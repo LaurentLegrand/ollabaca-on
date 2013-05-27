@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.ollabaca.on
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.ollabaca.on; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.ollabaca.on.site;bundle-version="1.0.0",
+ org.eclipse.core.resources;bundle-version="3.8.1",
+ org.eclipse.core.runtime;bundle-version="3.8.0"
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.ollabaca.on,
+ org.ollabaca.on.formatting,
+ org.ollabaca.on.generator,
+ org.ollabaca.on.model,
+ org.ollabaca.on.model.impl,
+ org.ollabaca.on.model.util,
+ org.ollabaca.on.parser.antlr,
+ org.ollabaca.on.parser.antlr.internal,
+ org.ollabaca.on.scoping,
+ org.ollabaca.on.serializer,
+ org.ollabaca.on.services,
+ org.ollabaca.on.util,
+ org.ollabaca.on.validation
+

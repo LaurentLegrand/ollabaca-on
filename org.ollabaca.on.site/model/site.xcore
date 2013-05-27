@@ -1,0 +1,101 @@
+package org.ollabaca.on.site
+
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.common.util.BasicEList
+
+abstract class Named {
+	
+	String name
+	
+}
+
+class Tag extends Named {
+	
+	refers Topic[] topics
+	
+}
+
+class Site extends Named {
+	
+	contains Topic[] topics
+	
+	contains Tag[] tags
+	
+	/**
+	 * Get or create a tag with a given name
+	 */
+	op Tag getOrCreateTag(String name) {
+		val n = name // param is not final
+		var Tag tag = tags.findFirst([it.name == n])
+		if (tag == null) {
+			tag = SiteFactory::eINSTANCE.createTag
+			tag.name = name
+			tags += tag
+		}
+		return tag
+	}
+	
+	op Topic getTopic(String name) {
+		val n = name // param is not final
+		topics.findFirst([it.name == n])
+	}
+	
+	/**
+	 * Get the root topics
+	 */
+	op Topic[] getRoots() {
+		val roots = new BasicEList<Topic>
+		topics.filter([parent == null]).forEach([roots.add(it)])
+		return roots
+	}
+	
+	/**
+	 * Get topic which target ... 
+	 */
+	op Topic getTopic(EObject target) {
+		val t = target
+		return topics.findFirst([it.target == t])
+	}
+}
+
+class Topic extends Named {
+	
+	String title
+	
+	String ^abstract
+	
+	/**
+	 * Documentation with Markdown syntax 
+	 */
+	String documentation
+	
+	refers Tag[] tags
+	
+	refers Topic parent opposite topics
+	
+	refers Topic[] topics opposite parent	
+	
+	refers Topic[] see
+	
+	
+	/**
+	 * The annotated element
+	 */
+	refers EObject target
+	
+	op boolean isAnonymous() {
+		this.name == null || this.name.trim().length() == 0
+	}
+	
+	op Topic[] getAncestorsAndSelf() {
+		val EList<Topic> list = new BasicEList
+		var Topic e = this;
+		while (e != null) {
+			list.add(0, e)
+			e = e.parent
+		}
+		return list
+	}
+	
+}

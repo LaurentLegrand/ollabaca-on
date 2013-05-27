@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ollabaca.on/src-gen" editDirectory="/org.ollabaca.on.edit/src"
+    editorDirectory="/org.ollabaca.on.editor/src" modelPluginID="org.ollabaca.on"
+    forceOverwrite="true" modelName="ObjectNotation" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.ollabaca.on.edit"
+    editorPluginID="org.ollabaca.on.editor" runtimeVersion="2.8">
+  <genPackages prefix="Model" basePackage="org.ollabaca.on" disposableProviderFactory="true"
+      ecorePackage="ObjectNotation.ecore#/">
+    <genClasses ecoreClass="ObjectNotation.ecore#//Unit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Unit/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Unit/container"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Unit/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Value"/>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Literal"/>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Import/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Container">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Container/instance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Container/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/documentation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/see"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/slots"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Slot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Slot/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Slot/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//Array">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Array/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//BooleanValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//BooleanValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//NullValue"/>
+    <genClasses ecoreClass="ObjectNotation.ecore#//NumberValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//NumberValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//InstanceRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//InstanceRef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ObjectNotation.ecore#//EnumValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//EnumValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
