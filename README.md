@@ -15,7 +15,7 @@ Support any EMF meta-model
 #Support of any EMF meta-model
 
 Internally, **ollabaca-on** uses the reflection API of EMF for content assist facilities and for object instantiations.
-Therefore, any kind of EMF meta-model which exists in the Eclipse installation directory can be used, even UML.
+Therefore, any kind of EMF meta-model which exists in the Eclipse installation directory can be used, even UML (cf. [Samples](https://github.com/LaurentLegrand/ollabaca-on/wiki/Samples)).
 
 
  
