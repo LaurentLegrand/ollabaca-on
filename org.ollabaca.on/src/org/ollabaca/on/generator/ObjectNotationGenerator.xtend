@@ -42,7 +42,7 @@ class ObjectNotationGenerator implements IGenerator {
    		}
    		
 		
-		var URI all = (fsa as IFileSystemAccessExtension2).getURI("all.xmi")
+		var URI all = (fsa as IFileSystemAccessExtension2).getURI("instances.xmi")
 		var XMLResource out = Resource$Factory$Registry::INSTANCE.getFactory(all).createResource(all) as XMLResource
 		out.contents.addAll(new ProjectToXmi(resourceSet).build())
 		
