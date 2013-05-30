@@ -226,7 +226,7 @@ class SiteToHtml {
 	}
 	
 	def dispatch print(Void self) {
-		"<null>"
+		"<null>".escape
 	}
 	
 	def dispatch print(Object self) {
@@ -243,7 +243,7 @@ class SiteToHtml {
 	}
 	
 	def dispatch print(Iterable<?> self) {
-		'''«FOR e: self BEFORE "[ " SEPARATOR ", " AFTER " ]"»«(e as Object).print»«ENDFOR»'''
+		'''«FOR e: self BEFORE "<ul>"  AFTER "</ul>"»<li>«(e as Object).print»</li>«ENDFOR»'''
 	}
 	
 	def link(Topic self) {
