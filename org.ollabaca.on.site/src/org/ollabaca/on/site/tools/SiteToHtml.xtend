@@ -107,7 +107,7 @@ class SiteToHtml {
 	«««			«FOR e: Activator::instance.renderers»
 	«««				«e.toSection(self, processor, renderer)»
 	«««			«ENDFOR»
-				«self.target.features»
+				«self.target.properties»
 		</article>
 		'''
 	}
@@ -144,17 +144,17 @@ class SiteToHtml {
 		site.getTopic(self)
 	}
 	
-	def features(EObject self) {
+	def properties(EObject self) {
 		val List<EClass> types = newArrayList()
 		types.add(self.eClass)
 		types.addAll(self.eClass.EAllSuperTypes)
 		
 		
 		'''
-		<section class="features">
-			<h1>Structural Features</h1>
+		<section class="properties">
+			<h1>Properties</h1>
 		<table>
-			<caption>Structural Features</caption>
+			<caption>Properties</caption>
 			<thead>
 				<tr><th scope="col">Class</th><th scope="col">Name</th><th scope="col">Value</th></tr>
 			</thead>
