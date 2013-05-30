@@ -43,18 +43,19 @@ class SiteToHtml {
 			<body>
 				<header>
 					<h1>«site.name»</h1>
-					«nav»
+«««					«nav»
 				</header>
-				<div id=instances>
+«««				<div id=instances>
 				«FOR e: topics.sortBy[name]»
 					«e.article»
 				«ENDFOR»
-				</div>
-				<div id=types>
-				«FOR t: types BEFORE '<div>' AFTER '</div>'»
+«««				</div>
+«««				<div id=types>
+«««				«FOR t: types BEFORE '<div>' AFTER '</div>'»
+				«FOR t: types.sortBy[name]»
 					«t.article(site.eResource.allContents.filter(t.instanceClass).toList)»
 				«ENDFOR»
-				</div>
+«««				</div>
 				<footer>
 					<p>«new SimpleDateFormat().format(new Date)»</p>
 				</footer>
@@ -66,7 +67,7 @@ class SiteToHtml {
 	def nav() {
 		'''
 		<nav>
-		«FOR e: site.roots.sortBy([name]) BEFORE "<ul>" AFTER "</ul>"»
+		«FOR e: site.roots.sortBy[name] BEFORE "<ul>" AFTER "</ul>"»
 			«nav(e)»
 		«ENDFOR»
 		</nav>
@@ -77,7 +78,7 @@ class SiteToHtml {
 		'''
 		<li>
 			«self.link»
-			«FOR e: self.topics.filter[!anonymous].sortBy([name]) BEFORE "<ul>" AFTER "</ul>"»
+			«FOR e: self.topics.filter[!anonymous].sortBy[name] BEFORE "<ul>" AFTER "</ul>"»
 				«e.nav»
 			«ENDFOR»
 		</li>
@@ -90,18 +91,23 @@ class SiteToHtml {
 	
 	def article(Topic self) {
 		'''
-		<article class="«self.target.eClass.name»">
-			<section class="main">
+		<article class="instance «self.target.eClass.name»">
 			<a id="«self.name»"></a>
 			<h1>«self.title»</h1>
 			«self.aside»
 			
-			«self.documentation.html»
-			</section>
-«««			«FOR e: Activator::instance.renderers»
-«««				«e.toSection(self, processor, renderer)»
-«««			«ENDFOR»
-			«self.target.features»
+				<section class="main">
+					<section class="abstract">
+						«self.^abstract.html»
+					</section>
+					<section class="documentation">
+						«self.documentation.html»
+					</section>
+				</section>
+	«««			«FOR e: Activator::instance.renderers»
+	«««				«e.toSection(self, processor, renderer)»
+	«««			«ENDFOR»
+				«self.target.features»
 		</article>
 		'''
 	}
@@ -109,8 +115,8 @@ class SiteToHtml {
 	def aside(Topic self) {
 		'''
 		<aside>
+			<ul class="breadcrumb">«FOR e: self.ancestors»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»<li>«self.title»</li></ul>
 			<p>type: <a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></p>
-			<p>path: «FOR e: self.ancestorsAndSelf SEPARATOR "/"»<a href="#«e.name»">«e.title»</a>«ENDFOR»</p>
 			«FOR e: self.topics BEFORE "<p>children: " SEPARATOR ", " AFTER "</p>"»<a href="#«e.name»">«e.title»</a>«ENDFOR»
 			«FOR e: self.see BEFORE "<p>see: " SEPARATOR ", " AFTER "</p>"»<a href="#«e.name»">«e.title»</a>«ENDFOR»
 		</aside>
@@ -142,10 +148,11 @@ class SiteToHtml {
 		
 		'''
 		<section class="features">
-			<h1>Features</h1>
-		<table border=1>
+			<h1>Structural Features</h1>
+		<table>
+			<caption>Structural Features</caption>
 			<thead>
-				<tr><th>Class</th><th>Name</th><th>Value</th></tr>
+				<tr><th scope="col">Class</th><th scope="col">Name</th><th scope="col">Value</th></tr>
 			</thead>
 			<tbody>
 				«FOR t: types»
@@ -153,9 +160,9 @@ class SiteToHtml {
 						«FOR f: t.EStructuralFeatures»
 							<tr>
 								«IF t.EStructuralFeatures.indexOf(f) == 0»
-									<th rowspan="«t.EStructuralFeatures.size»">«t.name»</th>
+									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.name»</th>
 								«ENDIF»
-								<th>«f.name.escape»</th>
+								<th scope="row">«f.name.escape»</th>
 								<td>«self.eGet(f).print»</td>
 							</tr>
 						«ENDFOR»
@@ -176,40 +183,40 @@ class SiteToHtml {
 		types.addAll(type.EAllSuperTypes)
 		
 		'''
-		<article>
+		<article class="type"">
 			<a id="eClass:«type.name»"></a>
 			<h1>«type.name»</h1>
-		<table border=1>
-			<thead>
-				<tr>
-				«FOR t: types»
-					«IF t.EStructuralFeatures.size != 0»
-					<th colspan="«t.EStructuralFeatures.size»">«t.name»</th>
-					«ENDIF»
-				«ENDFOR»
-				</tr>
-				<tr>
-				«FOR t: types»
-					«FOR f: t.EStructuralFeatures»
-						<th>«f.name.escape»</th>
-					«ENDFOR»
-				«ENDFOR»
-				</tr>
-			</thead>
-			<tbody>
-				«FOR i: instances»
+			<table>
+				<thead>
 					<tr>
 					«FOR t: types»
-						«FOR f: t.EStructuralFeatures »
-							<td>«(i as EObject).eGet(f).print»</td>
+						«IF t.EStructuralFeatures.size != 0»
+						<th colspan="«t.EStructuralFeatures.size»">«t.name»</th>
+						«ENDIF»
+					«ENDFOR»
+					</tr>
+					<tr>
+					«FOR t: types»
+						«FOR f: t.EStructuralFeatures»
+							<th>«f.name.escape»</th>
 						«ENDFOR»
 					«ENDFOR»
 					</tr>
-				«ENDFOR»
-			</tbody>
-			<tfoot>
-			</tfoot>
-		</table>
+				</thead>
+				<tbody>
+					«FOR i: instances»
+						<tr>
+						«FOR t: types»
+							«FOR f: t.EStructuralFeatures »
+								<td>«(i as EObject).eGet(f).print»</td>
+							«ENDFOR»
+						«ENDFOR»
+						</tr>
+					«ENDFOR»
+				</tbody>
+				<tfoot>
+				</tfoot>
+			</table>
 		</article>
 		'''
 	}

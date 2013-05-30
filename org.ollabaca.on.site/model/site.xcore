@@ -97,5 +97,15 @@ class Topic extends Named {
 		}
 		return list
 	}
+
+	op Topic[] getAncestors() {
+		val EList<Topic> list = new BasicEList
+		var Topic e = this.parent;
+		while (e != null) {
+			list.add(0, e)
+			e = e.parent
+		}
+		return list
+	}
 	
 }
