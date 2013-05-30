@@ -43,7 +43,7 @@ class SiteToHtml {
 			<body>
 				<header>
 					<h1>«site.name»</h1>
-«««					«nav»
+					«nav»
 				</header>
 «««				<div id=instances>
 				«FOR e: topics.sortBy[name]»
@@ -66,7 +66,7 @@ class SiteToHtml {
 	
 	def nav() {
 		'''
-		<nav>
+		<nav class="instance-tree">
 		«FOR e: site.roots.sortBy[name] BEFORE "<ul>" AFTER "</ul>"»
 			«nav(e)»
 		«ENDFOR»
