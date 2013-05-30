@@ -115,10 +115,14 @@ class SiteToHtml {
 	def aside(Topic self) {
 		'''
 		<aside>
-			<ul class="breadcrumb">«FOR e: self.ancestors»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»<li>«self.title»</li></ul>
-			<p>type: <a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></p>
-			«FOR e: self.topics BEFORE "<p>children: " SEPARATOR ", " AFTER "</p>"»<a href="#«e.name»">«e.title»</a>«ENDFOR»
-			«FOR e: self.see BEFORE "<p>see: " SEPARATOR ", " AFTER "</p>"»<a href="#«e.name»">«e.title»</a>«ENDFOR»
+			<dl>
+				<dt>path</dt>
+				<dd><ul class="breadcrumb">«FOR e: self.ancestors»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»<li>«self.title»</li></ul></dd>
+				<dt>type</dt>
+				<dd><a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></dd>
+				«FOR e: self.topics BEFORE "<dt>children</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+				«FOR e: self.see BEFORE "<dt>see also</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+			</dl>
 		</aside>
 		'''
 	}
@@ -183,7 +187,7 @@ class SiteToHtml {
 		types.addAll(type.EAllSuperTypes)
 		
 		'''
-		<article class="type"">
+		<article class="type">
 			<a id="eClass:«type.name»"></a>
 			<h1>«type.name»</h1>
 			<table>
