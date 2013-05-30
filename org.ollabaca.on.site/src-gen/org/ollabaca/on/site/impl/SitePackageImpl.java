@@ -345,6 +345,16 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EOperation getTopic__GetAncestors()
+  {
+    return topicEClass.getEOperations().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SiteFactory getSiteFactory()
   {
     return (SiteFactory)getEFactoryInstance();
@@ -395,6 +405,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     createEReference(topicEClass, TOPIC__TARGET);
     createEOperation(topicEClass, TOPIC___IS_ANONYMOUS);
     createEOperation(topicEClass, TOPIC___GET_ANCESTORS_AND_SELF);
+    createEOperation(topicEClass, TOPIC___GET_ANCESTORS);
   }
 
   /**
@@ -468,6 +479,8 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     initEOperation(getTopic__IsAnonymous(), theEcorePackage.getEBoolean(), "isAnonymous", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
     initEOperation(getTopic__GetAncestorsAndSelf(), this.getTopic(), "getAncestorsAndSelf", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+    initEOperation(getTopic__GetAncestors(), this.getTopic(), "getAncestors", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

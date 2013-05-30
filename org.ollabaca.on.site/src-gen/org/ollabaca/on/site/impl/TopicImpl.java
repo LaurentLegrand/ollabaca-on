@@ -459,6 +459,32 @@ public class TopicImpl extends NamedImpl implements Topic
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Topic> getAncestors()
+  {
+    BasicEList<Topic> _basicEList = new BasicEList<Topic>();
+    final EList<Topic> list = _basicEList;
+    Topic _this = this;
+    Topic e = _this.getParent();
+    boolean _notEquals = (!Objects.equal(e, null));
+    boolean _while = _notEquals;
+    while (_while)
+    {
+      {
+        list.add(0, e);
+        Topic _parent = e.getParent();
+        e = _parent;
+      }
+      boolean _notEquals_1 = (!Objects.equal(e, null));
+      _while = _notEquals_1;
+    }
+    return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @SuppressWarnings("unchecked")
   @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
@@ -649,6 +675,8 @@ public class TopicImpl extends NamedImpl implements Topic
         return isAnonymous();
       case SitePackage.TOPIC___GET_ANCESTORS_AND_SELF:
         return getAncestorsAndSelf();
+      case SitePackage.TOPIC___GET_ANCESTORS:
+        return getAncestors();
     }
     return super.eInvoke(operationID, arguments);
   }

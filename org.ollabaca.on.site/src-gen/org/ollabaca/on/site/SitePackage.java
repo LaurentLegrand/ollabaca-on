@@ -352,13 +352,22 @@ public interface SitePackage extends EPackage
   int TOPIC___GET_ANCESTORS_AND_SELF = NAMED_OPERATION_COUNT + 1;
 
   /**
+   * The operation id for the '<em>Get Ancestors</em>' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOPIC___GET_ANCESTORS = NAMED_OPERATION_COUNT + 2;
+
+  /**
    * The number of operations of the '<em>Topic</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOPIC_OPERATION_COUNT = NAMED_OPERATION_COUNT + 2;
+  int TOPIC_OPERATION_COUNT = NAMED_OPERATION_COUNT + 3;
 
 
   /**
@@ -594,6 +603,16 @@ public interface SitePackage extends EPackage
   EOperation getTopic__GetAncestorsAndSelf();
 
   /**
+   * Returns the meta object for the '{@link org.ollabaca.on.site.Topic#getAncestors() <em>Get Ancestors</em>}' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the '<em>Get Ancestors</em>' operation.
+   * @see org.ollabaca.on.site.Topic#getAncestors()
+   * @generated
+   */
+  EOperation getTopic__GetAncestors();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -800,6 +819,14 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EOperation TOPIC___GET_ANCESTORS_AND_SELF = eINSTANCE.getTopic__GetAncestorsAndSelf();
+
+    /**
+     * The meta object literal for the '<em><b>Get Ancestors</b></em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EOperation TOPIC___GET_ANCESTORS = eINSTANCE.getTopic__GetAncestors();
 
   }
 
