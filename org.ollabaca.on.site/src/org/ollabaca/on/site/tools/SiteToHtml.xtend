@@ -12,6 +12,7 @@ import org.ollabaca.on.site.Topic
 import org.pegdown.Extensions
 import org.pegdown.LinkRenderer
 import org.pegdown.PegDownProcessor
+import org.ollabaca.on.site.Activator
 
 class SiteToHtml {
 	
@@ -104,9 +105,9 @@ class SiteToHtml {
 						«self.documentation.html»
 					</section>
 				</section>
-	«««			«FOR e: Activator::instance.renderers»
-	«««				«e.toSection(self, processor, renderer)»
-	«««			«ENDFOR»
+				«FOR e: Activator::instance.factories»
+					«e.newRenderer(this).section(self.target)»
+				«ENDFOR»
 				«self.target.properties»
 		</article>
 		'''
@@ -115,14 +116,20 @@ class SiteToHtml {
 	def aside(Topic self) {
 		'''
 		<aside>
-			<dl>
-				<dt>path</dt>
-				<dd><ul class="breadcrumb">«FOR e: self.ancestors»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»<li>«self.title»</li></ul></dd>
-				<dt>type</dt>
-				<dd><a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></dd>
-				«FOR e: self.topics BEFORE "<dt>children</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
-				«FOR e: self.see BEFORE "<dt>see also</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
-			</dl>
+«««			<dl>
+«««				<dt>path</dt>
+«««				<dd><ul class="breadcrumb">«FOR e: self.ancestors»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»<li>«self.title»</li></ul></dd>
+«««				<dt>type</dt>
+«««				<dd><a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></dd>
+«««				«FOR e: self.topics BEFORE "<dt>children</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+«««				«FOR e: self.see BEFORE "<dt>see also</dt><dd><ul>" AFTER "</ul></dd>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+«««			</dl>
+			<ul class='nav nav-list'>
+				<li class='nav-header'>type</li><li><a href="#eClass:«self.target.eClass.name»">«self.target.eClass.name»</a></li>
+				«FOR e: self.ancestors BEFORE "<li class='nav-header'>ancestors</li>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+				«FOR e: self.topics  BEFORE "<li class='nav-header'>children</li>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+				«FOR e: self.see BEFORE "<li class='nav-header'>see also</li>"»<li><a href="#«e.name»">«e.title»</a></li>«ENDFOR»
+			</ul>
 		</aside>
 		'''
 	}
