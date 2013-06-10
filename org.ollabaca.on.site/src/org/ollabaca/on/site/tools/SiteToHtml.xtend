@@ -129,7 +129,7 @@ $("nav ul").addClass("nav nav-list");
 «««				<div id=types>
 «««				«FOR t: types BEFORE '<div>' AFTER '</div>'»
 				«FOR t: types.sortBy[name]»
-					«t.article(site.eResource.allContents.filter(t.instanceClass).toList)»
+					«t.article(site.eResource.allContents.filter(t.instanceClass).filter(typeof(EObject)).toList)»
 				«ENDFOR»
 «««				</div>
 				<footer>
@@ -263,7 +263,7 @@ $("nav ul").addClass("nav nav-list");
 	}
 	
 	
-	def article(EClass type, List<?> instances) {
+	def article(EClass type, List<EObject> instances) {
 		val List<EClass> types = newArrayList()
 		types.add(type)
 		types.addAll(type.EAllSuperTypes)
@@ -275,6 +275,7 @@ $("nav ul").addClass("nav nav-list");
 			<table>
 				<thead>
 					<tr>
+						<th><!-- topic id --></th>
 					«FOR t: types»
 						«IF t.EStructuralFeatures.size != 0»
 						<th colspan="«t.EStructuralFeatures.size»">«t.name»</th>
@@ -282,6 +283,7 @@ $("nav ul").addClass("nav nav-list");
 					«ENDFOR»
 					</tr>
 					<tr>
+						<th><!-- topic id --></th>
 					«FOR t: types»
 						«FOR f: t.EStructuralFeatures»
 							<th>«f.name.escape»</th>
@@ -292,6 +294,13 @@ $("nav ul").addClass("nav nav-list");
 				<tbody>
 					«FOR i: instances»
 						<tr>
+						<td>
+						«IF i.topic != null»
+							<a href="#«i.topic.name»">«i.topic.title»</a>
+						«ELSE»
+							<!-- -->
+						«ENDIF»
+						</td>
 						«FOR t: types»
 							«FOR f: t.EStructuralFeatures »
 								<td>«(i as EObject).eGet(f).print»</td>
