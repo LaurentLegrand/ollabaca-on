@@ -73,17 +73,14 @@ class Units {
 	}
 	
 	def Instance[] getAncestorsAndSelf(Instance self) {
-		var List<Instance> list = new ArrayList()
-		var EObject e = self;
-		while (e != null) {
-			if (e instanceof Instance) {
-				list.add(0, e as Instance)
-			}
-			e = e.eContainer
-		}
-		/*if (self.unit.container != null && self.unit.container.container != null) {
-			list.addAll(0, self.unit.container.container.ancestorsAndSelf);
-		}*/
+		var List<Instance> list = newArrayList()
+		var Instance e = self;
+		
+		do {
+			list.add(0, e)
+			e = e.parent
+		} while (e != null)
+		
 		return list
 	}
 	
@@ -95,6 +92,9 @@ class Units {
 			}
 			e = e.eContainer
 		}
+		// due to cross reference in multiple files (cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=338655), code below generate 
+		// "java.lang.AssertionError: Cyclic resolution of lazy links : Container.instance->Container.instance"
+		// 
 		/*if (self.unit.container != null && self.unit.container.instance != null) {
 			return self.unit.container.instance
 		}*/
