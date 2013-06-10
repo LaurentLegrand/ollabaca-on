@@ -2,7 +2,6 @@ package org.ollabaca.on.generator
 
 import java.util.ArrayList
 import java.util.Collection
-import java.util.HashMap
 import java.util.HashSet
 import java.util.Map
 import java.util.Set
@@ -30,6 +29,7 @@ import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.SiteFactory
 import org.ollabaca.on.site.Topic
 import org.ollabaca.on.util.Units
+import org.eclipse.xtext.naming.QualifiedName
 
 class ProjectToXmi {
 	
@@ -37,9 +37,11 @@ class ProjectToXmi {
 	
 	Units units = new Units()
 	
-	Map<Instance, EObject> instances = new HashMap
+	Map<Instance, EObject> instances = newHashMap
 	
-	Map<Instance, Topic> topics = new HashMap
+	Map<Instance, Topic> topics = newHashMap
+	
+	Map<QualifiedName, Topic> names = newHashMap
 	
 	Set<Unit> all = new HashSet
 	
@@ -124,7 +126,8 @@ class ProjectToXmi {
 		
 			val name = qualifiedNameProvider.getFullyQualifiedName(e)
 			if (name != null) {
-				topic.name = name.toString	
+				topic.name = name.toString
+				names.put(name, topic)	
 			}
 			topic.documentation = e.documentation.normalize
 			if (e.title != null) {
@@ -153,11 +156,12 @@ class ProjectToXmi {
 		}
 		
 		// create parent-child links
-		for (e: topics.keySet) {
-			val topic = topics.get(e)
-			val parent = units.getParent(e)
+		for (e: names.keySet) {
+			val topic = names.get(e)
+			val parent = names.get(e.skipLast(1))
 			if (parent != null) {
-				topic.parent = topics.get(parent)
+				parent.topics.add(topic)
+				//topic.parent = topics.get(parent)
 			}
 		}
 		
