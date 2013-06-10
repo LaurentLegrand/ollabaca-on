@@ -45,9 +45,7 @@ class Site extends Named {
 	 * Get the root topics
 	 */
 	op Topic[] getRoots() {
-		val roots = new BasicEList<Topic>
-		topics.filter([parent == null]).forEach([roots.add(it)])
-		return roots
+		new BasicEList<Topic>(topics.filter([parent == null && !anonymous]).toList)
 	}
 	
 	/**
