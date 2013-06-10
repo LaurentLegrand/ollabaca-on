@@ -9,6 +9,7 @@ import java.lang.Iterable;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -25,8 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.SiteFactory;
@@ -186,29 +185,31 @@ public class SiteImpl extends NamedImpl implements Site
    */
   public EList<Topic> getRoots()
   {
-    BasicEList<Topic> _basicEList = new BasicEList<Topic>();
-    final BasicEList<Topic> roots = _basicEList;
     Site _this = this;
     EList<Topic> _topics = _this.getTopics();
     final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
     {
         public Boolean apply(final Topic it)
         {
+          boolean _and = false;
           Topic _parent = it.getParent();
           boolean _equals = Objects.equal(_parent, null);
-          return Boolean.valueOf(_equals);
+          if (!_equals)
+          {
+            _and = false;
+          } else
+          {
+            boolean _isAnonymous = it.isAnonymous();
+            boolean _not = (!_isAnonymous);
+            _and = (_equals && _not);
+          }
+          return Boolean.valueOf(_and);
         }
       };
     Iterable<Topic> _filter = IterableExtensions.<Topic>filter(_topics, _function);
-    final Procedure1<Topic> _function_1 = new Procedure1<Topic>()
-    {
-        public void apply(final Topic it)
-        {
-          roots.add(it);
-        }
-      };
-    IterableExtensions.<Topic>forEach(_filter, _function_1);
-    return roots;
+    List<Topic> _list = IterableExtensions.<Topic>toList(_filter);
+    BasicEList<Topic> _basicEList = new BasicEList<Topic>(_list);
+    return _basicEList;
   }
 
   /**

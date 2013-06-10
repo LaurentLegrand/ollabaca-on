@@ -12,23 +12,26 @@ import org.ollabaca.on.site.Topic
 import org.pegdown.Extensions
 import org.pegdown.LinkRenderer
 import org.pegdown.PegDownProcessor
-import org.ollabaca.on.site.Activator
 
 class SiteToHtml {
 	
-	val Site site
+	public val Site site
 	
 	val processor = new PegDownProcessor(Extensions::WIKILINKS)
 	
 	val LinkRenderer linkRenderer
 	
+	var Set<ObjectRenderer> renderers// = newHashSet()
+	
 	
 	new(Site site) {
 		this.site = site
 		linkRenderer = new SiteLinkRenderer(this.site)
+		this.renderers = renderers
 	}
 	
-	def html() {
+	def html(Set<ObjectRenderer> renderers) {
+		this.renderers = renderers
 		
 		val List<Topic> topics = newArrayList()
 		val Set<EClass> types = newHashSet()
@@ -40,12 +43,84 @@ class SiteToHtml {
 		<html>
 			<head>
 				<title>«site.name»</title>
+		<link rel="stylesheet" type="text/css" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css"/>
+
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="http://twitter.github.io/bootstrap/assets/js/bootstrap.js"></script>
+
+
+		<script>
+			$(document).ready(function() {
+
+				//$("body > *").not("header").not("footer").wrapAll("<div class='row-fluid'></div>");
+				$("body > header").wrap("<div class='row-fluid'><div class='span12'></div></div>");
+				$("body > footer").wrap("<div class='row-fluid'><div class='span12'></div></div>");
+				$("body > *").wrapAll("<div class='container-fluid'></div>");
+
+				$("nav").wrap("<div class='row-fluid'><div class='span12'></div></div>");
+				//$("article").wrap("<div class='row-fluid'></div>");
+
+
+				$("article > h1").wrap("<div class='row-fluid'><div class='span12 page-header'></div>");
+					$("article aside").addClass("span3");
+				$('article').each(function() {
+					$(this).find('section').wrapAll("<div class='span9'></div>");
+				});
+				$('article').each(function() {
+					$(this).find('.span3, .span9').wrapAll("<div class='row-fluid'></div>");
+				});
+
+//				$("article > section").wrapAll("<div class='span9'></div>");
+//
+//				$("article > *").not("h1").not("a").wrapAll("<div class='row-fluid'></div>");
+
+
+				$(".breadcrumb").removeClass("breadcrumb");
+				$("table").wrap("<div class='table' style='overflow: auto;'/>");
+					$(".abstract").addClass("lead");
+
+					$("article aside").addClass("well");
+
+					// replace dl per ul
+//					$("article aside dl").wrap("<ul class='nav nav-list'></ul>");
+//					$("article aside dt").unwrap();
+//					$("article aside dt").wrap("<li class='nav-header'></li>");
+//					$("article aside dt:first-child").unwrap();
+//					$("article aside dd").wrap("<li></li>");
+//					$("article aside dd:first-child").unwrap();
+//					$("article aside ul").addClass("nav nav-list");
+
+
+//					$("article aside ul").addClass("breadcrumb");
+//					$("article aside dl").addClass("dl-horizontal");
+//				$(".type table").addClass("table-bordered");
+//				$(".breadcrumb li").not(":last-child").append("<span class='divider'>/</span>");
+
+				$(".nav-header").before("<li class='divider'></li>");
+
+				$("table ul").addClass("inline")
+				$("table li").not(":last-child").append("<span class='divider'>,</span>");
+$("nav").addClass("well");
+$("nav ul").addClass("nav nav-list");
+
+				$(".properties > h1").nextAll().hide();
+				$(".properties > h1").click(function() {
+					$(this).nextAll().toggle('slow', function() {
+						// Animation complete.
+						});
+					});
+
+				});
+
+			</script>
+				
 			</head>
 			<body>
 				<header>
 					<h1>«site.name»</h1>
-					«nav»
 				</header>
+				«nav»
 «««				<div id=instances>
 				«FOR e: topics.sortBy[name]»
 					«e.article»
@@ -105,8 +180,8 @@ class SiteToHtml {
 						«self.documentation.html»
 					</section>
 				</section>
-				«FOR e: Activator::instance.factories»
-					«e.newRenderer(this).section(self.target)»
+				«FOR e:renderers»
+					«e.section(self.target)»
 				«ENDFOR»
 				«self.target.properties»
 		</article>
@@ -233,14 +308,24 @@ class SiteToHtml {
 	}
 	
 	def dispatch print(Void self) {
-		"<null>".escape
+		"<code class='null'>null</code>"
 	}
 	
 	def dispatch print(Object self) {
+		for (e: renderers) {
+			val res = e.print(self)
+			if (res != null && res.length > 0) {
+				return res
+			}
+		}
+		self.printFallback
+	}
+	
+	def dispatch printFallback(Object self) {
 		self.toString.escape
 	}
 	
-	def dispatch print(EObject self) {
+	def dispatch printFallback(EObject self) {
 		val topic = self.topic
 		if (topic == null) {
 			self.toString.escape

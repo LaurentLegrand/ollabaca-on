@@ -19,6 +19,9 @@ import org.eclipse.xtext.generator.IGenerator
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.tools.SiteToHtml
 import org.ollabaca.on.util.Visitor
+import org.ollabaca.on.site.tools.ObjectRenderer
+import java.util.Set
+import org.ollabaca.on.site.Activator
 
 
 class ObjectNotationGenerator implements IGenerator {
@@ -56,7 +59,12 @@ class ObjectNotationGenerator implements IGenerator {
 		val site = out.contents.filter(typeof(Site)).head
 		
 		if (site != null) {
-			fsa.generateFile("doc.html", new SiteToHtml(site).html())
+			val siteToHtml = new SiteToHtml(site)
+			val Set<ObjectRenderer> renderers = newHashSet()
+			for (e: Activator::instance.factories) {
+				renderers.add(e.newRenderer(siteToHtml))
+			}
+			fsa.generateFile("doc.html", siteToHtml.html(renderers))
 		}
 
 		//new ToXWiki().doGenerate(out, fsa)
