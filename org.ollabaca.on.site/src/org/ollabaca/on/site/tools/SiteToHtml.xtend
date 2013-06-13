@@ -4,34 +4,20 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.List
 import java.util.Set
-import org.apache.commons.lang3.StringEscapeUtils
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
-import org.pegdown.Extensions
-import org.pegdown.LinkRenderer
-import org.pegdown.PegDownProcessor
 
-class SiteToHtml {
-	
-	public val Site site
-	
-	val processor = new PegDownProcessor(Extensions::WIKILINKS)
-	
-	val LinkRenderer linkRenderer
-	
-	var Set<ObjectRenderer> renderers// = newHashSet()
+class SiteToHtml extends SiteRenderer {
 	
 	
 	new(Site site) {
-		this.site = site
-		linkRenderer = new SiteLinkRenderer(this.site)
-		this.renderers = renderers
+		super(site)
 	}
 	
 	def html(Set<ObjectRenderer> renderers) {
-		this.renderers = renderers
+		this.setOjectRenderers(renderers)
 		
 		val List<Topic> topics = newArrayList()
 		val Set<EClass> types = newHashSet()
@@ -161,10 +147,6 @@ $("nav ul").addClass("nav nav-list");
 		'''
 	}
 	
-	def html(String self) {
-		processor.markdownToHtml(self, linkRenderer)
-	}
-	
 	def article(Topic self) {
 		'''
 		<article class="instance «self.target.eClass.name»">
@@ -180,7 +162,7 @@ $("nav ul").addClass("nav nav-list");
 						«self.documentation.html»
 					</section>
 				</section>
-				«FOR e:renderers»
+				«FOR e:objectRenderers»
 					«e.section(self.target)»
 				«ENDFOR»
 				«self.target.properties»
@@ -209,10 +191,6 @@ $("nav ul").addClass("nav nav-list");
 		'''
 	}
 	
-	def escape(String self) {
-		StringEscapeUtils::escapeHtml4(self)
-	}
-	
 	def getTopicTitle(EObject self, String name) {
 		var Topic t = self.eResource.allContents.filter(typeof(Topic)).findFirst([Topic t | t.name == name])
 		if (t == null) {
@@ -221,11 +199,7 @@ $("nav ul").addClass("nav nav-list");
 			return t.title
 		}
 	}
-	
-	def topic(EObject self) {
-		site.getTopic(self)
-	}
-	
+		
 	def properties(EObject self) {
 		val List<EClass> types = newArrayList()
 		types.add(self.eClass)
@@ -316,39 +290,16 @@ $("nav ul").addClass("nav nav-list");
 		'''
 	}
 	
-	def dispatch print(Void self) {
-		"<code class='null'>null</code>"
-	}
-	
-	def dispatch print(Object self) {
-		for (e: renderers) {
-			val res = e.print(self)
-			if (res != null && res.length > 0) {
-				return res
-			}
-		}
-		self.printFallback
-	}
-	
-	def dispatch printFallback(Object self) {
-		self.toString.escape
-	}
-	
-	def dispatch printFallback(EObject self) {
-		val topic = self.topic
-		if (topic == null) {
-			self.toString.escape
-		} else {
-			'''<a href="#«topic.name»">«topic.title»</a>'''
-		}
-	}
-	
-	def dispatch print(Iterable<?> self) {
-		'''«FOR e: self BEFORE "<ul>"  AFTER "</ul>"»<li>«(e as Object).print»</li>«ENDFOR»'''
-	}
-	
 	def link(Topic self) {
 		'''<a href="#«self.name»">«self.title»</a>'''
+	}
+	
+	override href(Topic self) {
+		'''#«self.name»'''
+	}
+	
+	override href(Site self) {
+		'#'
 	}
 	
 }

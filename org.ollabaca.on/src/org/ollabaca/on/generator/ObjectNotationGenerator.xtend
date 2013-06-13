@@ -22,6 +22,7 @@ import org.ollabaca.on.util.Visitor
 import org.ollabaca.on.site.tools.ObjectRenderer
 import java.util.Set
 import org.ollabaca.on.site.Activator
+import org.ollabaca.on.site.tools.RendererFactory
 
 
 class ObjectNotationGenerator implements IGenerator {
@@ -47,7 +48,7 @@ class ObjectNotationGenerator implements IGenerator {
 		
 		var URI all = (fsa as IFileSystemAccessExtension2).getURI("instances.xmi")
 		var XMLResource out = Resource$Factory$Registry::INSTANCE.getFactory(all).createResource(all) as XMLResource
-		out.contents.addAll(new ProjectToXmi(resourceSet).build())
+		out.contents.addAll(new ProjectToXmi(resourceSet, project.name).build())
 		
 		// force id
 		for (e: out.allContents.toIterable) {
@@ -61,7 +62,7 @@ class ObjectNotationGenerator implements IGenerator {
 		if (site != null) {
 			val siteToHtml = new SiteToHtml(site)
 			val Set<ObjectRenderer> renderers = newHashSet()
-			for (e: Activator::instance.factories) {
+			for (e: RendererFactory::factories) {
 				renderers.add(e.newRenderer(siteToHtml))
 			}
 			fsa.generateFile("doc.html", siteToHtml.html(renderers))

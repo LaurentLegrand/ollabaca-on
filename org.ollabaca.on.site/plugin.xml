@@ -13,5 +13,12 @@
             class="org.ollabaca.on.site.SitePackage"
             genModel="model/site.xcore"/>
    </extension>
-
+   <extension
+         point="org.eclipse.equinox.http.registry.servlets">
+      <servlet
+            alias="/site"
+            class="org.ollabaca.on.site.servlets.SiteServlet2"
+            load-on-startup="true">
+      </servlet>
+   </extension>
 </plugin>

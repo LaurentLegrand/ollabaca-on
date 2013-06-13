@@ -47,8 +47,14 @@ class ProjectToXmi {
 	
 	ResourceSet set
 	
-	new(ResourceSet set) {
+	/**
+	 * Project name
+	 */
+	String project
+	
+	new(ResourceSet set, String project) {
 		this.set = set
+		this.project = project
 	}
 	
 	def Collection<EObject> build() {
@@ -119,6 +125,7 @@ class ProjectToXmi {
 		// create site
 		var Site site = SiteFactory::eINSTANCE.createSite
 		result += site
+		site.name = project
 				
 		for (e: instances.keySet) {
 			val topic = SiteFactory::eINSTANCE.createTopic
@@ -137,7 +144,7 @@ class ProjectToXmi {
 			}
 			
 			topic.setAbstract(e.getAbstract().normalize)
-			topic.target = instances.get(e)
+			topic.target = instances.get(e) 
 			
 			topics.put(e, topic)
 			//result += topic

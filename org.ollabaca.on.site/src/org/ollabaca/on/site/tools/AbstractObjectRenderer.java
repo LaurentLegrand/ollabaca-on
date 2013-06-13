@@ -4,10 +4,10 @@ import org.eclipse.emf.ecore.EObject;
 
 public abstract class AbstractObjectRenderer implements ObjectRenderer {
 
-	protected SiteToHtml siteToHtml;
+	protected SiteRenderer siteRenderer;
 
-	protected AbstractObjectRenderer(SiteToHtml siteToHtml) {
-		this.siteToHtml = siteToHtml;
+	protected AbstractObjectRenderer(SiteRenderer siteRenderer) {
+		this.siteRenderer = siteRenderer;
 	}
 
 	protected String _section(Void self) {
@@ -23,7 +23,7 @@ public abstract class AbstractObjectRenderer implements ObjectRenderer {
 	}
 
 	public String escape(String self) {
-		return siteToHtml.escape(self);
+		return siteRenderer.escape(self);
 	}
 
 	protected String _print(Object self) {

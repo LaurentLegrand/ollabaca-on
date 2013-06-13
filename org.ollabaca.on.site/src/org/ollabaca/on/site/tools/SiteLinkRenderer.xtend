@@ -1,15 +1,15 @@
 package org.ollabaca.on.site.tools
 
 import org.pegdown.LinkRenderer
-import org.ollabaca.on.site.Site
+import org.pegdown.LinkRenderer$Rendering
 import org.pegdown.ast.WikiLinkNode
 
 class SiteLinkRenderer extends LinkRenderer {
 	
-	val Site site
+	val SiteRenderer renderer
 	
-	new(Site site) {
-		this.site = site
+	new(SiteRenderer renderer) {
+		this.renderer = renderer
 	}
 
 	/**
@@ -18,11 +18,11 @@ class SiteLinkRenderer extends LinkRenderer {
 	override render(WikiLinkNode node) {
 		val key = node.text.substring(1).replaceAll("/", ".")
 		
-		val topic = site.getTopic(key)
+		val topic = renderer.site.getTopic(key)
 		if (topic == null) {
 			return new LinkRenderer$Rendering('#', "Not found: " + key); 
 		} else {
-			return new LinkRenderer$Rendering('#' + key, topic.title); 
+			return new LinkRenderer$Rendering(renderer.href(topic), topic.title); 
 		}
 	}
 
