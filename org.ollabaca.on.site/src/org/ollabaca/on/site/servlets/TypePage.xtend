@@ -3,13 +3,16 @@ package org.ollabaca.on.site.servlets
 import java.util.Set
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
+import org.ollabaca.on.site.Activator
 import org.ollabaca.on.site.Site
+
+import static extension org.ollabaca.on.site.renderers.Renderers.*
 
 class TypePage extends SitePage {
 	
-	val String type
+	val EClass type
 	
-	new(Site site, String type) {
+	new(Site site, EClass type) {
 		super(site)
 		this.type = type
 	}
@@ -18,11 +21,20 @@ class TypePage extends SitePage {
 		site.name + ":" + type
 	}
 	
+	override onLoad() {
+		'''
+		«FOR e: Activator::instance.context.contentProviders»
+			«e.onType(site, type)»
+		«ENDFOR»
+		'''
+	}
+	
+	
 	override aside() {
 		'''
 		<aside>
 			<ul class='nav nav-list'>
-				<li class='nav-header'>name</li><li>«type.substring(type.lastIndexOf(".") + 1)»</li>
+				<li class='nav-header'>name</li><li>«type.name»</li>
 «««				«FOR e: topic.ancestors BEFORE "<li class='divider'></li><li class='nav-header'>ancestors</li>"»<li>«e.link»</li>«ENDFOR»
 «««				«FOR e: topic.topics  BEFORE "<li class='divider'></li><li class='nav-header'>children</li>"»<li>«e.link»</li>«ENDFOR»
 «««				«FOR e: topic.see BEFORE "<li class='divider'></li><li class='nav-header'>see also</li>"»<li>«e.link»</li>«ENDFOR»
@@ -45,7 +57,7 @@ class TypePage extends SitePage {
 		
 		val Set<EObject> instances = newHashSet()
 		val Set<EClass> types = newHashSet()
-		site.topics.map[target].filter[it.eClass.instanceClassName.equals(type)].forEach[instances.add(it) types.add(it.eClass) types.addAll(it.eClass.EAllSuperTypes)]
+		site.topics.map[target].filter[it.eClass == this.type].forEach[instances.add(it) types.add(it.eClass) types.addAll(it.eClass.EAllSuperTypes)]
 		
 		'''
 		<article class="type">
@@ -85,7 +97,7 @@ class TypePage extends SitePage {
 						</td>
 						«FOR t: types»
 							«FOR f: t.EStructuralFeatures »
-								<td>«(i as EObject).eGet(f).print»</td>
+								<td>«(i as EObject).eGet(f).label»</td>
 							«ENDFOR»
 						«ENDFOR»
 						</tr>

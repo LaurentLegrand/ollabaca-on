@@ -37,18 +37,35 @@ class Page {
 						padding-right: 5px;
 					}
 				}
-			</style>
+.parentOf {
+	stroke: red;
+  stroke-width: 1.5px;
+}
+
+.seeAlso {
+	stroke: blue;
+  stroke-width: 1.5px;
+}			</style>
 			<link href="/site/assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 			<script src="/site/assets/jquery/jquery-2.0.2.min.js"></script>
 			<script src="/site/assets/bootstrap/js/bootstrap.js"></script>
+			<script src="/site/assets/d3js/d3.v3.min.js"></script>
+			<script src="/site/assets/d3js/parsets/d3.parsets.js"></script>
+			<script src="/site/assets/site.js"></script>
 			<script>
 				$(document).ready(function() {
 					$("table").wrap("<div class='table' style='overflow: auto;'/>");
 				});
+				
 			</script>
+			«onLoad»
 			
 		</head>
 		'''
+	}
+	
+	def onLoad() {
+		""
 	}
 	
 	def render() {
@@ -85,7 +102,7 @@ class Page {
 						<div class="span3 well">
 							«aside»
 						</div>
-						<div class="span9">
+						<div id="content" class="span9">
 							«content»
 						</div>
 					</div>

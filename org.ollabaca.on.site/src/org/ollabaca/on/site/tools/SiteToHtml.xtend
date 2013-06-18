@@ -302,4 +302,7 @@ $("nav ul").addClass("nav nav-list");
 		'#'
 	}
 	
+	override href(EClass self) {
+		'''«self.instanceClassName»'''
+	}
 }

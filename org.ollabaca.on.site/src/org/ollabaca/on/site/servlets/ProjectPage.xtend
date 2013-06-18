@@ -2,6 +2,8 @@ package org.ollabaca.on.site.servlets
 
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
+import org.ollabaca.on.site.Activator
+import static extension org.ollabaca.on.site.renderers.Renderers.*
 
 class ProjectPage extends SitePage {
 		
@@ -9,9 +11,22 @@ class ProjectPage extends SitePage {
 		super(site)
 	}
 	
+	override aside() {
+		nav
+	}
+	
 	override content() {
 		'''
-		«nav»
+		<div id="vis" class="span12">
+		</div>
+		'''
+	}
+	
+	override onLoad() {
+		'''
+		«FOR e: Activator::instance.context.contentProviders»
+			«e.onSite(site)»
+		«ENDFOR»
 		'''
 	}
 	
@@ -24,6 +39,10 @@ class ProjectPage extends SitePage {
 		'''
 		'''
 	}
+	
+//	override onDocumentReady() {
+//		'''myGraph("#vis", "/site/projects/«site.name»/json");'''
+//	}
 
 	def nav() {
 		'''

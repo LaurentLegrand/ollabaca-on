@@ -1,10 +1,13 @@
 package org.ollabaca.on.site;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
+import org.ollabaca.on.site.renderers.ContentProvider;
+import org.ollabaca.on.site.renderers.LabelProvider;
 import org.ollabaca.on.site.servlets.HttpServiceTracker;
 import org.ollabaca.on.site.tools.RendererFactory;
 import org.osgi.framework.BundleActivator;
@@ -14,35 +17,44 @@ public class Activator implements BundleActivator {
 
 	public final String RENDERER_FACTORY_ID = "org.ollabaca.on.site.RendererFactory";
 
+	public final String LABEL_PROVIDER_ID = "org.ollabaca.on.site.LabelProvider";
+
+	public final String CONTENT_PROVIDER_ID = "org.ollabaca.on.site.ContentProvider";
+
 	public static Activator instance;
 
-	//Set<RendererFactory> factories = new HashSet<>();
-	
+	// Set<RendererFactory> factories = new HashSet<>();
+
 	private HttpServiceTracker serviceTracker;
 
+	private Context context;
 
 	@Override
 	public void start(BundleContext context) throws Exception {
-		this.load(RENDERER_FACTORY_ID, RendererFactory.class, RendererFactory.factories);
+		this.load(RENDERER_FACTORY_ID, RendererFactory.class,
+				RendererFactory.factories);
 		instance = this;
 		System.out.println(this + ": activated");
-		
-		 serviceTracker = new HttpServiceTracker(context);
-         serviceTracker.open();
 
+		serviceTracker = new HttpServiceTracker(context);
+		serviceTracker.open();
+
+		this.context = new Context(
+				this.load(LABEL_PROVIDER_ID, LabelProvider.class, new HashSet<LabelProvider>()), 
+				this.load(CONTENT_PROVIDER_ID, ContentProvider.class, new HashSet<ContentProvider>()));
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		instance = null;
 		RendererFactory.factories.clear();
-		
-		serviceTracker.close();
-        serviceTracker = null;
 
+		serviceTracker.close();
+		serviceTracker = null;
+		context = null;
 	}
 
-	<E> void load(String id, Class<E> type, Collection<E> instances) {
+	<E> Collection<E> load(String id, Class<E> type, Collection<E> instances) {
 		IConfigurationElement[] elements = Platform.getExtensionRegistry()
 				.getConfigurationElementsFor(id);
 		try {
@@ -57,7 +69,11 @@ public class Activator implements BundleActivator {
 			// TODO
 			System.out.println(ex.getMessage());
 		}
+		return instances;
+	}
 
+	public Context getContext() {
+		return context;
 	}
 
 }

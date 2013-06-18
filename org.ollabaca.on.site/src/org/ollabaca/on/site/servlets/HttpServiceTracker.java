@@ -21,7 +21,7 @@ public class HttpServiceTracker extends ServiceTracker {
 		try {
 			httpService.registerServlet("/site", new SiteServlet(), null,
 					null);
-			httpService.registerResources("/site/assets", "/org/ollabaca/on/site/assets", null);
+			httpService.registerResources("/site/assets", "/assets", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

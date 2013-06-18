@@ -12,7 +12,7 @@ class HomePage extends Page {
 		'''
 		<div class="row-fluid">
 			«FOR e: ResourcesPlugin::workspace.root.projects.filter[getFile("src-gen/instances.xmi").exists]»
-			<p><a href="/site/projects/«e.name»">«e.name»</a></p>
+			<p><a href="/site/pages/«e.name»">«e.name»</a></p>
 			«ENDFOR»
 		</div>
 		'''

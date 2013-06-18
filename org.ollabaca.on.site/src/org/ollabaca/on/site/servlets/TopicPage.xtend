@@ -5,6 +5,8 @@ import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
+import org.ollabaca.on.site.Activator
+import static extension org.ollabaca.on.site.renderers.Renderers.*
 
 class TopicPage extends SitePage {
 	
@@ -27,6 +29,14 @@ class TopicPage extends SitePage {
 		'''
 	}
 	
+	override onLoad() {
+		'''
+		«FOR e: Activator::instance.context.contentProviders»
+			«e.onTopic(topic)»
+		«ENDFOR»
+		'''
+	}
+	
 	def article() {
 		'''
 		<article class="instance «topic.target.eClass.name»">
@@ -42,7 +52,7 @@ class TopicPage extends SitePage {
 						«topic.documentation.html»
 					</section>
 				</section>
-				«renderer.section(topic)»
+«««				«renderer.section(topic)»
 		</article>
 		'''		
 	}
@@ -78,7 +88,7 @@ class TopicPage extends SitePage {
 		types.addAll(self.eClass.EAllSuperTypes)
 		
 		'''
-		<section class="properties">
+		<section id="properties" class="properties">
 			<h2>Properties</h2>
 		<table class="table">
 			<caption>Properties</caption>
@@ -94,7 +104,7 @@ class TopicPage extends SitePage {
 									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link»</th>
 								«ENDIF»
 								<th scope="row">«f.name.escape»</th>
-								<td>«self.eGet(f).print»</td>
+								<td>«self.eGet(f).label»</td>
 							</tr>
 						«ENDFOR»
 					«ENDIF»

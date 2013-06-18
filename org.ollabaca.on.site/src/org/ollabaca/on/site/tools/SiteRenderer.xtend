@@ -8,6 +8,7 @@ import org.ollabaca.on.site.Topic
 import org.pegdown.Extensions
 import org.pegdown.LinkRenderer
 import org.pegdown.PegDownProcessor
+import org.eclipse.emf.ecore.EClass
 
 abstract class SiteRenderer {
 	
@@ -35,6 +36,21 @@ abstract class SiteRenderer {
 	def String href(Topic self)
 	
 	def String href(Site self)
+	
+	def String href(EClass self)
+	
+	def dispatch link(Site self) {
+		'''<a href="«href(self)»">«self.name»</a>'''
+	}
+	
+	def dispatch link(Topic self) {
+		'''<a href="«href(self)»">«self.title»</a>'''
+	}
+	
+	def dispatch link(EClass self) {
+		'''<a href="«href(self)»">«self.name»</a>'''		
+	}
+	
 	
 	def section(Topic self) {
 		'''

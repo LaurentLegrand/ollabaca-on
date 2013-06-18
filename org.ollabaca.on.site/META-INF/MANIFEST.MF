@@ -10,12 +10,18 @@ Bundle-ClassPath: .,
  lib/asm-util-4.1.jar,
  lib/parboiled-core-1.1.5.jar,
  lib/parboiled-java-1.1.5.jar,
- lib/pegdown-1.2.1.jar
+ lib/pegdown-1.2.1.jar,
+ lib/javax.json-1.0-b06.jar,
+ lib/javax.json-api-1.0-b06.jar,
+ lib/parboiled-core-1.1.4.jar,
+ lib/parboiled-java-1.1.4.jar,
+ resources/
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.ollabaca.on.site,
  org.ollabaca.on.site.impl,
+ org.ollabaca.on.site.renderers,
  org.ollabaca.on.site.servlets,
  org.ollabaca.on.site.tools,
  org.ollabaca.on.site.util
