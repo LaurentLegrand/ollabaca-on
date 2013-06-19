@@ -5,7 +5,6 @@
 -->
 
 <plugin>
-   <extension-point id="RendererFactory" name="RendererFactory" schema="schema/RendererFactory.exsd"/>
    <extension-point id="ContentProvider" name="ContentProvider" schema="schema/ContentProvider.exsd"/>
    <extension-point id="LabelProvider" name="LabelProvider" schema="schema/LabelProvider.exsd"/>
 

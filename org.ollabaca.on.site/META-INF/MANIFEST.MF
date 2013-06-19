@@ -23,7 +23,6 @@ Export-Package: org.ollabaca.on.site,
  org.ollabaca.on.site.impl,
  org.ollabaca.on.site.renderers,
  org.ollabaca.on.site.servlets,
- org.ollabaca.on.site.tools,
  org.ollabaca.on.site.util
 Require-Bundle: javax.servlet;bundle-version="3.0.0",
  org.eclipse.core.runtime,

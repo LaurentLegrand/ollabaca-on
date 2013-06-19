@@ -9,7 +9,6 @@ import org.eclipse.core.runtime.Platform;
 import org.ollabaca.on.site.renderers.ContentProvider;
 import org.ollabaca.on.site.renderers.LabelProvider;
 import org.ollabaca.on.site.servlets.HttpServiceTracker;
-import org.ollabaca.on.site.tools.RendererFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -31,8 +30,6 @@ public class Activator implements BundleActivator {
 
 	@Override
 	public void start(BundleContext context) throws Exception {
-		this.load(RENDERER_FACTORY_ID, RendererFactory.class,
-				RendererFactory.factories);
 		instance = this;
 		System.out.println(this + ": activated");
 
@@ -47,8 +44,6 @@ public class Activator implements BundleActivator {
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		instance = null;
-		RendererFactory.factories.clear();
-
 		serviceTracker.close();
 		serviceTracker = null;
 		context = null;

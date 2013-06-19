@@ -61,8 +61,8 @@ class TypePage extends SitePage {
 		
 		'''
 		<article class="type">
-			<a id="eClass:«type»"></a>
-			<h1>«type»</h1>
+			<a id="eClass:«type.name»"></a>
+			<h1>«type.name»</h1>
 			
 			<h2>instances</h2>
 			<table>
