@@ -14,15 +14,11 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-	public final String RENDERER_FACTORY_ID = "org.ollabaca.on.site.RendererFactory";
-
 	public final String LABEL_PROVIDER_ID = "org.ollabaca.on.site.LabelProvider";
 
 	public final String CONTENT_PROVIDER_ID = "org.ollabaca.on.site.ContentProvider";
 
 	public static Activator instance;
-
-	// Set<RendererFactory> factories = new HashSet<>();
 
 	private HttpServiceTracker serviceTracker;
 
