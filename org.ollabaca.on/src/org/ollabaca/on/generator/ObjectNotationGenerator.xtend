@@ -16,13 +16,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IFileSystemAccessExtension2
 import org.eclipse.xtext.generator.IGenerator
-import org.ollabaca.on.site.Site
-import org.ollabaca.on.site.tools.SiteToHtml
 import org.ollabaca.on.util.Visitor
-import org.ollabaca.on.site.tools.ObjectRenderer
-import java.util.Set
-import org.ollabaca.on.site.Activator
-import org.ollabaca.on.site.tools.RendererFactory
 
 
 class ObjectNotationGenerator implements IGenerator {
@@ -57,16 +51,16 @@ class ObjectNotationGenerator implements IGenerator {
 		
 		out.save(Collections::EMPTY_MAP)
 		
-		val site = out.contents.filter(typeof(Site)).head
-		
-		if (site != null) {
-			val siteToHtml = new SiteToHtml(site)
-			val Set<ObjectRenderer> renderers = newHashSet()
-			for (e: RendererFactory::factories) {
-				renderers.add(e.newRenderer(siteToHtml))
-			}
-			fsa.generateFile("doc.html", siteToHtml.html(renderers))
-		}
+//		val site = out.contents.filter(typeof(Site)).head
+//		
+//		if (site != null) {
+//			val siteToHtml = new SiteToHtml(site)
+//			val Set<ObjectRenderer> renderers = newHashSet()
+//			for (e: RendererFactory::factories) {
+//				renderers.add(e.newRenderer(siteToHtml))
+//			}
+//			fsa.generateFile("doc.html", siteToHtml.html(renderers))
+//		}
 
 		//new ToXWiki().doGenerate(out, fsa)
 		

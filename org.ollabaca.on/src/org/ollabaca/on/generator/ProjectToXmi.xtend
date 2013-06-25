@@ -144,7 +144,7 @@ class ProjectToXmi {
 			}
 			
 			topic.setAbstract(e.getAbstract().normalize)
-			topic.target = instances.get(e) 
+			topic.target = instances.get(e)
 			
 			topics.put(e, topic)
 			//result += topic
