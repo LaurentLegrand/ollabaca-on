@@ -8,7 +8,7 @@ import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
 import org.pegdown.Extensions
 import org.pegdown.PegDownProcessor
-
+import org.ollabaca.on.site.Tag
 
 class Renderers {
 	
@@ -46,7 +46,7 @@ class Renderers {
 		fallback(self)
 	}
 	
-	def static dispatch label(Iterable<?> self) {
+	def static dispatch CharSequence label(Iterable<?> self) {
 		'''«FOR e: self BEFORE "<ul>"  AFTER "</ul>"»<li>«label(e as Object)»</li>«ENDFOR»'''
 	}
 	
@@ -95,6 +95,10 @@ class Renderers {
 		'''/site/«path»/«getSite.name»/types/«self.instanceClassName»'''
 	}
 	
+	def static dispatch String href(Tag self, String path) {
+		'''/site/«path»/«getSite.name»/tags/«self.name»'''
+	}
+	
 	def static dispatch String href(Topic self) {
 		href(self, "pages")
 	}
@@ -107,6 +111,10 @@ class Renderers {
 		href(self, "pages")
 	}
 	
+	def static dispatch String href(Tag self) {
+		href(self, "pages")
+	}
+	
 	def static dispatch link(Site self) {
 		'''<a href="«href(self)»">«self.name»</a>'''
 	}
@@ -116,6 +124,10 @@ class Renderers {
 	}
 	
 	def static dispatch link(EClass self) {
+		'''<a href="«href(self)»">«self.name»</a>'''		
+	}
+
+	def static dispatch link(Tag self) {
 		'''<a href="«href(self)»">«self.name»</a>'''		
 	}
 }

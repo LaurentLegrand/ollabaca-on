@@ -205,27 +205,31 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cSeeInstanceCrossReference_4_1_0 = (CrossReference)cSeeAssignment_4_1.eContents().get(0);
 		private final RuleCall cSeeInstanceFQNTerminalRuleCall_4_1_0_1 = (RuleCall)cSeeInstanceCrossReference_4_1_0.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cNameAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_5_0_0 = (RuleCall)cNameAssignment_5_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Keyword cNewKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cTypeIDTerminalRuleCall_7_0 = (RuleCall)cTypeAssignment_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cSlotsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cSlotsSlotParserRuleCall_9_0 = (RuleCall)cSlotsAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cTagKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cTagsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cTagsIDTerminalRuleCall_5_1_0 = (RuleCall)cTagsAssignment_5_1.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_6_0_0 = (RuleCall)cNameAssignment_6_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cNewKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cTypeIDTerminalRuleCall_8_0 = (RuleCall)cTypeAssignment_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cSlotsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cSlotsSlotParserRuleCall_10_0 = (RuleCall)cSlotsAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Instance:
 		//
 		//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
 		//
-		//	see+=[Instance|FQN])* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+		//	see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
 		//
-		//see+=[Instance|FQN])* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
+		//see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Instance}
@@ -282,38 +286,50 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getSeeInstanceFQNTerminalRuleCall_4_1_0_1() { return cSeeInstanceFQNTerminalRuleCall_4_1_0_1; }
 
-		//(name=ID "=")?
+		//("@tag" tags+=ID)*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//name=ID
-		public Assignment getNameAssignment_5_0() { return cNameAssignment_5_0; }
+		//"@tag"
+		public Keyword getTagKeyword_5_0() { return cTagKeyword_5_0; }
+
+		//tags+=ID
+		public Assignment getTagsAssignment_5_1() { return cTagsAssignment_5_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_5_0_0() { return cNameIDTerminalRuleCall_5_0_0; }
+		public RuleCall getTagsIDTerminalRuleCall_5_1_0() { return cTagsIDTerminalRuleCall_5_1_0; }
+
+		//(name=ID "=")?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//name=ID
+		public Assignment getNameAssignment_6_0() { return cNameAssignment_6_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_6_0_0() { return cNameIDTerminalRuleCall_6_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_5_1() { return cEqualsSignKeyword_5_1; }
+		public Keyword getEqualsSignKeyword_6_1() { return cEqualsSignKeyword_6_1; }
 
 		//"new"
-		public Keyword getNewKeyword_6() { return cNewKeyword_6; }
+		public Keyword getNewKeyword_7() { return cNewKeyword_7; }
 
 		//type=ID
-		public Assignment getTypeAssignment_7() { return cTypeAssignment_7; }
+		public Assignment getTypeAssignment_8() { return cTypeAssignment_8; }
 
 		//ID
-		public RuleCall getTypeIDTerminalRuleCall_7_0() { return cTypeIDTerminalRuleCall_7_0; }
+		public RuleCall getTypeIDTerminalRuleCall_8_0() { return cTypeIDTerminalRuleCall_8_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
 
 		//slots+=Slot*
-		public Assignment getSlotsAssignment_9() { return cSlotsAssignment_9; }
+		public Assignment getSlotsAssignment_10() { return cSlotsAssignment_10; }
 
 		//Slot
-		public RuleCall getSlotsSlotParserRuleCall_9_0() { return cSlotsSlotParserRuleCall_9_0; }
+		public RuleCall getSlotsSlotParserRuleCall_10_0() { return cSlotsSlotParserRuleCall_10_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class SlotElements extends AbstractParserRuleElementFinder {
@@ -658,7 +674,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
 	//
-	//	see+=[Instance|FQN])* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+	//	see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 	public InstanceElements getInstanceAccess() {
 		return (pInstance != null) ? pInstance : (pInstance = new InstanceElements());
 	}

@@ -41,6 +41,9 @@ class Highlighter {
 					for(node: NodeModelUtils::findNodesForFeature(e, Literals::INSTANCE__SEE)) {
 						acceptor.addPosition(node.offset, node.length, HighlightingConfiguration::REF_ID)
 					}
+					for(node: NodeModelUtils::findNodesForFeature(e, Literals::INSTANCE__TAGS)) {
+						acceptor.addPosition(node.offset, node.length, HighlightingConfiguration::REF_ID)
+					}
 				}
 				InstanceRef: {
 					for(node: NodeModelUtils::findNodesForFeature(e, Literals::INSTANCE_REF__VALUE)) {

@@ -27,7 +27,8 @@ import org.ollabaca.on.site.renderers.Renderers
  * /site 							: home page
  * /site/pages/xxx 					: project page
  * /site/pages/xxx/topics/yyyy 		: topic page
- * /site/pages/xxx/types/aaaa		: type page
+ * /site/pages/xxx/types/yyyy		: type page
+ * /site/pages/xxx/tags/yyyy		: tag page
  *
  * @author 
  *
@@ -51,12 +52,15 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 				project(request, response, names.get(0), names.get(1))
 			} else if ("topics".equals(names.get(2))) {
 				topic(request, response, names.get(0), names.get(1), names.get(3))
-			} else {
+			} else if ("tags".equals(names.get(2))) {
+				tag(request, response, names.get(0), names.get(1), names.get(3))
+			}
+			else {
 				type(request, response, names.get(0), names.get(1), names.get(3))				
 			}
 		}		
 	}
-
+	
 	def home(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.getWriter().append(new HomePage().render());
 	}
@@ -107,6 +111,21 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 		}		
 	}
 	
+	def tag(HttpServletRequest request, HttpServletResponse response, String path, String project, String tag) {
+		var site = ResourcesPlugin::workspace.root.getProject(project).instances.allContents.filter(typeof(Site)).head
+		try {
+			Renderers::init(site)
+			var t = site.tags.filter[name == tag].head
+			if (path == "pages") {
+				response.getWriter().append(new TagPage(site, t).render())	
+			} else {
+//				Activator::instance.context.getTagRenderer(path).render(t).fill(response)
+			}
+		} finally {
+			Renderers::dispose
+		}		
+	}
+
 	def Resource getInstances(IProject project) {
 		var Resource resource = this.instances.get(project);
 		if (resource != null) {

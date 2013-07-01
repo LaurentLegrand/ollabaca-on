@@ -26,6 +26,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/abstract"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/documentation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/see"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/tags"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/slots"/>

@@ -217,6 +217,7 @@ public class ObjectNotationSemanticSequencer extends AbstractDelegatingSemanticS
 	 *         abstract=MY_STRING? 
 	 *         documentation=MY_STRING? 
 	 *         see+=[Instance|FQN]* 
+	 *         tags+=ID* 
 	 *         name=ID? 
 	 *         type=ID 
 	 *         slots+=Slot*

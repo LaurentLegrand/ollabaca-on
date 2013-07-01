@@ -125,13 +125,22 @@ public interface SitePackage extends EPackage
   int TAG__TOPICS = NAMED_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Site</b></em>' container reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAG__SITE = NAMED_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Tag</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TAG_FEATURE_COUNT = NAMED_FEATURE_COUNT + 1;
+  int TAG_FEATURE_COUNT = NAMED_FEATURE_COUNT + 2;
 
   /**
    * The number of operations of the '<em>Tag</em>' class.
@@ -413,6 +422,17 @@ public interface SitePackage extends EPackage
   EReference getTag_Topics();
 
   /**
+   * Returns the meta object for the container reference '{@link org.ollabaca.on.site.Tag#getSite <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the container reference '<em>Site</em>'.
+   * @see org.ollabaca.on.site.Tag#getSite()
+   * @see #getTag()
+   * @generated
+   */
+  EReference getTag_Site();
+
+  /**
    * Returns the meta object for class '{@link org.ollabaca.on.site.Site <em>Site</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -671,6 +691,14 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EReference TAG__TOPICS = eINSTANCE.getTag_Topics();
+
+    /**
+     * The meta object literal for the '<em><b>Site</b></em>' container reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TAG__SITE = eINSTANCE.getTag_Site();
 
     /**
      * The meta object literal for the '{@link org.ollabaca.on.site.impl.SiteImpl <em>Site</em>}' class.

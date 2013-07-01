@@ -12,7 +12,10 @@ class ProjectPage extends SitePage {
 	}
 	
 	override aside() {
-		nav
+		'''
+		«nav»
+		«tags»
+		'''
 	}
 	
 	override content() {
@@ -63,5 +66,9 @@ class ProjectPage extends SitePage {
 			«ENDFOR»
 		</li>
 		'''
+	}
+	
+	def tags() {
+		'''«FOR e: site.tags BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.link»«ENDFOR»'''
 	}	
 }

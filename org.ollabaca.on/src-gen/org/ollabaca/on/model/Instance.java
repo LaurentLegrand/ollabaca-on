@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.ollabaca.on.model.Instance#getAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getSee <em>See</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.Instance#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getName <em>Name</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getType <em>Type</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getSlots <em>Slots</em>}</li>
@@ -121,6 +122,22 @@ public interface Instance extends Value
    * @generated
    */
   EList<Instance> getSee();
+
+  /**
+   * Returns the value of the '<em><b>Tags</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Tags</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Tags</em>' attribute list.
+   * @see org.ollabaca.on.model.ModelPackage#getInstance_Tags()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getTags();
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

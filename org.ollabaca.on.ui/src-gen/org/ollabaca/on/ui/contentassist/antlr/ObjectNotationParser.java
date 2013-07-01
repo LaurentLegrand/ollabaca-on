@@ -50,6 +50,7 @@ public class ObjectNotationParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstanceAccess().getGroup_3(), "rule__Instance__Group_3__0");
 					put(grammarAccess.getInstanceAccess().getGroup_4(), "rule__Instance__Group_4__0");
 					put(grammarAccess.getInstanceAccess().getGroup_5(), "rule__Instance__Group_5__0");
+					put(grammarAccess.getInstanceAccess().getGroup_6(), "rule__Instance__Group_6__0");
 					put(grammarAccess.getSlotAccess().getGroup(), "rule__Slot__Group__0");
 					put(grammarAccess.getArrayAccess().getGroup(), "rule__Array__Group__0");
 					put(grammarAccess.getNullValueAccess().getGroup(), "rule__NullValue__Group__0");
@@ -64,9 +65,10 @@ public class ObjectNotationParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInstanceAccess().getAbstractAssignment_2_1(), "rule__Instance__AbstractAssignment_2_1");
 					put(grammarAccess.getInstanceAccess().getDocumentationAssignment_3_1(), "rule__Instance__DocumentationAssignment_3_1");
 					put(grammarAccess.getInstanceAccess().getSeeAssignment_4_1(), "rule__Instance__SeeAssignment_4_1");
-					put(grammarAccess.getInstanceAccess().getNameAssignment_5_0(), "rule__Instance__NameAssignment_5_0");
-					put(grammarAccess.getInstanceAccess().getTypeAssignment_7(), "rule__Instance__TypeAssignment_7");
-					put(grammarAccess.getInstanceAccess().getSlotsAssignment_9(), "rule__Instance__SlotsAssignment_9");
+					put(grammarAccess.getInstanceAccess().getTagsAssignment_5_1(), "rule__Instance__TagsAssignment_5_1");
+					put(grammarAccess.getInstanceAccess().getNameAssignment_6_0(), "rule__Instance__NameAssignment_6_0");
+					put(grammarAccess.getInstanceAccess().getTypeAssignment_8(), "rule__Instance__TypeAssignment_8");
+					put(grammarAccess.getInstanceAccess().getSlotsAssignment_10(), "rule__Instance__SlotsAssignment_10");
 					put(grammarAccess.getSlotAccess().getNameAssignment_1(), "rule__Slot__NameAssignment_1");
 					put(grammarAccess.getSlotAccess().getValueAssignment_3(), "rule__Slot__ValueAssignment_3");
 					put(grammarAccess.getArrayAccess().getValueAssignment_1(), "rule__Array__ValueAssignment_1");

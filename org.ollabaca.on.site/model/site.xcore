@@ -12,7 +12,9 @@ abstract class Named {
 
 class Tag extends Named {
 	
-	refers Topic[] topics
+	refers Topic[] topics opposite tags
+	
+	refers Site site opposite tags
 	
 }
 
@@ -20,7 +22,7 @@ class Site extends Named {
 	
 	contains Topic[] topics
 	
-	contains Tag[] tags
+	contains Tag[] tags opposite site
 	
 	/**
 	 * Get or create a tag with a given name
@@ -68,7 +70,7 @@ class Topic extends Named {
 	 */
 	String documentation
 	
-	refers Tag[] tags
+	refers Tag[] tags opposite topics
 	
 	refers Topic parent opposite topics
 	

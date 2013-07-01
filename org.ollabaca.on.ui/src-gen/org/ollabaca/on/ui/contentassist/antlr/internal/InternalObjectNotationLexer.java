@@ -32,6 +32,7 @@ public class InternalObjectNotationLexer extends Lexer {
     public static final int RULE_ML_COMMENT=11;
     public static final int T__19=19;
     public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_STRING=10;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -266,10 +267,11 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:21:7: ( '=' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:21:9: '='
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:21:7: ( '@tag' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:21:9: '@tag'
             {
-            match('='); 
+            match("@tag"); 
+
 
             }
 
@@ -286,10 +288,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:22:7: ( '[' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:22:9: '['
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:22:7: ( '=' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:22:9: '='
             {
-            match('['); 
+            match('='); 
 
             }
 
@@ -306,10 +308,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:23:7: ( ']' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:23:9: ']'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:23:7: ( '[' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:23:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -326,11 +328,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:24:7: ( 'null' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:24:9: 'null'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:24:7: ( ']' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:24:9: ']'
             {
-            match("null"); 
-
+            match(']'); 
 
             }
 
@@ -347,10 +348,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:25:7: ( 'true' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:25:9: 'true'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:25:7: ( 'null' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:25:9: 'null'
             {
-            match("true"); 
+            match("null"); 
 
 
             }
@@ -368,10 +369,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:26:7: ( 'false' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:26:9: 'false'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:26:7: ( 'true' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:26:9: 'true'
             {
-            match("false"); 
+            match("true"); 
 
 
             }
@@ -384,16 +385,37 @@ public class InternalObjectNotationLexer extends Lexer {
     }
     // $ANTLR end "T__30"
 
+    // $ANTLR start "T__31"
+    public final void mT__31() throws RecognitionException {
+        try {
+            int _type = T__31;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:27:7: ( 'false' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:27:9: 'false'
+            {
+            match("false"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__31"
+
     // $ANTLR start "RULE_MY_STRING"
     public final void mRULE_MY_STRING() throws RecognitionException {
         try {
             int _type = RULE_MY_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2230:16: ( '\"' ( '\\\\\"' | ~ ( '\"' ) )* '\"' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2230:18: '\"' ( '\\\\\"' | ~ ( '\"' ) )* '\"'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2339:16: ( '\"' ( '\\\\\"' | ~ ( '\"' ) )* '\"' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2339:18: '\"' ( '\\\\\"' | ~ ( '\"' ) )* '\"'
             {
             match('\"'); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2230:22: ( '\\\\\"' | ~ ( '\"' ) )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2339:22: ( '\\\\\"' | ~ ( '\"' ) )*
             loop1:
             do {
                 int alt1=3;
@@ -427,7 +449,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2230:23: '\\\\\"'
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2339:23: '\\\\\"'
             	    {
             	    match("\\\""); 
 
@@ -435,7 +457,7 @@ public class InternalObjectNotationLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2230:29: ~ ( '\"' )
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2339:29: ~ ( '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -472,10 +494,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:13: ( ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:15: ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:13: ( ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:15: ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:15: ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:15: ( '0' | ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )? )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -493,16 +515,16 @@ public class InternalObjectNotationLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:16: '0'
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:16: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:20: ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )?
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:20: ( '-' )? '1' .. '9' ( '0' .. '9' )* ( '.' ( '0' .. '9' )+ )? ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )?
                     {
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:20: ( '-' )?
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:20: ( '-' )?
                     int alt2=2;
                     int LA2_0 = input.LA(1);
 
@@ -511,7 +533,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
                     switch (alt2) {
                         case 1 :
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:20: '-'
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:20: '-'
                             {
                             match('-'); 
 
@@ -521,7 +543,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
 
                     matchRange('1','9'); 
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:34: ( '0' .. '9' )*
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:34: ( '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -534,7 +556,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:35: '0' .. '9'
+                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:35: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -546,7 +568,7 @@ public class InternalObjectNotationLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:46: ( '.' ( '0' .. '9' )+ )?
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:46: ( '.' ( '0' .. '9' )+ )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -555,10 +577,10 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
                     switch (alt5) {
                         case 1 :
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:47: '.' ( '0' .. '9' )+
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:47: '.' ( '0' .. '9' )+
                             {
                             match('.'); 
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:51: ( '0' .. '9' )+
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:51: ( '0' .. '9' )+
                             int cnt4=0;
                             loop4:
                             do {
@@ -572,7 +594,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                                 switch (alt4) {
                             	case 1 :
-                            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:52: '0' .. '9'
+                            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:52: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -594,7 +616,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                     }
 
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:65: ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )?
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:65: ( 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )* )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -603,7 +625,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:66: 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )*
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:66: 'e' ( '+' | '-' ) '1' .. '9' ( '0' .. '9' )*
                             {
                             match('e'); 
                             if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
@@ -616,7 +638,7 @@ public class InternalObjectNotationLexer extends Lexer {
                                 throw mse;}
 
                             matchRange('1','9'); 
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:89: ( '0' .. '9' )*
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:89: ( '0' .. '9' )*
                             loop6:
                             do {
                                 int alt6=2;
@@ -629,7 +651,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                                 switch (alt6) {
                             	case 1 :
-                            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:90: '0' .. '9'
+                            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2341:90: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); 
 
@@ -669,10 +691,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_FQN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2234:10: ( ( '/' RULE_ID )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2234:12: ( '/' RULE_ID )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2343:10: ( ( '/' RULE_ID )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2343:12: ( '/' RULE_ID )*
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2234:12: ( '/' RULE_ID )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2343:12: ( '/' RULE_ID )*
             loop9:
             do {
                 int alt9=2;
@@ -685,7 +707,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2234:13: '/' RULE_ID
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2343:13: '/' RULE_ID
             	    {
             	    match('/'); 
             	    mRULE_ID(); 
@@ -714,10 +736,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )*
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:11: ( '^' )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:11: ( '^' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -726,7 +748,7 @@ public class InternalObjectNotationLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:11: '^'
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:11: '^'
                     {
                     match('^'); 
 
@@ -744,7 +766,7 @@ public class InternalObjectNotationLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' | '-' | '.' )*
             loop11:
             do {
                 int alt11=2;
@@ -793,12 +815,12 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_LONG_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2238:18: ( '(\"' ( options {greedy=false; } : . )* '\")' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2238:20: '(\"' ( options {greedy=false; } : . )* '\")'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2347:18: ( '(\"' ( options {greedy=false; } : . )* '\")' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2347:20: '(\"' ( options {greedy=false; } : . )* '\")'
             {
             match("(\""); 
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2238:25: ( options {greedy=false; } : . )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2347:25: ( options {greedy=false; } : . )*
             loop12:
             do {
                 int alt12=2;
@@ -823,7 +845,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2238:53: .
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2347:53: .
             	    {
             	    matchAny(); 
 
@@ -853,10 +875,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2240:10: ( ( '0' .. '9' )+ )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2240:12: ( '0' .. '9' )+
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2349:10: ( ( '0' .. '9' )+ )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2349:12: ( '0' .. '9' )+
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2240:12: ( '0' .. '9' )+
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2349:12: ( '0' .. '9' )+
             int cnt13=0;
             loop13:
             do {
@@ -870,7 +892,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2240:13: '0' .. '9'
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2349:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -902,10 +924,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -923,10 +945,10 @@ public class InternalObjectNotationLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -942,7 +964,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -958,7 +980,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -983,10 +1005,10 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop15:
                     do {
                         int alt15=3;
@@ -1002,7 +1024,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1018,7 +1040,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2242:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1061,12 +1083,12 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2244:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2244:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2353:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2353:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2244:24: ( options {greedy=false; } : . )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2353:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -1091,7 +1113,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2244:52: .
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2353:52: .
             	    {
             	    matchAny(); 
 
@@ -1121,12 +1143,12 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -1139,7 +1161,7 @@ public class InternalObjectNotationLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1159,7 +1181,7 @@ public class InternalObjectNotationLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:40: ( ( '\\r' )? '\\n' )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -1168,9 +1190,9 @@ public class InternalObjectNotationLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:41: ( '\\r' )? '\\n'
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:41: ( '\\r' )?
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -1179,7 +1201,7 @@ public class InternalObjectNotationLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2246:41: '\\r'
+                            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2355:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1211,10 +1233,10 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2248:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2248:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2357:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2357:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2248:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2357:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -1268,8 +1290,8 @@ public class InternalObjectNotationLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2250:16: ( . )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2250:18: .
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2359:16: ( . )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2359:18: .
             {
             matchAny(); 
 
@@ -1284,8 +1306,8 @@ public class InternalObjectNotationLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_MY_STRING | RULE_NUMBER | RULE_FQN | RULE_ID | RULE_LONG_STRING | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt22=27;
+        // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:8: ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_MY_STRING | RULE_NUMBER | RULE_FQN | RULE_ID | RULE_LONG_STRING | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt22=28;
         alt22 = dfa22.predict(input);
         switch (alt22) {
             case 1 :
@@ -1401,77 +1423,84 @@ public class InternalObjectNotationLexer extends Lexer {
                 }
                 break;
             case 17 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:106: RULE_MY_STRING
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:106: T__31
+                {
+                mT__31(); 
+
+                }
+                break;
+            case 18 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:112: RULE_MY_STRING
                 {
                 mRULE_MY_STRING(); 
 
                 }
                 break;
-            case 18 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:121: RULE_NUMBER
+            case 19 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:127: RULE_NUMBER
                 {
                 mRULE_NUMBER(); 
 
                 }
                 break;
-            case 19 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:133: RULE_FQN
+            case 20 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:139: RULE_FQN
                 {
                 mRULE_FQN(); 
 
                 }
                 break;
-            case 20 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:142: RULE_ID
+            case 21 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:148: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 21 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:150: RULE_LONG_STRING
+            case 22 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:156: RULE_LONG_STRING
                 {
                 mRULE_LONG_STRING(); 
 
                 }
                 break;
-            case 22 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:167: RULE_INT
+            case 23 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:173: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 23 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:176: RULE_STRING
+            case 24 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:182: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 24 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:188: RULE_ML_COMMENT
+            case 25 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:194: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 25 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:204: RULE_SL_COMMENT
+            case 26 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:210: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 26 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:220: RULE_WS
+            case 27 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:226: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 27 :
-                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:228: RULE_ANY_OTHER
+            case 28 :
+                // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1:234: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1487,33 +1516,35 @@ public class InternalObjectNotationLexer extends Lexer {
     static final String DFA22_eotS =
         "\1\22\2\32\1\uffff\1\32\2\uffff\1\30\3\uffff\2\32\1\30\1\55\1\30"+
         "\1\55\1\30\1\uffff\1\30\1\uffff\2\30\2\uffff\1\32\1\uffff\1\32\1"+
-        "\uffff\2\32\11\uffff\2\32\5\uffff\1\55\5\uffff\2\32\1\101\3\32\1"+
-        "\76\3\uffff\2\32\1\uffff\1\110\1\111\1\32\1\uffff\2\32\2\uffff\1"+
-        "\115\1\116\1\32\2\uffff\2\32\1\122\1\uffff";
+        "\uffff\2\32\11\uffff\2\32\5\uffff\1\55\5\uffff\2\32\1\103\1\32\2"+
+        "\uffff\2\32\1\100\3\uffff\2\32\1\uffff\1\112\1\113\1\32\1\uffff"+
+        "\2\32\2\uffff\1\117\1\120\1\32\2\uffff\2\32\1\124\1\uffff";
     static final String DFA22_eofS =
-        "\123\uffff";
+        "\125\uffff";
     static final String DFA22_minS =
         "\1\0\1\155\1\157\1\uffff\1\145\2\uffff\1\141\3\uffff\1\162\1\141"+
         "\1\0\1\60\1\61\1\60\1\52\1\uffff\1\101\1\uffff\1\42\1\0\2\uffff"+
-        "\1\160\1\uffff\1\156\1\uffff\1\167\1\154\11\uffff\1\165\1\154\2"+
-        "\0\3\uffff\1\60\5\uffff\1\157\1\164\1\55\1\154\1\145\1\163\3\0\1"+
-        "\uffff\1\162\1\141\1\uffff\2\55\1\145\1\uffff\1\164\1\151\2\uffff"+
-        "\2\55\1\156\2\uffff\1\145\1\162\1\55\1\uffff";
+        "\1\160\1\uffff\1\156\1\uffff\1\167\1\154\2\uffff\1\141\6\uffff\1"+
+        "\165\1\154\2\0\3\uffff\1\60\5\uffff\1\157\1\164\1\55\1\154\2\uffff"+
+        "\1\145\1\163\3\0\1\uffff\1\162\1\141\1\uffff\2\55\1\145\1\uffff"+
+        "\1\164\1\151\2\uffff\2\55\1\156\2\uffff\1\145\1\162\1\55\1\uffff";
     static final String DFA22_maxS =
         "\1\uffff\1\155\1\157\1\uffff\1\165\2\uffff\1\164\3\uffff\1\162"+
         "\1\141\1\uffff\3\71\1\172\1\uffff\1\172\1\uffff\1\42\1\uffff\2\uffff"+
-        "\1\160\1\uffff\1\156\1\uffff\1\167\1\154\11\uffff\1\165\1\154\2"+
-        "\uffff\3\uffff\1\71\5\uffff\1\157\1\164\1\172\1\154\1\145\1\163"+
-        "\3\uffff\1\uffff\1\162\1\141\1\uffff\2\172\1\145\1\uffff\1\164\1"+
-        "\151\2\uffff\2\172\1\156\2\uffff\1\145\1\162\1\172\1\uffff";
+        "\1\160\1\uffff\1\156\1\uffff\1\167\1\154\2\uffff\1\151\6\uffff\1"+
+        "\165\1\154\2\uffff\3\uffff\1\71\5\uffff\1\157\1\164\1\172\1\154"+
+        "\2\uffff\1\145\1\163\3\uffff\1\uffff\1\162\1\141\1\uffff\2\172\1"+
+        "\145\1\uffff\1\164\1\151\2\uffff\2\172\1\156\2\uffff\1\145\1\162"+
+        "\1\172\1\uffff";
     static final String DFA22_acceptS =
-        "\3\uffff\1\3\1\uffff\1\5\1\6\1\uffff\1\13\1\14\1\15\7\uffff\1\23"+
-        "\1\uffff\1\24\2\uffff\1\32\1\33\1\uffff\1\24\1\uffff\1\3\2\uffff"+
-        "\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15\4\uffff\1\21\1\22\1\26"+
-        "\1\uffff\1\30\1\31\1\25\1\27\1\32\11\uffff\1\21\2\uffff\1\4\3\uffff"+
-        "\1\21\2\uffff\1\16\1\17\3\uffff\1\20\1\1\3\uffff\1\2";
+        "\3\uffff\1\3\1\uffff\1\5\1\6\1\uffff\1\14\1\15\1\16\7\uffff\1\24"+
+        "\1\uffff\1\25\2\uffff\1\33\1\34\1\uffff\1\25\1\uffff\1\3\2\uffff"+
+        "\1\5\1\6\1\uffff\1\10\1\11\1\12\1\14\1\15\1\16\4\uffff\1\22\1\23"+
+        "\1\27\1\uffff\1\31\1\32\1\26\1\30\1\33\4\uffff\1\7\1\13\5\uffff"+
+        "\1\22\2\uffff\1\4\3\uffff\1\22\2\uffff\1\17\1\20\3\uffff\1\21\1"+
+        "\1\3\uffff\1\2";
     static final String DFA22_specialS =
-        "\1\5\14\uffff\1\2\10\uffff\1\1\23\uffff\1\0\1\3\17\uffff\1\6\1"+
+        "\1\5\14\uffff\1\0\10\uffff\1\2\23\uffff\1\1\1\6\21\uffff\1\3\1"+
         "\7\1\4\25\uffff}>";
     static final String[] DFA22_transitionS = {
             "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\15\1\3\3\30\1\26\1"+
@@ -1553,17 +1584,17 @@ public class InternalObjectNotationLexer extends Lexer {
             "\1\70",
             "",
             "",
+            "\1\72\7\uffff\1\71",
             "",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "\1\71",
-            "\1\72",
-            "\42\76\1\73\4\76\1\75\64\76\1\74\5\76\1\75\3\76\1\75\7\76"+
-            "\1\75\3\76\1\75\1\76\2\75\uff8a\76",
+            "\1\73",
+            "\1\74",
+            "\42\100\1\75\4\100\1\77\64\100\1\76\5\100\1\77\3\100\1\77"+
+            "\7\100\1\77\3\100\1\77\1\100\2\77\uff8a\100",
             "\42\53\1\54\71\53\1\52\uffa3\53",
             "",
             "",
@@ -1574,39 +1605,41 @@ public class InternalObjectNotationLexer extends Lexer {
             "",
             "",
             "",
-            "\1\77",
-            "\1\100",
-            "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
-            "\32",
+            "\1\101",
             "\1\102",
-            "\1\103",
+            "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
+            "\32",
             "\1\104",
-            "\42\53\1\54\71\53\1\52\uffa3\53",
-            "\42\53\1\105\71\53\1\52\uffa3\53",
-            "\42\53\1\54\71\53\1\52\uffa3\53",
             "",
+            "",
+            "\1\105",
             "\1\106",
-            "\1\107",
+            "\42\53\1\54\71\53\1\52\uffa3\53",
+            "\42\53\1\107\71\53\1\52\uffa3\53",
+            "\42\53\1\54\71\53\1\52\uffa3\53",
+            "",
+            "\1\110",
+            "\1\111",
             "",
             "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
             "\32",
             "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
             "\32",
-            "\1\112",
-            "",
-            "\1\113",
             "\1\114",
             "",
+            "\1\115",
+            "\1\116",
+            "",
             "",
             "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
             "\32",
             "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
             "\32",
-            "\1\117",
-            "",
-            "",
-            "\1\120",
             "\1\121",
+            "",
+            "",
+            "\1\122",
+            "\1\123",
             "\2\32\1\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
             "\32",
             ""
@@ -1642,37 +1675,13 @@ public class InternalObjectNotationLexer extends Lexer {
             this.transition = DFA22_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_MY_STRING | RULE_NUMBER | RULE_FQN | RULE_ID | RULE_LONG_STRING | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_MY_STRING | RULE_NUMBER | RULE_FQN | RULE_ID | RULE_LONG_STRING | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA22_42 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA22_42=='\"') ) {s = 59;}
-
-                        else if ( (LA22_42=='\\') ) {s = 60;}
-
-                        else if ( (LA22_42=='\''||LA22_42=='b'||LA22_42=='f'||LA22_42=='n'||LA22_42=='r'||(LA22_42>='t' && LA22_42<='u')) ) {s = 61;}
-
-                        else if ( ((LA22_42>='\u0000' && LA22_42<='!')||(LA22_42>='#' && LA22_42<='&')||(LA22_42>='(' && LA22_42<='[')||(LA22_42>=']' && LA22_42<='a')||(LA22_42>='c' && LA22_42<='e')||(LA22_42>='g' && LA22_42<='m')||(LA22_42>='o' && LA22_42<='q')||LA22_42=='s'||(LA22_42>='v' && LA22_42<='\uFFFF')) ) {s = 62;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA22_22 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA22_22>='\u0000' && LA22_22<='\uFFFF')) ) {s = 51;}
-
-                        else s = 24;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA22_13 = input.LA(1);
 
                         s = -1;
@@ -1686,19 +1695,31 @@ public class InternalObjectNotationLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
-                        int LA22_43 = input.LA(1);
+                    case 1 : 
+                        int LA22_42 = input.LA(1);
 
                         s = -1;
-                        if ( (LA22_43=='\"') ) {s = 44;}
+                        if ( (LA22_42=='\"') ) {s = 61;}
 
-                        else if ( (LA22_43=='\\') ) {s = 42;}
+                        else if ( (LA22_42=='\\') ) {s = 62;}
 
-                        else if ( ((LA22_43>='\u0000' && LA22_43<='!')||(LA22_43>='#' && LA22_43<='[')||(LA22_43>=']' && LA22_43<='\uFFFF')) ) {s = 43;}
+                        else if ( (LA22_42=='\''||LA22_42=='b'||LA22_42=='f'||LA22_42=='n'||LA22_42=='r'||(LA22_42>='t' && LA22_42<='u')) ) {s = 63;}
+
+                        else if ( ((LA22_42>='\u0000' && LA22_42<='!')||(LA22_42>='#' && LA22_42<='&')||(LA22_42>='(' && LA22_42<='[')||(LA22_42>=']' && LA22_42<='a')||(LA22_42>='c' && LA22_42<='e')||(LA22_42>='g' && LA22_42<='m')||(LA22_42>='o' && LA22_42<='q')||LA22_42=='s'||(LA22_42>='v' && LA22_42<='\uFFFF')) ) {s = 64;}
 
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
+                    case 2 : 
+                        int LA22_22 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA22_22>='\u0000' && LA22_22<='\uFFFF')) ) {s = 51;}
+
+                        else s = 24;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA22_61 = input.LA(1);
 
                         s = -1;
@@ -1707,6 +1728,20 @@ public class InternalObjectNotationLexer extends Lexer {
                         else if ( (LA22_61=='\\') ) {s = 42;}
 
                         else if ( ((LA22_61>='\u0000' && LA22_61<='!')||(LA22_61>='#' && LA22_61<='[')||(LA22_61>=']' && LA22_61<='\uFFFF')) ) {s = 43;}
+
+                        else s = 64;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA22_63 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA22_63=='\"') ) {s = 44;}
+
+                        else if ( (LA22_63=='\\') ) {s = 42;}
+
+                        else if ( ((LA22_63>='\u0000' && LA22_63<='!')||(LA22_63>='#' && LA22_63<='[')||(LA22_63>=']' && LA22_63<='\uFFFF')) ) {s = 43;}
 
                         if ( s>=0 ) return s;
                         break;
@@ -1765,28 +1800,26 @@ public class InternalObjectNotationLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 6 : 
-                        int LA22_59 = input.LA(1);
+                        int LA22_43 = input.LA(1);
 
                         s = -1;
-                        if ( (LA22_59=='\"') ) {s = 44;}
+                        if ( (LA22_43=='\"') ) {s = 44;}
 
-                        else if ( (LA22_59=='\\') ) {s = 42;}
+                        else if ( (LA22_43=='\\') ) {s = 42;}
 
-                        else if ( ((LA22_59>='\u0000' && LA22_59<='!')||(LA22_59>='#' && LA22_59<='[')||(LA22_59>=']' && LA22_59<='\uFFFF')) ) {s = 43;}
-
-                        else s = 62;
+                        else if ( ((LA22_43>='\u0000' && LA22_43<='!')||(LA22_43>='#' && LA22_43<='[')||(LA22_43>=']' && LA22_43<='\uFFFF')) ) {s = 43;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA22_60 = input.LA(1);
+                        int LA22_62 = input.LA(1);
 
                         s = -1;
-                        if ( (LA22_60=='\"') ) {s = 69;}
+                        if ( (LA22_62=='\"') ) {s = 71;}
 
-                        else if ( (LA22_60=='\\') ) {s = 42;}
+                        else if ( (LA22_62=='\\') ) {s = 42;}
 
-                        else if ( ((LA22_60>='\u0000' && LA22_60<='!')||(LA22_60>='#' && LA22_60<='[')||(LA22_60>=']' && LA22_60<='\uFFFF')) ) {s = 43;}
+                        else if ( ((LA22_62>='\u0000' && LA22_62<='!')||(LA22_62>='#' && LA22_62<='[')||(LA22_62>=']' && LA22_62<='\uFFFF')) ) {s = 43;}
 
                         if ( s>=0 ) return s;
                         break;

@@ -474,11 +474,33 @@ ruleInstance returns [EObject current=null]
 	}
 
 )
+))*(	otherlv_9='@tag' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getInstanceAccess().getTagKeyword_5_0());
+    }
+(
+(
+		lv_tags_10_0=RULE_ID
+		{
+			newLeafNode(lv_tags_10_0, grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_5_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getInstanceRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"tags",
+        		lv_tags_10_0, 
+        		"ID");
+	    }
+
+)
 ))*((
 (
-		lv_name_9_0=RULE_ID
+		lv_name_11_0=RULE_ID
 		{
-			newLeafNode(lv_name_9_0, grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_5_0_0()); 
+			newLeafNode(lv_name_11_0, grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_6_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -487,24 +509,24 @@ ruleInstance returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_9_0, 
+        		lv_name_11_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_10='=' 
+)	otherlv_12='=' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getInstanceAccess().getEqualsSignKeyword_5_1());
+    	newLeafNode(otherlv_12, grammarAccess.getInstanceAccess().getEqualsSignKeyword_6_1());
     }
-)?	otherlv_11='new' 
+)?	otherlv_13='new' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getInstanceAccess().getNewKeyword_6());
+    	newLeafNode(otherlv_13, grammarAccess.getInstanceAccess().getNewKeyword_7());
     }
 (
 (
-		lv_type_12_0=RULE_ID
+		lv_type_14_0=RULE_ID
 		{
-			newLeafNode(lv_type_12_0, grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_7_0()); 
+			newLeafNode(lv_type_14_0, grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_8_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -513,36 +535,36 @@ ruleInstance returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"type",
-        		lv_type_12_0, 
+        		lv_type_14_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_13='{' 
+)	otherlv_15='{' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_15, grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_9());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_10_0()); 
 	    }
-		lv_slots_14_0=ruleSlot		{
+		lv_slots_16_0=ruleSlot		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInstanceRule());
 	        }
        		add(
        			$current, 
        			"slots",
-        		lv_slots_14_0, 
+        		lv_slots_16_0, 
         		"Slot");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_15='}' 
+)*	otherlv_17='}' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_10());
+    	newLeafNode(otherlv_17, grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_11());
     }
 )
 ;

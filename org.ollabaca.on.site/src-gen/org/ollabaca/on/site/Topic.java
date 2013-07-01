@@ -112,6 +112,7 @@ public interface Topic extends Named
   /**
    * Returns the value of the '<em><b>Tags</b></em>' reference list.
    * The list contents are of type {@link org.ollabaca.on.site.Tag}.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.site.Tag#getTopics <em>Topics</em>}'.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Tags</em>' reference list isn't clear,
@@ -120,7 +121,8 @@ public interface Topic extends Named
    * <!-- end-user-doc -->
    * @return the value of the '<em>Tags</em>' reference list.
    * @see org.ollabaca.on.site.SitePackage#getTopic_Tags()
-   * @model
+   * @see org.ollabaca.on.site.Tag#getTopics
+   * @model opposite="topics"
    * @generated
    */
   EList<Tag> getTags();

@@ -31,6 +31,7 @@ Instance returns Instance:
 	('@abstract' abstract= MY_STRING)?
 	('@doc' documentation= MY_STRING)?
 	('@see' see+= [Instance|FQN])*
+	('@tag' tags+=ID)*
 	(name=ID '=')? 'new' type=ID
 	'{'
 		(slots+=Slot)*

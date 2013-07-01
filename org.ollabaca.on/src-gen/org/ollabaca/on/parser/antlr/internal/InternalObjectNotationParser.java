@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MY_STRING", "RULE_FQN", "RULE_ID", "RULE_NUMBER", "RULE_LONG_STRING", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'container'", "'#'", "'@title'", "'@abstract'", "'@doc'", "'@see'", "'='", "'new'", "'{'", "'}'", "'['", "']'", "'true'", "'false'", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MY_STRING", "RULE_FQN", "RULE_ID", "RULE_NUMBER", "RULE_LONG_STRING", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'container'", "'#'", "'@title'", "'@abstract'", "'@doc'", "'@see'", "'@tag'", "'='", "'new'", "'{'", "'}'", "'['", "']'", "'true'", "'false'", "'null'"
     };
     public static final int RULE_ID=6;
     public static final int T__29=29;
@@ -43,6 +43,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
     public static final int RULE_ML_COMMENT=11;
     public static final int T__30=30;
     public static final int T__19=19;
+    public static final int T__31=31;
     public static final int RULE_STRING=10;
     public static final int T__16=16;
     public static final int T__15=15;
@@ -250,7 +251,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==RULE_ID||(LA3_0>=18 && LA3_0<=21)||LA3_0==23) ) {
+                if ( (LA3_0==RULE_ID||(LA3_0>=18 && LA3_0<=22)||LA3_0==24) ) {
                     alt3=1;
                 }
 
@@ -381,12 +382,13 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
             case 19:
             case 20:
             case 21:
-            case 23:
+            case 22:
+            case 24:
                 {
                 alt4=1;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt4=2;
                 }
@@ -399,9 +401,9 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
             case RULE_MY_STRING:
             case RULE_NUMBER:
             case 17:
-            case 28:
             case 29:
             case 30:
+            case 31:
                 {
                 alt4=4;
                 }
@@ -572,13 +574,13 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                 alt5=1;
                 }
                 break;
-            case 28:
             case 29:
+            case 30:
                 {
                 alt5=2;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt5=3;
                 }
@@ -981,7 +983,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstance"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:384:1: ruleInstance returns [EObject current=null] : ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )? otherlv_11= 'new' ( (lv_type_12_0= RULE_ID ) ) otherlv_13= '{' ( (lv_slots_14_0= ruleSlot ) )* otherlv_15= '}' ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:384:1: ruleInstance returns [EObject current=null] : ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )* ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )? otherlv_13= 'new' ( (lv_type_14_0= RULE_ID ) ) otherlv_15= '{' ( (lv_slots_16_0= ruleSlot ) )* otherlv_17= '}' ) ;
     public final EObject ruleInstance() throws RecognitionException {
         EObject current = null;
 
@@ -993,23 +995,25 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
         Token lv_documentation_6_0=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
-        Token lv_name_9_0=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token lv_type_12_0=null;
+        Token otherlv_9=null;
+        Token lv_tags_10_0=null;
+        Token lv_name_11_0=null;
+        Token otherlv_12=null;
         Token otherlv_13=null;
+        Token lv_type_14_0=null;
         Token otherlv_15=null;
-        EObject lv_slots_14_0 = null;
+        Token otherlv_17=null;
+        EObject lv_slots_16_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:387:28: ( ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )? otherlv_11= 'new' ( (lv_type_12_0= RULE_ID ) ) otherlv_13= '{' ( (lv_slots_14_0= ruleSlot ) )* otherlv_15= '}' ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:1: ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )? otherlv_11= 'new' ( (lv_type_12_0= RULE_ID ) ) otherlv_13= '{' ( (lv_slots_14_0= ruleSlot ) )* otherlv_15= '}' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:387:28: ( ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )* ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )? otherlv_13= 'new' ( (lv_type_14_0= RULE_ID ) ) otherlv_15= '{' ( (lv_slots_16_0= ruleSlot ) )* otherlv_17= '}' ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:1: ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )* ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )? otherlv_13= 'new' ( (lv_type_14_0= RULE_ID ) ) otherlv_15= '{' ( (lv_slots_16_0= ruleSlot ) )* otherlv_17= '}' )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:1: ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )? otherlv_11= 'new' ( (lv_type_12_0= RULE_ID ) ) otherlv_13= '{' ( (lv_slots_14_0= ruleSlot ) )* otherlv_15= '}' )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:2: () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )? otherlv_11= 'new' ( (lv_type_12_0= RULE_ID ) ) otherlv_13= '{' ( (lv_slots_14_0= ruleSlot ) )* otherlv_15= '}'
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:1: ( () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )* ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )? otherlv_13= 'new' ( (lv_type_14_0= RULE_ID ) ) otherlv_15= '{' ( (lv_slots_16_0= ruleSlot ) )* otherlv_17= '}' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:2: () (otherlv_1= '@title' ( (lv_title_2_0= RULE_MY_STRING ) ) )? (otherlv_3= '@abstract' ( (lv_abstract_4_0= RULE_MY_STRING ) ) )? (otherlv_5= '@doc' ( (lv_documentation_6_0= RULE_MY_STRING ) ) )? (otherlv_7= '@see' ( (otherlv_8= RULE_FQN ) ) )* (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )* ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )? otherlv_13= 'new' ( (lv_type_14_0= RULE_ID ) ) otherlv_15= '{' ( (lv_slots_16_0= ruleSlot ) )* otherlv_17= '}'
             {
             // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:388:2: ()
             // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:389:5: 
@@ -1212,26 +1216,80 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:477:4: ( ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '=' )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:477:4: (otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) ) )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_ID) ) {
-                alt10=1;
+                if ( (LA10_0==22) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:477:6: otherlv_9= '@tag' ( (lv_tags_10_0= RULE_ID ) )
+            	    {
+            	    otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleInstance1030); 
+
+            	        	newLeafNode(otherlv_9, grammarAccess.getInstanceAccess().getTagKeyword_5_0());
+            	        
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:481:1: ( (lv_tags_10_0= RULE_ID ) )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:482:1: (lv_tags_10_0= RULE_ID )
+            	    {
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:482:1: (lv_tags_10_0= RULE_ID )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:483:3: lv_tags_10_0= RULE_ID
+            	    {
+            	    lv_tags_10_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1047); 
+
+            	    			newLeafNode(lv_tags_10_0, grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_5_1_0()); 
+            	    		
+
+            	    	        if (current==null) {
+            	    	            current = createModelElement(grammarAccess.getInstanceRule());
+            	    	        }
+            	           		addWithLastConsumed(
+            	           			current, 
+            	           			"tags",
+            	            		lv_tags_10_0, 
+            	            		"ID");
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:499:4: ( ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '=' )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==RULE_ID) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:477:5: ( (lv_name_9_0= RULE_ID ) ) otherlv_10= '='
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:499:5: ( (lv_name_11_0= RULE_ID ) ) otherlv_12= '='
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:477:5: ( (lv_name_9_0= RULE_ID ) )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:478:1: (lv_name_9_0= RULE_ID )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:499:5: ( (lv_name_11_0= RULE_ID ) )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:500:1: (lv_name_11_0= RULE_ID )
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:478:1: (lv_name_9_0= RULE_ID )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:479:3: lv_name_9_0= RULE_ID
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:500:1: (lv_name_11_0= RULE_ID )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:501:3: lv_name_11_0= RULE_ID
                     {
-                    lv_name_9_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1035); 
+                    lv_name_11_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1072); 
 
-                    			newLeafNode(lv_name_9_0, grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_5_0_0()); 
+                    			newLeafNode(lv_name_11_0, grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_6_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -1240,7 +1298,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                            		setWithLastConsumed(
                            			current, 
                            			"name",
-                            		lv_name_9_0, 
+                            		lv_name_11_0, 
                             		"ID");
                     	    
 
@@ -1249,9 +1307,9 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,22,FOLLOW_22_in_ruleInstance1052); 
+                    otherlv_12=(Token)match(input,23,FOLLOW_23_in_ruleInstance1089); 
 
-                        	newLeafNode(otherlv_10, grammarAccess.getInstanceAccess().getEqualsSignKeyword_5_1());
+                        	newLeafNode(otherlv_12, grammarAccess.getInstanceAccess().getEqualsSignKeyword_6_1());
                         
 
                     }
@@ -1259,19 +1317,19 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,23,FOLLOW_23_in_ruleInstance1066); 
+            otherlv_13=(Token)match(input,24,FOLLOW_24_in_ruleInstance1103); 
 
-                	newLeafNode(otherlv_11, grammarAccess.getInstanceAccess().getNewKeyword_6());
+                	newLeafNode(otherlv_13, grammarAccess.getInstanceAccess().getNewKeyword_7());
                 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:503:1: ( (lv_type_12_0= RULE_ID ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:504:1: (lv_type_12_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:525:1: ( (lv_type_14_0= RULE_ID ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:526:1: (lv_type_14_0= RULE_ID )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:504:1: (lv_type_12_0= RULE_ID )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:505:3: lv_type_12_0= RULE_ID
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:526:1: (lv_type_14_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:527:3: lv_type_14_0= RULE_ID
             {
-            lv_type_12_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1083); 
+            lv_type_14_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleInstance1120); 
 
-            			newLeafNode(lv_type_12_0, grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_7_0()); 
+            			newLeafNode(lv_type_14_0, grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_8_0()); 
             		
 
             	        if (current==null) {
@@ -1280,7 +1338,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                    		setWithLastConsumed(
                    			current, 
                    			"type",
-                    		lv_type_12_0, 
+                    		lv_type_14_0, 
                     		"ID");
             	    
 
@@ -1289,33 +1347,33 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,24,FOLLOW_24_in_ruleInstance1100); 
+            otherlv_15=(Token)match(input,25,FOLLOW_25_in_ruleInstance1137); 
 
-                	newLeafNode(otherlv_13, grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_8());
+                	newLeafNode(otherlv_15, grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_9());
                 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:525:1: ( (lv_slots_14_0= ruleSlot ) )*
-            loop11:
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:547:1: ( (lv_slots_16_0= ruleSlot ) )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==RULE_ID) ) {
-                    alt11=1;
+                if ( (LA12_0==RULE_ID) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:526:1: (lv_slots_14_0= ruleSlot )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:548:1: (lv_slots_16_0= ruleSlot )
             	    {
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:526:1: (lv_slots_14_0= ruleSlot )
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:527:3: lv_slots_14_0= ruleSlot
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:548:1: (lv_slots_16_0= ruleSlot )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:549:3: lv_slots_16_0= ruleSlot
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_9_0()); 
+            	    	        newCompositeNode(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_10_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleSlot_in_ruleInstance1121);
-            	    lv_slots_14_0=ruleSlot();
+            	    pushFollow(FOLLOW_ruleSlot_in_ruleInstance1158);
+            	    lv_slots_16_0=ruleSlot();
 
             	    state._fsp--;
 
@@ -1326,7 +1384,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"slots",
-            	            		lv_slots_14_0, 
+            	            		lv_slots_16_0, 
             	            		"Slot");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -1338,13 +1396,13 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
-            otherlv_15=(Token)match(input,25,FOLLOW_25_in_ruleInstance1134); 
+            otherlv_17=(Token)match(input,26,FOLLOW_26_in_ruleInstance1171); 
 
-                	newLeafNode(otherlv_15, grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_10());
+                	newLeafNode(otherlv_17, grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_11());
                 
 
             }
@@ -1367,7 +1425,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSlot"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:555:1: entryRuleSlot returns [EObject current=null] : iv_ruleSlot= ruleSlot EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:577:1: entryRuleSlot returns [EObject current=null] : iv_ruleSlot= ruleSlot EOF ;
     public final EObject entryRuleSlot() throws RecognitionException {
         EObject current = null;
 
@@ -1375,17 +1433,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:556:2: (iv_ruleSlot= ruleSlot EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:557:2: iv_ruleSlot= ruleSlot EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:578:2: (iv_ruleSlot= ruleSlot EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:579:2: iv_ruleSlot= ruleSlot EOF
             {
              newCompositeNode(grammarAccess.getSlotRule()); 
-            pushFollow(FOLLOW_ruleSlot_in_entryRuleSlot1170);
+            pushFollow(FOLLOW_ruleSlot_in_entryRuleSlot1207);
             iv_ruleSlot=ruleSlot();
 
             state._fsp--;
 
              current =iv_ruleSlot; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSlot1180); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSlot1217); 
 
             }
 
@@ -1403,7 +1461,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSlot"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:564:1: ruleSlot returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:586:1: ruleSlot returns [EObject current=null] : ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) ) ;
     public final EObject ruleSlot() throws RecognitionException {
         EObject current = null;
 
@@ -1415,14 +1473,14 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:567:28: ( ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:568:1: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:589:28: ( ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:590:1: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:568:1: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:568:2: () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:590:1: ( () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:590:2: () ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' ( (lv_value_3_0= ruleValue ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:568:2: ()
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:569:5: 
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:590:2: ()
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:591:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1432,13 +1490,13 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:574:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:575:1: (lv_name_1_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:596:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:597:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:575:1: (lv_name_1_0= RULE_ID )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:576:3: lv_name_1_0= RULE_ID
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:597:1: (lv_name_1_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:598:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSlot1231); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSlot1268); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getSlotAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1458,20 +1516,20 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleSlot1248); 
+            otherlv_2=(Token)match(input,23,FOLLOW_23_in_ruleSlot1285); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getSlotAccess().getEqualsSignKeyword_2());
                 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:596:1: ( (lv_value_3_0= ruleValue ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:597:1: (lv_value_3_0= ruleValue )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:618:1: ( (lv_value_3_0= ruleValue ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:619:1: (lv_value_3_0= ruleValue )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:597:1: (lv_value_3_0= ruleValue )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:598:3: lv_value_3_0= ruleValue
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:619:1: (lv_value_3_0= ruleValue )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:620:3: lv_value_3_0= ruleValue
             {
              
             	        newCompositeNode(grammarAccess.getSlotAccess().getValueValueParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleValue_in_ruleSlot1269);
+            pushFollow(FOLLOW_ruleValue_in_ruleSlot1306);
             lv_value_3_0=ruleValue();
 
             state._fsp--;
@@ -1514,7 +1572,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArray"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:622:1: entryRuleArray returns [EObject current=null] : iv_ruleArray= ruleArray EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:644:1: entryRuleArray returns [EObject current=null] : iv_ruleArray= ruleArray EOF ;
     public final EObject entryRuleArray() throws RecognitionException {
         EObject current = null;
 
@@ -1522,17 +1580,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:623:2: (iv_ruleArray= ruleArray EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:624:2: iv_ruleArray= ruleArray EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:645:2: (iv_ruleArray= ruleArray EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:646:2: iv_ruleArray= ruleArray EOF
             {
              newCompositeNode(grammarAccess.getArrayRule()); 
-            pushFollow(FOLLOW_ruleArray_in_entryRuleArray1305);
+            pushFollow(FOLLOW_ruleArray_in_entryRuleArray1342);
             iv_ruleArray=ruleArray();
 
             state._fsp--;
 
              current =iv_ruleArray; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArray1315); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArray1352); 
 
             }
 
@@ -1550,7 +1608,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArray"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:631:1: ruleArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:653:1: ruleArray returns [EObject current=null] : (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' ) ;
     public final EObject ruleArray() throws RecognitionException {
         EObject current = null;
 
@@ -1562,39 +1620,39 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:634:28: ( (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:635:1: (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:656:28: ( (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:657:1: (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:635:1: (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:635:3: otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']'
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:657:1: (otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:657:3: otherlv_0= '[' ( (lv_value_1_0= ruleValue ) )+ otherlv_2= ']'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleArray1352); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleArray1389); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getArrayAccess().getLeftSquareBracketKeyword_0());
                 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:639:1: ( (lv_value_1_0= ruleValue ) )+
-            int cnt12=0;
-            loop12:
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:661:1: ( (lv_value_1_0= ruleValue ) )+
+            int cnt13=0;
+            loop13:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA12_0>=RULE_MY_STRING && LA12_0<=RULE_NUMBER)||(LA12_0>=17 && LA12_0<=21)||LA12_0==23||LA12_0==26||(LA12_0>=28 && LA12_0<=30)) ) {
-                    alt12=1;
+                if ( ((LA13_0>=RULE_MY_STRING && LA13_0<=RULE_NUMBER)||(LA13_0>=17 && LA13_0<=22)||LA13_0==24||LA13_0==27||(LA13_0>=29 && LA13_0<=31)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt13) {
             	case 1 :
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:640:1: (lv_value_1_0= ruleValue )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:662:1: (lv_value_1_0= ruleValue )
             	    {
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:640:1: (lv_value_1_0= ruleValue )
-            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:641:3: lv_value_1_0= ruleValue
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:662:1: (lv_value_1_0= ruleValue )
+            	    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:663:3: lv_value_1_0= ruleValue
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getArrayAccess().getValueValueParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleValue_in_ruleArray1373);
+            	    pushFollow(FOLLOW_ruleValue_in_ruleArray1410);
             	    lv_value_1_0=ruleValue();
 
             	    state._fsp--;
@@ -1618,15 +1676,15 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt12 >= 1 ) break loop12;
+            	    if ( cnt13 >= 1 ) break loop13;
                         EarlyExitException eee =
-                            new EarlyExitException(12, input);
+                            new EarlyExitException(13, input);
                         throw eee;
                 }
-                cnt12++;
+                cnt13++;
             } while (true);
 
-            otherlv_2=(Token)match(input,27,FOLLOW_27_in_ruleArray1386); 
+            otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleArray1423); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getArrayAccess().getRightSquareBracketKeyword_2());
                 
@@ -1651,7 +1709,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:669:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:691:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -1659,17 +1717,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:670:2: (iv_ruleStringValue= ruleStringValue EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:671:2: iv_ruleStringValue= ruleStringValue EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:692:2: (iv_ruleStringValue= ruleStringValue EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:693:2: iv_ruleStringValue= ruleStringValue EOF
             {
              newCompositeNode(grammarAccess.getStringValueRule()); 
-            pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue1422);
+            pushFollow(FOLLOW_ruleStringValue_in_entryRuleStringValue1459);
             iv_ruleStringValue=ruleStringValue();
 
             state._fsp--;
 
              current =iv_ruleStringValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringValue1432); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringValue1469); 
 
             }
 
@@ -1687,7 +1745,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:678:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_MY_STRING ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:700:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_MY_STRING ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -1696,16 +1754,16 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:681:28: ( ( (lv_value_0_0= RULE_MY_STRING ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:682:1: ( (lv_value_0_0= RULE_MY_STRING ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:703:28: ( ( (lv_value_0_0= RULE_MY_STRING ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:704:1: ( (lv_value_0_0= RULE_MY_STRING ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:682:1: ( (lv_value_0_0= RULE_MY_STRING ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:683:1: (lv_value_0_0= RULE_MY_STRING )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:704:1: ( (lv_value_0_0= RULE_MY_STRING ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:705:1: (lv_value_0_0= RULE_MY_STRING )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:683:1: (lv_value_0_0= RULE_MY_STRING )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:684:3: lv_value_0_0= RULE_MY_STRING
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:705:1: (lv_value_0_0= RULE_MY_STRING )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:706:3: lv_value_0_0= RULE_MY_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_ruleStringValue1473); 
+            lv_value_0_0=(Token)match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_ruleStringValue1510); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getStringValueAccess().getValueMY_STRINGTerminalRuleCall_0()); 
             		
@@ -1743,7 +1801,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:708:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:730:1: entryRuleBooleanValue returns [EObject current=null] : iv_ruleBooleanValue= ruleBooleanValue EOF ;
     public final EObject entryRuleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -1751,17 +1809,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:709:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:710:2: iv_ruleBooleanValue= ruleBooleanValue EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:731:2: (iv_ruleBooleanValue= ruleBooleanValue EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:732:2: iv_ruleBooleanValue= ruleBooleanValue EOF
             {
              newCompositeNode(grammarAccess.getBooleanValueRule()); 
-            pushFollow(FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue1513);
+            pushFollow(FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue1550);
             iv_ruleBooleanValue=ruleBooleanValue();
 
             state._fsp--;
 
              current =iv_ruleBooleanValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanValue1523); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanValue1560); 
 
             }
 
@@ -1779,7 +1837,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:717:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:739:1: ruleBooleanValue returns [EObject current=null] : ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) ) ;
     public final EObject ruleBooleanValue() throws RecognitionException {
         EObject current = null;
 
@@ -1789,36 +1847,36 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:720:28: ( ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:721:1: ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:742:28: ( ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:743:1: ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:721:1: ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:743:1: ( ( (lv_value_0_0= 'true' ) ) | ( (lv_value_1_0= 'false' ) ) )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==28) ) {
-                alt13=1;
+            if ( (LA14_0==29) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==29) ) {
-                alt13=2;
+            else if ( (LA14_0==30) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:721:2: ( (lv_value_0_0= 'true' ) )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:743:2: ( (lv_value_0_0= 'true' ) )
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:721:2: ( (lv_value_0_0= 'true' ) )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:722:1: (lv_value_0_0= 'true' )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:743:2: ( (lv_value_0_0= 'true' ) )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:744:1: (lv_value_0_0= 'true' )
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:722:1: (lv_value_0_0= 'true' )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:723:3: lv_value_0_0= 'true'
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:744:1: (lv_value_0_0= 'true' )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:745:3: lv_value_0_0= 'true'
                     {
-                    lv_value_0_0=(Token)match(input,28,FOLLOW_28_in_ruleBooleanValue1566); 
+                    lv_value_0_0=(Token)match(input,29,FOLLOW_29_in_ruleBooleanValue1603); 
 
                             newLeafNode(lv_value_0_0, grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0());
                         
@@ -1838,15 +1896,15 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:737:6: ( (lv_value_1_0= 'false' ) )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:759:6: ( (lv_value_1_0= 'false' ) )
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:737:6: ( (lv_value_1_0= 'false' ) )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:738:1: (lv_value_1_0= 'false' )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:759:6: ( (lv_value_1_0= 'false' ) )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:760:1: (lv_value_1_0= 'false' )
                     {
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:738:1: (lv_value_1_0= 'false' )
-                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:739:3: lv_value_1_0= 'false'
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:760:1: (lv_value_1_0= 'false' )
+                    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:761:3: lv_value_1_0= 'false'
                     {
-                    lv_value_1_0=(Token)match(input,29,FOLLOW_29_in_ruleBooleanValue1603); 
+                    lv_value_1_0=(Token)match(input,30,FOLLOW_30_in_ruleBooleanValue1640); 
 
                             newLeafNode(lv_value_1_0, grammarAccess.getBooleanValueAccess().getValueFalseKeyword_1_0());
                         
@@ -1886,7 +1944,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNullValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:760:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:782:1: entryRuleNullValue returns [EObject current=null] : iv_ruleNullValue= ruleNullValue EOF ;
     public final EObject entryRuleNullValue() throws RecognitionException {
         EObject current = null;
 
@@ -1894,17 +1952,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:761:2: (iv_ruleNullValue= ruleNullValue EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:762:2: iv_ruleNullValue= ruleNullValue EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:783:2: (iv_ruleNullValue= ruleNullValue EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:784:2: iv_ruleNullValue= ruleNullValue EOF
             {
              newCompositeNode(grammarAccess.getNullValueRule()); 
-            pushFollow(FOLLOW_ruleNullValue_in_entryRuleNullValue1652);
+            pushFollow(FOLLOW_ruleNullValue_in_entryRuleNullValue1689);
             iv_ruleNullValue=ruleNullValue();
 
             state._fsp--;
 
              current =iv_ruleNullValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNullValue1662); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNullValue1699); 
 
             }
 
@@ -1922,7 +1980,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNullValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:769:1: ruleNullValue returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:791:1: ruleNullValue returns [EObject current=null] : ( () otherlv_1= 'null' ) ;
     public final EObject ruleNullValue() throws RecognitionException {
         EObject current = null;
 
@@ -1931,14 +1989,14 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:772:28: ( ( () otherlv_1= 'null' ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:773:1: ( () otherlv_1= 'null' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:794:28: ( ( () otherlv_1= 'null' ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:795:1: ( () otherlv_1= 'null' )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:773:1: ( () otherlv_1= 'null' )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:773:2: () otherlv_1= 'null'
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:795:1: ( () otherlv_1= 'null' )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:795:2: () otherlv_1= 'null'
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:773:2: ()
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:774:5: 
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:795:2: ()
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:796:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1948,7 +2006,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_30_in_ruleNullValue1708); 
+            otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleNullValue1745); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getNullValueAccess().getNullKeyword_1());
                 
@@ -1973,7 +2031,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:791:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:813:1: entryRuleNumberValue returns [EObject current=null] : iv_ruleNumberValue= ruleNumberValue EOF ;
     public final EObject entryRuleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -1981,17 +2039,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:792:2: (iv_ruleNumberValue= ruleNumberValue EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:793:2: iv_ruleNumberValue= ruleNumberValue EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:814:2: (iv_ruleNumberValue= ruleNumberValue EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:815:2: iv_ruleNumberValue= ruleNumberValue EOF
             {
              newCompositeNode(grammarAccess.getNumberValueRule()); 
-            pushFollow(FOLLOW_ruleNumberValue_in_entryRuleNumberValue1744);
+            pushFollow(FOLLOW_ruleNumberValue_in_entryRuleNumberValue1781);
             iv_ruleNumberValue=ruleNumberValue();
 
             state._fsp--;
 
              current =iv_ruleNumberValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberValue1754); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberValue1791); 
 
             }
 
@@ -2009,7 +2067,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:800:1: ruleNumberValue returns [EObject current=null] : ( (lv_value_0_0= RULE_NUMBER ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:822:1: ruleNumberValue returns [EObject current=null] : ( (lv_value_0_0= RULE_NUMBER ) ) ;
     public final EObject ruleNumberValue() throws RecognitionException {
         EObject current = null;
 
@@ -2018,16 +2076,16 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:803:28: ( ( (lv_value_0_0= RULE_NUMBER ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:804:1: ( (lv_value_0_0= RULE_NUMBER ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:825:28: ( ( (lv_value_0_0= RULE_NUMBER ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:826:1: ( (lv_value_0_0= RULE_NUMBER ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:804:1: ( (lv_value_0_0= RULE_NUMBER ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:805:1: (lv_value_0_0= RULE_NUMBER )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:826:1: ( (lv_value_0_0= RULE_NUMBER ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:827:1: (lv_value_0_0= RULE_NUMBER )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:805:1: (lv_value_0_0= RULE_NUMBER )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:806:3: lv_value_0_0= RULE_NUMBER
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:827:1: (lv_value_0_0= RULE_NUMBER )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:828:3: lv_value_0_0= RULE_NUMBER
             {
-            lv_value_0_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleNumberValue1795); 
+            lv_value_0_0=(Token)match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_ruleNumberValue1832); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getNumberValueAccess().getValueNUMBERTerminalRuleCall_0()); 
             		
@@ -2065,7 +2123,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInstanceRef"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:830:1: entryRuleInstanceRef returns [EObject current=null] : iv_ruleInstanceRef= ruleInstanceRef EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:852:1: entryRuleInstanceRef returns [EObject current=null] : iv_ruleInstanceRef= ruleInstanceRef EOF ;
     public final EObject entryRuleInstanceRef() throws RecognitionException {
         EObject current = null;
 
@@ -2073,17 +2131,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:831:2: (iv_ruleInstanceRef= ruleInstanceRef EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:832:2: iv_ruleInstanceRef= ruleInstanceRef EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:853:2: (iv_ruleInstanceRef= ruleInstanceRef EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:854:2: iv_ruleInstanceRef= ruleInstanceRef EOF
             {
              newCompositeNode(grammarAccess.getInstanceRefRule()); 
-            pushFollow(FOLLOW_ruleInstanceRef_in_entryRuleInstanceRef1835);
+            pushFollow(FOLLOW_ruleInstanceRef_in_entryRuleInstanceRef1872);
             iv_ruleInstanceRef=ruleInstanceRef();
 
             state._fsp--;
 
              current =iv_ruleInstanceRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInstanceRef1845); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInstanceRef1882); 
 
             }
 
@@ -2101,7 +2159,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInstanceRef"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:839:1: ruleInstanceRef returns [EObject current=null] : ( (otherlv_0= RULE_FQN ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:861:1: ruleInstanceRef returns [EObject current=null] : ( (otherlv_0= RULE_FQN ) ) ;
     public final EObject ruleInstanceRef() throws RecognitionException {
         EObject current = null;
 
@@ -2110,21 +2168,21 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:842:28: ( ( (otherlv_0= RULE_FQN ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:843:1: ( (otherlv_0= RULE_FQN ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:864:28: ( ( (otherlv_0= RULE_FQN ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:865:1: ( (otherlv_0= RULE_FQN ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:843:1: ( (otherlv_0= RULE_FQN ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:844:1: (otherlv_0= RULE_FQN )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:865:1: ( (otherlv_0= RULE_FQN ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:866:1: (otherlv_0= RULE_FQN )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:844:1: (otherlv_0= RULE_FQN )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:845:3: otherlv_0= RULE_FQN
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:866:1: (otherlv_0= RULE_FQN )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:867:3: otherlv_0= RULE_FQN
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getInstanceRefRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_FQN,FOLLOW_RULE_FQN_in_ruleInstanceRef1889); 
+            otherlv_0=(Token)match(input,RULE_FQN,FOLLOW_RULE_FQN_in_ruleInstanceRef1926); 
 
             		newLeafNode(otherlv_0, grammarAccess.getInstanceRefAccess().getValueInstanceCrossReference_0()); 
             	
@@ -2152,7 +2210,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:864:1: entryRuleEnumValue returns [EObject current=null] : iv_ruleEnumValue= ruleEnumValue EOF ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:886:1: entryRuleEnumValue returns [EObject current=null] : iv_ruleEnumValue= ruleEnumValue EOF ;
     public final EObject entryRuleEnumValue() throws RecognitionException {
         EObject current = null;
 
@@ -2160,17 +2218,17 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:865:2: (iv_ruleEnumValue= ruleEnumValue EOF )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:866:2: iv_ruleEnumValue= ruleEnumValue EOF
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:887:2: (iv_ruleEnumValue= ruleEnumValue EOF )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:888:2: iv_ruleEnumValue= ruleEnumValue EOF
             {
              newCompositeNode(grammarAccess.getEnumValueRule()); 
-            pushFollow(FOLLOW_ruleEnumValue_in_entryRuleEnumValue1924);
+            pushFollow(FOLLOW_ruleEnumValue_in_entryRuleEnumValue1961);
             iv_ruleEnumValue=ruleEnumValue();
 
             state._fsp--;
 
              current =iv_ruleEnumValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumValue1934); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumValue1971); 
 
             }
 
@@ -2188,7 +2246,7 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumValue"
-    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:873:1: ruleEnumValue returns [EObject current=null] : (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) ) ;
+    // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:895:1: ruleEnumValue returns [EObject current=null] : (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) ) ;
     public final EObject ruleEnumValue() throws RecognitionException {
         EObject current = null;
 
@@ -2198,23 +2256,23 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:876:28: ( (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:877:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:898:28: ( (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:899:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:877:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:877:3: otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:899:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:899:3: otherlv_0= '#' ( (lv_value_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleEnumValue1971); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleEnumValue2008); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEnumValueAccess().getNumberSignKeyword_0());
                 
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:881:1: ( (lv_value_1_0= RULE_ID ) )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:882:1: (lv_value_1_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:903:1: ( (lv_value_1_0= RULE_ID ) )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:904:1: (lv_value_1_0= RULE_ID )
             {
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:882:1: (lv_value_1_0= RULE_ID )
-            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:883:3: lv_value_1_0= RULE_ID
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:904:1: (lv_value_1_0= RULE_ID )
+            // ../org.ollabaca.on/src-gen/org/ollabaca/on/parser/antlr/internal/InternalObjectNotation.g:905:3: lv_value_1_0= RULE_ID
             {
-            lv_value_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumValue1988); 
+            lv_value_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumValue2025); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getEnumValueAccess().getValueIDTerminalRuleCall_1_0()); 
             		
@@ -2260,9 +2318,9 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleUnit_in_entryRuleUnit75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUnit85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_ruleUnit131 = new BitSet(new long[]{0x0000000000BD8040L});
-    public static final BitSet FOLLOW_ruleContainer_in_ruleUnit153 = new BitSet(new long[]{0x0000000000BD0040L});
-    public static final BitSet FOLLOW_ruleInstance_in_ruleUnit175 = new BitSet(new long[]{0x0000000000BD0042L});
+    public static final BitSet FOLLOW_ruleImport_in_ruleUnit131 = new BitSet(new long[]{0x00000000017D8040L});
+    public static final BitSet FOLLOW_ruleContainer_in_ruleUnit153 = new BitSet(new long[]{0x00000000017D0040L});
+    public static final BitSet FOLLOW_ruleInstance_in_ruleUnit175 = new BitSet(new long[]{0x00000000017D0042L});
     public static final BitSet FOLLOW_ruleValue_in_entryRuleValue212 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValue222 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInstance_in_ruleValue269 = new BitSet(new long[]{0x0000000000000002L});
@@ -2289,49 +2347,51 @@ public class InternalObjectNotationParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleInstance_in_entryRuleInstance827 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInstance837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_ruleInstance884 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance901 = new BitSet(new long[]{0x0000000000B80040L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance901 = new BitSet(new long[]{0x0000000001780040L});
     public static final BitSet FOLLOW_19_in_ruleInstance921 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance938 = new BitSet(new long[]{0x0000000000B00040L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance938 = new BitSet(new long[]{0x0000000001700040L});
     public static final BitSet FOLLOW_20_in_ruleInstance958 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance975 = new BitSet(new long[]{0x0000000000A00040L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleInstance975 = new BitSet(new long[]{0x0000000001600040L});
     public static final BitSet FOLLOW_21_in_ruleInstance995 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_FQN_in_ruleInstance1015 = new BitSet(new long[]{0x0000000000A00040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1035 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleInstance1052 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_23_in_ruleInstance1066 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1083 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleInstance1100 = new BitSet(new long[]{0x0000000002000040L});
-    public static final BitSet FOLLOW_ruleSlot_in_ruleInstance1121 = new BitSet(new long[]{0x0000000002000040L});
-    public static final BitSet FOLLOW_25_in_ruleInstance1134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSlot_in_entryRuleSlot1170 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSlot1180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSlot1231 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleSlot1248 = new BitSet(new long[]{0x0000000074BF00F0L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleSlot1269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArray_in_entryRuleArray1305 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArray1315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleArray1352 = new BitSet(new long[]{0x0000000074BF00F0L});
-    public static final BitSet FOLLOW_ruleValue_in_ruleArray1373 = new BitSet(new long[]{0x000000007CBF00F0L});
-    public static final BitSet FOLLOW_27_in_ruleArray1386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue1422 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringValue1432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleStringValue1473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue1513 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanValue1523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleBooleanValue1566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_ruleInstance1015 = new BitSet(new long[]{0x0000000001600040L});
+    public static final BitSet FOLLOW_22_in_ruleInstance1030 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1047 = new BitSet(new long[]{0x0000000001400040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1072 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleInstance1089 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleInstance1103 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleInstance1120 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleInstance1137 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_ruleSlot_in_ruleInstance1158 = new BitSet(new long[]{0x0000000004000040L});
+    public static final BitSet FOLLOW_26_in_ruleInstance1171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSlot_in_entryRuleSlot1207 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSlot1217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSlot1268 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleSlot1285 = new BitSet(new long[]{0x00000000E97F00F0L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleSlot1306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArray_in_entryRuleArray1342 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArray1352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleArray1389 = new BitSet(new long[]{0x00000000E97F00F0L});
+    public static final BitSet FOLLOW_ruleValue_in_ruleArray1410 = new BitSet(new long[]{0x00000000F97F00F0L});
+    public static final BitSet FOLLOW_28_in_ruleArray1423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringValue_in_entryRuleStringValue1459 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringValue1469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_ruleStringValue1510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanValue_in_entryRuleBooleanValue1550 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanValue1560 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_ruleBooleanValue1603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullValue_in_entryRuleNullValue1652 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNullValue1662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleNullValue1708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_entryRuleNumberValue1744 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumberValue1754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleNumberValue1795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstanceRef_in_entryRuleInstanceRef1835 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInstanceRef1845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FQN_in_ruleInstanceRef1889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumValue_in_entryRuleEnumValue1924 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumValue1934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleEnumValue1971 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumValue1988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleBooleanValue1640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullValue_in_entryRuleNullValue1689 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNullValue1699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleNullValue1745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_entryRuleNumberValue1781 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumberValue1791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_ruleNumberValue1832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstanceRef_in_entryRuleInstanceRef1872 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInstanceRef1882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_ruleInstanceRef1926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumValue_in_entryRuleEnumValue1961 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumValue1971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleEnumValue2008 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumValue2025 = new BitSet(new long[]{0x0000000000000002L});
 
 }

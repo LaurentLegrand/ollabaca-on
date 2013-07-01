@@ -44,6 +44,7 @@ public interface Site extends Named
   /**
    * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
    * The list contents are of type {@link org.ollabaca.on.site.Tag}.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.site.Tag#getSite <em>Site</em>}'.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Tags</em>' containment reference list isn't clear,
@@ -52,7 +53,8 @@ public interface Site extends Named
    * <!-- end-user-doc -->
    * @return the value of the '<em>Tags</em>' containment reference list.
    * @see org.ollabaca.on.site.SitePackage#getSite_Tags()
-   * @model containment="true"
+   * @see org.ollabaca.on.site.Tag#getSite
+   * @model opposite="site" containment="true"
    * @generated
    */
   EList<Tag> getTags();

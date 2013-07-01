@@ -252,13 +252,22 @@ public interface ModelPackage extends EPackage
   int INSTANCE__SEE = VALUE_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Tags</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE__TAGS = VALUE_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 4;
+  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -267,7 +276,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 5;
+  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -276,7 +285,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 6;
+  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Instance</em>' class.
@@ -285,7 +294,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 7;
+  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.model.impl.SlotImpl <em>Slot</em>}' class.
@@ -683,6 +692,17 @@ public interface ModelPackage extends EPackage
   EReference getInstance_See();
 
   /**
+   * Returns the meta object for the attribute list '{@link org.ollabaca.on.model.Instance#getTags <em>Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Tags</em>'.
+   * @see org.ollabaca.on.model.Instance#getTags()
+   * @see #getInstance()
+   * @generated
+   */
+  EAttribute getInstance_Tags();
+
+  /**
    * Returns the meta object for the attribute '{@link org.ollabaca.on.model.Instance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1045,6 +1065,14 @@ public interface ModelPackage extends EPackage
      * @generated
      */
     EReference INSTANCE__SEE = eINSTANCE.getInstance_See();
+
+    /**
+     * The meta object literal for the '<em><b>Tags</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCE__TAGS = eINSTANCE.getInstance_Tags();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

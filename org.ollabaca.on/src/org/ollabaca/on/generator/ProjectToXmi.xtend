@@ -113,7 +113,7 @@ class ProjectToXmi {
 					if (feature == null) {
 						//System::err.println("feature is null")						
 					} else {
-						var Collection<EObject> collection = container.eGet(feature) as Collection
+						var Collection<EObject> collection = container.eGet(feature) as Collection<EObject>
 						for (i: u.instances) {
 							collection.add(instances.get(i))
 						}
@@ -160,6 +160,16 @@ class ProjectToXmi {
 					topic.see += t
 				}
 			}
+		}
+		
+		// create tags
+		for (e: topics.keySet) {
+			val topic = topics.get(e)
+			
+			for (t: e.tags) {
+				site.getOrCreateTag(t).topics.add(topic)
+			}
+			
 		}
 		
 		// create parent-child links

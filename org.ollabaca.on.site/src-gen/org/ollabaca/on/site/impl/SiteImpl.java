@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -113,7 +114,7 @@ public class SiteImpl extends NamedImpl implements Site
   {
     if (tags == null)
     {
-      tags = new EObjectContainmentEList<Tag>(Tag.class, this, SitePackage.SITE__TAGS);
+      tags = new EObjectContainmentWithInverseEList<Tag>(Tag.class, this, SitePackage.SITE__TAGS, SitePackage.TAG__SITE);
     }
     return tags;
   }
@@ -232,6 +233,23 @@ public class SiteImpl extends NamedImpl implements Site
         }
       };
     return IterableExtensions.<Topic>findFirst(_topics, _function);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SitePackage.SITE__TAGS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getTags()).basicAdd(otherEnd, msgs);
+    }
+    return super.eInverseAdd(otherEnd, featureID, msgs);
   }
 
   /**

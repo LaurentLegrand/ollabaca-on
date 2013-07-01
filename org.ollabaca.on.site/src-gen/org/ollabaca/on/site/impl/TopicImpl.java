@@ -259,7 +259,7 @@ public class TopicImpl extends NamedImpl implements Topic
   {
     if (tags == null)
     {
-      tags = new EObjectResolvingEList<Tag>(Tag.class, this, SitePackage.TOPIC__TAGS);
+      tags = new EObjectWithInverseResolvingEList.ManyInverse<Tag>(Tag.class, this, SitePackage.TOPIC__TAGS, SitePackage.TAG__TOPICS);
     }
     return tags;
   }
@@ -491,6 +491,8 @@ public class TopicImpl extends NamedImpl implements Topic
   {
     switch (featureID)
     {
+      case SitePackage.TOPIC__TAGS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getTags()).basicAdd(otherEnd, msgs);
       case SitePackage.TOPIC__PARENT:
         if (parent != null)
           msgs = ((InternalEObject)parent).eInverseRemove(this, SitePackage.TOPIC__TOPICS, Topic.class, msgs);
@@ -511,6 +513,8 @@ public class TopicImpl extends NamedImpl implements Topic
   {
     switch (featureID)
     {
+      case SitePackage.TOPIC__TAGS:
+        return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
       case SitePackage.TOPIC__PARENT:
         return basicSetParent(null, msgs);
       case SitePackage.TOPIC__TOPICS:

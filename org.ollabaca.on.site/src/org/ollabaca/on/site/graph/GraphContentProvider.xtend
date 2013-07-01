@@ -11,6 +11,7 @@ import org.ollabaca.on.site.renderers.Text
 import java.io.StringWriter
 import java.util.List
 import javax.json.Json
+import org.ollabaca.on.site.Tag
 
 class GraphContentProvider implements ContentProvider {
 	
@@ -100,6 +101,12 @@ class GraphContentProvider implements ContentProvider {
 	override onType(Site site, EClass type) {
 		""
 	}
+
+	override onTag(Tag self) {
+		""
+	}
+	
+	
 	
 	def Text instancesToJSon(Site self) {
 		return new Text("text/json", instances(self));

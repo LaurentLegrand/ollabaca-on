@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -33,6 +34,7 @@ import org.ollabaca.on.model.Slot;
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getDocumentation <em>Documentation</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSee <em>See</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSlots <em>Slots</em>}</li>
@@ -112,6 +114,16 @@ public class InstanceImpl extends ValueImpl implements Instance
    * @ordered
    */
   protected EList<Instance> see;
+
+  /**
+   * The cached value of the '{@link #getTags() <em>Tags</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTags()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> tags;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -272,6 +284,20 @@ public class InstanceImpl extends ValueImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getTags()
+  {
+    if (tags == null)
+    {
+      tags = new EDataTypeEList<String>(String.class, this, ModelPackage.INSTANCE__TAGS);
+    }
+    return tags;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -361,6 +387,8 @@ public class InstanceImpl extends ValueImpl implements Instance
         return getDocumentation();
       case ModelPackage.INSTANCE__SEE:
         return getSee();
+      case ModelPackage.INSTANCE__TAGS:
+        return getTags();
       case ModelPackage.INSTANCE__NAME:
         return getName();
       case ModelPackage.INSTANCE__TYPE:
@@ -394,6 +422,10 @@ public class InstanceImpl extends ValueImpl implements Instance
       case ModelPackage.INSTANCE__SEE:
         getSee().clear();
         getSee().addAll((Collection<? extends Instance>)newValue);
+        return;
+      case ModelPackage.INSTANCE__TAGS:
+        getTags().clear();
+        getTags().addAll((Collection<? extends String>)newValue);
         return;
       case ModelPackage.INSTANCE__NAME:
         setName((String)newValue);
@@ -431,6 +463,9 @@ public class InstanceImpl extends ValueImpl implements Instance
       case ModelPackage.INSTANCE__SEE:
         getSee().clear();
         return;
+      case ModelPackage.INSTANCE__TAGS:
+        getTags().clear();
+        return;
       case ModelPackage.INSTANCE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -462,6 +497,8 @@ public class InstanceImpl extends ValueImpl implements Instance
         return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
       case ModelPackage.INSTANCE__SEE:
         return see != null && !see.isEmpty();
+      case ModelPackage.INSTANCE__TAGS:
+        return tags != null && !tags.isEmpty();
       case ModelPackage.INSTANCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ModelPackage.INSTANCE__TYPE:
@@ -489,6 +526,8 @@ public class InstanceImpl extends ValueImpl implements Instance
     result.append(abstract_);
     result.append(", documentation: ");
     result.append(documentation);
+    result.append(", tags: ");
+    result.append(tags);
     result.append(", name: ");
     result.append(name);
     result.append(", type: ");

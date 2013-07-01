@@ -359,7 +359,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstance_Name()
+  public EAttribute getInstance_Tags()
   {
     return (EAttribute)instanceEClass.getEStructuralFeatures().get(4);
   }
@@ -369,7 +369,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstance_Type()
+  public EAttribute getInstance_Name()
   {
     return (EAttribute)instanceEClass.getEStructuralFeatures().get(5);
   }
@@ -379,9 +379,19 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getInstance_Type()
+  {
+    return (EAttribute)instanceEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getInstance_Slots()
   {
-    return (EReference)instanceEClass.getEStructuralFeatures().get(6);
+    return (EReference)instanceEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -595,6 +605,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     createEAttribute(instanceEClass, INSTANCE__ABSTRACT);
     createEAttribute(instanceEClass, INSTANCE__DOCUMENTATION);
     createEReference(instanceEClass, INSTANCE__SEE);
+    createEAttribute(instanceEClass, INSTANCE__TAGS);
     createEAttribute(instanceEClass, INSTANCE__NAME);
     createEAttribute(instanceEClass, INSTANCE__TYPE);
     createEReference(instanceEClass, INSTANCE__SLOTS);
@@ -685,6 +696,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     initEAttribute(getInstance_Abstract(), ecorePackage.getEString(), "abstract", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstance_See(), this.getInstance(), null, "see", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstance_Tags(), ecorePackage.getEString(), "tags", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Type(), ecorePackage.getEString(), "type", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstance_Slots(), this.getSlot(), null, "slots", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
