@@ -30,7 +30,7 @@ public class SiteFactoryImpl extends EFactoryImpl implements SiteFactory
   {
     try
     {
-      SiteFactory theSiteFactory = (SiteFactory)EPackage.Registry.INSTANCE.getEFactory("org.ollabaca.on.site"); 
+      SiteFactory theSiteFactory = (SiteFactory)EPackage.Registry.INSTANCE.getEFactory(SitePackage.eNS_URI);
       if (theSiteFactory != null)
       {
         return theSiteFactory;

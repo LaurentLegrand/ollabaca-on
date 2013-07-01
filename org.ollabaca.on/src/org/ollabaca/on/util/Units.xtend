@@ -119,11 +119,13 @@ class Units {
 	}
 	
 	def EClass getClassifier(Instance self) {
-		self.unit.classes.findFirst[it.name == self.type]
+		val type = self.type
+		self.unit.classes.findFirst[it.name == type]
 	}
 	
 	def EStructuralFeature getFeature(Slot self) {
-		self.instance.features.findFirst[it.name == self.name]
+		val name = self.name
+		self.instance.features.findFirst[it.name == name]
 	}
 	
 	def EStructuralFeature getFeature(Instance self, String name) {

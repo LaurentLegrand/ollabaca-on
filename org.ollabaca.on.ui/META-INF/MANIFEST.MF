@@ -23,5 +23,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.ollabaca.on.ui.contentassist,
  org.ollabaca.on.ui.contentassist.antlr,
- org.ollabaca.on.ui.internal
+ org.ollabaca.on.ui.internal,
+ org.ollabaca.on.ui.quickfix
 Bundle-Activator: org.ollabaca.on.ui.internal.ObjectNotationActivator

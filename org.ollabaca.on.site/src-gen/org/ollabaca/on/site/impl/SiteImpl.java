@@ -123,7 +123,7 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
-  public Tag getOrCreateTag(String name)
+  public Tag getOrCreateTag(final String name)
   {
     final String n = name;
     Site _this = this;
@@ -156,7 +156,7 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
-  public Topic getTopic(String name)
+  public Topic getTopic(final String name)
   {
     Topic _xblockexpression = null;
     {
@@ -217,7 +217,7 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
-  public Topic getTopic(EObject target)
+  public Topic getTopic(final EObject target)
   {
     final EObject t = target;
     Site _this = this;

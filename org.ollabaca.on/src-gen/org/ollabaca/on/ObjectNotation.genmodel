@@ -4,7 +4,7 @@
     editorDirectory="/org.ollabaca.on.editor/src" modelPluginID="org.ollabaca.on"
     forceOverwrite="true" modelName="ObjectNotation" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.ollabaca.on.edit"
-    editorPluginID="org.ollabaca.on.editor" runtimeVersion="2.8">
+    editorPluginID="org.ollabaca.on.editor" runtimeVersion="2.9">
   <genPackages prefix="Model" basePackage="org.ollabaca.on" disposableProviderFactory="true"
       ecorePackage="ObjectNotation.ecore#/">
     <genClasses ecoreClass="ObjectNotation.ecore#//Unit">

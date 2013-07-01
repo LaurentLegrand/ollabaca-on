@@ -67,11 +67,26 @@ class GraphContentProvider implements ContentProvider {
 			<ul id="«TAB»" class="nav nav-tabs">
 				<li class="active"><a href="#«INSTANCES»" data-toggle="tab">Instances</a></li>
 				<li><a href="#«TYPES»" data-toggle="tab">Types</a></li>
+				
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="«INSTANCES»">
+					<svg xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<marker id="end" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+								<path d="M 0 10 L 10 5 L 0 0 L 0 10" fill="white" stroke="black" stroke-width="1"/>
+							</marker>
+						</defs>
+					</svg>
 				</div>
 				<div class="tab-pane" id="«TYPES»">
+					<svg xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<marker id="end" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+								<path d="M 0 10 L 10 5 L 0 0 L 0 10" fill="white" stroke="black" stroke-width="1"/>
+							</marker>
+						</defs>
+					</svg>
 				</div>
 			</div>
 		</div>

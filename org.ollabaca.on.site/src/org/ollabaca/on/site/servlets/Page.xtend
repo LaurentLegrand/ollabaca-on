@@ -37,15 +37,21 @@ class Page {
 						padding-right: 5px;
 					}
 				}
-.parentOf {
-	stroke: red;
-  stroke-width: 1.5px;
-}
+		.parentOf {
+			stroke: red;
+		  stroke-width: 1.5px;
+		}
+		
+		.seeAlso {
+			stroke: blue;
+		  stroke-width: 1.5px;
+		}
 
-.seeAlso {
-	stroke: blue;
-  stroke-width: 1.5px;
-}			</style>
+		.node {
+			backgroud-color: green;
+		}
+
+		</style>
 			<link href="/site/assets/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 			<script src="/site/assets/jquery/jquery-2.0.2.min.js"></script>
 			<script src="/site/assets/bootstrap/js/bootstrap.js"></script>

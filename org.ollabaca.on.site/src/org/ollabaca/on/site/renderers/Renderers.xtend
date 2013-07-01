@@ -9,7 +9,6 @@ import org.ollabaca.on.site.Topic
 import org.pegdown.Extensions
 import org.pegdown.PegDownProcessor
 
-import static org.ollabaca.on.site.renderers.Renderers.*
 
 class Renderers {
 	
@@ -68,7 +67,7 @@ class Renderers {
 	}
 	
 	def static dispatch fallback(EObject self) {
-		val topic = site.getTopic(self)
+		val topic = getSite.getTopic(self)
 		if (topic == null) {
 			escape(self.toString)
 		} else {
@@ -76,16 +75,16 @@ class Renderers {
 		}
 	}
 	
-	def static site() {
+	def static getSite() {
 		current.get().site
 	}
 	
 	def static html(String self) {
-		current.get().processor.markdownToHtml(self, new SiteLinkRenderer(site))
+		current.get().processor.markdownToHtml(self, new SiteLinkRenderer(getSite))
 	}
 		
 	def static dispatch String href(Topic self, String path) {
-		'''/site/«path»/«site.name»/topics/«self.name»'''
+		'''/site/«path»/«getSite.name»/topics/«self.name»'''
 	}
 
 	def static dispatch String href(Site self, String path) {
@@ -93,7 +92,7 @@ class Renderers {
 	}
 	
 	def static dispatch String href(EClass self, String path) {
-		'''/site/«path»/«site.name»/types/«self.instanceClassName»'''
+		'''/site/«path»/«getSite.name»/types/«self.instanceClassName»'''
 	}
 	
 	def static dispatch String href(Topic self) {

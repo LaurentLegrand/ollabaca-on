@@ -30,7 +30,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory
   {
     try
     {
-      ModelFactory theModelFactory = (ModelFactory)EPackage.Registry.INSTANCE.getEFactory("org.ollabaca.on"); 
+      ModelFactory theModelFactory = (ModelFactory)EPackage.Registry.INSTANCE.getEFactory(ModelPackage.eNS_URI);
       if (theModelFactory != null)
       {
         return theModelFactory;
