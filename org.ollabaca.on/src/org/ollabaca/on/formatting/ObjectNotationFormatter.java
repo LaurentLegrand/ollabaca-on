@@ -35,7 +35,7 @@ public class ObjectNotationFormatter extends AbstractDeclarativeFormatter {
 			c.setNoSpace().after(keyword);
 		}
 
-		for (Keyword keyword : f.findKeywords("@title", "@abstract", "@doc", "@see")) {
+		for (Keyword keyword : f.findKeywords("@title", "@abstract", "@doc", "@see", "@tag")) {
 			c.setLinewrap(1, 1, 2).before(keyword);
 			c.setSpace(" ").after(keyword);
 		}
@@ -44,6 +44,7 @@ public class ObjectNotationFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getAbstractAssignment_2_1());
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getDocumentationAssignment_3_1());
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getSeeAssignment_4_1());
+		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getTagsAssignment_5_1());
 
 		for (Pair<Keyword, Keyword> pair : f.findKeywordPairs("{", "}")) {
 			c.setIndentation(pair.getFirst(), pair.getSecond());
