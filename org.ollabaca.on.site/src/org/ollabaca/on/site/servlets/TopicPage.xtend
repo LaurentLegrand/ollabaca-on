@@ -41,7 +41,7 @@ class TopicPage extends SitePage {
 		'''
 		<article class="instance «topic.target.eClass.name»">
 			<a id="«topic.name»"></a>
-			<h1>«topic.title»</h1>
+			<h1>«topic.title.html»</h1>
 			
 			
 				<section class="main">
@@ -64,7 +64,7 @@ class TopicPage extends SitePage {
 			«FOR e: topic.ancestors»
 				<li>«e.link» <span class="divider">/</span></li>
 			«ENDFOR»
-			<li class="active">«topic.title.escape»</li>
+			<li class="active">«topic.title.html»</li>
 		</ul>
 		'''
 	}
