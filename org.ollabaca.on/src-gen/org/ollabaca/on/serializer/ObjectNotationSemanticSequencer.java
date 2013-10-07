@@ -216,6 +216,7 @@ public class ObjectNotationSemanticSequencer extends AbstractDelegatingSemanticS
 	 *         title=MY_STRING? 
 	 *         abstract=MY_STRING? 
 	 *         documentation=MY_STRING? 
+	 *         abbr=ID? 
 	 *         see+=[Instance|FQN]* 
 	 *         tags+=ID* 
 	 *         name=ID? 
@@ -290,7 +291,7 @@ public class ObjectNotationSemanticSequencer extends AbstractDelegatingSemanticS
 	
 	/**
 	 * Constraint:
-	 *     (imports+=Import+ container=Container? instances+=Instance+)
+	 *     (imports+=Import+ parent=[Instance|FQN]? container=Container? instances+=Instance+)
 	 */
 	protected void sequence_Unit(EObject context, Unit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

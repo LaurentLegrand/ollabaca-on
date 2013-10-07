@@ -12,6 +12,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.ollabaca.on.model.Container;
 import org.ollabaca.on.model.Instance;
 import org.ollabaca.on.model.ModelPackage;
+import org.ollabaca.on.model.Unit;
 import org.ollabaca.on.util.Units;
 
 public class QualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider implements IQualifiedNameConverter {
@@ -27,12 +28,18 @@ public class QualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvid
 		/*
 		 * Verify that the container 
 		 */
-		Container container = units.getUnit(self).getContainer();
-		if (container != null) {
-			List<INode> nodes = NodeModelUtils.findNodesForFeature(container, ModelPackage.Literals.CONTAINER__INSTANCE);			
-			if (nodes.size() != 0) {
-				list.addAll(0, this.parse(nodes.get(0).getText()));
-			}
+//		Container container = units.getUnit(self).getContainer();
+//		if (container != null) {
+//			List<INode> nodes = NodeModelUtils.findNodesForFeature(container, ModelPackage.Literals.CONTAINER__INSTANCE);			
+//			if (nodes.size() != 0) {
+//				list.addAll(0, this.parse(nodes.get(0).getText()));
+//			}
+//		}
+		
+		Unit unit = units.getUnit(self);
+		List<INode> nodes = NodeModelUtils.findNodesForFeature(unit, ModelPackage.Literals.UNIT__PARENT);
+		if (nodes.size() != 0) {
+			list.addAll(0, this.parse(nodes.get(0).getText()));
 		}
 		
 		QualifiedName qn = QualifiedName.create(list);

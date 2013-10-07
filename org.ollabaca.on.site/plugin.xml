@@ -20,4 +20,10 @@
             class="org.ollabaca.on.site.graph.GraphContentProvider">
       </provider>
    </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="org.ollabaca.on.site.Startup">
+      </startup>
+   </extension>
 </plugin>

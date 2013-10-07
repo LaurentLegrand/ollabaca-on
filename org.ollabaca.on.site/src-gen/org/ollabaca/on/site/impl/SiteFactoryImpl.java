@@ -65,6 +65,7 @@ public class SiteFactoryImpl extends EFactoryImpl implements SiteFactory
     switch (eClass.getClassifierID())
     {
       case SitePackage.TAG: return createTag();
+      case SitePackage.ABBREVIATION: return createAbbreviation();
       case SitePackage.SITE: return createSite();
       case SitePackage.TOPIC: return createTopic();
       default:
@@ -81,6 +82,17 @@ public class SiteFactoryImpl extends EFactoryImpl implements SiteFactory
   {
     TagImpl tag = new TagImpl();
     return tag;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Abbreviation createAbbreviation()
+  {
+    AbbreviationImpl abbreviation = new AbbreviationImpl();
+    return abbreviation;
   }
 
   /**

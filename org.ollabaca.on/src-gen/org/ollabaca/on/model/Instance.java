@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.ollabaca.on.model.Instance#getTitle <em>Title</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.Instance#getAbbr <em>Abbr</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getSee <em>See</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getName <em>Name</em>}</li>
@@ -106,6 +107,32 @@ public interface Instance extends Value
    * @generated
    */
   void setDocumentation(String value);
+
+  /**
+   * Returns the value of the '<em><b>Abbr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Abbr</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Abbr</em>' attribute.
+   * @see #setAbbr(String)
+   * @see org.ollabaca.on.model.ModelPackage#getInstance_Abbr()
+   * @model
+   * @generated
+   */
+  String getAbbr();
+
+  /**
+   * Sets the value of the '{@link org.ollabaca.on.model.Instance#getAbbr <em>Abbr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Abbr</em>' attribute.
+   * @see #getAbbr()
+   * @generated
+   */
+  void setAbbr(String value);
 
   /**
    * Returns the value of the '<em><b>See</b></em>' reference list.

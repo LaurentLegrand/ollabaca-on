@@ -18,12 +18,21 @@ class Tag extends Named {
 	
 }
 
+class Abbreviation extends Named {
+	
+	refers Topic[] topics opposite abbreviation
+	
+	refers Site site opposite abbreviations
+}
+
 class Site extends Named {
 	
 	contains Topic[] topics
 	
 	contains Tag[] tags opposite site
-	
+
+	contains Abbreviation[] abbreviations opposite site	
+
 	/**
 	 * Get or create a tag with a given name
 	 */
@@ -36,6 +45,20 @@ class Site extends Named {
 			tags += tag
 		}
 		return tag
+	}
+	
+	/**
+	 * Get or create a tag with a given name
+	 */
+	op Abbreviation getOrCreateAbbr(String name) {
+		val n = name // param is not final
+		var Abbreviation abbreviation = abbreviations.findFirst([it.name == n])
+		if (abbreviation == null) {
+			abbreviation = SiteFactory::eINSTANCE.createAbbreviation
+			abbreviation.name = name
+			abbreviations += abbreviation
+		}
+		return abbreviation
 	}
 	
 	op Topic getTopic(String name) {
@@ -77,6 +100,8 @@ class Topic extends Named {
 	refers Topic[] topics opposite parent	
 	
 	refers Topic[] see
+	
+	refers Abbreviation abbreviation opposite topics
 	
 	
 	/**

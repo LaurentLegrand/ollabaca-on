@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ollabaca.on.site.Topic#getParent <em>Parent</em>}</li>
  *   <li>{@link org.ollabaca.on.site.Topic#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.Topic#getSee <em>See</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.Topic#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.ollabaca.on.site.Topic#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
@@ -188,6 +189,34 @@ public interface Topic extends Named
    * @generated
    */
   EList<Topic> getSee();
+
+  /**
+   * Returns the value of the '<em><b>Abbreviation</b></em>' reference.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.site.Abbreviation#getTopics <em>Topics</em>}'.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Abbreviation</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Abbreviation</em>' reference.
+   * @see #setAbbreviation(Abbreviation)
+   * @see org.ollabaca.on.site.SitePackage#getTopic_Abbreviation()
+   * @see org.ollabaca.on.site.Abbreviation#getTopics
+   * @model opposite="topics"
+   * @generated
+   */
+  Abbreviation getAbbreviation();
+
+  /**
+   * Sets the value of the '{@link org.ollabaca.on.site.Topic#getAbbreviation <em>Abbreviation</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Abbreviation</em>' reference.
+   * @see #getAbbreviation()
+   * @generated
+   */
+  void setAbbreviation(Abbreviation value);
 
   /**
    * Returns the value of the '<em><b>Target</b></em>' reference.

@@ -23,17 +23,21 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cContainerAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cContainerContainerParserRuleCall_1_0 = (RuleCall)cContainerAssignment_1.eContents().get(0);
-		private final Assignment cInstancesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInstancesInstanceParserRuleCall_2_0 = (RuleCall)cInstancesAssignment_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cParentKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cParentAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cParentInstanceCrossReference_1_1_0 = (CrossReference)cParentAssignment_1_1.eContents().get(0);
+		private final RuleCall cParentInstanceFQNTerminalRuleCall_1_1_0_1 = (RuleCall)cParentInstanceCrossReference_1_1_0.eContents().get(1);
+		private final Assignment cContainerAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cContainerContainerParserRuleCall_2_0 = (RuleCall)cContainerAssignment_2.eContents().get(0);
+		private final Assignment cInstancesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cInstancesInstanceParserRuleCall_3_0 = (RuleCall)cInstancesAssignment_3.eContents().get(0);
 		
 		//Unit:
-		//
-		//	imports+=Import+ container=Container? instances+=Instance+;
+		//	imports+=Import+ ("parent" parent=[Instance|FQN])? container=Container? instances+=Instance+;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import+ container=Container? instances+=Instance+
+		//imports+=Import+ ("parent" parent=[Instance|FQN])? container=Container? instances+=Instance+
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import+
@@ -42,17 +46,32 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
+		//("parent" parent=[Instance|FQN])?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"parent"
+		public Keyword getParentKeyword_1_0() { return cParentKeyword_1_0; }
+
+		//parent=[Instance|FQN]
+		public Assignment getParentAssignment_1_1() { return cParentAssignment_1_1; }
+
+		//[Instance|FQN]
+		public CrossReference getParentInstanceCrossReference_1_1_0() { return cParentInstanceCrossReference_1_1_0; }
+
+		//FQN
+		public RuleCall getParentInstanceFQNTerminalRuleCall_1_1_0_1() { return cParentInstanceFQNTerminalRuleCall_1_1_0_1; }
+
 		//container=Container?
-		public Assignment getContainerAssignment_1() { return cContainerAssignment_1; }
+		public Assignment getContainerAssignment_2() { return cContainerAssignment_2; }
 
 		//Container
-		public RuleCall getContainerContainerParserRuleCall_1_0() { return cContainerContainerParserRuleCall_1_0; }
+		public RuleCall getContainerContainerParserRuleCall_2_0() { return cContainerContainerParserRuleCall_2_0; }
 
 		//instances+=Instance+
-		public Assignment getInstancesAssignment_2() { return cInstancesAssignment_2; }
+		public Assignment getInstancesAssignment_3() { return cInstancesAssignment_3; }
 
 		//Instance
-		public RuleCall getInstancesInstanceParserRuleCall_2_0() { return cInstancesInstanceParserRuleCall_2_0; }
+		public RuleCall getInstancesInstanceParserRuleCall_3_0() { return cInstancesInstanceParserRuleCall_3_0; }
 	}
 
 	public class ValueElements extends AbstractParserRuleElementFinder {
@@ -64,7 +83,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLiteralParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Value:
-		//
 		//	Instance | Array | InstanceRef | Literal;
 		public ParserRule getRule() { return rule; }
 
@@ -94,7 +112,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnumValueParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Literal:
-		//
 		//	StringValue | BooleanValue | NullValue | NumberValue | EnumValue;
 		public ParserRule getRule() { return rule; }
 
@@ -125,7 +142,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameMY_STRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Import:
-		//
 		//	"import" name=MY_STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -154,7 +170,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFeatureIDTerminalRuleCall_3_0 = (RuleCall)cFeatureAssignment_3.eContents().get(0);
 		
 		//Container:
-		//
 		//	"container" instance=[Instance|FQN] "#" feature=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -200,36 +215,37 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDocumentationAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cDocumentationMY_STRINGTerminalRuleCall_3_1_0 = (RuleCall)cDocumentationAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cSeeKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cSeeAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cSeeInstanceCrossReference_4_1_0 = (CrossReference)cSeeAssignment_4_1.eContents().get(0);
-		private final RuleCall cSeeInstanceFQNTerminalRuleCall_4_1_0_1 = (RuleCall)cSeeInstanceCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cAbbrKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAbbrAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAbbrIDTerminalRuleCall_4_1_0 = (RuleCall)cAbbrAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cTagKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cTagsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cTagsIDTerminalRuleCall_5_1_0 = (RuleCall)cTagsAssignment_5_1.eContents().get(0);
+		private final Keyword cSeeKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cSeeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cSeeInstanceCrossReference_5_1_0 = (CrossReference)cSeeAssignment_5_1.eContents().get(0);
+		private final RuleCall cSeeInstanceFQNTerminalRuleCall_5_1_0_1 = (RuleCall)cSeeInstanceCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Assignment cNameAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_6_0_0 = (RuleCall)cNameAssignment_6_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Keyword cNewKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cTypeIDTerminalRuleCall_8_0 = (RuleCall)cTypeAssignment_8.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cSlotsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cSlotsSlotParserRuleCall_10_0 = (RuleCall)cSlotsAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cTagKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cTagsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cTagsIDTerminalRuleCall_6_1_0 = (RuleCall)cTagsAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Assignment cNameAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_7_0_0 = (RuleCall)cNameAssignment_7_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Keyword cNewKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cTypeIDTerminalRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cSlotsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cSlotsSlotParserRuleCall_11_0 = (RuleCall)cSlotsAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Instance:
-		//
-		//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
-		//
-		//	see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+		//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
+		//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
-		//
-		//see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
+		//{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
+		//abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Instance}
@@ -271,65 +287,77 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		//MY_STRING
 		public RuleCall getDocumentationMY_STRINGTerminalRuleCall_3_1_0() { return cDocumentationMY_STRINGTerminalRuleCall_3_1_0; }
 
-		//("@see" see+=[Instance|FQN])*
+		//("@abbr" abbr=ID)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"@see"
-		public Keyword getSeeKeyword_4_0() { return cSeeKeyword_4_0; }
+		//"@abbr"
+		public Keyword getAbbrKeyword_4_0() { return cAbbrKeyword_4_0; }
 
-		//see+=[Instance|FQN]
-		public Assignment getSeeAssignment_4_1() { return cSeeAssignment_4_1; }
+		//abbr=ID
+		public Assignment getAbbrAssignment_4_1() { return cAbbrAssignment_4_1; }
 
-		//[Instance|FQN]
-		public CrossReference getSeeInstanceCrossReference_4_1_0() { return cSeeInstanceCrossReference_4_1_0; }
+		//ID
+		public RuleCall getAbbrIDTerminalRuleCall_4_1_0() { return cAbbrIDTerminalRuleCall_4_1_0; }
 
-		//FQN
-		public RuleCall getSeeInstanceFQNTerminalRuleCall_4_1_0_1() { return cSeeInstanceFQNTerminalRuleCall_4_1_0_1; }
-
-		//("@tag" tags+=ID)*
+		//("@see" see+=[Instance|FQN])*
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"@tag"
-		public Keyword getTagKeyword_5_0() { return cTagKeyword_5_0; }
+		//"@see"
+		public Keyword getSeeKeyword_5_0() { return cSeeKeyword_5_0; }
 
-		//tags+=ID
-		public Assignment getTagsAssignment_5_1() { return cTagsAssignment_5_1; }
+		//see+=[Instance|FQN]
+		public Assignment getSeeAssignment_5_1() { return cSeeAssignment_5_1; }
 
-		//ID
-		public RuleCall getTagsIDTerminalRuleCall_5_1_0() { return cTagsIDTerminalRuleCall_5_1_0; }
+		//[Instance|FQN]
+		public CrossReference getSeeInstanceCrossReference_5_1_0() { return cSeeInstanceCrossReference_5_1_0; }
 
-		//(name=ID "=")?
+		//FQN
+		public RuleCall getSeeInstanceFQNTerminalRuleCall_5_1_0_1() { return cSeeInstanceFQNTerminalRuleCall_5_1_0_1; }
+
+		//("@tag" tags+=ID)*
 		public Group getGroup_6() { return cGroup_6; }
 
-		//name=ID
-		public Assignment getNameAssignment_6_0() { return cNameAssignment_6_0; }
+		//"@tag"
+		public Keyword getTagKeyword_6_0() { return cTagKeyword_6_0; }
+
+		//tags+=ID
+		public Assignment getTagsAssignment_6_1() { return cTagsAssignment_6_1; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_6_0_0() { return cNameIDTerminalRuleCall_6_0_0; }
+		public RuleCall getTagsIDTerminalRuleCall_6_1_0() { return cTagsIDTerminalRuleCall_6_1_0; }
+
+		//(name=ID "=")?
+		public Group getGroup_7() { return cGroup_7; }
+
+		//name=ID
+		public Assignment getNameAssignment_7_0() { return cNameAssignment_7_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_7_0_0() { return cNameIDTerminalRuleCall_7_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_6_1() { return cEqualsSignKeyword_6_1; }
+		public Keyword getEqualsSignKeyword_7_1() { return cEqualsSignKeyword_7_1; }
 
 		//"new"
-		public Keyword getNewKeyword_7() { return cNewKeyword_7; }
+		public Keyword getNewKeyword_8() { return cNewKeyword_8; }
 
 		//type=ID
-		public Assignment getTypeAssignment_8() { return cTypeAssignment_8; }
+		public Assignment getTypeAssignment_9() { return cTypeAssignment_9; }
 
 		//ID
-		public RuleCall getTypeIDTerminalRuleCall_8_0() { return cTypeIDTerminalRuleCall_8_0; }
+		public RuleCall getTypeIDTerminalRuleCall_9_0() { return cTypeIDTerminalRuleCall_9_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		public Keyword getLeftCurlyBracketKeyword_10() { return cLeftCurlyBracketKeyword_10; }
 
 		//slots+=Slot*
-		public Assignment getSlotsAssignment_10() { return cSlotsAssignment_10; }
+		public Assignment getSlotsAssignment_11() { return cSlotsAssignment_11; }
 
 		//Slot
-		public RuleCall getSlotsSlotParserRuleCall_10_0() { return cSlotsSlotParserRuleCall_10_0; }
+		public RuleCall getSlotsSlotParserRuleCall_11_0() { return cSlotsSlotParserRuleCall_11_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class SlotElements extends AbstractParserRuleElementFinder {
@@ -343,7 +371,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueValueParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//Slot:
-		//
 		//	{Slot} name=ID "=" value=Value;
 		public ParserRule getRule() { return rule; }
 
@@ -378,14 +405,11 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Array:
-		//
 		//	"[" //( "," value+=Value)*  
-		//
 		//	value+=Value+ "]";
 		public ParserRule getRule() { return rule; }
 
 		//"[" //( "," value+=Value)*  
-		//
 		//value+=Value+ "]"
 		public Group getGroup() { return cGroup; }
 
@@ -393,7 +417,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
 		////( "," value+=Value)*  
-		//
 		//value+=Value+
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
@@ -410,7 +433,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueMY_STRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//StringValue:
-		//
 		//	value=MY_STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -430,7 +452,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cValueFalseKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
 		
 		//BooleanValue:
-		//
 		//	value="true" | value="false";
 		public ParserRule getRule() { return rule; }
 
@@ -457,7 +478,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNullKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//NullValue:
-		//
 		//	{NullValue} "null";
 		public ParserRule getRule() { return rule; }
 
@@ -477,7 +497,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueNUMBERTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//NumberValue:
-		//
 		//	value=NUMBER;
 		public ParserRule getRule() { return rule; }
 
@@ -495,7 +514,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueInstanceFQNTerminalRuleCall_0_1 = (RuleCall)cValueInstanceCrossReference_0.eContents().get(1);
 		
 		//InstanceRef:
-		//
 		//	value=[Instance|FQN];
 		public ParserRule getRule() { return rule; }
 
@@ -517,7 +535,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueIDTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//EnumValue:
-		//
 		//	"#" value=ID;
 		public ParserRule getRule() { return rule; }
 
@@ -541,7 +558,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLONG_STRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//EString returns ecore::EString:
-		//
 		//	STRING | LONG_STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -616,8 +632,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Unit:
-	//
-	//	imports+=Import+ container=Container? instances+=Instance+;
+	//	imports+=Import+ ("parent" parent=[Instance|FQN])? container=Container? instances+=Instance+;
 	public UnitElements getUnitAccess() {
 		return (pUnit != null) ? pUnit : (pUnit = new UnitElements());
 	}
@@ -627,7 +642,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Value:
-	//
 	//	Instance | Array | InstanceRef | Literal;
 	public ValueElements getValueAccess() {
 		return (pValue != null) ? pValue : (pValue = new ValueElements());
@@ -638,7 +652,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Literal:
-	//
 	//	StringValue | BooleanValue | NullValue | NumberValue | EnumValue;
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
@@ -649,7 +662,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import:
-	//
 	//	"import" name=MY_STRING;
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
@@ -660,7 +672,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Container:
-	//
 	//	"container" instance=[Instance|FQN] "#" feature=ID;
 	public ContainerElements getContainerAccess() {
 		return (pContainer != null) ? pContainer : (pContainer = new ContainerElements());
@@ -671,10 +682,8 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Instance:
-	//
-	//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@see"
-	//
-	//	see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+	//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
+	//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 	public InstanceElements getInstanceAccess() {
 		return (pInstance != null) ? pInstance : (pInstance = new InstanceElements());
 	}
@@ -684,7 +693,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Slot:
-	//
 	//	{Slot} name=ID "=" value=Value;
 	public SlotElements getSlotAccess() {
 		return (pSlot != null) ? pSlot : (pSlot = new SlotElements());
@@ -695,9 +703,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Array:
-	//
 	//	"[" //( "," value+=Value)*  
-	//
 	//	value+=Value+ "]";
 	public ArrayElements getArrayAccess() {
 		return (pArray != null) ? pArray : (pArray = new ArrayElements());
@@ -708,7 +714,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringValue:
-	//
 	//	value=MY_STRING;
 	public StringValueElements getStringValueAccess() {
 		return (pStringValue != null) ? pStringValue : (pStringValue = new StringValueElements());
@@ -719,7 +724,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BooleanValue:
-	//
 	//	value="true" | value="false";
 	public BooleanValueElements getBooleanValueAccess() {
 		return (pBooleanValue != null) ? pBooleanValue : (pBooleanValue = new BooleanValueElements());
@@ -730,7 +734,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NullValue:
-	//
 	//	{NullValue} "null";
 	public NullValueElements getNullValueAccess() {
 		return (pNullValue != null) ? pNullValue : (pNullValue = new NullValueElements());
@@ -741,7 +744,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NumberValue:
-	//
 	//	value=NUMBER;
 	public NumberValueElements getNumberValueAccess() {
 		return (pNumberValue != null) ? pNumberValue : (pNumberValue = new NumberValueElements());
@@ -752,7 +754,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InstanceRef:
-	//
 	//	value=[Instance|FQN];
 	public InstanceRefElements getInstanceRefAccess() {
 		return (pInstanceRef != null) ? pInstanceRef : (pInstanceRef = new InstanceRefElements());
@@ -763,7 +764,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EnumValue:
-	//
 	//	"#" value=ID;
 	public EnumValueElements getEnumValueAccess() {
 		return (pEnumValue != null) ? pEnumValue : (pEnumValue = new EnumValueElements());
@@ -774,7 +774,6 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EString returns ecore::EString:
-	//
 	//	STRING | LONG_STRING;
 	public EStringElements getEStringAccess() {
 		return (pEString != null) ? pEString : (pEString = new EStringElements());
@@ -785,81 +784,68 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal MY_STRING:
-	//
 	//	"\"" ("\\\"" | !"\"")* "\"";
 	public TerminalRule getMY_STRINGRule() {
 		return (tMY_STRING != null) ? tMY_STRING : (tMY_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MY_STRING"));
 	} 
 
 	//terminal NUMBER:
-	//
 	//	"0" | "-"? "1".."9" "0".."9"* ("." "0".."9"+)? ("e" ("+" | "-") "1".."9" "0".."9"*)?;
 	public TerminalRule getNUMBERRule() {
 		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
 	} 
 
 	//terminal FQN:
-	//
 	//	("/" ID)*;
 	public TerminalRule getFQNRule() {
 		return (tFQN != null) ? tFQN : (tFQN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FQN"));
 	} 
 
 	////	ID ('/' ID)*;
-	//
 	//terminal ID:
-	//
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9" | "-" | ".")*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
 	//terminal LONG_STRING:
-	//
 	//	"(\""->"\")";
 	public TerminalRule getLONG_STRINGRule() {
 		return (tLONG_STRING != null) ? tLONG_STRING : (tLONG_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONG_STRING"));
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
 		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//
 	//	"/ *"->"* /";
 	public TerminalRule getML_COMMENTRule() {
 		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
 		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
 		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
-	//
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return gaTerminals.getANY_OTHERRule();

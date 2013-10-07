@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.ollabaca.on.model.Unit#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.Unit#getParent <em>Parent</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Unit#getContainer <em>Container</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Unit#getInstances <em>Instances</em>}</li>
  * </ul>
@@ -41,6 +42,32 @@ public interface Unit extends EObject
    * @generated
    */
   EList<Import> getImports();
+
+  /**
+   * Returns the value of the '<em><b>Parent</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Parent</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parent</em>' reference.
+   * @see #setParent(Instance)
+   * @see org.ollabaca.on.model.ModelPackage#getUnit_Parent()
+   * @model
+   * @generated
+   */
+  Instance getParent();
+
+  /**
+   * Sets the value of the '{@link org.ollabaca.on.model.Unit#getParent <em>Parent</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Parent</em>' reference.
+   * @see #getParent()
+   * @generated
+   */
+  void setParent(Instance value);
 
   /**
    * Returns the value of the '<em><b>Container</b></em>' containment reference.

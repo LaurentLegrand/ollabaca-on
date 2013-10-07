@@ -32,6 +32,15 @@ public interface SiteFactory extends EFactory
   Tag createTag();
 
   /**
+   * Returns a new object of class '<em>Abbreviation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abbreviation</em>'.
+   * @generated
+   */
+  Abbreviation createAbbreviation();
+
+  /**
    * Returns a new object of class '<em>Site</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.ollabaca.on.site.Abbreviation;
 import org.ollabaca.on.site.Named;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.SiteFactory;
@@ -39,6 +40,13 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * @generated
    */
   private EClass tagEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass abbreviationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -175,6 +183,36 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAbbreviation()
+  {
+    return abbreviationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbbreviation_Topics()
+  {
+    return (EReference)abbreviationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbbreviation_Site()
+  {
+    return (EReference)abbreviationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSite()
   {
     return siteEClass;
@@ -205,6 +243,16 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSite_Abbreviations()
+  {
+    return (EReference)siteEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EOperation getSite__GetOrCreateTag__String()
   {
     return siteEClass.getEOperations().get(0);
@@ -215,7 +263,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EOperation getSite__GetTopic__String()
+  public EOperation getSite__GetOrCreateAbbr__String()
   {
     return siteEClass.getEOperations().get(1);
   }
@@ -225,7 +273,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EOperation getSite__GetRoots()
+  public EOperation getSite__GetTopic__String()
   {
     return siteEClass.getEOperations().get(2);
   }
@@ -235,9 +283,19 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EOperation getSite__GetTopic__EObject()
+  public EOperation getSite__GetRoots()
   {
     return siteEClass.getEOperations().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EOperation getSite__GetTopic__EObject()
+  {
+    return siteEClass.getEOperations().get(4);
   }
 
   /**
@@ -325,9 +383,19 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTopic_Target()
+  public EReference getTopic_Abbreviation()
   {
     return (EReference)topicEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTopic_Target()
+  {
+    return (EReference)topicEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -397,10 +465,16 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     createEReference(tagEClass, TAG__TOPICS);
     createEReference(tagEClass, TAG__SITE);
 
+    abbreviationEClass = createEClass(ABBREVIATION);
+    createEReference(abbreviationEClass, ABBREVIATION__TOPICS);
+    createEReference(abbreviationEClass, ABBREVIATION__SITE);
+
     siteEClass = createEClass(SITE);
     createEReference(siteEClass, SITE__TOPICS);
     createEReference(siteEClass, SITE__TAGS);
+    createEReference(siteEClass, SITE__ABBREVIATIONS);
     createEOperation(siteEClass, SITE___GET_OR_CREATE_TAG__STRING);
+    createEOperation(siteEClass, SITE___GET_OR_CREATE_ABBR__STRING);
     createEOperation(siteEClass, SITE___GET_TOPIC__STRING);
     createEOperation(siteEClass, SITE___GET_ROOTS);
     createEOperation(siteEClass, SITE___GET_TOPIC__EOBJECT);
@@ -413,6 +487,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     createEReference(topicEClass, TOPIC__PARENT);
     createEReference(topicEClass, TOPIC__TOPICS);
     createEReference(topicEClass, TOPIC__SEE);
+    createEReference(topicEClass, TOPIC__ABBREVIATION);
     createEReference(topicEClass, TOPIC__TARGET);
     createEOperation(topicEClass, TOPIC___IS_ANONYMOUS);
     createEOperation(topicEClass, TOPIC___GET_ANCESTORS_AND_SELF);
@@ -452,6 +527,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
 
     // Add supertypes to classes
     tagEClass.getESuperTypes().add(this.getNamed());
+    abbreviationEClass.getESuperTypes().add(this.getNamed());
     siteEClass.getESuperTypes().add(this.getNamed());
     topicEClass.getESuperTypes().add(this.getNamed());
 
@@ -463,11 +539,19 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     initEReference(getTag_Topics(), this.getTopic(), this.getTopic_Tags(), "topics", null, 0, -1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTag_Site(), this.getSite(), this.getSite_Tags(), "site", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(abbreviationEClass, Abbreviation.class, "Abbreviation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAbbreviation_Topics(), this.getTopic(), this.getTopic_Abbreviation(), "topics", null, 0, -1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbbreviation_Site(), this.getSite(), this.getSite_Abbreviations(), "site", null, 0, 1, Abbreviation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSite_Topics(), this.getTopic(), null, "topics", null, 0, -1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSite_Tags(), this.getTag(), this.getTag_Site(), "tags", null, 0, -1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSite_Abbreviations(), this.getAbbreviation(), this.getAbbreviation_Site(), "abbreviations", null, 0, -1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     EOperation op = initEOperation(getSite__GetOrCreateTag__String(), this.getTag(), "getOrCreateTag", 0, 1, !IS_UNIQUE, IS_ORDERED);
+    addEParameter(op, theEcorePackage.getEString(), "name", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
+    op = initEOperation(getSite__GetOrCreateAbbr__String(), this.getAbbreviation(), "getOrCreateAbbr", 0, 1, !IS_UNIQUE, IS_ORDERED);
     addEParameter(op, theEcorePackage.getEString(), "name", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
     op = initEOperation(getSite__GetTopic__String(), this.getTopic(), "getTopic", 0, 1, !IS_UNIQUE, IS_ORDERED);
@@ -486,6 +570,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     initEReference(getTopic_Parent(), this.getTopic(), this.getTopic_Topics(), "parent", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopic_Topics(), this.getTopic(), this.getTopic_Parent(), "topics", null, 0, -1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopic_See(), this.getTopic(), null, "see", null, 0, -1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTopic_Abbreviation(), this.getAbbreviation(), this.getAbbreviation_Topics(), "abbreviation", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopic_Target(), theEcorePackage.getEObject(), null, "target", null, 0, 1, Topic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEOperation(getTopic__IsAnonymous(), theEcorePackage.getEBoolean(), "isAnonymous", 0, 1, !IS_UNIQUE, IS_ORDERED);

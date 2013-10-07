@@ -28,6 +28,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
+import org.ollabaca.on.site.Abbreviation;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.SiteFactory;
 import org.ollabaca.on.site.SitePackage;
@@ -43,6 +44,7 @@ import org.ollabaca.on.site.Topic;
  * <ul>
  *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getTags <em>Tags</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getAbbreviations <em>Abbreviations</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,6 +71,16 @@ public class SiteImpl extends NamedImpl implements Site
    * @ordered
    */
   protected EList<Tag> tags;
+
+  /**
+   * The cached value of the '{@link #getAbbreviations() <em>Abbreviations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbbreviations()
+   * @generated
+   * @ordered
+   */
+  protected EList<Abbreviation> abbreviations;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,6 +136,20 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Abbreviation> getAbbreviations()
+  {
+    if (abbreviations == null)
+    {
+      abbreviations = new EObjectContainmentWithInverseEList<Abbreviation>(Abbreviation.class, this, SitePackage.SITE__ABBREVIATIONS, SitePackage.ABBREVIATION__SITE);
+    }
+    return abbreviations;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Tag getOrCreateTag(final String name)
   {
     final String n = name;
@@ -131,13 +157,13 @@ public class SiteImpl extends NamedImpl implements Site
     EList<Tag> _tags = _this.getTags();
     final Function1<Tag,Boolean> _function = new Function1<Tag,Boolean>()
     {
-        public Boolean apply(final Tag it)
-        {
-          String _name = it.getName();
-          boolean _equals = Objects.equal(_name, n);
-          return Boolean.valueOf(_equals);
-        }
-      };
+      public Boolean apply(final Tag it)
+      {
+        String _name = it.getName();
+        boolean _equals = Objects.equal(_name, n);
+        return Boolean.valueOf(_equals);
+      }
+    };
     Tag tag = IterableExtensions.<Tag>findFirst(_tags, _function);
     boolean _equals = Objects.equal(tag, null);
     if (_equals)
@@ -157,6 +183,39 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
+  public Abbreviation getOrCreateAbbr(final String name)
+  {
+    final String n = name;
+    Site _this = this;
+    EList<Abbreviation> _abbreviations = _this.getAbbreviations();
+    final Function1<Abbreviation,Boolean> _function = new Function1<Abbreviation,Boolean>()
+    {
+      public Boolean apply(final Abbreviation it)
+      {
+        String _name = it.getName();
+        boolean _equals = Objects.equal(_name, n);
+        return Boolean.valueOf(_equals);
+      }
+    };
+    Abbreviation abbreviation = IterableExtensions.<Abbreviation>findFirst(_abbreviations, _function);
+    boolean _equals = Objects.equal(abbreviation, null);
+    if (_equals)
+    {
+      Abbreviation _createAbbreviation = SiteFactory.eINSTANCE.createAbbreviation();
+      abbreviation = _createAbbreviation;
+      abbreviation.setName(name);
+      Site _this_1 = this;
+      EList<Abbreviation> _abbreviations_1 = _this_1.getAbbreviations();
+      _abbreviations_1.add(abbreviation);
+    }
+    return abbreviation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Topic getTopic(final String name)
   {
     Topic _xblockexpression = null;
@@ -166,13 +225,13 @@ public class SiteImpl extends NamedImpl implements Site
       EList<Topic> _topics = _this.getTopics();
       final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
       {
-          public Boolean apply(final Topic it)
-          {
-            String _name = it.getName();
-            boolean _equals = Objects.equal(_name, n);
-            return Boolean.valueOf(_equals);
-          }
-        };
+        public Boolean apply(final Topic it)
+        {
+          String _name = it.getName();
+          boolean _equals = Objects.equal(_name, n);
+          return Boolean.valueOf(_equals);
+        }
+      };
       Topic _findFirst = IterableExtensions.<Topic>findFirst(_topics, _function);
       _xblockexpression = (_findFirst);
     }
@@ -190,23 +249,23 @@ public class SiteImpl extends NamedImpl implements Site
     EList<Topic> _topics = _this.getTopics();
     final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
     {
-        public Boolean apply(final Topic it)
+      public Boolean apply(final Topic it)
+      {
+        boolean _and = false;
+        Topic _parent = it.getParent();
+        boolean _equals = Objects.equal(_parent, null);
+        if (!_equals)
         {
-          boolean _and = false;
-          Topic _parent = it.getParent();
-          boolean _equals = Objects.equal(_parent, null);
-          if (!_equals)
-          {
-            _and = false;
-          } else
-          {
-            boolean _isAnonymous = it.isAnonymous();
-            boolean _not = (!_isAnonymous);
-            _and = (_equals && _not);
-          }
-          return Boolean.valueOf(_and);
+          _and = false;
+        } else
+        {
+          boolean _isAnonymous = it.isAnonymous();
+          boolean _not = (!_isAnonymous);
+          _and = (_equals && _not);
         }
-      };
+        return Boolean.valueOf(_and);
+      }
+    };
     Iterable<Topic> _filter = IterableExtensions.<Topic>filter(_topics, _function);
     List<Topic> _list = IterableExtensions.<Topic>toList(_filter);
     BasicEList<Topic> _basicEList = new BasicEList<Topic>(_list);
@@ -225,13 +284,13 @@ public class SiteImpl extends NamedImpl implements Site
     EList<Topic> _topics = _this.getTopics();
     final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
     {
-        public Boolean apply(final Topic it)
-        {
-          EObject _target = it.getTarget();
-          boolean _equals = Objects.equal(_target, t);
-          return Boolean.valueOf(_equals);
-        }
-      };
+      public Boolean apply(final Topic it)
+      {
+        EObject _target = it.getTarget();
+        boolean _equals = Objects.equal(_target, t);
+        return Boolean.valueOf(_equals);
+      }
+    };
     return IterableExtensions.<Topic>findFirst(_topics, _function);
   }
 
@@ -248,6 +307,8 @@ public class SiteImpl extends NamedImpl implements Site
     {
       case SitePackage.SITE__TAGS:
         return ((InternalEList<InternalEObject>)(InternalEList<?>)getTags()).basicAdd(otherEnd, msgs);
+      case SitePackage.SITE__ABBREVIATIONS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getAbbreviations()).basicAdd(otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
   }
@@ -266,6 +327,8 @@ public class SiteImpl extends NamedImpl implements Site
         return ((InternalEList<?>)getTopics()).basicRemove(otherEnd, msgs);
       case SitePackage.SITE__TAGS:
         return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
+      case SitePackage.SITE__ABBREVIATIONS:
+        return ((InternalEList<?>)getAbbreviations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -284,6 +347,8 @@ public class SiteImpl extends NamedImpl implements Site
         return getTopics();
       case SitePackage.SITE__TAGS:
         return getTags();
+      case SitePackage.SITE__ABBREVIATIONS:
+        return getAbbreviations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -307,6 +372,10 @@ public class SiteImpl extends NamedImpl implements Site
         getTags().clear();
         getTags().addAll((Collection<? extends Tag>)newValue);
         return;
+      case SitePackage.SITE__ABBREVIATIONS:
+        getAbbreviations().clear();
+        getAbbreviations().addAll((Collection<? extends Abbreviation>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -327,6 +396,9 @@ public class SiteImpl extends NamedImpl implements Site
       case SitePackage.SITE__TAGS:
         getTags().clear();
         return;
+      case SitePackage.SITE__ABBREVIATIONS:
+        getAbbreviations().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -345,6 +417,8 @@ public class SiteImpl extends NamedImpl implements Site
         return topics != null && !topics.isEmpty();
       case SitePackage.SITE__TAGS:
         return tags != null && !tags.isEmpty();
+      case SitePackage.SITE__ABBREVIATIONS:
+        return abbreviations != null && !abbreviations.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -361,6 +435,8 @@ public class SiteImpl extends NamedImpl implements Site
     {
       case SitePackage.SITE___GET_OR_CREATE_TAG__STRING:
         return getOrCreateTag((String)arguments.get(0));
+      case SitePackage.SITE___GET_OR_CREATE_ABBR__STRING:
+        return getOrCreateAbbr((String)arguments.get(0));
       case SitePackage.SITE___GET_TOPIC__STRING:
         return getTopic((String)arguments.get(0));
       case SitePackage.SITE___GET_ROOTS:

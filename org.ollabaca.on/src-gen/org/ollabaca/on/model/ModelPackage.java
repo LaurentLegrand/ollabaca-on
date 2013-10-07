@@ -76,13 +76,22 @@ public interface ModelPackage extends EPackage
   int UNIT__IMPORTS = 0;
 
   /**
+   * The feature id for the '<em><b>Parent</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIT__PARENT = 1;
+
+  /**
    * The feature id for the '<em><b>Container</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UNIT__CONTAINER = 1;
+  int UNIT__CONTAINER = 2;
 
   /**
    * The feature id for the '<em><b>Instances</b></em>' containment reference list.
@@ -91,7 +100,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIT__INSTANCES = 2;
+  int UNIT__INSTANCES = 3;
 
   /**
    * The number of structural features of the '<em>Unit</em>' class.
@@ -100,7 +109,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIT_FEATURE_COUNT = 3;
+  int UNIT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.model.impl.ValueImpl <em>Value</em>}' class.
@@ -243,13 +252,22 @@ public interface ModelPackage extends EPackage
   int INSTANCE__DOCUMENTATION = VALUE_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Abbr</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE__ABBR = VALUE_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>See</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE__SEE = VALUE_FEATURE_COUNT + 3;
+  int INSTANCE__SEE = VALUE_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Tags</b></em>' attribute list.
@@ -258,7 +276,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__TAGS = VALUE_FEATURE_COUNT + 4;
+  int INSTANCE__TAGS = VALUE_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -267,7 +285,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 5;
+  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -276,7 +294,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 6;
+  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -285,7 +303,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 7;
+  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Instance</em>' class.
@@ -294,7 +312,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 8;
+  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.model.impl.SlotImpl <em>Slot</em>}' class.
@@ -543,6 +561,17 @@ public interface ModelPackage extends EPackage
   EReference getUnit_Imports();
 
   /**
+   * Returns the meta object for the reference '{@link org.ollabaca.on.model.Unit#getParent <em>Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Parent</em>'.
+   * @see org.ollabaca.on.model.Unit#getParent()
+   * @see #getUnit()
+   * @generated
+   */
+  EReference getUnit_Parent();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.ollabaca.on.model.Unit#getContainer <em>Container</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -679,6 +708,17 @@ public interface ModelPackage extends EPackage
    * @generated
    */
   EAttribute getInstance_Documentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.model.Instance#getAbbr <em>Abbr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Abbr</em>'.
+   * @see org.ollabaca.on.model.Instance#getAbbr()
+   * @see #getInstance()
+   * @generated
+   */
+  EAttribute getInstance_Abbr();
 
   /**
    * Returns the meta object for the reference list '{@link org.ollabaca.on.model.Instance#getSee <em>See</em>}'.
@@ -945,6 +985,14 @@ public interface ModelPackage extends EPackage
     EReference UNIT__IMPORTS = eINSTANCE.getUnit_Imports();
 
     /**
+     * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNIT__PARENT = eINSTANCE.getUnit_Parent();
+
+    /**
      * The meta object literal for the '<em><b>Container</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1057,6 +1105,14 @@ public interface ModelPackage extends EPackage
      * @generated
      */
     EAttribute INSTANCE__DOCUMENTATION = eINSTANCE.getInstance_Documentation();
+
+    /**
+     * The meta object literal for the '<em><b>Abbr</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCE__ABBR = eINSTANCE.getInstance_Abbr();
 
     /**
      * The meta object literal for the '<em><b>See</b></em>' reference list feature.

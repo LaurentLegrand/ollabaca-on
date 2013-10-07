@@ -22,13 +22,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalObjectNotationParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MY_STRING", "RULE_FQN", "RULE_ID", "RULE_NUMBER", "RULE_LONG_STRING", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'container'", "'#'", "'new'", "'{'", "'}'", "'@title'", "'@abstract'", "'@doc'", "'@see'", "'@tag'", "'='", "'['", "']'", "'null'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_FQN", "RULE_MY_STRING", "RULE_ID", "RULE_NUMBER", "RULE_LONG_STRING", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'parent'", "'import'", "'container'", "'#'", "'new'", "'{'", "'}'", "'@title'", "'@abstract'", "'@doc'", "'@abbr'", "'@see'", "'@tag'", "'='", "'['", "']'", "'null'", "'true'", "'false'"
     };
     public static final int RULE_ID=6;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
-    public static final int RULE_MY_STRING=4;
+    public static final int RULE_MY_STRING=5;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
@@ -38,7 +38,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int RULE_LONG_STRING=8;
-    public static final int RULE_FQN=5;
+    public static final int RULE_FQN=4;
     public static final int RULE_SL_COMMENT=12;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=11;
@@ -46,6 +46,8 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     public static final int T__19=19;
     public static final int T__31=31;
     public static final int RULE_STRING=10;
+    public static final int T__32=32;
+    public static final int T__33=33;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -1180,17 +1182,18 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
             int alt1=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
-            case 18:
-            case 21:
+            case 19:
             case 22:
             case 23:
             case 24:
             case 25:
+            case 26:
+            case 27:
                 {
                 alt1=1;
                 }
                 break;
-            case 27:
+            case 29:
                 {
                 alt1=2;
                 }
@@ -1202,10 +1205,10 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
                 break;
             case RULE_MY_STRING:
             case RULE_NUMBER:
-            case 17:
-            case 29:
-            case 30:
+            case 18:
             case 31:
+            case 32:
+            case 33:
                 {
                 alt1=4;
                 }
@@ -1326,13 +1329,13 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
                 alt2=1;
                 }
                 break;
-            case 30:
-            case 31:
+            case 32:
+            case 33:
                 {
                 alt2=2;
                 }
                 break;
-            case 29:
+            case 31:
                 {
                 alt2=3;
                 }
@@ -1342,7 +1345,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
                 alt2=4;
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt2=5;
                 }
@@ -1478,10 +1481,10 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==30) ) {
+            if ( (LA3_0==32) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==31) ) {
+            else if ( (LA3_0==33) ) {
                 alt3=2;
             }
             else {
@@ -1638,7 +1641,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==15) ) {
+                if ( (LA4_0==16) ) {
                     alt4=1;
                 }
 
@@ -1725,32 +1728,32 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Unit__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:601:1: rule__Unit__Group__1__Impl : ( ( rule__Unit__ContainerAssignment_1 )? ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:601:1: rule__Unit__Group__1__Impl : ( ( rule__Unit__Group_1__0 )? ) ;
     public final void rule__Unit__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:605:1: ( ( ( rule__Unit__ContainerAssignment_1 )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:606:1: ( ( rule__Unit__ContainerAssignment_1 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:605:1: ( ( ( rule__Unit__Group_1__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:606:1: ( ( rule__Unit__Group_1__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:606:1: ( ( rule__Unit__ContainerAssignment_1 )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:607:1: ( rule__Unit__ContainerAssignment_1 )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:606:1: ( ( rule__Unit__Group_1__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:607:1: ( rule__Unit__Group_1__0 )?
             {
-             before(grammarAccess.getUnitAccess().getContainerAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:608:1: ( rule__Unit__ContainerAssignment_1 )?
+             before(grammarAccess.getUnitAccess().getGroup_1()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:608:1: ( rule__Unit__Group_1__0 )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==16) ) {
+            if ( (LA5_0==15) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:608:2: rule__Unit__ContainerAssignment_1
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:608:2: rule__Unit__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Unit__ContainerAssignment_1_in_rule__Unit__Group__1__Impl1252);
-                    rule__Unit__ContainerAssignment_1();
+                    pushFollow(FOLLOW_rule__Unit__Group_1__0_in_rule__Unit__Group__1__Impl1252);
+                    rule__Unit__Group_1__0();
 
                     state._fsp--;
 
@@ -1760,7 +1763,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
             }
 
-             after(grammarAccess.getUnitAccess().getContainerAssignment_1()); 
+             after(grammarAccess.getUnitAccess().getGroup_1()); 
 
             }
 
@@ -1783,17 +1786,22 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Unit__Group__2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:618:1: rule__Unit__Group__2 : rule__Unit__Group__2__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:618:1: rule__Unit__Group__2 : rule__Unit__Group__2__Impl rule__Unit__Group__3 ;
     public final void rule__Unit__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:622:1: ( rule__Unit__Group__2__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:623:2: rule__Unit__Group__2__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:622:1: ( rule__Unit__Group__2__Impl rule__Unit__Group__3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:623:2: rule__Unit__Group__2__Impl rule__Unit__Group__3
             {
             pushFollow(FOLLOW_rule__Unit__Group__2__Impl_in_rule__Unit__Group__21283);
             rule__Unit__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Unit__Group__3_in_rule__Unit__Group__21286);
+            rule__Unit__Group__3();
 
             state._fsp--;
 
@@ -1816,74 +1824,42 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Unit__Group__2__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:629:1: rule__Unit__Group__2__Impl : ( ( ( rule__Unit__InstancesAssignment_2 ) ) ( ( rule__Unit__InstancesAssignment_2 )* ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:630:1: rule__Unit__Group__2__Impl : ( ( rule__Unit__ContainerAssignment_2 )? ) ;
     public final void rule__Unit__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:633:1: ( ( ( ( rule__Unit__InstancesAssignment_2 ) ) ( ( rule__Unit__InstancesAssignment_2 )* ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:634:1: ( ( ( rule__Unit__InstancesAssignment_2 ) ) ( ( rule__Unit__InstancesAssignment_2 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:634:1: ( ( ( rule__Unit__ContainerAssignment_2 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:635:1: ( ( rule__Unit__ContainerAssignment_2 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:634:1: ( ( ( rule__Unit__InstancesAssignment_2 ) ) ( ( rule__Unit__InstancesAssignment_2 )* ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:635:1: ( ( rule__Unit__InstancesAssignment_2 ) ) ( ( rule__Unit__InstancesAssignment_2 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:635:1: ( ( rule__Unit__ContainerAssignment_2 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:636:1: ( rule__Unit__ContainerAssignment_2 )?
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:635:1: ( ( rule__Unit__InstancesAssignment_2 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:636:1: ( rule__Unit__InstancesAssignment_2 )
-            {
-             before(grammarAccess.getUnitAccess().getInstancesAssignment_2()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:637:1: ( rule__Unit__InstancesAssignment_2 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:637:2: rule__Unit__InstancesAssignment_2
-            {
-            pushFollow(FOLLOW_rule__Unit__InstancesAssignment_2_in_rule__Unit__Group__2__Impl1312);
-            rule__Unit__InstancesAssignment_2();
+             before(grammarAccess.getUnitAccess().getContainerAssignment_2()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:637:1: ( rule__Unit__ContainerAssignment_2 )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA6_0==17) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:637:2: rule__Unit__ContainerAssignment_2
+                    {
+                    pushFollow(FOLLOW_rule__Unit__ContainerAssignment_2_in_rule__Unit__Group__2__Impl1313);
+                    rule__Unit__ContainerAssignment_2();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getUnitAccess().getInstancesAssignment_2()); 
-
-            }
-
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:640:1: ( ( rule__Unit__InstancesAssignment_2 )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:641:1: ( rule__Unit__InstancesAssignment_2 )*
-            {
-             before(grammarAccess.getUnitAccess().getInstancesAssignment_2()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:642:1: ( rule__Unit__InstancesAssignment_2 )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==RULE_ID||LA6_0==18||(LA6_0>=21 && LA6_0<=25)) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:642:2: rule__Unit__InstancesAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_rule__Unit__InstancesAssignment_2_in_rule__Unit__Group__2__Impl1324);
-            	    rule__Unit__InstancesAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop6;
-                }
-            } while (true);
-
-             after(grammarAccess.getUnitAccess().getInstancesAssignment_2()); 
-
-            }
-
+             after(grammarAccess.getUnitAccess().getContainerAssignment_2()); 
 
             }
 
@@ -1905,22 +1881,300 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Unit__Group__2__Impl"
 
 
+    // $ANTLR start "rule__Unit__Group__3"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:647:1: rule__Unit__Group__3 : rule__Unit__Group__3__Impl ;
+    public final void rule__Unit__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:651:1: ( rule__Unit__Group__3__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:652:2: rule__Unit__Group__3__Impl
+            {
+            pushFollow(FOLLOW_rule__Unit__Group__3__Impl_in_rule__Unit__Group__31344);
+            rule__Unit__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group__3"
+
+
+    // $ANTLR start "rule__Unit__Group__3__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:658:1: rule__Unit__Group__3__Impl : ( ( ( rule__Unit__InstancesAssignment_3 ) ) ( ( rule__Unit__InstancesAssignment_3 )* ) ) ;
+    public final void rule__Unit__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:662:1: ( ( ( ( rule__Unit__InstancesAssignment_3 ) ) ( ( rule__Unit__InstancesAssignment_3 )* ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:663:1: ( ( ( rule__Unit__InstancesAssignment_3 ) ) ( ( rule__Unit__InstancesAssignment_3 )* ) )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:663:1: ( ( ( rule__Unit__InstancesAssignment_3 ) ) ( ( rule__Unit__InstancesAssignment_3 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:664:1: ( ( rule__Unit__InstancesAssignment_3 ) ) ( ( rule__Unit__InstancesAssignment_3 )* )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:664:1: ( ( rule__Unit__InstancesAssignment_3 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:665:1: ( rule__Unit__InstancesAssignment_3 )
+            {
+             before(grammarAccess.getUnitAccess().getInstancesAssignment_3()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:666:1: ( rule__Unit__InstancesAssignment_3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:666:2: rule__Unit__InstancesAssignment_3
+            {
+            pushFollow(FOLLOW_rule__Unit__InstancesAssignment_3_in_rule__Unit__Group__3__Impl1373);
+            rule__Unit__InstancesAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnitAccess().getInstancesAssignment_3()); 
+
+            }
+
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:669:1: ( ( rule__Unit__InstancesAssignment_3 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:670:1: ( rule__Unit__InstancesAssignment_3 )*
+            {
+             before(grammarAccess.getUnitAccess().getInstancesAssignment_3()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:671:1: ( rule__Unit__InstancesAssignment_3 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==RULE_ID||LA7_0==19||(LA7_0>=22 && LA7_0<=27)) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:671:2: rule__Unit__InstancesAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_rule__Unit__InstancesAssignment_3_in_rule__Unit__Group__3__Impl1385);
+            	    rule__Unit__InstancesAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getUnitAccess().getInstancesAssignment_3()); 
+
+            }
+
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Unit__Group_1__0"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:690:1: rule__Unit__Group_1__0 : rule__Unit__Group_1__0__Impl rule__Unit__Group_1__1 ;
+    public final void rule__Unit__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:694:1: ( rule__Unit__Group_1__0__Impl rule__Unit__Group_1__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:695:2: rule__Unit__Group_1__0__Impl rule__Unit__Group_1__1
+            {
+            pushFollow(FOLLOW_rule__Unit__Group_1__0__Impl_in_rule__Unit__Group_1__01426);
+            rule__Unit__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Unit__Group_1__1_in_rule__Unit__Group_1__01429);
+            rule__Unit__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group_1__0"
+
+
+    // $ANTLR start "rule__Unit__Group_1__0__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:702:1: rule__Unit__Group_1__0__Impl : ( 'parent' ) ;
+    public final void rule__Unit__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:706:1: ( ( 'parent' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:707:1: ( 'parent' )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:707:1: ( 'parent' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:708:1: 'parent'
+            {
+             before(grammarAccess.getUnitAccess().getParentKeyword_1_0()); 
+            match(input,15,FOLLOW_15_in_rule__Unit__Group_1__0__Impl1457); 
+             after(grammarAccess.getUnitAccess().getParentKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__Unit__Group_1__1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:721:1: rule__Unit__Group_1__1 : rule__Unit__Group_1__1__Impl ;
+    public final void rule__Unit__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:725:1: ( rule__Unit__Group_1__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:726:2: rule__Unit__Group_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Unit__Group_1__1__Impl_in_rule__Unit__Group_1__11488);
+            rule__Unit__Group_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group_1__1"
+
+
+    // $ANTLR start "rule__Unit__Group_1__1__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:732:1: rule__Unit__Group_1__1__Impl : ( ( rule__Unit__ParentAssignment_1_1 ) ) ;
+    public final void rule__Unit__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:736:1: ( ( ( rule__Unit__ParentAssignment_1_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:737:1: ( ( rule__Unit__ParentAssignment_1_1 ) )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:737:1: ( ( rule__Unit__ParentAssignment_1_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:738:1: ( rule__Unit__ParentAssignment_1_1 )
+            {
+             before(grammarAccess.getUnitAccess().getParentAssignment_1_1()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:739:1: ( rule__Unit__ParentAssignment_1_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:739:2: rule__Unit__ParentAssignment_1_1
+            {
+            pushFollow(FOLLOW_rule__Unit__ParentAssignment_1_1_in_rule__Unit__Group_1__1__Impl1515);
+            rule__Unit__ParentAssignment_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnitAccess().getParentAssignment_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__Group_1__1__Impl"
+
+
     // $ANTLR start "rule__Import__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:659:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:753:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
     public final void rule__Import__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:663:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:664:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:757:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:758:2: rule__Import__Group__0__Impl rule__Import__Group__1
             {
-            pushFollow(FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__01363);
+            pushFollow(FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__01549);
             rule__Import__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Import__Group__1_in_rule__Import__Group__01366);
+            pushFollow(FOLLOW_rule__Import__Group__1_in_rule__Import__Group__01552);
             rule__Import__Group__1();
 
             state._fsp--;
@@ -1944,20 +2198,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Import__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:671:1: rule__Import__Group__0__Impl : ( 'import' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:765:1: rule__Import__Group__0__Impl : ( 'import' ) ;
     public final void rule__Import__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:675:1: ( ( 'import' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:676:1: ( 'import' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:769:1: ( ( 'import' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:770:1: ( 'import' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:676:1: ( 'import' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:677:1: 'import'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:770:1: ( 'import' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:771:1: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_0()); 
-            match(input,15,FOLLOW_15_in_rule__Import__Group__0__Impl1394); 
+            match(input,16,FOLLOW_16_in_rule__Import__Group__0__Impl1580); 
              after(grammarAccess.getImportAccess().getImportKeyword_0()); 
 
             }
@@ -1981,16 +2235,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Import__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:690:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:784:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
     public final void rule__Import__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:694:1: ( rule__Import__Group__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:695:2: rule__Import__Group__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:788:1: ( rule__Import__Group__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:789:2: rule__Import__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__11425);
+            pushFollow(FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__11611);
             rule__Import__Group__1__Impl();
 
             state._fsp--;
@@ -2014,23 +2268,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Import__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:701:1: rule__Import__Group__1__Impl : ( ( rule__Import__NameAssignment_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:795:1: rule__Import__Group__1__Impl : ( ( rule__Import__NameAssignment_1 ) ) ;
     public final void rule__Import__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:705:1: ( ( ( rule__Import__NameAssignment_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:706:1: ( ( rule__Import__NameAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:799:1: ( ( ( rule__Import__NameAssignment_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:800:1: ( ( rule__Import__NameAssignment_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:706:1: ( ( rule__Import__NameAssignment_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:707:1: ( rule__Import__NameAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:800:1: ( ( rule__Import__NameAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:801:1: ( rule__Import__NameAssignment_1 )
             {
              before(grammarAccess.getImportAccess().getNameAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:708:1: ( rule__Import__NameAssignment_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:708:2: rule__Import__NameAssignment_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:802:1: ( rule__Import__NameAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:802:2: rule__Import__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Import__NameAssignment_1_in_rule__Import__Group__1__Impl1452);
+            pushFollow(FOLLOW_rule__Import__NameAssignment_1_in_rule__Import__Group__1__Impl1638);
             rule__Import__NameAssignment_1();
 
             state._fsp--;
@@ -2061,21 +2315,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:722:1: rule__Container__Group__0 : rule__Container__Group__0__Impl rule__Container__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:816:1: rule__Container__Group__0 : rule__Container__Group__0__Impl rule__Container__Group__1 ;
     public final void rule__Container__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:726:1: ( rule__Container__Group__0__Impl rule__Container__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:727:2: rule__Container__Group__0__Impl rule__Container__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:820:1: ( rule__Container__Group__0__Impl rule__Container__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:821:2: rule__Container__Group__0__Impl rule__Container__Group__1
             {
-            pushFollow(FOLLOW_rule__Container__Group__0__Impl_in_rule__Container__Group__01486);
+            pushFollow(FOLLOW_rule__Container__Group__0__Impl_in_rule__Container__Group__01672);
             rule__Container__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Container__Group__1_in_rule__Container__Group__01489);
+            pushFollow(FOLLOW_rule__Container__Group__1_in_rule__Container__Group__01675);
             rule__Container__Group__1();
 
             state._fsp--;
@@ -2099,20 +2353,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:734:1: rule__Container__Group__0__Impl : ( 'container' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:828:1: rule__Container__Group__0__Impl : ( 'container' ) ;
     public final void rule__Container__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:738:1: ( ( 'container' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:739:1: ( 'container' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:832:1: ( ( 'container' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:833:1: ( 'container' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:739:1: ( 'container' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:740:1: 'container'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:833:1: ( 'container' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:834:1: 'container'
             {
              before(grammarAccess.getContainerAccess().getContainerKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__Container__Group__0__Impl1517); 
+            match(input,17,FOLLOW_17_in_rule__Container__Group__0__Impl1703); 
              after(grammarAccess.getContainerAccess().getContainerKeyword_0()); 
 
             }
@@ -2136,21 +2390,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:753:1: rule__Container__Group__1 : rule__Container__Group__1__Impl rule__Container__Group__2 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:847:1: rule__Container__Group__1 : rule__Container__Group__1__Impl rule__Container__Group__2 ;
     public final void rule__Container__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:757:1: ( rule__Container__Group__1__Impl rule__Container__Group__2 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:758:2: rule__Container__Group__1__Impl rule__Container__Group__2
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:851:1: ( rule__Container__Group__1__Impl rule__Container__Group__2 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:852:2: rule__Container__Group__1__Impl rule__Container__Group__2
             {
-            pushFollow(FOLLOW_rule__Container__Group__1__Impl_in_rule__Container__Group__11548);
+            pushFollow(FOLLOW_rule__Container__Group__1__Impl_in_rule__Container__Group__11734);
             rule__Container__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Container__Group__2_in_rule__Container__Group__11551);
+            pushFollow(FOLLOW_rule__Container__Group__2_in_rule__Container__Group__11737);
             rule__Container__Group__2();
 
             state._fsp--;
@@ -2174,23 +2428,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:765:1: rule__Container__Group__1__Impl : ( ( rule__Container__InstanceAssignment_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:859:1: rule__Container__Group__1__Impl : ( ( rule__Container__InstanceAssignment_1 ) ) ;
     public final void rule__Container__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:769:1: ( ( ( rule__Container__InstanceAssignment_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:770:1: ( ( rule__Container__InstanceAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:863:1: ( ( ( rule__Container__InstanceAssignment_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:864:1: ( ( rule__Container__InstanceAssignment_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:770:1: ( ( rule__Container__InstanceAssignment_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:771:1: ( rule__Container__InstanceAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:864:1: ( ( rule__Container__InstanceAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:865:1: ( rule__Container__InstanceAssignment_1 )
             {
              before(grammarAccess.getContainerAccess().getInstanceAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:772:1: ( rule__Container__InstanceAssignment_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:772:2: rule__Container__InstanceAssignment_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:866:1: ( rule__Container__InstanceAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:866:2: rule__Container__InstanceAssignment_1
             {
-            pushFollow(FOLLOW_rule__Container__InstanceAssignment_1_in_rule__Container__Group__1__Impl1578);
+            pushFollow(FOLLOW_rule__Container__InstanceAssignment_1_in_rule__Container__Group__1__Impl1764);
             rule__Container__InstanceAssignment_1();
 
             state._fsp--;
@@ -2221,21 +2475,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:782:1: rule__Container__Group__2 : rule__Container__Group__2__Impl rule__Container__Group__3 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:876:1: rule__Container__Group__2 : rule__Container__Group__2__Impl rule__Container__Group__3 ;
     public final void rule__Container__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:786:1: ( rule__Container__Group__2__Impl rule__Container__Group__3 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:787:2: rule__Container__Group__2__Impl rule__Container__Group__3
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:880:1: ( rule__Container__Group__2__Impl rule__Container__Group__3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:881:2: rule__Container__Group__2__Impl rule__Container__Group__3
             {
-            pushFollow(FOLLOW_rule__Container__Group__2__Impl_in_rule__Container__Group__21608);
+            pushFollow(FOLLOW_rule__Container__Group__2__Impl_in_rule__Container__Group__21794);
             rule__Container__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Container__Group__3_in_rule__Container__Group__21611);
+            pushFollow(FOLLOW_rule__Container__Group__3_in_rule__Container__Group__21797);
             rule__Container__Group__3();
 
             state._fsp--;
@@ -2259,20 +2513,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__2__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:794:1: rule__Container__Group__2__Impl : ( '#' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:888:1: rule__Container__Group__2__Impl : ( '#' ) ;
     public final void rule__Container__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:798:1: ( ( '#' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:799:1: ( '#' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:892:1: ( ( '#' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:893:1: ( '#' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:799:1: ( '#' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:800:1: '#'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:893:1: ( '#' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:894:1: '#'
             {
              before(grammarAccess.getContainerAccess().getNumberSignKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__Container__Group__2__Impl1639); 
+            match(input,18,FOLLOW_18_in_rule__Container__Group__2__Impl1825); 
              after(grammarAccess.getContainerAccess().getNumberSignKeyword_2()); 
 
             }
@@ -2296,16 +2550,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__3"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:813:1: rule__Container__Group__3 : rule__Container__Group__3__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:907:1: rule__Container__Group__3 : rule__Container__Group__3__Impl ;
     public final void rule__Container__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:817:1: ( rule__Container__Group__3__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:818:2: rule__Container__Group__3__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:911:1: ( rule__Container__Group__3__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:912:2: rule__Container__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Container__Group__3__Impl_in_rule__Container__Group__31670);
+            pushFollow(FOLLOW_rule__Container__Group__3__Impl_in_rule__Container__Group__31856);
             rule__Container__Group__3__Impl();
 
             state._fsp--;
@@ -2329,23 +2583,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__Group__3__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:824:1: rule__Container__Group__3__Impl : ( ( rule__Container__FeatureAssignment_3 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:918:1: rule__Container__Group__3__Impl : ( ( rule__Container__FeatureAssignment_3 ) ) ;
     public final void rule__Container__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:828:1: ( ( ( rule__Container__FeatureAssignment_3 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:829:1: ( ( rule__Container__FeatureAssignment_3 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:922:1: ( ( ( rule__Container__FeatureAssignment_3 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:923:1: ( ( rule__Container__FeatureAssignment_3 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:829:1: ( ( rule__Container__FeatureAssignment_3 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:830:1: ( rule__Container__FeatureAssignment_3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:923:1: ( ( rule__Container__FeatureAssignment_3 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:924:1: ( rule__Container__FeatureAssignment_3 )
             {
              before(grammarAccess.getContainerAccess().getFeatureAssignment_3()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:831:1: ( rule__Container__FeatureAssignment_3 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:831:2: rule__Container__FeatureAssignment_3
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:925:1: ( rule__Container__FeatureAssignment_3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:925:2: rule__Container__FeatureAssignment_3
             {
-            pushFollow(FOLLOW_rule__Container__FeatureAssignment_3_in_rule__Container__Group__3__Impl1697);
+            pushFollow(FOLLOW_rule__Container__FeatureAssignment_3_in_rule__Container__Group__3__Impl1883);
             rule__Container__FeatureAssignment_3();
 
             state._fsp--;
@@ -2376,21 +2630,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:849:1: rule__Instance__Group__0 : rule__Instance__Group__0__Impl rule__Instance__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:943:1: rule__Instance__Group__0 : rule__Instance__Group__0__Impl rule__Instance__Group__1 ;
     public final void rule__Instance__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:853:1: ( rule__Instance__Group__0__Impl rule__Instance__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:854:2: rule__Instance__Group__0__Impl rule__Instance__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:947:1: ( rule__Instance__Group__0__Impl rule__Instance__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:948:2: rule__Instance__Group__0__Impl rule__Instance__Group__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group__0__Impl_in_rule__Instance__Group__01735);
+            pushFollow(FOLLOW_rule__Instance__Group__0__Impl_in_rule__Instance__Group__01921);
             rule__Instance__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__1_in_rule__Instance__Group__01738);
+            pushFollow(FOLLOW_rule__Instance__Group__1_in_rule__Instance__Group__01924);
             rule__Instance__Group__1();
 
             state._fsp--;
@@ -2414,21 +2668,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:861:1: rule__Instance__Group__0__Impl : ( () ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:955:1: rule__Instance__Group__0__Impl : ( () ) ;
     public final void rule__Instance__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:865:1: ( ( () ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:866:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:959:1: ( ( () ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:960:1: ( () )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:866:1: ( () )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:867:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:960:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:961:1: ()
             {
              before(grammarAccess.getInstanceAccess().getInstanceAction_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:868:1: ()
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:870:1: 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:962:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:964:1: 
             {
             }
 
@@ -2451,21 +2705,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:880:1: rule__Instance__Group__1 : rule__Instance__Group__1__Impl rule__Instance__Group__2 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:974:1: rule__Instance__Group__1 : rule__Instance__Group__1__Impl rule__Instance__Group__2 ;
     public final void rule__Instance__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:884:1: ( rule__Instance__Group__1__Impl rule__Instance__Group__2 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:885:2: rule__Instance__Group__1__Impl rule__Instance__Group__2
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:978:1: ( rule__Instance__Group__1__Impl rule__Instance__Group__2 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:979:2: rule__Instance__Group__1__Impl rule__Instance__Group__2
             {
-            pushFollow(FOLLOW_rule__Instance__Group__1__Impl_in_rule__Instance__Group__11796);
+            pushFollow(FOLLOW_rule__Instance__Group__1__Impl_in_rule__Instance__Group__11982);
             rule__Instance__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__2_in_rule__Instance__Group__11799);
+            pushFollow(FOLLOW_rule__Instance__Group__2_in_rule__Instance__Group__11985);
             rule__Instance__Group__2();
 
             state._fsp--;
@@ -2489,31 +2743,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:892:1: rule__Instance__Group__1__Impl : ( ( rule__Instance__Group_1__0 )? ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:986:1: rule__Instance__Group__1__Impl : ( ( rule__Instance__Group_1__0 )? ) ;
     public final void rule__Instance__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:896:1: ( ( ( rule__Instance__Group_1__0 )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:897:1: ( ( rule__Instance__Group_1__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:990:1: ( ( ( rule__Instance__Group_1__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:991:1: ( ( rule__Instance__Group_1__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:897:1: ( ( rule__Instance__Group_1__0 )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:898:1: ( rule__Instance__Group_1__0 )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:991:1: ( ( rule__Instance__Group_1__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:992:1: ( rule__Instance__Group_1__0 )?
             {
              before(grammarAccess.getInstanceAccess().getGroup_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:899:1: ( rule__Instance__Group_1__0 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:993:1: ( rule__Instance__Group_1__0 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==21) ) {
-                alt7=1;
+            if ( (LA8_0==22) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:899:2: rule__Instance__Group_1__0
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:993:2: rule__Instance__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Instance__Group_1__0_in_rule__Instance__Group__1__Impl1826);
+                    pushFollow(FOLLOW_rule__Instance__Group_1__0_in_rule__Instance__Group__1__Impl2012);
                     rule__Instance__Group_1__0();
 
                     state._fsp--;
@@ -2547,21 +2801,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:909:1: rule__Instance__Group__2 : rule__Instance__Group__2__Impl rule__Instance__Group__3 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1003:1: rule__Instance__Group__2 : rule__Instance__Group__2__Impl rule__Instance__Group__3 ;
     public final void rule__Instance__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:913:1: ( rule__Instance__Group__2__Impl rule__Instance__Group__3 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:914:2: rule__Instance__Group__2__Impl rule__Instance__Group__3
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1007:1: ( rule__Instance__Group__2__Impl rule__Instance__Group__3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1008:2: rule__Instance__Group__2__Impl rule__Instance__Group__3
             {
-            pushFollow(FOLLOW_rule__Instance__Group__2__Impl_in_rule__Instance__Group__21857);
+            pushFollow(FOLLOW_rule__Instance__Group__2__Impl_in_rule__Instance__Group__22043);
             rule__Instance__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__3_in_rule__Instance__Group__21860);
+            pushFollow(FOLLOW_rule__Instance__Group__3_in_rule__Instance__Group__22046);
             rule__Instance__Group__3();
 
             state._fsp--;
@@ -2585,31 +2839,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__2__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:921:1: rule__Instance__Group__2__Impl : ( ( rule__Instance__Group_2__0 )? ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1015:1: rule__Instance__Group__2__Impl : ( ( rule__Instance__Group_2__0 )? ) ;
     public final void rule__Instance__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:925:1: ( ( ( rule__Instance__Group_2__0 )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:926:1: ( ( rule__Instance__Group_2__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1019:1: ( ( ( rule__Instance__Group_2__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1020:1: ( ( rule__Instance__Group_2__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:926:1: ( ( rule__Instance__Group_2__0 )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:927:1: ( rule__Instance__Group_2__0 )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1020:1: ( ( rule__Instance__Group_2__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1021:1: ( rule__Instance__Group_2__0 )?
             {
              before(grammarAccess.getInstanceAccess().getGroup_2()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:928:1: ( rule__Instance__Group_2__0 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1022:1: ( rule__Instance__Group_2__0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==22) ) {
-                alt8=1;
+            if ( (LA9_0==23) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:928:2: rule__Instance__Group_2__0
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1022:2: rule__Instance__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Instance__Group_2__0_in_rule__Instance__Group__2__Impl1887);
+                    pushFollow(FOLLOW_rule__Instance__Group_2__0_in_rule__Instance__Group__2__Impl2073);
                     rule__Instance__Group_2__0();
 
                     state._fsp--;
@@ -2643,21 +2897,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__3"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:938:1: rule__Instance__Group__3 : rule__Instance__Group__3__Impl rule__Instance__Group__4 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1032:1: rule__Instance__Group__3 : rule__Instance__Group__3__Impl rule__Instance__Group__4 ;
     public final void rule__Instance__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:942:1: ( rule__Instance__Group__3__Impl rule__Instance__Group__4 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:943:2: rule__Instance__Group__3__Impl rule__Instance__Group__4
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1036:1: ( rule__Instance__Group__3__Impl rule__Instance__Group__4 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1037:2: rule__Instance__Group__3__Impl rule__Instance__Group__4
             {
-            pushFollow(FOLLOW_rule__Instance__Group__3__Impl_in_rule__Instance__Group__31918);
+            pushFollow(FOLLOW_rule__Instance__Group__3__Impl_in_rule__Instance__Group__32104);
             rule__Instance__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__4_in_rule__Instance__Group__31921);
+            pushFollow(FOLLOW_rule__Instance__Group__4_in_rule__Instance__Group__32107);
             rule__Instance__Group__4();
 
             state._fsp--;
@@ -2681,31 +2935,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__3__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:950:1: rule__Instance__Group__3__Impl : ( ( rule__Instance__Group_3__0 )? ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1044:1: rule__Instance__Group__3__Impl : ( ( rule__Instance__Group_3__0 )? ) ;
     public final void rule__Instance__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:954:1: ( ( ( rule__Instance__Group_3__0 )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:955:1: ( ( rule__Instance__Group_3__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1048:1: ( ( ( rule__Instance__Group_3__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1049:1: ( ( rule__Instance__Group_3__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:955:1: ( ( rule__Instance__Group_3__0 )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:956:1: ( rule__Instance__Group_3__0 )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1049:1: ( ( rule__Instance__Group_3__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1050:1: ( rule__Instance__Group_3__0 )?
             {
              before(grammarAccess.getInstanceAccess().getGroup_3()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:957:1: ( rule__Instance__Group_3__0 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1051:1: ( rule__Instance__Group_3__0 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==23) ) {
-                alt9=1;
+            if ( (LA10_0==24) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:957:2: rule__Instance__Group_3__0
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1051:2: rule__Instance__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Instance__Group_3__0_in_rule__Instance__Group__3__Impl1948);
+                    pushFollow(FOLLOW_rule__Instance__Group_3__0_in_rule__Instance__Group__3__Impl2134);
                     rule__Instance__Group_3__0();
 
                     state._fsp--;
@@ -2739,21 +2993,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__4"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:967:1: rule__Instance__Group__4 : rule__Instance__Group__4__Impl rule__Instance__Group__5 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1061:1: rule__Instance__Group__4 : rule__Instance__Group__4__Impl rule__Instance__Group__5 ;
     public final void rule__Instance__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:971:1: ( rule__Instance__Group__4__Impl rule__Instance__Group__5 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:972:2: rule__Instance__Group__4__Impl rule__Instance__Group__5
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1065:1: ( rule__Instance__Group__4__Impl rule__Instance__Group__5 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1066:2: rule__Instance__Group__4__Impl rule__Instance__Group__5
             {
-            pushFollow(FOLLOW_rule__Instance__Group__4__Impl_in_rule__Instance__Group__41979);
+            pushFollow(FOLLOW_rule__Instance__Group__4__Impl_in_rule__Instance__Group__42165);
             rule__Instance__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__5_in_rule__Instance__Group__41982);
+            pushFollow(FOLLOW_rule__Instance__Group__5_in_rule__Instance__Group__42168);
             rule__Instance__Group__5();
 
             state._fsp--;
@@ -2777,47 +3031,40 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__4__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:979:1: rule__Instance__Group__4__Impl : ( ( rule__Instance__Group_4__0 )* ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1073:1: rule__Instance__Group__4__Impl : ( ( rule__Instance__Group_4__0 )? ) ;
     public final void rule__Instance__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:983:1: ( ( ( rule__Instance__Group_4__0 )* ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:984:1: ( ( rule__Instance__Group_4__0 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1077:1: ( ( ( rule__Instance__Group_4__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1078:1: ( ( rule__Instance__Group_4__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:984:1: ( ( rule__Instance__Group_4__0 )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:985:1: ( rule__Instance__Group_4__0 )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1078:1: ( ( rule__Instance__Group_4__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1079:1: ( rule__Instance__Group_4__0 )?
             {
              before(grammarAccess.getInstanceAccess().getGroup_4()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:986:1: ( rule__Instance__Group_4__0 )*
-            loop10:
-            do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1080:1: ( rule__Instance__Group_4__0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==24) ) {
-                    alt10=1;
-                }
+            if ( (LA11_0==25) ) {
+                alt11=1;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1080:2: rule__Instance__Group_4__0
+                    {
+                    pushFollow(FOLLOW_rule__Instance__Group_4__0_in_rule__Instance__Group__4__Impl2195);
+                    rule__Instance__Group_4__0();
 
-
-                switch (alt10) {
-            	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:986:2: rule__Instance__Group_4__0
-            	    {
-            	    pushFollow(FOLLOW_rule__Instance__Group_4__0_in_rule__Instance__Group__4__Impl2009);
-            	    rule__Instance__Group_4__0();
-
-            	    state._fsp--;
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop10;
-                }
-            } while (true);
+            }
 
              after(grammarAccess.getInstanceAccess().getGroup_4()); 
 
@@ -2842,21 +3089,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__5"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:996:1: rule__Instance__Group__5 : rule__Instance__Group__5__Impl rule__Instance__Group__6 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1090:1: rule__Instance__Group__5 : rule__Instance__Group__5__Impl rule__Instance__Group__6 ;
     public final void rule__Instance__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1000:1: ( rule__Instance__Group__5__Impl rule__Instance__Group__6 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1001:2: rule__Instance__Group__5__Impl rule__Instance__Group__6
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1094:1: ( rule__Instance__Group__5__Impl rule__Instance__Group__6 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1095:2: rule__Instance__Group__5__Impl rule__Instance__Group__6
             {
-            pushFollow(FOLLOW_rule__Instance__Group__5__Impl_in_rule__Instance__Group__52040);
+            pushFollow(FOLLOW_rule__Instance__Group__5__Impl_in_rule__Instance__Group__52226);
             rule__Instance__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__6_in_rule__Instance__Group__52043);
+            pushFollow(FOLLOW_rule__Instance__Group__6_in_rule__Instance__Group__52229);
             rule__Instance__Group__6();
 
             state._fsp--;
@@ -2880,35 +3127,35 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__5__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1008:1: rule__Instance__Group__5__Impl : ( ( rule__Instance__Group_5__0 )* ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1102:1: rule__Instance__Group__5__Impl : ( ( rule__Instance__Group_5__0 )* ) ;
     public final void rule__Instance__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1012:1: ( ( ( rule__Instance__Group_5__0 )* ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1013:1: ( ( rule__Instance__Group_5__0 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1106:1: ( ( ( rule__Instance__Group_5__0 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1107:1: ( ( rule__Instance__Group_5__0 )* )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1013:1: ( ( rule__Instance__Group_5__0 )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1014:1: ( rule__Instance__Group_5__0 )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1107:1: ( ( rule__Instance__Group_5__0 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1108:1: ( rule__Instance__Group_5__0 )*
             {
              before(grammarAccess.getInstanceAccess().getGroup_5()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1015:1: ( rule__Instance__Group_5__0 )*
-            loop11:
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1109:1: ( rule__Instance__Group_5__0 )*
+            loop12:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA11_0==25) ) {
-                    alt11=1;
+                if ( (LA12_0==26) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt12) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1015:2: rule__Instance__Group_5__0
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1109:2: rule__Instance__Group_5__0
             	    {
-            	    pushFollow(FOLLOW_rule__Instance__Group_5__0_in_rule__Instance__Group__5__Impl2070);
+            	    pushFollow(FOLLOW_rule__Instance__Group_5__0_in_rule__Instance__Group__5__Impl2256);
             	    rule__Instance__Group_5__0();
 
             	    state._fsp--;
@@ -2918,7 +3165,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop12;
                 }
             } while (true);
 
@@ -2945,21 +3192,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__6"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1025:1: rule__Instance__Group__6 : rule__Instance__Group__6__Impl rule__Instance__Group__7 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1119:1: rule__Instance__Group__6 : rule__Instance__Group__6__Impl rule__Instance__Group__7 ;
     public final void rule__Instance__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1029:1: ( rule__Instance__Group__6__Impl rule__Instance__Group__7 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1030:2: rule__Instance__Group__6__Impl rule__Instance__Group__7
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1123:1: ( rule__Instance__Group__6__Impl rule__Instance__Group__7 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1124:2: rule__Instance__Group__6__Impl rule__Instance__Group__7
             {
-            pushFollow(FOLLOW_rule__Instance__Group__6__Impl_in_rule__Instance__Group__62101);
+            pushFollow(FOLLOW_rule__Instance__Group__6__Impl_in_rule__Instance__Group__62287);
             rule__Instance__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__7_in_rule__Instance__Group__62104);
+            pushFollow(FOLLOW_rule__Instance__Group__7_in_rule__Instance__Group__62290);
             rule__Instance__Group__7();
 
             state._fsp--;
@@ -2983,40 +3230,47 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__6__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1037:1: rule__Instance__Group__6__Impl : ( ( rule__Instance__Group_6__0 )? ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1131:1: rule__Instance__Group__6__Impl : ( ( rule__Instance__Group_6__0 )* ) ;
     public final void rule__Instance__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1041:1: ( ( ( rule__Instance__Group_6__0 )? ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1042:1: ( ( rule__Instance__Group_6__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1135:1: ( ( ( rule__Instance__Group_6__0 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1136:1: ( ( rule__Instance__Group_6__0 )* )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1042:1: ( ( rule__Instance__Group_6__0 )? )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1043:1: ( rule__Instance__Group_6__0 )?
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1136:1: ( ( rule__Instance__Group_6__0 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1137:1: ( rule__Instance__Group_6__0 )*
             {
              before(grammarAccess.getInstanceAccess().getGroup_6()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1044:1: ( rule__Instance__Group_6__0 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1138:1: ( rule__Instance__Group_6__0 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_ID) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1044:2: rule__Instance__Group_6__0
-                    {
-                    pushFollow(FOLLOW_rule__Instance__Group_6__0_in_rule__Instance__Group__6__Impl2131);
-                    rule__Instance__Group_6__0();
-
-                    state._fsp--;
+                if ( (LA13_0==27) ) {
+                    alt13=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt13) {
+            	case 1 :
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1138:2: rule__Instance__Group_6__0
+            	    {
+            	    pushFollow(FOLLOW_rule__Instance__Group_6__0_in_rule__Instance__Group__6__Impl2317);
+            	    rule__Instance__Group_6__0();
 
-            }
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
              after(grammarAccess.getInstanceAccess().getGroup_6()); 
 
@@ -3041,21 +3295,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__7"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1054:1: rule__Instance__Group__7 : rule__Instance__Group__7__Impl rule__Instance__Group__8 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1148:1: rule__Instance__Group__7 : rule__Instance__Group__7__Impl rule__Instance__Group__8 ;
     public final void rule__Instance__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1058:1: ( rule__Instance__Group__7__Impl rule__Instance__Group__8 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1059:2: rule__Instance__Group__7__Impl rule__Instance__Group__8
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1152:1: ( rule__Instance__Group__7__Impl rule__Instance__Group__8 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1153:2: rule__Instance__Group__7__Impl rule__Instance__Group__8
             {
-            pushFollow(FOLLOW_rule__Instance__Group__7__Impl_in_rule__Instance__Group__72162);
+            pushFollow(FOLLOW_rule__Instance__Group__7__Impl_in_rule__Instance__Group__72348);
             rule__Instance__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__8_in_rule__Instance__Group__72165);
+            pushFollow(FOLLOW_rule__Instance__Group__8_in_rule__Instance__Group__72351);
             rule__Instance__Group__8();
 
             state._fsp--;
@@ -3079,21 +3333,42 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__7__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1066:1: rule__Instance__Group__7__Impl : ( 'new' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1160:1: rule__Instance__Group__7__Impl : ( ( rule__Instance__Group_7__0 )? ) ;
     public final void rule__Instance__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1070:1: ( ( 'new' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1071:1: ( 'new' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1164:1: ( ( ( rule__Instance__Group_7__0 )? ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1165:1: ( ( rule__Instance__Group_7__0 )? )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1071:1: ( 'new' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1072:1: 'new'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1165:1: ( ( rule__Instance__Group_7__0 )? )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1166:1: ( rule__Instance__Group_7__0 )?
             {
-             before(grammarAccess.getInstanceAccess().getNewKeyword_7()); 
-            match(input,18,FOLLOW_18_in_rule__Instance__Group__7__Impl2193); 
-             after(grammarAccess.getInstanceAccess().getNewKeyword_7()); 
+             before(grammarAccess.getInstanceAccess().getGroup_7()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1167:1: ( rule__Instance__Group_7__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==RULE_ID) ) {
+                alt14=1;
+            }
+            switch (alt14) {
+                case 1 :
+                    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1167:2: rule__Instance__Group_7__0
+                    {
+                    pushFollow(FOLLOW_rule__Instance__Group_7__0_in_rule__Instance__Group__7__Impl2378);
+                    rule__Instance__Group_7__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getInstanceAccess().getGroup_7()); 
 
             }
 
@@ -3116,21 +3391,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__8"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1085:1: rule__Instance__Group__8 : rule__Instance__Group__8__Impl rule__Instance__Group__9 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1177:1: rule__Instance__Group__8 : rule__Instance__Group__8__Impl rule__Instance__Group__9 ;
     public final void rule__Instance__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1089:1: ( rule__Instance__Group__8__Impl rule__Instance__Group__9 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1090:2: rule__Instance__Group__8__Impl rule__Instance__Group__9
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1181:1: ( rule__Instance__Group__8__Impl rule__Instance__Group__9 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1182:2: rule__Instance__Group__8__Impl rule__Instance__Group__9
             {
-            pushFollow(FOLLOW_rule__Instance__Group__8__Impl_in_rule__Instance__Group__82224);
+            pushFollow(FOLLOW_rule__Instance__Group__8__Impl_in_rule__Instance__Group__82409);
             rule__Instance__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__9_in_rule__Instance__Group__82227);
+            pushFollow(FOLLOW_rule__Instance__Group__9_in_rule__Instance__Group__82412);
             rule__Instance__Group__9();
 
             state._fsp--;
@@ -3154,31 +3429,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__8__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1097:1: rule__Instance__Group__8__Impl : ( ( rule__Instance__TypeAssignment_8 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1189:1: rule__Instance__Group__8__Impl : ( 'new' ) ;
     public final void rule__Instance__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1101:1: ( ( ( rule__Instance__TypeAssignment_8 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1102:1: ( ( rule__Instance__TypeAssignment_8 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1193:1: ( ( 'new' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1194:1: ( 'new' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1102:1: ( ( rule__Instance__TypeAssignment_8 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1103:1: ( rule__Instance__TypeAssignment_8 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1194:1: ( 'new' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1195:1: 'new'
             {
-             before(grammarAccess.getInstanceAccess().getTypeAssignment_8()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1104:1: ( rule__Instance__TypeAssignment_8 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1104:2: rule__Instance__TypeAssignment_8
-            {
-            pushFollow(FOLLOW_rule__Instance__TypeAssignment_8_in_rule__Instance__Group__8__Impl2254);
-            rule__Instance__TypeAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInstanceAccess().getTypeAssignment_8()); 
+             before(grammarAccess.getInstanceAccess().getNewKeyword_8()); 
+            match(input,19,FOLLOW_19_in_rule__Instance__Group__8__Impl2440); 
+             after(grammarAccess.getInstanceAccess().getNewKeyword_8()); 
 
             }
 
@@ -3201,21 +3466,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__9"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1114:1: rule__Instance__Group__9 : rule__Instance__Group__9__Impl rule__Instance__Group__10 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1208:1: rule__Instance__Group__9 : rule__Instance__Group__9__Impl rule__Instance__Group__10 ;
     public final void rule__Instance__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1118:1: ( rule__Instance__Group__9__Impl rule__Instance__Group__10 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1119:2: rule__Instance__Group__9__Impl rule__Instance__Group__10
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1212:1: ( rule__Instance__Group__9__Impl rule__Instance__Group__10 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1213:2: rule__Instance__Group__9__Impl rule__Instance__Group__10
             {
-            pushFollow(FOLLOW_rule__Instance__Group__9__Impl_in_rule__Instance__Group__92284);
+            pushFollow(FOLLOW_rule__Instance__Group__9__Impl_in_rule__Instance__Group__92471);
             rule__Instance__Group__9__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__10_in_rule__Instance__Group__92287);
+            pushFollow(FOLLOW_rule__Instance__Group__10_in_rule__Instance__Group__92474);
             rule__Instance__Group__10();
 
             state._fsp--;
@@ -3239,21 +3504,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__9__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1126:1: rule__Instance__Group__9__Impl : ( '{' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1220:1: rule__Instance__Group__9__Impl : ( ( rule__Instance__TypeAssignment_9 ) ) ;
     public final void rule__Instance__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1130:1: ( ( '{' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1131:1: ( '{' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1224:1: ( ( ( rule__Instance__TypeAssignment_9 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1225:1: ( ( rule__Instance__TypeAssignment_9 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1131:1: ( '{' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1132:1: '{'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1225:1: ( ( rule__Instance__TypeAssignment_9 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1226:1: ( rule__Instance__TypeAssignment_9 )
             {
-             before(grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_9()); 
-            match(input,19,FOLLOW_19_in_rule__Instance__Group__9__Impl2315); 
-             after(grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_9()); 
+             before(grammarAccess.getInstanceAccess().getTypeAssignment_9()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1227:1: ( rule__Instance__TypeAssignment_9 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1227:2: rule__Instance__TypeAssignment_9
+            {
+            pushFollow(FOLLOW_rule__Instance__TypeAssignment_9_in_rule__Instance__Group__9__Impl2501);
+            rule__Instance__TypeAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInstanceAccess().getTypeAssignment_9()); 
 
             }
 
@@ -3276,21 +3551,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__10"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1145:1: rule__Instance__Group__10 : rule__Instance__Group__10__Impl rule__Instance__Group__11 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1237:1: rule__Instance__Group__10 : rule__Instance__Group__10__Impl rule__Instance__Group__11 ;
     public final void rule__Instance__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1149:1: ( rule__Instance__Group__10__Impl rule__Instance__Group__11 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1150:2: rule__Instance__Group__10__Impl rule__Instance__Group__11
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1241:1: ( rule__Instance__Group__10__Impl rule__Instance__Group__11 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1242:2: rule__Instance__Group__10__Impl rule__Instance__Group__11
             {
-            pushFollow(FOLLOW_rule__Instance__Group__10__Impl_in_rule__Instance__Group__102346);
+            pushFollow(FOLLOW_rule__Instance__Group__10__Impl_in_rule__Instance__Group__102531);
             rule__Instance__Group__10__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group__11_in_rule__Instance__Group__102349);
+            pushFollow(FOLLOW_rule__Instance__Group__11_in_rule__Instance__Group__102534);
             rule__Instance__Group__11();
 
             state._fsp--;
@@ -3314,49 +3589,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__10__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1157:1: rule__Instance__Group__10__Impl : ( ( rule__Instance__SlotsAssignment_10 )* ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1249:1: rule__Instance__Group__10__Impl : ( '{' ) ;
     public final void rule__Instance__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1161:1: ( ( ( rule__Instance__SlotsAssignment_10 )* ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1162:1: ( ( rule__Instance__SlotsAssignment_10 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1253:1: ( ( '{' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1254:1: ( '{' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1162:1: ( ( rule__Instance__SlotsAssignment_10 )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1163:1: ( rule__Instance__SlotsAssignment_10 )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1254:1: ( '{' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1255:1: '{'
             {
-             before(grammarAccess.getInstanceAccess().getSlotsAssignment_10()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1164:1: ( rule__Instance__SlotsAssignment_10 )*
-            loop13:
-            do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
-
-                if ( (LA13_0==RULE_ID) ) {
-                    alt13=1;
-                }
-
-
-                switch (alt13) {
-            	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1164:2: rule__Instance__SlotsAssignment_10
-            	    {
-            	    pushFollow(FOLLOW_rule__Instance__SlotsAssignment_10_in_rule__Instance__Group__10__Impl2376);
-            	    rule__Instance__SlotsAssignment_10();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop13;
-                }
-            } while (true);
-
-             after(grammarAccess.getInstanceAccess().getSlotsAssignment_10()); 
+             before(grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_10()); 
+            match(input,20,FOLLOW_20_in_rule__Instance__Group__10__Impl2562); 
+             after(grammarAccess.getInstanceAccess().getLeftCurlyBracketKeyword_10()); 
 
             }
 
@@ -3379,17 +3626,22 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__11"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1174:1: rule__Instance__Group__11 : rule__Instance__Group__11__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1268:1: rule__Instance__Group__11 : rule__Instance__Group__11__Impl rule__Instance__Group__12 ;
     public final void rule__Instance__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1178:1: ( rule__Instance__Group__11__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1179:2: rule__Instance__Group__11__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1272:1: ( rule__Instance__Group__11__Impl rule__Instance__Group__12 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1273:2: rule__Instance__Group__11__Impl rule__Instance__Group__12
             {
-            pushFollow(FOLLOW_rule__Instance__Group__11__Impl_in_rule__Instance__Group__112407);
+            pushFollow(FOLLOW_rule__Instance__Group__11__Impl_in_rule__Instance__Group__112593);
             rule__Instance__Group__11__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Instance__Group__12_in_rule__Instance__Group__112596);
+            rule__Instance__Group__12();
 
             state._fsp--;
 
@@ -3412,21 +3664,49 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group__11__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1185:1: rule__Instance__Group__11__Impl : ( '}' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1280:1: rule__Instance__Group__11__Impl : ( ( rule__Instance__SlotsAssignment_11 )* ) ;
     public final void rule__Instance__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1189:1: ( ( '}' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1190:1: ( '}' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1284:1: ( ( ( rule__Instance__SlotsAssignment_11 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1285:1: ( ( rule__Instance__SlotsAssignment_11 )* )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1190:1: ( '}' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1191:1: '}'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1285:1: ( ( rule__Instance__SlotsAssignment_11 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1286:1: ( rule__Instance__SlotsAssignment_11 )*
             {
-             before(grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,20,FOLLOW_20_in_rule__Instance__Group__11__Impl2435); 
-             after(grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_11()); 
+             before(grammarAccess.getInstanceAccess().getSlotsAssignment_11()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1287:1: ( rule__Instance__SlotsAssignment_11 )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
+
+                if ( (LA15_0==RULE_ID) ) {
+                    alt15=1;
+                }
+
+
+                switch (alt15) {
+            	case 1 :
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1287:2: rule__Instance__SlotsAssignment_11
+            	    {
+            	    pushFollow(FOLLOW_rule__Instance__SlotsAssignment_11_in_rule__Instance__Group__11__Impl2623);
+            	    rule__Instance__SlotsAssignment_11();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
+
+             after(grammarAccess.getInstanceAccess().getSlotsAssignment_11()); 
 
             }
 
@@ -3448,22 +3728,92 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Instance__Group__11__Impl"
 
 
+    // $ANTLR start "rule__Instance__Group__12"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1297:1: rule__Instance__Group__12 : rule__Instance__Group__12__Impl ;
+    public final void rule__Instance__Group__12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1301:1: ( rule__Instance__Group__12__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1302:2: rule__Instance__Group__12__Impl
+            {
+            pushFollow(FOLLOW_rule__Instance__Group__12__Impl_in_rule__Instance__Group__122654);
+            rule__Instance__Group__12__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group__12"
+
+
+    // $ANTLR start "rule__Instance__Group__12__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1308:1: rule__Instance__Group__12__Impl : ( '}' ) ;
+    public final void rule__Instance__Group__12__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1312:1: ( ( '}' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1313:1: ( '}' )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1313:1: ( '}' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1314:1: '}'
+            {
+             before(grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_12()); 
+            match(input,21,FOLLOW_21_in_rule__Instance__Group__12__Impl2682); 
+             after(grammarAccess.getInstanceAccess().getRightCurlyBracketKeyword_12()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group__12__Impl"
+
+
     // $ANTLR start "rule__Instance__Group_1__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1228:1: rule__Instance__Group_1__0 : rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1353:1: rule__Instance__Group_1__0 : rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1 ;
     public final void rule__Instance__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1232:1: ( rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1233:2: rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1357:1: ( rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1358:2: rule__Instance__Group_1__0__Impl rule__Instance__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_1__0__Impl_in_rule__Instance__Group_1__02490);
+            pushFollow(FOLLOW_rule__Instance__Group_1__0__Impl_in_rule__Instance__Group_1__02739);
             rule__Instance__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_1__1_in_rule__Instance__Group_1__02493);
+            pushFollow(FOLLOW_rule__Instance__Group_1__1_in_rule__Instance__Group_1__02742);
             rule__Instance__Group_1__1();
 
             state._fsp--;
@@ -3487,20 +3837,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_1__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1240:1: rule__Instance__Group_1__0__Impl : ( '@title' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1365:1: rule__Instance__Group_1__0__Impl : ( '@title' ) ;
     public final void rule__Instance__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1244:1: ( ( '@title' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1245:1: ( '@title' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1369:1: ( ( '@title' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1370:1: ( '@title' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1245:1: ( '@title' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1246:1: '@title'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1370:1: ( '@title' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1371:1: '@title'
             {
              before(grammarAccess.getInstanceAccess().getTitleKeyword_1_0()); 
-            match(input,21,FOLLOW_21_in_rule__Instance__Group_1__0__Impl2521); 
+            match(input,22,FOLLOW_22_in_rule__Instance__Group_1__0__Impl2770); 
              after(grammarAccess.getInstanceAccess().getTitleKeyword_1_0()); 
 
             }
@@ -3524,16 +3874,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_1__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1259:1: rule__Instance__Group_1__1 : rule__Instance__Group_1__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1384:1: rule__Instance__Group_1__1 : rule__Instance__Group_1__1__Impl ;
     public final void rule__Instance__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1263:1: ( rule__Instance__Group_1__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1264:2: rule__Instance__Group_1__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1388:1: ( rule__Instance__Group_1__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1389:2: rule__Instance__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_1__1__Impl_in_rule__Instance__Group_1__12552);
+            pushFollow(FOLLOW_rule__Instance__Group_1__1__Impl_in_rule__Instance__Group_1__12801);
             rule__Instance__Group_1__1__Impl();
 
             state._fsp--;
@@ -3557,23 +3907,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_1__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1270:1: rule__Instance__Group_1__1__Impl : ( ( rule__Instance__TitleAssignment_1_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1395:1: rule__Instance__Group_1__1__Impl : ( ( rule__Instance__TitleAssignment_1_1 ) ) ;
     public final void rule__Instance__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1274:1: ( ( ( rule__Instance__TitleAssignment_1_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1275:1: ( ( rule__Instance__TitleAssignment_1_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1399:1: ( ( ( rule__Instance__TitleAssignment_1_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1400:1: ( ( rule__Instance__TitleAssignment_1_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1275:1: ( ( rule__Instance__TitleAssignment_1_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1276:1: ( rule__Instance__TitleAssignment_1_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1400:1: ( ( rule__Instance__TitleAssignment_1_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1401:1: ( rule__Instance__TitleAssignment_1_1 )
             {
              before(grammarAccess.getInstanceAccess().getTitleAssignment_1_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1277:1: ( rule__Instance__TitleAssignment_1_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1277:2: rule__Instance__TitleAssignment_1_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1402:1: ( rule__Instance__TitleAssignment_1_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1402:2: rule__Instance__TitleAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Instance__TitleAssignment_1_1_in_rule__Instance__Group_1__1__Impl2579);
+            pushFollow(FOLLOW_rule__Instance__TitleAssignment_1_1_in_rule__Instance__Group_1__1__Impl2828);
             rule__Instance__TitleAssignment_1_1();
 
             state._fsp--;
@@ -3604,21 +3954,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_2__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1291:1: rule__Instance__Group_2__0 : rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1416:1: rule__Instance__Group_2__0 : rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1 ;
     public final void rule__Instance__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1295:1: ( rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1296:2: rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1420:1: ( rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1421:2: rule__Instance__Group_2__0__Impl rule__Instance__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_2__0__Impl_in_rule__Instance__Group_2__02613);
+            pushFollow(FOLLOW_rule__Instance__Group_2__0__Impl_in_rule__Instance__Group_2__02862);
             rule__Instance__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_2__1_in_rule__Instance__Group_2__02616);
+            pushFollow(FOLLOW_rule__Instance__Group_2__1_in_rule__Instance__Group_2__02865);
             rule__Instance__Group_2__1();
 
             state._fsp--;
@@ -3642,20 +3992,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_2__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1303:1: rule__Instance__Group_2__0__Impl : ( '@abstract' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1428:1: rule__Instance__Group_2__0__Impl : ( '@abstract' ) ;
     public final void rule__Instance__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1307:1: ( ( '@abstract' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1308:1: ( '@abstract' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1432:1: ( ( '@abstract' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1433:1: ( '@abstract' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1308:1: ( '@abstract' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1309:1: '@abstract'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1433:1: ( '@abstract' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1434:1: '@abstract'
             {
              before(grammarAccess.getInstanceAccess().getAbstractKeyword_2_0()); 
-            match(input,22,FOLLOW_22_in_rule__Instance__Group_2__0__Impl2644); 
+            match(input,23,FOLLOW_23_in_rule__Instance__Group_2__0__Impl2893); 
              after(grammarAccess.getInstanceAccess().getAbstractKeyword_2_0()); 
 
             }
@@ -3679,16 +4029,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_2__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1322:1: rule__Instance__Group_2__1 : rule__Instance__Group_2__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1447:1: rule__Instance__Group_2__1 : rule__Instance__Group_2__1__Impl ;
     public final void rule__Instance__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1326:1: ( rule__Instance__Group_2__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1327:2: rule__Instance__Group_2__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1451:1: ( rule__Instance__Group_2__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1452:2: rule__Instance__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_2__1__Impl_in_rule__Instance__Group_2__12675);
+            pushFollow(FOLLOW_rule__Instance__Group_2__1__Impl_in_rule__Instance__Group_2__12924);
             rule__Instance__Group_2__1__Impl();
 
             state._fsp--;
@@ -3712,23 +4062,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_2__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1333:1: rule__Instance__Group_2__1__Impl : ( ( rule__Instance__AbstractAssignment_2_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1458:1: rule__Instance__Group_2__1__Impl : ( ( rule__Instance__AbstractAssignment_2_1 ) ) ;
     public final void rule__Instance__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1337:1: ( ( ( rule__Instance__AbstractAssignment_2_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1338:1: ( ( rule__Instance__AbstractAssignment_2_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1462:1: ( ( ( rule__Instance__AbstractAssignment_2_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1463:1: ( ( rule__Instance__AbstractAssignment_2_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1338:1: ( ( rule__Instance__AbstractAssignment_2_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1339:1: ( rule__Instance__AbstractAssignment_2_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1463:1: ( ( rule__Instance__AbstractAssignment_2_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1464:1: ( rule__Instance__AbstractAssignment_2_1 )
             {
              before(grammarAccess.getInstanceAccess().getAbstractAssignment_2_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1340:1: ( rule__Instance__AbstractAssignment_2_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1340:2: rule__Instance__AbstractAssignment_2_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1465:1: ( rule__Instance__AbstractAssignment_2_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1465:2: rule__Instance__AbstractAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Instance__AbstractAssignment_2_1_in_rule__Instance__Group_2__1__Impl2702);
+            pushFollow(FOLLOW_rule__Instance__AbstractAssignment_2_1_in_rule__Instance__Group_2__1__Impl2951);
             rule__Instance__AbstractAssignment_2_1();
 
             state._fsp--;
@@ -3759,21 +4109,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_3__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1354:1: rule__Instance__Group_3__0 : rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1479:1: rule__Instance__Group_3__0 : rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1 ;
     public final void rule__Instance__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1358:1: ( rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1359:2: rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1483:1: ( rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1484:2: rule__Instance__Group_3__0__Impl rule__Instance__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_3__0__Impl_in_rule__Instance__Group_3__02736);
+            pushFollow(FOLLOW_rule__Instance__Group_3__0__Impl_in_rule__Instance__Group_3__02985);
             rule__Instance__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_3__1_in_rule__Instance__Group_3__02739);
+            pushFollow(FOLLOW_rule__Instance__Group_3__1_in_rule__Instance__Group_3__02988);
             rule__Instance__Group_3__1();
 
             state._fsp--;
@@ -3797,20 +4147,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_3__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1366:1: rule__Instance__Group_3__0__Impl : ( '@doc' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1491:1: rule__Instance__Group_3__0__Impl : ( '@doc' ) ;
     public final void rule__Instance__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1370:1: ( ( '@doc' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1371:1: ( '@doc' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1495:1: ( ( '@doc' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1496:1: ( '@doc' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1371:1: ( '@doc' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1372:1: '@doc'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1496:1: ( '@doc' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1497:1: '@doc'
             {
              before(grammarAccess.getInstanceAccess().getDocKeyword_3_0()); 
-            match(input,23,FOLLOW_23_in_rule__Instance__Group_3__0__Impl2767); 
+            match(input,24,FOLLOW_24_in_rule__Instance__Group_3__0__Impl3016); 
              after(grammarAccess.getInstanceAccess().getDocKeyword_3_0()); 
 
             }
@@ -3834,16 +4184,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_3__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1385:1: rule__Instance__Group_3__1 : rule__Instance__Group_3__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1510:1: rule__Instance__Group_3__1 : rule__Instance__Group_3__1__Impl ;
     public final void rule__Instance__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1389:1: ( rule__Instance__Group_3__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1390:2: rule__Instance__Group_3__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1514:1: ( rule__Instance__Group_3__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1515:2: rule__Instance__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_3__1__Impl_in_rule__Instance__Group_3__12798);
+            pushFollow(FOLLOW_rule__Instance__Group_3__1__Impl_in_rule__Instance__Group_3__13047);
             rule__Instance__Group_3__1__Impl();
 
             state._fsp--;
@@ -3867,23 +4217,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_3__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1396:1: rule__Instance__Group_3__1__Impl : ( ( rule__Instance__DocumentationAssignment_3_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1521:1: rule__Instance__Group_3__1__Impl : ( ( rule__Instance__DocumentationAssignment_3_1 ) ) ;
     public final void rule__Instance__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1400:1: ( ( ( rule__Instance__DocumentationAssignment_3_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1401:1: ( ( rule__Instance__DocumentationAssignment_3_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1525:1: ( ( ( rule__Instance__DocumentationAssignment_3_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1526:1: ( ( rule__Instance__DocumentationAssignment_3_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1401:1: ( ( rule__Instance__DocumentationAssignment_3_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1402:1: ( rule__Instance__DocumentationAssignment_3_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1526:1: ( ( rule__Instance__DocumentationAssignment_3_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1527:1: ( rule__Instance__DocumentationAssignment_3_1 )
             {
              before(grammarAccess.getInstanceAccess().getDocumentationAssignment_3_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1403:1: ( rule__Instance__DocumentationAssignment_3_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1403:2: rule__Instance__DocumentationAssignment_3_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1528:1: ( rule__Instance__DocumentationAssignment_3_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1528:2: rule__Instance__DocumentationAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Instance__DocumentationAssignment_3_1_in_rule__Instance__Group_3__1__Impl2825);
+            pushFollow(FOLLOW_rule__Instance__DocumentationAssignment_3_1_in_rule__Instance__Group_3__1__Impl3074);
             rule__Instance__DocumentationAssignment_3_1();
 
             state._fsp--;
@@ -3914,21 +4264,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_4__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1417:1: rule__Instance__Group_4__0 : rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1542:1: rule__Instance__Group_4__0 : rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1 ;
     public final void rule__Instance__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1421:1: ( rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1422:2: rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1546:1: ( rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1547:2: rule__Instance__Group_4__0__Impl rule__Instance__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_4__0__Impl_in_rule__Instance__Group_4__02859);
+            pushFollow(FOLLOW_rule__Instance__Group_4__0__Impl_in_rule__Instance__Group_4__03108);
             rule__Instance__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_4__1_in_rule__Instance__Group_4__02862);
+            pushFollow(FOLLOW_rule__Instance__Group_4__1_in_rule__Instance__Group_4__03111);
             rule__Instance__Group_4__1();
 
             state._fsp--;
@@ -3952,21 +4302,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_4__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1429:1: rule__Instance__Group_4__0__Impl : ( '@see' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1554:1: rule__Instance__Group_4__0__Impl : ( '@abbr' ) ;
     public final void rule__Instance__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1433:1: ( ( '@see' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1434:1: ( '@see' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1558:1: ( ( '@abbr' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1559:1: ( '@abbr' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1434:1: ( '@see' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1435:1: '@see'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1559:1: ( '@abbr' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1560:1: '@abbr'
             {
-             before(grammarAccess.getInstanceAccess().getSeeKeyword_4_0()); 
-            match(input,24,FOLLOW_24_in_rule__Instance__Group_4__0__Impl2890); 
-             after(grammarAccess.getInstanceAccess().getSeeKeyword_4_0()); 
+             before(grammarAccess.getInstanceAccess().getAbbrKeyword_4_0()); 
+            match(input,25,FOLLOW_25_in_rule__Instance__Group_4__0__Impl3139); 
+             after(grammarAccess.getInstanceAccess().getAbbrKeyword_4_0()); 
 
             }
 
@@ -3989,16 +4339,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_4__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1448:1: rule__Instance__Group_4__1 : rule__Instance__Group_4__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1573:1: rule__Instance__Group_4__1 : rule__Instance__Group_4__1__Impl ;
     public final void rule__Instance__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1452:1: ( rule__Instance__Group_4__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1453:2: rule__Instance__Group_4__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1577:1: ( rule__Instance__Group_4__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1578:2: rule__Instance__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_4__1__Impl_in_rule__Instance__Group_4__12921);
+            pushFollow(FOLLOW_rule__Instance__Group_4__1__Impl_in_rule__Instance__Group_4__13170);
             rule__Instance__Group_4__1__Impl();
 
             state._fsp--;
@@ -4022,31 +4372,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_4__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1459:1: rule__Instance__Group_4__1__Impl : ( ( rule__Instance__SeeAssignment_4_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1584:1: rule__Instance__Group_4__1__Impl : ( ( rule__Instance__AbbrAssignment_4_1 ) ) ;
     public final void rule__Instance__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1463:1: ( ( ( rule__Instance__SeeAssignment_4_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1464:1: ( ( rule__Instance__SeeAssignment_4_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1588:1: ( ( ( rule__Instance__AbbrAssignment_4_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1589:1: ( ( rule__Instance__AbbrAssignment_4_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1464:1: ( ( rule__Instance__SeeAssignment_4_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1465:1: ( rule__Instance__SeeAssignment_4_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1589:1: ( ( rule__Instance__AbbrAssignment_4_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1590:1: ( rule__Instance__AbbrAssignment_4_1 )
             {
-             before(grammarAccess.getInstanceAccess().getSeeAssignment_4_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1466:1: ( rule__Instance__SeeAssignment_4_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1466:2: rule__Instance__SeeAssignment_4_1
+             before(grammarAccess.getInstanceAccess().getAbbrAssignment_4_1()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1591:1: ( rule__Instance__AbbrAssignment_4_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1591:2: rule__Instance__AbbrAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Instance__SeeAssignment_4_1_in_rule__Instance__Group_4__1__Impl2948);
-            rule__Instance__SeeAssignment_4_1();
+            pushFollow(FOLLOW_rule__Instance__AbbrAssignment_4_1_in_rule__Instance__Group_4__1__Impl3197);
+            rule__Instance__AbbrAssignment_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInstanceAccess().getSeeAssignment_4_1()); 
+             after(grammarAccess.getInstanceAccess().getAbbrAssignment_4_1()); 
 
             }
 
@@ -4069,21 +4419,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_5__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1480:1: rule__Instance__Group_5__0 : rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1605:1: rule__Instance__Group_5__0 : rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1 ;
     public final void rule__Instance__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1484:1: ( rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1485:2: rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1609:1: ( rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1610:2: rule__Instance__Group_5__0__Impl rule__Instance__Group_5__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_5__0__Impl_in_rule__Instance__Group_5__02982);
+            pushFollow(FOLLOW_rule__Instance__Group_5__0__Impl_in_rule__Instance__Group_5__03231);
             rule__Instance__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_5__1_in_rule__Instance__Group_5__02985);
+            pushFollow(FOLLOW_rule__Instance__Group_5__1_in_rule__Instance__Group_5__03234);
             rule__Instance__Group_5__1();
 
             state._fsp--;
@@ -4107,21 +4457,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_5__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1492:1: rule__Instance__Group_5__0__Impl : ( '@tag' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1617:1: rule__Instance__Group_5__0__Impl : ( '@see' ) ;
     public final void rule__Instance__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1496:1: ( ( '@tag' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1497:1: ( '@tag' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1621:1: ( ( '@see' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1622:1: ( '@see' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1497:1: ( '@tag' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1498:1: '@tag'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1622:1: ( '@see' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1623:1: '@see'
             {
-             before(grammarAccess.getInstanceAccess().getTagKeyword_5_0()); 
-            match(input,25,FOLLOW_25_in_rule__Instance__Group_5__0__Impl3013); 
-             after(grammarAccess.getInstanceAccess().getTagKeyword_5_0()); 
+             before(grammarAccess.getInstanceAccess().getSeeKeyword_5_0()); 
+            match(input,26,FOLLOW_26_in_rule__Instance__Group_5__0__Impl3262); 
+             after(grammarAccess.getInstanceAccess().getSeeKeyword_5_0()); 
 
             }
 
@@ -4144,16 +4494,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_5__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1511:1: rule__Instance__Group_5__1 : rule__Instance__Group_5__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1636:1: rule__Instance__Group_5__1 : rule__Instance__Group_5__1__Impl ;
     public final void rule__Instance__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1515:1: ( rule__Instance__Group_5__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1516:2: rule__Instance__Group_5__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1640:1: ( rule__Instance__Group_5__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1641:2: rule__Instance__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_5__1__Impl_in_rule__Instance__Group_5__13044);
+            pushFollow(FOLLOW_rule__Instance__Group_5__1__Impl_in_rule__Instance__Group_5__13293);
             rule__Instance__Group_5__1__Impl();
 
             state._fsp--;
@@ -4177,31 +4527,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_5__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1522:1: rule__Instance__Group_5__1__Impl : ( ( rule__Instance__TagsAssignment_5_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1647:1: rule__Instance__Group_5__1__Impl : ( ( rule__Instance__SeeAssignment_5_1 ) ) ;
     public final void rule__Instance__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1526:1: ( ( ( rule__Instance__TagsAssignment_5_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1527:1: ( ( rule__Instance__TagsAssignment_5_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1651:1: ( ( ( rule__Instance__SeeAssignment_5_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1652:1: ( ( rule__Instance__SeeAssignment_5_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1527:1: ( ( rule__Instance__TagsAssignment_5_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1528:1: ( rule__Instance__TagsAssignment_5_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1652:1: ( ( rule__Instance__SeeAssignment_5_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1653:1: ( rule__Instance__SeeAssignment_5_1 )
             {
-             before(grammarAccess.getInstanceAccess().getTagsAssignment_5_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1529:1: ( rule__Instance__TagsAssignment_5_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1529:2: rule__Instance__TagsAssignment_5_1
+             before(grammarAccess.getInstanceAccess().getSeeAssignment_5_1()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1654:1: ( rule__Instance__SeeAssignment_5_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1654:2: rule__Instance__SeeAssignment_5_1
             {
-            pushFollow(FOLLOW_rule__Instance__TagsAssignment_5_1_in_rule__Instance__Group_5__1__Impl3071);
-            rule__Instance__TagsAssignment_5_1();
+            pushFollow(FOLLOW_rule__Instance__SeeAssignment_5_1_in_rule__Instance__Group_5__1__Impl3320);
+            rule__Instance__SeeAssignment_5_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInstanceAccess().getTagsAssignment_5_1()); 
+             after(grammarAccess.getInstanceAccess().getSeeAssignment_5_1()); 
 
             }
 
@@ -4224,21 +4574,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_6__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1543:1: rule__Instance__Group_6__0 : rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1668:1: rule__Instance__Group_6__0 : rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1 ;
     public final void rule__Instance__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1547:1: ( rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1548:2: rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1672:1: ( rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1673:2: rule__Instance__Group_6__0__Impl rule__Instance__Group_6__1
             {
-            pushFollow(FOLLOW_rule__Instance__Group_6__0__Impl_in_rule__Instance__Group_6__03105);
+            pushFollow(FOLLOW_rule__Instance__Group_6__0__Impl_in_rule__Instance__Group_6__03354);
             rule__Instance__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Instance__Group_6__1_in_rule__Instance__Group_6__03108);
+            pushFollow(FOLLOW_rule__Instance__Group_6__1_in_rule__Instance__Group_6__03357);
             rule__Instance__Group_6__1();
 
             state._fsp--;
@@ -4262,31 +4612,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_6__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1555:1: rule__Instance__Group_6__0__Impl : ( ( rule__Instance__NameAssignment_6_0 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1680:1: rule__Instance__Group_6__0__Impl : ( '@tag' ) ;
     public final void rule__Instance__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1559:1: ( ( ( rule__Instance__NameAssignment_6_0 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1560:1: ( ( rule__Instance__NameAssignment_6_0 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1684:1: ( ( '@tag' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1685:1: ( '@tag' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1560:1: ( ( rule__Instance__NameAssignment_6_0 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1561:1: ( rule__Instance__NameAssignment_6_0 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1685:1: ( '@tag' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1686:1: '@tag'
             {
-             before(grammarAccess.getInstanceAccess().getNameAssignment_6_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1562:1: ( rule__Instance__NameAssignment_6_0 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1562:2: rule__Instance__NameAssignment_6_0
-            {
-            pushFollow(FOLLOW_rule__Instance__NameAssignment_6_0_in_rule__Instance__Group_6__0__Impl3135);
-            rule__Instance__NameAssignment_6_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getInstanceAccess().getNameAssignment_6_0()); 
+             before(grammarAccess.getInstanceAccess().getTagKeyword_6_0()); 
+            match(input,27,FOLLOW_27_in_rule__Instance__Group_6__0__Impl3385); 
+             after(grammarAccess.getInstanceAccess().getTagKeyword_6_0()); 
 
             }
 
@@ -4309,16 +4649,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_6__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1572:1: rule__Instance__Group_6__1 : rule__Instance__Group_6__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1699:1: rule__Instance__Group_6__1 : rule__Instance__Group_6__1__Impl ;
     public final void rule__Instance__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1576:1: ( rule__Instance__Group_6__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1577:2: rule__Instance__Group_6__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1703:1: ( rule__Instance__Group_6__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1704:2: rule__Instance__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__Instance__Group_6__1__Impl_in_rule__Instance__Group_6__13165);
+            pushFollow(FOLLOW_rule__Instance__Group_6__1__Impl_in_rule__Instance__Group_6__13416);
             rule__Instance__Group_6__1__Impl();
 
             state._fsp--;
@@ -4342,21 +4682,31 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__Group_6__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1583:1: rule__Instance__Group_6__1__Impl : ( '=' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1710:1: rule__Instance__Group_6__1__Impl : ( ( rule__Instance__TagsAssignment_6_1 ) ) ;
     public final void rule__Instance__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1587:1: ( ( '=' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1588:1: ( '=' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1714:1: ( ( ( rule__Instance__TagsAssignment_6_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1715:1: ( ( rule__Instance__TagsAssignment_6_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1588:1: ( '=' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1589:1: '='
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1715:1: ( ( rule__Instance__TagsAssignment_6_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1716:1: ( rule__Instance__TagsAssignment_6_1 )
             {
-             before(grammarAccess.getInstanceAccess().getEqualsSignKeyword_6_1()); 
-            match(input,26,FOLLOW_26_in_rule__Instance__Group_6__1__Impl3193); 
-             after(grammarAccess.getInstanceAccess().getEqualsSignKeyword_6_1()); 
+             before(grammarAccess.getInstanceAccess().getTagsAssignment_6_1()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1717:1: ( rule__Instance__TagsAssignment_6_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1717:2: rule__Instance__TagsAssignment_6_1
+            {
+            pushFollow(FOLLOW_rule__Instance__TagsAssignment_6_1_in_rule__Instance__Group_6__1__Impl3443);
+            rule__Instance__TagsAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInstanceAccess().getTagsAssignment_6_1()); 
 
             }
 
@@ -4378,22 +4728,177 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Instance__Group_6__1__Impl"
 
 
+    // $ANTLR start "rule__Instance__Group_7__0"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1731:1: rule__Instance__Group_7__0 : rule__Instance__Group_7__0__Impl rule__Instance__Group_7__1 ;
+    public final void rule__Instance__Group_7__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1735:1: ( rule__Instance__Group_7__0__Impl rule__Instance__Group_7__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1736:2: rule__Instance__Group_7__0__Impl rule__Instance__Group_7__1
+            {
+            pushFollow(FOLLOW_rule__Instance__Group_7__0__Impl_in_rule__Instance__Group_7__03477);
+            rule__Instance__Group_7__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Instance__Group_7__1_in_rule__Instance__Group_7__03480);
+            rule__Instance__Group_7__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group_7__0"
+
+
+    // $ANTLR start "rule__Instance__Group_7__0__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1743:1: rule__Instance__Group_7__0__Impl : ( ( rule__Instance__NameAssignment_7_0 ) ) ;
+    public final void rule__Instance__Group_7__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1747:1: ( ( ( rule__Instance__NameAssignment_7_0 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1748:1: ( ( rule__Instance__NameAssignment_7_0 ) )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1748:1: ( ( rule__Instance__NameAssignment_7_0 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1749:1: ( rule__Instance__NameAssignment_7_0 )
+            {
+             before(grammarAccess.getInstanceAccess().getNameAssignment_7_0()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1750:1: ( rule__Instance__NameAssignment_7_0 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1750:2: rule__Instance__NameAssignment_7_0
+            {
+            pushFollow(FOLLOW_rule__Instance__NameAssignment_7_0_in_rule__Instance__Group_7__0__Impl3507);
+            rule__Instance__NameAssignment_7_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInstanceAccess().getNameAssignment_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group_7__0__Impl"
+
+
+    // $ANTLR start "rule__Instance__Group_7__1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1760:1: rule__Instance__Group_7__1 : rule__Instance__Group_7__1__Impl ;
+    public final void rule__Instance__Group_7__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1764:1: ( rule__Instance__Group_7__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1765:2: rule__Instance__Group_7__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Instance__Group_7__1__Impl_in_rule__Instance__Group_7__13537);
+            rule__Instance__Group_7__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group_7__1"
+
+
+    // $ANTLR start "rule__Instance__Group_7__1__Impl"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1771:1: rule__Instance__Group_7__1__Impl : ( '=' ) ;
+    public final void rule__Instance__Group_7__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1775:1: ( ( '=' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1776:1: ( '=' )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1776:1: ( '=' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1777:1: '='
+            {
+             before(grammarAccess.getInstanceAccess().getEqualsSignKeyword_7_1()); 
+            match(input,28,FOLLOW_28_in_rule__Instance__Group_7__1__Impl3565); 
+             after(grammarAccess.getInstanceAccess().getEqualsSignKeyword_7_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__Group_7__1__Impl"
+
+
     // $ANTLR start "rule__Slot__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1606:1: rule__Slot__Group__0 : rule__Slot__Group__0__Impl rule__Slot__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1794:1: rule__Slot__Group__0 : rule__Slot__Group__0__Impl rule__Slot__Group__1 ;
     public final void rule__Slot__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1610:1: ( rule__Slot__Group__0__Impl rule__Slot__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1611:2: rule__Slot__Group__0__Impl rule__Slot__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1798:1: ( rule__Slot__Group__0__Impl rule__Slot__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1799:2: rule__Slot__Group__0__Impl rule__Slot__Group__1
             {
-            pushFollow(FOLLOW_rule__Slot__Group__0__Impl_in_rule__Slot__Group__03228);
+            pushFollow(FOLLOW_rule__Slot__Group__0__Impl_in_rule__Slot__Group__03600);
             rule__Slot__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Slot__Group__1_in_rule__Slot__Group__03231);
+            pushFollow(FOLLOW_rule__Slot__Group__1_in_rule__Slot__Group__03603);
             rule__Slot__Group__1();
 
             state._fsp--;
@@ -4417,21 +4922,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1618:1: rule__Slot__Group__0__Impl : ( () ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1806:1: rule__Slot__Group__0__Impl : ( () ) ;
     public final void rule__Slot__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1622:1: ( ( () ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1623:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1810:1: ( ( () ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1811:1: ( () )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1623:1: ( () )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1624:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1811:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1812:1: ()
             {
              before(grammarAccess.getSlotAccess().getSlotAction_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1625:1: ()
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1627:1: 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1813:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1815:1: 
             {
             }
 
@@ -4454,21 +4959,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1637:1: rule__Slot__Group__1 : rule__Slot__Group__1__Impl rule__Slot__Group__2 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1825:1: rule__Slot__Group__1 : rule__Slot__Group__1__Impl rule__Slot__Group__2 ;
     public final void rule__Slot__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1641:1: ( rule__Slot__Group__1__Impl rule__Slot__Group__2 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1642:2: rule__Slot__Group__1__Impl rule__Slot__Group__2
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1829:1: ( rule__Slot__Group__1__Impl rule__Slot__Group__2 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1830:2: rule__Slot__Group__1__Impl rule__Slot__Group__2
             {
-            pushFollow(FOLLOW_rule__Slot__Group__1__Impl_in_rule__Slot__Group__13289);
+            pushFollow(FOLLOW_rule__Slot__Group__1__Impl_in_rule__Slot__Group__13661);
             rule__Slot__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Slot__Group__2_in_rule__Slot__Group__13292);
+            pushFollow(FOLLOW_rule__Slot__Group__2_in_rule__Slot__Group__13664);
             rule__Slot__Group__2();
 
             state._fsp--;
@@ -4492,23 +4997,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1649:1: rule__Slot__Group__1__Impl : ( ( rule__Slot__NameAssignment_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1837:1: rule__Slot__Group__1__Impl : ( ( rule__Slot__NameAssignment_1 ) ) ;
     public final void rule__Slot__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1653:1: ( ( ( rule__Slot__NameAssignment_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1654:1: ( ( rule__Slot__NameAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1841:1: ( ( ( rule__Slot__NameAssignment_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1842:1: ( ( rule__Slot__NameAssignment_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1654:1: ( ( rule__Slot__NameAssignment_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1655:1: ( rule__Slot__NameAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1842:1: ( ( rule__Slot__NameAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1843:1: ( rule__Slot__NameAssignment_1 )
             {
              before(grammarAccess.getSlotAccess().getNameAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1656:1: ( rule__Slot__NameAssignment_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1656:2: rule__Slot__NameAssignment_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1844:1: ( rule__Slot__NameAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1844:2: rule__Slot__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Slot__NameAssignment_1_in_rule__Slot__Group__1__Impl3319);
+            pushFollow(FOLLOW_rule__Slot__NameAssignment_1_in_rule__Slot__Group__1__Impl3691);
             rule__Slot__NameAssignment_1();
 
             state._fsp--;
@@ -4539,21 +5044,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1666:1: rule__Slot__Group__2 : rule__Slot__Group__2__Impl rule__Slot__Group__3 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1854:1: rule__Slot__Group__2 : rule__Slot__Group__2__Impl rule__Slot__Group__3 ;
     public final void rule__Slot__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1670:1: ( rule__Slot__Group__2__Impl rule__Slot__Group__3 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1671:2: rule__Slot__Group__2__Impl rule__Slot__Group__3
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1858:1: ( rule__Slot__Group__2__Impl rule__Slot__Group__3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1859:2: rule__Slot__Group__2__Impl rule__Slot__Group__3
             {
-            pushFollow(FOLLOW_rule__Slot__Group__2__Impl_in_rule__Slot__Group__23349);
+            pushFollow(FOLLOW_rule__Slot__Group__2__Impl_in_rule__Slot__Group__23721);
             rule__Slot__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Slot__Group__3_in_rule__Slot__Group__23352);
+            pushFollow(FOLLOW_rule__Slot__Group__3_in_rule__Slot__Group__23724);
             rule__Slot__Group__3();
 
             state._fsp--;
@@ -4577,20 +5082,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__2__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1678:1: rule__Slot__Group__2__Impl : ( '=' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1866:1: rule__Slot__Group__2__Impl : ( '=' ) ;
     public final void rule__Slot__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1682:1: ( ( '=' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1683:1: ( '=' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1870:1: ( ( '=' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1871:1: ( '=' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1683:1: ( '=' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1684:1: '='
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1871:1: ( '=' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1872:1: '='
             {
              before(grammarAccess.getSlotAccess().getEqualsSignKeyword_2()); 
-            match(input,26,FOLLOW_26_in_rule__Slot__Group__2__Impl3380); 
+            match(input,28,FOLLOW_28_in_rule__Slot__Group__2__Impl3752); 
              after(grammarAccess.getSlotAccess().getEqualsSignKeyword_2()); 
 
             }
@@ -4614,16 +5119,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__3"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1697:1: rule__Slot__Group__3 : rule__Slot__Group__3__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1885:1: rule__Slot__Group__3 : rule__Slot__Group__3__Impl ;
     public final void rule__Slot__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1701:1: ( rule__Slot__Group__3__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1702:2: rule__Slot__Group__3__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1889:1: ( rule__Slot__Group__3__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1890:2: rule__Slot__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Slot__Group__3__Impl_in_rule__Slot__Group__33411);
+            pushFollow(FOLLOW_rule__Slot__Group__3__Impl_in_rule__Slot__Group__33783);
             rule__Slot__Group__3__Impl();
 
             state._fsp--;
@@ -4647,23 +5152,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__Group__3__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1708:1: rule__Slot__Group__3__Impl : ( ( rule__Slot__ValueAssignment_3 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1896:1: rule__Slot__Group__3__Impl : ( ( rule__Slot__ValueAssignment_3 ) ) ;
     public final void rule__Slot__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1712:1: ( ( ( rule__Slot__ValueAssignment_3 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1713:1: ( ( rule__Slot__ValueAssignment_3 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1900:1: ( ( ( rule__Slot__ValueAssignment_3 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1901:1: ( ( rule__Slot__ValueAssignment_3 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1713:1: ( ( rule__Slot__ValueAssignment_3 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1714:1: ( rule__Slot__ValueAssignment_3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1901:1: ( ( rule__Slot__ValueAssignment_3 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1902:1: ( rule__Slot__ValueAssignment_3 )
             {
              before(grammarAccess.getSlotAccess().getValueAssignment_3()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1715:1: ( rule__Slot__ValueAssignment_3 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1715:2: rule__Slot__ValueAssignment_3
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1903:1: ( rule__Slot__ValueAssignment_3 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1903:2: rule__Slot__ValueAssignment_3
             {
-            pushFollow(FOLLOW_rule__Slot__ValueAssignment_3_in_rule__Slot__Group__3__Impl3438);
+            pushFollow(FOLLOW_rule__Slot__ValueAssignment_3_in_rule__Slot__Group__3__Impl3810);
             rule__Slot__ValueAssignment_3();
 
             state._fsp--;
@@ -4694,21 +5199,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1733:1: rule__Array__Group__0 : rule__Array__Group__0__Impl rule__Array__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1921:1: rule__Array__Group__0 : rule__Array__Group__0__Impl rule__Array__Group__1 ;
     public final void rule__Array__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1737:1: ( rule__Array__Group__0__Impl rule__Array__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1738:2: rule__Array__Group__0__Impl rule__Array__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1925:1: ( rule__Array__Group__0__Impl rule__Array__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1926:2: rule__Array__Group__0__Impl rule__Array__Group__1
             {
-            pushFollow(FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__03476);
+            pushFollow(FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__03848);
             rule__Array__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group__1_in_rule__Array__Group__03479);
+            pushFollow(FOLLOW_rule__Array__Group__1_in_rule__Array__Group__03851);
             rule__Array__Group__1();
 
             state._fsp--;
@@ -4732,20 +5237,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1745:1: rule__Array__Group__0__Impl : ( '[' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1933:1: rule__Array__Group__0__Impl : ( '[' ) ;
     public final void rule__Array__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1749:1: ( ( '[' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1750:1: ( '[' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1937:1: ( ( '[' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1938:1: ( '[' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1750:1: ( '[' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1751:1: '['
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1938:1: ( '[' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1939:1: '['
             {
              before(grammarAccess.getArrayAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Array__Group__0__Impl3507); 
+            match(input,29,FOLLOW_29_in_rule__Array__Group__0__Impl3879); 
              after(grammarAccess.getArrayAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -4769,21 +5274,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1764:1: rule__Array__Group__1 : rule__Array__Group__1__Impl rule__Array__Group__2 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1952:1: rule__Array__Group__1 : rule__Array__Group__1__Impl rule__Array__Group__2 ;
     public final void rule__Array__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1768:1: ( rule__Array__Group__1__Impl rule__Array__Group__2 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1769:2: rule__Array__Group__1__Impl rule__Array__Group__2
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1956:1: ( rule__Array__Group__1__Impl rule__Array__Group__2 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1957:2: rule__Array__Group__1__Impl rule__Array__Group__2
             {
-            pushFollow(FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__13538);
+            pushFollow(FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__13910);
             rule__Array__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Array__Group__2_in_rule__Array__Group__13541);
+            pushFollow(FOLLOW_rule__Array__Group__2_in_rule__Array__Group__13913);
             rule__Array__Group__2();
 
             state._fsp--;
@@ -4807,26 +5312,26 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1776:1: rule__Array__Group__1__Impl : ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1964:1: rule__Array__Group__1__Impl : ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) ) ;
     public final void rule__Array__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1780:1: ( ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1781:1: ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1968:1: ( ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1969:1: ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1781:1: ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1782:1: ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1969:1: ( ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1970:1: ( ( rule__Array__ValueAssignment_1 ) ) ( ( rule__Array__ValueAssignment_1 )* )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1782:1: ( ( rule__Array__ValueAssignment_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1783:1: ( rule__Array__ValueAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1970:1: ( ( rule__Array__ValueAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1971:1: ( rule__Array__ValueAssignment_1 )
             {
              before(grammarAccess.getArrayAccess().getValueAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1784:1: ( rule__Array__ValueAssignment_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1784:2: rule__Array__ValueAssignment_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1972:1: ( rule__Array__ValueAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1972:2: rule__Array__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3570);
+            pushFollow(FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3942);
             rule__Array__ValueAssignment_1();
 
             state._fsp--;
@@ -4838,26 +5343,26 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
             }
 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1787:1: ( ( rule__Array__ValueAssignment_1 )* )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1788:1: ( rule__Array__ValueAssignment_1 )*
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1975:1: ( ( rule__Array__ValueAssignment_1 )* )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1976:1: ( rule__Array__ValueAssignment_1 )*
             {
              before(grammarAccess.getArrayAccess().getValueAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1789:1: ( rule__Array__ValueAssignment_1 )*
-            loop14:
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1977:1: ( rule__Array__ValueAssignment_1 )*
+            loop16:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( ((LA14_0>=RULE_MY_STRING && LA14_0<=RULE_NUMBER)||(LA14_0>=17 && LA14_0<=18)||(LA14_0>=21 && LA14_0<=25)||LA14_0==27||(LA14_0>=29 && LA14_0<=31)) ) {
-                    alt14=1;
+                if ( ((LA16_0>=RULE_FQN && LA16_0<=RULE_NUMBER)||(LA16_0>=18 && LA16_0<=19)||(LA16_0>=22 && LA16_0<=27)||LA16_0==29||(LA16_0>=31 && LA16_0<=33)) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt16) {
             	case 1 :
-            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1789:2: rule__Array__ValueAssignment_1
+            	    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1977:2: rule__Array__ValueAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3582);
+            	    pushFollow(FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3954);
             	    rule__Array__ValueAssignment_1();
 
             	    state._fsp--;
@@ -4867,7 +5372,7 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop16;
                 }
             } while (true);
 
@@ -4897,16 +5402,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1800:1: rule__Array__Group__2 : rule__Array__Group__2__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1988:1: rule__Array__Group__2 : rule__Array__Group__2__Impl ;
     public final void rule__Array__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1804:1: ( rule__Array__Group__2__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1805:2: rule__Array__Group__2__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1992:1: ( rule__Array__Group__2__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1993:2: rule__Array__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__23615);
+            pushFollow(FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__23987);
             rule__Array__Group__2__Impl();
 
             state._fsp--;
@@ -4930,20 +5435,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__Group__2__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1811:1: rule__Array__Group__2__Impl : ( ']' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1999:1: rule__Array__Group__2__Impl : ( ']' ) ;
     public final void rule__Array__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1815:1: ( ( ']' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1816:1: ( ']' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2003:1: ( ( ']' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2004:1: ( ']' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1816:1: ( ']' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1817:1: ']'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2004:1: ( ']' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2005:1: ']'
             {
              before(grammarAccess.getArrayAccess().getRightSquareBracketKeyword_2()); 
-            match(input,28,FOLLOW_28_in_rule__Array__Group__2__Impl3643); 
+            match(input,30,FOLLOW_30_in_rule__Array__Group__2__Impl4015); 
              after(grammarAccess.getArrayAccess().getRightSquareBracketKeyword_2()); 
 
             }
@@ -4967,21 +5472,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__NullValue__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1836:1: rule__NullValue__Group__0 : rule__NullValue__Group__0__Impl rule__NullValue__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2024:1: rule__NullValue__Group__0 : rule__NullValue__Group__0__Impl rule__NullValue__Group__1 ;
     public final void rule__NullValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1840:1: ( rule__NullValue__Group__0__Impl rule__NullValue__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1841:2: rule__NullValue__Group__0__Impl rule__NullValue__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2028:1: ( rule__NullValue__Group__0__Impl rule__NullValue__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2029:2: rule__NullValue__Group__0__Impl rule__NullValue__Group__1
             {
-            pushFollow(FOLLOW_rule__NullValue__Group__0__Impl_in_rule__NullValue__Group__03680);
+            pushFollow(FOLLOW_rule__NullValue__Group__0__Impl_in_rule__NullValue__Group__04052);
             rule__NullValue__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NullValue__Group__1_in_rule__NullValue__Group__03683);
+            pushFollow(FOLLOW_rule__NullValue__Group__1_in_rule__NullValue__Group__04055);
             rule__NullValue__Group__1();
 
             state._fsp--;
@@ -5005,21 +5510,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__NullValue__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1848:1: rule__NullValue__Group__0__Impl : ( () ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2036:1: rule__NullValue__Group__0__Impl : ( () ) ;
     public final void rule__NullValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1852:1: ( ( () ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1853:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2040:1: ( ( () ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2041:1: ( () )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1853:1: ( () )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1854:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2041:1: ( () )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2042:1: ()
             {
              before(grammarAccess.getNullValueAccess().getNullValueAction_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1855:1: ()
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1857:1: 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2043:1: ()
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2045:1: 
             {
             }
 
@@ -5042,16 +5547,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__NullValue__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1867:1: rule__NullValue__Group__1 : rule__NullValue__Group__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2055:1: rule__NullValue__Group__1 : rule__NullValue__Group__1__Impl ;
     public final void rule__NullValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1871:1: ( rule__NullValue__Group__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1872:2: rule__NullValue__Group__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2059:1: ( rule__NullValue__Group__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2060:2: rule__NullValue__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__NullValue__Group__1__Impl_in_rule__NullValue__Group__13741);
+            pushFollow(FOLLOW_rule__NullValue__Group__1__Impl_in_rule__NullValue__Group__14113);
             rule__NullValue__Group__1__Impl();
 
             state._fsp--;
@@ -5075,20 +5580,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__NullValue__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1878:1: rule__NullValue__Group__1__Impl : ( 'null' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2066:1: rule__NullValue__Group__1__Impl : ( 'null' ) ;
     public final void rule__NullValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1882:1: ( ( 'null' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1883:1: ( 'null' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2070:1: ( ( 'null' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2071:1: ( 'null' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1883:1: ( 'null' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1884:1: 'null'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2071:1: ( 'null' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2072:1: 'null'
             {
              before(grammarAccess.getNullValueAccess().getNullKeyword_1()); 
-            match(input,29,FOLLOW_29_in_rule__NullValue__Group__1__Impl3769); 
+            match(input,31,FOLLOW_31_in_rule__NullValue__Group__1__Impl4141); 
              after(grammarAccess.getNullValueAccess().getNullKeyword_1()); 
 
             }
@@ -5112,21 +5617,21 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__EnumValue__Group__0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1901:1: rule__EnumValue__Group__0 : rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1 ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2089:1: rule__EnumValue__Group__0 : rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1 ;
     public final void rule__EnumValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1905:1: ( rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1906:2: rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2093:1: ( rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2094:2: rule__EnumValue__Group__0__Impl rule__EnumValue__Group__1
             {
-            pushFollow(FOLLOW_rule__EnumValue__Group__0__Impl_in_rule__EnumValue__Group__03804);
+            pushFollow(FOLLOW_rule__EnumValue__Group__0__Impl_in_rule__EnumValue__Group__04176);
             rule__EnumValue__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EnumValue__Group__1_in_rule__EnumValue__Group__03807);
+            pushFollow(FOLLOW_rule__EnumValue__Group__1_in_rule__EnumValue__Group__04179);
             rule__EnumValue__Group__1();
 
             state._fsp--;
@@ -5150,20 +5655,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__EnumValue__Group__0__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1913:1: rule__EnumValue__Group__0__Impl : ( '#' ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2101:1: rule__EnumValue__Group__0__Impl : ( '#' ) ;
     public final void rule__EnumValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1917:1: ( ( '#' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1918:1: ( '#' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2105:1: ( ( '#' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2106:1: ( '#' )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1918:1: ( '#' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1919:1: '#'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2106:1: ( '#' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2107:1: '#'
             {
              before(grammarAccess.getEnumValueAccess().getNumberSignKeyword_0()); 
-            match(input,17,FOLLOW_17_in_rule__EnumValue__Group__0__Impl3835); 
+            match(input,18,FOLLOW_18_in_rule__EnumValue__Group__0__Impl4207); 
              after(grammarAccess.getEnumValueAccess().getNumberSignKeyword_0()); 
 
             }
@@ -5187,16 +5692,16 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__EnumValue__Group__1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1932:1: rule__EnumValue__Group__1 : rule__EnumValue__Group__1__Impl ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2120:1: rule__EnumValue__Group__1 : rule__EnumValue__Group__1__Impl ;
     public final void rule__EnumValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1936:1: ( rule__EnumValue__Group__1__Impl )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1937:2: rule__EnumValue__Group__1__Impl
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2124:1: ( rule__EnumValue__Group__1__Impl )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2125:2: rule__EnumValue__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__EnumValue__Group__1__Impl_in_rule__EnumValue__Group__13866);
+            pushFollow(FOLLOW_rule__EnumValue__Group__1__Impl_in_rule__EnumValue__Group__14238);
             rule__EnumValue__Group__1__Impl();
 
             state._fsp--;
@@ -5220,23 +5725,23 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__EnumValue__Group__1__Impl"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1943:1: rule__EnumValue__Group__1__Impl : ( ( rule__EnumValue__ValueAssignment_1 ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2131:1: rule__EnumValue__Group__1__Impl : ( ( rule__EnumValue__ValueAssignment_1 ) ) ;
     public final void rule__EnumValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1947:1: ( ( ( rule__EnumValue__ValueAssignment_1 ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1948:1: ( ( rule__EnumValue__ValueAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2135:1: ( ( ( rule__EnumValue__ValueAssignment_1 ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2136:1: ( ( rule__EnumValue__ValueAssignment_1 ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1948:1: ( ( rule__EnumValue__ValueAssignment_1 ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1949:1: ( rule__EnumValue__ValueAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2136:1: ( ( rule__EnumValue__ValueAssignment_1 ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2137:1: ( rule__EnumValue__ValueAssignment_1 )
             {
              before(grammarAccess.getEnumValueAccess().getValueAssignment_1()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1950:1: ( rule__EnumValue__ValueAssignment_1 )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1950:2: rule__EnumValue__ValueAssignment_1
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2138:1: ( rule__EnumValue__ValueAssignment_1 )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2138:2: rule__EnumValue__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__EnumValue__ValueAssignment_1_in_rule__EnumValue__Group__1__Impl3893);
+            pushFollow(FOLLOW_rule__EnumValue__ValueAssignment_1_in_rule__EnumValue__Group__1__Impl4265);
             rule__EnumValue__ValueAssignment_1();
 
             state._fsp--;
@@ -5267,20 +5772,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Unit__ImportsAssignment_0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1965:1: rule__Unit__ImportsAssignment_0 : ( ruleImport ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2153:1: rule__Unit__ImportsAssignment_0 : ( ruleImport ) ;
     public final void rule__Unit__ImportsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1969:1: ( ( ruleImport ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1970:1: ( ruleImport )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2157:1: ( ( ruleImport ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2158:1: ( ruleImport )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1970:1: ( ruleImport )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1971:1: ruleImport
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2158:1: ( ruleImport )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2159:1: ruleImport
             {
              before(grammarAccess.getUnitAccess().getImportsImportParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleImport_in_rule__Unit__ImportsAssignment_03932);
+            pushFollow(FOLLOW_ruleImport_in_rule__Unit__ImportsAssignment_04304);
             ruleImport();
 
             state._fsp--;
@@ -5307,26 +5812,71 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Unit__ImportsAssignment_0"
 
 
-    // $ANTLR start "rule__Unit__ContainerAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1980:1: rule__Unit__ContainerAssignment_1 : ( ruleContainer ) ;
-    public final void rule__Unit__ContainerAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Unit__ParentAssignment_1_1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2168:1: rule__Unit__ParentAssignment_1_1 : ( ( RULE_FQN ) ) ;
+    public final void rule__Unit__ParentAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1984:1: ( ( ruleContainer ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1985:1: ( ruleContainer )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2172:1: ( ( ( RULE_FQN ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2173:1: ( ( RULE_FQN ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1985:1: ( ruleContainer )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1986:1: ruleContainer
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2173:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2174:1: ( RULE_FQN )
             {
-             before(grammarAccess.getUnitAccess().getContainerContainerParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleContainer_in_rule__Unit__ContainerAssignment_13963);
+             before(grammarAccess.getUnitAccess().getParentInstanceCrossReference_1_1_0()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2175:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2176:1: RULE_FQN
+            {
+             before(grammarAccess.getUnitAccess().getParentInstanceFQNTerminalRuleCall_1_1_0_1()); 
+            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__Unit__ParentAssignment_1_14339); 
+             after(grammarAccess.getUnitAccess().getParentInstanceFQNTerminalRuleCall_1_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getUnitAccess().getParentInstanceCrossReference_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unit__ParentAssignment_1_1"
+
+
+    // $ANTLR start "rule__Unit__ContainerAssignment_2"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2187:1: rule__Unit__ContainerAssignment_2 : ( ruleContainer ) ;
+    public final void rule__Unit__ContainerAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2191:1: ( ( ruleContainer ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2192:1: ( ruleContainer )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2192:1: ( ruleContainer )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2193:1: ruleContainer
+            {
+             before(grammarAccess.getUnitAccess().getContainerContainerParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleContainer_in_rule__Unit__ContainerAssignment_24374);
             ruleContainer();
 
             state._fsp--;
 
-             after(grammarAccess.getUnitAccess().getContainerContainerParserRuleCall_1_0()); 
+             after(grammarAccess.getUnitAccess().getContainerContainerParserRuleCall_2_0()); 
 
             }
 
@@ -5345,29 +5895,29 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Unit__ContainerAssignment_1"
+    // $ANTLR end "rule__Unit__ContainerAssignment_2"
 
 
-    // $ANTLR start "rule__Unit__InstancesAssignment_2"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1995:1: rule__Unit__InstancesAssignment_2 : ( ruleInstance ) ;
-    public final void rule__Unit__InstancesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Unit__InstancesAssignment_3"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2202:1: rule__Unit__InstancesAssignment_3 : ( ruleInstance ) ;
+    public final void rule__Unit__InstancesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:1999:1: ( ( ruleInstance ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2000:1: ( ruleInstance )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2206:1: ( ( ruleInstance ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2207:1: ( ruleInstance )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2000:1: ( ruleInstance )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2001:1: ruleInstance
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2207:1: ( ruleInstance )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2208:1: ruleInstance
             {
-             before(grammarAccess.getUnitAccess().getInstancesInstanceParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleInstance_in_rule__Unit__InstancesAssignment_23994);
+             before(grammarAccess.getUnitAccess().getInstancesInstanceParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleInstance_in_rule__Unit__InstancesAssignment_34405);
             ruleInstance();
 
             state._fsp--;
 
-             after(grammarAccess.getUnitAccess().getInstancesInstanceParserRuleCall_2_0()); 
+             after(grammarAccess.getUnitAccess().getInstancesInstanceParserRuleCall_3_0()); 
 
             }
 
@@ -5386,24 +5936,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Unit__InstancesAssignment_2"
+    // $ANTLR end "rule__Unit__InstancesAssignment_3"
 
 
     // $ANTLR start "rule__Import__NameAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2010:1: rule__Import__NameAssignment_1 : ( RULE_MY_STRING ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2217:1: rule__Import__NameAssignment_1 : ( RULE_MY_STRING ) ;
     public final void rule__Import__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2014:1: ( ( RULE_MY_STRING ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2015:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2221:1: ( ( RULE_MY_STRING ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2222:1: ( RULE_MY_STRING )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2015:1: ( RULE_MY_STRING )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2016:1: RULE_MY_STRING
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2222:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2223:1: RULE_MY_STRING
             {
              before(grammarAccess.getImportAccess().getNameMY_STRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Import__NameAssignment_14025); 
+            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Import__NameAssignment_14436); 
              after(grammarAccess.getImportAccess().getNameMY_STRINGTerminalRuleCall_1_0()); 
 
             }
@@ -5427,24 +5977,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__InstanceAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2025:1: rule__Container__InstanceAssignment_1 : ( ( RULE_FQN ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:1: rule__Container__InstanceAssignment_1 : ( ( RULE_FQN ) ) ;
     public final void rule__Container__InstanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2029:1: ( ( ( RULE_FQN ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2030:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2236:1: ( ( ( RULE_FQN ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2237:1: ( ( RULE_FQN ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2030:1: ( ( RULE_FQN ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2031:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2237:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2238:1: ( RULE_FQN )
             {
              before(grammarAccess.getContainerAccess().getInstanceInstanceCrossReference_1_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2032:1: ( RULE_FQN )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2033:1: RULE_FQN
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2239:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2240:1: RULE_FQN
             {
              before(grammarAccess.getContainerAccess().getInstanceInstanceFQNTerminalRuleCall_1_0_1()); 
-            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__Container__InstanceAssignment_14060); 
+            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__Container__InstanceAssignment_14471); 
              after(grammarAccess.getContainerAccess().getInstanceInstanceFQNTerminalRuleCall_1_0_1()); 
 
             }
@@ -5472,20 +6022,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Container__FeatureAssignment_3"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2044:1: rule__Container__FeatureAssignment_3 : ( RULE_ID ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2251:1: rule__Container__FeatureAssignment_3 : ( RULE_ID ) ;
     public final void rule__Container__FeatureAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2048:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2049:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2255:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2256:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2049:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2050:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2256:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2257:1: RULE_ID
             {
              before(grammarAccess.getContainerAccess().getFeatureIDTerminalRuleCall_3_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Container__FeatureAssignment_34095); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Container__FeatureAssignment_34506); 
              after(grammarAccess.getContainerAccess().getFeatureIDTerminalRuleCall_3_0()); 
 
             }
@@ -5509,20 +6059,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__TitleAssignment_1_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2059:1: rule__Instance__TitleAssignment_1_1 : ( RULE_MY_STRING ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2266:1: rule__Instance__TitleAssignment_1_1 : ( RULE_MY_STRING ) ;
     public final void rule__Instance__TitleAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2063:1: ( ( RULE_MY_STRING ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2064:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2270:1: ( ( RULE_MY_STRING ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2271:1: ( RULE_MY_STRING )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2064:1: ( RULE_MY_STRING )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2065:1: RULE_MY_STRING
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2271:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2272:1: RULE_MY_STRING
             {
              before(grammarAccess.getInstanceAccess().getTitleMY_STRINGTerminalRuleCall_1_1_0()); 
-            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__TitleAssignment_1_14126); 
+            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__TitleAssignment_1_14537); 
              after(grammarAccess.getInstanceAccess().getTitleMY_STRINGTerminalRuleCall_1_1_0()); 
 
             }
@@ -5546,20 +6096,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__AbstractAssignment_2_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2074:1: rule__Instance__AbstractAssignment_2_1 : ( RULE_MY_STRING ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2281:1: rule__Instance__AbstractAssignment_2_1 : ( RULE_MY_STRING ) ;
     public final void rule__Instance__AbstractAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2078:1: ( ( RULE_MY_STRING ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2079:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2285:1: ( ( RULE_MY_STRING ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2286:1: ( RULE_MY_STRING )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2079:1: ( RULE_MY_STRING )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2080:1: RULE_MY_STRING
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2286:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2287:1: RULE_MY_STRING
             {
              before(grammarAccess.getInstanceAccess().getAbstractMY_STRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__AbstractAssignment_2_14157); 
+            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__AbstractAssignment_2_14568); 
              after(grammarAccess.getInstanceAccess().getAbstractMY_STRINGTerminalRuleCall_2_1_0()); 
 
             }
@@ -5583,20 +6133,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Instance__DocumentationAssignment_3_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2089:1: rule__Instance__DocumentationAssignment_3_1 : ( RULE_MY_STRING ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2296:1: rule__Instance__DocumentationAssignment_3_1 : ( RULE_MY_STRING ) ;
     public final void rule__Instance__DocumentationAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2093:1: ( ( RULE_MY_STRING ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2094:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2300:1: ( ( RULE_MY_STRING ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2301:1: ( RULE_MY_STRING )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2094:1: ( RULE_MY_STRING )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2095:1: RULE_MY_STRING
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2301:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2302:1: RULE_MY_STRING
             {
              before(grammarAccess.getInstanceAccess().getDocumentationMY_STRINGTerminalRuleCall_3_1_0()); 
-            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__DocumentationAssignment_3_14188); 
+            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__Instance__DocumentationAssignment_3_14599); 
              after(grammarAccess.getInstanceAccess().getDocumentationMY_STRINGTerminalRuleCall_3_1_0()); 
 
             }
@@ -5619,30 +6169,22 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     // $ANTLR end "rule__Instance__DocumentationAssignment_3_1"
 
 
-    // $ANTLR start "rule__Instance__SeeAssignment_4_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2104:1: rule__Instance__SeeAssignment_4_1 : ( ( RULE_FQN ) ) ;
-    public final void rule__Instance__SeeAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Instance__AbbrAssignment_4_1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2311:1: rule__Instance__AbbrAssignment_4_1 : ( RULE_ID ) ;
+    public final void rule__Instance__AbbrAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2108:1: ( ( ( RULE_FQN ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2109:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2315:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2316:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2109:1: ( ( RULE_FQN ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2110:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2316:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2317:1: RULE_ID
             {
-             before(grammarAccess.getInstanceAccess().getSeeInstanceCrossReference_4_1_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2111:1: ( RULE_FQN )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2112:1: RULE_FQN
-            {
-             before(grammarAccess.getInstanceAccess().getSeeInstanceFQNTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__Instance__SeeAssignment_4_14223); 
-             after(grammarAccess.getInstanceAccess().getSeeInstanceFQNTerminalRuleCall_4_1_0_1()); 
-
-            }
-
-             after(grammarAccess.getInstanceAccess().getSeeInstanceCrossReference_4_1_0()); 
+             before(grammarAccess.getInstanceAccess().getAbbrIDTerminalRuleCall_4_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__AbbrAssignment_4_14630); 
+             after(grammarAccess.getInstanceAccess().getAbbrIDTerminalRuleCall_4_1_0()); 
 
             }
 
@@ -5661,25 +6203,33 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Instance__SeeAssignment_4_1"
+    // $ANTLR end "rule__Instance__AbbrAssignment_4_1"
 
 
-    // $ANTLR start "rule__Instance__TagsAssignment_5_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2123:1: rule__Instance__TagsAssignment_5_1 : ( RULE_ID ) ;
-    public final void rule__Instance__TagsAssignment_5_1() throws RecognitionException {
+    // $ANTLR start "rule__Instance__SeeAssignment_5_1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2326:1: rule__Instance__SeeAssignment_5_1 : ( ( RULE_FQN ) ) ;
+    public final void rule__Instance__SeeAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2127:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2128:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2330:1: ( ( ( RULE_FQN ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2331:1: ( ( RULE_FQN ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2128:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2129:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2331:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2332:1: ( RULE_FQN )
             {
-             before(grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_5_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__TagsAssignment_5_14258); 
-             after(grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_5_1_0()); 
+             before(grammarAccess.getInstanceAccess().getSeeInstanceCrossReference_5_1_0()); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2333:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2334:1: RULE_FQN
+            {
+             before(grammarAccess.getInstanceAccess().getSeeInstanceFQNTerminalRuleCall_5_1_0_1()); 
+            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__Instance__SeeAssignment_5_14665); 
+             after(grammarAccess.getInstanceAccess().getSeeInstanceFQNTerminalRuleCall_5_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getInstanceAccess().getSeeInstanceCrossReference_5_1_0()); 
 
             }
 
@@ -5698,25 +6248,25 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Instance__TagsAssignment_5_1"
+    // $ANTLR end "rule__Instance__SeeAssignment_5_1"
 
 
-    // $ANTLR start "rule__Instance__NameAssignment_6_0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2138:1: rule__Instance__NameAssignment_6_0 : ( RULE_ID ) ;
-    public final void rule__Instance__NameAssignment_6_0() throws RecognitionException {
+    // $ANTLR start "rule__Instance__TagsAssignment_6_1"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2345:1: rule__Instance__TagsAssignment_6_1 : ( RULE_ID ) ;
+    public final void rule__Instance__TagsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2142:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2143:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2349:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2350:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2143:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2144:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2350:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2351:1: RULE_ID
             {
-             before(grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_6_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__NameAssignment_6_04289); 
-             after(grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_6_0_0()); 
+             before(grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_6_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__TagsAssignment_6_14700); 
+             after(grammarAccess.getInstanceAccess().getTagsIDTerminalRuleCall_6_1_0()); 
 
             }
 
@@ -5735,25 +6285,25 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Instance__NameAssignment_6_0"
+    // $ANTLR end "rule__Instance__TagsAssignment_6_1"
 
 
-    // $ANTLR start "rule__Instance__TypeAssignment_8"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2153:1: rule__Instance__TypeAssignment_8 : ( RULE_ID ) ;
-    public final void rule__Instance__TypeAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Instance__NameAssignment_7_0"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2360:1: rule__Instance__NameAssignment_7_0 : ( RULE_ID ) ;
+    public final void rule__Instance__NameAssignment_7_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2157:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2158:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2364:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2365:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2158:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2159:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2365:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2366:1: RULE_ID
             {
-             before(grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_8_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__TypeAssignment_84320); 
-             after(grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_8_0()); 
+             before(grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_7_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__NameAssignment_7_04731); 
+             after(grammarAccess.getInstanceAccess().getNameIDTerminalRuleCall_7_0_0()); 
 
             }
 
@@ -5772,29 +6322,66 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Instance__TypeAssignment_8"
+    // $ANTLR end "rule__Instance__NameAssignment_7_0"
 
 
-    // $ANTLR start "rule__Instance__SlotsAssignment_10"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2168:1: rule__Instance__SlotsAssignment_10 : ( ruleSlot ) ;
-    public final void rule__Instance__SlotsAssignment_10() throws RecognitionException {
+    // $ANTLR start "rule__Instance__TypeAssignment_9"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2375:1: rule__Instance__TypeAssignment_9 : ( RULE_ID ) ;
+    public final void rule__Instance__TypeAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2172:1: ( ( ruleSlot ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2173:1: ( ruleSlot )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2379:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2380:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2173:1: ( ruleSlot )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2174:1: ruleSlot
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2380:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2381:1: RULE_ID
             {
-             before(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleSlot_in_rule__Instance__SlotsAssignment_104351);
+             before(grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_9_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Instance__TypeAssignment_94762); 
+             after(grammarAccess.getInstanceAccess().getTypeIDTerminalRuleCall_9_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Instance__TypeAssignment_9"
+
+
+    // $ANTLR start "rule__Instance__SlotsAssignment_11"
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2390:1: rule__Instance__SlotsAssignment_11 : ( ruleSlot ) ;
+    public final void rule__Instance__SlotsAssignment_11() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2394:1: ( ( ruleSlot ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2395:1: ( ruleSlot )
+            {
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2395:1: ( ruleSlot )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2396:1: ruleSlot
+            {
+             before(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_11_0()); 
+            pushFollow(FOLLOW_ruleSlot_in_rule__Instance__SlotsAssignment_114793);
             ruleSlot();
 
             state._fsp--;
 
-             after(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_10_0()); 
+             after(grammarAccess.getInstanceAccess().getSlotsSlotParserRuleCall_11_0()); 
 
             }
 
@@ -5813,24 +6400,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
         }
         return ;
     }
-    // $ANTLR end "rule__Instance__SlotsAssignment_10"
+    // $ANTLR end "rule__Instance__SlotsAssignment_11"
 
 
     // $ANTLR start "rule__Slot__NameAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2183:1: rule__Slot__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2405:1: rule__Slot__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Slot__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2187:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2188:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2409:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2410:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2188:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2189:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2410:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2411:1: RULE_ID
             {
              before(grammarAccess.getSlotAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Slot__NameAssignment_14382); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Slot__NameAssignment_14824); 
              after(grammarAccess.getSlotAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -5854,20 +6441,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Slot__ValueAssignment_3"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2198:1: rule__Slot__ValueAssignment_3 : ( ruleValue ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2420:1: rule__Slot__ValueAssignment_3 : ( ruleValue ) ;
     public final void rule__Slot__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2202:1: ( ( ruleValue ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2203:1: ( ruleValue )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2424:1: ( ( ruleValue ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2425:1: ( ruleValue )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2203:1: ( ruleValue )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2204:1: ruleValue
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2425:1: ( ruleValue )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2426:1: ruleValue
             {
              before(grammarAccess.getSlotAccess().getValueValueParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Slot__ValueAssignment_34413);
+            pushFollow(FOLLOW_ruleValue_in_rule__Slot__ValueAssignment_34855);
             ruleValue();
 
             state._fsp--;
@@ -5895,20 +6482,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__Array__ValueAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2213:1: rule__Array__ValueAssignment_1 : ( ruleValue ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2435:1: rule__Array__ValueAssignment_1 : ( ruleValue ) ;
     public final void rule__Array__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2217:1: ( ( ruleValue ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2218:1: ( ruleValue )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2439:1: ( ( ruleValue ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2440:1: ( ruleValue )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2218:1: ( ruleValue )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2219:1: ruleValue
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2440:1: ( ruleValue )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2441:1: ruleValue
             {
              before(grammarAccess.getArrayAccess().getValueValueParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleValue_in_rule__Array__ValueAssignment_14444);
+            pushFollow(FOLLOW_ruleValue_in_rule__Array__ValueAssignment_14886);
             ruleValue();
 
             state._fsp--;
@@ -5936,20 +6523,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2228:1: rule__StringValue__ValueAssignment : ( RULE_MY_STRING ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2450:1: rule__StringValue__ValueAssignment : ( RULE_MY_STRING ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2232:1: ( ( RULE_MY_STRING ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2233:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2454:1: ( ( RULE_MY_STRING ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2455:1: ( RULE_MY_STRING )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2233:1: ( RULE_MY_STRING )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2234:1: RULE_MY_STRING
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2455:1: ( RULE_MY_STRING )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2456:1: RULE_MY_STRING
             {
              before(grammarAccess.getStringValueAccess().getValueMY_STRINGTerminalRuleCall_0()); 
-            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__StringValue__ValueAssignment4475); 
+            match(input,RULE_MY_STRING,FOLLOW_RULE_MY_STRING_in_rule__StringValue__ValueAssignment4917); 
              after(grammarAccess.getStringValueAccess().getValueMY_STRINGTerminalRuleCall_0()); 
 
             }
@@ -5973,24 +6560,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__BooleanValue__ValueAssignment_0"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2243:1: rule__BooleanValue__ValueAssignment_0 : ( ( 'true' ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2465:1: rule__BooleanValue__ValueAssignment_0 : ( ( 'true' ) ) ;
     public final void rule__BooleanValue__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2247:1: ( ( ( 'true' ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2248:1: ( ( 'true' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2469:1: ( ( ( 'true' ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2470:1: ( ( 'true' ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2248:1: ( ( 'true' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2249:1: ( 'true' )
-            {
-             before(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2250:1: ( 'true' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2251:1: 'true'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2470:1: ( ( 'true' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2471:1: ( 'true' )
             {
              before(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
-            match(input,30,FOLLOW_30_in_rule__BooleanValue__ValueAssignment_04511); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2472:1: ( 'true' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2473:1: 'true'
+            {
+             before(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
+            match(input,32,FOLLOW_32_in_rule__BooleanValue__ValueAssignment_04953); 
              after(grammarAccess.getBooleanValueAccess().getValueTrueKeyword_0_0()); 
 
             }
@@ -6018,24 +6605,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__BooleanValue__ValueAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2266:1: rule__BooleanValue__ValueAssignment_1 : ( ( 'false' ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2488:1: rule__BooleanValue__ValueAssignment_1 : ( ( 'false' ) ) ;
     public final void rule__BooleanValue__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2270:1: ( ( ( 'false' ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2271:1: ( ( 'false' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2492:1: ( ( ( 'false' ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2493:1: ( ( 'false' ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2271:1: ( ( 'false' ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2272:1: ( 'false' )
-            {
-             before(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_1_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2273:1: ( 'false' )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2274:1: 'false'
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2493:1: ( ( 'false' ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2494:1: ( 'false' )
             {
              before(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_1_0()); 
-            match(input,31,FOLLOW_31_in_rule__BooleanValue__ValueAssignment_14555); 
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2495:1: ( 'false' )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2496:1: 'false'
+            {
+             before(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_1_0()); 
+            match(input,33,FOLLOW_33_in_rule__BooleanValue__ValueAssignment_14997); 
              after(grammarAccess.getBooleanValueAccess().getValueFalseKeyword_1_0()); 
 
             }
@@ -6063,20 +6650,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__NumberValue__ValueAssignment"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2289:1: rule__NumberValue__ValueAssignment : ( RULE_NUMBER ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2511:1: rule__NumberValue__ValueAssignment : ( RULE_NUMBER ) ;
     public final void rule__NumberValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2293:1: ( ( RULE_NUMBER ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2294:1: ( RULE_NUMBER )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2515:1: ( ( RULE_NUMBER ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2516:1: ( RULE_NUMBER )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2294:1: ( RULE_NUMBER )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2295:1: RULE_NUMBER
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2516:1: ( RULE_NUMBER )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2517:1: RULE_NUMBER
             {
              before(grammarAccess.getNumberValueAccess().getValueNUMBERTerminalRuleCall_0()); 
-            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__NumberValue__ValueAssignment4594); 
+            match(input,RULE_NUMBER,FOLLOW_RULE_NUMBER_in_rule__NumberValue__ValueAssignment5036); 
              after(grammarAccess.getNumberValueAccess().getValueNUMBERTerminalRuleCall_0()); 
 
             }
@@ -6100,24 +6687,24 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__InstanceRef__ValueAssignment"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2304:1: rule__InstanceRef__ValueAssignment : ( ( RULE_FQN ) ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2526:1: rule__InstanceRef__ValueAssignment : ( ( RULE_FQN ) ) ;
     public final void rule__InstanceRef__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2308:1: ( ( ( RULE_FQN ) ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2309:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2530:1: ( ( ( RULE_FQN ) ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2531:1: ( ( RULE_FQN ) )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2309:1: ( ( RULE_FQN ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2310:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2531:1: ( ( RULE_FQN ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2532:1: ( RULE_FQN )
             {
              before(grammarAccess.getInstanceRefAccess().getValueInstanceCrossReference_0()); 
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2311:1: ( RULE_FQN )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2312:1: RULE_FQN
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2533:1: ( RULE_FQN )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2534:1: RULE_FQN
             {
              before(grammarAccess.getInstanceRefAccess().getValueInstanceFQNTerminalRuleCall_0_1()); 
-            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__InstanceRef__ValueAssignment4629); 
+            match(input,RULE_FQN,FOLLOW_RULE_FQN_in_rule__InstanceRef__ValueAssignment5071); 
              after(grammarAccess.getInstanceRefAccess().getValueInstanceFQNTerminalRuleCall_0_1()); 
 
             }
@@ -6145,20 +6732,20 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__EnumValue__ValueAssignment_1"
-    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2323:1: rule__EnumValue__ValueAssignment_1 : ( RULE_ID ) ;
+    // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2545:1: rule__EnumValue__ValueAssignment_1 : ( RULE_ID ) ;
     public final void rule__EnumValue__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2327:1: ( ( RULE_ID ) )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2328:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2549:1: ( ( RULE_ID ) )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2550:1: ( RULE_ID )
             {
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2328:1: ( RULE_ID )
-            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2329:1: RULE_ID
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2550:1: ( RULE_ID )
+            // ../org.ollabaca.on.ui/src-gen/org/ollabaca/on/ui/contentassist/antlr/internal/InternalObjectNotation.g:2551:1: RULE_ID
             {
              before(grammarAccess.getEnumValueAccess().getValueIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumValue__ValueAssignment_14664); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumValue__ValueAssignment_15106); 
              after(grammarAccess.getEnumValueAccess().getValueIDTerminalRuleCall_1_0()); 
 
             }
@@ -6238,146 +6825,164 @@ public class InternalObjectNotationParser extends AbstractInternalContentAssistP
     public static final BitSet FOLLOW_ruleEnumValue_in_rule__Literal__Alternatives1063 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BooleanValue__ValueAssignment_0_in_rule__BooleanValue__Alternatives1095 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BooleanValue__ValueAssignment_1_in_rule__BooleanValue__Alternatives1113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Unit__Group__0__Impl_in_rule__Unit__Group__01145 = new BitSet(new long[]{0x0000000003E50040L});
+    public static final BitSet FOLLOW_rule__Unit__Group__0__Impl_in_rule__Unit__Group__01145 = new BitSet(new long[]{0x000000000FCA8040L});
     public static final BitSet FOLLOW_rule__Unit__Group__1_in_rule__Unit__Group__01148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Unit__ImportsAssignment_0_in_rule__Unit__Group__0__Impl1177 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__Unit__ImportsAssignment_0_in_rule__Unit__Group__0__Impl1189 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__Unit__Group__1__Impl_in_rule__Unit__Group__11222 = new BitSet(new long[]{0x0000000003E50040L});
+    public static final BitSet FOLLOW_rule__Unit__ImportsAssignment_0_in_rule__Unit__Group__0__Impl1177 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__Unit__ImportsAssignment_0_in_rule__Unit__Group__0__Impl1189 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_rule__Unit__Group__1__Impl_in_rule__Unit__Group__11222 = new BitSet(new long[]{0x000000000FCA8040L});
     public static final BitSet FOLLOW_rule__Unit__Group__2_in_rule__Unit__Group__11225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Unit__ContainerAssignment_1_in_rule__Unit__Group__1__Impl1252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Unit__Group__2__Impl_in_rule__Unit__Group__21283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Unit__InstancesAssignment_2_in_rule__Unit__Group__2__Impl1312 = new BitSet(new long[]{0x0000000003E50042L});
-    public static final BitSet FOLLOW_rule__Unit__InstancesAssignment_2_in_rule__Unit__Group__2__Impl1324 = new BitSet(new long[]{0x0000000003E50042L});
-    public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__01363 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__01366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Import__Group__0__Impl1394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__11425 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__NameAssignment_1_in_rule__Import__Group__1__Impl1452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__Group__0__Impl_in_rule__Container__Group__01486 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Container__Group__1_in_rule__Container__Group__01489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Container__Group__0__Impl1517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__Group__1__Impl_in_rule__Container__Group__11548 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__Container__Group__2_in_rule__Container__Group__11551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__InstanceAssignment_1_in_rule__Container__Group__1__Impl1578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__Group__2__Impl_in_rule__Container__Group__21608 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Container__Group__3_in_rule__Container__Group__21611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Container__Group__2__Impl1639 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__Group__3__Impl_in_rule__Container__Group__31670 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Container__FeatureAssignment_3_in_rule__Container__Group__3__Impl1697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__0__Impl_in_rule__Instance__Group__01735 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__1_in_rule__Instance__Group__01738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__1__Impl_in_rule__Instance__Group__11796 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__2_in_rule__Instance__Group__11799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_1__0_in_rule__Instance__Group__1__Impl1826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__2__Impl_in_rule__Instance__Group__21857 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__3_in_rule__Instance__Group__21860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_2__0_in_rule__Instance__Group__2__Impl1887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__3__Impl_in_rule__Instance__Group__31918 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__4_in_rule__Instance__Group__31921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_3__0_in_rule__Instance__Group__3__Impl1948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__4__Impl_in_rule__Instance__Group__41979 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__5_in_rule__Instance__Group__41982 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_4__0_in_rule__Instance__Group__4__Impl2009 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__5__Impl_in_rule__Instance__Group__52040 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__6_in_rule__Instance__Group__52043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_5__0_in_rule__Instance__Group__5__Impl2070 = new BitSet(new long[]{0x0000000002000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__6__Impl_in_rule__Instance__Group__62101 = new BitSet(new long[]{0x0000000003E50040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__7_in_rule__Instance__Group__62104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_6__0_in_rule__Instance__Group__6__Impl2131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__7__Impl_in_rule__Instance__Group__72162 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__8_in_rule__Instance__Group__72165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Instance__Group__7__Impl2193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__8__Impl_in_rule__Instance__Group__82224 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Instance__Group__9_in_rule__Instance__Group__82227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__TypeAssignment_8_in_rule__Instance__Group__8__Impl2254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__9__Impl_in_rule__Instance__Group__92284 = new BitSet(new long[]{0x0000000000100040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__10_in_rule__Instance__Group__92287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Instance__Group__9__Impl2315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group__10__Impl_in_rule__Instance__Group__102346 = new BitSet(new long[]{0x0000000000100040L});
-    public static final BitSet FOLLOW_rule__Instance__Group__11_in_rule__Instance__Group__102349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__SlotsAssignment_10_in_rule__Instance__Group__10__Impl2376 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_rule__Instance__Group__11__Impl_in_rule__Instance__Group__112407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__Instance__Group__11__Impl2435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_1__0__Impl_in_rule__Instance__Group_1__02490 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Instance__Group_1__1_in_rule__Instance__Group_1__02493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Instance__Group_1__0__Impl2521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_1__1__Impl_in_rule__Instance__Group_1__12552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__TitleAssignment_1_1_in_rule__Instance__Group_1__1__Impl2579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_2__0__Impl_in_rule__Instance__Group_2__02613 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Instance__Group_2__1_in_rule__Instance__Group_2__02616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Instance__Group_2__0__Impl2644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_2__1__Impl_in_rule__Instance__Group_2__12675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__AbstractAssignment_2_1_in_rule__Instance__Group_2__1__Impl2702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_3__0__Impl_in_rule__Instance__Group_3__02736 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Instance__Group_3__1_in_rule__Instance__Group_3__02739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Instance__Group_3__0__Impl2767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_3__1__Impl_in_rule__Instance__Group_3__12798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__DocumentationAssignment_3_1_in_rule__Instance__Group_3__1__Impl2825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_4__0__Impl_in_rule__Instance__Group_4__02859 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Instance__Group_4__1_in_rule__Instance__Group_4__02862 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Instance__Group_4__0__Impl2890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_4__1__Impl_in_rule__Instance__Group_4__12921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__SeeAssignment_4_1_in_rule__Instance__Group_4__1__Impl2948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_5__0__Impl_in_rule__Instance__Group_5__02982 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Instance__Group_5__1_in_rule__Instance__Group_5__02985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Instance__Group_5__0__Impl3013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_5__1__Impl_in_rule__Instance__Group_5__13044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__TagsAssignment_5_1_in_rule__Instance__Group_5__1__Impl3071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_6__0__Impl_in_rule__Instance__Group_6__03105 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Instance__Group_6__1_in_rule__Instance__Group_6__03108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__NameAssignment_6_0_in_rule__Instance__Group_6__0__Impl3135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Instance__Group_6__1__Impl_in_rule__Instance__Group_6__13165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Instance__Group_6__1__Impl3193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__Group__0__Impl_in_rule__Slot__Group__03228 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Slot__Group__1_in_rule__Slot__Group__03231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__Group__1__Impl_in_rule__Slot__Group__13289 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Slot__Group__2_in_rule__Slot__Group__13292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__NameAssignment_1_in_rule__Slot__Group__1__Impl3319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__Group__2__Impl_in_rule__Slot__Group__23349 = new BitSet(new long[]{0x00000000EBE700F0L});
-    public static final BitSet FOLLOW_rule__Slot__Group__3_in_rule__Slot__Group__23352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Slot__Group__2__Impl3380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__Group__3__Impl_in_rule__Slot__Group__33411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Slot__ValueAssignment_3_in_rule__Slot__Group__3__Impl3438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__03476 = new BitSet(new long[]{0x00000000EBE700F0L});
-    public static final BitSet FOLLOW_rule__Array__Group__1_in_rule__Array__Group__03479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Array__Group__0__Impl3507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__13538 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__Array__Group__2_in_rule__Array__Group__13541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3570 = new BitSet(new long[]{0x00000000EBE700F2L});
-    public static final BitSet FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3582 = new BitSet(new long[]{0x00000000EBE700F2L});
-    public static final BitSet FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__23615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__Array__Group__2__Impl3643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NullValue__Group__0__Impl_in_rule__NullValue__Group__03680 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__NullValue__Group__1_in_rule__NullValue__Group__03683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NullValue__Group__1__Impl_in_rule__NullValue__Group__13741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__NullValue__Group__1__Impl3769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumValue__Group__0__Impl_in_rule__EnumValue__Group__03804 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__EnumValue__Group__1_in_rule__EnumValue__Group__03807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__EnumValue__Group__0__Impl3835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumValue__Group__1__Impl_in_rule__EnumValue__Group__13866 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EnumValue__ValueAssignment_1_in_rule__EnumValue__Group__1__Impl3893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__Unit__ImportsAssignment_03932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContainer_in_rule__Unit__ContainerAssignment_13963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInstance_in_rule__Unit__InstancesAssignment_23994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Import__NameAssignment_14025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FQN_in_rule__Container__InstanceAssignment_14060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Container__FeatureAssignment_34095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__TitleAssignment_1_14126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__AbstractAssignment_2_14157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__DocumentationAssignment_3_14188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FQN_in_rule__Instance__SeeAssignment_4_14223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__TagsAssignment_5_14258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__NameAssignment_6_04289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__TypeAssignment_84320 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSlot_in_rule__Instance__SlotsAssignment_104351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Slot__NameAssignment_14382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Slot__ValueAssignment_34413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValue_in_rule__Array__ValueAssignment_14444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__StringValue__ValueAssignment4475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__BooleanValue__ValueAssignment_04511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__BooleanValue__ValueAssignment_14555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__NumberValue__ValueAssignment4594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_FQN_in_rule__InstanceRef__ValueAssignment4629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumValue__ValueAssignment_14664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__Group_1__0_in_rule__Unit__Group__1__Impl1252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__Group__2__Impl_in_rule__Unit__Group__21283 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Unit__Group__3_in_rule__Unit__Group__21286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__ContainerAssignment_2_in_rule__Unit__Group__2__Impl1313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__Group__3__Impl_in_rule__Unit__Group__31344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__InstancesAssignment_3_in_rule__Unit__Group__3__Impl1373 = new BitSet(new long[]{0x000000000FCA8042L});
+    public static final BitSet FOLLOW_rule__Unit__InstancesAssignment_3_in_rule__Unit__Group__3__Impl1385 = new BitSet(new long[]{0x000000000FCA8042L});
+    public static final BitSet FOLLOW_rule__Unit__Group_1__0__Impl_in_rule__Unit__Group_1__01426 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Unit__Group_1__1_in_rule__Unit__Group_1__01429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Unit__Group_1__0__Impl1457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__Group_1__1__Impl_in_rule__Unit__Group_1__11488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Unit__ParentAssignment_1_1_in_rule__Unit__Group_1__1__Impl1515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__Group__0__Impl_in_rule__Import__Group__01549 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Import__Group__1_in_rule__Import__Group__01552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Import__Group__0__Impl1580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__Group__1__Impl_in_rule__Import__Group__11611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__NameAssignment_1_in_rule__Import__Group__1__Impl1638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__Group__0__Impl_in_rule__Container__Group__01672 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Container__Group__1_in_rule__Container__Group__01675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Container__Group__0__Impl1703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__Group__1__Impl_in_rule__Container__Group__11734 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__Container__Group__2_in_rule__Container__Group__11737 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__InstanceAssignment_1_in_rule__Container__Group__1__Impl1764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__Group__2__Impl_in_rule__Container__Group__21794 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Container__Group__3_in_rule__Container__Group__21797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Container__Group__2__Impl1825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__Group__3__Impl_in_rule__Container__Group__31856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Container__FeatureAssignment_3_in_rule__Container__Group__3__Impl1883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__0__Impl_in_rule__Instance__Group__01921 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__1_in_rule__Instance__Group__01924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__1__Impl_in_rule__Instance__Group__11982 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__2_in_rule__Instance__Group__11985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_1__0_in_rule__Instance__Group__1__Impl2012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__2__Impl_in_rule__Instance__Group__22043 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__3_in_rule__Instance__Group__22046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_2__0_in_rule__Instance__Group__2__Impl2073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__3__Impl_in_rule__Instance__Group__32104 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__4_in_rule__Instance__Group__32107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_3__0_in_rule__Instance__Group__3__Impl2134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__4__Impl_in_rule__Instance__Group__42165 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__5_in_rule__Instance__Group__42168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_4__0_in_rule__Instance__Group__4__Impl2195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__5__Impl_in_rule__Instance__Group__52226 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__6_in_rule__Instance__Group__52229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_5__0_in_rule__Instance__Group__5__Impl2256 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__6__Impl_in_rule__Instance__Group__62287 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__7_in_rule__Instance__Group__62290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_6__0_in_rule__Instance__Group__6__Impl2317 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__7__Impl_in_rule__Instance__Group__72348 = new BitSet(new long[]{0x000000000FCA8040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__8_in_rule__Instance__Group__72351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_7__0_in_rule__Instance__Group__7__Impl2378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__8__Impl_in_rule__Instance__Group__82409 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__9_in_rule__Instance__Group__82412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Instance__Group__8__Impl2440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__9__Impl_in_rule__Instance__Group__92471 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__Instance__Group__10_in_rule__Instance__Group__92474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__TypeAssignment_9_in_rule__Instance__Group__9__Impl2501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__10__Impl_in_rule__Instance__Group__102531 = new BitSet(new long[]{0x0000000000200040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__11_in_rule__Instance__Group__102534 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__Instance__Group__10__Impl2562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group__11__Impl_in_rule__Instance__Group__112593 = new BitSet(new long[]{0x0000000000200040L});
+    public static final BitSet FOLLOW_rule__Instance__Group__12_in_rule__Instance__Group__112596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__SlotsAssignment_11_in_rule__Instance__Group__11__Impl2623 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_rule__Instance__Group__12__Impl_in_rule__Instance__Group__122654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__Instance__Group__12__Impl2682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_1__0__Impl_in_rule__Instance__Group_1__02739 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Instance__Group_1__1_in_rule__Instance__Group_1__02742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Instance__Group_1__0__Impl2770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_1__1__Impl_in_rule__Instance__Group_1__12801 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__TitleAssignment_1_1_in_rule__Instance__Group_1__1__Impl2828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_2__0__Impl_in_rule__Instance__Group_2__02862 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Instance__Group_2__1_in_rule__Instance__Group_2__02865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Instance__Group_2__0__Impl2893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_2__1__Impl_in_rule__Instance__Group_2__12924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__AbstractAssignment_2_1_in_rule__Instance__Group_2__1__Impl2951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_3__0__Impl_in_rule__Instance__Group_3__02985 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Instance__Group_3__1_in_rule__Instance__Group_3__02988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Instance__Group_3__0__Impl3016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_3__1__Impl_in_rule__Instance__Group_3__13047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__DocumentationAssignment_3_1_in_rule__Instance__Group_3__1__Impl3074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_4__0__Impl_in_rule__Instance__Group_4__03108 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Instance__Group_4__1_in_rule__Instance__Group_4__03111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Instance__Group_4__0__Impl3139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_4__1__Impl_in_rule__Instance__Group_4__13170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__AbbrAssignment_4_1_in_rule__Instance__Group_4__1__Impl3197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_5__0__Impl_in_rule__Instance__Group_5__03231 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Instance__Group_5__1_in_rule__Instance__Group_5__03234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Instance__Group_5__0__Impl3262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_5__1__Impl_in_rule__Instance__Group_5__13293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__SeeAssignment_5_1_in_rule__Instance__Group_5__1__Impl3320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_6__0__Impl_in_rule__Instance__Group_6__03354 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Instance__Group_6__1_in_rule__Instance__Group_6__03357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Instance__Group_6__0__Impl3385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_6__1__Impl_in_rule__Instance__Group_6__13416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__TagsAssignment_6_1_in_rule__Instance__Group_6__1__Impl3443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_7__0__Impl_in_rule__Instance__Group_7__03477 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Instance__Group_7__1_in_rule__Instance__Group_7__03480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__NameAssignment_7_0_in_rule__Instance__Group_7__0__Impl3507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Instance__Group_7__1__Impl_in_rule__Instance__Group_7__13537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Instance__Group_7__1__Impl3565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__Group__0__Impl_in_rule__Slot__Group__03600 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Slot__Group__1_in_rule__Slot__Group__03603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__Group__1__Impl_in_rule__Slot__Group__13661 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Slot__Group__2_in_rule__Slot__Group__13664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__NameAssignment_1_in_rule__Slot__Group__1__Impl3691 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__Group__2__Impl_in_rule__Slot__Group__23721 = new BitSet(new long[]{0x00000003AFCE80F0L});
+    public static final BitSet FOLLOW_rule__Slot__Group__3_in_rule__Slot__Group__23724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Slot__Group__2__Impl3752 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__Group__3__Impl_in_rule__Slot__Group__33783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Slot__ValueAssignment_3_in_rule__Slot__Group__3__Impl3810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__0__Impl_in_rule__Array__Group__03848 = new BitSet(new long[]{0x00000003AFCE80F0L});
+    public static final BitSet FOLLOW_rule__Array__Group__1_in_rule__Array__Group__03851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__Array__Group__0__Impl3879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__Group__1__Impl_in_rule__Array__Group__13910 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__Array__Group__2_in_rule__Array__Group__13913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3942 = new BitSet(new long[]{0x00000003AFCE80F2L});
+    public static final BitSet FOLLOW_rule__Array__ValueAssignment_1_in_rule__Array__Group__1__Impl3954 = new BitSet(new long[]{0x00000003AFCE80F2L});
+    public static final BitSet FOLLOW_rule__Array__Group__2__Impl_in_rule__Array__Group__23987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__Array__Group__2__Impl4015 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NullValue__Group__0__Impl_in_rule__NullValue__Group__04052 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__NullValue__Group__1_in_rule__NullValue__Group__04055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NullValue__Group__1__Impl_in_rule__NullValue__Group__14113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__NullValue__Group__1__Impl4141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumValue__Group__0__Impl_in_rule__EnumValue__Group__04176 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__EnumValue__Group__1_in_rule__EnumValue__Group__04179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__EnumValue__Group__0__Impl4207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumValue__Group__1__Impl_in_rule__EnumValue__Group__14238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EnumValue__ValueAssignment_1_in_rule__EnumValue__Group__1__Impl4265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__Unit__ImportsAssignment_04304 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_rule__Unit__ParentAssignment_1_14339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContainer_in_rule__Unit__ContainerAssignment_24374 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInstance_in_rule__Unit__InstancesAssignment_34405 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Import__NameAssignment_14436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_rule__Container__InstanceAssignment_14471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Container__FeatureAssignment_34506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__TitleAssignment_1_14537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__AbstractAssignment_2_14568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__Instance__DocumentationAssignment_3_14599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__AbbrAssignment_4_14630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_rule__Instance__SeeAssignment_5_14665 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__TagsAssignment_6_14700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__NameAssignment_7_04731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Instance__TypeAssignment_94762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSlot_in_rule__Instance__SlotsAssignment_114793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Slot__NameAssignment_14824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Slot__ValueAssignment_34855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValue_in_rule__Array__ValueAssignment_14886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MY_STRING_in_rule__StringValue__ValueAssignment4917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__BooleanValue__ValueAssignment_04953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__BooleanValue__ValueAssignment_14997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_NUMBER_in_rule__NumberValue__ValueAssignment5036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_FQN_in_rule__InstanceRef__ValueAssignment5071 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumValue__ValueAssignment_15106 = new BitSet(new long[]{0x0000000000000002L});
 
 }

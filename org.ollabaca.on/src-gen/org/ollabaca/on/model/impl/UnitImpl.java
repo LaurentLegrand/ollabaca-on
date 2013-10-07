@@ -31,6 +31,7 @@ import org.ollabaca.on.model.Unit;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ollabaca.on.model.impl.UnitImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.impl.UnitImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.UnitImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.UnitImpl#getInstances <em>Instances</em>}</li>
  * </ul>
@@ -49,6 +50,16 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
    * @ordered
    */
   protected EList<Import> imports;
+
+  /**
+   * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParent()
+   * @generated
+   * @ordered
+   */
+  protected Instance parent;
 
   /**
    * The cached value of the '{@link #getContainer() <em>Container</em>}' containment reference.
@@ -103,6 +114,49 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
       imports = new EObjectContainmentEList<Import>(Import.class, this, ModelPackage.UNIT__IMPORTS);
     }
     return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Instance getParent()
+  {
+    if (parent != null && parent.eIsProxy())
+    {
+      InternalEObject oldParent = (InternalEObject)parent;
+      parent = (Instance)eResolveProxy(oldParent);
+      if (parent != oldParent)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.UNIT__PARENT, oldParent, parent));
+      }
+    }
+    return parent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Instance basicGetParent()
+  {
+    return parent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParent(Instance newParent)
+  {
+    Instance oldParent = parent;
+    parent = newParent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.UNIT__PARENT, oldParent, parent));
   }
 
   /**
@@ -199,6 +253,9 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
     {
       case ModelPackage.UNIT__IMPORTS:
         return getImports();
+      case ModelPackage.UNIT__PARENT:
+        if (resolve) return getParent();
+        return basicGetParent();
       case ModelPackage.UNIT__CONTAINER:
         return getContainer();
       case ModelPackage.UNIT__INSTANCES:
@@ -221,6 +278,9 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
       case ModelPackage.UNIT__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
+        return;
+      case ModelPackage.UNIT__PARENT:
+        setParent((Instance)newValue);
         return;
       case ModelPackage.UNIT__CONTAINER:
         setContainer((org.ollabaca.on.model.Container)newValue);
@@ -246,6 +306,9 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
       case ModelPackage.UNIT__IMPORTS:
         getImports().clear();
         return;
+      case ModelPackage.UNIT__PARENT:
+        setParent((Instance)null);
+        return;
       case ModelPackage.UNIT__CONTAINER:
         setContainer((org.ollabaca.on.model.Container)null);
         return;
@@ -268,6 +331,8 @@ public class UnitImpl extends MinimalEObjectImpl.Container implements Unit
     {
       case ModelPackage.UNIT__IMPORTS:
         return imports != null && !imports.isEmpty();
+      case ModelPackage.UNIT__PARENT:
+        return parent != null;
       case ModelPackage.UNIT__CONTAINER:
         return container != null;
       case ModelPackage.UNIT__INSTANCES:

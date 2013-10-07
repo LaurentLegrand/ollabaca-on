@@ -126,7 +126,7 @@ class ProjectToXmi {
 		var Site site = SiteFactory::eINSTANCE.createSite
 		result += site
 		site.name = project
-				
+		
 		for (e: instances.keySet) {
 			val topic = SiteFactory::eINSTANCE.createTopic
 			site.topics += topic
@@ -162,12 +162,16 @@ class ProjectToXmi {
 			}
 		}
 		
-		// create tags
+		// create abbr & tags
 		for (e: topics.keySet) {
 			val topic = topics.get(e)
 			
 			for (t: e.tags) {
 				site.getOrCreateTag(t).topics.add(topic)
+			}
+			
+			if (e.abbr != null) {
+				site.getOrCreateAbbr(e.abbr).topics.add(topic)
 			}
 			
 		}

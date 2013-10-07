@@ -219,7 +219,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnit_Container()
+  public EReference getUnit_Parent()
   {
     return (EReference)unitEClass.getEStructuralFeatures().get(1);
   }
@@ -229,9 +229,19 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUnit_Instances()
+  public EReference getUnit_Container()
   {
     return (EReference)unitEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUnit_Instances()
+  {
+    return (EReference)unitEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -349,9 +359,19 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getInstance_Abbr()
+  {
+    return (EAttribute)instanceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getInstance_See()
   {
-    return (EReference)instanceEClass.getEStructuralFeatures().get(3);
+    return (EReference)instanceEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -361,7 +381,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    */
   public EAttribute getInstance_Tags()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)instanceEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -371,7 +391,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    */
   public EAttribute getInstance_Name()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)instanceEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -381,7 +401,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    */
   public EAttribute getInstance_Type()
   {
-    return (EAttribute)instanceEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)instanceEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -391,7 +411,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
    */
   public EReference getInstance_Slots()
   {
-    return (EReference)instanceEClass.getEStructuralFeatures().get(7);
+    return (EReference)instanceEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -586,6 +606,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     // Create classes and their features
     unitEClass = createEClass(UNIT);
     createEReference(unitEClass, UNIT__IMPORTS);
+    createEReference(unitEClass, UNIT__PARENT);
     createEReference(unitEClass, UNIT__CONTAINER);
     createEReference(unitEClass, UNIT__INSTANCES);
 
@@ -604,6 +625,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     createEAttribute(instanceEClass, INSTANCE__TITLE);
     createEAttribute(instanceEClass, INSTANCE__ABSTRACT);
     createEAttribute(instanceEClass, INSTANCE__DOCUMENTATION);
+    createEAttribute(instanceEClass, INSTANCE__ABBR);
     createEReference(instanceEClass, INSTANCE__SEE);
     createEAttribute(instanceEClass, INSTANCE__TAGS);
     createEAttribute(instanceEClass, INSTANCE__NAME);
@@ -677,6 +699,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     // Initialize classes and features; add operations and parameters
     initEClass(unitEClass, Unit.class, "Unit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUnit_Imports(), this.getImport(), null, "imports", null, 0, -1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUnit_Parent(), this.getInstance(), null, "parent", null, 0, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUnit_Container(), this.getContainer(), null, "container", null, 0, 1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUnit_Instances(), this.getInstance(), null, "instances", null, 0, -1, Unit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -695,6 +718,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage
     initEAttribute(getInstance_Title(), ecorePackage.getEString(), "title", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Abstract(), ecorePackage.getEString(), "abstract", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInstance_Abbr(), ecorePackage.getEString(), "abbr", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInstance_See(), this.getInstance(), null, "see", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Tags(), ecorePackage.getEString(), "tags", null, 0, -1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

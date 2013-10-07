@@ -15,6 +15,7 @@ class ProjectPage extends SitePage {
 		'''
 		«nav»
 		«tags»
+		«abbreviations»
 		'''
 	}
 	
@@ -70,5 +71,8 @@ class ProjectPage extends SitePage {
 	
 	def tags() {
 		'''«FOR e: site.tags BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.link»«ENDFOR»'''
+	}	
+	def abbreviations() {
+		'''«FOR e: site.abbreviations BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.name»«ENDFOR»'''
 	}	
 }

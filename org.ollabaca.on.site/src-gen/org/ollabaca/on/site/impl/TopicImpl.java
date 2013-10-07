@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ollabaca.on.site.Abbreviation;
 import org.ollabaca.on.site.SitePackage;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
@@ -42,6 +43,7 @@ import org.ollabaca.on.site.Topic;
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getSee <em>See</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getAbbreviation <em>Abbreviation</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
@@ -149,6 +151,16 @@ public class TopicImpl extends NamedImpl implements Topic
    * @ordered
    */
   protected EList<Topic> see;
+
+  /**
+   * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbbreviation()
+   * @generated
+   * @ordered
+   */
+  protected Abbreviation abbreviation;
 
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -365,6 +377,74 @@ public class TopicImpl extends NamedImpl implements Topic
    * <!-- end-user-doc -->
    * @generated
    */
+  public Abbreviation getAbbreviation()
+  {
+    if (abbreviation != null && abbreviation.eIsProxy())
+    {
+      InternalEObject oldAbbreviation = (InternalEObject)abbreviation;
+      abbreviation = (Abbreviation)eResolveProxy(oldAbbreviation);
+      if (abbreviation != oldAbbreviation)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SitePackage.TOPIC__ABBREVIATION, oldAbbreviation, abbreviation));
+      }
+    }
+    return abbreviation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Abbreviation basicGetAbbreviation()
+  {
+    return abbreviation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAbbreviation(Abbreviation newAbbreviation, NotificationChain msgs)
+  {
+    Abbreviation oldAbbreviation = abbreviation;
+    abbreviation = newAbbreviation;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SitePackage.TOPIC__ABBREVIATION, oldAbbreviation, newAbbreviation);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAbbreviation(Abbreviation newAbbreviation)
+  {
+    if (newAbbreviation != abbreviation)
+    {
+      NotificationChain msgs = null;
+      if (abbreviation != null)
+        msgs = ((InternalEObject)abbreviation).eInverseRemove(this, SitePackage.ABBREVIATION__TOPICS, Abbreviation.class, msgs);
+      if (newAbbreviation != null)
+        msgs = ((InternalEObject)newAbbreviation).eInverseAdd(this, SitePackage.ABBREVIATION__TOPICS, Abbreviation.class, msgs);
+      msgs = basicSetAbbreviation(newAbbreviation, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SitePackage.TOPIC__ABBREVIATION, newAbbreviation, newAbbreviation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EObject getTarget()
   {
     if (target != null && target.eIsProxy())
@@ -499,6 +579,10 @@ public class TopicImpl extends NamedImpl implements Topic
         return basicSetParent((Topic)otherEnd, msgs);
       case SitePackage.TOPIC__TOPICS:
         return ((InternalEList<InternalEObject>)(InternalEList<?>)getTopics()).basicAdd(otherEnd, msgs);
+      case SitePackage.TOPIC__ABBREVIATION:
+        if (abbreviation != null)
+          msgs = ((InternalEObject)abbreviation).eInverseRemove(this, SitePackage.ABBREVIATION__TOPICS, Abbreviation.class, msgs);
+        return basicSetAbbreviation((Abbreviation)otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
   }
@@ -519,6 +603,8 @@ public class TopicImpl extends NamedImpl implements Topic
         return basicSetParent(null, msgs);
       case SitePackage.TOPIC__TOPICS:
         return ((InternalEList<?>)getTopics()).basicRemove(otherEnd, msgs);
+      case SitePackage.TOPIC__ABBREVIATION:
+        return basicSetAbbreviation(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -548,6 +634,9 @@ public class TopicImpl extends NamedImpl implements Topic
         return getTopics();
       case SitePackage.TOPIC__SEE:
         return getSee();
+      case SitePackage.TOPIC__ABBREVIATION:
+        if (resolve) return getAbbreviation();
+        return basicGetAbbreviation();
       case SitePackage.TOPIC__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
@@ -590,6 +679,9 @@ public class TopicImpl extends NamedImpl implements Topic
         getSee().clear();
         getSee().addAll((Collection<? extends Topic>)newValue);
         return;
+      case SitePackage.TOPIC__ABBREVIATION:
+        setAbbreviation((Abbreviation)newValue);
+        return;
       case SitePackage.TOPIC__TARGET:
         setTarget((EObject)newValue);
         return;
@@ -628,6 +720,9 @@ public class TopicImpl extends NamedImpl implements Topic
       case SitePackage.TOPIC__SEE:
         getSee().clear();
         return;
+      case SitePackage.TOPIC__ABBREVIATION:
+        setAbbreviation((Abbreviation)null);
+        return;
       case SitePackage.TOPIC__TARGET:
         setTarget((EObject)null);
         return;
@@ -659,6 +754,8 @@ public class TopicImpl extends NamedImpl implements Topic
         return topics != null && !topics.isEmpty();
       case SitePackage.TOPIC__SEE:
         return see != null && !see.isEmpty();
+      case SitePackage.TOPIC__ABBREVIATION:
+        return abbreviation != null;
       case SitePackage.TOPIC__TARGET:
         return target != null;
     }

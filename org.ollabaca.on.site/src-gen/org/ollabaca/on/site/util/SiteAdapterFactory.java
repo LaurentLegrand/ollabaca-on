@@ -85,6 +85,11 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
         return createTagAdapter();
       }
       @Override
+      public Adapter caseAbbreviation(Abbreviation object)
+      {
+        return createAbbreviationAdapter();
+      }
+      @Override
       public Adapter caseSite(Site object)
       {
         return createSiteAdapter();
@@ -142,6 +147,21 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTagAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.site.Abbreviation <em>Abbreviation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.site.Abbreviation
+   * @generated
+   */
+  public Adapter createAbbreviationAdapter()
   {
     return null;
   }

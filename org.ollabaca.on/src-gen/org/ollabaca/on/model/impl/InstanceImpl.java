@@ -33,6 +33,7 @@ import org.ollabaca.on.model.Slot;
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getDocumentation <em>Documentation</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getAbbr <em>Abbr</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSee <em>See</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getName <em>Name</em>}</li>
@@ -104,6 +105,26 @@ public class InstanceImpl extends ValueImpl implements Instance
    * @ordered
    */
   protected String documentation = DOCUMENTATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAbbr() <em>Abbr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbbr()
+   * @generated
+   * @ordered
+   */
+  protected static final String ABBR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAbbr() <em>Abbr</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAbbr()
+   * @generated
+   * @ordered
+   */
+  protected String abbr = ABBR_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSee() <em>See</em>}' reference list.
@@ -270,6 +291,29 @@ public class InstanceImpl extends ValueImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getAbbr()
+  {
+    return abbr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAbbr(String newAbbr)
+  {
+    String oldAbbr = abbr;
+    abbr = newAbbr;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INSTANCE__ABBR, oldAbbr, abbr));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Instance> getSee()
   {
     if (see == null)
@@ -385,6 +429,8 @@ public class InstanceImpl extends ValueImpl implements Instance
         return getAbstract();
       case ModelPackage.INSTANCE__DOCUMENTATION:
         return getDocumentation();
+      case ModelPackage.INSTANCE__ABBR:
+        return getAbbr();
       case ModelPackage.INSTANCE__SEE:
         return getSee();
       case ModelPackage.INSTANCE__TAGS:
@@ -418,6 +464,9 @@ public class InstanceImpl extends ValueImpl implements Instance
         return;
       case ModelPackage.INSTANCE__DOCUMENTATION:
         setDocumentation((String)newValue);
+        return;
+      case ModelPackage.INSTANCE__ABBR:
+        setAbbr((String)newValue);
         return;
       case ModelPackage.INSTANCE__SEE:
         getSee().clear();
@@ -460,6 +509,9 @@ public class InstanceImpl extends ValueImpl implements Instance
       case ModelPackage.INSTANCE__DOCUMENTATION:
         setDocumentation(DOCUMENTATION_EDEFAULT);
         return;
+      case ModelPackage.INSTANCE__ABBR:
+        setAbbr(ABBR_EDEFAULT);
+        return;
       case ModelPackage.INSTANCE__SEE:
         getSee().clear();
         return;
@@ -495,6 +547,8 @@ public class InstanceImpl extends ValueImpl implements Instance
         return ABSTRACT_EDEFAULT == null ? abstract_ != null : !ABSTRACT_EDEFAULT.equals(abstract_);
       case ModelPackage.INSTANCE__DOCUMENTATION:
         return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+      case ModelPackage.INSTANCE__ABBR:
+        return ABBR_EDEFAULT == null ? abbr != null : !ABBR_EDEFAULT.equals(abbr);
       case ModelPackage.INSTANCE__SEE:
         return see != null && !see.isEmpty();
       case ModelPackage.INSTANCE__TAGS:
@@ -526,6 +580,8 @@ public class InstanceImpl extends ValueImpl implements Instance
     result.append(abstract_);
     result.append(", documentation: ");
     result.append(documentation);
+    result.append(", abbr: ");
+    result.append(abbr);
     result.append(", tags: ");
     result.append(tags);
     result.append(", name: ");
