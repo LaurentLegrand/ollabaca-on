@@ -7,7 +7,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.ollabaca.on.site.renderers.ContentProvider;
-import org.ollabaca.on.site.renderers.LabelProvider;
 import org.ollabaca.on.site.servlets.HttpServiceTracker;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -33,7 +32,6 @@ public class Activator implements BundleActivator {
 		serviceTracker.open();
 
 		this.context = new Context(
-				this.load(LABEL_PROVIDER_ID, LabelProvider.class, new HashSet<LabelProvider>()), 
 				this.load(CONTENT_PROVIDER_ID, ContentProvider.class, new HashSet<ContentProvider>()));
 	}
 

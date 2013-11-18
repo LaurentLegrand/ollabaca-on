@@ -1,17 +1,20 @@
 package org.ollabaca.on.site.graph
 
-import org.ollabaca.on.site.renderers.ContentProvider
-import org.eclipse.emf.ecore.EClass
-import org.ollabaca.on.site.Site
-import org.ollabaca.on.site.Topic
-import org.ollabaca.on.site.renderers.Register
-
-import static extension org.ollabaca.on.site.renderers.Renderers.*
-import org.ollabaca.on.site.renderers.Text
 import java.io.StringWriter
 import java.util.List
 import javax.json.Json
+import org.eclipse.emf.ecore.EClass
+import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Tag
+import org.ollabaca.on.site.Topic
+import org.ollabaca.on.site.renderers.ContentProvider
+import org.ollabaca.on.site.renderers.Register
+import org.ollabaca.on.site.renderers.Text
+
+import static org.ollabaca.on.site.util.Sites.*
+
+import static extension org.ollabaca.on.site.renderers.Renderers.*
+import static extension org.ollabaca.on.site.util.Html.*
 
 class GraphContentProvider implements ContentProvider {
 	

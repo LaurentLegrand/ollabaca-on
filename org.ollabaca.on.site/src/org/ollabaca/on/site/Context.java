@@ -9,7 +9,6 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
 import org.ollabaca.on.site.renderers.Content;
 import org.ollabaca.on.site.renderers.ContentProvider;
-import org.ollabaca.on.site.renderers.LabelProvider;
 import org.ollabaca.on.site.renderers.Register;
 import org.ollabaca.on.site.renderers.SiteRenderer;
 import org.ollabaca.on.site.renderers.Text;
@@ -24,23 +23,15 @@ public class Context implements Register {
 
 	Map<String, TypeRenderer> typeRenderers = new HashMap<>();
 
-	Set<LabelProvider> labelProviders = new HashSet<>();
-
 	Set<ContentProvider> contentProviders = new HashSet<>();
 
-	Context(Collection<LabelProvider> labelProviders,
-			Collection<ContentProvider> contentProviders) {
-		this.labelProviders.addAll(labelProviders);
+	Context(Collection<ContentProvider> contentProviders) {
 		this.contentProviders.addAll(contentProviders);
 
 		// activate content providers
 		for (ContentProvider e : this.contentProviders) {
 			e.activate(this);
 		}
-	}
-
-	public Set<LabelProvider> getLabelProviders() {
-		return labelProviders;
 	}
 
 	public Set<ContentProvider> getContentProviders() {

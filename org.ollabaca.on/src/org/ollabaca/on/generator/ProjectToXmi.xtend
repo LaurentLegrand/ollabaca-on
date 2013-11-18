@@ -197,10 +197,15 @@ class ProjectToXmi {
 			val EStructuralFeature feature = units.getFeature(slot)
 			val Object value = slot.value.compute
 			System::out.println(self + ":" + slot.name + ":" + value)
-			if (feature.many) {
-				(object.eGet(feature) as Collection).addAll(value as Collection)
-			} else {
-				object.eSet(feature, value)	
+			try {
+				if (feature.many) {
+					(object.eGet(feature) as Collection).addAll(value as Collection)
+				} else {
+					object.eSet(feature, value)	
+				}
+			} catch (RuntimeException e) {
+				System::out.println("ERROR: " + self + ":" + slot.name + ":" + value + e)
+				throw e
 			}
 		}
 		

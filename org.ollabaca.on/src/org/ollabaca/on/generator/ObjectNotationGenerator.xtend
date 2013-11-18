@@ -17,7 +17,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IFileSystemAccessExtension2
 import org.eclipse.xtext.generator.IGenerator
 import org.ollabaca.on.util.Visitor
-
+import java.util.Set
 
 class ObjectNotationGenerator implements IGenerator {
 	
@@ -29,14 +29,17 @@ class ObjectNotationGenerator implements IGenerator {
 		}
 		
    		var resourceSet = resource.resourceSet
-   		      	
       	var IProject project = ResourcesPlugin::workspace.root.getFile(new Path(resource.URI.toPlatformString(true))).project
+   		var Set<IProject> projects = newHashSet()
+      	project.fill(projects)
       	
    		var Visitor visitor = new Visitor
-   		project.getFolder("src").accept(visitor)
-   		for (IFile file: visitor.files) {
-      		System::out.println("LOAD: " + file.fullPath)
-   			resourceSet.getResource(URI::createPlatformResourceURI(file.fullPath.toString, true), true)
+   		for (p: projects) {
+	   		p.getFolder("src").accept(visitor)
+			for (IFile file: visitor.files) {
+				System::out.println("LOAD: " + file.fullPath)
+				resourceSet.getResource(URI::createPlatformResourceURI(file.fullPath.toString, true), true)
+			}   		
    		}
    		
 		
@@ -109,4 +112,14 @@ class ObjectNotationGenerator implements IGenerator {
 		
 	//}
 		
+	def void fill(IProject self, Set<IProject> projects) {
+		if (projects.contains(self)) {
+			return 
+		}
+		System::out.println("fill: " + self)
+		projects.add(self)
+		for (e: self.referencedProjects) {
+			e.fill(projects)
+		}
+	}
 }
