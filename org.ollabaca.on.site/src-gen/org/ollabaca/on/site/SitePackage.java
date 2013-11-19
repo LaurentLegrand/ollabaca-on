@@ -60,6 +60,34 @@ public interface SitePackage extends EPackage
   SitePackage eINSTANCE = org.ollabaca.on.site.impl.SitePackageImpl.init();
 
   /**
+   * The meta object id for the '{@link org.ollabaca.on.site.impl.ElementImpl <em>Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ollabaca.on.site.impl.ElementImpl
+   * @see org.ollabaca.on.site.impl.SitePackageImpl#getElement()
+   * @generated
+   */
+  int ELEMENT = 0;
+
+  /**
+   * The number of structural features of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The number of operations of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_OPERATION_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link org.ollabaca.on.site.impl.NamedImpl <em>Named</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,7 +95,7 @@ public interface SitePackage extends EPackage
    * @see org.ollabaca.on.site.impl.SitePackageImpl#getNamed()
    * @generated
    */
-  int NAMED = 0;
+  int NAMED = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -76,7 +104,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED__NAME = 0;
+  int NAMED__NAME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Named</em>' class.
@@ -85,7 +113,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED_FEATURE_COUNT = 1;
+  int NAMED_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of operations of the '<em>Named</em>' class.
@@ -94,7 +122,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMED_OPERATION_COUNT = 0;
+  int NAMED_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.site.impl.TagImpl <em>Tag</em>}' class.
@@ -104,7 +132,7 @@ public interface SitePackage extends EPackage
    * @see org.ollabaca.on.site.impl.SitePackageImpl#getTag()
    * @generated
    */
-  int TAG = 1;
+  int TAG = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -152,6 +180,61 @@ public interface SitePackage extends EPackage
   int TAG_OPERATION_COUNT = NAMED_OPERATION_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.ollabaca.on.site.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ollabaca.on.site.impl.TypeImpl
+   * @see org.ollabaca.on.site.impl.SitePackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__NAME = NAMED__NAME;
+
+  /**
+   * The feature id for the '<em><b>Topics</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__TOPICS = NAMED_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Site</b></em>' container reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__SITE = NAMED_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = NAMED_FEATURE_COUNT + 2;
+
+  /**
+   * The number of operations of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_OPERATION_COUNT = NAMED_OPERATION_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.ollabaca.on.site.impl.AbbreviationImpl <em>Abbreviation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -159,7 +242,7 @@ public interface SitePackage extends EPackage
    * @see org.ollabaca.on.site.impl.SitePackageImpl#getAbbreviation()
    * @generated
    */
-  int ABBREVIATION = 2;
+  int ABBREVIATION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -214,7 +297,7 @@ public interface SitePackage extends EPackage
    * @see org.ollabaca.on.site.impl.SitePackageImpl#getSite()
    * @generated
    */
-  int SITE = 3;
+  int SITE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -253,13 +336,22 @@ public interface SitePackage extends EPackage
   int SITE__ABBREVIATIONS = NAMED_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SITE__TYPES = NAMED_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Site</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SITE_FEATURE_COUNT = NAMED_FEATURE_COUNT + 3;
+  int SITE_FEATURE_COUNT = NAMED_FEATURE_COUNT + 4;
 
   /**
    * The operation id for the '<em>Get Or Create Tag</em>' operation.
@@ -280,13 +372,22 @@ public interface SitePackage extends EPackage
   int SITE___GET_OR_CREATE_ABBR__STRING = NAMED_OPERATION_COUNT + 1;
 
   /**
+   * The operation id for the '<em>Get Or Create Type</em>' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SITE___GET_OR_CREATE_TYPE__STRING = NAMED_OPERATION_COUNT + 2;
+
+  /**
    * The operation id for the '<em>Get Topic</em>' operation.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SITE___GET_TOPIC__STRING = NAMED_OPERATION_COUNT + 2;
+  int SITE___GET_TOPIC__STRING = NAMED_OPERATION_COUNT + 3;
 
   /**
    * The operation id for the '<em>Get Roots</em>' operation.
@@ -295,7 +396,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SITE___GET_ROOTS = NAMED_OPERATION_COUNT + 3;
+  int SITE___GET_ROOTS = NAMED_OPERATION_COUNT + 4;
 
   /**
    * The operation id for the '<em>Get Topic</em>' operation.
@@ -304,7 +405,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SITE___GET_TOPIC__EOBJECT = NAMED_OPERATION_COUNT + 4;
+  int SITE___GET_TOPIC__EOBJECT = NAMED_OPERATION_COUNT + 5;
 
   /**
    * The number of operations of the '<em>Site</em>' class.
@@ -313,7 +414,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SITE_OPERATION_COUNT = NAMED_OPERATION_COUNT + 5;
+  int SITE_OPERATION_COUNT = NAMED_OPERATION_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.site.impl.TopicImpl <em>Topic</em>}' class.
@@ -323,7 +424,7 @@ public interface SitePackage extends EPackage
    * @see org.ollabaca.on.site.impl.SitePackageImpl#getTopic()
    * @generated
    */
-  int TOPIC = 4;
+  int TOPIC = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -407,13 +508,22 @@ public interface SitePackage extends EPackage
   int TOPIC__ABBREVIATION = NAMED_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TOPIC__TYPE = NAMED_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOPIC__TARGET = NAMED_FEATURE_COUNT + 8;
+  int TOPIC__TARGET = NAMED_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Topic</em>' class.
@@ -422,7 +532,7 @@ public interface SitePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TOPIC_FEATURE_COUNT = NAMED_FEATURE_COUNT + 9;
+  int TOPIC_FEATURE_COUNT = NAMED_FEATURE_COUNT + 10;
 
   /**
    * The operation id for the '<em>Is Anonymous</em>' operation.
@@ -460,6 +570,16 @@ public interface SitePackage extends EPackage
    */
   int TOPIC_OPERATION_COUNT = NAMED_OPERATION_COUNT + 3;
 
+
+  /**
+   * Returns the meta object for class '{@link org.ollabaca.on.site.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element</em>'.
+   * @see org.ollabaca.on.site.Element
+   * @generated
+   */
+  EClass getElement();
 
   /**
    * Returns the meta object for class '{@link org.ollabaca.on.site.Named <em>Named</em>}'.
@@ -513,6 +633,38 @@ public interface SitePackage extends EPackage
    * @generated
    */
   EReference getTag_Site();
+
+  /**
+   * Returns the meta object for class '{@link org.ollabaca.on.site.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type</em>'.
+   * @see org.ollabaca.on.site.Type
+   * @generated
+   */
+  EClass getType();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.ollabaca.on.site.Type#getTopics <em>Topics</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Topics</em>'.
+   * @see org.ollabaca.on.site.Type#getTopics()
+   * @see #getType()
+   * @generated
+   */
+  EReference getType_Topics();
+
+  /**
+   * Returns the meta object for the container reference '{@link org.ollabaca.on.site.Type#getSite <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the container reference '<em>Site</em>'.
+   * @see org.ollabaca.on.site.Type#getSite()
+   * @see #getType()
+   * @generated
+   */
+  EReference getType_Site();
 
   /**
    * Returns the meta object for class '{@link org.ollabaca.on.site.Abbreviation <em>Abbreviation</em>}'.
@@ -590,6 +742,17 @@ public interface SitePackage extends EPackage
   EReference getSite_Abbreviations();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.ollabaca.on.site.Site#getTypes <em>Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Types</em>'.
+   * @see org.ollabaca.on.site.Site#getTypes()
+   * @see #getSite()
+   * @generated
+   */
+  EReference getSite_Types();
+
+  /**
    * Returns the meta object for the '{@link org.ollabaca.on.site.Site#getOrCreateTag(java.lang.String) <em>Get Or Create Tag</em>}' operation.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -608,6 +771,16 @@ public interface SitePackage extends EPackage
    * @generated
    */
   EOperation getSite__GetOrCreateAbbr__String();
+
+  /**
+   * Returns the meta object for the '{@link org.ollabaca.on.site.Site#getOrCreateType(java.lang.String) <em>Get Or Create Type</em>}' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the '<em>Get Or Create Type</em>' operation.
+   * @see org.ollabaca.on.site.Site#getOrCreateType(java.lang.String)
+   * @generated
+   */
+  EOperation getSite__GetOrCreateType__String();
 
   /**
    * Returns the meta object for the '{@link org.ollabaca.on.site.Site#getTopic(java.lang.String) <em>Get Topic</em>}' operation.
@@ -738,6 +911,17 @@ public interface SitePackage extends EPackage
   EReference getTopic_Abbreviation();
 
   /**
+   * Returns the meta object for the reference '{@link org.ollabaca.on.site.Topic#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see org.ollabaca.on.site.Topic#getType()
+   * @see #getTopic()
+   * @generated
+   */
+  EReference getTopic_Type();
+
+  /**
    * Returns the meta object for the reference '{@link org.ollabaca.on.site.Topic#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -803,6 +987,16 @@ public interface SitePackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link org.ollabaca.on.site.impl.ElementImpl <em>Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ollabaca.on.site.impl.ElementImpl
+     * @see org.ollabaca.on.site.impl.SitePackageImpl#getElement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getElement();
+
+    /**
      * The meta object literal for the '{@link org.ollabaca.on.site.impl.NamedImpl <em>Named</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -845,6 +1039,32 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EReference TAG__SITE = eINSTANCE.getTag_Site();
+
+    /**
+     * The meta object literal for the '{@link org.ollabaca.on.site.impl.TypeImpl <em>Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ollabaca.on.site.impl.TypeImpl
+     * @see org.ollabaca.on.site.impl.SitePackageImpl#getType()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '<em><b>Topics</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__TOPICS = eINSTANCE.getType_Topics();
+
+    /**
+     * The meta object literal for the '<em><b>Site</b></em>' container reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__SITE = eINSTANCE.getType_Site();
 
     /**
      * The meta object literal for the '{@link org.ollabaca.on.site.impl.AbbreviationImpl <em>Abbreviation</em>}' class.
@@ -907,6 +1127,14 @@ public interface SitePackage extends EPackage
     EReference SITE__ABBREVIATIONS = eINSTANCE.getSite_Abbreviations();
 
     /**
+     * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SITE__TYPES = eINSTANCE.getSite_Types();
+
+    /**
      * The meta object literal for the '<em><b>Get Or Create Tag</b></em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -921,6 +1149,14 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EOperation SITE___GET_OR_CREATE_ABBR__STRING = eINSTANCE.getSite__GetOrCreateAbbr__String();
+
+    /**
+     * The meta object literal for the '<em><b>Get Or Create Type</b></em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EOperation SITE___GET_OR_CREATE_TYPE__STRING = eINSTANCE.getSite__GetOrCreateType__String();
 
     /**
      * The meta object literal for the '<em><b>Get Topic</b></em>' operation.
@@ -1019,6 +1255,14 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EReference TOPIC__ABBREVIATION = eINSTANCE.getTopic_Abbreviation();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TOPIC__TYPE = eINSTANCE.getTopic_Type();
 
     /**
      * The meta object literal for the '<em><b>Target</b></em>' reference feature.

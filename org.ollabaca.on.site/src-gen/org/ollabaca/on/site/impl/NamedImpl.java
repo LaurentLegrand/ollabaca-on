@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ollabaca.on.site.Named;
 import org.ollabaca.on.site.SitePackage;
@@ -25,7 +24,7 @@ import org.ollabaca.on.site.SitePackage;
  *
  * @generated
  */
-public abstract class NamedImpl extends MinimalEObjectImpl.Container implements Named
+public abstract class NamedImpl extends ElementImpl implements Named
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

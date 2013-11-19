@@ -162,7 +162,7 @@ class ProjectToXmi {
 			}
 		}
 		
-		// create abbr & tags
+		// create abbr, tags & types
 		for (e: topics.keySet) {
 			val topic = topics.get(e)
 			
@@ -174,6 +174,7 @@ class ProjectToXmi {
 				site.getOrCreateAbbr(e.abbr).topics.add(topic)
 			}
 			
+			site.getOrCreateType(topic.target.eClass.instanceClassName).topics.add(topic)
 		}
 		
 		// create parent-child links

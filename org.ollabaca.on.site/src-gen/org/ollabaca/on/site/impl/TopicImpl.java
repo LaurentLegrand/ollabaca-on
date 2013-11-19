@@ -28,6 +28,7 @@ import org.ollabaca.on.site.Abbreviation;
 import org.ollabaca.on.site.SitePackage;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
+import org.ollabaca.on.site.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +45,7 @@ import org.ollabaca.on.site.Topic;
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getSee <em>See</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getAbbreviation <em>Abbreviation</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.TopicImpl#getTarget <em>Target</em>}</li>
  * </ul>
  * </p>
@@ -161,6 +163,16 @@ public class TopicImpl extends NamedImpl implements Topic
    * @ordered
    */
   protected Abbreviation abbreviation;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected Type type;
 
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
@@ -445,6 +457,74 @@ public class TopicImpl extends NamedImpl implements Topic
    * <!-- end-user-doc -->
    * @generated
    */
+  public Type getType()
+  {
+    if (type != null && type.eIsProxy())
+    {
+      InternalEObject oldType = (InternalEObject)type;
+      type = (Type)eResolveProxy(oldType);
+      if (type != oldType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SitePackage.TOPIC__TYPE, oldType, type));
+      }
+    }
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type basicGetType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
+  {
+    Type oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SitePackage.TOPIC__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(Type newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, SitePackage.TYPE__TOPICS, Type.class, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, SitePackage.TYPE__TOPICS, Type.class, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SitePackage.TOPIC__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EObject getTarget()
   {
     if (target != null && target.eIsProxy())
@@ -583,6 +663,10 @@ public class TopicImpl extends NamedImpl implements Topic
         if (abbreviation != null)
           msgs = ((InternalEObject)abbreviation).eInverseRemove(this, SitePackage.ABBREVIATION__TOPICS, Abbreviation.class, msgs);
         return basicSetAbbreviation((Abbreviation)otherEnd, msgs);
+      case SitePackage.TOPIC__TYPE:
+        if (type != null)
+          msgs = ((InternalEObject)type).eInverseRemove(this, SitePackage.TYPE__TOPICS, Type.class, msgs);
+        return basicSetType((Type)otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
   }
@@ -605,6 +689,8 @@ public class TopicImpl extends NamedImpl implements Topic
         return ((InternalEList<?>)getTopics()).basicRemove(otherEnd, msgs);
       case SitePackage.TOPIC__ABBREVIATION:
         return basicSetAbbreviation(null, msgs);
+      case SitePackage.TOPIC__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -637,6 +723,9 @@ public class TopicImpl extends NamedImpl implements Topic
       case SitePackage.TOPIC__ABBREVIATION:
         if (resolve) return getAbbreviation();
         return basicGetAbbreviation();
+      case SitePackage.TOPIC__TYPE:
+        if (resolve) return getType();
+        return basicGetType();
       case SitePackage.TOPIC__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
@@ -682,6 +771,9 @@ public class TopicImpl extends NamedImpl implements Topic
       case SitePackage.TOPIC__ABBREVIATION:
         setAbbreviation((Abbreviation)newValue);
         return;
+      case SitePackage.TOPIC__TYPE:
+        setType((Type)newValue);
+        return;
       case SitePackage.TOPIC__TARGET:
         setTarget((EObject)newValue);
         return;
@@ -723,6 +815,9 @@ public class TopicImpl extends NamedImpl implements Topic
       case SitePackage.TOPIC__ABBREVIATION:
         setAbbreviation((Abbreviation)null);
         return;
+      case SitePackage.TOPIC__TYPE:
+        setType((Type)null);
+        return;
       case SitePackage.TOPIC__TARGET:
         setTarget((EObject)null);
         return;
@@ -756,6 +851,8 @@ public class TopicImpl extends NamedImpl implements Topic
         return see != null && !see.isEmpty();
       case SitePackage.TOPIC__ABBREVIATION:
         return abbreviation != null;
+      case SitePackage.TOPIC__TYPE:
+        return type != null;
       case SitePackage.TOPIC__TARGET:
         return target != null;
     }

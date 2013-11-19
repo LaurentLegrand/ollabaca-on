@@ -34,6 +34,7 @@ import org.ollabaca.on.site.SiteFactory;
 import org.ollabaca.on.site.SitePackage;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
+import org.ollabaca.on.site.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,6 +46,7 @@ import org.ollabaca.on.site.Topic;
  *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getAbbreviations <em>Abbreviations</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.impl.SiteImpl#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +83,16 @@ public class SiteImpl extends NamedImpl implements Site
    * @ordered
    */
   protected EList<Abbreviation> abbreviations;
+
+  /**
+   * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<Type> types;
 
   /**
    * <!-- begin-user-doc -->
@@ -150,6 +162,20 @@ public class SiteImpl extends NamedImpl implements Site
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Type> getTypes()
+  {
+    if (types == null)
+    {
+      types = new EObjectContainmentWithInverseEList<Type>(Type.class, this, SitePackage.SITE__TYPES, SitePackage.TYPE__SITE);
+    }
+    return types;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Tag getOrCreateTag(final String name)
   {
     final String n = name;
@@ -209,6 +235,39 @@ public class SiteImpl extends NamedImpl implements Site
       _abbreviations_1.add(abbreviation);
     }
     return abbreviation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type getOrCreateType(final String name)
+  {
+    final String n = name;
+    Site _this = this;
+    EList<Type> _types = _this.getTypes();
+    final Function1<Type,Boolean> _function = new Function1<Type,Boolean>()
+    {
+      public Boolean apply(final Type it)
+      {
+        String _name = it.getName();
+        boolean _equals = Objects.equal(_name, n);
+        return Boolean.valueOf(_equals);
+      }
+    };
+    Type e = IterableExtensions.<Type>findFirst(_types, _function);
+    boolean _equals = Objects.equal(e, null);
+    if (_equals)
+    {
+      Type _createType = SiteFactory.eINSTANCE.createType();
+      e = _createType;
+      e.setName(name);
+      Site _this_1 = this;
+      EList<Type> _types_1 = _this_1.getTypes();
+      _types_1.add(e);
+    }
+    return e;
   }
 
   /**
@@ -309,6 +368,8 @@ public class SiteImpl extends NamedImpl implements Site
         return ((InternalEList<InternalEObject>)(InternalEList<?>)getTags()).basicAdd(otherEnd, msgs);
       case SitePackage.SITE__ABBREVIATIONS:
         return ((InternalEList<InternalEObject>)(InternalEList<?>)getAbbreviations()).basicAdd(otherEnd, msgs);
+      case SitePackage.SITE__TYPES:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getTypes()).basicAdd(otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
   }
@@ -329,6 +390,8 @@ public class SiteImpl extends NamedImpl implements Site
         return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
       case SitePackage.SITE__ABBREVIATIONS:
         return ((InternalEList<?>)getAbbreviations()).basicRemove(otherEnd, msgs);
+      case SitePackage.SITE__TYPES:
+        return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -349,6 +412,8 @@ public class SiteImpl extends NamedImpl implements Site
         return getTags();
       case SitePackage.SITE__ABBREVIATIONS:
         return getAbbreviations();
+      case SitePackage.SITE__TYPES:
+        return getTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -376,6 +441,10 @@ public class SiteImpl extends NamedImpl implements Site
         getAbbreviations().clear();
         getAbbreviations().addAll((Collection<? extends Abbreviation>)newValue);
         return;
+      case SitePackage.SITE__TYPES:
+        getTypes().clear();
+        getTypes().addAll((Collection<? extends Type>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -399,6 +468,9 @@ public class SiteImpl extends NamedImpl implements Site
       case SitePackage.SITE__ABBREVIATIONS:
         getAbbreviations().clear();
         return;
+      case SitePackage.SITE__TYPES:
+        getTypes().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -419,6 +491,8 @@ public class SiteImpl extends NamedImpl implements Site
         return tags != null && !tags.isEmpty();
       case SitePackage.SITE__ABBREVIATIONS:
         return abbreviations != null && !abbreviations.isEmpty();
+      case SitePackage.SITE__TYPES:
+        return types != null && !types.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -437,6 +511,8 @@ public class SiteImpl extends NamedImpl implements Site
         return getOrCreateTag((String)arguments.get(0));
       case SitePackage.SITE___GET_OR_CREATE_ABBR__STRING:
         return getOrCreateAbbr((String)arguments.get(0));
+      case SitePackage.SITE___GET_OR_CREATE_TYPE__STRING:
+        return getOrCreateType((String)arguments.get(0));
       case SitePackage.SITE___GET_TOPIC__STRING:
         return getTopic((String)arguments.get(0));
       case SitePackage.SITE___GET_ROOTS:

@@ -4,7 +4,11 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.common.util.BasicEList
 
-abstract class Named {
+abstract class Element {
+	
+}
+
+abstract class Named extends Element {
 	
 	String name
 	
@@ -15,6 +19,15 @@ class Tag extends Named {
 	refers Topic[] topics opposite tags
 	
 	refers Site site opposite tags
+	
+}
+
+class Type extends Named {
+	
+	refers Topic[] topics opposite ^type
+	
+	refers Site site opposite types
+	
 	
 }
 
@@ -31,7 +44,9 @@ class Site extends Named {
 	
 	contains Tag[] tags opposite site
 
-	contains Abbreviation[] abbreviations opposite site	
+	contains Abbreviation[] abbreviations opposite site
+	
+	contains Type[] types opposite site
 
 	/**
 	 * Get or create a tag with a given name
@@ -48,7 +63,7 @@ class Site extends Named {
 	}
 	
 	/**
-	 * Get or create a tag with a given name
+	 * Get or create a abbreviation with a given name
 	 */
 	op Abbreviation getOrCreateAbbr(String name) {
 		val n = name // param is not final
@@ -59,6 +74,20 @@ class Site extends Named {
 			abbreviations += abbreviation
 		}
 		return abbreviation
+	}
+	
+	/**
+	 * Get or create a type with a given name
+	 */
+	op Type getOrCreateType(String name) {
+		val n = name // param is not final
+		var Type e = types.findFirst([it.name == n])
+		if (e == null) {
+			e = SiteFactory::eINSTANCE.createType
+			e.name = name
+			types += e
+		}
+		return e
 	}
 	
 	op Topic getTopic(String name) {
@@ -102,6 +131,8 @@ class Topic extends Named {
 	refers Topic[] see
 	
 	refers Abbreviation abbreviation opposite topics
+	
+	refers Type ^type opposite topics
 	
 	
 	/**

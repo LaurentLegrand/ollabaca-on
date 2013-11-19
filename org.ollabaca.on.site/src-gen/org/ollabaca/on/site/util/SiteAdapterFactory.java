@@ -75,6 +75,11 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
     new SiteSwitch<Adapter>()
     {
       @Override
+      public Adapter caseElement(Element object)
+      {
+        return createElementAdapter();
+      }
+      @Override
       public Adapter caseNamed(Named object)
       {
         return createNamedAdapter();
@@ -83,6 +88,11 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTag(Tag object)
       {
         return createTagAdapter();
+      }
+      @Override
+      public Adapter caseType(Type object)
+      {
+        return createTypeAdapter();
       }
       @Override
       public Adapter caseAbbreviation(Abbreviation object)
@@ -122,6 +132,21 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
 
 
   /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.site.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.site.Element
+   * @generated
+   */
+  public Adapter createElementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.ollabaca.on.site.Named <em>Named</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -147,6 +172,21 @@ public class SiteAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTagAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.site.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.site.Type
+   * @generated
+   */
+  public Adapter createTypeAdapter()
   {
     return null;
   }

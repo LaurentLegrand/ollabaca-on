@@ -72,10 +72,18 @@ public class SiteSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case SitePackage.ELEMENT:
+      {
+        Element element = (Element)theEObject;
+        T result = caseElement(element);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SitePackage.NAMED:
       {
         Named named = (Named)theEObject;
         T result = caseNamed(named);
+        if (result == null) result = caseElement(named);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -84,6 +92,16 @@ public class SiteSwitch<T> extends Switch<T>
         Tag tag = (Tag)theEObject;
         T result = caseTag(tag);
         if (result == null) result = caseNamed(tag);
+        if (result == null) result = caseElement(tag);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SitePackage.TYPE:
+      {
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = caseNamed(type);
+        if (result == null) result = caseElement(type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -92,6 +110,7 @@ public class SiteSwitch<T> extends Switch<T>
         Abbreviation abbreviation = (Abbreviation)theEObject;
         T result = caseAbbreviation(abbreviation);
         if (result == null) result = caseNamed(abbreviation);
+        if (result == null) result = caseElement(abbreviation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -100,6 +119,7 @@ public class SiteSwitch<T> extends Switch<T>
         Site site = (Site)theEObject;
         T result = caseSite(site);
         if (result == null) result = caseNamed(site);
+        if (result == null) result = caseElement(site);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,11 +128,28 @@ public class SiteSwitch<T> extends Switch<T>
         Topic topic = (Topic)theEObject;
         T result = caseTopic(topic);
         if (result == null) result = caseNamed(topic);
+        if (result == null) result = caseElement(topic);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElement(Element object)
+  {
+    return null;
   }
 
   /**
@@ -143,6 +180,22 @@ public class SiteSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTag(Tag object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType(Type object)
   {
     return null;
   }

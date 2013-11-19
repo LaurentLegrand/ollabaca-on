@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ollabaca.on.site.Site#getTopics <em>Topics</em>}</li>
  *   <li>{@link org.ollabaca.on.site.Site#getTags <em>Tags</em>}</li>
  *   <li>{@link org.ollabaca.on.site.Site#getAbbreviations <em>Abbreviations</em>}</li>
+ *   <li>{@link org.ollabaca.on.site.Site#getTypes <em>Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +80,24 @@ public interface Site extends Named
   EList<Abbreviation> getAbbreviations();
 
   /**
+   * Returns the value of the '<em><b>Types</b></em>' containment reference list.
+   * The list contents are of type {@link org.ollabaca.on.site.Type}.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.site.Type#getSite <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Types</em>' containment reference list.
+   * @see org.ollabaca.on.site.SitePackage#getSite_Types()
+   * @see org.ollabaca.on.site.Type#getSite
+   * @model opposite="site" containment="true"
+   * @generated
+   */
+  EList<Type> getTypes();
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * <!-- begin-model-doc -->
@@ -96,13 +115,26 @@ public interface Site extends Named
    * <!-- end-user-doc -->
    * <!-- begin-model-doc -->
    * *
-   * Get or create a tag with a given name
+   * Get or create a abbreviation with a given name
    * <!-- end-model-doc -->
    * @model unique="false" nameUnique="false"
    *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%java.lang.String%> n = name;\n<%org.ollabaca.on.site.Site%> _this = this;\n<%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Abbreviation%>> _abbreviations = _this.getAbbreviations();\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.site.Abbreviation%>,<%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.site.Abbreviation%>,<%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%org.ollabaca.on.site.Abbreviation%> it)\n\t{\n\t\t<%java.lang.String%> _name = it.getName();\n\t\tboolean _equals = <%com.google.common.base.Objects%>.equal(_name, n);\n\t\treturn <%java.lang.Boolean%>.valueOf(_equals);\n\t}\n};\n<%org.ollabaca.on.site.Abbreviation%> abbreviation = <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%org.ollabaca.on.site.Abbreviation%>>findFirst(_abbreviations, _function);\nboolean _equals = <%com.google.common.base.Objects%>.equal(abbreviation, null);\nif (_equals)\n{\n\t<%org.ollabaca.on.site.Abbreviation%> _createAbbreviation = <%org.ollabaca.on.site.SiteFactory%>.eINSTANCE.createAbbreviation();\n\tabbreviation = _createAbbreviation;\n\tabbreviation.setName(name);\n\t<%org.ollabaca.on.site.Site%> _this_1 = this;\n\t<%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Abbreviation%>> _abbreviations_1 = _this_1.getAbbreviations();\n\t_abbreviations_1.add(abbreviation);\n}\nreturn abbreviation;'"
    * @generated
    */
   Abbreviation getOrCreateAbbr(String name);
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * <!-- begin-model-doc -->
+   * *
+   * Get or create a type with a given name
+   * <!-- end-model-doc -->
+   * @model unique="false" nameUnique="false"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%java.lang.String%> n = name;\n<%org.ollabaca.on.site.Site%> _this = this;\n<%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Type%>> _types = _this.getTypes();\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.site.Type%>,<%java.lang.Boolean%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.site.Type%>,<%java.lang.Boolean%>>()\n{\n\tpublic <%java.lang.Boolean%> apply(final <%org.ollabaca.on.site.Type%> it)\n\t{\n\t\t<%java.lang.String%> _name = it.getName();\n\t\tboolean _equals = <%com.google.common.base.Objects%>.equal(_name, n);\n\t\treturn <%java.lang.Boolean%>.valueOf(_equals);\n\t}\n};\n<%org.ollabaca.on.site.Type%> e = <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%org.ollabaca.on.site.Type%>>findFirst(_types, _function);\nboolean _equals = <%com.google.common.base.Objects%>.equal(e, null);\nif (_equals)\n{\n\t<%org.ollabaca.on.site.Type%> _createType = <%org.ollabaca.on.site.SiteFactory%>.eINSTANCE.createType();\n\te = _createType;\n\te.setName(name);\n\t<%org.ollabaca.on.site.Site%> _this_1 = this;\n\t<%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Type%>> _types_1 = _this_1.getTypes();\n\t_types_1.add(e);\n}\nreturn e;'"
+   * @generated
+   */
+  Type getOrCreateType(String name);
 
   /**
    * <!-- begin-user-doc -->
