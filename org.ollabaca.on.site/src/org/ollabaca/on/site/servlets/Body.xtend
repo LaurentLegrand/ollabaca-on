@@ -1,17 +1,17 @@
 package org.ollabaca.on.site.servlets
 
+import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.util.Template
-import org.eclipse.emf.ecore.EObject
 
-class Body extends Template<EObject> {
+class Body extends Template<Element> {
 
 	public static val Body instance = new Body()
 
-	static def body_EObject(EObject self) {
+	static def body_Element(Element self) {
 		instance.apply(self)
 	}
 
-	override def CharSequence doFallback(EObject self) '''
+	override def CharSequence doFallback(Element self) '''
 		<body>
 			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
@@ -39,10 +39,10 @@ class Body extends Template<EObject> {
 			<div class="container-fluid">
 				<div class='row-fluid'>
 					<div class="span3 well">
-						«Aside::aside_EObject(self)»
+						«Aside::aside_Element(self)»
 					</div>
 					<div id="content" class="span9">
-						«Main::main_EObject(self)»
+						«Main::main_Element(self)»
 					</div>
 				</div>
 			</div>

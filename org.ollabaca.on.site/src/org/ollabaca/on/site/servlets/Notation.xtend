@@ -1,8 +1,11 @@
 package org.ollabaca.on.site.servlets
 
-import org.ollabaca.on.site.util.Template
 import org.eclipse.emf.ecore.EObject
+import org.ollabaca.on.site.util.Template
+
 import static extension org.ollabaca.on.site.util.Html.*
+import org.ollabaca.on.site.Element
+import org.ollabaca.on.site.util.Sites
 
 class Notation extends Template<Object> {
 
@@ -13,7 +16,16 @@ class Notation extends Template<Object> {
 	}
 
 	def dispatch CharSequence doFallback(EObject self) {
-		link(self)
+		val topic = Sites::topic_EObject(self)
+		if (topic == null) {
+			self.toString
+		} else {
+			Link::link_EObject(topic)
+		}
+	}
+
+	def dispatch CharSequence doFallback(Element self) {
+		Link::link_EObject(self)
 	}
 
 	def dispatch CharSequence doFallback(Object self) {

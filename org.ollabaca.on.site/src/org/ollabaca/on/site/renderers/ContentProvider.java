@@ -1,9 +1,9 @@
 package org.ollabaca.on.site.renderers;
 
-import org.eclipse.emf.ecore.EClass;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
+import org.ollabaca.on.site.Type;
 
 public interface ContentProvider {
 	
@@ -13,7 +13,7 @@ public interface ContentProvider {
 	
 	String onTag(Tag self);
 	
-	String onType(Site site, EClass type);
+	String onType(Type type);
 
 	void activate(Register register);
 

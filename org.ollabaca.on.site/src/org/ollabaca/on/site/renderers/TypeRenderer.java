@@ -1,10 +1,9 @@
 package org.ollabaca.on.site.renderers;
 
-import org.eclipse.emf.ecore.EClass;
-import org.ollabaca.on.site.Site;
+import org.ollabaca.on.site.Type;
 
 public interface TypeRenderer {
 
-	Content render(Site site, EClass self);
+	Content render(Type self);
 
 }

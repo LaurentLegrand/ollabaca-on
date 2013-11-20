@@ -13,8 +13,9 @@ import org.ollabaca.on.site.renderers.Text
 
 import static org.ollabaca.on.site.util.Sites.*
 
-import static extension org.ollabaca.on.site.renderers.Renderers.*
+import static extension org.ollabaca.on.site.servlets.Ref.*
 import static extension org.ollabaca.on.site.util.Html.*
+import org.ollabaca.on.site.Type
 
 class GraphContentProvider implements ContentProvider {
 	
@@ -58,8 +59,8 @@ class GraphContentProvider implements ContentProvider {
 				$(this).tab('show');
 			});
 			
-			myGraph("#«INSTANCES»", "«self.href(INSTANCES)»"); 
-			myGraph("#«TYPES»", "«self.href(TYPES)»"); 
+			myGraph("#«INSTANCES»", "«scope(INSTANCES, self).ref_Object»"); 
+			myGraph("#«TYPES»", "«scope(TYPES, self).ref_Object»"); 
 		});
 		</script>
 		'''
@@ -101,7 +102,7 @@ class GraphContentProvider implements ContentProvider {
 		""
 	}
 	
-	override onType(Site site, EClass type) {
+	override onType(Type type) {
 		""
 	}
 
@@ -135,7 +136,7 @@ class GraphContentProvider implements ContentProvider {
 			.writeStartArray("nodes")
 				nodes.forEach[
 					graph.writeStartObject
-						.write("href", it.href)
+						.write("href", it.ref_Object.toString)
 						.write("name", it.name)
 						.write("title", it.title)
 						.write("level", it.ancestors.size)
@@ -178,7 +179,7 @@ class GraphContentProvider implements ContentProvider {
 			.writeStartArray("nodes")
 				nodes.forEach[
 					graph.writeStartObject
-						.write("href", it.href)
+						.write("href", it.ref_Object.toString)
 						.write("name", it.name)
 						.write("title", it.name)
 						.write("level", 1)

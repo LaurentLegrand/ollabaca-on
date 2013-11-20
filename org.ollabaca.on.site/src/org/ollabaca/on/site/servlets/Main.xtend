@@ -1,38 +1,41 @@
 package org.ollabaca.on.site.servlets
 
-import org.ollabaca.on.site.util.Template
-import org.eclipse.emf.ecore.EObject
+import java.util.List
+import java.util.Set
 import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EObject
 import org.ollabaca.on.site.Tag
-
-import static extension org.ollabaca.on.site.util.Html.*
-import static extension org.ollabaca.on.site.servlets.Notation.*
 import org.ollabaca.on.site.Topic
 import org.ollabaca.on.site.util.Sites
-import java.util.List
-import org.eclipse.emf.ecore.EClass
-import java.util.Set
+import org.ollabaca.on.site.util.Template
 
-class Main extends Template<EObject> {
+import static extension org.ollabaca.on.site.servlets.Link.*
+import static extension org.ollabaca.on.site.servlets.Notation.*
+import static extension org.ollabaca.on.site.util.Html.*
+import org.ollabaca.on.site.Element
+import org.ollabaca.on.site.Type
+
+class Main extends Template<Element> {
 
 	public static val Main instance = new Main()
 
-	static def main_EObject(EObject self) {
+	static def main_Element(Element self) {
 		instance.apply(self)
 	}
 
 	dispatch def CharSequence doFallback(Tag self) '''
 		<nav>
-		«ul(self.topics, #[], content([it.link]))»
+		«ul(self.topics, #[], content([it.link_EObject]))»
 		</nav>
 	'''
 
 	dispatch def CharSequence doFallback(Topic self) '''
 		<!-- breadcumb -->
 		<ul class="breadcrumb">
-			<li>«Sites::site.link» <span class="divider">/</span></li>
+			<li>«Sites::site.link_EObject» <span class="divider">/</span></li>
 			«FOR e: self.ancestors»
-				<li>«e.link» <span class="divider">/</span></li>
+				<li>«e.link_EObject» <span class="divider">/</span></li>
 			«ENDFOR»
 			<li class="active">«self.title.html»</li>
 		</ul>
@@ -56,7 +59,7 @@ class Main extends Template<EObject> {
 		«self.target.properties»
 	'''
 
-	dispatch def CharSequence doFallback(EObject self) ''''''
+	dispatch def CharSequence doFallback(Element self) ''''''
 
 	dispatch def CharSequence doFallback(Void self) '''
 		<div class="row-fluid">
@@ -66,16 +69,15 @@ class Main extends Template<EObject> {
 		</div>
 	'''
 
- 	dispatch def CharSequence doFallback(EClass self) {
+ 	dispatch def CharSequence doFallback(Type self) {
 		val Set<EObject> instances = newHashSet()
 		val Set<EClass> types = newHashSet()
-		val type = self
-		Sites::site.topics.map[target].filter[it.eClass == type].forEach[
-			instances.add(it)
-			types.add(it.eClass)
-			types.addAll(it.eClass.EAllSuperTypes)
-		]
+		instances.addAll(self.topics.map[target])
 		
+		val eClass = self.topics.head.target.eClass
+		types.add(eClass)
+		types.addAll(eClass.EAllSuperTypes)
+				
 		'''
 		<article class="type">
 			<a id="eClass:«self.name»"></a>
@@ -107,7 +109,7 @@ class Main extends Template<EObject> {
 						<td>
 						«var topic = Sites::site.getTopic(i)»
 						«IF topic != null»
-							«topic.link»
+							«topic.link_EObject»
 						«ELSE»
 							<!-- -->
 						«ENDIF»
@@ -146,7 +148,7 @@ class Main extends Template<EObject> {
 						«FOR f: t.EStructuralFeatures»
 							<tr>
 								«IF t.EStructuralFeatures.indexOf(f) == 0»
-									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link»</th>
+									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link_EObject»</th>
 								«ENDIF»
 								<th scope="row">«f.name.escape»</th>
 								<td>«self.eGet(f).notation_Object»</td>
@@ -160,5 +162,5 @@ class Main extends Template<EObject> {
 		</table>
 		</section>
 		'''
-	}
+	}	
 }

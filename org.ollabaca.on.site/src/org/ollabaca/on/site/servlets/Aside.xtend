@@ -1,23 +1,26 @@
 package org.ollabaca.on.site.servlets
 
-import org.ollabaca.on.site.util.Template
-import org.eclipse.emf.ecore.EObject
+import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.Site
-import static extension org.ollabaca.on.site.util.Html.*
 import org.ollabaca.on.site.Topic
-import org.eclipse.emf.ecore.EClass
+import org.ollabaca.on.site.Type
+import org.ollabaca.on.site.util.Template
 
-class Aside extends Template<EObject> {
+import static org.ollabaca.on.site.util.Html.*
+
+import static extension org.ollabaca.on.site.servlets.Link.*
+
+class Aside extends Template<Element> {
 
 	public static val Aside instance = new Aside()
 
-	static def aside_EObject(EObject self) {
+	static def aside_Element(Element self) {
 		instance.apply(self)
 	}
 
-	def dispatch CharSequence doFallback(EObject self) ''''''
+	def dispatch CharSequence doFallback(Element self) ''''''
 
-	def dispatch CharSequence doFallback(EClass self) '''
+	def dispatch CharSequence doFallback(Type self) '''
 		<aside>
 			<ul class='nav nav-list'>
 				<li class='nav-header'>name</li><li>«self.name»</li>
@@ -27,17 +30,17 @@ class Aside extends Template<EObject> {
 
 	def dispatch CharSequence doFallback(Site self) '''
 		«self.nav»
-		«self.tags»
-		«self.abbreviations»
+		«self.para_Site_tags»
+		«self.para_Site_abbreviations»
 	'''
 
 	def dispatch CharSequence doFallback(Topic self) '''
 		<aside>
 			<ul class='nav nav-list'>
-				<li class='nav-header'>type</li><li>«self.target.eClass.link»</li>
-				«FOR e : self.ancestors BEFORE "<li class='divider'></li><li class='nav-header'>ancestors</li>"»<li>«e.link»</li>«ENDFOR»
-				«FOR e : self.topics BEFORE "<li class='divider'></li><li class='nav-header'>children</li>"»<li>«e.link»</li>«ENDFOR»
-				«FOR e : self.see BEFORE "<li class='divider'></li><li class='nav-header'>see also</li>"»<li>«e.link»</li>«ENDFOR»
+				<li class='nav-header'>type</li><li>«self.type.link_EObject»</li>
+				«FOR e : self.ancestors BEFORE "<li class='divider'></li><li class='nav-header'>ancestors</li>"»<li>«e.link_EObject»</li>«ENDFOR»
+				«FOR e : self.topics BEFORE "<li class='divider'></li><li class='nav-header'>children</li>"»<li>«e.link_EObject»</li>«ENDFOR»
+				«FOR e : self.see BEFORE "<li class='divider'></li><li class='nav-header'>see also</li>"»<li>«e.link_EObject»</li>«ENDFOR»
 			</ul>
 		</aside>
 	'''
@@ -49,15 +52,15 @@ class Aside extends Template<EObject> {
 	'''
 
 	def dispatch CharSequence nav(Topic self) '''
-		«self.link»
+		«self.link_EObject»
 		«ul(self.topics.filter[!anonymous].sortBy[name], [it.nav])»
 	'''
 
-	def tags(Site self) '''
-		«FOR e : self.tags BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.link»«ENDFOR»
+	def para_Site_tags(Site self) '''
+		«FOR e : self.tags BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.link_EObject»«ENDFOR»
 	'''
 
-	def abbreviations(Site self) '''
+	def para_Site_abbreviations(Site self) '''
 		«FOR e : self.abbreviations BEFORE "<p>" SEPARATOR "&nbsp;" AFTER "</p>"»«e.name»«ENDFOR»
 	'''
 }

@@ -1,19 +1,19 @@
 package org.ollabaca.on.site.servlets
 
+import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.util.Template
-import org.eclipse.emf.ecore.EObject
 
-class Head extends Template<EObject> {
+class Head extends Template<Element> {
 
 	public static val Head instance = new Head()
 
-	static def head_EObject(EObject self) {
+	static def head_Element(Element self) {
 		instance.apply(self)
 	}
 
-	override def CharSequence doFallback(EObject self) '''
+	override def CharSequence doFallback(Element self) '''
 		<head>
-			<title>«Title::title_EObject(self)»</title>
+			<title>«Title::title_Element(self)»</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<meta name="description" content="">
 			<meta name="author" content="">
@@ -63,7 +63,7 @@ class Head extends Template<EObject> {
 				
 			</script>
 			
-			«OnLoad::onLoad_EObject(self)»
+			«OnLoad::onLoad_Element(self)»
 			
 		</head>
 	'''

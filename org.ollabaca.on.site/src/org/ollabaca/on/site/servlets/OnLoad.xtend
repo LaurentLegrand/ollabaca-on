@@ -1,21 +1,23 @@
 package org.ollabaca.on.site.servlets
 
-import org.eclipse.emf.ecore.EObject
 import org.ollabaca.on.site.Activator
+import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
+import org.ollabaca.on.site.Type
 import org.ollabaca.on.site.util.Template
-import org.eclipse.emf.ecore.EClass
-import org.ollabaca.on.site.util.Sites
 
-class OnLoad extends Template<EObject> {
+class OnLoad extends Template<Element> {
 
 	public static val OnLoad instance = new OnLoad()
 
-	static def onLoad_EObject(EObject self) {
+	static def onLoad_Element(Element self) {
 		instance.apply(self)
 	}
 
+	dispatch def CharSequence doFallback(Element self) {
+		""
+	}
 	dispatch def CharSequence doFallback(Site self) '''
 		«FOR e : Activator::instance.context.contentProviders»
 			«e.onSite(self)»
@@ -28,9 +30,9 @@ class OnLoad extends Template<EObject> {
 		«ENDFOR»
 	'''
 
-	dispatch def CharSequence doFallback(EClass self) '''
+	dispatch def CharSequence doFallback(Type self) '''
 		«FOR e : Activator::instance.context.contentProviders»
-			«e.onType(Sites::site, self)»
+			«e.onType(self)»
 		«ENDFOR»
 	'''
 

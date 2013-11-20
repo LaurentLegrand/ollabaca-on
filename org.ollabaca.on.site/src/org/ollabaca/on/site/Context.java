@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.emf.ecore.EClass;
 import org.ollabaca.on.site.renderers.Content;
 import org.ollabaca.on.site.renderers.ContentProvider;
 import org.ollabaca.on.site.renderers.Register;
@@ -82,7 +81,7 @@ public class Context implements Register {
 		return (renderer != null) ? renderer : new TypeRenderer() {
 
 			@Override
-			public Content render(Site site, EClass self) {
+			public Content render(Type type) {
 				return new Text("text/plain", "Renderer not found for path: "
 						+ path);
 			}

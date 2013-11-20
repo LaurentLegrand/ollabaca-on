@@ -15,7 +15,6 @@ import org.eclipse.core.resources.IResourceChangeListener
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.Path
 import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
@@ -63,7 +62,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 	}
 	
 	def home(HttpServletRequest request, HttpServletResponse response) throws IOException {
-				response.getWriter().append(Page::page_EObject(null))
+				response.getWriter().append(Page::page_Element(null))
 	}
 	
 	def project(HttpServletRequest request, HttpServletResponse response, String path, String project) {
@@ -71,7 +70,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 		try {
 			Sites::current.set(site)
 			if (path == "pages") {
-				response.getWriter().append(Page::page_EObject(site))
+				response.getWriter().append(Page::page_Element(site))
 			} else {
 				Activator::instance.context.getSiteRenderer(path).render(site).fill(response)
 			}
@@ -86,7 +85,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			Sites::current.set(site)
 			var t = site.topics.filter[name == topic].head
 			if (path == "pages") {
-				response.getWriter().append(Page::page_EObject(t))
+				response.getWriter().append(Page::page_Element(t))
 			} else {
 				Activator::instance.context.getTopicRenderer(path).render(t).fill(response)
 			}
@@ -99,13 +98,12 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 		var site = ResourcesPlugin::workspace.root.getProject(project).instances.allContents.filter(typeof(Site)).head
 		try {
 			Sites::current.set(site)
-			val topic = site.topics.findFirst[it.target.eClass.instanceClassName.equals(type)]
-			var EClass eClass = topic.target.eClass
+			var t = site.types.filter[name == type].head
 			
 			if (path == "pages") {
-				response.getWriter().append(Page::page_EObject(eClass))
+				response.getWriter().append(Page::page_Element(t))
 			} else {
-				Activator::instance.context.getTypeRenderer(path).render(site, eClass).fill(response)
+				Activator::instance.context.getTypeRenderer(path).render(t).fill(response)
 			}
 		} finally {
 			Sites::current.set(null)
@@ -118,7 +116,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			Sites::current.set(site)
 			var t = site.tags.filter[name == tag].head
 			if (path == "pages") {
-				response.getWriter().append(Page::page_EObject(t))
+				response.getWriter().append(Page::page_Element(t))
 			} else {
 //				Activator::instance.context.getTagRenderer(path).render(t).fill(response)
 			}
