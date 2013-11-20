@@ -1,0 +1,52 @@
+package org.ollabaca.on.uml.book
+
+import org.eclipse.uml2.uml.PackageableElement
+import org.eclipse.uml2.uml.Element
+import org.eclipse.uml2.uml.Node
+import org.eclipse.uml2.uml.ExecutionEnvironment
+
+class BookElement extends PackageableElement {
+
+	refers Element documentation
+}
+
+class Book extends BookElement {
+	
+	contains Part[] parts
+}
+
+class Part extends BookElement {
+	
+	contains Chapter[] chapters
+}
+
+class Chapter extends Section {
+	
+}
+
+class Section extends BookElement {
+	
+	refers Element[] elements
+	
+	contains Section[] sections
+}
+
+abstract class Tier extends Node {
+	
+}
+
+class Front extends Tier {
+	
+}
+
+class Middle extends Tier {
+	
+}
+
+class Back extends Tier {
+	
+}
+
+class Environment extends ExecutionEnvironment {
+	
+}
