@@ -20,6 +20,8 @@ class Aside extends Template<Element> {
 
 	def dispatch CharSequence doFallback(Element self) ''''''
 
+	def dispatch CharSequence doFallback(Void self) ''''''
+
 	def dispatch CharSequence doFallback(Type self) '''
 		<aside>
 			<ul class='nav nav-list'>
