@@ -69,10 +69,6 @@ public class BookFactoryImpl extends EFactoryImpl implements BookFactory
       case BookPackage.PART: return createPart();
       case BookPackage.CHAPTER: return createChapter();
       case BookPackage.SECTION: return createSection();
-      case BookPackage.FRONT: return createFront();
-      case BookPackage.MIDDLE: return createMiddle();
-      case BookPackage.BACK: return createBack();
-      case BookPackage.ENVIRONMENT: return createEnvironment();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -131,50 +127,6 @@ public class BookFactoryImpl extends EFactoryImpl implements BookFactory
   {
     SectionImpl section = new SectionImpl();
     return section;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Front createFront()
-  {
-    FrontImpl front = new FrontImpl();
-    return front;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Middle createMiddle()
-  {
-    MiddleImpl middle = new MiddleImpl();
-    return middle;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Back createBack()
-  {
-    BackImpl back = new BackImpl();
-    return back;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Environment createEnvironment()
-  {
-    EnvironmentImpl environment = new EnvironmentImpl();
-    return environment;
   }
 
   /**

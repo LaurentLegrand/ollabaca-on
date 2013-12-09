@@ -68,42 +68,6 @@ public interface BookFactory extends EFactory
   Section createSection();
 
   /**
-   * Returns a new object of class '<em>Front</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Front</em>'.
-   * @generated
-   */
-  Front createFront();
-
-  /**
-   * Returns a new object of class '<em>Middle</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Middle</em>'.
-   * @generated
-   */
-  Middle createMiddle();
-
-  /**
-   * Returns a new object of class '<em>Back</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Back</em>'.
-   * @generated
-   */
-  Back createBack();
-
-  /**
-   * Returns a new object of class '<em>Environment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Environment</em>'.
-   * @generated
-   */
-  Environment createEnvironment();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

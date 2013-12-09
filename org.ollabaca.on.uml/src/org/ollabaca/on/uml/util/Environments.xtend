@@ -5,7 +5,7 @@ import org.eclipse.uml2.uml.Deployment
 import org.eclipse.uml2.uml.DeploymentSpecification
 import org.eclipse.uml2.uml.Node
 import org.eclipse.uml2.uml.Property
-import org.ollabaca.on.uml.book.Environment
+import org.ollabaca.on.uml.todo.Environment
 
 import static extension org.ollabaca.on.site.servlets.Link.*
 import static extension org.ollabaca.on.site.servlets.Notation.*

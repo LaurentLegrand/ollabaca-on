@@ -31,22 +31,3 @@ class Section extends BookElement {
 	contains Section[] sections
 }
 
-abstract class Tier extends Node {
-	
-}
-
-class Front extends Tier {
-	
-}
-
-class Middle extends Tier {
-	
-}
-
-class Back extends Tier {
-	
-}
-
-class Environment extends ExecutionEnvironment {
-	
-}

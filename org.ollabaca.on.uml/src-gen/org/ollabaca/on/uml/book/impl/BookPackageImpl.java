@@ -10,18 +10,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
 
-import org.ollabaca.on.uml.book.Back;
 import org.ollabaca.on.uml.book.Book;
 import org.ollabaca.on.uml.book.BookElement;
 import org.ollabaca.on.uml.book.BookFactory;
 import org.ollabaca.on.uml.book.BookPackage;
 import org.ollabaca.on.uml.book.Chapter;
-import org.ollabaca.on.uml.book.Environment;
-import org.ollabaca.on.uml.book.Front;
-import org.ollabaca.on.uml.book.Middle;
 import org.ollabaca.on.uml.book.Part;
 import org.ollabaca.on.uml.book.Section;
-import org.ollabaca.on.uml.book.Tier;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,41 +60,6 @@ public class BookPackageImpl extends EPackageImpl implements BookPackage
    * @generated
    */
   private EClass sectionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass tierEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass frontEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass middleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass backEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass environmentEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -272,56 +232,6 @@ public class BookPackageImpl extends EPackageImpl implements BookPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTier()
-  {
-    return tierEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFront()
-  {
-    return frontEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMiddle()
-  {
-    return middleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBack()
-  {
-    return backEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEnvironment()
-  {
-    return environmentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public BookFactory getBookFactory()
   {
     return (BookFactory)getEFactoryInstance();
@@ -361,16 +271,6 @@ public class BookPackageImpl extends EPackageImpl implements BookPackage
     sectionEClass = createEClass(SECTION);
     createEReference(sectionEClass, SECTION__ELEMENTS);
     createEReference(sectionEClass, SECTION__SECTIONS);
-
-    tierEClass = createEClass(TIER);
-
-    frontEClass = createEClass(FRONT);
-
-    middleEClass = createEClass(MIDDLE);
-
-    backEClass = createEClass(BACK);
-
-    environmentEClass = createEClass(ENVIRONMENT);
   }
 
   /**
@@ -410,11 +310,6 @@ public class BookPackageImpl extends EPackageImpl implements BookPackage
     partEClass.getESuperTypes().add(this.getBookElement());
     chapterEClass.getESuperTypes().add(this.getSection());
     sectionEClass.getESuperTypes().add(this.getBookElement());
-    tierEClass.getESuperTypes().add(theUMLPackage.getNode());
-    frontEClass.getESuperTypes().add(this.getTier());
-    middleEClass.getESuperTypes().add(this.getTier());
-    backEClass.getESuperTypes().add(this.getTier());
-    environmentEClass.getESuperTypes().add(theUMLPackage.getExecutionEnvironment());
 
     // Initialize classes, features, and operations; add parameters
     initEClass(bookElementEClass, BookElement.class, "BookElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -431,16 +326,6 @@ public class BookPackageImpl extends EPackageImpl implements BookPackage
     initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSection_Elements(), theUMLPackage.getElement(), null, "elements", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSection_Sections(), this.getSection(), null, "sections", null, 0, -1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(tierEClass, Tier.class, "Tier", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(frontEClass, Front.class, "Front", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(middleEClass, Middle.class, "Middle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(backEClass, Back.class, "Back", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

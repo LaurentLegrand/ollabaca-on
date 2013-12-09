@@ -22,7 +22,7 @@ import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.util.Attr;
 import org.ollabaca.on.site.util.Column;
 import org.ollabaca.on.site.util.Html;
-import org.ollabaca.on.uml.book.Environment;
+import org.ollabaca.on.uml.todo.Environment;
 
 @SuppressWarnings("all")
 public class Environments {

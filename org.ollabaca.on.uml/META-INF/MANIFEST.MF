@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xcore.lib;visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
  org.ollabaca.on.site;bundle-version="1.0.0",
- org.eclipse.uml2.uml;visibility:=reexport;bundle-version="4.0.2"
+ org.eclipse.uml2.uml;visibility:=reexport;bundle-version="4.0.2",
+ org.ollabaca.on.uml;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.ollabaca.on.uml,
@@ -23,4 +24,13 @@ Export-Package: org.ollabaca.on.uml,
  org.ollabaca.on.uml.rest,
  org.ollabaca.on.uml.rest.impl,
  org.ollabaca.on.uml.rest.util,
- org.ollabaca.on.uml.util
+ org.ollabaca.on.uml.util,
+ org.ollabaca.on.uml.org,
+ org.ollabaca.on.uml.org.impl,
+ org.ollabaca.on.uml.org.util,
+ org.ollabaca.on.uml.task,
+ org.ollabaca.on.uml.task.impl,
+ org.ollabaca.on.uml.task.util,
+ org.ollabaca.on.uml.todo,
+ org.ollabaca.on.uml.todo.impl,
+ org.ollabaca.on.uml.todo.util

@@ -8,9 +8,9 @@ import org.eclipse.uml2.uml.Operation
 import org.eclipse.uml2.uml.Port
 import org.eclipse.uml2.uml.UseCase
 import org.ollabaca.on.uml.book.Book
-import org.ollabaca.on.uml.book.Environment
 import org.ollabaca.on.uml.book.Part
 import org.ollabaca.on.uml.book.Section
+import org.ollabaca.on.uml.todo.Environment
 
 import static org.ollabaca.on.uml.Layout_Element.*
 
@@ -21,8 +21,8 @@ import static extension org.ollabaca.on.uml.util.BehavioralFeatures.*
 import static extension org.ollabaca.on.uml.util.BehavioredClassifiers.*
 import static extension org.ollabaca.on.uml.util.Classifiers.*
 import static extension org.ollabaca.on.uml.util.Constraints.*
-import static extension org.ollabaca.on.uml.util.Environments.*
 import static extension org.ollabaca.on.uml.util.Namespaces.*
+import static extension org.ollabaca.on.uml.util.Environments.*
 
 class Section_Element_OwnedElements {
 	
