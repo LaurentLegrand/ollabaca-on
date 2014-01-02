@@ -1,0 +1,67 @@
+package org.ollabaca.on.gtbr
+
+import org.ollabaca.on.uml.org.Agent
+import org.ollabaca.on.gtbr.util.Dates
+import org.eclipse.uml2.uml.NamedElement
+import org.eclipse.uml2.uml.PackageableElement
+import org.ollabaca.on.gtbr.util.Accounts
+
+type Date wraps java.util.Date
+create {
+	if (it != null) Dates::fromString(it)
+}
+convert {
+	if (it != null) Dates::toString(it)
+}
+
+
+abstract class AccountingElement extends PackageableElement {
+	
+}
+
+class Account extends NamedElement, AccountingElement {
+	
+	refers Agent institution
+	
+	refers Agent holder
+	
+	refers AccountingOperation[] operations opposite account
+	
+	derived double balance get {
+		return Accounts::getBalance(this) 
+	}
+	
+}
+
+abstract class AccountingOperation extends AccountingElement {
+	
+	refers Account account opposite operations
+	
+	Date[1] date
+	
+	double amount 
+}
+
+class Debit extends AccountingOperation {
+	
+}
+
+class Credit extends AccountingOperation {
+	
+}
+
+class Transfer extends AccountingElement {
+	
+	Date[1] date
+	
+	double amount
+	
+	refers Account from
+	
+	refers Account to
+	
+	contains Debit debit
+	
+	contains Credit credit
+	
+}
