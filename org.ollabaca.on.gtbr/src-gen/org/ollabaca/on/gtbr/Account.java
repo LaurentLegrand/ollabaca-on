@@ -18,7 +18,7 @@ import org.ollabaca.on.uml.org.Agent;
  * <ul>
  *   <li>{@link org.ollabaca.on.gtbr.Account#getInstitution <em>Institution</em>}</li>
  *   <li>{@link org.ollabaca.on.gtbr.Account#getHolder <em>Holder</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.Account#getOperations <em>Operations</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.Account#getRecords <em>Records</em>}</li>
  *   <li>{@link org.ollabaca.on.gtbr.Account#getBalance <em>Balance</em>}</li>
  * </ul>
  * </p>
@@ -82,22 +82,22 @@ public interface Account extends NamedElement, AccountingElement
   void setHolder(Agent value);
 
   /**
-   * Returns the value of the '<em><b>Operations</b></em>' reference list.
-   * The list contents are of type {@link org.ollabaca.on.gtbr.AccountingOperation}.
-   * It is bidirectional and its opposite is '{@link org.ollabaca.on.gtbr.AccountingOperation#getAccount <em>Account</em>}'.
+   * Returns the value of the '<em><b>Records</b></em>' reference list.
+   * The list contents are of type {@link org.ollabaca.on.gtbr.Record}.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.gtbr.Record#getAccount <em>Account</em>}'.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Operations</em>' reference list isn't clear,
+   * If the meaning of the '<em>Records</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operations</em>' reference list.
-   * @see org.ollabaca.on.gtbr.GtbrPackage#getAccount_Operations()
-   * @see org.ollabaca.on.gtbr.AccountingOperation#getAccount
+   * @return the value of the '<em>Records</em>' reference list.
+   * @see org.ollabaca.on.gtbr.GtbrPackage#getAccount_Records()
+   * @see org.ollabaca.on.gtbr.Record#getAccount
    * @model opposite="account"
    * @generated
    */
-  EList<AccountingOperation> getOperations();
+  EList<Record> getRecords();
 
   /**
    * Returns the value of the '<em><b>Balance</b></em>' attribute.
@@ -110,7 +110,7 @@ public interface Account extends NamedElement, AccountingElement
    * @return the value of the '<em>Balance</em>' attribute.
    * @see org.ollabaca.on.gtbr.GtbrPackage#getAccount_Balance()
    * @model unique="false" transient="true" changeable="false" volatile="true" derived="true"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel get='<%org.ollabaca.on.gtbr.Account%> _this = this;\nreturn <%org.ollabaca.on.gtbr.util.Accounts%>.getBalance(_this);'"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel get='double b = 0;\n<%org.ollabaca.on.gtbr.Account%> _this = this;\n<%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.gtbr.Record%>> _records = _this.getRecords();\nfinal <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.gtbr.Record%>,<%java.util.Date%>> _function = new <%org.eclipse.xtext.xbase.lib.Functions.Function1%><<%org.ollabaca.on.gtbr.Record%>,<%java.util.Date%>>()\n{\n\tpublic <%java.util.Date%> apply(final <%org.ollabaca.on.gtbr.Record%> it)\n\t{\n\t\t<%java.util.Date%> _date = it.getDate();\n\t\treturn _date;\n\t}\n};\n<%java.util.List%><<%org.ollabaca.on.gtbr.Record%>> _sortBy = <%org.eclipse.xtext.xbase.lib.IterableExtensions%>.<<%org.ollabaca.on.gtbr.Record%>, <%java.util.Date%>>sortBy(_records, _function);\nfor (final <%org.ollabaca.on.gtbr.Record%> e : _sortBy)\n{\n\tdouble _apply = e.apply(b);\n\tb = _apply;\n}\nreturn b;'"
    * @generated
    */
   double getBalance();

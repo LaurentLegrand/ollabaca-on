@@ -13,5 +13,11 @@
             class="org.ollabaca.on.gtbr.GtbrPackage"
             genModel="model/gtbr.xcore"/>
    </extension>
+   <extension
+         point="org.ollabaca.on.site.SitePlugin">
+      <plugin
+            class="org.ollabaca.on.gtbr.site.GtbrSitePlugin">
+      </plugin>
+   </extension>
 
 </plugin>

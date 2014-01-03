@@ -5,6 +5,7 @@ package org.ollabaca.on.gtbr;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -802,13 +803,13 @@ public interface GtbrPackage extends EPackage
   int ACCOUNT__HOLDER = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Operations</b></em>' reference list.
+   * The feature id for the '<em><b>Records</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNT__OPERATIONS = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+  int ACCOUNT__RECORDS = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Balance</b></em>' attribute.
@@ -1306,14 +1307,14 @@ public interface GtbrPackage extends EPackage
   int ACCOUNT_OPERATION_COUNT = UMLPackage.NAMED_ELEMENT_OPERATION_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.gtbr.impl.AccountingOperationImpl <em>Accounting Operation</em>}' class.
+   * The meta object id for the '{@link org.ollabaca.on.gtbr.impl.RecordImpl <em>Record</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.gtbr.impl.AccountingOperationImpl
-   * @see org.ollabaca.on.gtbr.impl.GtbrPackageImpl#getAccountingOperation()
+   * @see org.ollabaca.on.gtbr.impl.RecordImpl
+   * @see org.ollabaca.on.gtbr.impl.GtbrPackageImpl#getRecord()
    * @generated
    */
-  int ACCOUNTING_OPERATION = 2;
+  int RECORD = 2;
 
   /**
    * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -1322,7 +1323,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__EANNOTATIONS = ACCOUNTING_ELEMENT__EANNOTATIONS;
+  int RECORD__EANNOTATIONS = ACCOUNTING_ELEMENT__EANNOTATIONS;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1331,7 +1332,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__OWNED_COMMENT = ACCOUNTING_ELEMENT__OWNED_COMMENT;
+  int RECORD__OWNED_COMMENT = ACCOUNTING_ELEMENT__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1340,7 +1341,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__OWNED_ELEMENT = ACCOUNTING_ELEMENT__OWNED_ELEMENT;
+  int RECORD__OWNED_ELEMENT = ACCOUNTING_ELEMENT__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1349,7 +1350,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__OWNER = ACCOUNTING_ELEMENT__OWNER;
+  int RECORD__OWNER = ACCOUNTING_ELEMENT__OWNER;
 
   /**
    * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -1358,7 +1359,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__CLIENT_DEPENDENCY = ACCOUNTING_ELEMENT__CLIENT_DEPENDENCY;
+  int RECORD__CLIENT_DEPENDENCY = ACCOUNTING_ELEMENT__CLIENT_DEPENDENCY;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1367,7 +1368,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__NAME = ACCOUNTING_ELEMENT__NAME;
+  int RECORD__NAME = ACCOUNTING_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -1376,7 +1377,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__NAME_EXPRESSION = ACCOUNTING_ELEMENT__NAME_EXPRESSION;
+  int RECORD__NAME_EXPRESSION = ACCOUNTING_ELEMENT__NAME_EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -1385,7 +1386,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__NAMESPACE = ACCOUNTING_ELEMENT__NAMESPACE;
+  int RECORD__NAMESPACE = ACCOUNTING_ELEMENT__NAMESPACE;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -1394,7 +1395,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__QUALIFIED_NAME = ACCOUNTING_ELEMENT__QUALIFIED_NAME;
+  int RECORD__QUALIFIED_NAME = ACCOUNTING_ELEMENT__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1403,7 +1404,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__VISIBILITY = ACCOUNTING_ELEMENT__VISIBILITY;
+  int RECORD__VISIBILITY = ACCOUNTING_ELEMENT__VISIBILITY;
 
   /**
    * The feature id for the '<em><b>Owning Template Parameter</b></em>' container reference.
@@ -1412,7 +1413,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__OWNING_TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT__OWNING_TEMPLATE_PARAMETER;
+  int RECORD__OWNING_TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT__OWNING_TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Template Parameter</b></em>' reference.
@@ -1421,7 +1422,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT__TEMPLATE_PARAMETER;
+  int RECORD__TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT__TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Account</b></em>' reference.
@@ -1430,7 +1431,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__ACCOUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 0;
+  int RECORD__ACCOUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -1439,7 +1440,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__DATE = ACCOUNTING_ELEMENT_FEATURE_COUNT + 1;
+  int RECORD__DATE = ACCOUNTING_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -1448,16 +1449,16 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION__AMOUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 2;
+  int RECORD__AMOUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Accounting Operation</em>' class.
+   * The number of structural features of the '<em>Record</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION_FEATURE_COUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 3;
+  int RECORD_FEATURE_COUNT = ACCOUNTING_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1466,7 +1467,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_EANNOTATION__STRING = ACCOUNTING_ELEMENT___GET_EANNOTATION__STRING;
+  int RECORD___GET_EANNOTATION__STRING = ACCOUNTING_ELEMENT___GET_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -1475,7 +1476,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+  int RECORD___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -1484,7 +1485,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+  int RECORD___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Add Keyword</em>' operation.
@@ -1493,7 +1494,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___ADD_KEYWORD__STRING = ACCOUNTING_ELEMENT___ADD_KEYWORD__STRING;
+  int RECORD___ADD_KEYWORD__STRING = ACCOUNTING_ELEMENT___ADD_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -1502,7 +1503,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___APPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+  int RECORD___APPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -1511,7 +1512,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___CREATE_EANNOTATION__STRING = ACCOUNTING_ELEMENT___CREATE_EANNOTATION__STRING;
+  int RECORD___CREATE_EANNOTATION__STRING = ACCOUNTING_ELEMENT___CREATE_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Destroy</em>' operation.
@@ -1520,7 +1521,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___DESTROY = ACCOUNTING_ELEMENT___DESTROY;
+  int RECORD___DESTROY = ACCOUNTING_ELEMENT___DESTROY;
 
   /**
    * The operation id for the '<em>Get Keywords</em>' operation.
@@ -1529,7 +1530,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_KEYWORDS = ACCOUNTING_ELEMENT___GET_KEYWORDS;
+  int RECORD___GET_KEYWORDS = ACCOUNTING_ELEMENT___GET_KEYWORDS;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -1538,7 +1539,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+  int RECORD___GET_APPLICABLE_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -1547,7 +1548,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPES = ACCOUNTING_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+  int RECORD___GET_APPLICABLE_STEREOTYPES = ACCOUNTING_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -1556,7 +1557,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+  int RECORD___GET_APPLIED_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -1565,7 +1566,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPES = ACCOUNTING_ELEMENT___GET_APPLIED_STEREOTYPES;
+  int RECORD___GET_APPLIED_STEREOTYPES = ACCOUNTING_ELEMENT___GET_APPLIED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -1574,7 +1575,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+  int RECORD___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -1583,7 +1584,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = ACCOUNTING_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+  int RECORD___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = ACCOUNTING_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Model</em>' operation.
@@ -1592,7 +1593,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_MODEL = ACCOUNTING_ELEMENT___GET_MODEL;
+  int RECORD___GET_MODEL = ACCOUNTING_ELEMENT___GET_MODEL;
 
   /**
    * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -1601,7 +1602,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_NEAREST_PACKAGE = ACCOUNTING_ELEMENT___GET_NEAREST_PACKAGE;
+  int RECORD___GET_NEAREST_PACKAGE = ACCOUNTING_ELEMENT___GET_NEAREST_PACKAGE;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1610,7 +1611,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_RELATIONSHIPS;
+  int RECORD___GET_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1619,7 +1620,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+  int RECORD___GET_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -1628,7 +1629,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+  int RECORD___GET_REQUIRED_STEREOTYPE__STRING = ACCOUNTING_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -1637,7 +1638,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPES = ACCOUNTING_ELEMENT___GET_REQUIRED_STEREOTYPES;
+  int RECORD___GET_REQUIRED_STEREOTYPES = ACCOUNTING_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1646,7 +1647,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+  int RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1655,7 +1656,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+  int RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -1664,7 +1665,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = ACCOUNTING_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+  int RECORD___GET_STEREOTYPE_APPLICATION__STEREOTYPE = ACCOUNTING_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -1673,7 +1674,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATIONS = ACCOUNTING_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+  int RECORD___GET_STEREOTYPE_APPLICATIONS = ACCOUNTING_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1682,7 +1683,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+  int RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS = ACCOUNTING_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1691,7 +1692,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+  int RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Value</em>' operation.
@@ -1700,7 +1701,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_VALUE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+  int RECORD___GET_VALUE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Has Keyword</em>' operation.
@@ -1709,7 +1710,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___HAS_KEYWORD__STRING = ACCOUNTING_ELEMENT___HAS_KEYWORD__STRING;
+  int RECORD___HAS_KEYWORD__STRING = ACCOUNTING_ELEMENT___HAS_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Has Value</em>' operation.
@@ -1718,7 +1719,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___HAS_VALUE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+  int RECORD___HAS_VALUE__STEREOTYPE_STRING = ACCOUNTING_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -1727,7 +1728,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+  int RECORD___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -1736,7 +1737,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLIED__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+  int RECORD___IS_STEREOTYPE_APPLIED__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -1745,7 +1746,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+  int RECORD___IS_STEREOTYPE_REQUIRED__STEREOTYPE = ACCOUNTING_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -1754,7 +1755,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___REMOVE_KEYWORD__STRING = ACCOUNTING_ELEMENT___REMOVE_KEYWORD__STRING;
+  int RECORD___REMOVE_KEYWORD__STRING = ACCOUNTING_ELEMENT___REMOVE_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Set Value</em>' operation.
@@ -1763,7 +1764,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___SET_VALUE__STEREOTYPE_STRING_OBJECT = ACCOUNTING_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+  int RECORD___SET_VALUE__STEREOTYPE_STRING_OBJECT = ACCOUNTING_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
   /**
    * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -1772,7 +1773,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___UNAPPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+  int RECORD___UNAPPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1781,7 +1782,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___ALL_OWNED_ELEMENTS = ACCOUNTING_ELEMENT___ALL_OWNED_ELEMENTS;
+  int RECORD___ALL_OWNED_ELEMENTS = ACCOUNTING_ELEMENT___ALL_OWNED_ELEMENTS;
 
   /**
    * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1790,7 +1791,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___MUST_BE_OWNED = ACCOUNTING_ELEMENT___MUST_BE_OWNED;
+  int RECORD___MUST_BE_OWNED = ACCOUNTING_ELEMENT___MUST_BE_OWNED;
 
   /**
    * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -1799,7 +1800,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int RECORD___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -1808,7 +1809,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int RECORD___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -1817,7 +1818,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+  int RECORD___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = ACCOUNTING_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Create Dependency</em>' operation.
@@ -1826,7 +1827,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___CREATE_DEPENDENCY__NAMEDELEMENT = ACCOUNTING_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+  int RECORD___CREATE_DEPENDENCY__NAMEDELEMENT = ACCOUNTING_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Create Usage</em>' operation.
@@ -1835,7 +1836,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___CREATE_USAGE__NAMEDELEMENT = ACCOUNTING_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+  int RECORD___CREATE_USAGE__NAMEDELEMENT = ACCOUNTING_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -1844,7 +1845,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_LABEL = ACCOUNTING_ELEMENT___GET_LABEL;
+  int RECORD___GET_LABEL = ACCOUNTING_ELEMENT___GET_LABEL;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -1853,7 +1854,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_LABEL__BOOLEAN = ACCOUNTING_ELEMENT___GET_LABEL__BOOLEAN;
+  int RECORD___GET_LABEL__BOOLEAN = ACCOUNTING_ELEMENT___GET_LABEL__BOOLEAN;
 
   /**
    * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1862,7 +1863,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___ALL_NAMESPACES = ACCOUNTING_ELEMENT___ALL_NAMESPACES;
+  int RECORD___ALL_NAMESPACES = ACCOUNTING_ELEMENT___ALL_NAMESPACES;
 
   /**
    * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -1871,7 +1872,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___ALL_OWNING_PACKAGES = ACCOUNTING_ELEMENT___ALL_OWNING_PACKAGES;
+  int RECORD___ALL_OWNING_PACKAGES = ACCOUNTING_ELEMENT___ALL_OWNING_PACKAGES;
 
   /**
    * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -1880,7 +1881,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = ACCOUNTING_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+  int RECORD___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = ACCOUNTING_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Namespace</em>' operation.
@@ -1889,7 +1890,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_NAMESPACE = ACCOUNTING_ELEMENT___GET_NAMESPACE;
+  int RECORD___GET_NAMESPACE = ACCOUNTING_ELEMENT___GET_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -1898,7 +1899,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___GET_QUALIFIED_NAME = ACCOUNTING_ELEMENT___GET_QUALIFIED_NAME;
+  int RECORD___GET_QUALIFIED_NAME = ACCOUNTING_ELEMENT___GET_QUALIFIED_NAME;
 
   /**
    * The operation id for the '<em>Separator</em>' operation.
@@ -1907,7 +1908,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___SEPARATOR = ACCOUNTING_ELEMENT___SEPARATOR;
+  int RECORD___SEPARATOR = ACCOUNTING_ELEMENT___SEPARATOR;
 
   /**
    * The operation id for the '<em>Is Compatible With</em>' operation.
@@ -1916,7 +1917,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = ACCOUNTING_ELEMENT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
+  int RECORD___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = ACCOUNTING_ELEMENT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
 
   /**
    * The operation id for the '<em>Is Template Parameter</em>' operation.
@@ -1925,16 +1926,25 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION___IS_TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT___IS_TEMPLATE_PARAMETER;
+  int RECORD___IS_TEMPLATE_PARAMETER = ACCOUNTING_ELEMENT___IS_TEMPLATE_PARAMETER;
 
   /**
-   * The number of operations of the '<em>Accounting Operation</em>' class.
+   * The operation id for the '<em>Apply</em>' operation.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCOUNTING_OPERATION_OPERATION_COUNT = ACCOUNTING_ELEMENT_OPERATION_COUNT + 0;
+  int RECORD___APPLY__DOUBLE = ACCOUNTING_ELEMENT_OPERATION_COUNT + 0;
+
+  /**
+   * The number of operations of the '<em>Record</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECORD_OPERATION_COUNT = ACCOUNTING_ELEMENT_OPERATION_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.gtbr.impl.DebitImpl <em>Debit</em>}' class.
@@ -1953,7 +1963,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__EANNOTATIONS = ACCOUNTING_OPERATION__EANNOTATIONS;
+  int DEBIT__EANNOTATIONS = RECORD__EANNOTATIONS;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1962,7 +1972,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__OWNED_COMMENT = ACCOUNTING_OPERATION__OWNED_COMMENT;
+  int DEBIT__OWNED_COMMENT = RECORD__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1971,7 +1981,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__OWNED_ELEMENT = ACCOUNTING_OPERATION__OWNED_ELEMENT;
+  int DEBIT__OWNED_ELEMENT = RECORD__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1980,7 +1990,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__OWNER = ACCOUNTING_OPERATION__OWNER;
+  int DEBIT__OWNER = RECORD__OWNER;
 
   /**
    * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -1989,7 +1999,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__CLIENT_DEPENDENCY = ACCOUNTING_OPERATION__CLIENT_DEPENDENCY;
+  int DEBIT__CLIENT_DEPENDENCY = RECORD__CLIENT_DEPENDENCY;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1998,7 +2008,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__NAME = ACCOUNTING_OPERATION__NAME;
+  int DEBIT__NAME = RECORD__NAME;
 
   /**
    * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -2007,7 +2017,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__NAME_EXPRESSION = ACCOUNTING_OPERATION__NAME_EXPRESSION;
+  int DEBIT__NAME_EXPRESSION = RECORD__NAME_EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -2016,7 +2026,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__NAMESPACE = ACCOUNTING_OPERATION__NAMESPACE;
+  int DEBIT__NAMESPACE = RECORD__NAMESPACE;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -2025,7 +2035,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__QUALIFIED_NAME = ACCOUNTING_OPERATION__QUALIFIED_NAME;
+  int DEBIT__QUALIFIED_NAME = RECORD__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2034,7 +2044,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__VISIBILITY = ACCOUNTING_OPERATION__VISIBILITY;
+  int DEBIT__VISIBILITY = RECORD__VISIBILITY;
 
   /**
    * The feature id for the '<em><b>Owning Template Parameter</b></em>' container reference.
@@ -2043,7 +2053,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__OWNING_TEMPLATE_PARAMETER = ACCOUNTING_OPERATION__OWNING_TEMPLATE_PARAMETER;
+  int DEBIT__OWNING_TEMPLATE_PARAMETER = RECORD__OWNING_TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Template Parameter</b></em>' reference.
@@ -2052,7 +2062,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__TEMPLATE_PARAMETER = ACCOUNTING_OPERATION__TEMPLATE_PARAMETER;
+  int DEBIT__TEMPLATE_PARAMETER = RECORD__TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Account</b></em>' reference.
@@ -2061,7 +2071,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__ACCOUNT = ACCOUNTING_OPERATION__ACCOUNT;
+  int DEBIT__ACCOUNT = RECORD__ACCOUNT;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -2070,7 +2080,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__DATE = ACCOUNTING_OPERATION__DATE;
+  int DEBIT__DATE = RECORD__DATE;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -2079,7 +2089,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT__AMOUNT = ACCOUNTING_OPERATION__AMOUNT;
+  int DEBIT__AMOUNT = RECORD__AMOUNT;
 
   /**
    * The number of structural features of the '<em>Debit</em>' class.
@@ -2088,7 +2098,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT_FEATURE_COUNT = ACCOUNTING_OPERATION_FEATURE_COUNT + 0;
+  int DEBIT_FEATURE_COUNT = RECORD_FEATURE_COUNT + 0;
 
   /**
    * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2097,7 +2107,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_EANNOTATION__STRING = ACCOUNTING_OPERATION___GET_EANNOTATION__STRING;
+  int DEBIT___GET_EANNOTATION__STRING = RECORD___GET_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -2106,7 +2116,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+  int DEBIT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -2115,7 +2125,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+  int DEBIT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Add Keyword</em>' operation.
@@ -2124,7 +2134,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___ADD_KEYWORD__STRING = ACCOUNTING_OPERATION___ADD_KEYWORD__STRING;
+  int DEBIT___ADD_KEYWORD__STRING = RECORD___ADD_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -2133,7 +2143,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___APPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_OPERATION___APPLY_STEREOTYPE__STEREOTYPE;
+  int DEBIT___APPLY_STEREOTYPE__STEREOTYPE = RECORD___APPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -2142,7 +2152,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___CREATE_EANNOTATION__STRING = ACCOUNTING_OPERATION___CREATE_EANNOTATION__STRING;
+  int DEBIT___CREATE_EANNOTATION__STRING = RECORD___CREATE_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Destroy</em>' operation.
@@ -2151,7 +2161,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___DESTROY = ACCOUNTING_OPERATION___DESTROY;
+  int DEBIT___DESTROY = RECORD___DESTROY;
 
   /**
    * The operation id for the '<em>Get Keywords</em>' operation.
@@ -2160,7 +2170,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_KEYWORDS = ACCOUNTING_OPERATION___GET_KEYWORDS;
+  int DEBIT___GET_KEYWORDS = RECORD___GET_KEYWORDS;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -2169,7 +2179,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLICABLE_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPE__STRING;
+  int DEBIT___GET_APPLICABLE_STEREOTYPE__STRING = RECORD___GET_APPLICABLE_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -2178,7 +2188,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLICABLE_STEREOTYPES = ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPES;
+  int DEBIT___GET_APPLICABLE_STEREOTYPES = RECORD___GET_APPLICABLE_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -2187,7 +2197,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLIED_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPE__STRING;
+  int DEBIT___GET_APPLIED_STEREOTYPE__STRING = RECORD___GET_APPLIED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -2196,7 +2206,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLIED_STEREOTYPES = ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPES;
+  int DEBIT___GET_APPLIED_STEREOTYPES = RECORD___GET_APPLIED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -2205,7 +2215,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+  int DEBIT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = RECORD___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -2214,7 +2224,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+  int DEBIT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = RECORD___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Model</em>' operation.
@@ -2223,7 +2233,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_MODEL = ACCOUNTING_OPERATION___GET_MODEL;
+  int DEBIT___GET_MODEL = RECORD___GET_MODEL;
 
   /**
    * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -2232,7 +2242,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_NEAREST_PACKAGE = ACCOUNTING_OPERATION___GET_NEAREST_PACKAGE;
+  int DEBIT___GET_NEAREST_PACKAGE = RECORD___GET_NEAREST_PACKAGE;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2241,7 +2251,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_RELATIONSHIPS;
+  int DEBIT___GET_RELATIONSHIPS = RECORD___GET_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2250,7 +2260,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_RELATIONSHIPS__ECLASS;
+  int DEBIT___GET_RELATIONSHIPS__ECLASS = RECORD___GET_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -2259,7 +2269,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_REQUIRED_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPE__STRING;
+  int DEBIT___GET_REQUIRED_STEREOTYPE__STRING = RECORD___GET_REQUIRED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -2268,7 +2278,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_REQUIRED_STEREOTYPES = ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPES;
+  int DEBIT___GET_REQUIRED_STEREOTYPES = RECORD___GET_REQUIRED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2277,7 +2287,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_SOURCE_DIRECTED_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+  int DEBIT___GET_SOURCE_DIRECTED_RELATIONSHIPS = RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2286,7 +2296,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+  int DEBIT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -2295,7 +2305,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+  int DEBIT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = RECORD___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -2304,7 +2314,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_STEREOTYPE_APPLICATIONS = ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATIONS;
+  int DEBIT___GET_STEREOTYPE_APPLICATIONS = RECORD___GET_STEREOTYPE_APPLICATIONS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2313,7 +2323,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_TARGET_DIRECTED_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS;
+  int DEBIT___GET_TARGET_DIRECTED_RELATIONSHIPS = RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2322,7 +2332,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+  int DEBIT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Value</em>' operation.
@@ -2331,7 +2341,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_VALUE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___GET_VALUE__STEREOTYPE_STRING;
+  int DEBIT___GET_VALUE__STEREOTYPE_STRING = RECORD___GET_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Has Keyword</em>' operation.
@@ -2340,7 +2350,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___HAS_KEYWORD__STRING = ACCOUNTING_OPERATION___HAS_KEYWORD__STRING;
+  int DEBIT___HAS_KEYWORD__STRING = RECORD___HAS_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Has Value</em>' operation.
@@ -2349,7 +2359,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___HAS_VALUE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___HAS_VALUE__STEREOTYPE_STRING;
+  int DEBIT___HAS_VALUE__STEREOTYPE_STRING = RECORD___HAS_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -2358,7 +2368,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+  int DEBIT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = RECORD___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -2367,7 +2377,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_STEREOTYPE_APPLIED__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+  int DEBIT___IS_STEREOTYPE_APPLIED__STEREOTYPE = RECORD___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -2376,7 +2386,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+  int DEBIT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = RECORD___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -2385,7 +2395,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___REMOVE_KEYWORD__STRING = ACCOUNTING_OPERATION___REMOVE_KEYWORD__STRING;
+  int DEBIT___REMOVE_KEYWORD__STRING = RECORD___REMOVE_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Set Value</em>' operation.
@@ -2394,7 +2404,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___SET_VALUE__STEREOTYPE_STRING_OBJECT = ACCOUNTING_OPERATION___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+  int DEBIT___SET_VALUE__STEREOTYPE_STRING_OBJECT = RECORD___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
   /**
    * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -2403,7 +2413,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___UNAPPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_OPERATION___UNAPPLY_STEREOTYPE__STEREOTYPE;
+  int DEBIT___UNAPPLY_STEREOTYPE__STEREOTYPE = RECORD___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -2412,7 +2422,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___ALL_OWNED_ELEMENTS = ACCOUNTING_OPERATION___ALL_OWNED_ELEMENTS;
+  int DEBIT___ALL_OWNED_ELEMENTS = RECORD___ALL_OWNED_ELEMENTS;
 
   /**
    * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -2421,7 +2431,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___MUST_BE_OWNED = ACCOUNTING_OPERATION___MUST_BE_OWNED;
+  int DEBIT___MUST_BE_OWNED = RECORD___MUST_BE_OWNED;
 
   /**
    * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -2430,7 +2440,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int DEBIT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -2439,7 +2449,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int DEBIT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -2448,7 +2458,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+  int DEBIT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Create Dependency</em>' operation.
@@ -2457,7 +2467,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___CREATE_DEPENDENCY__NAMEDELEMENT = ACCOUNTING_OPERATION___CREATE_DEPENDENCY__NAMEDELEMENT;
+  int DEBIT___CREATE_DEPENDENCY__NAMEDELEMENT = RECORD___CREATE_DEPENDENCY__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Create Usage</em>' operation.
@@ -2466,7 +2476,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___CREATE_USAGE__NAMEDELEMENT = ACCOUNTING_OPERATION___CREATE_USAGE__NAMEDELEMENT;
+  int DEBIT___CREATE_USAGE__NAMEDELEMENT = RECORD___CREATE_USAGE__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -2475,7 +2485,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_LABEL = ACCOUNTING_OPERATION___GET_LABEL;
+  int DEBIT___GET_LABEL = RECORD___GET_LABEL;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -2484,7 +2494,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_LABEL__BOOLEAN = ACCOUNTING_OPERATION___GET_LABEL__BOOLEAN;
+  int DEBIT___GET_LABEL__BOOLEAN = RECORD___GET_LABEL__BOOLEAN;
 
   /**
    * The operation id for the '<em>All Namespaces</em>' operation.
@@ -2493,7 +2503,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___ALL_NAMESPACES = ACCOUNTING_OPERATION___ALL_NAMESPACES;
+  int DEBIT___ALL_NAMESPACES = RECORD___ALL_NAMESPACES;
 
   /**
    * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -2502,7 +2512,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___ALL_OWNING_PACKAGES = ACCOUNTING_OPERATION___ALL_OWNING_PACKAGES;
+  int DEBIT___ALL_OWNING_PACKAGES = RECORD___ALL_OWNING_PACKAGES;
 
   /**
    * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -2511,7 +2521,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = ACCOUNTING_OPERATION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+  int DEBIT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = RECORD___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Namespace</em>' operation.
@@ -2520,7 +2530,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_NAMESPACE = ACCOUNTING_OPERATION___GET_NAMESPACE;
+  int DEBIT___GET_NAMESPACE = RECORD___GET_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -2529,7 +2539,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___GET_QUALIFIED_NAME = ACCOUNTING_OPERATION___GET_QUALIFIED_NAME;
+  int DEBIT___GET_QUALIFIED_NAME = RECORD___GET_QUALIFIED_NAME;
 
   /**
    * The operation id for the '<em>Separator</em>' operation.
@@ -2538,7 +2548,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___SEPARATOR = ACCOUNTING_OPERATION___SEPARATOR;
+  int DEBIT___SEPARATOR = RECORD___SEPARATOR;
 
   /**
    * The operation id for the '<em>Is Compatible With</em>' operation.
@@ -2547,7 +2557,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = ACCOUNTING_OPERATION___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
+  int DEBIT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = RECORD___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
 
   /**
    * The operation id for the '<em>Is Template Parameter</em>' operation.
@@ -2556,7 +2566,16 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT___IS_TEMPLATE_PARAMETER = ACCOUNTING_OPERATION___IS_TEMPLATE_PARAMETER;
+  int DEBIT___IS_TEMPLATE_PARAMETER = RECORD___IS_TEMPLATE_PARAMETER;
+
+  /**
+   * The operation id for the '<em>Apply</em>' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEBIT___APPLY__DOUBLE = RECORD_OPERATION_COUNT + 0;
 
   /**
    * The number of operations of the '<em>Debit</em>' class.
@@ -2565,7 +2584,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEBIT_OPERATION_COUNT = ACCOUNTING_OPERATION_OPERATION_COUNT + 0;
+  int DEBIT_OPERATION_COUNT = RECORD_OPERATION_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.gtbr.impl.CreditImpl <em>Credit</em>}' class.
@@ -2584,7 +2603,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__EANNOTATIONS = ACCOUNTING_OPERATION__EANNOTATIONS;
+  int CREDIT__EANNOTATIONS = RECORD__EANNOTATIONS;
 
   /**
    * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2593,7 +2612,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__OWNED_COMMENT = ACCOUNTING_OPERATION__OWNED_COMMENT;
+  int CREDIT__OWNED_COMMENT = RECORD__OWNED_COMMENT;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -2602,7 +2621,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__OWNED_ELEMENT = ACCOUNTING_OPERATION__OWNED_ELEMENT;
+  int CREDIT__OWNED_ELEMENT = RECORD__OWNED_ELEMENT;
 
   /**
    * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -2611,7 +2630,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__OWNER = ACCOUNTING_OPERATION__OWNER;
+  int CREDIT__OWNER = RECORD__OWNER;
 
   /**
    * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -2620,7 +2639,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__CLIENT_DEPENDENCY = ACCOUNTING_OPERATION__CLIENT_DEPENDENCY;
+  int CREDIT__CLIENT_DEPENDENCY = RECORD__CLIENT_DEPENDENCY;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2629,7 +2648,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__NAME = ACCOUNTING_OPERATION__NAME;
+  int CREDIT__NAME = RECORD__NAME;
 
   /**
    * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -2638,7 +2657,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__NAME_EXPRESSION = ACCOUNTING_OPERATION__NAME_EXPRESSION;
+  int CREDIT__NAME_EXPRESSION = RECORD__NAME_EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -2647,7 +2666,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__NAMESPACE = ACCOUNTING_OPERATION__NAMESPACE;
+  int CREDIT__NAMESPACE = RECORD__NAMESPACE;
 
   /**
    * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -2656,7 +2675,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__QUALIFIED_NAME = ACCOUNTING_OPERATION__QUALIFIED_NAME;
+  int CREDIT__QUALIFIED_NAME = RECORD__QUALIFIED_NAME;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2665,7 +2684,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__VISIBILITY = ACCOUNTING_OPERATION__VISIBILITY;
+  int CREDIT__VISIBILITY = RECORD__VISIBILITY;
 
   /**
    * The feature id for the '<em><b>Owning Template Parameter</b></em>' container reference.
@@ -2674,7 +2693,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__OWNING_TEMPLATE_PARAMETER = ACCOUNTING_OPERATION__OWNING_TEMPLATE_PARAMETER;
+  int CREDIT__OWNING_TEMPLATE_PARAMETER = RECORD__OWNING_TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Template Parameter</b></em>' reference.
@@ -2683,7 +2702,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__TEMPLATE_PARAMETER = ACCOUNTING_OPERATION__TEMPLATE_PARAMETER;
+  int CREDIT__TEMPLATE_PARAMETER = RECORD__TEMPLATE_PARAMETER;
 
   /**
    * The feature id for the '<em><b>Account</b></em>' reference.
@@ -2692,7 +2711,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__ACCOUNT = ACCOUNTING_OPERATION__ACCOUNT;
+  int CREDIT__ACCOUNT = RECORD__ACCOUNT;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -2701,7 +2720,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__DATE = ACCOUNTING_OPERATION__DATE;
+  int CREDIT__DATE = RECORD__DATE;
 
   /**
    * The feature id for the '<em><b>Amount</b></em>' attribute.
@@ -2710,7 +2729,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT__AMOUNT = ACCOUNTING_OPERATION__AMOUNT;
+  int CREDIT__AMOUNT = RECORD__AMOUNT;
 
   /**
    * The number of structural features of the '<em>Credit</em>' class.
@@ -2719,7 +2738,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT_FEATURE_COUNT = ACCOUNTING_OPERATION_FEATURE_COUNT + 0;
+  int CREDIT_FEATURE_COUNT = RECORD_FEATURE_COUNT + 0;
 
   /**
    * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2728,7 +2747,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_EANNOTATION__STRING = ACCOUNTING_OPERATION___GET_EANNOTATION__STRING;
+  int CREDIT___GET_EANNOTATION__STRING = RECORD___GET_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -2737,7 +2756,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+  int CREDIT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -2746,7 +2765,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+  int CREDIT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Add Keyword</em>' operation.
@@ -2755,7 +2774,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___ADD_KEYWORD__STRING = ACCOUNTING_OPERATION___ADD_KEYWORD__STRING;
+  int CREDIT___ADD_KEYWORD__STRING = RECORD___ADD_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -2764,7 +2783,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___APPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_OPERATION___APPLY_STEREOTYPE__STEREOTYPE;
+  int CREDIT___APPLY_STEREOTYPE__STEREOTYPE = RECORD___APPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -2773,7 +2792,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___CREATE_EANNOTATION__STRING = ACCOUNTING_OPERATION___CREATE_EANNOTATION__STRING;
+  int CREDIT___CREATE_EANNOTATION__STRING = RECORD___CREATE_EANNOTATION__STRING;
 
   /**
    * The operation id for the '<em>Destroy</em>' operation.
@@ -2782,7 +2801,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___DESTROY = ACCOUNTING_OPERATION___DESTROY;
+  int CREDIT___DESTROY = RECORD___DESTROY;
 
   /**
    * The operation id for the '<em>Get Keywords</em>' operation.
@@ -2791,7 +2810,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_KEYWORDS = ACCOUNTING_OPERATION___GET_KEYWORDS;
+  int CREDIT___GET_KEYWORDS = RECORD___GET_KEYWORDS;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -2800,7 +2819,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLICABLE_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPE__STRING;
+  int CREDIT___GET_APPLICABLE_STEREOTYPE__STRING = RECORD___GET_APPLICABLE_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -2809,7 +2828,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLICABLE_STEREOTYPES = ACCOUNTING_OPERATION___GET_APPLICABLE_STEREOTYPES;
+  int CREDIT___GET_APPLICABLE_STEREOTYPES = RECORD___GET_APPLICABLE_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -2818,7 +2837,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLIED_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPE__STRING;
+  int CREDIT___GET_APPLIED_STEREOTYPE__STRING = RECORD___GET_APPLIED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -2827,7 +2846,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLIED_STEREOTYPES = ACCOUNTING_OPERATION___GET_APPLIED_STEREOTYPES;
+  int CREDIT___GET_APPLIED_STEREOTYPES = RECORD___GET_APPLIED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -2836,7 +2855,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+  int CREDIT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = RECORD___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -2845,7 +2864,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = ACCOUNTING_OPERATION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+  int CREDIT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = RECORD___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Model</em>' operation.
@@ -2854,7 +2873,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_MODEL = ACCOUNTING_OPERATION___GET_MODEL;
+  int CREDIT___GET_MODEL = RECORD___GET_MODEL;
 
   /**
    * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -2863,7 +2882,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_NEAREST_PACKAGE = ACCOUNTING_OPERATION___GET_NEAREST_PACKAGE;
+  int CREDIT___GET_NEAREST_PACKAGE = RECORD___GET_NEAREST_PACKAGE;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2872,7 +2891,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_RELATIONSHIPS;
+  int CREDIT___GET_RELATIONSHIPS = RECORD___GET_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2881,7 +2900,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_RELATIONSHIPS__ECLASS;
+  int CREDIT___GET_RELATIONSHIPS__ECLASS = RECORD___GET_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -2890,7 +2909,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_REQUIRED_STEREOTYPE__STRING = ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPE__STRING;
+  int CREDIT___GET_REQUIRED_STEREOTYPE__STRING = RECORD___GET_REQUIRED_STEREOTYPE__STRING;
 
   /**
    * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -2899,7 +2918,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_REQUIRED_STEREOTYPES = ACCOUNTING_OPERATION___GET_REQUIRED_STEREOTYPES;
+  int CREDIT___GET_REQUIRED_STEREOTYPES = RECORD___GET_REQUIRED_STEREOTYPES;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2908,7 +2927,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_SOURCE_DIRECTED_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+  int CREDIT___GET_SOURCE_DIRECTED_RELATIONSHIPS = RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2917,7 +2936,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+  int CREDIT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = RECORD___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -2926,7 +2945,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+  int CREDIT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = RECORD___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -2935,7 +2954,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_STEREOTYPE_APPLICATIONS = ACCOUNTING_OPERATION___GET_STEREOTYPE_APPLICATIONS;
+  int CREDIT___GET_STEREOTYPE_APPLICATIONS = RECORD___GET_STEREOTYPE_APPLICATIONS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2944,7 +2963,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_TARGET_DIRECTED_RELATIONSHIPS = ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS;
+  int CREDIT___GET_TARGET_DIRECTED_RELATIONSHIPS = RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
   /**
    * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2953,7 +2972,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = ACCOUNTING_OPERATION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+  int CREDIT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = RECORD___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
   /**
    * The operation id for the '<em>Get Value</em>' operation.
@@ -2962,7 +2981,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_VALUE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___GET_VALUE__STEREOTYPE_STRING;
+  int CREDIT___GET_VALUE__STEREOTYPE_STRING = RECORD___GET_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Has Keyword</em>' operation.
@@ -2971,7 +2990,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___HAS_KEYWORD__STRING = ACCOUNTING_OPERATION___HAS_KEYWORD__STRING;
+  int CREDIT___HAS_KEYWORD__STRING = RECORD___HAS_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Has Value</em>' operation.
@@ -2980,7 +2999,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___HAS_VALUE__STEREOTYPE_STRING = ACCOUNTING_OPERATION___HAS_VALUE__STEREOTYPE_STRING;
+  int CREDIT___HAS_VALUE__STEREOTYPE_STRING = RECORD___HAS_VALUE__STEREOTYPE_STRING;
 
   /**
    * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -2989,7 +3008,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+  int CREDIT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = RECORD___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -2998,7 +3017,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_STEREOTYPE_APPLIED__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+  int CREDIT___IS_STEREOTYPE_APPLIED__STEREOTYPE = RECORD___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -3007,7 +3026,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = ACCOUNTING_OPERATION___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+  int CREDIT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = RECORD___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
   /**
    * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -3016,7 +3035,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___REMOVE_KEYWORD__STRING = ACCOUNTING_OPERATION___REMOVE_KEYWORD__STRING;
+  int CREDIT___REMOVE_KEYWORD__STRING = RECORD___REMOVE_KEYWORD__STRING;
 
   /**
    * The operation id for the '<em>Set Value</em>' operation.
@@ -3025,7 +3044,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___SET_VALUE__STEREOTYPE_STRING_OBJECT = ACCOUNTING_OPERATION___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+  int CREDIT___SET_VALUE__STEREOTYPE_STRING_OBJECT = RECORD___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
   /**
    * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -3034,7 +3053,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___UNAPPLY_STEREOTYPE__STEREOTYPE = ACCOUNTING_OPERATION___UNAPPLY_STEREOTYPE__STEREOTYPE;
+  int CREDIT___UNAPPLY_STEREOTYPE__STEREOTYPE = RECORD___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
   /**
    * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -3043,7 +3062,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___ALL_OWNED_ELEMENTS = ACCOUNTING_OPERATION___ALL_OWNED_ELEMENTS;
+  int CREDIT___ALL_OWNED_ELEMENTS = RECORD___ALL_OWNED_ELEMENTS;
 
   /**
    * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -3052,7 +3071,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___MUST_BE_OWNED = ACCOUNTING_OPERATION___MUST_BE_OWNED;
+  int CREDIT___MUST_BE_OWNED = RECORD___MUST_BE_OWNED;
 
   /**
    * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -3061,7 +3080,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int CREDIT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -3070,7 +3089,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+  int CREDIT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -3079,7 +3098,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = ACCOUNTING_OPERATION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+  int CREDIT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = RECORD___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
   /**
    * The operation id for the '<em>Create Dependency</em>' operation.
@@ -3088,7 +3107,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___CREATE_DEPENDENCY__NAMEDELEMENT = ACCOUNTING_OPERATION___CREATE_DEPENDENCY__NAMEDELEMENT;
+  int CREDIT___CREATE_DEPENDENCY__NAMEDELEMENT = RECORD___CREATE_DEPENDENCY__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Create Usage</em>' operation.
@@ -3097,7 +3116,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___CREATE_USAGE__NAMEDELEMENT = ACCOUNTING_OPERATION___CREATE_USAGE__NAMEDELEMENT;
+  int CREDIT___CREATE_USAGE__NAMEDELEMENT = RECORD___CREATE_USAGE__NAMEDELEMENT;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -3106,7 +3125,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_LABEL = ACCOUNTING_OPERATION___GET_LABEL;
+  int CREDIT___GET_LABEL = RECORD___GET_LABEL;
 
   /**
    * The operation id for the '<em>Get Label</em>' operation.
@@ -3115,7 +3134,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_LABEL__BOOLEAN = ACCOUNTING_OPERATION___GET_LABEL__BOOLEAN;
+  int CREDIT___GET_LABEL__BOOLEAN = RECORD___GET_LABEL__BOOLEAN;
 
   /**
    * The operation id for the '<em>All Namespaces</em>' operation.
@@ -3124,7 +3143,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___ALL_NAMESPACES = ACCOUNTING_OPERATION___ALL_NAMESPACES;
+  int CREDIT___ALL_NAMESPACES = RECORD___ALL_NAMESPACES;
 
   /**
    * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -3133,7 +3152,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___ALL_OWNING_PACKAGES = ACCOUNTING_OPERATION___ALL_OWNING_PACKAGES;
+  int CREDIT___ALL_OWNING_PACKAGES = RECORD___ALL_OWNING_PACKAGES;
 
   /**
    * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -3142,7 +3161,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = ACCOUNTING_OPERATION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+  int CREDIT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = RECORD___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Namespace</em>' operation.
@@ -3151,7 +3170,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_NAMESPACE = ACCOUNTING_OPERATION___GET_NAMESPACE;
+  int CREDIT___GET_NAMESPACE = RECORD___GET_NAMESPACE;
 
   /**
    * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -3160,7 +3179,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___GET_QUALIFIED_NAME = ACCOUNTING_OPERATION___GET_QUALIFIED_NAME;
+  int CREDIT___GET_QUALIFIED_NAME = RECORD___GET_QUALIFIED_NAME;
 
   /**
    * The operation id for the '<em>Separator</em>' operation.
@@ -3169,7 +3188,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___SEPARATOR = ACCOUNTING_OPERATION___SEPARATOR;
+  int CREDIT___SEPARATOR = RECORD___SEPARATOR;
 
   /**
    * The operation id for the '<em>Is Compatible With</em>' operation.
@@ -3178,7 +3197,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = ACCOUNTING_OPERATION___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
+  int CREDIT___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT = RECORD___IS_COMPATIBLE_WITH__PARAMETERABLEELEMENT;
 
   /**
    * The operation id for the '<em>Is Template Parameter</em>' operation.
@@ -3187,7 +3206,16 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT___IS_TEMPLATE_PARAMETER = ACCOUNTING_OPERATION___IS_TEMPLATE_PARAMETER;
+  int CREDIT___IS_TEMPLATE_PARAMETER = RECORD___IS_TEMPLATE_PARAMETER;
+
+  /**
+   * The operation id for the '<em>Apply</em>' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CREDIT___APPLY__DOUBLE = RECORD_OPERATION_COUNT + 0;
 
   /**
    * The number of operations of the '<em>Credit</em>' class.
@@ -3196,7 +3224,7 @@ public interface GtbrPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CREDIT_OPERATION_COUNT = ACCOUNTING_OPERATION_OPERATION_COUNT + 0;
+  int CREDIT_OPERATION_COUNT = RECORD_OPERATION_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.gtbr.impl.TransferImpl <em>Transfer</em>}' class.
@@ -3910,15 +3938,15 @@ public interface GtbrPackage extends EPackage
   EReference getAccount_Holder();
 
   /**
-   * Returns the meta object for the reference list '{@link org.ollabaca.on.gtbr.Account#getOperations <em>Operations</em>}'.
+   * Returns the meta object for the reference list '{@link org.ollabaca.on.gtbr.Account#getRecords <em>Records</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Operations</em>'.
-   * @see org.ollabaca.on.gtbr.Account#getOperations()
+   * @return the meta object for the reference list '<em>Records</em>'.
+   * @see org.ollabaca.on.gtbr.Account#getRecords()
    * @see #getAccount()
    * @generated
    */
-  EReference getAccount_Operations();
+  EReference getAccount_Records();
 
   /**
    * Returns the meta object for the attribute '{@link org.ollabaca.on.gtbr.Account#getBalance <em>Balance</em>}'.
@@ -3932,47 +3960,57 @@ public interface GtbrPackage extends EPackage
   EAttribute getAccount_Balance();
 
   /**
-   * Returns the meta object for class '{@link org.ollabaca.on.gtbr.AccountingOperation <em>Accounting Operation</em>}'.
+   * Returns the meta object for class '{@link org.ollabaca.on.gtbr.Record <em>Record</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Accounting Operation</em>'.
-   * @see org.ollabaca.on.gtbr.AccountingOperation
+   * @return the meta object for class '<em>Record</em>'.
+   * @see org.ollabaca.on.gtbr.Record
    * @generated
    */
-  EClass getAccountingOperation();
+  EClass getRecord();
 
   /**
-   * Returns the meta object for the reference '{@link org.ollabaca.on.gtbr.AccountingOperation#getAccount <em>Account</em>}'.
+   * Returns the meta object for the reference '{@link org.ollabaca.on.gtbr.Record#getAccount <em>Account</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Account</em>'.
-   * @see org.ollabaca.on.gtbr.AccountingOperation#getAccount()
-   * @see #getAccountingOperation()
+   * @see org.ollabaca.on.gtbr.Record#getAccount()
+   * @see #getRecord()
    * @generated
    */
-  EReference getAccountingOperation_Account();
+  EReference getRecord_Account();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.gtbr.AccountingOperation#getDate <em>Date</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.gtbr.Record#getDate <em>Date</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Date</em>'.
-   * @see org.ollabaca.on.gtbr.AccountingOperation#getDate()
-   * @see #getAccountingOperation()
+   * @see org.ollabaca.on.gtbr.Record#getDate()
+   * @see #getRecord()
    * @generated
    */
-  EAttribute getAccountingOperation_Date();
+  EAttribute getRecord_Date();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.gtbr.AccountingOperation#getAmount <em>Amount</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.gtbr.Record#getAmount <em>Amount</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Amount</em>'.
-   * @see org.ollabaca.on.gtbr.AccountingOperation#getAmount()
-   * @see #getAccountingOperation()
+   * @see org.ollabaca.on.gtbr.Record#getAmount()
+   * @see #getRecord()
    * @generated
    */
-  EAttribute getAccountingOperation_Amount();
+  EAttribute getRecord_Amount();
+
+  /**
+   * Returns the meta object for the '{@link org.ollabaca.on.gtbr.Record#apply(double) <em>Apply</em>}' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the '<em>Apply</em>' operation.
+   * @see org.ollabaca.on.gtbr.Record#apply(double)
+   * @generated
+   */
+  EOperation getRecord__Apply__double();
 
   /**
    * Returns the meta object for class '{@link org.ollabaca.on.gtbr.Debit <em>Debit</em>}'.
@@ -3985,6 +4023,16 @@ public interface GtbrPackage extends EPackage
   EClass getDebit();
 
   /**
+   * Returns the meta object for the '{@link org.ollabaca.on.gtbr.Debit#apply(double) <em>Apply</em>}' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the '<em>Apply</em>' operation.
+   * @see org.ollabaca.on.gtbr.Debit#apply(double)
+   * @generated
+   */
+  EOperation getDebit__Apply__double();
+
+  /**
    * Returns the meta object for class '{@link org.ollabaca.on.gtbr.Credit <em>Credit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3993,6 +4041,16 @@ public interface GtbrPackage extends EPackage
    * @generated
    */
   EClass getCredit();
+
+  /**
+   * Returns the meta object for the '{@link org.ollabaca.on.gtbr.Credit#apply(double) <em>Apply</em>}' operation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the '<em>Apply</em>' operation.
+   * @see org.ollabaca.on.gtbr.Credit#apply(double)
+   * @generated
+   */
+  EOperation getCredit__Apply__double();
 
   /**
    * Returns the meta object for class '{@link org.ollabaca.on.gtbr.Transfer <em>Transfer</em>}'.
@@ -4143,12 +4201,12 @@ public interface GtbrPackage extends EPackage
     EReference ACCOUNT__HOLDER = eINSTANCE.getAccount_Holder();
 
     /**
-     * The meta object literal for the '<em><b>Operations</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Records</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACCOUNT__OPERATIONS = eINSTANCE.getAccount_Operations();
+    EReference ACCOUNT__RECORDS = eINSTANCE.getAccount_Records();
 
     /**
      * The meta object literal for the '<em><b>Balance</b></em>' attribute feature.
@@ -4159,14 +4217,14 @@ public interface GtbrPackage extends EPackage
     EAttribute ACCOUNT__BALANCE = eINSTANCE.getAccount_Balance();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.gtbr.impl.AccountingOperationImpl <em>Accounting Operation</em>}' class.
+     * The meta object literal for the '{@link org.ollabaca.on.gtbr.impl.RecordImpl <em>Record</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.gtbr.impl.AccountingOperationImpl
-     * @see org.ollabaca.on.gtbr.impl.GtbrPackageImpl#getAccountingOperation()
+     * @see org.ollabaca.on.gtbr.impl.RecordImpl
+     * @see org.ollabaca.on.gtbr.impl.GtbrPackageImpl#getRecord()
      * @generated
      */
-    EClass ACCOUNTING_OPERATION = eINSTANCE.getAccountingOperation();
+    EClass RECORD = eINSTANCE.getRecord();
 
     /**
      * The meta object literal for the '<em><b>Account</b></em>' reference feature.
@@ -4174,7 +4232,7 @@ public interface GtbrPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ACCOUNTING_OPERATION__ACCOUNT = eINSTANCE.getAccountingOperation_Account();
+    EReference RECORD__ACCOUNT = eINSTANCE.getRecord_Account();
 
     /**
      * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
@@ -4182,7 +4240,7 @@ public interface GtbrPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACCOUNTING_OPERATION__DATE = eINSTANCE.getAccountingOperation_Date();
+    EAttribute RECORD__DATE = eINSTANCE.getRecord_Date();
 
     /**
      * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
@@ -4190,7 +4248,15 @@ public interface GtbrPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACCOUNTING_OPERATION__AMOUNT = eINSTANCE.getAccountingOperation_Amount();
+    EAttribute RECORD__AMOUNT = eINSTANCE.getRecord_Amount();
+
+    /**
+     * The meta object literal for the '<em><b>Apply</b></em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EOperation RECORD___APPLY__DOUBLE = eINSTANCE.getRecord__Apply__double();
 
     /**
      * The meta object literal for the '{@link org.ollabaca.on.gtbr.impl.DebitImpl <em>Debit</em>}' class.
@@ -4203,6 +4269,14 @@ public interface GtbrPackage extends EPackage
     EClass DEBIT = eINSTANCE.getDebit();
 
     /**
+     * The meta object literal for the '<em><b>Apply</b></em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EOperation DEBIT___APPLY__DOUBLE = eINSTANCE.getDebit__Apply__double();
+
+    /**
      * The meta object literal for the '{@link org.ollabaca.on.gtbr.impl.CreditImpl <em>Credit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4211,6 +4285,14 @@ public interface GtbrPackage extends EPackage
      * @generated
      */
     EClass CREDIT = eINSTANCE.getCredit();
+
+    /**
+     * The meta object literal for the '<em><b>Apply</b></em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EOperation CREDIT___APPLY__DOUBLE = eINSTANCE.getCredit__Apply__double();
 
     /**
      * The meta object literal for the '{@link org.ollabaca.on.gtbr.impl.TransferImpl <em>Transfer</em>}' class.

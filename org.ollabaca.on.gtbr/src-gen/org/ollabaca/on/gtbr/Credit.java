@@ -13,6 +13,15 @@ package org.ollabaca.on.gtbr;
  * @model
  * @generated
  */
-public interface Credit extends AccountingOperation
+public interface Credit extends Record
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @model unique="false" balanceUnique="false"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.ollabaca.on.gtbr.Credit%> _this = this;\ndouble _amount = _this.getAmount();\nreturn (balance + _amount);'"
+   * @generated
+   */
+  double apply(double balance);
+
 } // Credit

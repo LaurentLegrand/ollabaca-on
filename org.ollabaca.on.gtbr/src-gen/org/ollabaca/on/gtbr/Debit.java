@@ -13,6 +13,15 @@ package org.ollabaca.on.gtbr;
  * @model
  * @generated
  */
-public interface Debit extends AccountingOperation
+public interface Debit extends Record
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @model unique="false" balanceUnique="false"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.ollabaca.on.gtbr.Debit%> _this = this;\ndouble _amount = _this.getAmount();\nreturn (balance - _amount);'"
+   * @generated
+   */
+  double apply(double balance);
+
 } // Debit

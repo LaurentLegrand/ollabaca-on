@@ -2,10 +2,14 @@
  */
 package org.ollabaca.on.gtbr.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -13,25 +17,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.ollabaca.on.gtbr.Account;
-import org.ollabaca.on.gtbr.AccountingOperation;
 import org.ollabaca.on.gtbr.GtbrPackage;
+import org.ollabaca.on.gtbr.Record;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Accounting Operation</b></em>'.
+ * An implementation of the model object '<em><b>Record</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ollabaca.on.gtbr.impl.AccountingOperationImpl#getAccount <em>Account</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.impl.AccountingOperationImpl#getDate <em>Date</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.impl.AccountingOperationImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.impl.RecordImpl#getAccount <em>Account</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.impl.RecordImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.impl.RecordImpl#getAmount <em>Amount</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class AccountingOperationImpl extends AccountingElementImpl implements AccountingOperation
+public abstract class RecordImpl extends AccountingElementImpl implements Record
 {
   /**
    * The cached value of the '{@link #getAccount() <em>Account</em>}' reference.
@@ -88,7 +92,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AccountingOperationImpl()
+  protected RecordImpl()
   {
     super();
   }
@@ -101,7 +105,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   @Override
   protected EClass eStaticClass()
   {
-    return GtbrPackage.Literals.ACCOUNTING_OPERATION;
+    return GtbrPackage.Literals.RECORD;
   }
 
   /**
@@ -118,7 +122,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
       if (account != oldAccount)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT, oldAccount, account));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, GtbrPackage.RECORD__ACCOUNT, oldAccount, account));
       }
     }
     return account;
@@ -145,7 +149,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
     account = newAccount;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT, oldAccount, newAccount);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GtbrPackage.RECORD__ACCOUNT, oldAccount, newAccount);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -162,14 +166,14 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
     {
       NotificationChain msgs = null;
       if (account != null)
-        msgs = ((InternalEObject)account).eInverseRemove(this, GtbrPackage.ACCOUNT__OPERATIONS, Account.class, msgs);
+        msgs = ((InternalEObject)account).eInverseRemove(this, GtbrPackage.ACCOUNT__RECORDS, Account.class, msgs);
       if (newAccount != null)
-        msgs = ((InternalEObject)newAccount).eInverseAdd(this, GtbrPackage.ACCOUNT__OPERATIONS, Account.class, msgs);
+        msgs = ((InternalEObject)newAccount).eInverseAdd(this, GtbrPackage.ACCOUNT__RECORDS, Account.class, msgs);
       msgs = basicSetAccount(newAccount, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT, newAccount, newAccount));
+      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.RECORD__ACCOUNT, newAccount, newAccount));
   }
 
   /**
@@ -192,7 +196,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
     Date oldDate = date;
     date = newDate;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.ACCOUNTING_OPERATION__DATE, oldDate, date));
+      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.RECORD__DATE, oldDate, date));
   }
 
   /**
@@ -215,7 +219,17 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
     double oldAmount = amount;
     amount = newAmount;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.ACCOUNTING_OPERATION__AMOUNT, oldAmount, amount));
+      eNotify(new ENotificationImpl(this, Notification.SET, GtbrPackage.RECORD__AMOUNT, oldAmount, amount));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public double apply(final double balance)
+  {
+    return balance;
   }
 
   /**
@@ -228,9 +242,9 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         if (account != null)
-          msgs = ((InternalEObject)account).eInverseRemove(this, GtbrPackage.ACCOUNT__OPERATIONS, Account.class, msgs);
+          msgs = ((InternalEObject)account).eInverseRemove(this, GtbrPackage.ACCOUNT__RECORDS, Account.class, msgs);
         return basicSetAccount((Account)otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -246,7 +260,7 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         return basicSetAccount(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -262,12 +276,12 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         if (resolve) return getAccount();
         return basicGetAccount();
-      case GtbrPackage.ACCOUNTING_OPERATION__DATE:
+      case GtbrPackage.RECORD__DATE:
         return getDate();
-      case GtbrPackage.ACCOUNTING_OPERATION__AMOUNT:
+      case GtbrPackage.RECORD__AMOUNT:
         return getAmount();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -283,13 +297,13 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         setAccount((Account)newValue);
         return;
-      case GtbrPackage.ACCOUNTING_OPERATION__DATE:
+      case GtbrPackage.RECORD__DATE:
         setDate((Date)newValue);
         return;
-      case GtbrPackage.ACCOUNTING_OPERATION__AMOUNT:
+      case GtbrPackage.RECORD__AMOUNT:
         setAmount((Double)newValue);
         return;
     }
@@ -306,13 +320,13 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         setAccount((Account)null);
         return;
-      case GtbrPackage.ACCOUNTING_OPERATION__DATE:
+      case GtbrPackage.RECORD__DATE:
         setDate(DATE_EDEFAULT);
         return;
-      case GtbrPackage.ACCOUNTING_OPERATION__AMOUNT:
+      case GtbrPackage.RECORD__AMOUNT:
         setAmount(AMOUNT_EDEFAULT);
         return;
     }
@@ -329,14 +343,30 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
   {
     switch (featureID)
     {
-      case GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT:
+      case GtbrPackage.RECORD__ACCOUNT:
         return account != null;
-      case GtbrPackage.ACCOUNTING_OPERATION__DATE:
+      case GtbrPackage.RECORD__DATE:
         return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
-      case GtbrPackage.ACCOUNTING_OPERATION__AMOUNT:
+      case GtbrPackage.RECORD__AMOUNT:
         return amount != AMOUNT_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
+  {
+    switch (operationID)
+    {
+      case GtbrPackage.RECORD___APPLY__DOUBLE:
+        return apply((Double)arguments.get(0));
+    }
+    return super.eInvoke(operationID, arguments);
   }
 
   /**
@@ -358,4 +388,4 @@ public abstract class AccountingOperationImpl extends AccountingElementImpl impl
     return result.toString();
   }
 
-} //AccountingOperationImpl
+} //RecordImpl

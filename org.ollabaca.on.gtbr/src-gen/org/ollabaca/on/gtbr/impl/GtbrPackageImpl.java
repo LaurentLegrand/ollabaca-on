@@ -7,6 +7,7 @@ import java.util.Date;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -17,11 +18,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 import org.ollabaca.on.gtbr.Account;
 import org.ollabaca.on.gtbr.AccountingElement;
-import org.ollabaca.on.gtbr.AccountingOperation;
 import org.ollabaca.on.gtbr.Credit;
 import org.ollabaca.on.gtbr.Debit;
 import org.ollabaca.on.gtbr.GtbrFactory;
 import org.ollabaca.on.gtbr.GtbrPackage;
+import org.ollabaca.on.gtbr.Record;
 import org.ollabaca.on.gtbr.Transfer;
 
 import org.ollabaca.on.uml.org.OrgPackage;
@@ -53,7 +54,7 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass accountingOperationEClass = null;
+  private EClass recordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,7 +195,7 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAccount_Operations()
+  public EReference getAccount_Records()
   {
     return (EReference)accountEClass.getEStructuralFeatures().get(2);
   }
@@ -214,9 +215,9 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAccountingOperation()
+  public EClass getRecord()
   {
-    return accountingOperationEClass;
+    return recordEClass;
   }
 
   /**
@@ -224,9 +225,9 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAccountingOperation_Account()
+  public EReference getRecord_Account()
   {
-    return (EReference)accountingOperationEClass.getEStructuralFeatures().get(0);
+    return (EReference)recordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -234,9 +235,9 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAccountingOperation_Date()
+  public EAttribute getRecord_Date()
   {
-    return (EAttribute)accountingOperationEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)recordEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -244,9 +245,19 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAccountingOperation_Amount()
+  public EAttribute getRecord_Amount()
   {
-    return (EAttribute)accountingOperationEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)recordEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EOperation getRecord__Apply__double()
+  {
+    return recordEClass.getEOperations().get(0);
   }
 
   /**
@@ -264,9 +275,29 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EOperation getDebit__Apply__double()
+  {
+    return debitEClass.getEOperations().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCredit()
   {
     return creditEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EOperation getCredit__Apply__double()
+  {
+    return creditEClass.getEOperations().get(0);
   }
 
   /**
@@ -384,17 +415,20 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
     accountEClass = createEClass(ACCOUNT);
     createEReference(accountEClass, ACCOUNT__INSTITUTION);
     createEReference(accountEClass, ACCOUNT__HOLDER);
-    createEReference(accountEClass, ACCOUNT__OPERATIONS);
+    createEReference(accountEClass, ACCOUNT__RECORDS);
     createEAttribute(accountEClass, ACCOUNT__BALANCE);
 
-    accountingOperationEClass = createEClass(ACCOUNTING_OPERATION);
-    createEReference(accountingOperationEClass, ACCOUNTING_OPERATION__ACCOUNT);
-    createEAttribute(accountingOperationEClass, ACCOUNTING_OPERATION__DATE);
-    createEAttribute(accountingOperationEClass, ACCOUNTING_OPERATION__AMOUNT);
+    recordEClass = createEClass(RECORD);
+    createEReference(recordEClass, RECORD__ACCOUNT);
+    createEAttribute(recordEClass, RECORD__DATE);
+    createEAttribute(recordEClass, RECORD__AMOUNT);
+    createEOperation(recordEClass, RECORD___APPLY__DOUBLE);
 
     debitEClass = createEClass(DEBIT);
+    createEOperation(debitEClass, DEBIT___APPLY__DOUBLE);
 
     creditEClass = createEClass(CREDIT);
+    createEOperation(creditEClass, CREDIT___APPLY__DOUBLE);
 
     transferEClass = createEClass(TRANSFER);
     createEAttribute(transferEClass, TRANSFER__DATE);
@@ -445,9 +479,9 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
     accountingElementEClass.getESuperTypes().add(theUMLPackage.getPackageableElement());
     accountEClass.getESuperTypes().add(theUMLPackage.getNamedElement());
     accountEClass.getESuperTypes().add(this.getAccountingElement());
-    accountingOperationEClass.getESuperTypes().add(this.getAccountingElement());
-    debitEClass.getESuperTypes().add(this.getAccountingOperation());
-    creditEClass.getESuperTypes().add(this.getAccountingOperation());
+    recordEClass.getESuperTypes().add(this.getAccountingElement());
+    debitEClass.getESuperTypes().add(this.getRecord());
+    creditEClass.getESuperTypes().add(this.getRecord());
     transferEClass.getESuperTypes().add(this.getAccountingElement());
 
     // Initialize classes, features, and operations; add parameters
@@ -456,17 +490,26 @@ public class GtbrPackageImpl extends EPackageImpl implements GtbrPackage
     initEClass(accountEClass, Account.class, "Account", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAccount_Institution(), theOrgPackage.getAgent(), null, "institution", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAccount_Holder(), theOrgPackage.getAgent(), null, "holder", null, 0, 1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAccount_Operations(), this.getAccountingOperation(), this.getAccountingOperation_Account(), "operations", null, 0, -1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAccount_Records(), this.getRecord(), this.getRecord_Account(), "records", null, 0, -1, Account.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAccount_Balance(), theEcorePackage.getEDouble(), "balance", null, 0, 1, Account.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-    initEClass(accountingOperationEClass, AccountingOperation.class, "AccountingOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAccountingOperation_Account(), this.getAccount(), this.getAccount_Operations(), "account", null, 0, 1, AccountingOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAccountingOperation_Date(), this.getDate(), "date", null, 1, 1, AccountingOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAccountingOperation_Amount(), theEcorePackage.getEDouble(), "amount", null, 0, 1, AccountingOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(recordEClass, Record.class, "Record", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRecord_Account(), this.getAccount(), this.getAccount_Records(), "account", null, 0, 1, Record.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecord_Date(), this.getDate(), "date", null, 1, 1, Record.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecord_Amount(), theEcorePackage.getEDouble(), "amount", null, 0, 1, Record.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    EOperation op = initEOperation(getRecord__Apply__double(), theEcorePackage.getEDouble(), "apply", 0, 1, !IS_UNIQUE, IS_ORDERED);
+    addEParameter(op, theEcorePackage.getEDouble(), "balance", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
     initEClass(debitEClass, Debit.class, "Debit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    op = initEOperation(getDebit__Apply__double(), theEcorePackage.getEDouble(), "apply", 0, 1, !IS_UNIQUE, IS_ORDERED);
+    addEParameter(op, theEcorePackage.getEDouble(), "balance", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
     initEClass(creditEClass, Credit.class, "Credit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    op = initEOperation(getCredit__Apply__double(), theEcorePackage.getEDouble(), "apply", 0, 1, !IS_UNIQUE, IS_ORDERED);
+    addEParameter(op, theEcorePackage.getEDouble(), "balance", 0, 1, !IS_UNIQUE, IS_ORDERED);
 
     initEClass(transferEClass, Transfer.class, "Transfer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTransfer_Date(), this.getDate(), "date", null, 1, 1, Transfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

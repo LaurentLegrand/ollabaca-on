@@ -4,7 +4,6 @@ import org.ollabaca.on.uml.org.Agent
 import org.ollabaca.on.gtbr.util.Dates
 import org.eclipse.uml2.uml.NamedElement
 import org.eclipse.uml2.uml.PackageableElement
-import org.ollabaca.on.gtbr.util.Accounts
 
 type Date wraps java.util.Date
 create {
@@ -25,28 +24,44 @@ class Account extends NamedElement, AccountingElement {
 	
 	refers Agent holder
 	
-	refers AccountingOperation[] operations opposite account
+	refers Record[] records opposite account
 	
 	derived double balance get {
-		return Accounts::getBalance(this) 
+		var double b = 0
+		for (Record e: records.sortBy[date]) {
+			b = e.apply(b)
+		}
+		return b
 	}
 	
 }
 
-abstract class AccountingOperation extends AccountingElement {
+abstract class Record extends AccountingElement {
 	
-	refers Account account opposite operations
+	refers Account account opposite records
 	
 	Date[1] date
 	
-	double amount 
+	double amount
+	
+	op double apply(double balance) {
+		return balance
+	}
 }
 
-class Debit extends AccountingOperation {
+class Debit extends Record {
+	
+	op double apply(double balance) {
+		return balance - this.amount
+	}
 	
 }
 
-class Credit extends AccountingOperation {
+class Credit extends Record {
+	
+	op double apply(double balance) {
+		return balance + this.amount
+	}
 	
 }
 

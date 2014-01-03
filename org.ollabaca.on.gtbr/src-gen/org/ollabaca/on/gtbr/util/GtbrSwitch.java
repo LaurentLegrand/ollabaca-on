@@ -103,16 +103,16 @@ public class GtbrSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case GtbrPackage.ACCOUNTING_OPERATION:
+      case GtbrPackage.RECORD:
       {
-        AccountingOperation accountingOperation = (AccountingOperation)theEObject;
-        T result = caseAccountingOperation(accountingOperation);
-        if (result == null) result = caseAccountingElement(accountingOperation);
-        if (result == null) result = casePackageableElement(accountingOperation);
-        if (result == null) result = caseNamedElement(accountingOperation);
-        if (result == null) result = caseParameterableElement(accountingOperation);
-        if (result == null) result = caseElement(accountingOperation);
-        if (result == null) result = caseEModelElement(accountingOperation);
+        Record record = (Record)theEObject;
+        T result = caseRecord(record);
+        if (result == null) result = caseAccountingElement(record);
+        if (result == null) result = casePackageableElement(record);
+        if (result == null) result = caseNamedElement(record);
+        if (result == null) result = caseParameterableElement(record);
+        if (result == null) result = caseElement(record);
+        if (result == null) result = caseEModelElement(record);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -120,7 +120,7 @@ public class GtbrSwitch<T> extends Switch<T>
       {
         Debit debit = (Debit)theEObject;
         T result = caseDebit(debit);
-        if (result == null) result = caseAccountingOperation(debit);
+        if (result == null) result = caseRecord(debit);
         if (result == null) result = caseAccountingElement(debit);
         if (result == null) result = casePackageableElement(debit);
         if (result == null) result = caseNamedElement(debit);
@@ -134,7 +134,7 @@ public class GtbrSwitch<T> extends Switch<T>
       {
         Credit credit = (Credit)theEObject;
         T result = caseCredit(credit);
-        if (result == null) result = caseAccountingOperation(credit);
+        if (result == null) result = caseRecord(credit);
         if (result == null) result = caseAccountingElement(credit);
         if (result == null) result = casePackageableElement(credit);
         if (result == null) result = caseNamedElement(credit);
@@ -194,17 +194,17 @@ public class GtbrSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Accounting Operation</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Record</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Accounting Operation</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Record</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAccountingOperation(AccountingOperation object)
+  public T caseRecord(Record object)
   {
     return null;
   }

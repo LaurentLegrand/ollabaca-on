@@ -5,6 +5,8 @@ package org.ollabaca.on.gtbr.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,12 +29,14 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 import org.eclipse.uml2.uml.internal.impl.NamedElementImpl;
 
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+
 import org.ollabaca.on.gtbr.Account;
 import org.ollabaca.on.gtbr.AccountingElement;
-import org.ollabaca.on.gtbr.AccountingOperation;
 import org.ollabaca.on.gtbr.GtbrPackage;
-
-import org.ollabaca.on.gtbr.util.Accounts;
+import org.ollabaca.on.gtbr.Record;
 
 import org.ollabaca.on.uml.org.Agent;
 
@@ -47,7 +51,7 @@ import org.ollabaca.on.uml.org.Agent;
  *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getTemplateParameter <em>Template Parameter</em>}</li>
  *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getInstitution <em>Institution</em>}</li>
  *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getHolder <em>Holder</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getRecords <em>Records</em>}</li>
  *   <li>{@link org.ollabaca.on.gtbr.impl.AccountImpl#getBalance <em>Balance</em>}</li>
  * </ul>
  * </p>
@@ -87,14 +91,14 @@ public class AccountImpl extends NamedElementImpl implements Account
   protected Agent holder;
 
   /**
-   * The cached value of the '{@link #getOperations() <em>Operations</em>}' reference list.
+   * The cached value of the '{@link #getRecords() <em>Records</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperations()
+   * @see #getRecords()
    * @generated
    * @ordered
    */
-  protected EList<AccountingOperation> operations;
+  protected EList<Record> records;
 
   /**
    * The default value of the '{@link #getBalance() <em>Balance</em>}' attribute.
@@ -342,13 +346,13 @@ public class AccountImpl extends NamedElementImpl implements Account
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AccountingOperation> getOperations()
+  public EList<Record> getRecords()
   {
-    if (operations == null)
+    if (records == null)
     {
-      operations = new EObjectWithInverseResolvingEList<AccountingOperation>(AccountingOperation.class, this, GtbrPackage.ACCOUNT__OPERATIONS, GtbrPackage.ACCOUNTING_OPERATION__ACCOUNT);
+      records = new EObjectWithInverseResolvingEList<Record>(Record.class, this, GtbrPackage.ACCOUNT__RECORDS, GtbrPackage.RECORD__ACCOUNT);
     }
-    return operations;
+    return records;
   }
 
   /**
@@ -358,8 +362,24 @@ public class AccountImpl extends NamedElementImpl implements Account
    */
   public double getBalance()
   {
+    double b = 0;
     Account _this = this;
-    return Accounts.getBalance(_this);
+    EList<Record> _records = _this.getRecords();
+    final Function1<Record,Date> _function = new Function1<Record,Date>()
+    {
+      public Date apply(final Record it)
+      {
+        Date _date = it.getDate();
+        return _date;
+      }
+    };
+    List<Record> _sortBy = IterableExtensions.<Record, Date>sortBy(_records, _function);
+    for (final Record e : _sortBy)
+    {
+      double _apply = e.apply(b);
+      b = _apply;
+    }
+    return b;
   }
 
   /**
@@ -405,8 +425,8 @@ public class AccountImpl extends NamedElementImpl implements Account
         if (templateParameter != null)
           msgs = ((InternalEObject)templateParameter).eInverseRemove(this, UMLPackage.TEMPLATE_PARAMETER__PARAMETERED_ELEMENT, TemplateParameter.class, msgs);
         return basicSetTemplateParameter((TemplateParameter)otherEnd, msgs);
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        return ((InternalEList<InternalEObject>)(InternalEList<?>)getOperations()).basicAdd(otherEnd, msgs);
+      case GtbrPackage.ACCOUNT__RECORDS:
+        return ((InternalEList<InternalEObject>)(InternalEList<?>)getRecords()).basicAdd(otherEnd, msgs);
     }
     return super.eInverseAdd(otherEnd, featureID, msgs);
   }
@@ -425,8 +445,8 @@ public class AccountImpl extends NamedElementImpl implements Account
         return basicSetOwningTemplateParameter(null, msgs);
       case GtbrPackage.ACCOUNT__TEMPLATE_PARAMETER:
         return basicSetTemplateParameter(null, msgs);
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+      case GtbrPackage.ACCOUNT__RECORDS:
+        return ((InternalEList<?>)getRecords()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -469,8 +489,8 @@ public class AccountImpl extends NamedElementImpl implements Account
       case GtbrPackage.ACCOUNT__HOLDER:
         if (resolve) return getHolder();
         return basicGetHolder();
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        return getOperations();
+      case GtbrPackage.ACCOUNT__RECORDS:
+        return getRecords();
       case GtbrPackage.ACCOUNT__BALANCE:
         return getBalance();
     }
@@ -500,9 +520,9 @@ public class AccountImpl extends NamedElementImpl implements Account
       case GtbrPackage.ACCOUNT__HOLDER:
         setHolder((Agent)newValue);
         return;
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        getOperations().clear();
-        getOperations().addAll((Collection<? extends AccountingOperation>)newValue);
+      case GtbrPackage.ACCOUNT__RECORDS:
+        getRecords().clear();
+        getRecords().addAll((Collection<? extends Record>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -530,8 +550,8 @@ public class AccountImpl extends NamedElementImpl implements Account
       case GtbrPackage.ACCOUNT__HOLDER:
         setHolder((Agent)null);
         return;
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        getOperations().clear();
+      case GtbrPackage.ACCOUNT__RECORDS:
+        getRecords().clear();
         return;
     }
     super.eUnset(featureID);
@@ -555,8 +575,8 @@ public class AccountImpl extends NamedElementImpl implements Account
         return institution != null;
       case GtbrPackage.ACCOUNT__HOLDER:
         return holder != null;
-      case GtbrPackage.ACCOUNT__OPERATIONS:
-        return operations != null && !operations.isEmpty();
+      case GtbrPackage.ACCOUNT__RECORDS:
+        return records != null && !records.isEmpty();
       case GtbrPackage.ACCOUNT__BALANCE:
         return getBalance() != BALANCE_EDEFAULT;
     }

@@ -9,12 +9,21 @@ import org.ollabaca.on.gtbr.Debit;
 import org.ollabaca.on.gtbr.GtbrFactory;
 
 public privileged aspect Transfers {
+	
+	public void TransferImpl.setName(String name) {
+		super.setName(name);
+	}
 
 //	after(TransferImpl self) : execution(TransferImpl.new(..)) && this(self) {
 //		self.debit = GtbrFactory.eINSTANCE.createDebit();
 //		self.credit = GtbrFactory.eINSTANCE.createCredit();
 //	}
 
+	after(TransferImpl self, String name) returning: execution(* TransferImpl.setName(..)) && this(self) && args(name) {
+		this.getDebit(self).setName(name + " - Debit");
+		this.getCredit(self).setName(name + " - Credit");
+	}
+	
 	after(TransferImpl self, Date date) returning: execution(* TransferImpl.setDate(..)) && this(self) && args(date) {
 		this.getDebit(self).setDate(date);
 		this.getCredit(self).setDate(date);
@@ -32,6 +41,13 @@ public privileged aspect Transfers {
 	after(TransferImpl self, Account to) returning: execution(* TransferImpl.setTo(..)) && this(self) && args(to) {
 		this.getCredit(self).setAccount(to);
 	}
+	
+	// does not work: Account still have reference to de-serialized record
+//	void around() : call(* TransferImpl.setDebit(..)) && withincode(void eSet(int, Object)) {
+//	}
+//	
+//	void around() : call(* TransferImpl.setCredit(..)) && withincode(void eSet(int, Object)) {
+//	}
 	
 	void around(TransferImpl self, Debit debit) : execution(* TransferImpl.setDebit(..)) && this(self) && args(debit) {
 		Debit previous = self.getDebit();

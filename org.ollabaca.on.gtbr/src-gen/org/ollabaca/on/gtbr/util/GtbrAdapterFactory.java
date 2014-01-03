@@ -91,9 +91,9 @@ public class GtbrAdapterFactory extends AdapterFactoryImpl
         return createAccountAdapter();
       }
       @Override
-      public Adapter caseAccountingOperation(AccountingOperation object)
+      public Adapter caseRecord(Record object)
       {
-        return createAccountingOperationAdapter();
+        return createRecordAdapter();
       }
       @Override
       public Adapter caseDebit(Debit object)
@@ -188,16 +188,16 @@ public class GtbrAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ollabaca.on.gtbr.AccountingOperation <em>Accounting Operation</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.gtbr.Record <em>Record</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ollabaca.on.gtbr.AccountingOperation
+   * @see org.ollabaca.on.gtbr.Record
    * @generated
    */
-  public Adapter createAccountingOperationAdapter()
+  public Adapter createRecordAdapter()
   {
     return null;
   }

@@ -6,27 +6,27 @@ import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Accounting Operation</b></em>'.
+ * A representation of the model object '<em><b>Record</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ollabaca.on.gtbr.AccountingOperation#getAccount <em>Account</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.AccountingOperation#getDate <em>Date</em>}</li>
- *   <li>{@link org.ollabaca.on.gtbr.AccountingOperation#getAmount <em>Amount</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.Record#getAccount <em>Account</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.Record#getDate <em>Date</em>}</li>
+ *   <li>{@link org.ollabaca.on.gtbr.Record#getAmount <em>Amount</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.ollabaca.on.gtbr.GtbrPackage#getAccountingOperation()
+ * @see org.ollabaca.on.gtbr.GtbrPackage#getRecord()
  * @model abstract="true"
  * @generated
  */
-public interface AccountingOperation extends AccountingElement
+public interface Record extends AccountingElement
 {
   /**
    * Returns the value of the '<em><b>Account</b></em>' reference.
-   * It is bidirectional and its opposite is '{@link org.ollabaca.on.gtbr.Account#getOperations <em>Operations</em>}'.
+   * It is bidirectional and its opposite is '{@link org.ollabaca.on.gtbr.Account#getRecords <em>Records</em>}'.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Account</em>' reference isn't clear,
@@ -35,15 +35,15 @@ public interface AccountingOperation extends AccountingElement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Account</em>' reference.
    * @see #setAccount(Account)
-   * @see org.ollabaca.on.gtbr.GtbrPackage#getAccountingOperation_Account()
-   * @see org.ollabaca.on.gtbr.Account#getOperations
-   * @model opposite="operations"
+   * @see org.ollabaca.on.gtbr.GtbrPackage#getRecord_Account()
+   * @see org.ollabaca.on.gtbr.Account#getRecords
+   * @model opposite="records"
    * @generated
    */
   Account getAccount();
 
   /**
-   * Sets the value of the '{@link org.ollabaca.on.gtbr.AccountingOperation#getAccount <em>Account</em>}' reference.
+   * Sets the value of the '{@link org.ollabaca.on.gtbr.Record#getAccount <em>Account</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Account</em>' reference.
@@ -62,14 +62,14 @@ public interface AccountingOperation extends AccountingElement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Date</em>' attribute.
    * @see #setDate(Date)
-   * @see org.ollabaca.on.gtbr.GtbrPackage#getAccountingOperation_Date()
+   * @see org.ollabaca.on.gtbr.GtbrPackage#getRecord_Date()
    * @model unique="false" dataType="org.ollabaca.on.gtbr.Date" required="true"
    * @generated
    */
   Date getDate();
 
   /**
-   * Sets the value of the '{@link org.ollabaca.on.gtbr.AccountingOperation#getDate <em>Date</em>}' attribute.
+   * Sets the value of the '{@link org.ollabaca.on.gtbr.Record#getDate <em>Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Date</em>' attribute.
@@ -88,14 +88,14 @@ public interface AccountingOperation extends AccountingElement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Amount</em>' attribute.
    * @see #setAmount(double)
-   * @see org.ollabaca.on.gtbr.GtbrPackage#getAccountingOperation_Amount()
+   * @see org.ollabaca.on.gtbr.GtbrPackage#getRecord_Amount()
    * @model unique="false"
    * @generated
    */
   double getAmount();
 
   /**
-   * Sets the value of the '{@link org.ollabaca.on.gtbr.AccountingOperation#getAmount <em>Amount</em>}' attribute.
+   * Sets the value of the '{@link org.ollabaca.on.gtbr.Record#getAmount <em>Amount</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Amount</em>' attribute.
@@ -104,4 +104,13 @@ public interface AccountingOperation extends AccountingElement
    */
   void setAmount(double value);
 
-} // AccountingOperation
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @model unique="false" balanceUnique="false"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='return balance;'"
+   * @generated
+   */
+  double apply(double balance);
+
+} // Record
