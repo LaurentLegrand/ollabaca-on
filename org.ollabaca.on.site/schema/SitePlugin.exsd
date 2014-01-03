@@ -3,7 +3,7 @@
 <schema targetNamespace="org.ollabaca.on.site" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="org.ollabaca.on.site" id="LabelProvider" name="LabelProvider"/>
+         <meta.schema plugin="org.ollabaca.on.site" id="SiteExtension" name="SiteExtension"/>
       </appInfo>
       <documentation>
          [Enter description of this extension point.]
@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <choice>
-            <element ref="provider" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="plugin" minOccurs="1" maxOccurs="unbounded"/>
          </choice>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,7 +47,7 @@
       </complexType>
    </element>
 
-   <element name="provider">
+   <element name="plugin">
       <complexType>
          <attribute name="class" type="string">
             <annotation>
@@ -55,7 +55,7 @@
                   
                </documentation>
                <appInfo>
-                  <meta.attribute kind="java" basedOn=":org.ollabaca.on.site.renderers.LabelProvider"/>
+                  <meta.attribute kind="java" basedOn=":org.ollabaca.on.site.SitePlugin"/>
                </appInfo>
             </annotation>
          </attribute>

@@ -13,7 +13,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-	public final String LABEL_PROVIDER_ID = "org.ollabaca.on.site.LabelProvider";
+	public final String SITE_PLUGIN_ID = "org.ollabaca.on.site.SitePlugin";
 
 	public final String CONTENT_PROVIDER_ID = "org.ollabaca.on.site.ContentProvider";
 
@@ -33,6 +33,10 @@ public class Activator implements BundleActivator {
 
 		this.context = new Context(
 				this.load(CONTENT_PROVIDER_ID, ContentProvider.class, new HashSet<ContentProvider>()));
+		
+		for (SitePlugin plugin: this.load(SITE_PLUGIN_ID, SitePlugin.class, new HashSet<SitePlugin>())) {
+			plugin.activate();
+		}
 	}
 
 	@Override

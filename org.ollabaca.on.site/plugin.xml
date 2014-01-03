@@ -6,7 +6,7 @@
 
 <plugin>
    <extension-point id="ContentProvider" name="ContentProvider" schema="schema/ContentProvider.exsd"/>
-   <extension-point id="LabelProvider" name="LabelProvider" schema="schema/LabelProvider.exsd"/>
+   <extension-point id="SitePlugin" name="SitePlugin" schema="schema/SitePlugin.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
