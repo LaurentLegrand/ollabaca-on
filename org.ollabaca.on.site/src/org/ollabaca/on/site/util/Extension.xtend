@@ -8,7 +8,7 @@ class Extension<I, O> {
 	val (I)=>O fallback
 
 	val SortedMap<Class<? extends I>, (I)=>O> extensions = new TreeMap(
-		[ Class<? extends I> a, b | // must specific class, first
+		[ Class<? extends I> a, b | // most specific class, first
 			if (a == b) {
 				return 0
 			}
