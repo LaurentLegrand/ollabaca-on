@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.ollabaca.on.site.Activator
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.util.Sites
+import org.ollabaca.on.site.util.Locales
 
 /**
  * /site 							: home page
@@ -42,23 +43,28 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 	val Map<IProject, Resource> instances = Collections::synchronizedMap(new HashMap<IProject, Resource>());
 	
 	override protected doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		var pathInfo = request.pathInfo
-		if (pathInfo == null || pathInfo.equals("/")) {
-			home(request, response)
-			//return
-		} else {
-			val String[] names = pathInfo.substring(1).split("/")
-			if (names.size == 2) {
-				project(request, response, names.get(0), names.get(1))
-			} else if ("topics".equals(names.get(2))) {
-				topic(request, response, names.get(0), names.get(1), names.get(3))
-			} else if ("tags".equals(names.get(2))) {
-				tag(request, response, names.get(0), names.get(1), names.get(3))
+		try {
+			Locales::set(request.locale)
+			var pathInfo = request.pathInfo
+			if (pathInfo == null || pathInfo.equals("/")) {
+				home(request, response)
+				//return
+			} else {
+				val String[] names = pathInfo.substring(1).split("/")
+				if (names.size == 2) {
+					project(request, response, names.get(0), names.get(1))
+				} else if ("topics".equals(names.get(2))) {
+					topic(request, response, names.get(0), names.get(1), names.get(3))
+				} else if ("tags".equals(names.get(2))) {
+					tag(request, response, names.get(0), names.get(1), names.get(3))
+				}
+				else {
+					type(request, response, names.get(0), names.get(1), names.get(3))				
+				}
 			}
-			else {
-				type(request, response, names.get(0), names.get(1), names.get(3))				
-			}
-		}		
+		} finally {
+			Locales::unset
+		}
 	}
 	
 	def home(HttpServletRequest request, HttpServletResponse response) throws IOException {

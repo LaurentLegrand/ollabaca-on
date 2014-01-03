@@ -6,6 +6,10 @@ import org.ollabaca.on.site.util.Template
 import static extension org.ollabaca.on.site.util.Html.*
 import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.util.Sites
+import java.text.NumberFormat
+import org.ollabaca.on.site.util.Locales
+import java.util.Date
+import java.text.DateFormat
 
 class Notation extends Template<Object> {
 
@@ -43,5 +47,12 @@ class Notation extends Template<Object> {
 	def dispatch CharSequence doFallback(Void self) {
 		"<code class='null'>null</code>"
 	}
+	
+	def dispatch CharSequence doFallback(Number self) {
+		NumberFormat::getInstance(Locales::get).format(self)
+	}
 
+	def dispatch CharSequence doFallback(Date self) {
+		DateFormat::getDateTimeInstance(DateFormat::SHORT, DateFormat::FULL, Locales::get).format(self)
+	}
 }
