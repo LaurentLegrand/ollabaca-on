@@ -6,7 +6,8 @@ public class UmlSitePlugin implements SitePlugin {
 
 	@Override
 	public void activate() {
-		Notation_Element.register();		
+		Notation_Element.register();
+		UmlContentProvider.register();
 	}
 
 }

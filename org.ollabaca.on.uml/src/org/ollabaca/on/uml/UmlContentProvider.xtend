@@ -1,7 +1,6 @@
 package org.ollabaca.on.uml
 
 import java.util.List
-import javax.swing.text.View
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.uml2.uml.Association
 import org.eclipse.uml2.uml.Classifier
@@ -10,11 +9,8 @@ import org.eclipse.uml2.uml.Operation
 import org.eclipse.uml2.uml.Package
 import org.eclipse.uml2.uml.Property
 import org.eclipse.uml2.uml.Type
-import org.ollabaca.on.site.Site
-import org.ollabaca.on.site.Tag
 import org.ollabaca.on.site.Topic
-import org.ollabaca.on.site.renderers.ContentProvider
-import org.ollabaca.on.site.renderers.Register
+import org.ollabaca.on.site.renderers.Renderers
 import org.ollabaca.on.site.renderers.Text
 import org.ollabaca.on.uml.book.Book
 
@@ -26,17 +22,23 @@ import static extension org.ollabaca.on.site.servlets.Ref.*
 import static extension org.ollabaca.on.site.util.Html.*
 import static extension org.ollabaca.on.uml.Section_Element_OwnedElements.*
 
-class UmlContentProvider implements ContentProvider {
+class UmlContentProvider {
 
 	static val String PATH = "uml"
 
 	static val String BOOK = "uml-book"
 
 	static val BookToHtml bookToHtml = new BookToHtml();
+	
+	static def register() {
+		Renderers::topicRenderers.registerLoader([true], [it.onTopic]);
+		
+		Renderers::topicRenderers.registerRenderer(PATH, [toSection]);
+		Renderers::topicRenderers.registerRenderer(BOOK, [toBook]);
+		
+	}
 
-	override onSite(Site self) ''''''
-
-	override onTopic(Topic self) '''
+	static def onTopic(Topic self) '''
 		<script>
 		$(document).ready(function() {
 			$("#properties").before("<div id='«PATH»'></div>");
@@ -45,19 +47,7 @@ class UmlContentProvider implements ContentProvider {
 		</script>
 	'''
 
-	override onType(org.ollabaca.on.site.Type self) ''''''
-	
-
-	override onTag(Tag self) ''''''
-	
-
-	override activate(Register register) {
-
-		register.registerTopicRenderer(PATH, [toSection]);
-		register.registerTopicRenderer(BOOK, [toBook]);
-	}
-
-	def Text toSection(Topic self) {
+	static def Text toSection(Topic self) {
 		if (self.target instanceof Book) {
 			var text = '''<a href="«scope(BOOK, self).ref_Object»" target="_blank">Read more...</a">'''
 			return new Text("text/html", text);
@@ -65,19 +55,19 @@ class UmlContentProvider implements ContentProvider {
 		return new Text("text/html", section(self.target));
 	}
 
-	def Text toBook(Topic self) {
+	static def Text toBook(Topic self) {
 		return new Text("text/html", bookToHtml.html_Book(self.target as Book));
 	}
 
-	def dispatch section(EObject self) {
+	static def dispatch section(EObject self) {
 		''''''
 	}
 	
-	def dispatch section(Element self) {
+	static def dispatch section(Element self) {
 		Section_Element.section_Element(self)
 	}
 
-	def dispatch section(Package self) {
+	static def dispatch section(Package self) {
 		val List<List<Topic>> rows = newArrayList()
 		var i = 0
 		var List<Topic> current = null
@@ -110,7 +100,7 @@ class UmlContentProvider implements ContentProvider {
 		'''
 	}
 	
-	def dispatch section(Classifier self) {
+	static def dispatch section(Classifier self) {
 		self.section_Element_OwnedElements
 	}
 	
