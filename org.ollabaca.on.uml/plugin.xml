@@ -48,4 +48,18 @@
             genModel="model/todo.xcore"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated om -->
+      <package
+            uri="org.ollabaca.on.uml.om"
+            class="org.ollabaca.on.uml.om.OmPackage"
+            genModel="model/om.xcore"/>
+   </extension>
+   <extension
+         point="org.ollabaca.on.site.SitePlugin">
+      <plugin
+            class="org.ollabaca.on.uml.UmlSitePlugin">
+      </plugin>
+   </extension>
+
 </plugin>
