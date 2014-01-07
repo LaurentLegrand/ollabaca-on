@@ -1,0 +1,26 @@
+package org.ollabaca.on.uml.todo
+
+
+
+import org.eclipse.uml2.uml.Node
+import org.eclipse.uml2.uml.ExecutionEnvironment
+
+abstract class Tier extends Node {
+	
+}
+
+class Front extends Tier {
+	
+}
+
+class Middle extends Tier {
+	
+}
+
+class Back extends Tier {
+	
+}
+
+class Environment extends ExecutionEnvironment {
+	
+}

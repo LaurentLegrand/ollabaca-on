@@ -1,0 +1,149 @@
+package org.ollabaca.on.uml.task
+
+import org.ollabaca.on.uml.util.Period
+import org.ollabaca.on.uml.org.Membership
+import org.eclipse.uml2.uml.NamedElement
+import org.eclipse.uml2.uml.Element
+import org.eclipse.uml2.uml.PackageableElement
+import org.eclipse.uml2.uml.Comment
+
+type Date wraps java.util.Date
+
+type Period wraps Period
+create {
+	if (it != null) Period::parse(it)
+}
+convert {
+	if (it != null) it.toString
+}
+
+abstract class TaskElement extends Element {
+	
+}
+
+class Phase extends NamedElement, TaskElement {
+	
+	/**
+	 * Period of the phase
+	 */
+	Period period
+	
+	contains Phase[] nestedPhases opposite nestingPhase
+	
+	refers Phase nestingPhase opposite nestedPhases
+	
+}
+
+class Stage extends NamedElement, TaskElement {
+	
+	contains Stage[] nestedStages opposite nestingStage
+	
+	refers Stage nestingStage opposite nestedStages
+	
+}
+
+/**
+ * cf. http://www.taskjuggler.org/tj3/manual/account.html
+ */
+class Account extends NamedElement, TaskElement, PackageableElement {
+	
+	contains Account[] nestedAccounts opposite nestingAccount
+	
+	refers Account nestingAccount opposite nestedAccounts
+}
+
+/**
+ * Task
+ */
+class Task extends NamedElement {
+	
+	//contains Coordinate coordinate opposite task
+	
+	refers Account account
+	
+	refers Phase[1] phase
+	
+	refers Element[1..*] elements
+	
+	
+	refers Membership[1] performer  
+	
+	/**
+	 * Specifies the effort needed to complete the item
+	 */
+	double effort
+	
+	/**
+	 * 
+	 */
+	double completion
+	
+	Period[1] period
+	
+	contains Work[] works
+	
+}
+
+
+abstract class Coordinate {
+	
+	//refers readonly Task task opposite coordinate
+	
+}
+
+/**
+ * Corresponds to the amount of time spent on the WorkProduct  
+ */
+class Work extends TaskElement {
+	
+	String summary
+	
+	Period[1] period
+	
+	/**
+	 * Amount of work realized
+	 */
+	double realized
+	
+}
+
+class Warning extends Comment {
+	
+	contains Note mitigation 
+}
+
+class Note extends Comment { }
+
+class Important extends Comment { }
+
+
+abstract class Assignment {
+	
+}
+
+///**
+// * @see https://en.wikipedia.org/wiki/Responsibility_assignment_matrix
+// */	
+//class Raci extends Assignment {
+//	
+//	/**
+//	 * owner, the person who owns the work. Each deliverable/activity must have an owner.
+//	 */
+//	refers Membership[1] responsible
+//	
+//	/**
+//	 * the person who approves the deliverable or activity. There should only be one approver.
+//	 */
+//	refers Membership[1] approval
+//	
+//	/**
+//	 * this person delivers information required to do the work.
+//	 */
+//	refers Membership[] consulted
+//	
+//	/**
+//	 * a person that needs to be informed of the progress of the work.
+//	 */
+//	refers Membership[] informed
+//		
+//}
