@@ -17,6 +17,7 @@ import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.renderers.Content;
 import org.ollabaca.on.site.renderers.Renderers;
 import org.ollabaca.on.site.renderers.Text;
+import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.servlets.Ref;
 import org.ollabaca.on.site.servlets.Scope;
@@ -94,10 +95,10 @@ public class Content_Element {
       }
     };
     List<Record> _sortBy = IterableExtensions.<Record, Date>sortBy(_records, _function);
-    final Function1<Record,String> _function_1 = new Function1<Record,String>() {
-      public String apply(final Record it) {
-        String _name = it.getName();
-        return _name;
+    final Function1<Record,CharSequence> _function_1 = new Function1<Record,CharSequence>() {
+      public CharSequence apply(final Record it) {
+        CharSequence _link_EObject = Link.link_EObject(it);
+        return _link_EObject;
       }
     };
     Column<Record> _column = Html.<Record>column("Name", _function_1);

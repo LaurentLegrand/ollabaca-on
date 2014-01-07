@@ -12,6 +12,7 @@ import org.ollabaca.on.site.servlets.Notation
 import static org.ollabaca.on.site.util.Html.*
 
 import static extension org.ollabaca.on.site.servlets.Ref.*
+import org.ollabaca.on.site.servlets.Link
 
 class Content_Element {
 	
@@ -39,7 +40,7 @@ class Content_Element {
 			self.records.sortBy[date], 
 			#[],
 			#[
-				column("Name", [Record it | it.name]),
+				column("Name", [Record it | Link::link_EObject(it)]),
 				column("Debit", [Record it | if (it instanceof Debit) Notation::notation_Object(it.amount)]),
 				column("Credit", [Record it | if (it instanceof Credit) Notation::notation_Object(it.amount)])
 			]
