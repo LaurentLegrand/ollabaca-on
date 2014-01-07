@@ -7,6 +7,7 @@ class GtbrSitePlugin implements SitePlugin {
 	
 	override activate() {
 		Notation_Element::register();
+		Content_Element::register();
 	}
 	
 }

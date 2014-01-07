@@ -2,8 +2,6 @@ package org.ollabaca.on.uml.book
 
 import org.eclipse.uml2.uml.PackageableElement
 import org.eclipse.uml2.uml.Element
-import org.eclipse.uml2.uml.Node
-import org.eclipse.uml2.uml.ExecutionEnvironment
 
 class BookElement extends PackageableElement {
 

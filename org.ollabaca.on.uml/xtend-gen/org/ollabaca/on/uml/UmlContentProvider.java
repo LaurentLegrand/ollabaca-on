@@ -19,14 +19,11 @@ import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.site.Site;
-import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.Type;
 import org.ollabaca.on.site.renderers.Content;
-import org.ollabaca.on.site.renderers.ContentProvider;
-import org.ollabaca.on.site.renderers.Register;
+import org.ollabaca.on.site.renderers.Renderers;
 import org.ollabaca.on.site.renderers.Text;
-import org.ollabaca.on.site.renderers.TopicRenderer;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.servlets.Ref;
@@ -39,7 +36,7 @@ import org.ollabaca.on.uml.Section_Element_OwnedElements;
 import org.ollabaca.on.uml.book.Book;
 
 @SuppressWarnings("all")
-public class UmlContentProvider implements ContentProvider {
+public class UmlContentProvider {
   private final static String PATH = "uml";
   
   private final static String BOOK = "uml-book";
@@ -51,12 +48,41 @@ public class UmlContentProvider implements ContentProvider {
     }
   }.apply();
   
-  public String onSite(final Site self) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder.toString();
+  public static Function1<? super Topic,? extends Content> register() {
+    Function1<? super Topic,? extends Content> _xblockexpression = null;
+    {
+      final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>() {
+        public Boolean apply(final Topic it) {
+          return Boolean.valueOf(true);
+        }
+      };
+      final Function1<Topic,CharSequence> _function_1 = new Function1<Topic,CharSequence>() {
+        public CharSequence apply(final Topic it) {
+          CharSequence _onTopic = UmlContentProvider.onTopic(it);
+          return _onTopic;
+        }
+      };
+      Renderers.topicRenderers.registerLoader(_function, _function_1);
+      final Function1<Topic,Text> _function_2 = new Function1<Topic,Text>() {
+        public Text apply(final Topic it) {
+          Text _section = UmlContentProvider.toSection(it);
+          return _section;
+        }
+      };
+      Renderers.topicRenderers.registerRenderer(UmlContentProvider.PATH, _function_2);
+      final Function1<Topic,Text> _function_3 = new Function1<Topic,Text>() {
+        public Text apply(final Topic it) {
+          Text _book = UmlContentProvider.toBook(it);
+          return _book;
+        }
+      };
+      Function1<? super Topic,? extends Content> _registerRenderer = Renderers.topicRenderers.registerRenderer(UmlContentProvider.BOOK, _function_3);
+      _xblockexpression = (_registerRenderer);
+    }
+    return _xblockexpression;
   }
   
-  public String onTopic(final Topic self) {
+  public static CharSequence onTopic(final Topic self) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<script>");
     _builder.newLine();
@@ -80,37 +106,10 @@ public class UmlContentProvider implements ContentProvider {
     _builder.newLine();
     _builder.append("</script>");
     _builder.newLine();
-    return _builder.toString();
+    return _builder;
   }
   
-  public String onType(final Type self) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder.toString();
-  }
-  
-  public String onTag(final Tag self) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder.toString();
-  }
-  
-  public void activate(final Register register) {
-    final TopicRenderer _function = new TopicRenderer() {
-      public Content render(final Topic it) {
-        Text _section = UmlContentProvider.this.toSection(it);
-        return _section;
-      }
-    };
-    register.registerTopicRenderer(UmlContentProvider.PATH, _function);
-    final TopicRenderer _function_1 = new TopicRenderer() {
-      public Content render(final Topic it) {
-        Text _book = UmlContentProvider.this.toBook(it);
-        return _book;
-      }
-    };
-    register.registerTopicRenderer(UmlContentProvider.BOOK, _function_1);
-  }
-  
-  public Text toSection(final Topic self) {
+  public static Text toSection(final Topic self) {
     EObject _target = self.getTarget();
     if ((_target instanceof Book)) {
       StringConcatenation _builder = new StringConcatenation();
@@ -124,29 +123,29 @@ public class UmlContentProvider implements ContentProvider {
       return _text;
     }
     EObject _target_1 = self.getTarget();
-    CharSequence _section = this.section(_target_1);
+    CharSequence _section = UmlContentProvider.section(_target_1);
     Text _text_1 = new Text("text/html", _section);
     return _text_1;
   }
   
-  public Text toBook(final Topic self) {
+  public static Text toBook(final Topic self) {
     EObject _target = self.getTarget();
     CharSequence _html_Book = UmlContentProvider.bookToHtml.html_Book(((Book) _target));
     Text _text = new Text("text/html", _html_Book);
     return _text;
   }
   
-  protected CharSequence _section(final EObject self) {
+  protected static CharSequence _section(final EObject self) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected CharSequence _section(final Element self) {
+  protected static CharSequence _section(final Element self) {
     CharSequence _section_Element = Section_Element.section_Element(self);
     return _section_Element;
   }
   
-  protected CharSequence _section(final org.eclipse.uml2.uml.Package self) {
+  protected static CharSequence _section(final org.eclipse.uml2.uml.Package self) {
     CharSequence _xblockexpression = null;
     {
       final List<List<Topic>> rows = CollectionLiterals.<List<Topic>>newArrayList();
@@ -224,7 +223,7 @@ public class UmlContentProvider implements ContentProvider {
     return _xblockexpression;
   }
   
-  protected CharSequence _section(final Classifier self) {
+  protected static CharSequence _section(final Classifier self) {
     CharSequence _section_Element_OwnedElements = Section_Element_OwnedElements.section_Element_OwnedElements(self);
     return _section_Element_OwnedElements;
   }
@@ -349,7 +348,7 @@ public class UmlContentProvider implements ContentProvider {
     return _builder;
   }
   
-  public CharSequence section(final EObject self) {
+  public static CharSequence section(final EObject self) {
     if (self instanceof Classifier) {
       return _section((Classifier)self);
     } else if (self instanceof org.eclipse.uml2.uml.Package) {

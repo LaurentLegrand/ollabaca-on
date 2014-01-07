@@ -1,5 +1,6 @@
 package org.ollabaca.on.gtbr.site;
 
+import org.ollabaca.on.gtbr.site.Content_Element;
 import org.ollabaca.on.gtbr.site.Notation_Element;
 import org.ollabaca.on.site.SitePlugin;
 
@@ -7,5 +8,6 @@ import org.ollabaca.on.site.SitePlugin;
 public class GtbrSitePlugin implements SitePlugin {
   public void activate() {
     Notation_Element.register();
+    Content_Element.register();
   }
 }

@@ -5,19 +5,16 @@ import java.util.List
 import javax.json.Json
 import org.eclipse.emf.ecore.EClass
 import org.ollabaca.on.site.Site
-import org.ollabaca.on.site.Tag
 import org.ollabaca.on.site.Topic
-import org.ollabaca.on.site.renderers.ContentProvider
-import org.ollabaca.on.site.renderers.Register
+import org.ollabaca.on.site.renderers.Renderers
 import org.ollabaca.on.site.renderers.Text
 
 import static org.ollabaca.on.site.util.Sites.*
 
 import static extension org.ollabaca.on.site.servlets.Ref.*
 import static extension org.ollabaca.on.site.util.Html.*
-import org.ollabaca.on.site.Type
 
-class GraphContentProvider implements ContentProvider {
+class GraphContentProvider {
 	
 	static val String TAB = "graph-tab"
 	
@@ -26,13 +23,15 @@ class GraphContentProvider implements ContentProvider {
 	static val String TYPES = "graph-types"
 	
 
-	override activate(Register register) {
+	static def register() {
 		
-		register.registerSiteRenderer(INSTANCES, [instancesToJSon]);	
-		register.registerSiteRenderer(TYPES, [typesToJSon]);	
+		Renderers::siteRenderers.registerLoader([true], [it.load])
+		
+		Renderers::siteRenderers.registerRenderer(INSTANCES, [instancesToJSon]);	
+		Renderers::siteRenderers.registerRenderer(TYPES, [typesToJSon]);	
 	}
 	
-	override onSite(Site self) {
+	static def load(Site self) {
 		'''
 		<style>
 		.parentOf {
@@ -66,7 +65,7 @@ class GraphContentProvider implements ContentProvider {
 		'''
 	}
 	
-	def String tabs() {
+	static def String tabs() {
 		'''
 		<div class="tabbable">
 			<ul id="«TAB»" class="nav nav-tabs">
@@ -96,31 +95,17 @@ class GraphContentProvider implements ContentProvider {
 			</div>
 		</div>
     	'''
-	}
+	}	
 	
-	override onTopic(Topic self) {
-		""
-	}
-	
-	override onType(Type type) {
-		""
-	}
-
-	override onTag(Tag self) {
-		""
-	}
-	
-	
-	
-	def Text instancesToJSon(Site self) {
+	static def Text instancesToJSon(Site self) {
 		return new Text("text/json", instances(self));
 	}
 	
-	def Text typesToJSon(Site self) {
+	static def Text typesToJSon(Site self) {
 		return new Text("text/json", types(self));
 	}
 	
-	def instances(Site self) {
+	static def instances(Site self) {
 		val List<Topic> nodes = newArrayList
 		
 		site.topics.filter[!anonymous].forEach[
@@ -168,7 +153,7 @@ class GraphContentProvider implements ContentProvider {
 		
 	}
 	
-	def types(Site self) {
+	static def types(Site self) {
 		val List<EClass> nodes = newArrayList
 		site.topics.forEach[fill(nodes, it.target.eClass)]
 		
@@ -202,7 +187,7 @@ class GraphContentProvider implements ContentProvider {
 		return out.toString
 	}
 		
-	def void fill(List<EClass> list, EClass self) {
+	static def void fill(List<EClass> list, EClass self) {
 		if (list.contains(self)) {
 			return
 		}

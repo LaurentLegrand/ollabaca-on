@@ -18,10 +18,10 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
-import org.ollabaca.on.site.Activator
 import org.ollabaca.on.site.Site
-import org.ollabaca.on.site.util.Sites
+import org.ollabaca.on.site.renderers.Renderers
 import org.ollabaca.on.site.util.Locales
+import org.ollabaca.on.site.util.Sites
 
 /**
  * /site 							: home page
@@ -78,7 +78,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			if (path == "pages") {
 				response.getWriter().append(Page::page_Element(site))
 			} else {
-				Activator::instance.context.getSiteRenderer(path).render(site).fill(response)
+				Renderers::siteRenderers.render(path, site).fill(response)
 			}
 		} finally {
 			Sites::current.set(null)
@@ -93,7 +93,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			if (path == "pages") {
 				response.getWriter().append(Page::page_Element(t))
 			} else {
-				Activator::instance.context.getTopicRenderer(path).render(t).fill(response)
+				Renderers::topicRenderers.render(path, t).fill(response)
 			}
 		} finally {
 			Sites::current.set(null)
@@ -109,7 +109,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			if (path == "pages") {
 				response.getWriter().append(Page::page_Element(t))
 			} else {
-				Activator::instance.context.getTypeRenderer(path).render(t).fill(response)
+				Renderers::typeRenderers.render(path, t).fill(response)
 			}
 		} finally {
 			Sites::current.set(null)

@@ -5,6 +5,7 @@ import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
 import org.eclipse.emf.ecore.EClass
 import org.ollabaca.on.site.Type
+import org.ollabaca.on.site.Element
 
 class Sites {
 
@@ -56,4 +57,8 @@ class Sites {
 //	static def dispatch Site site_fallback(Object self) {
 //		current.get()
 //	}
+
+	def static isTargetInstanceOf(Element element, Class<?> type) {
+		return element instanceof Topic && type.isInstance((element as Topic).target)
+	}
 }
