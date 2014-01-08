@@ -19,6 +19,7 @@ import org.ollabaca.on.uml.book.BookElement
 import org.ollabaca.on.uml.util.BookElements
 
 import static extension org.ollabaca.on.site.servlets.Link.*
+import org.eclipse.uml2.uml.Generalization
 
 class Notation_Element {
 
@@ -159,6 +160,10 @@ class Notation_Element {
 
 	static def dispatch CharSequence notation_Element(LiteralString self) {
 		'''<code>«self.value»</code> as <code>String</code>'''
+	}
+	
+	static def dispatch CharSequence notation_Element(Generalization self) {
+		'''«self.specific.link_EObject» &#8680; «self.general.link_EObject»'''
 	}
 
 }
