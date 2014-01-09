@@ -165,8 +165,8 @@ class Units {
 			return true
 		}
 		System::out.format("VALIDATION IS VALID REF: %s = supertype: %s : current type: %s\n", 
-			(self.slot.feature.EType as EClass).isSuperTypeOf(self.value.instance.classifier)
-			, self.slot.feature.EType, self.value.instance.classifier
+			(self.slot.feature.EType as EClass).isSuperTypeOf(self.value.classifier)
+			, self.slot.feature.EType, self.value.classifier
 		)
 		
 		(self.slot.feature.EType as EClass).isSuperTypeOf(self.value.classifier)
