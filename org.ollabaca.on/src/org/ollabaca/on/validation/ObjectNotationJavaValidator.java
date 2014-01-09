@@ -79,12 +79,15 @@ public class ObjectNotationJavaValidator extends
 					ModelPackage.Literals.SLOT__NAME);
 			return;
 		}
-		Value value = self.getValue();
+		
+		// enhancement #21 array is optionnal
+		
+//		Value value = self.getValue();
 
-		if (feature.isMany() && value != null && !(value instanceof Array)) {
-			error(String.format("value shall be an array"),
-					ModelPackage.Literals.SLOT__VALUE);
-		}
+//		if (feature.isMany() && value != null && !(value instanceof Array)) {
+//			error(String.format("value shall be an array"),
+//					ModelPackage.Literals.SLOT__VALUE);
+//		}
 
 	}
 

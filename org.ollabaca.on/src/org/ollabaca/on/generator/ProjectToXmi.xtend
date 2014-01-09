@@ -200,7 +200,11 @@ class ProjectToXmi {
 			System::out.println(self + ":" + slot.name + ":" + value)
 			try {
 				if (feature.many) {
-					(object.eGet(feature) as Collection).addAll(value as Collection)
+					if (value instanceof Collection) {
+						(object.eGet(feature) as Collection).addAll(value as Collection)
+					} else {
+						(object.eGet(feature) as Collection).add(value)
+					}
 				} else {
 					object.eSet(feature, value)	
 				}
