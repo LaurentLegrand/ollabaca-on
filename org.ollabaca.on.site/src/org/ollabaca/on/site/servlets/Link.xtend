@@ -16,7 +16,7 @@ class Link extends Template<EObject> {
 	public static val Link instance = new Link()
 
 	static def link_EObject(EObject self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	def dispatch CharSequence doFallback(Void self) {

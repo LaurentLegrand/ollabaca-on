@@ -9,10 +9,10 @@ import org.ollabaca.on.site.Element
 
 class Sites {
 
-	public static val topic = new Extension<EObject, Topic>([it.topic_fallback]);
+	public static val topic = new Transformer<EObject, Topic>([it.topic_fallback]);
 
 	def static Topic topic_EObject(EObject self) {
-		topic.apply(self)
+		topic.transform(self)
 	}
 
 	static def dispatch Topic topic_fallback(EObject self) {

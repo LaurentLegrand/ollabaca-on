@@ -16,7 +16,7 @@ class Notation extends Template<Object> {
 	public static val Notation instance = new Notation()
 
 	static def notation_Object(Object self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	def dispatch CharSequence doFallback(EObject self) {

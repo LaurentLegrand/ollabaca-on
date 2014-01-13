@@ -15,7 +15,7 @@ class Aside extends Template<Element> {
 	public static val Aside instance = new Aside()
 
 	static def aside_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	def dispatch CharSequence doFallback(Element self) ''''''

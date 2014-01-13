@@ -8,7 +8,7 @@ class Body extends Template<Element> {
 	public static val Body instance = new Body()
 
 	static def body_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	override def CharSequence doFallback(Element self) '''

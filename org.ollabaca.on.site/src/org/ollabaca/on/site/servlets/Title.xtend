@@ -13,7 +13,7 @@ class Title extends Template<Element> {
 	public static val Title instance = new Title()
 
 	static def title_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	dispatch def CharSequence doFallback(Site self) 

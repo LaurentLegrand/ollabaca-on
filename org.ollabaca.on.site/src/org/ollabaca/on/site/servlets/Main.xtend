@@ -21,7 +21,7 @@ class Main extends Template<Element> {
 	public static val Main instance = new Main()
 
 	static def main_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	dispatch def CharSequence doFallback(Tag self) '''

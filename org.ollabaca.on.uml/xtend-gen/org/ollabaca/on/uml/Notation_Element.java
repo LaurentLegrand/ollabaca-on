@@ -6,7 +6,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Generalization;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.LiteralString;
@@ -439,6 +441,18 @@ public class Notation_Element {
     return _builder;
   }
   
+  protected static CharSequence _notation_Element(final Generalization self) {
+    StringConcatenation _builder = new StringConcatenation();
+    Classifier _specific = self.getSpecific();
+    CharSequence _link_EObject = Link.link_EObject(_specific);
+    _builder.append(_link_EObject, "");
+    _builder.append(" &#8680; ");
+    Classifier _general = self.getGeneral();
+    CharSequence _link_EObject_1 = Link.link_EObject(_general);
+    _builder.append(_link_EObject_1, "");
+    return _builder;
+  }
+  
   public static CharSequence notation_Element(final Object self) {
     if (self instanceof LiteralBoolean) {
       return _notation_Element((LiteralBoolean)self);
@@ -454,6 +468,8 @@ public class Notation_Element {
       return _notation_Element((Property)self);
     } else if (self instanceof Parameter) {
       return _notation_Element((Parameter)self);
+    } else if (self instanceof Generalization) {
+      return _notation_Element((Generalization)self);
     } else if (self instanceof Element) {
       return _notation_Element((Element)self);
     } else if (self instanceof ParameterDirectionKind) {

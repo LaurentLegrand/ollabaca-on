@@ -12,7 +12,7 @@ class OnLoad extends Template<Element> {
 	public static val OnLoad instance = new OnLoad()
 
 	static def onLoad_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	dispatch def CharSequence doFallback(Element self) {

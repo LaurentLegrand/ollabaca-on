@@ -20,7 +20,7 @@ class Ref extends Template<Object> {
 	public static val Ref instance = new Ref()
 
 	static def ref_Object(Object self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 	
 	static def Scope scope(String path, EObject target) {

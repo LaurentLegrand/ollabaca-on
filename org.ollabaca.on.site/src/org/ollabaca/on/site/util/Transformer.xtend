@@ -3,11 +3,11 @@ package org.ollabaca.on.site.util
 import java.util.SortedMap
 import java.util.TreeMap
 
-class Extension<I, O> {
+class Transformer<I, O> {
 
 	val (I)=>O fallback
 
-	val SortedMap<Class<? extends I>, (I)=>O> extensions = new TreeMap(
+	val SortedMap<Class<? extends I>, (I)=>O> transformers = new TreeMap(
 		[ Class<? extends I> a, b | // most specific class, first
 			if (a == b) {
 				return 0
@@ -26,18 +26,19 @@ class Extension<I, O> {
 		this.fallback = fallback
 	}
 
-	public def register(Class<? extends I> type, (I)=>O ext) {
-		extensions.put(type, ext)
+	public def register(Class<? extends I> type, (I)=>O transformer) {
+		transformers.put(type, transformer)
 	}
 
-	public def O apply(I self) {
-		for (e : extensions.values) {
+	public def O transform(I self) {
+		for (e : transformers.entrySet) {
 			try {
-				val o = e.apply(self)
-				if (o != null) {
-					return o
+				if (e.key.isInstance(self)) {
+					val o = e.value.apply(self)
+					if (o != null) {
+						return o
+					}
 				}
-				
 			} catch (IllegalArgumentException ex) {
 				ex.printStackTrace
 			}

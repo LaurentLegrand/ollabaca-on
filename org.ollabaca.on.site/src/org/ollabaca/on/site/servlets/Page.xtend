@@ -8,7 +8,7 @@ class Page extends Template<Element> {
 	public static val Page instance = new Page()
 
 	static def page_Element(Element self) {
-		instance.apply(self)
+		instance.transform(self)
 	}
 
 	override protected doFallback(Element self) '''
