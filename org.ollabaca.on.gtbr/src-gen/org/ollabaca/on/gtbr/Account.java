@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.uml2.uml.NamedElement;
 
-import org.ollabaca.on.uml.org.Agent;
+import org.ollabaca.on.mm.org.Agent;
 
 /**
  * <!-- begin-user-doc -->

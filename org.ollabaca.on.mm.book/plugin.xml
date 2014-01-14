@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated book -->
+      <package
+            uri="org.ollabaca.on.mm.book"
+            class="org.ollabaca.on.mm.book.BookPackage"
+            genModel="model/book.xcore"/>
+   </extension>
+   <extension
+         point="org.ollabaca.on.site.SitePlugin">
+      <plugin
+            class="org.ollabaca.on.mm.book.site.BookSitePlugin">
+      </plugin>
+   </extension>
+
+</plugin>

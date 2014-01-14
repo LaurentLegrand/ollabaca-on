@@ -38,7 +38,7 @@ import org.ollabaca.on.gtbr.AccountingElement;
 import org.ollabaca.on.gtbr.GtbrPackage;
 import org.ollabaca.on.gtbr.Record;
 
-import org.ollabaca.on.uml.org.Agent;
+import org.ollabaca.on.mm.org.Agent;
 
 /**
  * <!-- begin-user-doc -->

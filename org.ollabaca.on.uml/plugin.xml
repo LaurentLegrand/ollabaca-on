@@ -9,35 +9,11 @@
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated book -->
-      <package
-            uri="org.ollabaca.on.uml.book"
-            class="org.ollabaca.on.uml.book.BookPackage"
-            genModel="model/book.xcore"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated rest -->
       <package
             uri="org.ollabaca.on.uml.rest"
             class="org.ollabaca.on.uml.rest.RestPackage"
             genModel="model/rest.xcore"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated org -->
-      <package
-            uri="org.ollabaca.on.uml.org"
-            class="org.ollabaca.on.uml.org.OrgPackage"
-            genModel="model/org.xcore"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated task -->
-      <package
-            uri="org.ollabaca.on.uml.task"
-            class="org.ollabaca.on.uml.task.TaskPackage"
-            genModel="model/task.xcore"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">

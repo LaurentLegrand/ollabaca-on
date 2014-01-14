@@ -1,6 +1,6 @@
 package org.ollabaca.on.gtbr
 
-import org.ollabaca.on.uml.org.Agent
+import org.ollabaca.on.mm.org.Agent
 import org.ollabaca.on.gtbr.util.Dates
 import org.eclipse.uml2.uml.NamedElement
 import org.eclipse.uml2.uml.PackageableElement

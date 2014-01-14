@@ -25,7 +25,7 @@ import org.ollabaca.on.gtbr.GtbrPackage;
 import org.ollabaca.on.gtbr.Record;
 import org.ollabaca.on.gtbr.Transfer;
 
-import org.ollabaca.on.uml.org.OrgPackage;
+import org.ollabaca.on.mm.org.OrgPackage;
 
 /**
  * <!-- begin-user-doc -->

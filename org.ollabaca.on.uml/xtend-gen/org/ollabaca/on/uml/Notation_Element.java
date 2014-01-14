@@ -4,7 +4,6 @@ import com.google.common.base.Objects;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.BehavioralFeature;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Element;
@@ -24,43 +23,24 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
-import org.ollabaca.on.site.util.Sites;
-import org.ollabaca.on.uml.book.BookElement;
-import org.ollabaca.on.uml.util.BookElements;
 
 @SuppressWarnings("all")
 public class Notation_Element {
-  public static Function1<? super EObject,? extends Topic> register() {
-    Function1<? super EObject,? extends Topic> _xblockexpression = null;
-    {
-      final Function1<Object,CharSequence> _function = new Function1<Object,CharSequence>() {
-        public CharSequence apply(final Object it) {
-          CharSequence _xifexpression = null;
-          if ((it instanceof Element)) {
-            CharSequence _notation_Element = Notation_Element.notation_Element(((Element) it));
-            _xifexpression = _notation_Element;
-          }
-          return _xifexpression;
+  public static Function1<? super Object,? extends CharSequence> register() {
+    final Function1<Object,CharSequence> _function = new Function1<Object,CharSequence>() {
+      public CharSequence apply(final Object it) {
+        CharSequence _xifexpression = null;
+        if ((it instanceof Element)) {
+          CharSequence _notation_Element = Notation_Element.notation_Element(((Element) it));
+          _xifexpression = _notation_Element;
         }
-      };
-      Notation.instance.register(Element.class, _function);
-      final Function1<EObject,Topic> _function_1 = new Function1<EObject,Topic>() {
-        public Topic apply(final EObject it) {
-          Topic _xifexpression = null;
-          if ((it instanceof BookElement)) {
-            Topic _pic_BookElement = BookElements.topic_BookElement(((BookElement) it));
-            _xifexpression = _pic_BookElement;
-          }
-          return _xifexpression;
-        }
-      };
-      Function1<? super EObject,? extends Topic> _register = Sites.topic.register(BookElement.class, _function_1);
-      _xblockexpression = (_register);
-    }
-    return _xblockexpression;
+        return _xifexpression;
+      }
+    };
+    Function1<? super Object,? extends CharSequence> _register = Notation.instance.register(Element.class, _function);
+    return _register;
   }
   
   protected static CharSequence _notation_Element(final Element self) {
