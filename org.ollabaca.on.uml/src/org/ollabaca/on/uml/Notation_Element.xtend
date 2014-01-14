@@ -3,6 +3,7 @@ package org.ollabaca.on.uml
 import java.util.List
 import org.eclipse.uml2.uml.BehavioralFeature
 import org.eclipse.uml2.uml.Element
+import org.eclipse.uml2.uml.Generalization
 import org.eclipse.uml2.uml.LiteralBoolean
 import org.eclipse.uml2.uml.LiteralInteger
 import org.eclipse.uml2.uml.LiteralString
@@ -14,19 +15,13 @@ import org.eclipse.uml2.uml.ParameterDirectionKind
 import org.eclipse.uml2.uml.Property
 import org.eclipse.uml2.uml.VisibilityKind
 import org.ollabaca.on.site.servlets.Notation
-import org.ollabaca.on.site.util.Sites
-import org.ollabaca.on.uml.book.BookElement
-import org.ollabaca.on.uml.util.BookElements
 
 import static extension org.ollabaca.on.site.servlets.Link.*
-import org.eclipse.uml2.uml.Generalization
 
 class Notation_Element {
 
 	static def register() {
 		Notation::instance.register(typeof(Element), [if(it instanceof Element) notation_Element(it as Element)])
-		Sites::topic.register(typeof(BookElement),
-			[if(it instanceof BookElement) BookElements::topic_BookElement(it as BookElement)]) // TODO refactor
 	}
 
 	static def dispatch CharSequence notation_Element(Element self) {
