@@ -32,8 +32,5 @@ Export-Package: org.ollabaca.on.uml,
  org.ollabaca.on.uml.task.util,
  org.ollabaca.on.uml.todo,
  org.ollabaca.on.uml.todo.impl,
- org.ollabaca.on.uml.todo.util,
- org.ollabaca.on.uml.om,
- org.ollabaca.on.uml.om.impl,
- org.ollabaca.on.uml.om.util
+ org.ollabaca.on.uml.todo.util
 

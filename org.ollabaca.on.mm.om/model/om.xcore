@@ -1,0 +1,50 @@
+/**
+ * Observations & Measurement
+ */
+package org.ollabaca.on.mm.om
+
+import org.eclipse.uml2.uml.DataType
+import org.eclipse.uml2.uml.Property
+
+class OmElement {
+	
+}
+
+
+class QuantityKind extends DataType, OmElement {
+	
+	contains Dimension[] dimension
+	
+}
+
+class Dimension {
+	
+	refers QuantityKind quantity
+	
+	float magnitude
+}
+
+class Unit extends OmElement {
+	
+	refers QuantityKind quantityKind
+}
+
+class Obseravtion extends OmElement {
+	
+}
+
+
+class Measure extends OmElement {
+	
+	refers Property property
+	
+	refers Unit unit
+	
+}
+
+
+class DataSet {
+	
+	refers Measure[] measures
+	
+}
