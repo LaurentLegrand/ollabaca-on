@@ -7,7 +7,7 @@ class Transformer<I, O> {
 
 	val (I)=>O fallback
 
-	val SortedMap<Class<? extends I>, (I)=>O> transformers = new TreeMap(
+	protected val SortedMap<Class<? extends I>, (I)=>O> transformers = new TreeMap(
 		[ Class<? extends I> a, b | // most specific class, first
 			if (a == b) {
 				return 0
