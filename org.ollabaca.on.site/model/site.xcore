@@ -165,3 +165,7 @@ class Topic extends Named {
 	}
 	
 }
+
+class Workspace extends Element {
+	
+}

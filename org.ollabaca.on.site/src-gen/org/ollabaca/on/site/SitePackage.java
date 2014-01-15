@@ -570,6 +570,34 @@ public interface SitePackage extends EPackage
    */
   int TOPIC_OPERATION_COUNT = NAMED_OPERATION_COUNT + 3;
 
+  /**
+   * The meta object id for the '{@link org.ollabaca.on.site.impl.WorkspaceImpl <em>Workspace</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ollabaca.on.site.impl.WorkspaceImpl
+   * @see org.ollabaca.on.site.impl.SitePackageImpl#getWorkspace()
+   * @generated
+   */
+  int WORKSPACE = 7;
+
+  /**
+   * The number of structural features of the '<em>Workspace</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKSPACE_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of operations of the '<em>Workspace</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORKSPACE_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link org.ollabaca.on.site.Element <em>Element</em>}'.
@@ -963,6 +991,16 @@ public interface SitePackage extends EPackage
   EOperation getTopic__GetAncestors();
 
   /**
+   * Returns the meta object for class '{@link org.ollabaca.on.site.Workspace <em>Workspace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Workspace</em>'.
+   * @see org.ollabaca.on.site.Workspace
+   * @generated
+   */
+  EClass getWorkspace();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1295,6 +1333,16 @@ public interface SitePackage extends EPackage
      * @generated
      */
     EOperation TOPIC___GET_ANCESTORS = eINSTANCE.getTopic__GetAncestors();
+
+    /**
+     * The meta object literal for the '{@link org.ollabaca.on.site.impl.WorkspaceImpl <em>Workspace</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ollabaca.on.site.impl.WorkspaceImpl
+     * @see org.ollabaca.on.site.impl.SitePackageImpl#getWorkspace()
+     * @generated
+     */
+    EClass WORKSPACE = eINSTANCE.getWorkspace();
 
   }
 

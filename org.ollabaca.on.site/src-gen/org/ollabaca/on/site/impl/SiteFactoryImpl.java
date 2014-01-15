@@ -69,6 +69,7 @@ public class SiteFactoryImpl extends EFactoryImpl implements SiteFactory
       case SitePackage.ABBREVIATION: return createAbbreviation();
       case SitePackage.SITE: return createSite();
       case SitePackage.TOPIC: return createTopic();
+      case SitePackage.WORKSPACE: return createWorkspace();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -127,6 +128,17 @@ public class SiteFactoryImpl extends EFactoryImpl implements SiteFactory
   {
     TopicImpl topic = new TopicImpl();
     return topic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Workspace createWorkspace()
+  {
+    WorkspaceImpl workspace = new WorkspaceImpl();
+    return workspace;
   }
 
   /**

@@ -20,6 +20,7 @@ import org.ollabaca.on.site.SitePackage;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.Type;
+import org.ollabaca.on.site.Workspace;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,6 +78,13 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * @generated
    */
   private EClass topicEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass workspaceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -519,6 +527,16 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getWorkspace()
+  {
+    return workspaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SiteFactory getSiteFactory()
   {
     return (SiteFactory)getEFactoryInstance();
@@ -587,6 +605,8 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     createEOperation(topicEClass, TOPIC___IS_ANONYMOUS);
     createEOperation(topicEClass, TOPIC___GET_ANCESTORS_AND_SELF);
     createEOperation(topicEClass, TOPIC___GET_ANCESTORS);
+
+    workspaceEClass = createEClass(WORKSPACE);
   }
 
   /**
@@ -627,6 +647,7 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     abbreviationEClass.getESuperTypes().add(this.getNamed());
     siteEClass.getESuperTypes().add(this.getNamed());
     topicEClass.getESuperTypes().add(this.getNamed());
+    workspaceEClass.getESuperTypes().add(this.getElement());
 
     // Initialize classes, features, and operations; add parameters
     initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -686,6 +707,8 @@ public class SitePackageImpl extends EPackageImpl implements SitePackage
     initEOperation(getTopic__GetAncestorsAndSelf(), this.getTopic(), "getAncestorsAndSelf", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
     initEOperation(getTopic__GetAncestors(), this.getTopic(), "getAncestors", 0, -1, !IS_UNIQUE, IS_ORDERED);
+
+    initEClass(workspaceEClass, Workspace.class, "Workspace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

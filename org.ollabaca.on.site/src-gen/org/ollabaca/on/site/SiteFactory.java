@@ -68,6 +68,15 @@ public interface SiteFactory extends EFactory
   Topic createTopic();
 
   /**
+   * Returns a new object of class '<em>Workspace</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Workspace</em>'.
+   * @generated
+   */
+  Workspace createWorkspace();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

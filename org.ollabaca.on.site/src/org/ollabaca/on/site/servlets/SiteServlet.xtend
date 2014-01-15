@@ -22,6 +22,8 @@ import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.renderers.Renderers
 import org.ollabaca.on.site.util.Locales
 import org.ollabaca.on.site.util.Sites
+import org.ollabaca.on.site.Workspace
+import org.ollabaca.on.site.SiteFactory
 
 /**
  * /site 							: home page
@@ -40,6 +42,8 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 		//Sites::site.register(typeof(EClass), [current.get()])
 	}
 	
+	val Workspace workspace = SiteFactory::eINSTANCE.createWorkspace
+	
 	val Map<IProject, Resource> instances = Collections::synchronizedMap(new HashMap<IProject, Resource>());
 	
 	override protected doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,7 +56,7 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 			} else {
 				val String[] names = pathInfo.substring(1).split("/")
 				if (names.size == 2) {
-					project(request, response, names.get(0), names.get(1))
+					site(request, response, names.get(0), names.get(1))
 				} else if ("topics".equals(names.get(2))) {
 					topic(request, response, names.get(0), names.get(1), names.get(3))
 				} else if ("tags".equals(names.get(2))) {
@@ -68,10 +72,10 @@ class SiteServlet extends HttpServlet implements  IResourceChangeListener {
 	}
 	
 	def home(HttpServletRequest request, HttpServletResponse response) throws IOException {
-				response.getWriter().append(Page::page_Element(null))
+		response.getWriter().append(Page::page_Element(workspace))
 	}
 	
-	def project(HttpServletRequest request, HttpServletResponse response, String path, String project) {
+	def site(HttpServletRequest request, HttpServletResponse response, String path, String project) {
 		var site = ResourcesPlugin::workspace.root.getProject(project).instances.allContents.filter(typeof(Site)).head
 		try {
 			Sites::current.set(site)

@@ -9,7 +9,7 @@ import java.util.Set
 
 class Registry<E extends Element> {
 	
-	val Set<Pair<(E) => Boolean, (E) => CharSequence>> loaders = newHashSet();	
+//	val Set<Pair<(E) => Boolean, (E) => CharSequence>> loaders = newHashSet();	
 
 	val Map<String, (E) => Content> renderers = newHashMap()
 	
@@ -17,19 +17,19 @@ class Registry<E extends Element> {
 		renderers.put(path, renderer)
 	}
 	
-	def registerLoader((E) => Boolean filter, (E) => CharSequence loader) {
-		loaders.add(new Pair<(E) => Boolean, (E) => CharSequence>(filter, loader))
-	}
-	
-	def CharSequence load(E self) {
-		'''
-		«FOR e: loaders»
-			«IF e.key.apply(self)»
-				«e.value.apply(self)»
-			«ENDIF»
-		«ENDFOR»
-		'''
-	}
+////	def registerLoader((E) => Boolean filter, (E) => CharSequence loader) {
+////		loaders.add(new Pair<(E) => Boolean, (E) => CharSequence>(filter, loader))
+////	}
+////	
+//	def CharSequence load(E self) {
+//		'''
+//		«FOR e: loaders»
+//			«IF e.key.apply(self)»
+//				«e.value.apply(self)»
+//			«ENDIF»
+//		«ENDFOR»
+//		'''
+//	}
 	
 	def Content render(String path, E self) {
 		var renderer = renderers.get(path);

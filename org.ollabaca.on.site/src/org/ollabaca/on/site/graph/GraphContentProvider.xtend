@@ -13,6 +13,7 @@ import static org.ollabaca.on.site.util.Sites.*
 
 import static extension org.ollabaca.on.site.servlets.Ref.*
 import static extension org.ollabaca.on.site.util.Html.*
+import org.ollabaca.on.site.servlets.Page
 
 class GraphContentProvider {
 	
@@ -25,13 +26,14 @@ class GraphContentProvider {
 
 	static def register() {
 		
-		Renderers::siteRenderers.registerLoader([true], [it.load])
+		Page::head.beforeEnd.register(typeof(Site), [ if (it instanceof Site) head_Site(it as Site)])
 		
 		Renderers::siteRenderers.registerRenderer(INSTANCES, [instancesToJSon]);	
+
 		Renderers::siteRenderers.registerRenderer(TYPES, [typesToJSon]);	
 	}
 	
-	static def load(Site self) {
+	static def head_Site(Site self) {
 		'''
 		<style>
 		.parentOf {

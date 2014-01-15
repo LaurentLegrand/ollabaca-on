@@ -132,6 +132,14 @@ public class SiteSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SitePackage.WORKSPACE:
+      {
+        Workspace workspace = (Workspace)theEObject;
+        T result = caseWorkspace(workspace);
+        if (result == null) result = caseElement(workspace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -244,6 +252,22 @@ public class SiteSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTopic(Topic object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Workspace</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Workspace</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWorkspace(Workspace object)
   {
     return null;
   }
