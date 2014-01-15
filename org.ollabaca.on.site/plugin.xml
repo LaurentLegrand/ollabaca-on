@@ -15,12 +15,6 @@
             genModel="model/site.xcore"/>
    </extension>
    <extension
-         point="org.ollabaca.on.site.ContentProvider">
-      <provider
-            class="org.ollabaca.on.site.graph.GraphContentProvider">
-      </provider>
-   </extension>
-   <extension
          point="org.eclipse.ui.startup">
       <startup
             class="org.ollabaca.on.site.Startup">
