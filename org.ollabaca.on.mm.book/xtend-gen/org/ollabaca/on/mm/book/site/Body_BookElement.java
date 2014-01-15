@@ -16,16 +16,16 @@ import org.ollabaca.on.site.util.Column;
 import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
-public class Body_Element {
-  protected static CharSequence _body_Element(final BookElement self) {
+public class Body_BookElement {
+  protected static CharSequence _body_BookElement(final BookElement self) {
     CharSequence _c_BookElement = BookElements.toc_BookElement(self);
     return _c_BookElement;
   }
   
-  protected static CharSequence _body_Element(final Section self) {
+  protected static CharSequence _body_BookElement(final Section self) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence __body_Element = Body_Element._body_Element(((BookElement) self));
-    _builder.append(__body_Element, "");
+    CharSequence __body_BookElement = Body_BookElement._body_BookElement(((BookElement) self));
+    _builder.append(__body_BookElement, "");
     _builder.newLineIfNotEmpty();
     EList<Element> _elements = self.getElements();
     final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
@@ -48,18 +48,11 @@ public class Body_Element {
     return _builder;
   }
   
-  protected static CharSequence _body_Element(final Element self) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
-  }
-  
-  public static CharSequence body_Element(final Element self) {
+  public static CharSequence body_BookElement(final BookElement self) {
     if (self instanceof Section) {
-      return _body_Element((Section)self);
-    } else if (self instanceof BookElement) {
-      return _body_Element((BookElement)self);
+      return _body_BookElement((Section)self);
     } else if (self != null) {
-      return _body_Element(self);
+      return _body_BookElement(self);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(self).toString());

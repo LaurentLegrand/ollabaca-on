@@ -1,4 +1,4 @@
-package org.ollabaca.on.mm.book.site;
+package org.ollabaca.on.uml;
 
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -12,59 +12,37 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.UseCase;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.ollabaca.on.mm.book.Book;
-import org.ollabaca.on.mm.book.Chapter;
-import org.ollabaca.on.mm.book.Part;
-import org.ollabaca.on.mm.book.Section;
-import org.ollabaca.on.mm.book.site.BehavioredClassifiers;
-import org.ollabaca.on.mm.book.site.Section_Element;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Ref;
 import org.ollabaca.on.site.util.Html;
+import org.ollabaca.on.site.util.Template;
 import org.ollabaca.on.uml.Layout_Element;
 import org.ollabaca.on.uml.util.BehavioralFeatures;
+import org.ollabaca.on.uml.util.BehavioredClassifiers;
 import org.ollabaca.on.uml.util.Classifiers;
 import org.ollabaca.on.uml.util.Constraints;
 import org.ollabaca.on.uml.util.Namespaces;
 
 @SuppressWarnings("all")
-public class Section_Element_OwnedElements {
-  protected static CharSequence _section_Element_OwnedElements(final Element self) {
-    StringConcatenation _builder = new StringConcatenation();
-    return _builder;
-  }
-  
-  protected static CharSequence _section_Element_OwnedElements(final Book self) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<Part> _parts = self.getParts();
-      for(final Part e : _parts) {
-        CharSequence _section_Element = Section_Element.section_Element(e);
-        _builder.append(_section_Element, "");
-        _builder.newLineIfNotEmpty();
-      }
+public class Section_Element_OwnedElements extends Template<Element> {
+  public final static Section_Element_OwnedElements instance = new Function0<Section_Element_OwnedElements>() {
+    public Section_Element_OwnedElements apply() {
+      Section_Element_OwnedElements _section_Element_OwnedElements = new Section_Element_OwnedElements();
+      return _section_Element_OwnedElements;
     }
-    return _builder;
+  }.apply();
+  
+  public static CharSequence section_Element_OwnedElements(final Element self) {
+    CharSequence _transform = Section_Element_OwnedElements.instance.transform(self);
+    return _transform;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Part self) {
+  protected CharSequence _doFallback(final UseCase self) {
     StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<Chapter> _chapters = self.getChapters();
-      for(final Chapter e : _chapters) {
-        CharSequence _section_Element = Section_Element.section_Element(e);
-        _builder.append(_section_Element, "");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    return _builder;
-  }
-  
-  protected static CharSequence _section_Element_OwnedElements(final UseCase self) {
-    StringConcatenation _builder = new StringConcatenation();
-    CharSequence __section_Element_OwnedElements = Section_Element_OwnedElements._section_Element_OwnedElements(((Classifier) self));
-    _builder.append(__section_Element_OwnedElements, "");
+    CharSequence __doFallback = this._doFallback(((Classifier) self));
+    _builder.append(__doFallback, "");
     _builder.newLineIfNotEmpty();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -93,7 +71,7 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Classifier self) {
+  protected CharSequence _doFallback(final Classifier self) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -146,7 +124,7 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Component self) {
+  protected CharSequence _doFallback(final Component self) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -213,7 +191,7 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Operation self) {
+  protected CharSequence _doFallback(final Operation self) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -268,7 +246,7 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final OpaqueBehavior self) {
+  protected CharSequence _doFallback(final OpaqueBehavior self) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -311,7 +289,7 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Port self) {
+  protected CharSequence _doFallback(final Port self) {
     StringConcatenation _builder = new StringConcatenation();
     CharSequence _ref_Object = Ref.ref_Object(self);
     String _string = _ref_Object.toString();
@@ -354,48 +332,19 @@ public class Section_Element_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Section self) {
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<Element> _elements = self.getElements();
-      for(final Element e : _elements) {
-        CharSequence _section_Element = Section_Element.section_Element(e);
-        _builder.append(_section_Element, "");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      EList<Section> _sections = self.getSections();
-      for(final Section e_1 : _sections) {
-        CharSequence _section_Element_1 = Section_Element.section_Element(e_1);
-        _builder.append(_section_Element_1, "");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    return _builder;
-  }
-  
-  public static CharSequence section_Element_OwnedElements(final Element self) {
+  public CharSequence doFallback(final Element self) {
     if (self instanceof OpaqueBehavior) {
-      return _section_Element_OwnedElements((OpaqueBehavior)self);
+      return _doFallback((OpaqueBehavior)self);
     } else if (self instanceof Component) {
-      return _section_Element_OwnedElements((Component)self);
+      return _doFallback((Component)self);
     } else if (self instanceof Port) {
-      return _section_Element_OwnedElements((Port)self);
+      return _doFallback((Port)self);
     } else if (self instanceof UseCase) {
-      return _section_Element_OwnedElements((UseCase)self);
+      return _doFallback((UseCase)self);
     } else if (self instanceof Operation) {
-      return _section_Element_OwnedElements((Operation)self);
+      return _doFallback((Operation)self);
     } else if (self instanceof Classifier) {
-      return _section_Element_OwnedElements((Classifier)self);
-    } else if (self instanceof Book) {
-      return _section_Element_OwnedElements((Book)self);
-    } else if (self instanceof Part) {
-      return _section_Element_OwnedElements((Part)self);
-    } else if (self instanceof Section) {
-      return _section_Element_OwnedElements((Section)self);
-    } else if (self != null) {
-      return _section_Element_OwnedElements(self);
+      return _doFallback((Classifier)self);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(self).toString());

@@ -1,10 +1,10 @@
-package org.ollabaca.on.mm.book.site;
+package org.ollabaca.on.uml.util;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.ollabaca.on.mm.book.site.Section_Element;
+import org.ollabaca.on.uml.Section_Element;
 
 @SuppressWarnings("all")
 public class BehavioredClassifiers {

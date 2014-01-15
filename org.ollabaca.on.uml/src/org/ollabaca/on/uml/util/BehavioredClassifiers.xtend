@@ -1,7 +1,7 @@
-package org.ollabaca.on.mm.book.site
+package org.ollabaca.on.uml.util
 
 import org.eclipse.uml2.uml.BehavioredClassifier
-import org.ollabaca.on.mm.book.site.Section_Element
+import org.ollabaca.on.uml.Section_Element
 
 class BehavioredClassifiers {
 

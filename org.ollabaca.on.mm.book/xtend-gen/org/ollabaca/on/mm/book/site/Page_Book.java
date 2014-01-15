@@ -6,17 +6,17 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.ollabaca.on.mm.book.Book;
-import org.ollabaca.on.mm.book.site.Section_Element;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.util.Html;
 import org.ollabaca.on.site.util.Levels;
 import org.ollabaca.on.site.util.Sites;
+import org.ollabaca.on.uml.Section_Element;
 
 @SuppressWarnings("all")
-public class BookToHtml {
-  public CharSequence html_Book(final Book self) {
+public class Page_Book {
+  public static CharSequence page_Book(final Book self) {
     CharSequence _xblockexpression = null;
     {
       Levels.reset();
@@ -181,7 +181,7 @@ public class BookToHtml {
     return _xblockexpression;
   }
   
-  public CharSequence title_Element(final Element self) {
+  public static CharSequence title_Element(final Element self) {
     String _xblockexpression = null;
     {
       final Topic topic = Sites.topic_EObject(self);
@@ -201,7 +201,7 @@ public class BookToHtml {
     return _xblockexpression;
   }
   
-  public CharSequence link(final Element self) {
+  public static CharSequence link(final Element self) {
     CharSequence _xblockexpression = null;
     {
       Site _site = Sites.site();
@@ -211,10 +211,10 @@ public class BookToHtml {
       if (_notEquals) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("<a href=\"#");
-        String _id = this.id(self);
+        String _id = Page_Book.id(self);
         _builder.append(_id, "");
         _builder.append("\">");
-        CharSequence _title_Element = this.title_Element(self);
+        CharSequence _title_Element = Page_Book.title_Element(self);
         _builder.append(_title_Element, "");
         _builder.append("</a>");
         _xifexpression = _builder;
@@ -226,24 +226,24 @@ public class BookToHtml {
     return _xblockexpression;
   }
   
-  public String id(final Object self) {
+  public static String id(final Object self) {
     int _identityHashCode = System.identityHashCode(self);
     String _hexString = Long.toHexString(_identityHashCode);
     return _hexString;
   }
   
-  protected boolean _isEmpty(final String self) {
+  protected static boolean _isEmpty(final String self) {
     String _trim = self.trim();
     int _length = _trim.length();
     boolean _equals = (_length == 0);
     return _equals;
   }
   
-  protected boolean _isEmpty(final Void self) {
+  protected static boolean _isEmpty(final Void self) {
     return true;
   }
   
-  public boolean isEmpty(final String self) {
+  public static boolean isEmpty(final String self) {
     if (self != null) {
       return _isEmpty(self);
     } else if (self == null) {

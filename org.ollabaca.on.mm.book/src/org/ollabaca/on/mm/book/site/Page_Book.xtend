@@ -8,10 +8,11 @@ import static extension org.ollabaca.on.site.servlets.Notation.*
 import static extension org.ollabaca.on.site.util.Html.*
 import static extension org.ollabaca.on.site.util.Sites.*
 import org.ollabaca.on.mm.book.Book
+import org.ollabaca.on.uml.Section_Element
 
-class BookToHtml {
+class Page_Book {
 	
-	def html_Book(Book self) {
+	static def page_Book(Book self) {
 		Levels::reset
 		'''
 		<!DOCTYPE html>
@@ -72,15 +73,8 @@ class BookToHtml {
 		</html>
 		'''
 	}
-	
-	
-	
-
-	
 		
-
-	
-	def CharSequence title_Element(Element self) {
+	static def CharSequence title_Element(Element self) {
 		val topic = self.topic_EObject
 		if (topic != null) {
 			return topic.title.span
@@ -90,7 +84,7 @@ class BookToHtml {
 		"<undef>".escape
 	}
 	
-	def link(Element self) {
+	static def link(Element self) {
 		val topic = site.getTopic(self)
 		if (topic != null) {
 			'''<a href="#«self.id»">«self.title_Element»</a>'''
@@ -99,15 +93,15 @@ class BookToHtml {
 		}
 	}
 	
-	def String id(Object self) {
+	static def String id(Object self) {
 		Long::toHexString(System::identityHashCode(self))
 	}
 	
-	def dispatch boolean isEmpty(String self) {
+	static def dispatch boolean isEmpty(String self) {
 		self.trim().length == 0
 	}
 	
-	def dispatch boolean isEmpty(Void self) {
+	static def dispatch boolean isEmpty(Void self) {
 		true
 	}
 }
