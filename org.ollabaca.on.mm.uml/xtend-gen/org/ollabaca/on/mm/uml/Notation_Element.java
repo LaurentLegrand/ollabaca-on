@@ -137,23 +137,23 @@ public class Notation_Element {
     return _xblockexpression;
   }
   
-  protected static CharSequence _notation_Element(final Operation self) {
+  protected static CharSequence _notation_Element(final Operation that) {
     CharSequence _xblockexpression = null;
     {
       StringBuilder _stringBuilder = new StringBuilder();
       final StringBuilder definition = _stringBuilder;
-      VisibilityKind _visibility = self.getVisibility();
+      VisibilityKind _visibility = that.getVisibility();
       CharSequence _notation_Element = Notation_Element.notation_Element(_visibility);
       StringBuilder _append = definition.append(_notation_Element);
-      CharSequence _link_EObject = Link.link_EObject(self);
+      CharSequence _link_EObject = Link.link_EObject(that);
       _append.append(_link_EObject);
-      CharSequence _notation_BehavioralFeature_OwnedParameters = Notation_Element.notation_BehavioralFeature_OwnedParameters(self);
+      CharSequence _notation_BehavioralFeature_OwnedParameters = Notation_Element.notation_BehavioralFeature_OwnedParameters(that);
       definition.append(_notation_BehavioralFeature_OwnedParameters);
-      EList<Parameter> _returnResult = self.returnResult();
+      EList<Parameter> _returnResult = that.returnResult();
       boolean _isEmpty = _returnResult.isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
-        EList<Parameter> _returnResult_1 = self.returnResult();
+        EList<Parameter> _returnResult_1 = that.returnResult();
         final Parameter ret = IterableExtensions.<Parameter>head(_returnResult_1);
         StringBuilder _append_1 = definition.append(":&nbsp;");
         Type _type = ret.getType();
@@ -163,21 +163,21 @@ public class Notation_Element {
         _append_2.append(_notation_Multiplicity);
       }
       final List<String> modifiers = CollectionLiterals.<String>newArrayList();
-      boolean _isQuery = self.isQuery();
+      boolean _isQuery = that.isQuery();
       if (_isQuery) {
         modifiers.add("query");
       }
-      EList<Operation> _redefinedOperations = self.getRedefinedOperations();
+      EList<Operation> _redefinedOperations = that.getRedefinedOperations();
       for (final Operation e : _redefinedOperations) {
         CharSequence _link_EObject_2 = Link.link_EObject(e);
         String _plus = ("redefines " + _link_EObject_2);
         modifiers.add(_plus);
       }
-      boolean _isOrdered = self.isOrdered();
+      boolean _isOrdered = that.isOrdered();
       if (_isOrdered) {
         modifiers.add("ordered");
       }
-      boolean _isUnique = self.isUnique();
+      boolean _isUnique = that.isUnique();
       if (_isUnique) {
         modifiers.add("unique");
       }

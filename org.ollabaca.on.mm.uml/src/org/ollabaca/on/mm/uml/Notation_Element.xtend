@@ -66,30 +66,30 @@ class Notation_Element {
 		'''<code>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " } "»«e»«ENDFOR»</code>'''
 	}
 	
-	static def dispatch CharSequence notation_Element(Operation self) {
+	static def dispatch CharSequence notation_Element(Operation that) {
 		val definition = new StringBuilder
 		
-		definition.append(self.visibility.notation_Element).append(self.link_EObject)
+		definition.append(that.visibility.notation_Element).append(that.link_EObject)
 		
-		definition.append(notation_BehavioralFeature_OwnedParameters(self))
+		definition.append(notation_BehavioralFeature_OwnedParameters(that))
 		
-		if (!self.returnResult.empty) {
-			val ret = self.returnResult.head
+		if (!that.returnResult().empty) {
+			val ret = that.returnResult().head
 			definition.append(":&nbsp;").
 			append(ret.type.link_EObject).append(ret.notation_Multiplicity)
 		}
 		
 		val List<String> modifiers = newArrayList()
-		if (self.query) {
+		if (that.query) {
 			modifiers.add("query")
 		}
-		for (e : self.redefinedOperations) {
+		for (e : that.redefinedOperations) {
 			modifiers.add("redefines " + e.link_EObject)
 		}
-		if (self.ordered) {
+		if (that.ordered) {
 			modifiers.add("ordered")
 		}
-		if (self.unique) {
+		if (that.unique) {
 			modifiers.add("unique")
 		}
 		

@@ -167,7 +167,7 @@ public class Page_Book {
       _builder.newLine();
       _builder.append("\t\t");
       CharSequence _section_Element = Section_Element.section_Element(self);
-      _builder.append(_section_Element, "		");
+      _builder.append(_section_Element, "\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
       _builder.append("</div>");

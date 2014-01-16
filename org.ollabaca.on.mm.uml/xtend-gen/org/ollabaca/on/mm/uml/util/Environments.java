@@ -127,7 +127,7 @@ public class Environments {
             _builder.append("\t\t");
             _builder.append("<dd><code>");
             String _deploymentLocation = it.getDeploymentLocation();
-            _builder.append(_deploymentLocation, "		");
+            _builder.append(_deploymentLocation, "\t\t");
             _builder.append("</code></dd>");
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
@@ -136,7 +136,7 @@ public class Environments {
             _builder.append("\t\t");
             _builder.append("<dd><code>");
             String _executionLocation = it.getExecutionLocation();
-            _builder.append(_executionLocation, "		");
+            _builder.append(_executionLocation, "\t\t");
             _builder.append("</code></dd>");
             _builder.newLineIfNotEmpty();
             _builder.append("\t");

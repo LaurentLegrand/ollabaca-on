@@ -24,7 +24,7 @@ public class Section_Book {
     _builder.append("<p>");
     Topic _pic_EObject = Sites.topic_EObject(self);
     CharSequence _title_Element = Title.title_Element(_pic_EObject);
-    _builder.append(_title_Element, "			");
+    _builder.append(_title_Element, "\t\t\t");
     _builder.append("</p>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -38,7 +38,7 @@ public class Section_Book {
     _builder.newLine();
     _builder.append("\t\t");
     CharSequence _c_BookElement = BookElements.toc_BookElement(self);
-    _builder.append(_c_BookElement, "		");
+    _builder.append(_c_BookElement, "\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("</div>");

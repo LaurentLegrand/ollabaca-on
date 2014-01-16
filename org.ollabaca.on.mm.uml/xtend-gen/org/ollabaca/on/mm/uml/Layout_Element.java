@@ -31,9 +31,9 @@ public class Layout_Element {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<h");
-    _builder.append(level, "			");
+    _builder.append(level, "\t\t\t");
     _builder.append(" class=\"marker text-right\">&nbsp;</h");
-    _builder.append(level, "			");
+    _builder.append(level, "\t\t\t");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -44,11 +44,11 @@ public class Layout_Element {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<h");
-    _builder.append(level, "			");
+    _builder.append(level, "\t\t\t");
     _builder.append(">");
-    _builder.append(title, "			");
+    _builder.append(title, "\t\t\t");
     _builder.append("</h");
-    _builder.append(level, "			");
+    _builder.append(level, "\t\t\t");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     {
@@ -56,7 +56,7 @@ public class Layout_Element {
       if (_notEquals) {
         _builder.append("\t\t\t");
         CharSequence _apply = body.apply(self);
-        _builder.append(_apply, "			");
+        _builder.append(_apply, "\t\t\t");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -71,7 +71,7 @@ public class Layout_Element {
       if (_notEquals_1) {
         _builder.append("\t");
         CharSequence _apply_1 = subsection.apply(self);
-        _builder.append(_apply_1, "	");
+        _builder.append(_apply_1, "\t");
         _builder.newLineIfNotEmpty();
       }
     }
