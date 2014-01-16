@@ -13,7 +13,7 @@ import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.util.Template;
 
 @SuppressWarnings("all")
-public class HTag extends Template<Element> {
+public class Component extends Template<Element> {
   /**
    * Tag attributes
    */
@@ -95,7 +95,7 @@ public class HTag extends Template<Element> {
   
   private final Function1<? super Element,? extends CharSequence> content;
   
-  public HTag(final String name, final Map<String,String> attrs, final Function1<? super Element,? extends CharSequence> content) {
+  public Component(final String name, final Map<String,String> attrs, final Function1<? super Element,? extends CharSequence> content) {
     this.name = name;
     this.attrs = attrs;
     this.content = content;

@@ -4,13 +4,13 @@ import java.util.List
 import org.eclipse.emf.ecore.EClass
 import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.Topic
-import org.ollabaca.on.site.util.HTag
+import org.ollabaca.on.site.util.Component
 
 import static extension org.ollabaca.on.site.servlets.Link.*
 import static extension org.ollabaca.on.site.servlets.Notation.*
 import static extension org.ollabaca.on.site.util.Html.*
 
-class Properties extends HTag {
+class Properties extends Component {
 
 	new() {
 		super("div", #{ "class" -> "properties"}, null)

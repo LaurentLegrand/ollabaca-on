@@ -11,12 +11,12 @@ import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Link;
-import org.ollabaca.on.site.util.HTag;
+import org.ollabaca.on.site.util.Component;
 import org.ollabaca.on.site.util.Html;
 import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
-public class Breadcrumb extends HTag {
+public class Breadcrumb extends Component {
   public Breadcrumb() {
     super("div", new Function0<Map<String,String>>() {
       public Map<String,String> apply() {

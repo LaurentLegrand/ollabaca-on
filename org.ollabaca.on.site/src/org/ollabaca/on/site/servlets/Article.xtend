@@ -8,14 +8,14 @@ import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.Topic
 import org.ollabaca.on.site.Type
 import org.ollabaca.on.site.Workspace
-import org.ollabaca.on.site.util.HTag
+import org.ollabaca.on.site.util.Component
 import org.ollabaca.on.site.util.Sites
 
 import static extension org.ollabaca.on.site.servlets.Link.*
 import static extension org.ollabaca.on.site.servlets.Notation.*
 import static extension org.ollabaca.on.site.util.Html.*
 
-class Article extends HTag {
+class Article extends Component {
 	
 	new() {
 		super("article", #{}, null)

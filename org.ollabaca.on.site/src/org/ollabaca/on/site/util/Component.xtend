@@ -8,7 +8,7 @@ import java.util.Map
 /**
  * 
  */
-class HTag extends Template<Element> {
+class Component extends Template<Element> {
 	
 	/**
 	 * Tag attributes
