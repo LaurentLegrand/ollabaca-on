@@ -17,5 +17,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.types;visibility:=reexport,
  org.eclipse.uml2.uml;bundle-version="4.1.0",
  org.ollabaca.on.site;bundle-version="1.0.0",
- org.ollabaca.on.uml;bundle-version="1.0.0"
+ org.ollabaca.on.mm.uml;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

@@ -9,9 +9,9 @@ import org.ollabaca.on.site.servlets.Page
 import org.ollabaca.on.site.util.Sites
 
 import static extension org.ollabaca.on.site.servlets.Ref.*
-import org.ollabaca.on.uml.Section_Element
-import org.ollabaca.on.uml.Section_Element_OwnedElements
-import org.ollabaca.on.uml.Body_Element
+import org.ollabaca.on.mm.uml.Section_Element
+import org.ollabaca.on.mm.uml.Section_Element_OwnedElements
+import org.ollabaca.on.mm.uml.Body_Element
 
 class BookSitePlugin implements SitePlugin {
 

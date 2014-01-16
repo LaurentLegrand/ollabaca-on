@@ -8,7 +8,7 @@ import org.ollabaca.on.mm.book.Book;
 import org.ollabaca.on.mm.book.Chapter;
 import org.ollabaca.on.mm.book.Part;
 import org.ollabaca.on.mm.book.Section;
-import org.ollabaca.on.uml.Section_Element;
+import org.ollabaca.on.mm.uml.Section_Element;
 
 @SuppressWarnings("all")
 public class Section_BookElement_OwnedElements {

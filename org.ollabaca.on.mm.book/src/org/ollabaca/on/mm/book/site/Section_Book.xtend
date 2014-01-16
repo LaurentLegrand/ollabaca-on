@@ -1,7 +1,7 @@
 package org.ollabaca.on.mm.book.site
 
 import org.ollabaca.on.mm.book.Book
-import org.ollabaca.on.uml.Section_Element_OwnedElements
+import org.ollabaca.on.mm.uml.Section_Element_OwnedElements
 
 import static extension org.ollabaca.on.mm.book.site.BookElements.*
 import static extension org.ollabaca.on.site.servlets.Title.*

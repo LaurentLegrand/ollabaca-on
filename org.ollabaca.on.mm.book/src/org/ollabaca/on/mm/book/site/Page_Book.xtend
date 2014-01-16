@@ -8,7 +8,7 @@ import static extension org.ollabaca.on.site.servlets.Notation.*
 import static extension org.ollabaca.on.site.util.Html.*
 import static extension org.ollabaca.on.site.util.Sites.*
 import org.ollabaca.on.mm.book.Book
-import org.ollabaca.on.uml.Section_Element
+import org.ollabaca.on.mm.uml.Section_Element
 
 class Page_Book {
 	

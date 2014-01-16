@@ -6,13 +6,13 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.ollabaca.on.mm.book.Book;
+import org.ollabaca.on.mm.uml.Section_Element;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.util.Html;
 import org.ollabaca.on.site.util.Levels;
 import org.ollabaca.on.site.util.Sites;
-import org.ollabaca.on.uml.Section_Element;
 
 @SuppressWarnings("all")
 public class Page_Book {

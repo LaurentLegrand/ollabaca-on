@@ -3,10 +3,10 @@ package org.ollabaca.on.mm.book.site;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.ollabaca.on.mm.book.Book;
 import org.ollabaca.on.mm.book.site.BookElements;
+import org.ollabaca.on.mm.uml.Section_Element_OwnedElements;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Title;
 import org.ollabaca.on.site.util.Sites;
-import org.ollabaca.on.uml.Section_Element_OwnedElements;
 
 @SuppressWarnings("all")
 public class Section_Book {

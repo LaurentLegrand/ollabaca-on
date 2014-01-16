@@ -11,6 +11,9 @@ import org.ollabaca.on.mm.book.site.BookElements;
 import org.ollabaca.on.mm.book.site.Page_Book;
 import org.ollabaca.on.mm.book.site.Section_Book;
 import org.ollabaca.on.mm.book.site.Section_BookElement_OwnedElements;
+import org.ollabaca.on.mm.uml.Body_Element;
+import org.ollabaca.on.mm.uml.Section_Element;
+import org.ollabaca.on.mm.uml.Section_Element_OwnedElements;
 import org.ollabaca.on.site.SitePlugin;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.renderers.Renderers;
@@ -19,9 +22,6 @@ import org.ollabaca.on.site.servlets.Page;
 import org.ollabaca.on.site.servlets.Ref;
 import org.ollabaca.on.site.servlets.Scope;
 import org.ollabaca.on.site.util.Sites;
-import org.ollabaca.on.uml.Body_Element;
-import org.ollabaca.on.uml.Section_Element;
-import org.ollabaca.on.uml.Section_Element_OwnedElements;
 
 @SuppressWarnings("all")
 public class BookSitePlugin implements SitePlugin {
