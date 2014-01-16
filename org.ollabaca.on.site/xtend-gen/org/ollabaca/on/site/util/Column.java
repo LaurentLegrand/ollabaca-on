@@ -19,9 +19,9 @@ public class Column<E extends Object> {
     return this._cell;
   }
   
-  public CharSequence apply(final E self) {
+  public CharSequence apply(final E object) {
     Function1<? super E,? extends CharSequence> _cell = this.getCell();
-    CharSequence _apply = _cell.apply(self);
+    CharSequence _apply = _cell.apply(object);
     return _apply;
   }
   

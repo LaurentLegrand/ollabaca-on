@@ -36,40 +36,40 @@ class BookRenderers {
 //		
 //	}
 //
-//	static def onTopic(Topic self) '''
+//	static def onTopic(Topic object) '''
 //		<script>
 //		$(document).ready(function() {
 //			$("#properties").before("<div id='«PATH»'></div>");
-//			$("#«PATH»").load("«scope(PATH, self).ref_Object»");
+//			$("#«PATH»").load("«scope(PATH, object).ref_Object»");
 //		});
 //		</script>
 //	'''
 //
-//	static def Text toSection(Topic self) {
-//		if (self.target instanceof Book) {
-//			var text = '''<a href="«scope(BOOK, self).ref_Object»" target="_blank">Read more...</a">'''
+//	static def Text toSection(Topic object) {
+//		if (object.target instanceof Book) {
+//			var text = '''<a href="«scope(BOOK, object).ref_Object»" target="_blank">Read more...</a">'''
 //			return new Text("text/html", text);
 //		}
-//		return new Text("text/html", section(self.target));
+//		return new Text("text/html", section(object.target));
 //	}
 //
-//	static def Text toBook(Topic self) {
-//		return new Text("text/html", bookToHtml.html_Book(self.target as Book));
+//	static def Text toBook(Topic object) {
+//		return new Text("text/html", bookToHtml.html_Book(object.target as Book));
 //	}
 //
-//	static def dispatch section(EObject self) {
+//	static def dispatch section(EObject object) {
 //		''''''
 //	}
 //	
-//	static def dispatch section(Element self) {
-//		Section_Element.section_Element(self)
+//	static def dispatch section(Element object) {
+//		Section_Element.section_Element(object)
 //	}
 //
-//	static def dispatch section(Package self) {
+//	static def dispatch section(Package object) {
 //		val List<List<Topic>> rows = newArrayList()
 //		var i = 0
 //		var List<Topic> current = null
-//		for (e : self.packagedElements) {
+//		for (e : object.packagedElements) {
 //			var t = site.getTopic(e)
 //			if (t != null) {
 //				if (i % 3 == 0) {
@@ -81,7 +81,7 @@ class BookRenderers {
 //			}
 //		}
 //		'''
-//			<section class="«self.eClass.name»">
+//			<section class="«object.eClass.name»">
 //			
 //			«FOR r : rows»
 //				<div class="row-fluid">
@@ -98,51 +98,51 @@ class BookRenderers {
 //		'''
 //	}
 //	
-////	static def dispatch section(Classifier self) {
-////		self.section_Element_OwnedElements
+////	static def dispatch section(Classifier object) {
+////		object.section_Element_OwnedElements
 ////	}
 //	
 //
 //
-////	def dispatch section(Element self) {
+////	def dispatch section(Element object) {
 ////		'''
-////		<section class="«self.eClass.name»">
-////			<p>TODO: «self.eClass.name.escape» : «self.toString.escape»</p>
+////		<section class="«object.eClass.name»">
+////			<p>TODO: «object.eClass.name.escape» : «object.toString.escape»</p>
 ////		</section>'''
 ////	}
 //
-//	def define(Property self) {
+//	def define(Property object) {
 //		'''
-//			<dt>«self.notation_Object»</dt>
-//			<dd>«self.doc»</dd>
-//		'''
-//	}
-//
-//	def define(Operation self) {
-//		'''
-//			<dt>«self.notation_Object»</dt>
-//			<dd>«self.doc»</dd>
+//			<dt>«object.notation_Object»</dt>
+//			<dd>«object.doc»</dd>
 //		'''
 //	}
 //
-//	def print(Association self, Type context) {
-//		if (self.endTypes.size == 1) { // the same type is involved on all ends
+//	def define(Operation object) {
+//		'''
+//			<dt>«object.notation_Object»</dt>
+//			<dd>«object.doc»</dd>
+//		'''
+//	}
+//
+//	def print(Association object, Type context) {
+//		if (object.endTypes.size == 1) { // the same type is involved on all ends
 //			'''
-//				«FOR e : self.ownedEnds»
+//				«FOR e : object.ownedEnds»
 //					«e.define»
 //				«ENDFOR»
 //			'''
 //		} else { // print only ends which type is not the context
 //			'''
-//				«FOR e : self.ownedEnds.filter[it|it.type != context]»
+//				«FOR e : object.ownedEnds.filter[it|it.type != context]»
 //					«e.define»
 //				«ENDFOR»
 //			'''
 //		}
 //	}
 //
-//	def doc(Element self) {
-//		val topic = site.getTopic(self)
+//	def doc(Element object) {
+//		val topic = site.getTopic(object)
 //		if (topic != null) {
 //			'''
 //				<div>
@@ -153,16 +153,16 @@ class BookRenderers {
 //		}
 //	}
 //
-//	def dispatch link(Element self) {
-//		val topic = site.getTopic(self)
+//	def dispatch link(Element object) {
+//		val topic = site.getTopic(object)
 //		if (topic != null) {
 //			return topic.link_EObject
 //		} else {
-//			return self.notation_Object
+//			return object.notation_Object
 //		}
 //
-//	//		if (self instanceof NamedElement) {
-//	//		'''<a href="«href»">«(self as NamedElement).name.escape»</a>'''
+//	//		if (object instanceof NamedElement) {
+//	//		'''<a href="«href»">«(object as NamedElement).name.escape»</a>'''
 //	//		} else if (topic != null) {
 //	//			topic.link
 //	//		} else {
@@ -170,7 +170,7 @@ class BookRenderers {
 //	//		}
 //	}
 //
-//	def dispatch link(Void self) {
+//	def dispatch link(Void object) {
 //		'''<code>null</code>'''
 //	}
 

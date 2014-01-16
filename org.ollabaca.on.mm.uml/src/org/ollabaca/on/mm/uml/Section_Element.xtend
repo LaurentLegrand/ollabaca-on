@@ -13,13 +13,13 @@ class Section_Element extends Template<Element> {
 	
 	public static val instance = new Section_Element()
 
-	static def section_Element(Element self) {
-		instance.transform(self)
+	static def section_Element(Element object) {
+		instance.transform(object)
 	}
 
-	override CharSequence doFallback(Element self) {
+	override CharSequence doFallback(Element object) {
 
-		Layout_Element.layout_Element(self.ref_Object.toString, self.topic_EObject.getTitle.span.toString, self,
+		Layout_Element.layout_Element(object.ref_Object.toString, object.topic_EObject.getTitle.span.toString, object,
 			[
 				'''
 					«Html::documentation_EObject(it)»

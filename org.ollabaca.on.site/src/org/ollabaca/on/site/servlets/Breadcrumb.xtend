@@ -14,16 +14,16 @@ class Breadcrumb extends HTag {
 		super("div", #{}, null)
 	}
 
-	dispatch def CharSequence content_Element(Topic self) '''
+	dispatch def CharSequence content_Element(Topic object) '''
 		<ul class="breadcrumb">
 			<li>«Sites::site.link_EObject» <span class="divider">/</span></li>
-			«FOR e: self.ancestors»
+			«FOR e: object.ancestors»
 				<li>«e.link_EObject» <span class="divider">/</span></li>
 			«ENDFOR»
-			<li class="active">«self.title.html»</li>
+			<li class="active">«object.title.html»</li>
 		</ul>	
 	'''
 	
-	def dispatch CharSequence content_Element(Element self) ''''''
+	def dispatch CharSequence content_Element(Element object) ''''''
 
 }

@@ -20,13 +20,13 @@ public class Attr<E extends Object> {
     return this._value;
   }
   
-  public CharSequence apply(final E self) {
+  public CharSequence apply(final E object) {
     StringConcatenation _builder = new StringConcatenation();
     String _name = this.getName();
     _builder.append(_name, "");
     _builder.append("=\"");
     Function1<? super E,? extends CharSequence> _value = this.getValue();
-    CharSequence _apply = _value.apply(self);
+    CharSequence _apply = _value.apply(object);
     _builder.append(_apply, "");
     _builder.append("\"");
     return _builder;

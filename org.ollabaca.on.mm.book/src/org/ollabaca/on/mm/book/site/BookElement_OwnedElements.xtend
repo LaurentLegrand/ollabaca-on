@@ -11,22 +11,22 @@ import static extension org.ollabaca.on.site.servlets.Link.*
 
 class BookElement_OwnedElements {
 	
-	static def dispatch CharSequence ul_BookElement_OwnedElements(BookElement self) '''
+	static def dispatch CharSequence ul_BookElement_OwnedElements(BookElement object) '''
 	'''
 	
-	static def dispatch CharSequence ul_BookElement_OwnedElements(Book self) {
-		ul(self.parts, [''' «it.link_EObject» «it.ul_BookElement_OwnedElements»''']) // TODO local link
+	static def dispatch CharSequence ul_BookElement_OwnedElements(Book object) {
+		ul(object.parts, [''' «it.link_EObject» «it.ul_BookElement_OwnedElements»''']) // TODO local link
 	}
 	
-	static def dispatch CharSequence ul_BookElement_OwnedElements(Part self) {
-		ul(self.chapters, [ ''' «it.link_EObject» «it.ul_BookElement_OwnedElements»''']) // TODO local link
+	static def dispatch CharSequence ul_BookElement_OwnedElements(Part object) {
+		ul(object.chapters, [ ''' «it.link_EObject» «it.ul_BookElement_OwnedElements»''']) // TODO local link
 	}
 
-	static def dispatch CharSequence ul_BookElement_OwnedElements(Section self) {
-		if (self.elements.empty && self.sections.empty) {
+	static def dispatch CharSequence ul_BookElement_OwnedElements(Section object) {
+		if (object.elements.empty && object.sections.empty) {
 			return ""
 		}
-		tag(self, "ul", 
+		tag(object, "ul", 
 			[
 				'''
 				«FOR e: it.elements»

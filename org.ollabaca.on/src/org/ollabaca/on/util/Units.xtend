@@ -24,8 +24,8 @@ import org.ollabaca.on.model.Value
 
 class Units {
 	
-	def Unit getUnit(EObject self) {
-		var EObject container = self.eContainer()
+	def Unit getUnit(EObject object) {
+		var EObject container = object.eContainer()
 		
 		while (container != null) {
 			if (container instanceof Unit) {
@@ -60,9 +60,9 @@ class Units {
 		return null;
 	}
 	
-	def EPackage[] getPackages(Unit self) {
+	def EPackage[] getPackages(Unit object) {
 		var List<EPackage> list = new ArrayList()
-		for (Import i: self.imports) {
+		for (Import i: object.imports) {
 			var EPackage p = Registry::INSTANCE.getEPackage(i.name)
 			if (p != null) {
 				list += p
@@ -72,9 +72,9 @@ class Units {
 		return list
 	}
 	
-	def Instance[] getAncestorsAndSelf(Instance self) {
+	def Instance[] getAncestorsAndSelf(Instance object) {
 		var List<Instance> list = newArrayList()
-		var Instance e = self;
+		var Instance e = object;
 		
 		do {
 			list.add(0, e)
@@ -84,8 +84,8 @@ class Units {
 		return list
 	}
 	
-	def Instance getParent(Instance self) {
-		var EObject e = self.eContainer;
+	def Instance getParent(Instance object) {
+		var EObject e = object.eContainer;
 		while (e != null) {
 			if (e instanceof Instance) {
 				return e as Instance
@@ -95,96 +95,96 @@ class Units {
 		// due to cross reference in multiple files (cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=338655), code below generate 
 		// "java.lang.AssertionError: Cyclic resolution of lazy links : Container.instance->Container.instance"
 		// 
-		/*if (self.unit.container != null && self.unit.container.instance != null) {
-			return self.unit.container.instance
+		/*if (object.unit.container != null && object.unit.container.instance != null) {
+			return object.unit.container.instance
 		}*/
 	}
 	
-	def EPackage getPackage(Import self) {
-		return Registry::INSTANCE.getEPackage(self.name)
+	def EPackage getPackage(Import object) {
+		return Registry::INSTANCE.getEPackage(object.name)
 	}
 	
-	def EClass[] getClasses(Import self) {
-		return getPackage(self).EClassifiers.filter(typeof(EClass))
+	def EClass[] getClasses(Import object) {
+		return getPackage(object).EClassifiers.filter(typeof(EClass))
 	}
 	
-	def EClass[] getClasses(Unit self) {
+	def EClass[] getClasses(Unit object) {
 		val List<EClass> list = new ArrayList()
-		self.imports.forEach(it | list.addAll(getClasses(it)))
+		object.imports.forEach(it | list.addAll(getClasses(it)))
 		return list
 	}
 	
-	def EStructuralFeature[] getFeatures(Instance self) {
-		getClassifier(self).EAllStructuralFeatures.filter(it | it.settable)
+	def EStructuralFeature[] getFeatures(Instance object) {
+		getClassifier(object).EAllStructuralFeatures.filter(it | it.settable)
 	}
 	
-	def EClass getClassifier(Instance self) {
-		val type = self.type
-		self.unit.classes.findFirst[it.name == type]
+	def EClass getClassifier(Instance object) {
+		val type = object.type
+		object.unit.classes.findFirst[it.name == type]
 	}
 	
-	def EStructuralFeature getFeature(Slot self) {
-		val name = self.name
-		self.instance.features.findFirst[it.name == name]
+	def EStructuralFeature getFeature(Slot object) {
+		val name = object.name
+		object.instance.features.findFirst[it.name == name]
 	}
 	
-	def EStructuralFeature getFeature(Instance self, String name) {
-		self.features.findFirst[it.name == name]
+	def EStructuralFeature getFeature(Instance object, String name) {
+		object.features.findFirst[it.name == name]
 	}
 	
-	def EReference getReference(Slot self) {
-		if (self.feature instanceof EReference) self.feature as EReference
+	def EReference getReference(Slot object) {
+		if (object.feature instanceof EReference) object.feature as EReference
 	}
 	
-	def EEnum getEnum(Slot self) {
-		if (self.feature?.EType instanceof EEnum) {
-			return self.feature.EType as EEnum
+	def EEnum getEnum(Slot object) {
+		if (object.feature?.EType instanceof EEnum) {
+			return object.feature.EType as EEnum
 		}
 	}
 	
-	def boolean isSettable(EStructuralFeature self) {
-		return self.changeable// && !self.derived
+	def boolean isSettable(EStructuralFeature object) {
+		return object.changeable// && !object.derived
 	}
 	
-	def  boolean isMandatory(EStructuralFeature self) {
-		return self.lowerBound > 0 && self.defaultValueLiteral == null
+	def  boolean isMandatory(EStructuralFeature object) {
+		return object.lowerBound > 0 && object.defaultValueLiteral == null
 	}
 	
-	def  dispatch boolean isValid(Value self) {
+	def  dispatch boolean isValid(Value object) {
 		false
 	}
 	
-	def  dispatch boolean isValid(Array self) {
-		self.slot.feature.many
+	def  dispatch boolean isValid(Array object) {
+		object.slot.feature.many
 	}
 	
-	def  dispatch boolean isValid(InstanceRef self) {
+	def  dispatch boolean isValid(InstanceRef object) {
 
 		// Specific check: ECore class seems to be an hidden / secret supertype
-		if (EcorePackage::eINSTANCE.EObject.equals(self.slot.feature.EType)) {
+		if (EcorePackage::eINSTANCE.EObject.equals(object.slot.feature.EType)) {
 			return true
 		}
 		System::out.format("VALIDATION IS VALID REF: %s = supertype: %s : current type: %s\n", 
-			(self.slot.feature.EType as EClass).isSuperTypeOf(self.value.classifier)
-			, self.slot.feature.EType, self.value.classifier
+			(object.slot.feature.EType as EClass).isSuperTypeOf(object.value.classifier)
+			, object.slot.feature.EType, object.value.classifier
 		)
 		
-		(self.slot.feature.EType as EClass).isSuperTypeOf(self.value.classifier)
+		(object.slot.feature.EType as EClass).isSuperTypeOf(object.value.classifier)
 	}
 	
-	def  dispatch boolean isValidInstance(BooleanValue self) {
-		var o = self.slot?.feature?.EType?.instanceClass
+	def  dispatch boolean isValidInstance(BooleanValue object) {
+		var o = object.slot?.feature?.EType?.instanceClass
 		System::out.println(o)
 		return Boolean::TYPE.equals(o) || typeof(Boolean).equals(o) 
 	}
 	
-	def  dispatch boolean isValidInstance(StringValue self) {
-		var o = self.slot?.feature?.EType?.instanceClass
+	def  dispatch boolean isValidInstance(StringValue object) {
+		var o = object.slot?.feature?.EType?.instanceClass
 		return typeof(String).equals(o)
 	}
 	
-	def  String getDocumentation(EModelElement self) {
-		var EAnnotation a = self.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")
+	def  String getDocumentation(EModelElement object) {
+		var EAnnotation a = object.getEAnnotation("http://www.eclipse.org/emf/2002/GenModel")
 		if (a == null) {
 			return null;
 		} else {

@@ -33,7 +33,7 @@ public class ObjectNotationProposalProvider extends AbstractObjectNotationPropos
 
 	Units units = new Units();
 
-	public void completeInstance_Type(Instance self, Assignment assignment,
+	public void completeInstance_Type(Instance object, Assignment assignment,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// TODO Auto-generated method stub
 		// super.completeInstance_Type(model, assignment, context, acceptor);
@@ -41,9 +41,9 @@ public class ObjectNotationProposalProvider extends AbstractObjectNotationPropos
 		// System.out.println(this + ": " + model);
 
 		List<EClass> list = new ArrayList<>(Arrays.asList(units
-				.getClasses(units.getUnit(self))));
+				.getClasses(units.getUnit(object))));
 
-		Slot slot = units.getSlot(self);
+		Slot slot = units.getSlot(object);
 		if (slot != null) {
 			EReference reference = units.getReference(slot);
 			if (reference != null) {
@@ -67,12 +67,12 @@ public class ObjectNotationProposalProvider extends AbstractObjectNotationPropos
 
 	}
 
-	public void completeInstance_Slots(Instance self, Assignment assignment,
+	public void completeInstance_Slots(Instance object, Assignment assignment,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall) assignment.getTerminal()), context,
 				acceptor);
 
-		for (EStructuralFeature feature : units.getFeatures(self)) {
+		for (EStructuralFeature feature : units.getFeatures(object)) {
 			// System.out.println(feature.getName());
 			acceptor.accept(createCompletionProposal(String.format("%s = ", feature.getName()), context));
 

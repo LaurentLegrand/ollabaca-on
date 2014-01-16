@@ -5,8 +5,8 @@ import org.ollabaca.on.mm.uml.Section_Element
 
 class BehavioredClassifiers {
 
-	static def CharSequence section_BehavioredClassifier_OwnedBehaviors(BehavioredClassifier self) '''
-		«FOR e : self.ownedBehaviors»
+	static def CharSequence section_BehavioredClassifier_OwnedBehaviors(BehavioredClassifier object) '''
+		«FOR e : object.ownedBehaviors»
 			«Section_Element.section_Element(e)»
 		«ENDFOR»
 	'''

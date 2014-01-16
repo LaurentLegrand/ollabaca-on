@@ -24,42 +24,42 @@ class Notation_Element {
 		Notation::instance.register(typeof(Element), [if(it instanceof Element) notation_Element(it as Element)])
 	}
 
-	static def dispatch CharSequence notation_Element(Element self) {
+	static def dispatch CharSequence notation_Element(Element object) {
 	}
 
-	static def dispatch CharSequence notation_Element(Property self) {
+	static def dispatch CharSequence notation_Element(Property object) {
 
 		val definition = new StringBuilder
-		if (self.derived) {
+		if (object.derived) {
 			definition.append('/')
 		}
 
-		definition.append(self.visibility.notation_Element).append(self.link_EObject).append(":&nbsp;").append(
-			self.type.link_EObject).append(self.notation_Multiplicity)
+		definition.append(object.visibility.notation_Element).append(object.link_EObject).append(":&nbsp;").append(
+			object.type.link_EObject).append(object.notation_Multiplicity)
 
-		if (self.setDefault) {
-			definition.append(" = ").append(self.^default)
+		if (object.setDefault) {
+			definition.append(" = ").append(object.^default)
 		}
 		val List<String> modifiers = newArrayList()
-		if (self.readOnly) {
+		if (object.readOnly) {
 			modifiers.add("readOnly")
 		}
-		if (self.derivedUnion) {
+		if (object.derivedUnion) {
 			modifiers.add("union")
 		}
-		for (Property e : self.subsettedProperties) {
+		for (Property e : object.subsettedProperties) {
 			modifiers.add("subsets " + e.link_EObject)
 		}
-		for (Property e : self.redefinedProperties) {
+		for (Property e : object.redefinedProperties) {
 			modifiers.add("redefines " + e.link_EObject)
 		}
-		if (self.ordered) {
+		if (object.ordered) {
 			modifiers.add("ordered")
 		}
-		if (self.unique && self.multivalued) {
+		if (object.unique && object.multivalued) {
 			modifiers.add("unique")
 		}
-		if (self.isID) {
+		if (object.isID) {
 			modifiers.add("id")
 		}
 
@@ -96,35 +96,35 @@ class Notation_Element {
 		'''<code>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " } "»«e»«ENDFOR»</code>'''
 	}
 
-	static def dispatch CharSequence notation_Element(Parameter self) {
+	static def dispatch CharSequence notation_Element(Parameter object) {
 		val definition = new StringBuilder
 
-		definition.append(self.direction.notation_Element).append("&nbsp;").append(self.link_EObject).append(":&nbsp;").
-			append(self.type.link_EObject).append(self.notation_Multiplicity)
+		definition.append(object.direction.notation_Element).append("&nbsp;").append(object.link_EObject).append(":&nbsp;").
+			append(object.type.link_EObject).append(object.notation_Multiplicity)
 
-		if (self.setDefault) {
-			definition.append(" = ").append(self.^default)
+		if (object.setDefault) {
+			definition.append(" = ").append(object.^default)
 		}
 
 		'''«definition»'''
 	}
 
-	static def CharSequence notation_BehavioralFeature_OwnedParameters(BehavioralFeature self) '''(«FOR e : self.
+	static def CharSequence notation_BehavioralFeature_OwnedParameters(BehavioralFeature object) '''(«FOR e : object.
 		ownedParameters.filter[direction != ParameterDirectionKind::RETURN_LITERAL] SEPARATOR ", "»«e.notation_Element»«ENDFOR»)'''
 
-	static def CharSequence notation_Multiplicity(MultiplicityElement self) {
-		switch self {
-			case self.lower == 0 && self.upper == 0:
+	static def CharSequence notation_Multiplicity(MultiplicityElement object) {
+		switch object {
+			case object.lower == 0 && object.upper == 0:
 				""
-			case self.lower == 1 && self.upper == 1:
+			case object.lower == 1 && object.upper == 1:
 				"[1]"
-			case self.upper > 0: '''[«self.lower»..«self.upper»]'''
-			default: '''[«self.lower»..*]'''
+			case object.upper > 0: '''[«object.lower»..«object.upper»]'''
+			default: '''[«object.lower»..*]'''
 		}
 	}
 
-	static def dispatch CharSequence notation_Element(ParameterDirectionKind self) {
-		switch self {
+	static def dispatch CharSequence notation_Element(ParameterDirectionKind object) {
+		switch object {
 			case ParameterDirectionKind::IN_LITERAL: 'in'
 			case ParameterDirectionKind::OUT_LITERAL: 'out'
 			case ParameterDirectionKind::INOUT_LITERAL: 'inout'
@@ -132,8 +132,8 @@ class Notation_Element {
 		}
 	}
 
-	static def dispatch CharSequence notation_Element(VisibilityKind self) {
-		switch self {
+	static def dispatch CharSequence notation_Element(VisibilityKind object) {
+		switch object {
 			case VisibilityKind::PUBLIC_LITERAL: '+'
 			case VisibilityKind::PRIVATE_LITERAL: '-'
 			case VisibilityKind::PROTECTED_LITERAL: '#'
@@ -141,24 +141,24 @@ class Notation_Element {
 		}
 	}
 
-	static def dispatch CharSequence notation_Element(LiteralBoolean self) {
-		'''<code>«self.value»</code> as <code>Boolean</code>'''
+	static def dispatch CharSequence notation_Element(LiteralBoolean object) {
+		'''<code>«object.value»</code> as <code>Boolean</code>'''
 	}
 
-	static def dispatch CharSequence notation_Element(LiteralUnlimitedNatural self) {
-		'''<code>«self.value»</code> as <code>UnlimitedNatural</code>'''
+	static def dispatch CharSequence notation_Element(LiteralUnlimitedNatural object) {
+		'''<code>«object.value»</code> as <code>UnlimitedNatural</code>'''
 	}
 
-	static def dispatch CharSequence notation_Element(LiteralInteger self) {
-		'''<code>«self.value»</code> as <code>Integer</code>'''
+	static def dispatch CharSequence notation_Element(LiteralInteger object) {
+		'''<code>«object.value»</code> as <code>Integer</code>'''
 	}
 
-	static def dispatch CharSequence notation_Element(LiteralString self) {
-		'''<code>«self.value»</code> as <code>String</code>'''
+	static def dispatch CharSequence notation_Element(LiteralString object) {
+		'''<code>«object.value»</code> as <code>String</code>'''
 	}
 	
-	static def dispatch CharSequence notation_Element(Generalization self) {
-		'''«self.specific.link_EObject» &#8680; «self.general.link_EObject»'''
+	static def dispatch CharSequence notation_Element(Generalization object) {
+		'''«object.specific.link_EObject» &#8680; «object.general.link_EObject»'''
 	}
 
 }

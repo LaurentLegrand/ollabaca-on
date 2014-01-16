@@ -19,43 +19,43 @@ class Ref extends Template<Object> {
 
 	public static val Ref instance = new Ref()
 
-	static def ref_Object(Object self) {
-		instance.transform(self)
+	static def ref_Object(Object object) {
+		instance.transform(object)
 	}
 	
 	static def Scope scope(String path, EObject target) {
 		new Scope(path, target)
 	}
 
-	def dispatch CharSequence doFallback(Void self) {
+	def dispatch CharSequence doFallback(Void object) {
 		"null"
 	}
 
-	def dispatch CharSequence doFallback(EObject self) {
-		ref_Object(new Scope("pages", self))
+	def dispatch CharSequence doFallback(EObject object) {
+		ref_Object(new Scope("pages", object))
 	}
 
-	def dispatch CharSequence doFallback(Scope self) {
-		path(self.path, self.target)
+	def dispatch CharSequence doFallback(Scope object) {
+		path(object.path, object.target)
 	}
 
-	def dispatch String path(String scope, Site self) {
-		'''/site/«scope»/«self.name»'''
+	def dispatch String path(String scope, Site object) {
+		'''/site/«scope»/«object.name»'''
 	}
 
-	def dispatch String path(String scope, Topic self) {
-		'''/site/«scope»/«Sites::site.name»/topics/«self.name»'''
+	def dispatch String path(String scope, Topic object) {
+		'''/site/«scope»/«Sites::site.name»/topics/«object.name»'''
 	}
 
-	def dispatch String path(String scope, Tag self) {
-		'''/site/«scope»/«Sites::site.name»/tags/«self.name»'''
+	def dispatch String path(String scope, Tag object) {
+		'''/site/«scope»/«Sites::site.name»/tags/«object.name»'''
 	}
 
-	def dispatch String path(String scope, EObject self) {
-		'''/site/«scope»/«Sites::site.name»/unknwon/«self»'''
+	def dispatch String path(String scope, EObject object) {
+		'''/site/«scope»/«Sites::site.name»/unknwon/«object»'''
 	}
 
-	def dispatch String path(String scope, Type self) {
-		'''/site/«scope»/«Sites::site.name»/types/«self.name»'''
+	def dispatch String path(String scope, Type object) {
+		'''/site/«scope»/«Sites::site.name»/types/«object.name»'''
 	}
 }

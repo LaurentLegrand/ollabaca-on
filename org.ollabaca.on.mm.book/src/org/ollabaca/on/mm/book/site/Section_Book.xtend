@@ -9,17 +9,17 @@ import static extension org.ollabaca.on.site.util.Sites.*
 
 class Section_Book {
 
-	static def CharSequence section_Book(Book self) '''
+	static def CharSequence section_Book(Book object) '''
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="page-header">
-					<p>«self.topic_EObject.title_Element»</p>
+					<p>«object.topic_EObject.title_Element»</p>
 				</div>
 			</div>
 			<div class="span12">
-				«self.toc_BookElement»
+				«object.toc_BookElement»
 			</div>
 		</div>
-		«Section_Element_OwnedElements::section_Element_OwnedElements(self)»
+		«Section_Element_OwnedElements::section_Element_OwnedElements(object)»
 	'''
 }

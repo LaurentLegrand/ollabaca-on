@@ -9,8 +9,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class StructuredClassifiers {
-  public CharSequence definition_list_StructuredClassifier_Parts(final StructuredClassifier self) {
-    EList<Property> _parts = self.getParts();
+  public CharSequence definition_list_StructuredClassifier_Parts(final StructuredClassifier object) {
+    EList<Property> _parts = object.getParts();
     final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
       public CharSequence apply(final Property it) {
         CharSequence _notation_Object = Notation.notation_Object(it);

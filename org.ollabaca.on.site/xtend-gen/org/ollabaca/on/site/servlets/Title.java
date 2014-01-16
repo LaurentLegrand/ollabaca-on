@@ -20,67 +20,67 @@ public class Title extends Template<Element> {
     }
   }.apply();
   
-  public static CharSequence title_Element(final Element self) {
-    CharSequence _transform = Title.instance.transform(self);
+  public static CharSequence title_Element(final Element object) {
+    CharSequence _transform = Title.instance.transform(object);
     return _transform;
   }
   
-  protected CharSequence _doFallback(final Site self) {
+  protected CharSequence _doFallback(final Site object) {
     StringConcatenation _builder = new StringConcatenation();
-    String _name = self.getName();
+    String _name = object.getName();
     _builder.append(_name, "");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final EObject self) {
+  protected CharSequence _doFallback(final EObject object) {
     StringConcatenation _builder = new StringConcatenation();
-    Site _site_Object = Sites.site_Object(self);
+    Site _site_Object = Sites.site_Object(object);
     String _name = _site_Object.getName();
     _builder.append(_name, "");
     _builder.append(" - ");
-    Topic _pic_EObject = Sites.topic_EObject(self);
+    Topic _pic_EObject = Sites.topic_EObject(object);
     String _title = _pic_EObject.getTitle();
     _builder.append(_title, "");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final Element self) {
+  protected CharSequence _doFallback(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
-    Site _site_Object = Sites.site_Object(self);
+    Site _site_Object = Sites.site_Object(object);
     String _name = _site_Object.getName();
     _builder.append(_name, "");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final Named self) {
+  protected CharSequence _doFallback(final Named object) {
     StringConcatenation _builder = new StringConcatenation();
-    Site _site_Object = Sites.site_Object(self);
+    Site _site_Object = Sites.site_Object(object);
     String _name = _site_Object.getName();
     _builder.append(_name, "");
     _builder.append(" - ");
-    String _name_1 = self.getName();
+    String _name_1 = object.getName();
     _builder.append(_name_1, "");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final Void self) {
+  protected CharSequence _doFallback(final Void object) {
     return "";
   }
   
-  public CharSequence doFallback(final EObject self) {
-    if (self instanceof Site) {
-      return _doFallback((Site)self);
-    } else if (self instanceof Named) {
-      return _doFallback((Named)self);
-    } else if (self instanceof Element) {
-      return _doFallback((Element)self);
-    } else if (self != null) {
-      return _doFallback(self);
-    } else if (self == null) {
+  public CharSequence doFallback(final EObject object) {
+    if (object instanceof Site) {
+      return _doFallback((Site)object);
+    } else if (object instanceof Named) {
+      return _doFallback((Named)object);
+    } else if (object instanceof Element) {
+      return _doFallback((Element)object);
+    } else if (object != null) {
+      return _doFallback(object);
+    } else if (object == null) {
       return _doFallback((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

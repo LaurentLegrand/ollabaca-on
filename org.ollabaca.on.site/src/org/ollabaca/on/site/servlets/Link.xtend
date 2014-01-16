@@ -15,46 +15,46 @@ class Link extends Template<EObject> {
 
 	public static val Link instance = new Link()
 
-	static def link_EObject(EObject self) {
-		instance.transform(self)
+	static def link_EObject(EObject object) {
+		instance.transform(object)
 	}
 
-	def dispatch CharSequence doFallback(Void self) {
+	def dispatch CharSequence doFallback(Void object) {
 		"null"
 	}
 
-	def dispatch CharSequence doFallback(Named self) {
-		'''<a href="«Ref::ref_Object(self)»">«self.name»</a>'''
+	def dispatch CharSequence doFallback(Named object) {
+		'''<a href="«Ref::ref_Object(object)»">«object.name»</a>'''
 	}
 
-	def dispatch CharSequence doFallback(Type self) {
-		'''<a href="«Ref::ref_Object(self)»">«self.name.split("\\.").last»</a>'''
+	def dispatch CharSequence doFallback(Type object) {
+		'''<a href="«Ref::ref_Object(object)»">«object.name.split("\\.").last»</a>'''
 	}
 
-	def dispatch CharSequence doFallback(Topic self) {
-		'''<a href="«Ref::ref_Object(self)»">«self.title.span»</a>'''
+	def dispatch CharSequence doFallback(Topic object) {
+		'''<a href="«Ref::ref_Object(object)»">«object.title.span»</a>'''
 	}
 
 
-	def dispatch CharSequence doFallback(EClass self) {
-		val type = Sites::type_EClass(self)
+	def dispatch CharSequence doFallback(EClass object) {
+		val type = Sites::type_EClass(object)
 		if (type == null) {
-			self.name
+			object.name
 		} else {
 			link_EObject(type)
 		}		
 	}
 	
-	def dispatch CharSequence doFallback(EObject self) {
-		val topic = Sites::topic_EObject(self)
+	def dispatch CharSequence doFallback(EObject object) {
+		val topic = Sites::topic_EObject(object)
 		if (topic == null) {
-			self.toString
+			object.toString
 		} else {
 			link_EObject(topic)
 		}		
 	}
 
-	def dispatch CharSequence doFallback(Element self) {
+	def dispatch CharSequence doFallback(Element object) {
 		link_EObject(Sites::site)
 	}
 

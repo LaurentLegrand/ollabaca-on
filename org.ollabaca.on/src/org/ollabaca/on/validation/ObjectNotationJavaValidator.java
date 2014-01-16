@@ -24,32 +24,32 @@ public class ObjectNotationJavaValidator extends
 	Units units = new Units();
 
 	@Check
-	void verify(Import self) {
-		if (units.getPackage(self) == null) {
-			error(String.format("package [%s] not found", self.getName()),
+	void verify(Import object) {
+		if (units.getPackage(object) == null) {
+			error(String.format("package [%s] not found", object.getName()),
 					ModelPackage.Literals.IMPORT__NAME);
 		}
 	}
 
 	@Check
-	void verify(Instance self) {
-		EClass type = units.getClassifier(self);
+	void verify(Instance object) {
+		EClass type = units.getClassifier(object);
 		if (type == null) {
-			error(String.format("type [%s] does not exist", self.getType()),
+			error(String.format("type [%s] does not exist", object.getType()),
 					ModelPackage.Literals.INSTANCE__TYPE);
 			return;
 		}
 
 		if (type.isAbstract()) {
-			error(String.format("type [%s] is abstract", self.getType()),
+			error(String.format("type [%s] is abstract", object.getType()),
 					ModelPackage.Literals.INSTANCE__TYPE);
 		}
 
 		// verify mandatory slots
-		for (EStructuralFeature feature : units.getFeatures(self)) {
+		for (EStructuralFeature feature : units.getFeatures(object)) {
 			if (units.isMandatory(feature)) {
 				boolean found = false;
-				for (Slot slot : self.getSlots()) {
+				for (Slot slot : object.getSlots()) {
 					if (slot.getName().equals(feature.getName())) {
 						found = true;
 						break;
@@ -72,17 +72,17 @@ public class ObjectNotationJavaValidator extends
 	}
 
 	@Check
-	void verify(Slot self) {
-		EStructuralFeature feature = units.getFeature(self);
+	void verify(Slot object) {
+		EStructuralFeature feature = units.getFeature(object);
 		if (feature == null) {
-			error(String.format("feature [%s] not found", self.getName()),
+			error(String.format("feature [%s] not found", object.getName()),
 					ModelPackage.Literals.SLOT__NAME);
 			return;
 		}
 		
 		// enhancement #21 array is optionnal
 		
-//		Value value = self.getValue();
+//		Value value = object.getValue();
 
 //		if (feature.isMany() && value != null && !(value instanceof Array)) {
 //			error(String.format("value shall be an array"),
@@ -92,8 +92,8 @@ public class ObjectNotationJavaValidator extends
 	}
 
 	@Check
-	void verify(Literal self) {
-		EStructuralFeature feature = units.getFeature(units.getSlot(self));
+	void verify(Literal object) {
+		EStructuralFeature feature = units.getFeature(units.getSlot(object));
 		if (feature != null && !(feature instanceof EAttribute)) {
 			error(String.format("literal cannot be used on references"),
 					ModelPackage.Literals.SLOT__VALUE);
@@ -101,44 +101,44 @@ public class ObjectNotationJavaValidator extends
 	}
 
 	@Check
-	void verify(Array self) {
-		if (!units.isValid(self)) {
+	void verify(Array object) {
+		if (!units.isValid(object)) {
 			error(String.format("array is not valid for mutliplicity"),
 					ModelPackage.Literals.ARRAY__VALUE);
 		}
 	}
 
 	@Check
-	void verify(BooleanValue self) {
-		if (!units.isValidInstance(self)) {
+	void verify(BooleanValue object) {
+		if (!units.isValidInstance(object)) {
 			error(String.format("value is not valid for type"),
 					ModelPackage.Literals.BOOLEAN_VALUE__VALUE);
 		}
 	}
 
 	@Check
-	void verify(StringValue self) {
+	void verify(StringValue object) {
 		// TODO
-		// if (!units.isValidInstance(self)) {
+		// if (!units.isValidInstance(object)) {
 		// error(String.format("value is not valid for type"),
 		// OnPackage.Literals.LITERAL__VALUE);
 		// }
 	}
 
 	@Check
-	void verify(InstanceRef self) {
-		if (!units.isValid(self)) {
+	void verify(InstanceRef object) {
+		if (!units.isValid(object)) {
 			error(String.format("value is not of type [%s]",
-					units.getFeature(units.getSlot(self)).getEType().getName()),
+					units.getFeature(units.getSlot(object)).getEType().getName()),
 					ModelPackage.Literals.INSTANCE_REF__VALUE);
 		}
 	}
 
 	@Check
-	void verify(Container self) {
-		if (units.getFeature(self.getInstance(), self.getFeature()) == null) {
+	void verify(Container object) {
+		if (units.getFeature(object.getInstance(), object.getFeature()) == null) {
 			error(String.format("feature [%s] does not exist",
-					self.getFeature()),
+					object.getFeature()),
 					ModelPackage.Literals.CONTAINER__FEATURE);
 		}
 	}

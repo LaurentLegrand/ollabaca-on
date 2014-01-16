@@ -15,32 +15,32 @@ public privileged aspect Transfers {
 		super.setName(name);
 	}
 
-//	after(TransferImpl self) : execution(TransferImpl.new(..)) && this(self) {
-//		self.debit = GtbrFactory.eINSTANCE.createDebit();
-//		self.credit = GtbrFactory.eINSTANCE.createCredit();
+//	after(TransferImpl object) : execution(TransferImpl.new(..)) && this(object) {
+//		object.debit = GtbrFactory.eINSTANCE.createDebit();
+//		object.credit = GtbrFactory.eINSTANCE.createCredit();
 //	}
 
-	after(TransferImpl self, String name) returning: execution(* TransferImpl.setName(..)) && this(self) && args(name) {
-		this.getDebit(self).setName(name + " - Debit");
-		this.getCredit(self).setName(name + " - Credit");
+	after(TransferImpl object, String name) returning: execution(* TransferImpl.setName(..)) && this(object) && args(name) {
+		this.getDebit(object).setName(name + " - Debit");
+		this.getCredit(object).setName(name + " - Credit");
 	}
 	
-	after(TransferImpl self, Date date) returning: execution(* TransferImpl.setDate(..)) && this(self) && args(date) {
-		this.getDebit(self).setDate(date);
-		this.getCredit(self).setDate(date);
+	after(TransferImpl object, Date date) returning: execution(* TransferImpl.setDate(..)) && this(object) && args(date) {
+		this.getDebit(object).setDate(date);
+		this.getCredit(object).setDate(date);
 	}
 
-	after(TransferImpl self, double amount) returning: execution(* TransferImpl.setAmount(..)) && this(self) && args(amount) {
-		this.getDebit(self).setAmount(amount);
-		this.getCredit(self).setAmount(amount);
+	after(TransferImpl object, double amount) returning: execution(* TransferImpl.setAmount(..)) && this(object) && args(amount) {
+		this.getDebit(object).setAmount(amount);
+		this.getCredit(object).setAmount(amount);
 	}
 	
-	after(TransferImpl self, Account from) returning: execution(* TransferImpl.setFrom(..)) && this(self) && args(from) {
-		this.getDebit(self).setAccount(from);
+	after(TransferImpl object, Account from) returning: execution(* TransferImpl.setFrom(..)) && this(object) && args(from) {
+		this.getDebit(object).setAccount(from);
 	}
 	
-	after(TransferImpl self, Account to) returning: execution(* TransferImpl.setTo(..)) && this(self) && args(to) {
-		this.getCredit(self).setAccount(to);
+	after(TransferImpl object, Account to) returning: execution(* TransferImpl.setTo(..)) && this(object) && args(to) {
+		this.getCredit(object).setAccount(to);
 	}
 	
 	// does not work: Account still have reference to de-serialized record
@@ -50,38 +50,38 @@ public privileged aspect Transfers {
 //	void around() : call(* TransferImpl.setCredit(..)) && withincode(void eSet(int, Object)) {
 //	}
 	
-	void around(TransferImpl self, Debit debit) : execution(* TransferImpl.setDebit(..)) && this(self) && args(debit) {
-		Debit previous = self.getDebit();
-		proceed(self, debit);
+	void around(TransferImpl object, Debit debit) : execution(* TransferImpl.setDebit(..)) && this(object) && args(debit) {
+		Debit previous = object.getDebit();
+		proceed(object, debit);
 		if (previous != null && previous != debit) {
 			previous.setAccount(null);
 			EcoreUtil.delete(previous);
 		}
 	}
 	
-	void around(TransferImpl self, Credit credit) : execution(* TransferImpl.setCredit(..)) && this(self) && args(credit) {
-		Credit previous = self.getCredit();
-		proceed(self, credit);
+	void around(TransferImpl object, Credit credit) : execution(* TransferImpl.setCredit(..)) && this(object) && args(credit) {
+		Credit previous = object.getCredit();
+		proceed(object, credit);
 		if (previous != null && previous != credit) {
 			previous.setAccount(null);
 			EcoreUtil.delete(previous);
 		}
 	}
 	
-	Debit getDebit(TransferImpl self) {
-		Debit debit = self.getDebit();
+	Debit getDebit(TransferImpl object) {
+		Debit debit = object.getDebit();
 		if (debit == null) {
 			debit = GtbrFactory.eINSTANCE.createDebit();
-			self.setDebit(debit);
+			object.setDebit(debit);
 		}
 		return debit;
 	}
 	
-	Credit getCredit(TransferImpl self) {
-		Credit credit = self.getCredit();
+	Credit getCredit(TransferImpl object) {
+		Credit credit = object.getCredit();
 		if (credit == null) {
 			credit = GtbrFactory.eINSTANCE.createCredit();
-			self.setCredit(credit);
+			object.setCredit(credit);
 		}
 		return credit;
 	}

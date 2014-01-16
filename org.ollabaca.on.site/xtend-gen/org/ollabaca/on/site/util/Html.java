@@ -38,23 +38,23 @@ public class Html {
     }
   }.apply();
   
-  public static String html(final String self) {
-    String _markdownToHtml = Html.processor.markdownToHtml(self, Html.linkRenderer);
+  public static String html(final String object) {
+    String _markdownToHtml = Html.processor.markdownToHtml(object, Html.linkRenderer);
     return _markdownToHtml;
   }
   
-  protected static CharSequence _span(final Void self) {
+  protected static CharSequence _span(final Void object) {
     return "null";
   }
   
-  protected static CharSequence _span(final CharSequence self) {
-    String _string = self.toString();
+  protected static CharSequence _span(final CharSequence object) {
+    String _string = object.toString();
     CharSequence __span = Html._span(_string);
     return __span;
   }
   
-  protected static CharSequence _span(final String self) {
-    char[] _charArray = self.toCharArray();
+  protected static CharSequence _span(final String object) {
+    char[] _charArray = object.toCharArray();
     final RootNode node = Html.processor.parseMarkdown(_charArray);
     InlineSerializer _inlineSerializer = new InlineSerializer(Html.linkRenderer);
     final String span = _inlineSerializer.toHtml(node);
@@ -76,13 +76,13 @@ public class Html {
     return _column;
   }
   
-  public static <E extends Object> CharSequence tag(final E self, final String name, final Function1<? super E,? extends CharSequence> content) {
+  public static <E extends Object> CharSequence tag(final E object, final String name, final Function1<? super E,? extends CharSequence> content) {
     Content<E> _content = Html.<E>content(content);
-    CharSequence _tag = Html.<E>tag(self, name, Collections.<Attr<E>>unmodifiableList(Lists.<Attr<E>>newArrayList()), Collections.<Content<E>>unmodifiableList(Lists.<Content<E>>newArrayList(_content)));
+    CharSequence _tag = Html.<E>tag(object, name, Collections.<Attr<E>>unmodifiableList(Lists.<Attr<E>>newArrayList()), Collections.<Content<E>>unmodifiableList(Lists.<Content<E>>newArrayList(_content)));
     return _tag;
   }
   
-  public static <E extends Object> CharSequence tag(final E self, final String name, final List<Attr<E>> attributes, final List<Content<E>> contents) {
+  public static <E extends Object> CharSequence tag(final E object, final String name, final List<Attr<E>> attributes, final List<Content<E>> contents) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<");
     _builder.append(name, "");
@@ -90,7 +90,7 @@ public class Html {
     {
       for(final Attr<E> e : attributes) {
         _builder.append(" ");
-        CharSequence _apply = e.apply(self);
+        CharSequence _apply = e.apply(object);
         _builder.append(_apply, "");
         _builder.append(" ");
       }
@@ -99,7 +99,7 @@ public class Html {
     _builder.newLineIfNotEmpty();
     {
       for(final Content<E> e_1 : contents) {
-        CharSequence _apply_1 = e_1.apply(self);
+        CharSequence _apply_1 = e_1.apply(object);
         _builder.append(_apply_1, "");
         _builder.newLineIfNotEmpty();
       }
@@ -111,17 +111,17 @@ public class Html {
     return _builder;
   }
   
-  public static <E extends Object> CharSequence dl(final Iterable<? extends E> self, final Function1<? super E,? extends CharSequence> term, final Function1<? super E,? extends CharSequence> definition) {
+  public static <E extends Object> CharSequence dl(final Iterable<? extends E> object, final Function1<? super E,? extends CharSequence> term, final Function1<? super E,? extends CharSequence> definition) {
     Content<E> _content = Html.<E>content(term);
     Content<E> _content_1 = Html.<E>content(definition);
-    CharSequence _dl = Html.<E>dl(self, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content, _content_1);
+    CharSequence _dl = Html.<E>dl(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content, _content_1);
     return _dl;
   }
   
-  public static <E extends Object> CharSequence dl(final Iterable<? extends E> self, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> term, final Content<E> definition) {
+  public static <E extends Object> CharSequence dl(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> term, final Content<E> definition) {
     CharSequence _xblockexpression = null;
     {
-      boolean _isEmpty = IterableExtensions.isEmpty(self);
+      boolean _isEmpty = IterableExtensions.isEmpty(object);
       if (_isEmpty) {
         return "";
       }
@@ -140,54 +140,54 @@ public class Html {
         }
       };
       Content<Iterable<? extends E>> _content = Html.<Iterable<? extends E>>content(_function);
-      CharSequence _tag = Html.<Iterable<? extends E>>tag(self, "dl", attributes, 
+      CharSequence _tag = Html.<Iterable<? extends E>>tag(object, "dl", attributes, 
         Collections.<Content<Iterable<? extends E>>>unmodifiableList(Lists.<Content<Iterable<? extends E>>>newArrayList(_content)));
       _xblockexpression = (_tag);
     }
     return _xblockexpression;
   }
   
-  public static <E extends Object> CharSequence definition(final E self, final Content<E> term, final Content<E> definition) {
+  public static <E extends Object> CharSequence definition(final E object, final Content<E> term, final Content<E> definition) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<dt>");
-    CharSequence _apply = term.apply(self);
+    CharSequence _apply = term.apply(object);
     _builder.append(_apply, "");
     _builder.append("</dt>");
     _builder.newLineIfNotEmpty();
     _builder.append("<dd>");
-    CharSequence _apply_1 = definition.apply(self);
+    CharSequence _apply_1 = definition.apply(object);
     _builder.append(_apply_1, "");
     _builder.append("</dd>");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public static <E extends Object> CharSequence ol(final Iterable<? extends E> self, final Function1<? super E,? extends CharSequence> item) {
+  public static <E extends Object> CharSequence ol(final Iterable<? extends E> object, final Function1<? super E,? extends CharSequence> item) {
     Content<E> _content = Html.<E>content(item);
-    CharSequence _ol = Html.<E>ol(self, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
+    CharSequence _ol = Html.<E>ol(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
     return _ol;
   }
   
-  public static <E extends Object> CharSequence ol(final Iterable<? extends E> self, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
-    CharSequence _list = Html.<E>list(self, "ol", attributes, item);
+  public static <E extends Object> CharSequence ol(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
+    CharSequence _list = Html.<E>list(object, "ol", attributes, item);
     return _list;
   }
   
-  public static <E extends Object> CharSequence ul(final Iterable<? extends E> self, final Function1<? super E,? extends CharSequence> item) {
+  public static <E extends Object> CharSequence ul(final Iterable<? extends E> object, final Function1<? super E,? extends CharSequence> item) {
     Content<E> _content = Html.<E>content(item);
-    CharSequence _ul = Html.<E>ul(self, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
+    CharSequence _ul = Html.<E>ul(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
     return _ul;
   }
   
-  public static <E extends Object> CharSequence ul(final Iterable<? extends E> self, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
-    CharSequence _list = Html.<E>list(self, "ul", attributes, item);
+  public static <E extends Object> CharSequence ul(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
+    CharSequence _list = Html.<E>list(object, "ul", attributes, item);
     return _list;
   }
   
-  public static <E extends Object> CharSequence list(final Iterable<? extends E> self, final String name, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
+  public static <E extends Object> CharSequence list(final Iterable<? extends E> object, final String name, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
     CharSequence _xblockexpression = null;
     {
-      boolean _isEmpty = IterableExtensions.isEmpty(self);
+      boolean _isEmpty = IterableExtensions.isEmpty(object);
       if (_isEmpty) {
         return "";
       }
@@ -207,7 +207,7 @@ public class Html {
         }
       };
       Content<Iterable<? extends E>> _content = Html.<Iterable<? extends E>>content(_function);
-      CharSequence _tag = Html.<Iterable<? extends E>>tag(self, name, attributes, 
+      CharSequence _tag = Html.<Iterable<? extends E>>tag(object, name, attributes, 
         Collections.<Content<Iterable<? extends E>>>unmodifiableList(Lists.<Content<Iterable<? extends E>>>newArrayList(_content)));
       _xblockexpression = (_tag);
     }
@@ -230,7 +230,7 @@ public class Html {
         _builder.append("\t");
         _builder.append("<th>");
         String _name = c.getName();
-        _builder.append(_name, "	");
+        _builder.append(_name, "\t");
         _builder.append("</th>");
         _builder.newLineIfNotEmpty();
       }
@@ -255,7 +255,7 @@ public class Html {
             _builder.append("<td>");
             Function1<? super E,? extends CharSequence> _cell = c_1.getCell();
             CharSequence _apply = _cell.apply(e);
-            _builder.append(_apply, "	");
+            _builder.append(_apply, "\t");
             _builder.append("</td>");
             _builder.newLineIfNotEmpty();
           }
@@ -273,18 +273,18 @@ public class Html {
     return _builder;
   }
   
-  public static String escape(final String self) {
-    String _escapeHtml4 = StringEscapeUtils.escapeHtml4(self);
+  public static String escape(final String object) {
+    String _escapeHtml4 = StringEscapeUtils.escapeHtml4(object);
     return _escapeHtml4;
   }
   
-  public static String escapeEcmaScript(final String self) {
-    String _escapeEcmaScript = StringEscapeUtils.escapeEcmaScript(self);
+  public static String escapeEcmaScript(final String object) {
+    String _escapeEcmaScript = StringEscapeUtils.escapeEcmaScript(object);
     return _escapeEcmaScript;
   }
   
-  public static CharSequence abstract_EObject(final EObject self) {
-    final Topic topic = Sites.topic_EObject(self);
+  public static CharSequence abstract_EObject(final EObject object) {
+    final Topic topic = Sites.topic_EObject(object);
     boolean _notEquals = (!Objects.equal(topic, null));
     if (_notEquals) {
       String _abstract = topic.getAbstract();
@@ -293,10 +293,10 @@ public class Html {
     return "";
   }
   
-  public static CharSequence documentation_EObject(final EObject self) {
+  public static CharSequence documentation_EObject(final EObject object) {
     String _xblockexpression = null;
     {
-      final Topic topic = Sites.topic_EObject(self);
+      final Topic topic = Sites.topic_EObject(object);
       boolean _notEquals = (!Objects.equal(topic, null));
       if (_notEquals) {
         StringConcatenation _builder = new StringConcatenation();
@@ -319,16 +319,16 @@ public class Html {
     return _xblockexpression;
   }
   
-  public static CharSequence span(final CharSequence self) {
-    if (self instanceof String) {
-      return _span((String)self);
-    } else if (self != null) {
-      return _span(self);
-    } else if (self == null) {
+  public static CharSequence span(final CharSequence object) {
+    if (object instanceof String) {
+      return _span((String)object);
+    } else if (object != null) {
+      return _span(object);
+    } else if (object == null) {
       return _span((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

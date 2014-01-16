@@ -27,34 +27,34 @@ public class Link extends Template<EObject> {
     }
   }.apply();
   
-  public static CharSequence link_EObject(final EObject self) {
-    CharSequence _transform = Link.instance.transform(self);
+  public static CharSequence link_EObject(final EObject object) {
+    CharSequence _transform = Link.instance.transform(object);
     return _transform;
   }
   
-  protected CharSequence _doFallback(final Void self) {
+  protected CharSequence _doFallback(final Void object) {
     return "null";
   }
   
-  protected CharSequence _doFallback(final Named self) {
+  protected CharSequence _doFallback(final Named object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
-    CharSequence _ref_Object = Ref.ref_Object(self);
+    CharSequence _ref_Object = Ref.ref_Object(object);
     _builder.append(_ref_Object, "");
     _builder.append("\">");
-    String _name = self.getName();
+    String _name = object.getName();
     _builder.append(_name, "");
     _builder.append("</a>");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final Type self) {
+  protected CharSequence _doFallback(final Type object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
-    CharSequence _ref_Object = Ref.ref_Object(self);
+    CharSequence _ref_Object = Ref.ref_Object(object);
     _builder.append(_ref_Object, "");
     _builder.append("\">");
-    String _name = self.getName();
+    String _name = object.getName();
     String[] _split = _name.split("\\.");
     String _last = IterableExtensions.<String>last(((Iterable<String>)Conversions.doWrapArray(_split)));
     _builder.append(_last, "");
@@ -62,27 +62,27 @@ public class Link extends Template<EObject> {
     return _builder;
   }
   
-  protected CharSequence _doFallback(final Topic self) {
+  protected CharSequence _doFallback(final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<a href=\"");
-    CharSequence _ref_Object = Ref.ref_Object(self);
+    CharSequence _ref_Object = Ref.ref_Object(object);
     _builder.append(_ref_Object, "");
     _builder.append("\">");
-    String _title = self.getTitle();
+    String _title = object.getTitle();
     CharSequence _span = Html.span(_title);
     _builder.append(_span, "");
     _builder.append("</a>");
     return _builder;
   }
   
-  protected CharSequence _doFallback(final EClass self) {
+  protected CharSequence _doFallback(final EClass object) {
     CharSequence _xblockexpression = null;
     {
-      final Type type = Sites.type_EClass(self);
+      final Type type = Sites.type_EClass(object);
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(type, null);
       if (_equals) {
-        String _name = self.getName();
+        String _name = object.getName();
         _xifexpression = _name;
       } else {
         CharSequence _link_EObject = Link.link_EObject(type);
@@ -93,14 +93,14 @@ public class Link extends Template<EObject> {
     return _xblockexpression;
   }
   
-  protected CharSequence _doFallback(final EObject self) {
+  protected CharSequence _doFallback(final EObject object) {
     CharSequence _xblockexpression = null;
     {
-      final Topic topic = Sites.topic_EObject(self);
+      final Topic topic = Sites.topic_EObject(object);
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(topic, null);
       if (_equals) {
-        String _string = self.toString();
+        String _string = object.toString();
         _xifexpression = _string;
       } else {
         CharSequence _link_EObject = Link.link_EObject(topic);
@@ -111,30 +111,30 @@ public class Link extends Template<EObject> {
     return _xblockexpression;
   }
   
-  protected CharSequence _doFallback(final Element self) {
+  protected CharSequence _doFallback(final Element object) {
     Site _site = Sites.site();
     CharSequence _link_EObject = Link.link_EObject(_site);
     return _link_EObject;
   }
   
-  public CharSequence doFallback(final EObject self) {
-    if (self instanceof EClass) {
-      return _doFallback((EClass)self);
-    } else if (self instanceof Topic) {
-      return _doFallback((Topic)self);
-    } else if (self instanceof Type) {
-      return _doFallback((Type)self);
-    } else if (self instanceof Named) {
-      return _doFallback((Named)self);
-    } else if (self instanceof Element) {
-      return _doFallback((Element)self);
-    } else if (self != null) {
-      return _doFallback(self);
-    } else if (self == null) {
+  public CharSequence doFallback(final EObject object) {
+    if (object instanceof EClass) {
+      return _doFallback((EClass)object);
+    } else if (object instanceof Topic) {
+      return _doFallback((Topic)object);
+    } else if (object instanceof Type) {
+      return _doFallback((Type)object);
+    } else if (object instanceof Named) {
+      return _doFallback((Named)object);
+    } else if (object instanceof Element) {
+      return _doFallback((Element)object);
+    } else if (object != null) {
+      return _doFallback(object);
+    } else if (object == null) {
       return _doFallback((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

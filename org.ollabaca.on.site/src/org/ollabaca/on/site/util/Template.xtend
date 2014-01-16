@@ -13,12 +13,12 @@ class Template<E> extends Transformer<E, CharSequence> {
 	/**
 	 * Call all transformers and the callback and concat all non null results
 	 */
-	def CharSequence concat(E self) {
+	def CharSequence concat(E object) {
 		val builder = new StringBuilder
 		for (e : transformers.entrySet) {
 			try {
-				if (e.key.isInstance(self)) {
-					val o = e.value.apply(self)
+				if (e.key.isInstance(object)) {
+					val o = e.value.apply(object)
 					if (o != null) {
 						builder.append(o)
 					}
@@ -28,7 +28,7 @@ class Template<E> extends Transformer<E, CharSequence> {
 			}
 		}
 		try {
-			val o = self.doFallback
+			val o = object.doFallback
 			if (o != null) {
 				builder.append(o)
 			}

@@ -11,9 +11,9 @@ import static org.ollabaca.on.site.util.Html.*
 
 class Table_Account {
 		
-	static def CharSequence table_Account(Account self) {
+	static def CharSequence table_Account(Account object) {
 		table(
-			self.records.sortBy[date], 
+			object.records.sortBy[date], 
 			#[],
 			#[
 				column("Name", [Record it | Link::link_EObject(it)]),

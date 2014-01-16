@@ -40,19 +40,19 @@ public class Properties extends HTag {
     }
   }.apply();
   
-  public static CharSequence properties_Element(final Element self) {
-    CharSequence _transform = Properties.instance.transform(self);
+  public static CharSequence properties_Element(final Element object) {
+    CharSequence _transform = Properties.instance.transform(object);
     return _transform;
   }
   
-  protected CharSequence _content_Element(final Topic self) {
+  protected CharSequence _content_Element(final Topic object) {
     CharSequence _xblockexpression = null;
     {
       final List<EClass> types = CollectionLiterals.<EClass>newArrayList();
-      EObject _target = self.getTarget();
+      EObject _target = object.getTarget();
       EClass _eClass = _target.eClass();
       types.add(_eClass);
-      EObject _target_1 = self.getTarget();
+      EObject _target_1 = object.getTarget();
       EClass _eClass_1 = _target_1.eClass();
       EList<EClass> _eAllSuperTypes = _eClass_1.getEAllSuperTypes();
       types.addAll(_eAllSuperTypes);
@@ -97,10 +97,10 @@ public class Properties extends HTag {
                       _builder.append("<th scope=\"row\" rowspan=\"");
                       EList<EStructuralFeature> _eStructuralFeatures_3 = t.getEStructuralFeatures();
                       int _size_1 = _eStructuralFeatures_3.size();
-                      _builder.append(_size_1, "			");
+                      _builder.append(_size_1, "\t\t\t");
                       _builder.append("\">");
                       CharSequence _link_EObject = Link.link_EObject(t);
-                      _builder.append(_link_EObject, "			");
+                      _builder.append(_link_EObject, "\t\t\t");
                       _builder.append("</th>");
                       _builder.newLineIfNotEmpty();
                     }
@@ -110,16 +110,16 @@ public class Properties extends HTag {
                   _builder.append("<th scope=\"row\">");
                   String _name = f.getName();
                   String _escape = Html.escape(_name);
-                  _builder.append(_escape, "			");
+                  _builder.append(_escape, "\t\t\t");
                   _builder.append("</th>");
                   _builder.newLineIfNotEmpty();
                   _builder.append("\t\t");
                   _builder.append("\t");
                   _builder.append("<td>");
-                  EObject _target_2 = self.getTarget();
+                  EObject _target_2 = object.getTarget();
                   Object _eGet = _target_2.eGet(f);
                   CharSequence _notation_Object = Notation.notation_Object(_eGet);
-                  _builder.append(_notation_Object, "			");
+                  _builder.append(_notation_Object, "\t\t\t");
                   _builder.append("</td>");
                   _builder.newLineIfNotEmpty();
                   _builder.append("\t\t");
@@ -147,26 +147,26 @@ public class Properties extends HTag {
     return _xblockexpression;
   }
   
-  protected CharSequence _content_Element(final Element self) {
+  protected CharSequence _content_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected CharSequence _content_Element(final Void self) {
+  protected CharSequence _content_Element(final Void object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  public CharSequence content_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _content_Element((Topic)self);
-    } else if (self != null) {
-      return _content_Element(self);
-    } else if (self == null) {
+  public CharSequence content_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _content_Element((Topic)object);
+    } else if (object != null) {
+      return _content_Element(object);
+    } else if (object == null) {
       return _content_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

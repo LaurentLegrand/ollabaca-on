@@ -10,7 +10,7 @@ import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
 public class Section_Book {
-  public static CharSequence section_Book(final Book self) {
+  public static CharSequence section_Book(final Book object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div class=\"row-fluid\">");
     _builder.newLine();
@@ -22,7 +22,7 @@ public class Section_Book {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<p>");
-    Topic _pic_EObject = Sites.topic_EObject(self);
+    Topic _pic_EObject = Sites.topic_EObject(object);
     CharSequence _title_Element = Title.title_Element(_pic_EObject);
     _builder.append(_title_Element, "\t\t\t");
     _builder.append("</p>");
@@ -37,7 +37,7 @@ public class Section_Book {
     _builder.append("<div class=\"span12\">");
     _builder.newLine();
     _builder.append("\t\t");
-    CharSequence _c_BookElement = BookElements.toc_BookElement(self);
+    CharSequence _c_BookElement = BookElements.toc_BookElement(object);
     _builder.append(_c_BookElement, "\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -45,7 +45,7 @@ public class Section_Book {
     _builder.newLine();
     _builder.append("</div>");
     _builder.newLine();
-    CharSequence _section_Element_OwnedElements = Section_Element_OwnedElements.section_Element_OwnedElements(self);
+    CharSequence _section_Element_OwnedElements = Section_Element_OwnedElements.section_Element_OwnedElements(object);
     _builder.append(_section_Element_OwnedElements, "");
     _builder.newLineIfNotEmpty();
     return _builder;

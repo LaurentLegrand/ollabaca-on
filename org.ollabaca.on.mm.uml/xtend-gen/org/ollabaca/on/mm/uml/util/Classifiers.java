@@ -13,8 +13,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Classifiers {
-  public static CharSequence dl_Classifier_Associations(final Classifier self) {
-    List<Property> _associationEnds = Types.getAssociationEnds(self);
+  public static CharSequence dl_Classifier_Associations(final Classifier object) {
+    List<Property> _associationEnds = Types.getAssociationEnds(object);
     final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
       public CharSequence apply(final Property it) {
         CharSequence _notation_Object = Notation.notation_Object(it);
@@ -31,8 +31,8 @@ public class Classifiers {
     return _dl;
   }
   
-  public static CharSequence ul_Classifier_Generals(final Classifier self) {
-    EList<Classifier> _generals = self.getGenerals();
+  public static CharSequence ul_Classifier_Generals(final Classifier object) {
+    EList<Classifier> _generals = object.getGenerals();
     final Function1<Classifier,CharSequence> _function = new Function1<Classifier,CharSequence>() {
       public CharSequence apply(final Classifier it) {
         CharSequence _link_EObject = Link.link_EObject(it);
@@ -43,8 +43,8 @@ public class Classifiers {
     return _ul;
   }
   
-  public static CharSequence dl_Classifier_Attributes(final Classifier self) {
-    EList<Property> _attributes = self.getAttributes();
+  public static CharSequence dl_Classifier_Attributes(final Classifier object) {
+    EList<Property> _attributes = object.getAttributes();
     final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
       public CharSequence apply(final Property it) {
         CharSequence _notation_Object = Notation.notation_Object(it);
@@ -61,8 +61,8 @@ public class Classifiers {
     return _dl;
   }
   
-  public static CharSequence dl_Classifier_Operations(final Classifier self) {
-    EList<Operation> _operations = self.getOperations();
+  public static CharSequence dl_Classifier_Operations(final Classifier object) {
+    EList<Operation> _operations = object.getOperations();
     final Function1<Operation,CharSequence> _function = new Function1<Operation,CharSequence>() {
       public CharSequence apply(final Operation it) {
         CharSequence _notation_Object = Notation.notation_Object(it);

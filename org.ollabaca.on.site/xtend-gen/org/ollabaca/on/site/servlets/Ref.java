@@ -21,8 +21,8 @@ public class Ref extends Template<Object> {
     }
   }.apply();
   
-  public static CharSequence ref_Object(final Object self) {
-    CharSequence _transform = Ref.instance.transform(self);
+  public static CharSequence ref_Object(final Object object) {
+    CharSequence _transform = Ref.instance.transform(object);
     return _transform;
   }
   
@@ -31,34 +31,34 @@ public class Ref extends Template<Object> {
     return _scope;
   }
   
-  protected CharSequence _doFallback(final Void self) {
+  protected CharSequence _doFallback(final Void object) {
     return "null";
   }
   
-  protected CharSequence _doFallback(final EObject self) {
-    Scope _scope = new Scope("pages", self);
+  protected CharSequence _doFallback(final EObject object) {
+    Scope _scope = new Scope("pages", object);
     CharSequence _ref_Object = Ref.ref_Object(_scope);
     return _ref_Object;
   }
   
-  protected CharSequence _doFallback(final Scope self) {
-    String _path = self.getPath();
-    EObject _target = self.getTarget();
+  protected CharSequence _doFallback(final Scope object) {
+    String _path = object.getPath();
+    EObject _target = object.getTarget();
     String _path_1 = this.path(_path, _target);
     return _path_1;
   }
   
-  protected String _path(final String scope, final Site self) {
+  protected String _path(final String scope, final Site object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/site/");
     _builder.append(scope, "");
     _builder.append("/");
-    String _name = self.getName();
+    String _name = object.getName();
     _builder.append(_name, "");
     return _builder.toString();
   }
   
-  protected String _path(final String scope, final Topic self) {
+  protected String _path(final String scope, final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/site/");
     _builder.append(scope, "");
@@ -67,12 +67,12 @@ public class Ref extends Template<Object> {
     String _name = _site.getName();
     _builder.append(_name, "");
     _builder.append("/topics/");
-    String _name_1 = self.getName();
+    String _name_1 = object.getName();
     _builder.append(_name_1, "");
     return _builder.toString();
   }
   
-  protected String _path(final String scope, final Tag self) {
+  protected String _path(final String scope, final Tag object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/site/");
     _builder.append(scope, "");
@@ -81,12 +81,12 @@ public class Ref extends Template<Object> {
     String _name = _site.getName();
     _builder.append(_name, "");
     _builder.append("/tags/");
-    String _name_1 = self.getName();
+    String _name_1 = object.getName();
     _builder.append(_name_1, "");
     return _builder.toString();
   }
   
-  protected String _path(final String scope, final EObject self) {
+  protected String _path(final String scope, final EObject object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/site/");
     _builder.append(scope, "");
@@ -95,11 +95,11 @@ public class Ref extends Template<Object> {
     String _name = _site.getName();
     _builder.append(_name, "");
     _builder.append("/unknwon/");
-    _builder.append(self, "");
+    _builder.append(object, "");
     return _builder.toString();
   }
   
-  protected String _path(final String scope, final Type self) {
+  protected String _path(final String scope, final Type object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("/site/");
     _builder.append(scope, "");
@@ -108,38 +108,38 @@ public class Ref extends Template<Object> {
     String _name = _site.getName();
     _builder.append(_name, "");
     _builder.append("/types/");
-    String _name_1 = self.getName();
+    String _name_1 = object.getName();
     _builder.append(_name_1, "");
     return _builder.toString();
   }
   
-  public CharSequence doFallback(final Object self) {
-    if (self instanceof EObject) {
-      return _doFallback((EObject)self);
-    } else if (self == null) {
+  public CharSequence doFallback(final Object object) {
+    if (object instanceof EObject) {
+      return _doFallback((EObject)object);
+    } else if (object == null) {
       return _doFallback((Void)null);
-    } else if (self instanceof Scope) {
-      return _doFallback((Scope)self);
+    } else if (object instanceof Scope) {
+      return _doFallback((Scope)object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
   
-  public String path(final String scope, final EObject self) {
-    if (self instanceof Site) {
-      return _path(scope, (Site)self);
-    } else if (self instanceof Tag) {
-      return _path(scope, (Tag)self);
-    } else if (self instanceof Topic) {
-      return _path(scope, (Topic)self);
-    } else if (self instanceof Type) {
-      return _path(scope, (Type)self);
-    } else if (self != null) {
-      return _path(scope, self);
+  public String path(final String scope, final EObject object) {
+    if (object instanceof Site) {
+      return _path(scope, (Site)object);
+    } else if (object instanceof Tag) {
+      return _path(scope, (Tag)object);
+    } else if (object instanceof Topic) {
+      return _path(scope, (Topic)object);
+    } else if (object instanceof Type) {
+      return _path(scope, (Type)object);
+    } else if (object != null) {
+      return _path(scope, object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(scope, self).toString());
+        Arrays.<Object>asList(scope, object).toString());
     }
   }
 }

@@ -13,8 +13,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Namespaces {
-  public static CharSequence ordered_list_Namespace_OwnedRules(final Namespace self) {
-    EList<Constraint> _ownedRules = self.getOwnedRules();
+  public static CharSequence ordered_list_Namespace_OwnedRules(final Namespace object) {
+    EList<Constraint> _ownedRules = object.getOwnedRules();
     final Function1<Constraint,CharSequence> _function = new Function1<Constraint,CharSequence>() {
       public CharSequence apply(final Constraint it) {
         CharSequence _div_Constraint = Constraints.div_Constraint(it);

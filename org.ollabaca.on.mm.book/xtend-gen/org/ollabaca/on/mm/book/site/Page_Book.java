@@ -16,7 +16,7 @@ import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
 public class Page_Book {
-  public static CharSequence page_Book(final Book self) {
+  public static CharSequence page_Book(final Book object) {
     CharSequence _xblockexpression = null;
     {
       Levels.reset();
@@ -166,7 +166,7 @@ public class Page_Book {
       _builder.append("<div class=\"container-fluid\">");
       _builder.newLine();
       _builder.append("\t\t");
-      CharSequence _section_Element = Section_Element.section_Element(self);
+      CharSequence _section_Element = Section_Element.section_Element(object);
       _builder.append(_section_Element, "\t\t");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
@@ -181,17 +181,17 @@ public class Page_Book {
     return _xblockexpression;
   }
   
-  public static CharSequence title_Element(final Element self) {
+  public static CharSequence title_Element(final Element object) {
     String _xblockexpression = null;
     {
-      final Topic topic = Sites.topic_EObject(self);
+      final Topic topic = Sites.topic_EObject(object);
       boolean _notEquals = (!Objects.equal(topic, null));
       if (_notEquals) {
         String _title = topic.getTitle();
         return Html.span(_title);
       } else {
-        if ((self instanceof NamedElement)) {
-          String _name = ((NamedElement) self).getName();
+        if ((object instanceof NamedElement)) {
+          String _name = ((NamedElement) object).getName();
           return Html.span(_name);
         }
       }
@@ -201,56 +201,56 @@ public class Page_Book {
     return _xblockexpression;
   }
   
-  public static CharSequence link(final Element self) {
+  public static CharSequence link(final Element object) {
     CharSequence _xblockexpression = null;
     {
       Site _site = Sites.site();
-      final Topic topic = _site.getTopic(self);
+      final Topic topic = _site.getTopic(object);
       CharSequence _xifexpression = null;
       boolean _notEquals = (!Objects.equal(topic, null));
       if (_notEquals) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("<a href=\"#");
-        String _id = Page_Book.id(self);
+        String _id = Page_Book.id(object);
         _builder.append(_id, "");
         _builder.append("\">");
-        CharSequence _title_Element = Page_Book.title_Element(self);
+        CharSequence _title_Element = Page_Book.title_Element(object);
         _builder.append(_title_Element, "");
         _builder.append("</a>");
         _xifexpression = _builder;
       } else {
-        return Notation.notation_Object(self);
+        return Notation.notation_Object(object);
       }
       _xblockexpression = (_xifexpression);
     }
     return _xblockexpression;
   }
   
-  public static String id(final Object self) {
-    int _identityHashCode = System.identityHashCode(self);
+  public static String id(final Object object) {
+    int _identityHashCode = System.identityHashCode(object);
     String _hexString = Long.toHexString(_identityHashCode);
     return _hexString;
   }
   
-  protected static boolean _isEmpty(final String self) {
-    String _trim = self.trim();
+  protected static boolean _isEmpty(final String object) {
+    String _trim = object.trim();
     int _length = _trim.length();
     boolean _equals = (_length == 0);
     return _equals;
   }
   
-  protected static boolean _isEmpty(final Void self) {
+  protected static boolean _isEmpty(final Void object) {
     return true;
   }
   
-  public static boolean isEmpty(final String self) {
-    if (self != null) {
-      return _isEmpty(self);
-    } else if (self == null) {
+  public static boolean isEmpty(final String object) {
+    if (object != null) {
+      return _isEmpty(object);
+    } else if (object == null) {
       return _isEmpty((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

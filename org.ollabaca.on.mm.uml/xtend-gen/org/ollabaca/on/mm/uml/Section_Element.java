@@ -22,15 +22,15 @@ public class Section_Element extends Template<Element> {
     }
   }.apply();
   
-  public static CharSequence section_Element(final Element self) {
-    CharSequence _transform = Section_Element.instance.transform(self);
+  public static CharSequence section_Element(final Element object) {
+    CharSequence _transform = Section_Element.instance.transform(object);
     return _transform;
   }
   
-  public CharSequence doFallback(final Element self) {
-    CharSequence _ref_Object = Ref.ref_Object(self);
+  public CharSequence doFallback(final Element object) {
+    CharSequence _ref_Object = Ref.ref_Object(object);
     String _string = _ref_Object.toString();
-    Topic _pic_EObject = Sites.topic_EObject(self);
+    Topic _pic_EObject = Sites.topic_EObject(object);
     String _title = _pic_EObject.getTitle();
     CharSequence _span = Html.span(_title);
     String _string_1 = _span.toString();
@@ -52,7 +52,7 @@ public class Section_Element extends Template<Element> {
         return _section_Element_OwnedElements;
       }
     };
-    CharSequence _layout_Element = Layout_Element.<Element>layout_Element(_string, _string_1, self, _function, _function_1);
+    CharSequence _layout_Element = Layout_Element.<Element>layout_Element(_string, _string_1, object, _function, _function_1);
     return _layout_Element;
   }
 }

@@ -19,8 +19,8 @@ class Attr<E> {
 	val String name
 	val (E)=>CharSequence value
 
-	def CharSequence apply(E self) {
-		'''«name»="«value.apply(self)»"'''
+	def CharSequence apply(E object) {
+		'''«name»="«value.apply(object)»"'''
 	}
 }
 
@@ -28,8 +28,8 @@ class Attr<E> {
 class Content<E> {
 	val (E)=>CharSequence body
 
-	def CharSequence apply(E self) {
-		body.apply(self)
+	def CharSequence apply(E object) {
+		body.apply(object)
 	}
 }
 
@@ -38,8 +38,8 @@ class Column<E> {
 	val String name
 	val (E)=>CharSequence cell
 
-	def CharSequence apply(E self) {
-		cell.apply(self)
+	def CharSequence apply(E object) {
+		cell.apply(object)
 	}
 }
 
@@ -56,8 +56,8 @@ class InlineSerializer extends ToHtmlSerializer {
 
 class LocalLinkRenderer extends LinkRenderer {
 
-	override render(WikiLinkNode self) {
-		val key = self.text.substring(1).replaceAll("/", ".")
+	override render(WikiLinkNode object) {
+		val key = object.text.substring(1).replaceAll("/", ".")
 
 		val topic = site.getTopic(key)
 		if (topic == null) {
@@ -71,8 +71,8 @@ class LocalLinkRenderer extends LinkRenderer {
 
 class DefaultLinkRenderer extends LinkRenderer {
 
-	override render(WikiLinkNode self) {
-		val key = self.text.substring(1).replaceAll("/", ".")
+	override render(WikiLinkNode object) {
+		val key = object.text.substring(1).replaceAll("/", ".")
 
 		val topic = site.getTopic(key)
 		if (topic == null) {
@@ -91,20 +91,20 @@ public class Html {
 
 	static val linkRenderer = new DefaultLinkRenderer
 
-	def static String html(String self) {
-		processor.markdownToHtml(self, linkRenderer)
+	def static String html(String object) {
+		processor.markdownToHtml(object, linkRenderer)
 	}
 	
-	def static dispatch CharSequence span(Void self) {
+	def static dispatch CharSequence span(Void object) {
 		"null"
 	}
 
-	def static dispatch CharSequence span(CharSequence self) {
-		_span(self.toString)
+	def static dispatch CharSequence span(CharSequence object) {
+		_span(object.toString)
 	}
 	
-	def static dispatch CharSequence span(String self) {
-		val node = processor.parseMarkdown(self.toCharArray)
+	def static dispatch CharSequence span(String object) {
+		val node = processor.parseMarkdown(object.toCharArray)
 		val span = new InlineSerializer(linkRenderer).toHtml(node)
 		return span
 	}
@@ -121,64 +121,64 @@ public class Html {
 		new Column<E>(name, cell)
 	}
 
-	static def <E> CharSequence tag(E self, String name, (E)=>CharSequence content) {
-		tag(self, name, #[], #[content(content)])
+	static def <E> CharSequence tag(E object, String name, (E)=>CharSequence content) {
+		tag(object, name, #[], #[content(content)])
 	}
 
-	static def <E> CharSequence tag(E self, String name, List<Attr<E>> attributes, List<Content<E>> contents) {
+	static def <E> CharSequence tag(E object, String name, List<Attr<E>> attributes, List<Content<E>> contents) {
 		'''
-			<«name» «FOR e : attributes» «e.apply(self)» «ENDFOR»>
+			<«name» «FOR e : attributes» «e.apply(object)» «ENDFOR»>
 			«FOR e : contents»
-				«e.apply(self)»
+				«e.apply(object)»
 			«ENDFOR»
 			</«name»>
 		'''
 	}
 
-	static def <E> CharSequence dl(Iterable<? extends E> self, (E)=>CharSequence term, (E)=>CharSequence definition) {
-		dl(self, #[], content(term), content(definition))
+	static def <E> CharSequence dl(Iterable<? extends E> object, (E)=>CharSequence term, (E)=>CharSequence definition) {
+		dl(object, #[], content(term), content(definition))
 	}
 
-	static def <E> CharSequence dl(Iterable<? extends E> self, List<Attr<Iterable<? extends E>>> attributes,
+	static def <E> CharSequence dl(Iterable<? extends E> object, List<Attr<Iterable<? extends E>>> attributes,
 		Content<E> term, Content<E> definition) {
-		if (self.empty) {
+		if (object.empty) {
 			return ""
 		}
-		tag(self, "dl", attributes,
+		tag(object, "dl", attributes,
 			#[
 				content(['''«FOR E e : it» «definition(e, term, definition)» «ENDFOR»'''])
 			]);
 	}
 
-	static def <E> CharSequence definition(E self, Content<E> term, Content<E> definition) '''
-		<dt>«term.apply(self)»</dt>
-		<dd>«definition.apply(self)»</dd>
+	static def <E> CharSequence definition(E object, Content<E> term, Content<E> definition) '''
+		<dt>«term.apply(object)»</dt>
+		<dd>«definition.apply(object)»</dd>
 	'''
 
-	static def <E> CharSequence ol(Iterable<? extends E> self, (E)=>CharSequence item) {
-		ol(self, #[], content(item))
+	static def <E> CharSequence ol(Iterable<? extends E> object, (E)=>CharSequence item) {
+		ol(object, #[], content(item))
 	}
 
-	static def <E> CharSequence ol(Iterable<? extends E> self, List<Attr<Iterable<? extends E>>> attributes,
+	static def <E> CharSequence ol(Iterable<? extends E> object, List<Attr<Iterable<? extends E>>> attributes,
 		Content<E> item) {
-		list(self, "ol", attributes, item)
+		list(object, "ol", attributes, item)
 	}
 
-	static def <E> CharSequence ul(Iterable<? extends E> self, (E)=>CharSequence item) {
-		ul(self, #[], content(item))
+	static def <E> CharSequence ul(Iterable<? extends E> object, (E)=>CharSequence item) {
+		ul(object, #[], content(item))
 	}
 
-	static def <E> CharSequence ul(Iterable<? extends E> self, List<Attr<Iterable<? extends E>>> attributes,
+	static def <E> CharSequence ul(Iterable<? extends E> object, List<Attr<Iterable<? extends E>>> attributes,
 		Content<E> item) {
-		list(self, "ul", attributes, item)
+		list(object, "ul", attributes, item)
 	}
 
-	static def <E> CharSequence list(Iterable<? extends E> self, String name,
+	static def <E> CharSequence list(Iterable<? extends E> object, String name,
 		List<Attr<Iterable<? extends E>>> attributes, Content<E> item) {
-		if (self.empty) {
+		if (object.empty) {
 			return ""
 		}
-		tag(self, name, attributes,
+		tag(object, name, attributes,
 			#[
 				content(
 					[
@@ -213,24 +213,24 @@ public class Html {
 		</table>
 	'''
 
-	def static String escape(String self) {
-		StringEscapeUtils::escapeHtml4(self)
+	def static String escape(String object) {
+		StringEscapeUtils::escapeHtml4(object)
 	}
 
-	def static String escapeEcmaScript(String self) {
-		StringEscapeUtils::escapeEcmaScript(self)
+	def static String escapeEcmaScript(String object) {
+		StringEscapeUtils::escapeEcmaScript(object)
 	}
 
-	static def CharSequence abstract_EObject(EObject self) {
-		val topic = self.topic_EObject
+	static def CharSequence abstract_EObject(EObject object) {
+		val topic = object.topic_EObject
 		if (topic != null) {
 			return topic.abstract.html
 		}
 		return ""
 	}
 
-	static def CharSequence documentation_EObject(EObject self) {
-		val topic = self.topic_EObject
+	static def CharSequence documentation_EObject(EObject object) {
+		val topic = object.topic_EObject
 		if (topic != null) {
 			return '''
 				<div class="abstract">«topic.^abstract.html»</div>

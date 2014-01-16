@@ -29,23 +29,23 @@ public class Sites {
     }
   }.apply();
   
-  public static Topic topic_EObject(final EObject self) {
-    Topic _transform = Sites.topic.transform(self);
+  public static Topic topic_EObject(final EObject object) {
+    Topic _transform = Sites.topic.transform(object);
     return _transform;
   }
   
-  protected static Topic _topic_fallback(final EObject self) {
-    Site _site_Object = Sites.site_Object(self);
-    Topic _topic = _site_Object.getTopic(self);
+  protected static Topic _topic_fallback(final EObject object) {
+    Site _site_Object = Sites.site_Object(object);
+    Topic _topic = _site_Object.getTopic(object);
     return _topic;
   }
   
-  protected static Topic _topic_fallback(final Void self) {
+  protected static Topic _topic_fallback(final Void object) {
     return null;
   }
   
-  protected static Topic _topic_fallback(final Topic self) {
-    return self;
+  protected static Topic _topic_fallback(final Topic object) {
+    return object;
   }
   
   public final static ThreadLocal<Site> current = new Function0<ThreadLocal<Site>>() {
@@ -60,13 +60,13 @@ public class Sites {
     return _get;
   }
   
-  public static Site site_Object(final EObject self) {
+  public static Site site_Object(final EObject object) {
     Site _get = Sites.current.get();
     return _get;
   }
   
-  public static Type type_EClass(final EClass self) {
-    final String n = self.getInstanceClassName();
+  public static Type type_EClass(final EClass object) {
+    final String n = object.getInstanceClassName();
     Site _site = Sites.site();
     EList<Type> _types = _site.getTypes();
     final Function1<Type,Boolean> _function = new Function1<Type,Boolean>() {
@@ -91,16 +91,16 @@ public class Sites {
     return _and;
   }
   
-  public static Topic topic_fallback(final EObject self) {
-    if (self instanceof Topic) {
-      return _topic_fallback((Topic)self);
-    } else if (self != null) {
-      return _topic_fallback(self);
-    } else if (self == null) {
+  public static Topic topic_fallback(final EObject object) {
+    if (object instanceof Topic) {
+      return _topic_fallback((Topic)object);
+    } else if (object != null) {
+      return _topic_fallback(object);
+    } else if (object == null) {
       return _topic_fallback((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

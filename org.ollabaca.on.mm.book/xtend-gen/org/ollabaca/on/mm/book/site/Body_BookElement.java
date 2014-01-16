@@ -17,17 +17,17 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Body_BookElement {
-  protected static CharSequence _body_BookElement(final BookElement self) {
-    CharSequence _c_BookElement = BookElements.toc_BookElement(self);
+  protected static CharSequence _body_BookElement(final BookElement object) {
+    CharSequence _c_BookElement = BookElements.toc_BookElement(object);
     return _c_BookElement;
   }
   
-  protected static CharSequence _body_BookElement(final Section self) {
+  protected static CharSequence _body_BookElement(final Section object) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence __body_BookElement = Body_BookElement._body_BookElement(((BookElement) self));
+    CharSequence __body_BookElement = Body_BookElement._body_BookElement(((BookElement) object));
     _builder.append(__body_BookElement, "");
     _builder.newLineIfNotEmpty();
-    EList<Element> _elements = self.getElements();
+    EList<Element> _elements = object.getElements();
     final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
       public CharSequence apply(final Element it) {
         CharSequence _link_EObject = Link.link_EObject(it);
@@ -48,14 +48,14 @@ public class Body_BookElement {
     return _builder;
   }
   
-  public static CharSequence body_BookElement(final BookElement self) {
-    if (self instanceof Section) {
-      return _body_BookElement((Section)self);
-    } else if (self != null) {
-      return _body_BookElement(self);
+  public static CharSequence body_BookElement(final BookElement object) {
+    if (object instanceof Section) {
+      return _body_BookElement((Section)object);
+    } else if (object != null) {
+      return _body_BookElement(object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

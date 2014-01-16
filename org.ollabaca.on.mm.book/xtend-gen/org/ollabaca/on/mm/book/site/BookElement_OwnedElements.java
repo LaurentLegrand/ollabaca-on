@@ -15,13 +15,13 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class BookElement_OwnedElements {
-  protected static CharSequence _ul_BookElement_OwnedElements(final BookElement self) {
+  protected static CharSequence _ul_BookElement_OwnedElements(final BookElement object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected static CharSequence _ul_BookElement_OwnedElements(final Book self) {
-    EList<Part> _parts = self.getParts();
+  protected static CharSequence _ul_BookElement_OwnedElements(final Book object) {
+    EList<Part> _parts = object.getParts();
     final Function1<Part,String> _function = new Function1<Part,String>() {
       public String apply(final Part it) {
         StringConcatenation _builder = new StringConcatenation();
@@ -38,8 +38,8 @@ public class BookElement_OwnedElements {
     return _ul;
   }
   
-  protected static CharSequence _ul_BookElement_OwnedElements(final Part self) {
-    EList<Chapter> _chapters = self.getChapters();
+  protected static CharSequence _ul_BookElement_OwnedElements(final Part object) {
+    EList<Chapter> _chapters = object.getChapters();
     final Function1<Chapter,String> _function = new Function1<Chapter,String>() {
       public String apply(final Chapter it) {
         StringConcatenation _builder = new StringConcatenation();
@@ -56,16 +56,16 @@ public class BookElement_OwnedElements {
     return _ul;
   }
   
-  protected static CharSequence _ul_BookElement_OwnedElements(final Section self) {
+  protected static CharSequence _ul_BookElement_OwnedElements(final Section object) {
     CharSequence _xblockexpression = null;
     {
       boolean _and = false;
-      EList<Element> _elements = self.getElements();
+      EList<Element> _elements = object.getElements();
       boolean _isEmpty = _elements.isEmpty();
       if (!_isEmpty) {
         _and = false;
       } else {
-        EList<Section> _sections = self.getSections();
+        EList<Section> _sections = object.getSections();
         boolean _isEmpty_1 = _sections.isEmpty();
         _and = (_isEmpty && _isEmpty_1);
       }
@@ -104,24 +104,24 @@ public class BookElement_OwnedElements {
           return _builder.toString();
         }
       };
-      CharSequence _tag = Html.<Section>tag(self, "ul", _function);
+      CharSequence _tag = Html.<Section>tag(object, "ul", _function);
       _xblockexpression = (_tag);
     }
     return _xblockexpression;
   }
   
-  public static CharSequence ul_BookElement_OwnedElements(final BookElement self) {
-    if (self instanceof Book) {
-      return _ul_BookElement_OwnedElements((Book)self);
-    } else if (self instanceof Part) {
-      return _ul_BookElement_OwnedElements((Part)self);
-    } else if (self instanceof Section) {
-      return _ul_BookElement_OwnedElements((Section)self);
-    } else if (self != null) {
-      return _ul_BookElement_OwnedElements(self);
+  public static CharSequence ul_BookElement_OwnedElements(final BookElement object) {
+    if (object instanceof Book) {
+      return _ul_BookElement_OwnedElements((Book)object);
+    } else if (object instanceof Part) {
+      return _ul_BookElement_OwnedElements((Part)object);
+    } else if (object instanceof Section) {
+      return _ul_BookElement_OwnedElements((Section)object);
+    } else if (object != null) {
+      return _ul_BookElement_OwnedElements(object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

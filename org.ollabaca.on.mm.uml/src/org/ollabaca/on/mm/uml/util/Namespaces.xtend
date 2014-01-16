@@ -8,7 +8,7 @@ import static extension org.ollabaca.on.mm.uml.util.Constraints.*
 
 class Namespaces {
 	
-	static def ordered_list_Namespace_OwnedRules(Namespace self) {
-		ol(self.ownedRules, #[], content([it.div_Constraint]))
+	static def ordered_list_Namespace_OwnedRules(Namespace object) {
+		ol(object.ownedRules, #[], content([it.div_Constraint]))
 	}
 }

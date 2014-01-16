@@ -112,29 +112,29 @@ public class Page {
     }
   }.apply();
   
-  public static CharSequence page_Element(final Element self) {
+  public static CharSequence page_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<!DOCTYPE html>");
     _builder.newLine();
     _builder.append("<html lang=\"en\">");
     _builder.newLine();
     _builder.append("\t");
-    CharSequence _transform = Page.head.transform(self);
-    _builder.append(_transform, "	");
+    CharSequence _transform = Page.head.transform(object);
+    _builder.append(_transform, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _transform_1 = Page.body.transform(self);
-    _builder.append(_transform_1, "	");
+    CharSequence _transform_1 = Page.body.transform(object);
+    _builder.append(_transform_1, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("</html>");
     _builder.newLine();
     return _builder;
   }
   
-  public static CharSequence head_Element(final Element self) {
+  public static CharSequence head_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<title>");
-    CharSequence _title_Element = Title.title_Element(self);
+    CharSequence _title_Element = Title.title_Element(object);
     _builder.append(_title_Element, "");
     _builder.append("</title>");
     _builder.newLineIfNotEmpty();
@@ -249,9 +249,9 @@ public class Page {
     return _builder;
   }
   
-  public static CharSequence body_Element(final Element self) {
+  public static CharSequence body_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence _transform = Page.header.transform(self);
+    CharSequence _transform = Page.header.transform(object);
     _builder.append(_transform, "");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -264,8 +264,8 @@ public class Page {
     _builder.append("<div class=\"span3 well\">");
     _builder.newLine();
     _builder.append("\t\t\t");
-    CharSequence _transform_1 = Page.aside.transform(self);
-    _builder.append(_transform_1, "			");
+    CharSequence _transform_1 = Page.aside.transform(object);
+    _builder.append(_transform_1, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("</div>");
@@ -274,16 +274,16 @@ public class Page {
     _builder.append("<div id=\"content\" class=\"span9\">");
     _builder.newLine();
     _builder.append("\t\t\t");
-    CharSequence _transform_2 = Page.breadcrumb.transform(self);
-    _builder.append(_transform_2, "			");
+    CharSequence _transform_2 = Page.breadcrumb.transform(object);
+    _builder.append(_transform_2, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
-    CharSequence _transform_3 = Page.article.transform(self);
-    _builder.append(_transform_3, "			");
+    CharSequence _transform_3 = Page.article.transform(object);
+    _builder.append(_transform_3, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
-    CharSequence _properties_Element = Properties.properties_Element(self);
-    _builder.append(_properties_Element, "			");
+    CharSequence _properties_Element = Properties.properties_Element(object);
+    _builder.append(_properties_Element, "\t\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("</div>");
@@ -294,13 +294,13 @@ public class Page {
     _builder.append("</div>");
     _builder.newLine();
     _builder.newLine();
-    CharSequence _transform_4 = Page.footer.transform(self);
+    CharSequence _transform_4 = Page.footer.transform(object);
     _builder.append(_transform_4, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public static CharSequence header_Element(final Element self) {
+  public static CharSequence header_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div class=\"navbar-inner\">");
     _builder.newLine();
@@ -360,7 +360,7 @@ public class Page {
     return _builder;
   }
   
-  public static CharSequence footer_Element(final Element self) {
+  public static CharSequence footer_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }

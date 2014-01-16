@@ -16,14 +16,14 @@ public class TextHoverProvider extends DefaultEObjectHoverProvider  {
 	protected String getFirstLine(EObject o) {
 		EModelElement element = null;
 		if (o instanceof Import) {
-			Import self = (Import) o;
-			element = units.getPackage(self);
+			Import object = (Import) o;
+			element = units.getPackage(object);
 		} else if (o instanceof Instance) {
-			Instance self = (Instance) o;
-			element = units.getClassifier(self);
+			Instance object = (Instance) o;
+			element = units.getClassifier(object);
 		} else if (o instanceof Slot) {
-			Slot self = (Slot) o;
-			element = units.getFeature(self);
+			Slot object = (Slot) o;
+			element = units.getFeature(object);
 		}
 
 		if (element != null) {

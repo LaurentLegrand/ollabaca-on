@@ -47,79 +47,79 @@ class HTag extends Template<Element> {
 		this.content = content
 	}
 	
-	override protected doFallback(Element self) '''
-		«self.beforeStart_Element»
-		<«name» «FOR e: attrs.entrySet SEPARATOR " "»«e.key»="«e.value»"«ENDFOR»«self.attributes_Element»>
-			«self.afterStart_Element»
-			«self.content_Element»
-			«self.beforeEnd_Element»
+	override protected doFallback(Element object) '''
+		«object.beforeStart_Element»
+		<«name» «FOR e: attrs.entrySet SEPARATOR " "»«e.key»="«e.value»"«ENDFOR»«object.attributes_Element»>
+			«object.afterStart_Element»
+			«object.content_Element»
+			«object.beforeEnd_Element»
 		</«name»>
-		«self.afterEnd_Element»
+		«object.afterEnd_Element»
 	'''
 	
-	def dispatch beforeStart_Element(Element self) {
-		beforeStart.concat(self)
+	def dispatch beforeStart_Element(Element object) {
+		beforeStart.concat(object)
 	}
 	
-	def dispatch beforeStart_Element(Topic self) {
-		beforeStart.concat(self.target)
+	def dispatch beforeStart_Element(Topic object) {
+		beforeStart.concat(object.target)
 	}
 	
-	def dispatch beforeStart_Element(Void self) {
+	def dispatch beforeStart_Element(Void object) {
 		""
 	}
 	
-	def dispatch afterStart_Element(Element self) {
-		afterStart.concat(self)
+	def dispatch afterStart_Element(Element object) {
+		afterStart.concat(object)
 	}
 	
-	def dispatch afterStart_Element(Topic self) {
-		afterStart.concat(self.target)
+	def dispatch afterStart_Element(Topic object) {
+		afterStart.concat(object.target)
 	}
 	
-	def dispatch afterStart_Element(Void self) {
+	def dispatch afterStart_Element(Void object) {
 		""
 	}
 	
-	def dispatch beforeEnd_Element(Element self) {
-		beforeEnd.concat(self)
+	def dispatch beforeEnd_Element(Element object) {
+		beforeEnd.concat(object)
 	}
 	
-	def dispatch beforeEnd_Element(Topic self) {
-		beforeEnd.concat(self.target)
+	def dispatch beforeEnd_Element(Topic object) {
+		beforeEnd.concat(object.target)
 	}
 	
-	def dispatch beforeEnd_Element(Void self) {
+	def dispatch beforeEnd_Element(Void object) {
 		""
 	}
 	
-	def dispatch afterEnd_Element(Element self) {
-		afterEnd.concat(self)
+	def dispatch afterEnd_Element(Element object) {
+		afterEnd.concat(object)
 	}
 	
-	def dispatch afterEnd_Element(Topic self) {
-		afterEnd.concat(self.target)
+	def dispatch afterEnd_Element(Topic object) {
+		afterEnd.concat(object.target)
 	}
 	
-	def dispatch afterEnd_Element(Void self) {
+	def dispatch afterEnd_Element(Void object) {
 		""
 	}
 	
-	def dispatch attributes_Element(Element self) {
-		attributes.concat(self)
+	def dispatch attributes_Element(Element object) {
+		attributes.concat(object)
 	}
 	
-	def dispatch attributes_Element(Topic self) {
-		attributes.concat(self.target)
+	def dispatch attributes_Element(Topic object) {
+		attributes.concat(object.target)
 	}
 	
-	def dispatch attributes_Element(Void self) {
+	def dispatch attributes_Element(Void object) {
 		""
 	}
 	
-	def CharSequence content_Element(Element self) {
+	def CharSequence content_Element(Element object) {
 		if (content != null) {
-			return content.apply(self)
+			return content.apply(object)
 		}
 		""
 	}

@@ -30,11 +30,11 @@ class Transformer<I, O> {
 		transformers.put(type, transformer)
 	}
 
-	public def O transform(I self) {
+	public def O transform(I object) {
 		for (e : transformers.entrySet) {
 			try {
-				if (e.key.isInstance(self)) {
-					val o = e.value.apply(self)
+				if (e.key.isInstance(object)) {
+					val o = e.value.apply(object)
 					if (o != null) {
 						return o
 					}
@@ -44,16 +44,16 @@ class Transformer<I, O> {
 			}
 		}
 		try {
-			return self.doFallback
+			return object.doFallback
 		} catch (IllegalArgumentException ex) {
 			ex.printStackTrace
 		}
 		return null
 	}
 
-	protected def O doFallback(I self) {
+	protected def O doFallback(I object) {
 		if (this.fallback != null) {
-			return this.fallback.apply(self)
+			return this.fallback.apply(object)
 		}
 	}
 

@@ -6,14 +6,14 @@ import org.eclipse.uml2.uml.Type
 
 class Types {
 
-	static def List<Property> getAssociationEnds(Type self) {
+	static def List<Property> getAssociationEnds(Type object) {
 		val List<Property> list = newArrayList()
-		for (a : self.associations) {
+		for (a : object.associations) {
 			if (a.endTypes.size == 1) { // the same type is involved on all ends
 				list.addAll(a.ownedEnds)
 			} else {
 				for (e : a.ownedEnds) {
-					if (e.type != self) {
+					if (e.type != object) {
 						list.add(e)
 					}
 				}

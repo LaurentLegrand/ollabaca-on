@@ -3,7 +3,6 @@ package org.ollabaca.on.site.util;
 import com.google.common.base.Objects;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -102,18 +101,18 @@ public class HTag extends Template<Element> {
     this.content = content;
   }
   
-  protected CharSequence doFallback(final Element self) {
+  protected CharSequence doFallback(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence _beforeStart_Element = this.beforeStart_Element(self);
+    CharSequence _beforeStart_Element = this.beforeStart_Element(object);
     _builder.append(_beforeStart_Element, "");
     _builder.newLineIfNotEmpty();
     _builder.append("<");
     _builder.append(this.name, "");
     _builder.append(" ");
     {
-      Set<Entry<String,String>> _entrySet = this.attrs.entrySet();
+      Set<Map.Entry<String,String>> _entrySet = this.attrs.entrySet();
       boolean _hasElements = false;
-      for(final Entry<String, String> e : _entrySet) {
+      for(final Map.Entry<String, String> e : _entrySet) {
         if (!_hasElements) {
           _hasElements = true;
         } else {
@@ -127,181 +126,181 @@ public class HTag extends Template<Element> {
         _builder.append("\"");
       }
     }
-    CharSequence _attributes_Element = this.attributes_Element(self);
+    CharSequence _attributes_Element = this.attributes_Element(object);
     _builder.append(_attributes_Element, "");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _afterStart_Element = this.afterStart_Element(self);
-    _builder.append(_afterStart_Element, "	");
+    CharSequence _afterStart_Element = this.afterStart_Element(object);
+    _builder.append(_afterStart_Element, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _content_Element = this.content_Element(self);
-    _builder.append(_content_Element, "	");
+    CharSequence _content_Element = this.content_Element(object);
+    _builder.append(_content_Element, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _beforeEnd_Element = this.beforeEnd_Element(self);
-    _builder.append(_beforeEnd_Element, "	");
+    CharSequence _beforeEnd_Element = this.beforeEnd_Element(object);
+    _builder.append(_beforeEnd_Element, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("</");
     _builder.append(this.name, "");
     _builder.append(">");
     _builder.newLineIfNotEmpty();
-    CharSequence _afterEnd_Element = this.afterEnd_Element(self);
+    CharSequence _afterEnd_Element = this.afterEnd_Element(object);
     _builder.append(_afterEnd_Element, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected CharSequence _beforeStart_Element(final Element self) {
-    CharSequence _concat = this.beforeStart.concat(self);
+  protected CharSequence _beforeStart_Element(final Element object) {
+    CharSequence _concat = this.beforeStart.concat(object);
     return _concat;
   }
   
-  protected CharSequence _beforeStart_Element(final Topic self) {
-    EObject _target = self.getTarget();
+  protected CharSequence _beforeStart_Element(final Topic object) {
+    EObject _target = object.getTarget();
     CharSequence _concat = this.beforeStart.concat(_target);
     return _concat;
   }
   
-  protected CharSequence _beforeStart_Element(final Void self) {
+  protected CharSequence _beforeStart_Element(final Void object) {
     return "";
   }
   
-  protected CharSequence _afterStart_Element(final Element self) {
-    CharSequence _concat = this.afterStart.concat(self);
+  protected CharSequence _afterStart_Element(final Element object) {
+    CharSequence _concat = this.afterStart.concat(object);
     return _concat;
   }
   
-  protected CharSequence _afterStart_Element(final Topic self) {
-    EObject _target = self.getTarget();
+  protected CharSequence _afterStart_Element(final Topic object) {
+    EObject _target = object.getTarget();
     CharSequence _concat = this.afterStart.concat(_target);
     return _concat;
   }
   
-  protected CharSequence _afterStart_Element(final Void self) {
+  protected CharSequence _afterStart_Element(final Void object) {
     return "";
   }
   
-  protected CharSequence _beforeEnd_Element(final Element self) {
-    CharSequence _concat = this.beforeEnd.concat(self);
+  protected CharSequence _beforeEnd_Element(final Element object) {
+    CharSequence _concat = this.beforeEnd.concat(object);
     return _concat;
   }
   
-  protected CharSequence _beforeEnd_Element(final Topic self) {
-    EObject _target = self.getTarget();
+  protected CharSequence _beforeEnd_Element(final Topic object) {
+    EObject _target = object.getTarget();
     CharSequence _concat = this.beforeEnd.concat(_target);
     return _concat;
   }
   
-  protected CharSequence _beforeEnd_Element(final Void self) {
+  protected CharSequence _beforeEnd_Element(final Void object) {
     return "";
   }
   
-  protected CharSequence _afterEnd_Element(final Element self) {
-    CharSequence _concat = this.afterEnd.concat(self);
+  protected CharSequence _afterEnd_Element(final Element object) {
+    CharSequence _concat = this.afterEnd.concat(object);
     return _concat;
   }
   
-  protected CharSequence _afterEnd_Element(final Topic self) {
-    EObject _target = self.getTarget();
+  protected CharSequence _afterEnd_Element(final Topic object) {
+    EObject _target = object.getTarget();
     CharSequence _concat = this.afterEnd.concat(_target);
     return _concat;
   }
   
-  protected CharSequence _afterEnd_Element(final Void self) {
+  protected CharSequence _afterEnd_Element(final Void object) {
     return "";
   }
   
-  protected CharSequence _attributes_Element(final Element self) {
-    CharSequence _concat = this.attributes.concat(self);
+  protected CharSequence _attributes_Element(final Element object) {
+    CharSequence _concat = this.attributes.concat(object);
     return _concat;
   }
   
-  protected CharSequence _attributes_Element(final Topic self) {
-    EObject _target = self.getTarget();
+  protected CharSequence _attributes_Element(final Topic object) {
+    EObject _target = object.getTarget();
     CharSequence _concat = this.attributes.concat(_target);
     return _concat;
   }
   
-  protected CharSequence _attributes_Element(final Void self) {
+  protected CharSequence _attributes_Element(final Void object) {
     return "";
   }
   
-  public CharSequence content_Element(final Element self) {
+  public CharSequence content_Element(final Element object) {
     String _xblockexpression = null;
     {
       boolean _notEquals = (!Objects.equal(this.content, null));
       if (_notEquals) {
-        return this.content.apply(self);
+        return this.content.apply(object);
       }
       _xblockexpression = ("");
     }
     return _xblockexpression;
   }
   
-  public CharSequence beforeStart_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _beforeStart_Element((Topic)self);
-    } else if (self != null) {
-      return _beforeStart_Element(self);
-    } else if (self == null) {
+  public CharSequence beforeStart_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _beforeStart_Element((Topic)object);
+    } else if (object != null) {
+      return _beforeStart_Element(object);
+    } else if (object == null) {
       return _beforeStart_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
   
-  public CharSequence afterStart_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _afterStart_Element((Topic)self);
-    } else if (self != null) {
-      return _afterStart_Element(self);
-    } else if (self == null) {
+  public CharSequence afterStart_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _afterStart_Element((Topic)object);
+    } else if (object != null) {
+      return _afterStart_Element(object);
+    } else if (object == null) {
       return _afterStart_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
   
-  public CharSequence beforeEnd_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _beforeEnd_Element((Topic)self);
-    } else if (self != null) {
-      return _beforeEnd_Element(self);
-    } else if (self == null) {
+  public CharSequence beforeEnd_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _beforeEnd_Element((Topic)object);
+    } else if (object != null) {
+      return _beforeEnd_Element(object);
+    } else if (object == null) {
       return _beforeEnd_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
   
-  public CharSequence afterEnd_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _afterEnd_Element((Topic)self);
-    } else if (self != null) {
-      return _afterEnd_Element(self);
-    } else if (self == null) {
+  public CharSequence afterEnd_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _afterEnd_Element((Topic)object);
+    } else if (object != null) {
+      return _afterEnd_Element(object);
+    } else if (object == null) {
       return _afterEnd_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
   
-  public CharSequence attributes_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _attributes_Element((Topic)self);
-    } else if (self != null) {
-      return _attributes_Element(self);
-    } else if (self == null) {
+  public CharSequence attributes_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _attributes_Element((Topic)object);
+    } else if (object != null) {
+      return _attributes_Element(object);
+    } else if (object == null) {
       return _attributes_Element((Void)null);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

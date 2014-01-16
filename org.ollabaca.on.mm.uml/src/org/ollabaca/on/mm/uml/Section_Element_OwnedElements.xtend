@@ -24,52 +24,52 @@ class Section_Element_OwnedElements extends Template<Element> {
 	
 	public static val instance = new Section_Element_OwnedElements()
 	
-	static def CharSequence section_Element_OwnedElements(Element self) {
-		instance.transform(self)
+	static def CharSequence section_Element_OwnedElements(Element object) {
+		instance.transform(object)
 	}
 	
 	
 	
-//	static def dispatch CharSequence section_Element_OwnedElements(Environment self) '''
-//		«layout_Element(self.ref_Object.toString + "-Nodes", "Nodes", self, [it.table_Environment_Nodes], null)»
-//		«layout_Element(self.ref_Object.toString + "-Deployments", "Deployments", self, [it.table_Environment_Deployments], null)»
-//		«layout_Element(self.ref_Object.toString + "-CommunicationPaths", "Communication Paths", self, null, null)»
+//	static def dispatch CharSequence section_Element_OwnedElements(Environment object) '''
+//		«layout_Element(object.ref_Object.toString + "-Nodes", "Nodes", object, [it.table_Environment_Nodes], null)»
+//		«layout_Element(object.ref_Object.toString + "-Deployments", "Deployments", object, [it.table_Environment_Deployments], null)»
+//		«layout_Element(object.ref_Object.toString + "-CommunicationPaths", "Communication Paths", object, null, null)»
 //	'''	
 	
-	def dispatch CharSequence doFallback(UseCase self) '''
-		«_doFallback(self as Classifier)»
-		«layout_Element(self.ref_Object.toString + "-OwnedRules", "Constraints", self, [ordered_list_Namespace_OwnedRules], null)»
-		«layout_Element(self.ref_Object.toString + "-OwnedBehaviors", "Behaviors", self, null, [section_BehavioredClassifier_OwnedBehaviors])»
+	def dispatch CharSequence doFallback(UseCase object) '''
+		«_doFallback(object as Classifier)»
+		«layout_Element(object.ref_Object.toString + "-OwnedRules", "Constraints", object, [ordered_list_Namespace_OwnedRules], null)»
+		«layout_Element(object.ref_Object.toString + "-OwnedBehaviors", "Behaviors", object, null, [section_BehavioredClassifier_OwnedBehaviors])»
 	'''
 	
-	def dispatch CharSequence doFallback(Classifier self) '''
-		«layout_Element(self.ref_Object.toString + "-Generals", "Generalizations", self, [ul_Classifier_Generals], null)»
-		«layout_Element(self.ref_Object.toString + "-Attributes", "Attributes", self, [dl_Classifier_Attributes], null)»
-		«layout_Element(self.ref_Object.toString + "-Associations", "Associations", self, [dl_Classifier_Associations], null)»
-		«layout_Element(self.ref_Object.toString + "-Operations", "Operations", self, [dl_Classifier_Operations], null)»
+	def dispatch CharSequence doFallback(Classifier object) '''
+		«layout_Element(object.ref_Object.toString + "-Generals", "Generalizations", object, [ul_Classifier_Generals], null)»
+		«layout_Element(object.ref_Object.toString + "-Attributes", "Attributes", object, [dl_Classifier_Attributes], null)»
+		«layout_Element(object.ref_Object.toString + "-Associations", "Associations", object, [dl_Classifier_Associations], null)»
+		«layout_Element(object.ref_Object.toString + "-Operations", "Operations", object, [dl_Classifier_Operations], null)»
 	'''
 
-	def dispatch CharSequence doFallback(Component self) '''
-		«layout_Element(self.ref_Object.toString + "-Generals", "Generalizations", self, [ul_Classifier_Generals], null)»
-		«layout_Element(self.ref_Object.toString + "-Required", "Required Interfaces", self, [ul(it.requireds, [it.link_EObject])], null)»
-		«layout_Element(self.ref_Object.toString + "-Provided", "Provided Interfaces", self, [ul(it.provideds, [it.link_EObject])], null)»
-		«layout_Element(self.ref_Object.toString + "-Parts", "Parts", self, [dl_Classifier_Attributes], null)»
+	def dispatch CharSequence doFallback(Component object) '''
+		«layout_Element(object.ref_Object.toString + "-Generals", "Generalizations", object, [ul_Classifier_Generals], null)»
+		«layout_Element(object.ref_Object.toString + "-Required", "Required Interfaces", object, [ul(it.requireds, [it.link_EObject])], null)»
+		«layout_Element(object.ref_Object.toString + "-Provided", "Provided Interfaces", object, [ul(it.provideds, [it.link_EObject])], null)»
+		«layout_Element(object.ref_Object.toString + "-Parts", "Parts", object, [dl_Classifier_Attributes], null)»
 	'''
 
-	def dispatch CharSequence doFallback(Operation self) '''
-		«layout_Element(self.ref_Object.toString + "-RaisedExceptions", "Raised Exceptions", self, [dl_BehavioralFeature_RaisedException], null)»
-		«layout_Element(self.ref_Object.toString + "-Preconditions", "Preconditions", self, [ol(it.preconditions, [it.div_Constraint])], null)»
-		«layout_Element(self.ref_Object.toString + "-Postconditions", "Postconditions", self, [ol(it.postconditions, [it.div_Constraint])], null)»
+	def dispatch CharSequence doFallback(Operation object) '''
+		«layout_Element(object.ref_Object.toString + "-RaisedExceptions", "Raised Exceptions", object, [dl_BehavioralFeature_RaisedException], null)»
+		«layout_Element(object.ref_Object.toString + "-Preconditions", "Preconditions", object, [ol(it.preconditions, [it.div_Constraint])], null)»
+		«layout_Element(object.ref_Object.toString + "-Postconditions", "Postconditions", object, [ol(it.postconditions, [it.div_Constraint])], null)»
 	'''
 	
-	def dispatch CharSequence doFallback(OpaqueBehavior self) '''
-		«layout_Element(self.ref_Object.toString + "-Postconditions", "Postconditions", self, [ol(it.postconditions, [it.div_Constraint])], null)»
-		«layout_Element(self.ref_Object.toString + "-Body", "Body", self, [it | ul(it.bodies, [it.html])], null)»
+	def dispatch CharSequence doFallback(OpaqueBehavior object) '''
+		«layout_Element(object.ref_Object.toString + "-Postconditions", "Postconditions", object, [ol(it.postconditions, [it.div_Constraint])], null)»
+		«layout_Element(object.ref_Object.toString + "-Body", "Body", object, [it | ul(it.bodies, [it.html])], null)»
 	'''
 	
-	def dispatch CharSequence doFallback(Port self) '''
-		«layout_Element(self.ref_Object.toString + "-Required", "Required Interfaces", self, [ul(it.requireds, [it.link_EObject])], null)»
-		«layout_Element(self.ref_Object.toString + "-Provided", "Provided Interfaces", self, [ul(it.provideds, [it.link_EObject])], null)»
+	def dispatch CharSequence doFallback(Port object) '''
+		«layout_Element(object.ref_Object.toString + "-Required", "Required Interfaces", object, [ul(it.requireds, [it.link_EObject])], null)»
+		«layout_Element(object.ref_Object.toString + "-Provided", "Provided Interfaces", object, [ul(it.provideds, [it.link_EObject])], null)»
 	'''
 	
 }

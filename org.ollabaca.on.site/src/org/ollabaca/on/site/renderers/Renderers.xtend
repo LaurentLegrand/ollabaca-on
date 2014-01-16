@@ -21,24 +21,24 @@ class Registry<E extends Element> {
 ////		loaders.add(new Pair<(E) => Boolean, (E) => CharSequence>(filter, loader))
 ////	}
 ////	
-//	def CharSequence load(E self) {
+//	def CharSequence load(E object) {
 //		'''
 //		«FOR e: loaders»
-//			«IF e.key.apply(self)»
-//				«e.value.apply(self)»
+//			«IF e.key.apply(object)»
+//				«e.value.apply(object)»
 //			«ENDIF»
 //		«ENDFOR»
 //		'''
 //	}
 	
-	def Content render(String path, E self) {
+	def Content render(String path, E object) {
 		var renderer = renderers.get(path);
 		
 		if (renderer == null) {
 			return new Text("text/plain", "Renderer not found for path: " + path)
 		}
 		
-		return renderer.apply(self)		
+		return renderer.apply(object)		
 	}
 }
 

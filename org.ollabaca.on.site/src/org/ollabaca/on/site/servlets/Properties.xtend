@@ -18,14 +18,14 @@ class Properties extends HTag {
 	
 	public static val Properties instance = new Properties()
 
-	static def properties_Element(Element self) {
-		instance.transform(self)
+	static def properties_Element(Element object) {
+		instance.transform(object)
 	}
 
-	dispatch def CharSequence content_Element(Topic self) {
+	dispatch def CharSequence content_Element(Topic object) {
 		val List<EClass> types = newArrayList()
-		types.add(self.target.eClass)
-		types.addAll(self.target.eClass.EAllSuperTypes)
+		types.add(object.target.eClass)
+		types.addAll(object.target.eClass.EAllSuperTypes)
 		
 		'''
 		<table class="table">
@@ -42,7 +42,7 @@ class Properties extends HTag {
 									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link_EObject»</th>
 								«ENDIF»
 								<th scope="row">«f.name.escape»</th>
-								<td>«self.target.eGet(f).notation_Object»</td>
+								<td>«object.target.eGet(f).notation_Object»</td>
 							</tr>
 						«ENDFOR»
 					«ENDIF»
@@ -54,8 +54,8 @@ class Properties extends HTag {
 		'''
 	}
 
-	dispatch def CharSequence content_Element(Element self) ''''''
+	dispatch def CharSequence content_Element(Element object) ''''''
 
-	dispatch def CharSequence content_Element(Void self) ''''''
+	dispatch def CharSequence content_Element(Void object) ''''''
 
 }

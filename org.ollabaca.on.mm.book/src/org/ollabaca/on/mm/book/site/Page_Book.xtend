@@ -12,7 +12,7 @@ import org.ollabaca.on.mm.uml.Section_Element
 
 class Page_Book {
 	
-	static def page_Book(Book self) {
+	static def page_Book(Book object) {
 		Levels::reset
 		'''
 		<!DOCTYPE html>
@@ -67,41 +67,41 @@ class Page_Book {
 		</head>
 		<body>
 			<div class="container-fluid">
-				«Section_Element.section_Element(self)»
+				«Section_Element.section_Element(object)»
 			</div>
 		</body>
 		</html>
 		'''
 	}
 		
-	static def CharSequence title_Element(Element self) {
-		val topic = self.topic_EObject
+	static def CharSequence title_Element(Element object) {
+		val topic = object.topic_EObject
 		if (topic != null) {
 			return topic.title.span
-		} else if (self instanceof NamedElement) { 
-			return (self as NamedElement).name.span
+		} else if (object instanceof NamedElement) { 
+			return (object as NamedElement).name.span
 		}
 		"<undef>".escape
 	}
 	
-	static def link(Element self) {
-		val topic = site.getTopic(self)
+	static def link(Element object) {
+		val topic = site.getTopic(object)
 		if (topic != null) {
-			'''<a href="#«self.id»">«self.title_Element»</a>'''
+			'''<a href="#«object.id»">«object.title_Element»</a>'''
 		} else {
-			return self.notation_Object
+			return object.notation_Object
 		}
 	}
 	
-	static def String id(Object self) {
-		Long::toHexString(System::identityHashCode(self))
+	static def String id(Object object) {
+		Long::toHexString(System::identityHashCode(object))
 	}
 	
-	static def dispatch boolean isEmpty(String self) {
-		self.trim().length == 0
+	static def dispatch boolean isEmpty(String object) {
+		object.trim().length == 0
 	}
 	
-	static def dispatch boolean isEmpty(Void self) {
+	static def dispatch boolean isEmpty(Void object) {
 		true
 	}
 }

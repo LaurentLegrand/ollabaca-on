@@ -14,11 +14,11 @@ public class Body_Element extends Template<Element> {
     }
   }.apply();
   
-  public static CharSequence body_Element(final Element self) {
-    return Body_Element.instance.transform(self);
+  public static CharSequence body_Element(final Element object) {
+    return Body_Element.instance.transform(object);
   }
   
-  public CharSequence doFallback(final Element self) {
+  public CharSequence doFallback(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }

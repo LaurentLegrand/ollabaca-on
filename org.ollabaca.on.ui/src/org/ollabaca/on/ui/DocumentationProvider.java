@@ -15,14 +15,14 @@ public class DocumentationProvider implements IEObjectDocumentationProvider {
 	public String getDocumentation(EObject o) {
 		EModelElement element = null;
 		if (o instanceof Import) {
-			Import self = (Import) o;
-			element = units.getPackage(self);
+			Import object = (Import) o;
+			element = units.getPackage(object);
 		} else if (o instanceof Instance) {
-			Instance self = (Instance) o;
-			element = units.getClassifier(self);
+			Instance object = (Instance) o;
+			element = units.getClassifier(object);
 		} else if (element instanceof Slot) {
-			Slot self = (Slot) element;
-			element = units.getFeature(self);
+			Slot object = (Slot) element;
+			element = units.getFeature(object);
 		}
 
 		if (element != null) {

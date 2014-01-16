@@ -190,80 +190,73 @@ class ProjectToXmi {
 		return result
 	}
 	
-	def void setFeatures(Instance self) {
-		val EClass eClass = units.getClassifier(self)
-		val EObject object = instances.get(self)
+	def void setFeatures(Instance object) {
+		val EClass eClass = units.getClassifier(object)
+		val EObject output = instances.get(object)
 		
-		for (Slot slot: self.slots) {
+		for (Slot slot: object.slots) {
 			val EStructuralFeature feature = units.getFeature(slot)
 			val Object value = slot.value.compute
-			System::out.println(self + ":" + slot.name + ":" + value)
+			System::out.println(object + ":" + slot.name + ":" + value)
 			try {
 				if (feature.many) {
 					if (value instanceof Collection) {
-						(object.eGet(feature) as Collection).addAll(value as Collection)
+						(output.eGet(feature) as Collection).addAll(value as Collection)
 					} else {
-						(object.eGet(feature) as Collection).add(value)
+						(output.eGet(feature) as Collection).add(value)
 					}
 				} else {
-					object.eSet(feature, value)	
+					output.eSet(feature, value)	
 				}
 			} catch (RuntimeException e) {
-				System::out.println("ERROR: " + self + ":" + slot.name + ":" + value + e)
+				System::out.println("ERROR: " + object + ":" + slot.name + ":" + value + e)
 				throw e
 			}
 		}
 		
-		if (self.name != null) {
+		if (object.name != null) {
 			val EStructuralFeature name = eClass.getEStructuralFeature("name")
-			if (name != null && object.eGet(name) == null) {
-				object.eSet(name, self.name)
+			if (name != null && output.eGet(name) == null) {
+				output.eSet(name, object.name)
 			}
 		}
 		
-		// set documentation
-//		if (self.documentation != null) {
-//			val EStructuralFeature documentation = eClass.getEStructuralFeature("documentation")
-//			if (documentation != null && object.eGet(documentation) == null) {
-//				object.eSet(documentation, self.documentation)
-//			} 
-//		}
 	}
 	
-	def dispatch Object compute(Instance self) {
-		return instances.get(self)
+	def dispatch Object compute(Instance object) {
+		return instances.get(object)
 	}
 	
-	def dispatch Object compute(InstanceRef self) {
-		val EObject ref = instances.get(self.value)
+	def dispatch Object compute(InstanceRef object) {
+		val EObject ref = instances.get(object.value)
 		if (ref == null) {
-			System::err.println("No instance for ref: " + self.value)
+			System::err.println("No instance for ref: " + object.value)
 		}
-		return instances.get(self.value)
+		return instances.get(object.value)
 	}
 	
-	def dispatch Object compute(Literal self) {
-		val Slot slot = units.getSlot(self)
+	def dispatch Object compute(Literal object) {
+		val Slot slot = units.getSlot(object)
 		val EDataType type = (units.getFeature(slot) as EAttribute).EAttributeType
-		return type.EPackage.EFactoryInstance.createFromString(type, String::valueOf(self.value))
+		return type.EPackage.EFactoryInstance.createFromString(type, String::valueOf(object.value))
 	}
 	
 	
-	def Object value(Literal self) {
-		switch self {
-			BooleanValue: self.value
-			StringValue: self.value
+	def Object value(Literal object) {
+		switch object {
+			BooleanValue: object.value
+			StringValue: object.value
 			NullValue: null
-			NumberValue: self.value
-			EnumValue: self.value			
+			NumberValue: object.value
+			EnumValue: object.value			
 		}
 		
 	}
 
 	
-	def dispatch Object compute(Array self) {
+	def dispatch Object compute(Array object) {
 		val Collection result = new ArrayList
-		for (Value v: self.value) {
+		for (Value v: object.value) {
 			result += v.compute
 		}
 		return result

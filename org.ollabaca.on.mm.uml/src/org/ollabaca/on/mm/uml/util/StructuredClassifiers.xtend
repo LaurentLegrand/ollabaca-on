@@ -7,7 +7,7 @@ import static extension org.ollabaca.on.site.util.Html.*
 
 class StructuredClassifiers {
 	
-	def definition_list_StructuredClassifier_Parts(StructuredClassifier self) {
-		dl(self.parts, [it.notation_Object], [it.documentation_EObject])
+	def definition_list_StructuredClassifier_Parts(StructuredClassifier object) {
+		dl(object.parts, [it.notation_Object], [it.documentation_EObject])
 	}
 }

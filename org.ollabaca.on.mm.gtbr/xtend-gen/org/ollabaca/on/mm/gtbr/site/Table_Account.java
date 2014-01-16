@@ -19,8 +19,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Table_Account {
-  public static CharSequence table_Account(final Account self) {
-    EList<Record> _records = self.getRecords();
+  public static CharSequence table_Account(final Account object) {
+    EList<Record> _records = object.getRecords();
     final Function1<Record,Date> _function = new Function1<Record,Date>() {
       public Date apply(final Record it) {
         Date _date = it.getDate();
@@ -39,7 +39,7 @@ public class Table_Account {
       public CharSequence apply(final Record it) {
         CharSequence _xifexpression = null;
         if ((it instanceof Debit)) {
-          double _amount = it.getAmount();
+          double _amount = ((Debit)it).getAmount();
           CharSequence _notation_Object = Notation.notation_Object(Double.valueOf(_amount));
           _xifexpression = _notation_Object;
         }
@@ -51,7 +51,7 @@ public class Table_Account {
       public CharSequence apply(final Record it) {
         CharSequence _xifexpression = null;
         if ((it instanceof Credit)) {
-          double _amount = it.getAmount();
+          double _amount = ((Credit)it).getAmount();
           CharSequence _notation_Object = Notation.notation_Object(Double.valueOf(_amount));
           _xifexpression = _notation_Object;
         }

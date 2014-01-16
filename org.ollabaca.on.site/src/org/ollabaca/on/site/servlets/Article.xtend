@@ -21,32 +21,32 @@ class Article extends HTag {
 		super("article", #{}, null)
 	}
 
-	dispatch def CharSequence content_Element(Topic self) '''
-		<a id="«self.name»"></a>
-		<h1>«self.title.html»</h1>
+	dispatch def CharSequence content_Element(Topic object) '''
+		<a id="«object.name»"></a>
+		<h1>«object.title.html»</h1>
 		
 		<section class="abstract">
-			«self.^abstract.html»
+			«object.^abstract.html»
 		</section>
 		<section class="documentation">
-			«self.documentation.html»
+			«object.documentation.html»
 		</section>
 	'''
 	
-	def dispatch CharSequence content_Element(Element self) ''''''
+	def dispatch CharSequence content_Element(Element object) ''''''
 
- 	def dispatch CharSequence content_Element(Type self) {
+ 	def dispatch CharSequence content_Element(Type object) {
 		val Set<EObject> instances = newHashSet()
 		val Set<EClass> types = newHashSet()
-		instances.addAll(self.topics.map[target])
+		instances.addAll(object.topics.map[target])
 		
-		val eClass = self.topics.head.target.eClass
+		val eClass = object.topics.head.target.eClass
 		types.add(eClass)
 		types.addAll(eClass.EAllSuperTypes)
 		
 		'''
-		<a id="eClass:«self.name»"></a>
-		<h1>«self.name»</h1>
+		<a id="eClass:«object.name»"></a>
+		<h1>«object.name»</h1>
 		
 		<h2>instances</h2>
 		<table>
@@ -93,7 +93,7 @@ class Article extends HTag {
 		'''
 	}
 
-	dispatch def CharSequence content_Element(Workspace self) '''
+	dispatch def CharSequence content_Element(Workspace object) '''
 		<div class="row-fluid">
 			«FOR e : ResourcesPlugin::workspace.root.projects.filter[getFile("src-gen/instances.xmi").exists]»
 				<p><a href="/site/pages/«e.name»">«e.name»</a></p>

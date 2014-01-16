@@ -13,9 +13,9 @@ import static extension org.ollabaca.on.site.util.Html.*
 
 class Environments {
 
-	static def CharSequence table_Environment_Nodes(Environment self) {
+	static def CharSequence table_Environment_Nodes(Environment object) {
 		table(
-			self.eAllContents.filter(typeof(Node)).toIterable, 
+			object.eAllContents.filter(typeof(Node)).toIterable, 
 			#[],
 			#[
 				column("Name", [Node it | it.name]),
@@ -26,9 +26,9 @@ class Environments {
 		)	
 	}
 	
-	static def CharSequence table_Environment_Deployments(Environment self) {
+	static def CharSequence table_Environment_Deployments(Environment object) {
 		table(
-			self.eAllContents.filter(typeof(Deployment)).toIterable, 
+			object.eAllContents.filter(typeof(Deployment)).toIterable, 
 			#[], 
 			#[
 				column("Location", [Deployment it | it.location.name]),

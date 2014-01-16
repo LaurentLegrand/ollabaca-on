@@ -7,15 +7,15 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Constraints {
-  public static CharSequence div_Constraint(final Constraint self) {
+  public static CharSequence div_Constraint(final Constraint object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<div>");
-    CharSequence _documentation_EObject = Html.documentation_EObject(self);
+    CharSequence _documentation_EObject = Html.documentation_EObject(object);
     _builder.append(_documentation_EObject, "");
     _builder.append("</div>");
     _builder.newLineIfNotEmpty();
     _builder.append("<div>");
-    CharSequence _notation_Object = Notation.notation_Object(self);
+    CharSequence _notation_Object = Notation.notation_Object(object);
     _builder.append(_notation_Object, "");
     _builder.append("</div>");
     _builder.newLineIfNotEmpty();

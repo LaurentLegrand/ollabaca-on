@@ -2,7 +2,7 @@ package org.ollabaca.on.site.util;
 
 import com.google.common.base.Objects;
 import java.util.Comparator;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -47,15 +47,15 @@ public class Transformer<I extends Object, O extends Object> {
     return _put;
   }
   
-  public O transform(final I self) {
-    Set<Entry<Class<? extends I>,Function1<? super I,? extends O>>> _entrySet = this.transformers.entrySet();
-    for (final Entry<Class<? extends I>,Function1<? super I,? extends O>> e : _entrySet) {
+  public O transform(final I object) {
+    Set<Map.Entry<Class<? extends I>,Function1<? super I,? extends O>>> _entrySet = this.transformers.entrySet();
+    for (final Map.Entry<Class<? extends I>,Function1<? super I,? extends O>> e : _entrySet) {
       try {
         Class<? extends I> _key = e.getKey();
-        boolean _isInstance = _key.isInstance(self);
+        boolean _isInstance = _key.isInstance(object);
         if (_isInstance) {
           Function1<? super I,? extends O> _value = e.getValue();
-          final O o = _value.apply(self);
+          final O o = _value.apply(object);
           boolean _notEquals = (!Objects.equal(o, null));
           if (_notEquals) {
             return o;
@@ -71,7 +71,7 @@ public class Transformer<I extends Object, O extends Object> {
       }
     }
     try {
-      return this.doFallback(self);
+      return this.doFallback(object);
     } catch (final Throwable _t_1) {
       if (_t_1 instanceof IllegalArgumentException) {
         final IllegalArgumentException ex_1 = (IllegalArgumentException)_t_1;
@@ -83,12 +83,11 @@ public class Transformer<I extends Object, O extends Object> {
     return null;
   }
   
-  protected O doFallback(final I self) {
-    O _xifexpression = null;
+  protected O doFallback(final I object) {
     boolean _notEquals = (!Objects.equal(this.fallback, null));
     if (_notEquals) {
-      return this.fallback.apply(self);
+      return this.fallback.apply(object);
     }
-    return _xifexpression;
+    return null;
   }
 }

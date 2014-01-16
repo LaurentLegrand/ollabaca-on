@@ -21,16 +21,16 @@ class Page {
 
 	public static val HTag footer = new HTag("footer", #{ "class" -> "footer" }, [it.footer_Element])
 	
-	static def page_Element(Element self) '''
+	static def page_Element(Element object) '''
 		<!DOCTYPE html>
 		<html lang="en">
-			«head.transform(self)»
-			«body.transform(self)»
+			«head.transform(object)»
+			«body.transform(object)»
 		</html>
 	'''
 	
-	static def head_Element(Element self) '''
-		<title>«Title::title_Element(self)»</title>
+	static def head_Element(Element object) '''
+		<title>«Title::title_Element(object)»</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -82,26 +82,26 @@ class Page {
 	'''
 
 
-	static def CharSequence body_Element(Element self) '''
-		«header.transform(self)»
+	static def CharSequence body_Element(Element object) '''
+		«header.transform(object)»
 		
 		<div class="container-fluid">
 			<div class='row-fluid'>
 				<div class="span3 well">
-					«aside.transform(self)»
+					«aside.transform(object)»
 				</div>
 				<div id="content" class="span9">
-					«breadcrumb.transform(self)»
-					«article.transform(self)»
-					«Properties::properties_Element(self)»
+					«breadcrumb.transform(object)»
+					«article.transform(object)»
+					«Properties::properties_Element(object)»
 				</div>
 			</div>
 		</div>
 
-		«footer.transform(self)»
+		«footer.transform(object)»
 	'''
 
-	static def CharSequence header_Element(Element self) '''
+	static def CharSequence header_Element(Element object) '''
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -123,7 +123,7 @@ class Page {
 		</div>
 	'''
 	
-	static def CharSequence footer_Element(Element self) '''
+	static def CharSequence footer_Element(Element object) '''
 	'''
 
 }

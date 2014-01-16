@@ -26,19 +26,19 @@ public class Notation extends Template<Object> {
     }
   }.apply();
   
-  public static CharSequence notation_Object(final Object self) {
-    CharSequence _transform = Notation.instance.transform(self);
+  public static CharSequence notation_Object(final Object object) {
+    CharSequence _transform = Notation.instance.transform(object);
     return _transform;
   }
   
-  protected CharSequence _doFallback(final EObject self) {
+  protected CharSequence _doFallback(final EObject object) {
     CharSequence _xblockexpression = null;
     {
-      final Topic topic = Sites.topic_EObject(self);
+      final Topic topic = Sites.topic_EObject(object);
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(topic, null);
       if (_equals) {
-        String _string = self.toString();
+        String _string = object.toString();
         _xifexpression = _string;
       } else {
         CharSequence _link_EObject = Link.link_EObject(topic);
@@ -49,21 +49,21 @@ public class Notation extends Template<Object> {
     return _xblockexpression;
   }
   
-  protected CharSequence _doFallback(final Element self) {
-    CharSequence _link_EObject = Link.link_EObject(self);
+  protected CharSequence _doFallback(final Element object) {
+    CharSequence _link_EObject = Link.link_EObject(object);
     return _link_EObject;
   }
   
-  protected CharSequence _doFallback(final Object self) {
-    String _string = self.toString();
+  protected CharSequence _doFallback(final Object object) {
+    String _string = object.toString();
     return _string;
   }
   
-  protected CharSequence _doFallback(final Iterable<? extends Object> self) {
+  protected CharSequence _doFallback(final Iterable<? extends Object> object) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _hasElements = false;
-      for(final Object e : self) {
+      for(final Object e : object) {
         if (!_hasElements) {
           _hasElements = true;
           _builder.append("<ul>", "");
@@ -80,49 +80,49 @@ public class Notation extends Template<Object> {
     return _builder;
   }
   
-  protected CharSequence _doFallback(final String self) {
-    CharSequence _span = Html.span(self);
+  protected CharSequence _doFallback(final String object) {
+    CharSequence _span = Html.span(object);
     return _span;
   }
   
-  protected CharSequence _doFallback(final Void self) {
+  protected CharSequence _doFallback(final Void object) {
     return "<code class=\'null\'>null</code>";
   }
   
-  protected CharSequence _doFallback(final Number self) {
+  protected CharSequence _doFallback(final Number object) {
     Locale _get = Locales.get();
     NumberFormat _instance = NumberFormat.getInstance(_get);
-    String _format = _instance.format(self);
+    String _format = _instance.format(object);
     return _format;
   }
   
-  protected CharSequence _doFallback(final Date self) {
+  protected CharSequence _doFallback(final Date object) {
     Locale _get = Locales.get();
     DateFormat _dateTimeInstance = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.FULL, _get);
-    String _format = _dateTimeInstance.format(self);
+    String _format = _dateTimeInstance.format(object);
     return _format;
   }
   
-  public CharSequence doFallback(final Object self) {
-    if (self instanceof Element) {
-      return _doFallback((Element)self);
-    } else if (self instanceof Number) {
-      return _doFallback((Number)self);
-    } else if (self instanceof String) {
-      return _doFallback((String)self);
-    } else if (self instanceof Date) {
-      return _doFallback((Date)self);
-    } else if (self instanceof EObject) {
-      return _doFallback((EObject)self);
-    } else if (self instanceof Iterable) {
-      return _doFallback((Iterable<?>)self);
-    } else if (self == null) {
+  public CharSequence doFallback(final Object object) {
+    if (object instanceof Element) {
+      return _doFallback((Element)object);
+    } else if (object instanceof Number) {
+      return _doFallback((Number)object);
+    } else if (object instanceof String) {
+      return _doFallback((String)object);
+    } else if (object instanceof Date) {
+      return _doFallback((Date)object);
+    } else if (object instanceof EObject) {
+      return _doFallback((EObject)object);
+    } else if (object instanceof Iterable) {
+      return _doFallback((Iterable<?>)object);
+    } else if (object == null) {
       return _doFallback((Void)null);
-    } else if (self != null) {
-      return _doFallback(self);
+    } else if (object != null) {
+      return _doFallback(object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

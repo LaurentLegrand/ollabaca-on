@@ -8,22 +8,22 @@ import static extension org.ollabaca.on.site.util.Html.*
 
 class Classifiers {
 
-	static def CharSequence dl_Classifier_Associations(Classifier self) {
-		dl(Types::getAssociationEnds(self), [it.notation_Object], [it.documentation_EObject])
+	static def CharSequence dl_Classifier_Associations(Classifier object) {
+		dl(Types::getAssociationEnds(object), [it.notation_Object], [it.documentation_EObject])
 	}
 
-	static def CharSequence ul_Classifier_Generals(Classifier self) {
+	static def CharSequence ul_Classifier_Generals(Classifier object) {
 
 		// TODO local link!!!!
-		ul(self.generals, [it.link_EObject])
+		ul(object.generals, [it.link_EObject])
 	}
 
-	static def dl_Classifier_Attributes(Classifier self) {
-		dl(self.attributes, [it.notation_Object], [it.documentation_EObject])
+	static def dl_Classifier_Attributes(Classifier object) {
+		dl(object.attributes, [it.notation_Object], [it.documentation_EObject])
 	}
 
-	static def dl_Classifier_Operations(Classifier self) {
-		dl(self.operations, [it.notation_Object], [it.documentation_EObject])
+	static def dl_Classifier_Operations(Classifier object) {
+		dl(object.operations, [it.notation_Object], [it.documentation_EObject])
 	}
 
 }

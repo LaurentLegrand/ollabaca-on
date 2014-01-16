@@ -19,16 +19,16 @@ public class QualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvid
 	
 	Units units = new Units();
 	
-	QualifiedName qualifiedName(Instance self) {
+	QualifiedName qualifiedName(Instance object) {
 		List<String> list = new ArrayList<>();
-		for (Instance i: units.getAncestorsAndSelf(self)) {
+		for (Instance i: units.getAncestorsAndSelf(object)) {
 			list.addAll(Arrays.asList(i.getName().split("\\/")));
 		}
 		
 		/*
 		 * Verify that the container 
 		 */
-//		Container container = units.getUnit(self).getContainer();
+//		Container container = units.getUnit(object).getContainer();
 //		if (container != null) {
 //			List<INode> nodes = NodeModelUtils.findNodesForFeature(container, ModelPackage.Literals.CONTAINER__INSTANCE);			
 //			if (nodes.size() != 0) {
@@ -36,14 +36,14 @@ public class QualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvid
 //			}
 //		}
 		
-		Unit unit = units.getUnit(self);
+		Unit unit = units.getUnit(object);
 		List<INode> nodes = NodeModelUtils.findNodesForFeature(unit, ModelPackage.Literals.UNIT__PARENT);
 		if (nodes.size() != 0) {
 			list.addAll(0, this.parse(nodes.get(0).getText()));
 		}
 		
 		QualifiedName qn = QualifiedName.create(list);
-		System.out.println(qn + ":" + self);
+		System.out.println(qn + ":" + object);
 		return qn;
 	}
 

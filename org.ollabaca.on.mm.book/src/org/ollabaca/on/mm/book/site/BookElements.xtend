@@ -10,15 +10,15 @@ import org.ollabaca.on.mm.book.BookElement
 
 class BookElements {
 
-	def static CharSequence toc_BookElement(BookElement self) {
-		tag(self, "nav", [it.ul_BookElement_OwnedElements])
+	def static CharSequence toc_BookElement(BookElement object) {
+		tag(object, "nav", [it.ul_BookElement_OwnedElements])
 	}
 
-	def static Topic topic_BookElement(BookElement self) {
-		if (self.documentation != null) {
-			self.documentation.topic_EObject
+	def static Topic topic_BookElement(BookElement object) {
+		if (object.documentation != null) {
+			object.documentation.topic_EObject
 		} else {
-			self.topic_fallback
+			object.topic_fallback
 		}
 	}
 }

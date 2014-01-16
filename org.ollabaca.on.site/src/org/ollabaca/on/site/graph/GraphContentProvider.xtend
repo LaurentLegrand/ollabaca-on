@@ -33,7 +33,7 @@ class GraphContentProvider {
 		Renderers::siteRenderers.registerRenderer(TYPES, [typesToJSon]);	
 	}
 	
-	static def head_Site(Site self) {
+	static def head_Site(Site object) {
 		'''
 		<style>
 		.parentOf {
@@ -60,8 +60,8 @@ class GraphContentProvider {
 				$(this).tab('show');
 			});
 			
-			myGraph("#«INSTANCES»", "«scope(INSTANCES, self).ref_Object»"); 
-			myGraph("#«TYPES»", "«scope(TYPES, self).ref_Object»"); 
+			myGraph("#«INSTANCES»", "«scope(INSTANCES, object).ref_Object»"); 
+			myGraph("#«TYPES»", "«scope(TYPES, object).ref_Object»"); 
 		});
 		</script>
 		'''
@@ -99,15 +99,15 @@ class GraphContentProvider {
     	'''
 	}	
 	
-	static def Text instancesToJSon(Site self) {
-		return new Text("text/json", instances(self));
+	static def Text instancesToJSon(Site object) {
+		return new Text("text/json", instances(object));
 	}
 	
-	static def Text typesToJSon(Site self) {
-		return new Text("text/json", types(self));
+	static def Text typesToJSon(Site object) {
+		return new Text("text/json", types(object));
 	}
 	
-	static def instances(Site self) {
+	static def instances(Site object) {
 		val List<Topic> nodes = newArrayList
 		
 		site.topics.filter[!anonymous].forEach[
@@ -155,7 +155,7 @@ class GraphContentProvider {
 		
 	}
 	
-	static def types(Site self) {
+	static def types(Site object) {
 		val List<EClass> nodes = newArrayList
 		site.topics.forEach[fill(nodes, it.target.eClass)]
 		
@@ -189,13 +189,13 @@ class GraphContentProvider {
 		return out.toString
 	}
 		
-	static def void fill(List<EClass> list, EClass self) {
-		if (list.contains(self)) {
+	static def void fill(List<EClass> list, EClass object) {
+		if (list.contains(object)) {
 			return
 		}
 		
-		list.add(self)
-		self.EAllSuperTypes.forEach[fill(list, it)]
+		list.add(object)
+		object.EAllSuperTypes.forEach[fill(list, it)]
 	}
 	
 	

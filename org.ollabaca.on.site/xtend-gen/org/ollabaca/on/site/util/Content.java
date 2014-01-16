@@ -13,9 +13,9 @@ public class Content<E extends Object> {
     return this._body;
   }
   
-  public CharSequence apply(final E self) {
+  public CharSequence apply(final E object) {
     Function1<? super E,? extends CharSequence> _body = this.getBody();
-    CharSequence _apply = _body.apply(self);
+    CharSequence _apply = _body.apply(object);
     return _apply;
   }
   

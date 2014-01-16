@@ -28,7 +28,7 @@ public class Breadcrumb extends HTag {
     }.apply(), null);
   }
   
-  protected CharSequence _content_Element(final Topic self) {
+  protected CharSequence _content_Element(final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<ul class=\"breadcrumb\">");
     _builder.newLine();
@@ -36,25 +36,25 @@ public class Breadcrumb extends HTag {
     _builder.append("<li>");
     Site _site = Sites.site();
     CharSequence _link_EObject = Link.link_EObject(_site);
-    _builder.append(_link_EObject, "	");
+    _builder.append(_link_EObject, "\t");
     _builder.append(" <span class=\"divider\">/</span></li>");
     _builder.newLineIfNotEmpty();
     {
-      EList<Topic> _ancestors = self.getAncestors();
+      EList<Topic> _ancestors = object.getAncestors();
       for(final Topic e : _ancestors) {
         _builder.append("\t");
         _builder.append("<li>");
         CharSequence _link_EObject_1 = Link.link_EObject(e);
-        _builder.append(_link_EObject_1, "	");
+        _builder.append(_link_EObject_1, "\t");
         _builder.append(" <span class=\"divider\">/</span></li>");
         _builder.newLineIfNotEmpty();
       }
     }
     _builder.append("\t");
     _builder.append("<li class=\"active\">");
-    String _title = self.getTitle();
+    String _title = object.getTitle();
     String _html = Html.html(_title);
-    _builder.append(_html, "	");
+    _builder.append(_html, "\t");
     _builder.append("</li>");
     _builder.newLineIfNotEmpty();
     _builder.append("</ul>\t");
@@ -62,19 +62,19 @@ public class Breadcrumb extends HTag {
     return _builder;
   }
   
-  protected CharSequence _content_Element(final Element self) {
+  protected CharSequence _content_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  public CharSequence content_Element(final Element self) {
-    if (self instanceof Topic) {
-      return _content_Element((Topic)self);
-    } else if (self != null) {
-      return _content_Element(self);
+  public CharSequence content_Element(final Element object) {
+    if (object instanceof Topic) {
+      return _content_Element((Topic)object);
+    } else if (object != null) {
+      return _content_Element(object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

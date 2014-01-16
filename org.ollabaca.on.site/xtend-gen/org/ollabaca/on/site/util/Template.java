@@ -1,7 +1,7 @@
 package org.ollabaca.on.site.util;
 
 import com.google.common.base.Objects;
-import java.util.Map.Entry;
+import java.util.Map;
 import java.util.Set;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
@@ -20,17 +20,17 @@ public class Template<E extends Object> extends Transformer<E,CharSequence> {
   /**
    * Call all transformers and the callback and concat all non null results
    */
-  public CharSequence concat(final E self) {
+  public CharSequence concat(final E object) {
     StringBuilder _stringBuilder = new StringBuilder();
     final StringBuilder builder = _stringBuilder;
-    Set<Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>>> _entrySet = this.transformers.entrySet();
-    for (final Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>> e : _entrySet) {
+    Set<Map.Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>>> _entrySet = this.transformers.entrySet();
+    for (final Map.Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>> e : _entrySet) {
       try {
         Class<? extends E> _key = e.getKey();
-        boolean _isInstance = _key.isInstance(self);
+        boolean _isInstance = _key.isInstance(object);
         if (_isInstance) {
           Function1<? super E,? extends CharSequence> _value = e.getValue();
-          final CharSequence o = _value.apply(self);
+          final CharSequence o = _value.apply(object);
           boolean _notEquals = (!Objects.equal(o, null));
           if (_notEquals) {
             builder.append(o);
@@ -46,7 +46,7 @@ public class Template<E extends Object> extends Transformer<E,CharSequence> {
       }
     }
     try {
-      final CharSequence o_1 = this.doFallback(self);
+      final CharSequence o_1 = this.doFallback(object);
       boolean _notEquals_1 = (!Objects.equal(o_1, null));
       if (_notEquals_1) {
         builder.append(o_1);

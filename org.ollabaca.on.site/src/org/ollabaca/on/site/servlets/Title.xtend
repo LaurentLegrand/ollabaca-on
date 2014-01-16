@@ -12,23 +12,23 @@ class Title extends Template<Element> {
 
 	public static val Title instance = new Title()
 
-	static def title_Element(Element self) {
-		instance.transform(self)
+	static def title_Element(Element object) {
+		instance.transform(object)
 	}
 
-	dispatch def CharSequence doFallback(Site self) 
-		'''«self.name»'''
+	dispatch def CharSequence doFallback(Site object) 
+		'''«object.name»'''
 		
-	dispatch def CharSequence doFallback(EObject self) 
-		'''«self.site_Object.name» - «self.topic_EObject.title»'''
+	dispatch def CharSequence doFallback(EObject object) 
+		'''«object.site_Object.name» - «object.topic_EObject.title»'''
 	
-	dispatch def CharSequence doFallback(Element self) 
-		'''«self.site_Object.name»'''
+	dispatch def CharSequence doFallback(Element object) 
+		'''«object.site_Object.name»'''
 		
-	dispatch def CharSequence doFallback(Named self) 
-		'''«self.site_Object.name» - «self.name»'''
+	dispatch def CharSequence doFallback(Named object) 
+		'''«object.site_Object.name» - «object.name»'''
 		
-	dispatch def CharSequence doFallback(Void self) {
+	dispatch def CharSequence doFallback(Void object) {
 		""
 	}
 }

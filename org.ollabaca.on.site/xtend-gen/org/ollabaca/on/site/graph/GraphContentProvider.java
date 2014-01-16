@@ -64,7 +64,7 @@ public class GraphContentProvider {
     return _xblockexpression;
   }
   
-  public static CharSequence head_Site(final Site self) {
+  public static CharSequence head_Site(final Site object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<style>");
     _builder.newLine();
@@ -110,14 +110,14 @@ public class GraphContentProvider {
     _builder.append("$(\"#content\").append(\"");
     String _tabs = GraphContentProvider.tabs();
     String _escapeEcmaScript = Html.escapeEcmaScript(_tabs);
-    _builder.append(_escapeEcmaScript, "	");
+    _builder.append(_escapeEcmaScript, "\t");
     _builder.append("\");");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("$(\'#");
-    _builder.append(GraphContentProvider.TAB, "	");
+    _builder.append(GraphContentProvider.TAB, "\t");
     _builder.append(" a\').click(function (e) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -133,20 +133,20 @@ public class GraphContentProvider {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("myGraph(\"#");
-    _builder.append(GraphContentProvider.INSTANCES, "	");
+    _builder.append(GraphContentProvider.INSTANCES, "\t");
     _builder.append("\", \"");
-    Scope _scope = Ref.scope(GraphContentProvider.INSTANCES, self);
+    Scope _scope = Ref.scope(GraphContentProvider.INSTANCES, object);
     CharSequence _ref_Object = Ref.ref_Object(_scope);
-    _builder.append(_ref_Object, "	");
+    _builder.append(_ref_Object, "\t");
     _builder.append("\"); ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("myGraph(\"#");
-    _builder.append(GraphContentProvider.TYPES, "	");
+    _builder.append(GraphContentProvider.TYPES, "\t");
     _builder.append("\", \"");
-    Scope _scope_1 = Ref.scope(GraphContentProvider.TYPES, self);
+    Scope _scope_1 = Ref.scope(GraphContentProvider.TYPES, object);
     CharSequence _ref_Object_1 = Ref.ref_Object(_scope_1);
-    _builder.append(_ref_Object_1, "	");
+    _builder.append(_ref_Object_1, "\t");
     _builder.append("\"); ");
     _builder.newLineIfNotEmpty();
     _builder.append("});");
@@ -162,17 +162,17 @@ public class GraphContentProvider {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<ul id=\"");
-    _builder.append(GraphContentProvider.TAB, "	");
+    _builder.append(GraphContentProvider.TAB, "\t");
     _builder.append("\" class=\"nav nav-tabs\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("<li class=\"active\"><a href=\"#");
-    _builder.append(GraphContentProvider.INSTANCES, "		");
+    _builder.append(GraphContentProvider.INSTANCES, "\t\t");
     _builder.append("\" data-toggle=\"tab\">Instances</a></li>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("<li><a href=\"#");
-    _builder.append(GraphContentProvider.TYPES, "		");
+    _builder.append(GraphContentProvider.TYPES, "\t\t");
     _builder.append("\" data-toggle=\"tab\">Types</a></li>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -185,7 +185,7 @@ public class GraphContentProvider {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<div class=\"tab-pane active\" id=\"");
-    _builder.append(GraphContentProvider.INSTANCES, "		");
+    _builder.append(GraphContentProvider.INSTANCES, "\t\t");
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
@@ -214,7 +214,7 @@ public class GraphContentProvider {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<div class=\"tab-pane\" id=\"");
-    _builder.append(GraphContentProvider.TYPES, "		");
+    _builder.append(GraphContentProvider.TYPES, "\t\t");
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
@@ -249,19 +249,19 @@ public class GraphContentProvider {
     return _builder.toString();
   }
   
-  public static Text instancesToJSon(final Site self) {
-    String _instances = GraphContentProvider.instances(self);
+  public static Text instancesToJSon(final Site object) {
+    String _instances = GraphContentProvider.instances(object);
     Text _text = new Text("text/json", _instances);
     return _text;
   }
   
-  public static Text typesToJSon(final Site self) {
-    String _types = GraphContentProvider.types(self);
+  public static Text typesToJSon(final Site object) {
+    String _types = GraphContentProvider.types(object);
     Text _text = new Text("text/json", _types);
     return _text;
   }
   
-  public static String instances(final Site self) {
+  public static String instances(final Site object) {
     final List<Topic> nodes = CollectionLiterals.<Topic>newArrayList();
     Site _site = Sites.site();
     EList<Topic> _topics = _site.getTopics();
@@ -352,7 +352,7 @@ public class GraphContentProvider {
     return out.toString();
   }
   
-  public static String types(final Site self) {
+  public static String types(final Site object) {
     final List<EClass> nodes = CollectionLiterals.<EClass>newArrayList();
     Site _site = Sites.site();
     EList<Topic> _topics = _site.getTopics();
@@ -410,13 +410,13 @@ public class GraphContentProvider {
     return out.toString();
   }
   
-  public static void fill(final List<EClass> list, final EClass self) {
-    boolean _contains = list.contains(self);
+  public static void fill(final List<EClass> list, final EClass object) {
+    boolean _contains = list.contains(object);
     if (_contains) {
       return;
     }
-    list.add(self);
-    EList<EClass> _eAllSuperTypes = self.getEAllSuperTypes();
+    list.add(object);
+    EList<EClass> _eAllSuperTypes = object.getEAllSuperTypes();
     final Procedure1<EClass> _function = new Procedure1<EClass>() {
       public void apply(final EClass it) {
         GraphContentProvider.fill(list, it);

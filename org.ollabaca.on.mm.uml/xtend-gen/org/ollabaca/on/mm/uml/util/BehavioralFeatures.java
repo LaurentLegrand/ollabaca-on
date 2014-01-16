@@ -9,8 +9,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class BehavioralFeatures {
-  public static CharSequence dl_BehavioralFeature_RaisedException(final BehavioralFeature self) {
-    EList<Type> _raisedExceptions = self.getRaisedExceptions();
+  public static CharSequence dl_BehavioralFeature_RaisedException(final BehavioralFeature object) {
+    EList<Type> _raisedExceptions = object.getRaisedExceptions();
     final Function1<Type,CharSequence> _function = new Function1<Type,CharSequence>() {
       public CharSequence apply(final Type it) {
         CharSequence _notation_Object = Notation.notation_Object(it);

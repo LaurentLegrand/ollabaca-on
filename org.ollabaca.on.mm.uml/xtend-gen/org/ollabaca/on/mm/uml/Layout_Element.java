@@ -9,7 +9,7 @@ import org.ollabaca.on.site.util.Levels;
 
 @SuppressWarnings("all")
 public class Layout_Element {
-  public static <E extends Element> CharSequence layout_Element(final String id, final String title, final E self, final Function1<? super E,? extends CharSequence> body, final Function1<? super E,? extends CharSequence> subsection) {
+  public static <E extends Element> CharSequence layout_Element(final String id, final String title, final E object, final Function1<? super E,? extends CharSequence> body, final Function1<? super E,? extends CharSequence> subsection) {
     StringConcatenation _builder = new StringConcatenation();
     final int level = Levels.start();
     _builder.newLineIfNotEmpty();
@@ -18,7 +18,7 @@ public class Layout_Element {
     _builder.append("\" class=\"level-");
     _builder.append(level, "");
     _builder.append(" ");
-    EClass _eClass = self.eClass();
+    EClass _eClass = object.eClass();
     String _name = _eClass.getName();
     _builder.append(_name, "");
     _builder.append("\">");
@@ -55,7 +55,7 @@ public class Layout_Element {
       boolean _notEquals = (!Objects.equal(body, null));
       if (_notEquals) {
         _builder.append("\t\t\t");
-        CharSequence _apply = body.apply(self);
+        CharSequence _apply = body.apply(object);
         _builder.append(_apply, "\t\t\t");
         _builder.newLineIfNotEmpty();
       }
@@ -70,7 +70,7 @@ public class Layout_Element {
       boolean _notEquals_1 = (!Objects.equal(subsection, null));
       if (_notEquals_1) {
         _builder.append("\t");
-        CharSequence _apply_1 = subsection.apply(self);
+        CharSequence _apply_1 = subsection.apply(object);
         _builder.append(_apply_1, "\t");
         _builder.newLineIfNotEmpty();
       }

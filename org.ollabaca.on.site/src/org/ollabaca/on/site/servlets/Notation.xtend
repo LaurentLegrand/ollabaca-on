@@ -15,44 +15,44 @@ class Notation extends Template<Object> {
 
 	public static val Notation instance = new Notation()
 
-	static def notation_Object(Object self) {
-		instance.transform(self)
+	static def notation_Object(Object object) {
+		instance.transform(object)
 	}
 
-	def dispatch CharSequence doFallback(EObject self) {
-		val topic = Sites::topic_EObject(self)
+	def dispatch CharSequence doFallback(EObject object) {
+		val topic = Sites::topic_EObject(object)
 		if (topic == null) {
-			self.toString
+			object.toString
 		} else {
 			Link::link_EObject(topic)
 		}
 	}
 
-	def dispatch CharSequence doFallback(Element self) {
-		Link::link_EObject(self)
+	def dispatch CharSequence doFallback(Element object) {
+		Link::link_EObject(object)
 	}
 
-	def dispatch CharSequence doFallback(Object self) {
-		self.toString
+	def dispatch CharSequence doFallback(Object object) {
+		object.toString
 	}
 
-	def dispatch CharSequence doFallback(Iterable<?> self) {
-		'''«FOR e : self BEFORE "<ul>" AFTER "</ul>"»<li>«e.notation_Object»</li>«ENDFOR»'''
+	def dispatch CharSequence doFallback(Iterable<?> object) {
+		'''«FOR e : object BEFORE "<ul>" AFTER "</ul>"»<li>«e.notation_Object»</li>«ENDFOR»'''
 	}
 
-	def dispatch CharSequence doFallback(String self) {
-		self.span
+	def dispatch CharSequence doFallback(String object) {
+		object.span
 	}
 
-	def dispatch CharSequence doFallback(Void self) {
+	def dispatch CharSequence doFallback(Void object) {
 		"<code class='null'>null</code>"
 	}
 	
-	def dispatch CharSequence doFallback(Number self) {
-		NumberFormat::getInstance(Locales::get).format(self)
+	def dispatch CharSequence doFallback(Number object) {
+		NumberFormat::getInstance(Locales::get).format(object)
 	}
 
-	def dispatch CharSequence doFallback(Date self) {
-		DateFormat::getDateTimeInstance(DateFormat::SHORT, DateFormat::FULL, Locales::get).format(self)
+	def dispatch CharSequence doFallback(Date object) {
+		DateFormat::getDateTimeInstance(DateFormat::SHORT, DateFormat::FULL, Locales::get).format(object)
 	}
 }

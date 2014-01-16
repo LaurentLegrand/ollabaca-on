@@ -11,20 +11,20 @@ class Sites {
 
 	public static val topic = new Transformer<EObject, Topic>([it.topic_fallback]);
 
-	def static Topic topic_EObject(EObject self) {
-		topic.transform(self)
+	def static Topic topic_EObject(EObject object) {
+		topic.transform(object)
 	}
 
-	static def dispatch Topic topic_fallback(EObject self) {
-		self.site_Object.getTopic(self)
+	static def dispatch Topic topic_fallback(EObject object) {
+		object.site_Object.getTopic(object)
 	}
 
-	static def dispatch Topic topic_fallback(Void self) {
+	static def dispatch Topic topic_fallback(Void object) {
 		null
 	}
 
-	static def dispatch Topic topic_fallback(Topic self) {
-		self
+	static def dispatch Topic topic_fallback(Topic object) {
+		object
 	}
 
 	//	@Local
@@ -35,26 +35,26 @@ class Sites {
 		current.get()
 	}
 
-	def static Site site_Object(EObject self) {
+	def static Site site_Object(EObject object) {
 
-		//		site.apply(self)
+		//		site.apply(object)
 		current.get()
 	}
 
-	def static Type type_EClass(EClass self) {
-		val n = self.instanceClassName
+	def static Type type_EClass(EClass object) {
+		val n = object.instanceClassName
 		return site().types.findFirst[it.name == n]
 	}
 
-//	static def dispatch Site site_fallback(EClass self) {
+//	static def dispatch Site site_fallback(EClass object) {
 //		current.get()
 //	}
 //	
-//	static def dispatch Site site_fallback(EObject self) {
-//		self.eResource.contents.filter(typeof(Site)).head
+//	static def dispatch Site site_fallback(EObject object) {
+//		object.eResource.contents.filter(typeof(Site)).head
 //	}
 //	
-//	static def dispatch Site site_fallback(Object self) {
+//	static def dispatch Site site_fallback(Object object) {
 //		current.get()
 //	}
 

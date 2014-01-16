@@ -9,13 +9,13 @@ import static extension org.ollabaca.on.site.util.Html.*
 
 class Body_BookElement {
 	
-	def static dispatch CharSequence body_BookElement(BookElement self) { 
-		self.toc_BookElement
+	def static dispatch CharSequence body_BookElement(BookElement object) { 
+		object.toc_BookElement
 	}
 	
-	def static dispatch CharSequence body_BookElement(Section self) '''
-		«_body_BookElement(self as BookElement)»
-		«table(self.elements, #[], #[
+	def static dispatch CharSequence body_BookElement(Section object) '''
+		«_body_BookElement(object as BookElement)»
+		«table(object.elements, #[], #[
 			column("Title", [it.link_EObject]), // TODO local link
 			column("Description", [it.abstract_EObject])
 		])

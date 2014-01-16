@@ -11,27 +11,27 @@ import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
 public class BookElements {
-  public static CharSequence toc_BookElement(final BookElement self) {
+  public static CharSequence toc_BookElement(final BookElement object) {
     final Function1<BookElement,CharSequence> _function = new Function1<BookElement,CharSequence>() {
       public CharSequence apply(final BookElement it) {
         CharSequence _ul_BookElement_OwnedElements = BookElement_OwnedElements.ul_BookElement_OwnedElements(it);
         return _ul_BookElement_OwnedElements;
       }
     };
-    CharSequence _tag = Html.<BookElement>tag(self, "nav", _function);
+    CharSequence _tag = Html.<BookElement>tag(object, "nav", _function);
     return _tag;
   }
   
-  public static Topic topic_BookElement(final BookElement self) {
+  public static Topic topic_BookElement(final BookElement object) {
     Topic _xifexpression = null;
-    Element _documentation = self.getDocumentation();
+    Element _documentation = object.getDocumentation();
     boolean _notEquals = (!Objects.equal(_documentation, null));
     if (_notEquals) {
-      Element _documentation_1 = self.getDocumentation();
+      Element _documentation_1 = object.getDocumentation();
       Topic _pic_EObject = Sites.topic_EObject(_documentation_1);
       _xifexpression = _pic_EObject;
     } else {
-      Topic _pic_fallback = Sites.topic_fallback(self);
+      Topic _pic_fallback = Sites.topic_fallback(object);
       _xifexpression = _pic_fallback;
     }
     return _xifexpression;

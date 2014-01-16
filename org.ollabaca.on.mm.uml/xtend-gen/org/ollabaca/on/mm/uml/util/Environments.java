@@ -26,8 +26,8 @@ import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
 public class Environments {
-  public static CharSequence table_Environment_Nodes(final Environment self) {
-    TreeIterator<EObject> _eAllContents = self.eAllContents();
+  public static CharSequence table_Environment_Nodes(final Environment object) {
+    TreeIterator<EObject> _eAllContents = object.eAllContents();
     Iterator<Node> _filter = Iterators.<Node>filter(_eAllContents, Node.class);
     Iterable<Node> _iterable = IteratorExtensions.<Node>toIterable(_filter);
     final Function1<Node,String> _function = new Function1<Node,String>() {
@@ -84,8 +84,8 @@ public class Environments {
     return _table;
   }
   
-  public static CharSequence table_Environment_Deployments(final Environment self) {
-    TreeIterator<EObject> _eAllContents = self.eAllContents();
+  public static CharSequence table_Environment_Deployments(final Environment object) {
+    TreeIterator<EObject> _eAllContents = object.eAllContents();
     Iterator<Deployment> _filter = Iterators.<Deployment>filter(_eAllContents, Deployment.class);
     Iterable<Deployment> _iterable = IteratorExtensions.<Deployment>toIterable(_filter);
     final Function1<Deployment,String> _function = new Function1<Deployment,String>() {

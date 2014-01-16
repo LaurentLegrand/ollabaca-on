@@ -12,15 +12,15 @@ import org.ollabaca.on.mm.uml.Section_Element;
 
 @SuppressWarnings("all")
 public class Section_BookElement_OwnedElements {
-  protected static CharSequence _section_Element_OwnedElements(final Element self) {
+  protected static CharSequence _section_Element_OwnedElements(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Book self) {
+  protected static CharSequence _section_Element_OwnedElements(final Book object) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Part> _parts = self.getParts();
+      EList<Part> _parts = object.getParts();
       for(final Part e : _parts) {
         CharSequence _section_Element = Section_Element.section_Element(e);
         _builder.append(_section_Element, "");
@@ -30,10 +30,10 @@ public class Section_BookElement_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Part self) {
+  protected static CharSequence _section_Element_OwnedElements(final Part object) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Chapter> _chapters = self.getChapters();
+      EList<Chapter> _chapters = object.getChapters();
       for(final Chapter e : _chapters) {
         CharSequence _section_Element = Section_Element.section_Element(e);
         _builder.append(_section_Element, "");
@@ -43,10 +43,10 @@ public class Section_BookElement_OwnedElements {
     return _builder;
   }
   
-  protected static CharSequence _section_Element_OwnedElements(final Section self) {
+  protected static CharSequence _section_Element_OwnedElements(final Section object) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Element> _elements = self.getElements();
+      EList<Element> _elements = object.getElements();
       for(final Element e : _elements) {
         CharSequence _section_Element = Section_Element.section_Element(e);
         _builder.append(_section_Element, "");
@@ -54,7 +54,7 @@ public class Section_BookElement_OwnedElements {
       }
     }
     {
-      EList<Section> _sections = self.getSections();
+      EList<Section> _sections = object.getSections();
       for(final Section e_1 : _sections) {
         CharSequence _section_Element_1 = Section_Element.section_Element(e_1);
         _builder.append(_section_Element_1, "");
@@ -64,18 +64,18 @@ public class Section_BookElement_OwnedElements {
     return _builder;
   }
   
-  public static CharSequence section_Element_OwnedElements(final Element self) {
-    if (self instanceof Book) {
-      return _section_Element_OwnedElements((Book)self);
-    } else if (self instanceof Part) {
-      return _section_Element_OwnedElements((Part)self);
-    } else if (self instanceof Section) {
-      return _section_Element_OwnedElements((Section)self);
-    } else if (self != null) {
-      return _section_Element_OwnedElements(self);
+  public static CharSequence section_Element_OwnedElements(final Element object) {
+    if (object instanceof Book) {
+      return _section_Element_OwnedElements((Book)object);
+    } else if (object instanceof Part) {
+      return _section_Element_OwnedElements((Part)object);
+    } else if (object instanceof Section) {
+      return _section_Element_OwnedElements((Section)object);
+    } else if (object != null) {
+      return _section_Element_OwnedElements(object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

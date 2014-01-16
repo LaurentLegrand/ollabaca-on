@@ -43,73 +43,73 @@ public class Notation_Element {
     return _register;
   }
   
-  protected static CharSequence _notation_Element(final Element self) {
+  protected static CharSequence _notation_Element(final Element object) {
     return null;
   }
   
-  protected static CharSequence _notation_Element(final Property self) {
+  protected static CharSequence _notation_Element(final Property object) {
     CharSequence _xblockexpression = null;
     {
       StringBuilder _stringBuilder = new StringBuilder();
       final StringBuilder definition = _stringBuilder;
-      boolean _isDerived = self.isDerived();
+      boolean _isDerived = object.isDerived();
       if (_isDerived) {
         definition.append("/");
       }
-      VisibilityKind _visibility = self.getVisibility();
+      VisibilityKind _visibility = object.getVisibility();
       CharSequence _notation_Element = Notation_Element.notation_Element(_visibility);
       StringBuilder _append = definition.append(_notation_Element);
-      CharSequence _link_EObject = Link.link_EObject(self);
+      CharSequence _link_EObject = Link.link_EObject(object);
       StringBuilder _append_1 = _append.append(_link_EObject);
       StringBuilder _append_2 = _append_1.append(":&nbsp;");
-      Type _type = self.getType();
+      Type _type = object.getType();
       CharSequence _link_EObject_1 = Link.link_EObject(_type);
       StringBuilder _append_3 = _append_2.append(_link_EObject_1);
-      CharSequence _notation_Multiplicity = Notation_Element.notation_Multiplicity(self);
+      CharSequence _notation_Multiplicity = Notation_Element.notation_Multiplicity(object);
       _append_3.append(_notation_Multiplicity);
-      boolean _isSetDefault = self.isSetDefault();
+      boolean _isSetDefault = object.isSetDefault();
       if (_isSetDefault) {
         StringBuilder _append_4 = definition.append(" = ");
-        String _default = self.getDefault();
+        String _default = object.getDefault();
         _append_4.append(_default);
       }
       final List<String> modifiers = CollectionLiterals.<String>newArrayList();
-      boolean _isReadOnly = self.isReadOnly();
+      boolean _isReadOnly = object.isReadOnly();
       if (_isReadOnly) {
         modifiers.add("readOnly");
       }
-      boolean _isDerivedUnion = self.isDerivedUnion();
+      boolean _isDerivedUnion = object.isDerivedUnion();
       if (_isDerivedUnion) {
         modifiers.add("union");
       }
-      EList<Property> _subsettedProperties = self.getSubsettedProperties();
+      EList<Property> _subsettedProperties = object.getSubsettedProperties();
       for (final Property e : _subsettedProperties) {
         CharSequence _link_EObject_2 = Link.link_EObject(e);
         String _plus = ("subsets " + _link_EObject_2);
         modifiers.add(_plus);
       }
-      EList<Property> _redefinedProperties = self.getRedefinedProperties();
+      EList<Property> _redefinedProperties = object.getRedefinedProperties();
       for (final Property e_1 : _redefinedProperties) {
         CharSequence _link_EObject_3 = Link.link_EObject(e_1);
         String _plus_1 = ("redefines " + _link_EObject_3);
         modifiers.add(_plus_1);
       }
-      boolean _isOrdered = self.isOrdered();
+      boolean _isOrdered = object.isOrdered();
       if (_isOrdered) {
         modifiers.add("ordered");
       }
       boolean _and = false;
-      boolean _isUnique = self.isUnique();
+      boolean _isUnique = object.isUnique();
       if (!_isUnique) {
         _and = false;
       } else {
-        boolean _isMultivalued = self.isMultivalued();
+        boolean _isMultivalued = object.isMultivalued();
         _and = (_isUnique && _isMultivalued);
       }
       if (_and) {
         modifiers.add("unique");
       }
-      boolean _isID = self.isID();
+      boolean _isID = object.isID();
       if (_isID) {
         modifiers.add("id");
       }
@@ -205,27 +205,27 @@ public class Notation_Element {
     return _xblockexpression;
   }
   
-  protected static CharSequence _notation_Element(final Parameter self) {
+  protected static CharSequence _notation_Element(final Parameter object) {
     CharSequence _xblockexpression = null;
     {
       StringBuilder _stringBuilder = new StringBuilder();
       final StringBuilder definition = _stringBuilder;
-      ParameterDirectionKind _direction = self.getDirection();
+      ParameterDirectionKind _direction = object.getDirection();
       CharSequence _notation_Element = Notation_Element.notation_Element(_direction);
       StringBuilder _append = definition.append(_notation_Element);
       StringBuilder _append_1 = _append.append("&nbsp;");
-      CharSequence _link_EObject = Link.link_EObject(self);
+      CharSequence _link_EObject = Link.link_EObject(object);
       StringBuilder _append_2 = _append_1.append(_link_EObject);
       StringBuilder _append_3 = _append_2.append(":&nbsp;");
-      Type _type = self.getType();
+      Type _type = object.getType();
       CharSequence _link_EObject_1 = Link.link_EObject(_type);
       StringBuilder _append_4 = _append_3.append(_link_EObject_1);
-      CharSequence _notation_Multiplicity = Notation_Element.notation_Multiplicity(self);
+      CharSequence _notation_Multiplicity = Notation_Element.notation_Multiplicity(object);
       _append_4.append(_notation_Multiplicity);
-      boolean _isSetDefault = self.isSetDefault();
+      boolean _isSetDefault = object.isSetDefault();
       if (_isSetDefault) {
         StringBuilder _append_5 = definition.append(" = ");
-        String _default = self.getDefault();
+        String _default = object.getDefault();
         _append_5.append(_default);
       }
       StringConcatenation _builder = new StringConcatenation();
@@ -235,11 +235,11 @@ public class Notation_Element {
     return _xblockexpression;
   }
   
-  public static CharSequence notation_BehavioralFeature_OwnedParameters(final BehavioralFeature self) {
+  public static CharSequence notation_BehavioralFeature_OwnedParameters(final BehavioralFeature object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("(");
     {
-      EList<Parameter> _ownedParameters = self.getOwnedParameters();
+      EList<Parameter> _ownedParameters = object.getOwnedParameters();
       final Function1<Parameter,Boolean> _function = new Function1<Parameter,Boolean>() {
         public Boolean apply(final Parameter it) {
           ParameterDirectionKind _direction = it.getDirection();
@@ -263,17 +263,17 @@ public class Notation_Element {
     return _builder;
   }
   
-  public static CharSequence notation_Multiplicity(final MultiplicityElement self) {
+  public static CharSequence notation_Multiplicity(final MultiplicityElement object) {
     CharSequence _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
       boolean _and = false;
-      int _lower = self.getLower();
+      int _lower = object.getLower();
       boolean _equals = (_lower == 0);
       if (!_equals) {
         _and = false;
       } else {
-        int _upper = self.getUpper();
+        int _upper = object.getUpper();
         boolean _equals_1 = (_upper == 0);
         _and = (_equals && _equals_1);
       }
@@ -284,12 +284,12 @@ public class Notation_Element {
     }
     if (!_matched) {
       boolean _and_1 = false;
-      int _lower_1 = self.getLower();
+      int _lower_1 = object.getLower();
       boolean _equals_2 = (_lower_1 == 1);
       if (!_equals_2) {
         _and_1 = false;
       } else {
-        int _upper_1 = self.getUpper();
+        int _upper_1 = object.getUpper();
         boolean _equals_3 = (_upper_1 == 1);
         _and_1 = (_equals_2 && _equals_3);
       }
@@ -299,16 +299,16 @@ public class Notation_Element {
       }
     }
     if (!_matched) {
-      int _upper_2 = self.getUpper();
+      int _upper_2 = object.getUpper();
       boolean _greaterThan = (_upper_2 > 0);
       if (_greaterThan) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("[");
-        int _lower_2 = self.getLower();
+        int _lower_2 = object.getLower();
         _builder.append(_lower_2, "");
         _builder.append("..");
-        int _upper_3 = self.getUpper();
+        int _upper_3 = object.getUpper();
         _builder.append(_upper_3, "");
         _builder.append("]");
         _switchResult = _builder;
@@ -317,7 +317,7 @@ public class Notation_Element {
     if (!_matched) {
       StringConcatenation _builder_1 = new StringConcatenation();
       _builder_1.append("[");
-      int _lower_3 = self.getLower();
+      int _lower_3 = object.getLower();
       _builder_1.append(_lower_3, "");
       _builder_1.append("..*]");
       _switchResult = _builder_1;
@@ -325,29 +325,29 @@ public class Notation_Element {
     return _switchResult;
   }
   
-  protected static CharSequence _notation_Element(final ParameterDirectionKind self) {
+  protected static CharSequence _notation_Element(final ParameterDirectionKind object) {
     String _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (Objects.equal(self,ParameterDirectionKind.IN_LITERAL)) {
+      if (Objects.equal(object,ParameterDirectionKind.IN_LITERAL)) {
         _matched=true;
         _switchResult = "in";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,ParameterDirectionKind.OUT_LITERAL)) {
+      if (Objects.equal(object,ParameterDirectionKind.OUT_LITERAL)) {
         _matched=true;
         _switchResult = "out";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,ParameterDirectionKind.INOUT_LITERAL)) {
+      if (Objects.equal(object,ParameterDirectionKind.INOUT_LITERAL)) {
         _matched=true;
         _switchResult = "inout";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,ParameterDirectionKind.RETURN_LITERAL)) {
+      if (Objects.equal(object,ParameterDirectionKind.RETURN_LITERAL)) {
         _matched=true;
         _switchResult = "return";
       }
@@ -355,29 +355,29 @@ public class Notation_Element {
     return _switchResult;
   }
   
-  protected static CharSequence _notation_Element(final VisibilityKind self) {
+  protected static CharSequence _notation_Element(final VisibilityKind object) {
     String _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
-      if (Objects.equal(self,VisibilityKind.PUBLIC_LITERAL)) {
+      if (Objects.equal(object,VisibilityKind.PUBLIC_LITERAL)) {
         _matched=true;
         _switchResult = "+";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,VisibilityKind.PRIVATE_LITERAL)) {
+      if (Objects.equal(object,VisibilityKind.PRIVATE_LITERAL)) {
         _matched=true;
         _switchResult = "-";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,VisibilityKind.PROTECTED_LITERAL)) {
+      if (Objects.equal(object,VisibilityKind.PROTECTED_LITERAL)) {
         _matched=true;
         _switchResult = "#";
       }
     }
     if (!_matched) {
-      if (Objects.equal(self,VisibilityKind.PACKAGE_LITERAL)) {
+      if (Objects.equal(object,VisibilityKind.PACKAGE_LITERAL)) {
         _matched=true;
         _switchResult = "~";
       }
@@ -385,80 +385,80 @@ public class Notation_Element {
     return _switchResult;
   }
   
-  protected static CharSequence _notation_Element(final LiteralBoolean self) {
+  protected static CharSequence _notation_Element(final LiteralBoolean object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<code>");
-    boolean _isValue = self.isValue();
+    boolean _isValue = object.isValue();
     _builder.append(_isValue, "");
     _builder.append("</code> as <code>Boolean</code>");
     return _builder;
   }
   
-  protected static CharSequence _notation_Element(final LiteralUnlimitedNatural self) {
+  protected static CharSequence _notation_Element(final LiteralUnlimitedNatural object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<code>");
-    int _value = self.getValue();
+    int _value = object.getValue();
     _builder.append(_value, "");
     _builder.append("</code> as <code>UnlimitedNatural</code>");
     return _builder;
   }
   
-  protected static CharSequence _notation_Element(final LiteralInteger self) {
+  protected static CharSequence _notation_Element(final LiteralInteger object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<code>");
-    int _value = self.getValue();
+    int _value = object.getValue();
     _builder.append(_value, "");
     _builder.append("</code> as <code>Integer</code>");
     return _builder;
   }
   
-  protected static CharSequence _notation_Element(final LiteralString self) {
+  protected static CharSequence _notation_Element(final LiteralString object) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<code>");
-    String _value = self.getValue();
+    String _value = object.getValue();
     _builder.append(_value, "");
     _builder.append("</code> as <code>String</code>");
     return _builder;
   }
   
-  protected static CharSequence _notation_Element(final Generalization self) {
+  protected static CharSequence _notation_Element(final Generalization object) {
     StringConcatenation _builder = new StringConcatenation();
-    Classifier _specific = self.getSpecific();
+    Classifier _specific = object.getSpecific();
     CharSequence _link_EObject = Link.link_EObject(_specific);
     _builder.append(_link_EObject, "");
     _builder.append(" &#8680; ");
-    Classifier _general = self.getGeneral();
+    Classifier _general = object.getGeneral();
     CharSequence _link_EObject_1 = Link.link_EObject(_general);
     _builder.append(_link_EObject_1, "");
     return _builder;
   }
   
-  public static CharSequence notation_Element(final Object self) {
-    if (self instanceof LiteralBoolean) {
-      return _notation_Element((LiteralBoolean)self);
-    } else if (self instanceof LiteralInteger) {
-      return _notation_Element((LiteralInteger)self);
-    } else if (self instanceof LiteralString) {
-      return _notation_Element((LiteralString)self);
-    } else if (self instanceof LiteralUnlimitedNatural) {
-      return _notation_Element((LiteralUnlimitedNatural)self);
-    } else if (self instanceof Operation) {
-      return _notation_Element((Operation)self);
-    } else if (self instanceof Property) {
-      return _notation_Element((Property)self);
-    } else if (self instanceof Parameter) {
-      return _notation_Element((Parameter)self);
-    } else if (self instanceof Generalization) {
-      return _notation_Element((Generalization)self);
-    } else if (self instanceof Element) {
-      return _notation_Element((Element)self);
-    } else if (self instanceof ParameterDirectionKind) {
-      return _notation_Element((ParameterDirectionKind)self);
-    } else if (self instanceof VisibilityKind) {
-      return _notation_Element((VisibilityKind)self);
+  public static CharSequence notation_Element(final Object object) {
+    if (object instanceof LiteralBoolean) {
+      return _notation_Element((LiteralBoolean)object);
+    } else if (object instanceof LiteralInteger) {
+      return _notation_Element((LiteralInteger)object);
+    } else if (object instanceof LiteralString) {
+      return _notation_Element((LiteralString)object);
+    } else if (object instanceof LiteralUnlimitedNatural) {
+      return _notation_Element((LiteralUnlimitedNatural)object);
+    } else if (object instanceof Operation) {
+      return _notation_Element((Operation)object);
+    } else if (object instanceof Property) {
+      return _notation_Element((Property)object);
+    } else if (object instanceof Parameter) {
+      return _notation_Element((Parameter)object);
+    } else if (object instanceof Generalization) {
+      return _notation_Element((Generalization)object);
+    } else if (object instanceof Element) {
+      return _notation_Element((Element)object);
+    } else if (object instanceof ParameterDirectionKind) {
+      return _notation_Element((ParameterDirectionKind)object);
+    } else if (object instanceof VisibilityKind) {
+      return _notation_Element((VisibilityKind)object);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(self).toString());
+        Arrays.<Object>asList(object).toString());
     }
   }
 }

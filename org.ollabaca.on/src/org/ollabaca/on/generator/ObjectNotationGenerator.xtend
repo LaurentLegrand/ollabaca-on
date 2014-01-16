@@ -112,13 +112,13 @@ class ObjectNotationGenerator implements IGenerator {
 		
 	//}
 		
-	def void fill(IProject self, Set<IProject> projects) {
-		if (projects.contains(self)) {
+	def void fill(IProject object, Set<IProject> projects) {
+		if (projects.contains(object)) {
 			return 
 		}
-		System::out.println("fill: " + self)
-		projects.add(self)
-		for (e: self.referencedProjects) {
+		System::out.println("fill: " + object)
+		projects.add(object)
+		for (e: object.referencedProjects) {
 			e.fill(projects)
 		}
 	}
