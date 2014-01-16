@@ -4,13 +4,13 @@ import org.ollabaca.on.site.Element
 import org.ollabaca.on.site.Site
 import org.ollabaca.on.site.Topic
 import org.ollabaca.on.site.Type
-import org.ollabaca.on.site.util.HTag
+import org.ollabaca.on.site.util.Component
 
 import static org.ollabaca.on.site.util.Html.*
 
 import static extension org.ollabaca.on.site.servlets.Link.*
 
-class Aside extends HTag {
+class Aside extends Component {
 	
 	new() {
 		super("aside", #{}, null)

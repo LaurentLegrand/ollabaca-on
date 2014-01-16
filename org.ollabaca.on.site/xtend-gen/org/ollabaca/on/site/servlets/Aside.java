@@ -18,11 +18,11 @@ import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.Type;
 import org.ollabaca.on.site.servlets.Link;
-import org.ollabaca.on.site.util.HTag;
+import org.ollabaca.on.site.util.Component;
 import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
-public class Aside extends HTag {
+public class Aside extends Component {
   public Aside() {
     super("aside", new Function0<Map<String,String>>() {
       public Map<String,String> apply() {

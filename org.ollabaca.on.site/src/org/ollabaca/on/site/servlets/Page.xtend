@@ -1,25 +1,25 @@
 package org.ollabaca.on.site.servlets
 
 import org.ollabaca.on.site.Element
-import org.ollabaca.on.site.util.HTag
+import org.ollabaca.on.site.util.Component
 
 class Page {
 
 	public static val Page instance = new Page()
 	
-	public static val HTag head = new HTag("head", #{ "lang" -> "en" }, [it.head_Element])
+	public static val Component head = new Component("head", #{ "lang" -> "en" }, [it.head_Element])
 	
-	public static val HTag body = new HTag("body", #{ "lang" -> "en" }, [it.body_Element])
+	public static val Component body = new Component("body", #{ "lang" -> "en" }, [it.body_Element])
 	
-	public static val HTag header = new HTag("header", #{ "class" -> "navbar navbar-inverse navbar-fixed-top" }, [it.header_Element])
+	public static val Component header = new Component("header", #{ "class" -> "navbar navbar-inverse navbar-fixed-top" }, [it.header_Element])
 	
-	public static val HTag breadcrumb = new Breadcrumb()
+	public static val Component breadcrumb = new Breadcrumb()
 
-	public static val HTag aside = new Aside()
+	public static val Component aside = new Aside()
 
-	public static val HTag article = new Article()
+	public static val Component article = new Article()
 
-	public static val HTag footer = new HTag("footer", #{ "class" -> "footer" }, [it.footer_Element])
+	public static val Component footer = new Component("footer", #{ "class" -> "footer" }, [it.footer_Element])
 	
 	static def page_Element(Element object) '''
 		<!DOCTYPE html>

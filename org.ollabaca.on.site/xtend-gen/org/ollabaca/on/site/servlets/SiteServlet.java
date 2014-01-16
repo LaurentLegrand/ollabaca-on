@@ -66,12 +66,7 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
     _workspace.addResourceChangeListener(this, IResourceChangeEvent.POST_CHANGE);
   }
   
-  private final Workspace workspace = new Function0<Workspace>() {
-    public Workspace apply() {
-      Workspace _createWorkspace = SiteFactory.eINSTANCE.createWorkspace();
-      return _createWorkspace;
-    }
-  }.apply();
+  private final Workspace workspace = SiteFactory.eINSTANCE.createWorkspace();
   
   private final Map<IProject,Resource> instances = new Function0<Map<IProject,Resource>>() {
     public Map<IProject,Resource> apply() {

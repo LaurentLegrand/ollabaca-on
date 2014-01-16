@@ -12,7 +12,7 @@ import org.ollabaca.on.site.servlets.Aside;
 import org.ollabaca.on.site.servlets.Breadcrumb;
 import org.ollabaca.on.site.servlets.Properties;
 import org.ollabaca.on.site.servlets.Title;
-import org.ollabaca.on.site.util.HTag;
+import org.ollabaca.on.site.util.Component;
 
 @SuppressWarnings("all")
 public class Page {
@@ -23,8 +23,8 @@ public class Page {
     }
   }.apply();
   
-  public final static HTag head = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component head = new Function0<Component>() {
+    public Component apply() {
       Map<String,String> _xsetliteral = null;
       Map<String,String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("lang", "en");
@@ -35,13 +35,13 @@ public class Page {
           return _head_Element;
         }
       };
-      HTag _hTag = new HTag("head", _xsetliteral, _function);
-      return _hTag;
+      Component _component = new Component("head", _xsetliteral, _function);
+      return _component;
     }
   }.apply();
   
-  public final static HTag body = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component body = new Function0<Component>() {
+    public Component apply() {
       Map<String,String> _xsetliteral = null;
       Map<String,String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("lang", "en");
@@ -52,13 +52,13 @@ public class Page {
           return _body_Element;
         }
       };
-      HTag _hTag = new HTag("body", _xsetliteral, _function);
-      return _hTag;
+      Component _component = new Component("body", _xsetliteral, _function);
+      return _component;
     }
   }.apply();
   
-  public final static HTag header = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component header = new Function0<Component>() {
+    public Component apply() {
       Map<String,String> _xsetliteral = null;
       Map<String,String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("class", "navbar navbar-inverse navbar-fixed-top");
@@ -69,34 +69,34 @@ public class Page {
           return _header_Element;
         }
       };
-      HTag _hTag = new HTag("header", _xsetliteral, _function);
-      return _hTag;
+      Component _component = new Component("header", _xsetliteral, _function);
+      return _component;
     }
   }.apply();
   
-  public final static HTag breadcrumb = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component breadcrumb = new Function0<Component>() {
+    public Component apply() {
       Breadcrumb _breadcrumb = new Breadcrumb();
       return _breadcrumb;
     }
   }.apply();
   
-  public final static HTag aside = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component aside = new Function0<Component>() {
+    public Component apply() {
       Aside _aside = new Aside();
       return _aside;
     }
   }.apply();
   
-  public final static HTag article = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component article = new Function0<Component>() {
+    public Component apply() {
       Article _article = new Article();
       return _article;
     }
   }.apply();
   
-  public final static HTag footer = new Function0<HTag>() {
-    public HTag apply() {
+  public final static Component footer = new Function0<Component>() {
+    public Component apply() {
       Map<String,String> _xsetliteral = null;
       Map<String,String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("class", "footer");
@@ -107,8 +107,8 @@ public class Page {
           return _footer_Element;
         }
       };
-      HTag _hTag = new HTag("footer", _xsetliteral, _function);
-      return _hTag;
+      Component _component = new Component("footer", _xsetliteral, _function);
+      return _component;
     }
   }.apply();
   

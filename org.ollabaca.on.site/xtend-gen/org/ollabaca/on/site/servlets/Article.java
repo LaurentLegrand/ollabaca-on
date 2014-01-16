@@ -30,12 +30,12 @@ import org.ollabaca.on.site.Type;
 import org.ollabaca.on.site.Workspace;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
-import org.ollabaca.on.site.util.HTag;
+import org.ollabaca.on.site.util.Component;
 import org.ollabaca.on.site.util.Html;
 import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
-public class Article extends HTag {
+public class Article extends Component {
   public Article() {
     super("article", new Function0<Map<String,String>>() {
       public Map<String,String> apply() {

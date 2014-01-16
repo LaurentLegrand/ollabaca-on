@@ -16,11 +16,11 @@ import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
-import org.ollabaca.on.site.util.HTag;
+import org.ollabaca.on.site.util.Component;
 import org.ollabaca.on.site.util.Html;
 
 @SuppressWarnings("all")
-public class Properties extends HTag {
+public class Properties extends Component {
   public Properties() {
     super("div", new Function0<Map<String,String>>() {
       public Map<String,String> apply() {
