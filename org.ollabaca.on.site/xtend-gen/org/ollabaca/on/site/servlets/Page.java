@@ -88,8 +88,8 @@ public class Page {
     }
   }.apply();
   
-  public final static Component article = new Function0<Component>() {
-    public Component apply() {
+  public final static Article article = new Function0<Article>() {
+    public Article apply() {
       Article _article = new Article();
       return _article;
     }

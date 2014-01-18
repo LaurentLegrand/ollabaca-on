@@ -28,6 +28,7 @@ import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.Type;
 import org.ollabaca.on.site.Workspace;
+import org.ollabaca.on.site.servlets.Features;
 import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.util.Component;
@@ -78,6 +79,16 @@ public class Article extends Component {
     _builder.append(_html_2, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("</section>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("<div class=\"features\">");
+    _builder.newLine();
+    _builder.append("\t");
+    EObject _target = object.getTarget();
+    CharSequence _features_EObject = Features.features_EObject(_target);
+    _builder.append(_features_EObject, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("</div>");
     _builder.newLine();
     return _builder;
   }

@@ -277,7 +277,7 @@ public interface Topic extends Named
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @model kind="operation" unique="false"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean _or = false;\n<%org.ollabaca.on.site.Topic%> _this = this;\n<%java.lang.String%> _name = _this.getName();\nboolean _equals = <%com.google.common.base.Objects%>.equal(_name, null);\nif (_equals)\n{\n\t_or = true;\n} else\n{\n\t<%org.ollabaca.on.site.Topic%> _this_1 = this;\n\t<%java.lang.String%> _name_1 = _this_1.getName();\n\t<%java.lang.String%> _trim = _name_1.trim();\n\tint _length = _trim.length();\n\tboolean _equals_1 = (_length == 0);\n\t_or = (_equals || _equals_1);\n}\nreturn _or;'"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean _or = false;\n<%java.lang.String%> _name = this.getName();\nboolean _equals = <%com.google.common.base.Objects%>.equal(_name, null);\nif (_equals)\n{\n\t_or = true;\n} else\n{\n\t<%java.lang.String%> _name_1 = this.getName();\n\t<%java.lang.String%> _trim = _name_1.trim();\n\tint _length = _trim.length();\n\tboolean _equals_1 = (_length == 0);\n\t_or = (_equals || _equals_1);\n}\nreturn _or;'"
    * @generated
    */
   boolean isAnonymous();
@@ -295,7 +295,7 @@ public interface Topic extends Named
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @model kind="operation" unique="false"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>> _basicEList = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\nfinal <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = _basicEList;\n<%org.ollabaca.on.site.Topic%> _this = this;\n<%org.ollabaca.on.site.Topic%> e = _this.getParent();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(e, null));\nboolean _while = _notEquals;\nwhile (_while)\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n\tboolean _notEquals_1 = (!<%com.google.common.base.Objects%>.equal(e, null));\n\t_while = _notEquals_1;\n}\nreturn list;'"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>> _basicEList = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\nfinal <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = _basicEList;\n<%org.ollabaca.on.site.Topic%> e = this.getParent();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(e, null));\nboolean _while = _notEquals;\nwhile (_while)\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n\tboolean _notEquals_1 = (!<%com.google.common.base.Objects%>.equal(e, null));\n\t_while = _notEquals_1;\n}\nreturn list;'"
    * @generated
    */
   EList<Topic> getAncestors();

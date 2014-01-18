@@ -17,7 +17,7 @@ class Page {
 
 	public static val Component aside = new Aside()
 
-	public static val Component article = new Article()
+	public static val Article article = new Article()
 
 	public static val Component footer = new Component("footer", #{ "class" -> "footer" }, [it.footer_Element])
 	

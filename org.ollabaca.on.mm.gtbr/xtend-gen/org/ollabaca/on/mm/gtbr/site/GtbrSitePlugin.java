@@ -5,7 +5,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.ollabaca.on.mm.gtbr.Account;
 import org.ollabaca.on.mm.gtbr.site.Table_Account;
 import org.ollabaca.on.site.SitePlugin;
-import org.ollabaca.on.site.servlets.Page;
+import org.ollabaca.on.site.servlets.Features;
 
 @SuppressWarnings("all")
 public class GtbrSitePlugin implements SitePlugin {
@@ -16,6 +16,6 @@ public class GtbrSitePlugin implements SitePlugin {
         return _table_Account;
       }
     };
-    Page.article.beforeEnd.register(Account.class, _function);
+    Features.instance.register(Account.class, _function);
   }
 }

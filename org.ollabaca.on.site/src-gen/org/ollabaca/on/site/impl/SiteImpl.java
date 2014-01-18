@@ -179,8 +179,7 @@ public class SiteImpl extends NamedImpl implements Site
   public Tag getOrCreateTag(final String name)
   {
     final String n = name;
-    Site _this = this;
-    EList<Tag> _tags = _this.getTags();
+    EList<Tag> _tags = this.getTags();
     final Function1<Tag,Boolean> _function = new Function1<Tag,Boolean>()
     {
       public Boolean apply(final Tag it)
@@ -197,8 +196,7 @@ public class SiteImpl extends NamedImpl implements Site
       Tag _createTag = SiteFactory.eINSTANCE.createTag();
       tag = _createTag;
       tag.setName(name);
-      Site _this_1 = this;
-      EList<Tag> _tags_1 = _this_1.getTags();
+      EList<Tag> _tags_1 = this.getTags();
       _tags_1.add(tag);
     }
     return tag;
@@ -212,8 +210,7 @@ public class SiteImpl extends NamedImpl implements Site
   public Abbreviation getOrCreateAbbr(final String name)
   {
     final String n = name;
-    Site _this = this;
-    EList<Abbreviation> _abbreviations = _this.getAbbreviations();
+    EList<Abbreviation> _abbreviations = this.getAbbreviations();
     final Function1<Abbreviation,Boolean> _function = new Function1<Abbreviation,Boolean>()
     {
       public Boolean apply(final Abbreviation it)
@@ -230,8 +227,7 @@ public class SiteImpl extends NamedImpl implements Site
       Abbreviation _createAbbreviation = SiteFactory.eINSTANCE.createAbbreviation();
       abbreviation = _createAbbreviation;
       abbreviation.setName(name);
-      Site _this_1 = this;
-      EList<Abbreviation> _abbreviations_1 = _this_1.getAbbreviations();
+      EList<Abbreviation> _abbreviations_1 = this.getAbbreviations();
       _abbreviations_1.add(abbreviation);
     }
     return abbreviation;
@@ -245,8 +241,7 @@ public class SiteImpl extends NamedImpl implements Site
   public Type getOrCreateType(final String name)
   {
     final String n = name;
-    Site _this = this;
-    EList<Type> _types = _this.getTypes();
+    EList<Type> _types = this.getTypes();
     final Function1<Type,Boolean> _function = new Function1<Type,Boolean>()
     {
       public Boolean apply(final Type it)
@@ -263,8 +258,7 @@ public class SiteImpl extends NamedImpl implements Site
       Type _createType = SiteFactory.eINSTANCE.createType();
       e = _createType;
       e.setName(name);
-      Site _this_1 = this;
-      EList<Type> _types_1 = _this_1.getTypes();
+      EList<Type> _types_1 = this.getTypes();
       _types_1.add(e);
     }
     return e;
@@ -280,8 +274,7 @@ public class SiteImpl extends NamedImpl implements Site
     Topic _xblockexpression = null;
     {
       final String n = name;
-      Site _this = this;
-      EList<Topic> _topics = _this.getTopics();
+      EList<Topic> _topics = this.getTopics();
       final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
       {
         public Boolean apply(final Topic it)
@@ -304,8 +297,7 @@ public class SiteImpl extends NamedImpl implements Site
    */
   public EList<Topic> getRoots()
   {
-    Site _this = this;
-    EList<Topic> _topics = _this.getTopics();
+    EList<Topic> _topics = this.getTopics();
     final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
     {
       public Boolean apply(final Topic it)
@@ -339,8 +331,7 @@ public class SiteImpl extends NamedImpl implements Site
   public Topic getTopic(final EObject target)
   {
     final EObject t = target;
-    Site _this = this;
-    EList<Topic> _topics = _this.getTopics();
+    EList<Topic> _topics = this.getTopics();
     final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>()
     {
       public Boolean apply(final Topic it)

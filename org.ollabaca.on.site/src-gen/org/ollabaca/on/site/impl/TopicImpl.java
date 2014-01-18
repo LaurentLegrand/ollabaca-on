@@ -571,16 +571,14 @@ public class TopicImpl extends NamedImpl implements Topic
   public boolean isAnonymous()
   {
     boolean _or = false;
-    Topic _this = this;
-    String _name = _this.getName();
+    String _name = this.getName();
     boolean _equals = Objects.equal(_name, null);
     if (_equals)
     {
       _or = true;
     } else
     {
-      Topic _this_1 = this;
-      String _name_1 = _this_1.getName();
+      String _name_1 = this.getName();
       String _trim = _name_1.trim();
       int _length = _trim.length();
       boolean _equals_1 = (_length == 0);
@@ -623,8 +621,7 @@ public class TopicImpl extends NamedImpl implements Topic
   {
     BasicEList<Topic> _basicEList = new BasicEList<Topic>();
     final EList<Topic> list = _basicEList;
-    Topic _this = this;
-    Topic e = _this.getParent();
+    Topic e = this.getParent();
     boolean _notEquals = (!Objects.equal(e, null));
     boolean _while = _notEquals;
     while (_while)

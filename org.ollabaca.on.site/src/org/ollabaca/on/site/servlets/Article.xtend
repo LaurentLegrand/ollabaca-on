@@ -31,6 +31,10 @@ class Article extends Component {
 		<section class="documentation">
 			«object.documentation.html»
 		</section>
+		
+		<div class="features">
+			«Features::features_EObject(object.target)»
+		</div>
 	'''
 	
 	def dispatch CharSequence content_Element(Element object) ''''''
