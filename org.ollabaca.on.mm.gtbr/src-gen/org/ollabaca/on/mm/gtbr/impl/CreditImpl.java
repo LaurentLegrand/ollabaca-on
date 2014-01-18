@@ -51,8 +51,7 @@ public class CreditImpl extends RecordImpl implements Credit
    */
   public double apply(final double balance)
   {
-    Credit _this = this;
-    double _amount = _this.getAmount();
+    double _amount = this.getAmount();
     return (balance + _amount);
   }
 

@@ -66,7 +66,7 @@ class Page_Book {
 			</style>
 		</head>
 		<body>
-			<div class="container-fluid">
+			<div class="container">
 				«Section_Element.section_Element(object)»
 			</div>
 		</body>

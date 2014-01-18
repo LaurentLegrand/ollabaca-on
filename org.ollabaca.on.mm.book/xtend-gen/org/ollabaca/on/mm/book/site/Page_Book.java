@@ -163,7 +163,7 @@ public class Page_Book {
       _builder.append("<body>");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("<div class=\"container-fluid\">");
+      _builder.append("<div class=\"container\">");
       _builder.newLine();
       _builder.append("\t\t");
       CharSequence _section_Element = Section_Element.section_Element(object);

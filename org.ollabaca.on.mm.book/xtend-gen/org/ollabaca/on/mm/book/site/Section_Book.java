@@ -12,10 +12,10 @@ import org.ollabaca.on.site.util.Sites;
 public class Section_Book {
   public static CharSequence section_Book(final Book object) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div class=\"row-fluid\">");
+    _builder.append("<div class=\"row\">");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<div class=\"span12\">");
+    _builder.append("<div class=\"col-md-12\">");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<div class=\"page-header\">");
@@ -34,7 +34,7 @@ public class Section_Book {
     _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<div class=\"span12\">");
+    _builder.append("<div class=\"col-md-12\">");
     _builder.newLine();
     _builder.append("\t\t");
     CharSequence _c_BookElement = BookElements.toc_BookElement(object);

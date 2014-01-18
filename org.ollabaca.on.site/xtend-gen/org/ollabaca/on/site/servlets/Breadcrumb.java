@@ -30,14 +30,14 @@ public class Breadcrumb extends Component {
   
   protected CharSequence _content_Element(final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<ul class=\"breadcrumb\">");
+    _builder.append("<ol class=\"breadcrumb\">");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<li>");
     Site _site = Sites.site();
     CharSequence _link_EObject = Link.link_EObject(_site);
     _builder.append(_link_EObject, "\t");
-    _builder.append(" <span class=\"divider\">/</span></li>");
+    _builder.append("</li>");
     _builder.newLineIfNotEmpty();
     {
       EList<Topic> _ancestors = object.getAncestors();
@@ -46,18 +46,18 @@ public class Breadcrumb extends Component {
         _builder.append("<li>");
         CharSequence _link_EObject_1 = Link.link_EObject(e);
         _builder.append(_link_EObject_1, "\t");
-        _builder.append(" <span class=\"divider\">/</span></li>");
+        _builder.append("</li>");
         _builder.newLineIfNotEmpty();
       }
     }
     _builder.append("\t");
     _builder.append("<li class=\"active\">");
     String _title = object.getTitle();
-    String _html = Html.html(_title);
-    _builder.append(_html, "\t");
+    CharSequence _span = Html.span(_title);
+    _builder.append(_span, "\t");
     _builder.append("</li>");
     _builder.newLineIfNotEmpty();
-    _builder.append("</ul>\t");
+    _builder.append("</ol>\t");
     _builder.newLine();
     return _builder;
   }

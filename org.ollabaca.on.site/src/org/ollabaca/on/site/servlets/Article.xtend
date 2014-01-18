@@ -53,7 +53,7 @@ class Article extends Component {
 		<h1>«object.name»</h1>
 		
 		<h2>instances</h2>
-		<table>
+		<table class="table table-condensed">
 			<thead>
 				<tr>
 					<th><!-- topic id --></th>
@@ -98,7 +98,7 @@ class Article extends Component {
 	}
 
 	dispatch def CharSequence content_Element(Workspace object) '''
-		<div class="row-fluid">
+		<div class="row">
 			«FOR e : ResourcesPlugin::workspace.root.projects.filter[getFile("src-gen/instances.xmi").exists]»
 				<p><a href="/site/pages/«e.name»">«e.name»</a></p>
 			«ENDFOR»

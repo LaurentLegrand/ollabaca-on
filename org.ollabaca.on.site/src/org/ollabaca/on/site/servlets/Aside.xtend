@@ -21,7 +21,7 @@ class Aside extends Component {
 	def dispatch CharSequence content_Element(Void object) ''''''
 
 	def dispatch CharSequence content_Element(Type object) '''
-		<ul class='nav nav-list'>
+		<ul class='nav nav-stacked'>
 			<li class='nav-header'>name</li><li>«object.name»</li>
 		</ul>
 	'''
@@ -33,7 +33,7 @@ class Aside extends Component {
 	'''
 
 	def dispatch CharSequence content_Element(Topic object) '''
-		<ul class='nav nav-list'>
+		<ul class='nav nav-stacked'>
 			<li class='nav-header'>type</li><li>«object.type.link_EObject»</li>
 			«FOR e : object.ancestors BEFORE "<li class='divider'></li><li class='nav-header'>ancestors</li>"»<li>«e.link_EObject»</li>«ENDFOR»
 			«FOR e : object.topics BEFORE "<li class='divider'></li><li class='nav-header'>children</li>"»<li>«e.link_EObject»</li>«ENDFOR»

@@ -15,13 +15,13 @@ class Breadcrumb extends Component {
 	}
 
 	dispatch def CharSequence content_Element(Topic object) '''
-		<ul class="breadcrumb">
-			<li>«Sites::site.link_EObject» <span class="divider">/</span></li>
+		<ol class="breadcrumb">
+			<li>«Sites::site.link_EObject»</li>
 			«FOR e: object.ancestors»
-				<li>«e.link_EObject» <span class="divider">/</span></li>
+				<li>«e.link_EObject»</li>
 			«ENDFOR»
-			<li class="active">«object.title.html»</li>
-		</ul>	
+			<li class="active">«object.title.span»</li>
+		</ol>	
 	'''
 	
 	def dispatch CharSequence content_Element(Element object) ''''''

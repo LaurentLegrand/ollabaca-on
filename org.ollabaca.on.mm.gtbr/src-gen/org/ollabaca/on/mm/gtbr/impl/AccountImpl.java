@@ -363,8 +363,7 @@ public class AccountImpl extends NamedElementImpl implements Account
   public double getBalance()
   {
     double b = 0;
-    Account _this = this;
-    EList<Record> _records = _this.getRecords();
+    EList<Record> _records = this.getRecords();
     final Function1<Record,Date> _function = new Function1<Record,Date>()
     {
       public Date apply(final Record it)

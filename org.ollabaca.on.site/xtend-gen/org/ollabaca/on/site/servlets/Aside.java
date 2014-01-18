@@ -46,7 +46,7 @@ public class Aside extends Component {
   
   protected CharSequence _content_Element(final Type object) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<ul class=\'nav nav-list\'>");
+    _builder.append("<ul class=\'nav nav-stacked\'>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<li class=\'nav-header\'>name</li><li>");
@@ -75,7 +75,7 @@ public class Aside extends Component {
   
   protected CharSequence _content_Element(final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<ul class=\'nav nav-list\'>");
+    _builder.append("<ul class=\'nav nav-stacked\'>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<li class=\'nav-header\'>type</li><li>");

@@ -51,8 +51,7 @@ public class DebitImpl extends RecordImpl implements Debit
    */
   public double apply(final double balance)
   {
-    Debit _this = this;
-    double _amount = _this.getAmount();
+    double _amount = this.getAmount();
     return (balance - _amount);
   }
 

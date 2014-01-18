@@ -133,7 +133,7 @@ public class Article extends Component {
       _builder.newLine();
       _builder.append("<h2>instances</h2>");
       _builder.newLine();
-      _builder.append("<table>");
+      _builder.append("<table class=\"table table-condensed\">");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("<thead>");
@@ -266,7 +266,7 @@ public class Article extends Component {
   
   protected CharSequence _content_Element(final Workspace object) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<div class=\"row-fluid\">");
+    _builder.append("<div class=\"row\">");
     _builder.newLine();
     {
       IWorkspace _workspace = ResourcesPlugin.getWorkspace();

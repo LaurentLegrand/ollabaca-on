@@ -19,7 +19,7 @@ public interface Credit extends Record
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @model unique="false" balanceUnique="false"
-   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='<%org.ollabaca.on.mm.gtbr.Credit%> _this = this;\ndouble _amount = _this.getAmount();\nreturn (balance + _amount);'"
+   *        annotation="http://www.eclipse.org/emf/2002/GenModel body='double _amount = this.getAmount();\nreturn (balance + _amount);'"
    * @generated
    */
   double apply(double balance);

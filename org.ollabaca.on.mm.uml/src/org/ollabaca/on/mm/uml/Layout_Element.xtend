@@ -8,11 +8,11 @@ class Layout_Element {
 	static def <E extends Element> CharSequence layout_Element(String id, String title, E object, (E) => CharSequence body, (E) => CharSequence subsection) '''
 		«val level = Levels::start»
 		<section id="«id»" class="level-«level» «object.eClass.name»">
-			<div class="row-fluid">
-				<div class="span2">
+			<div class="row">
+				<div class="col-md-2">
 					<h«level» class="marker text-right">&nbsp;</h«level»>
 				</div>
-				<div class="span10">
+				<div class="col-md-10">
 					<h«level»>«title»</h«level»>
 					«IF body != null»
 						«body.apply(object)»

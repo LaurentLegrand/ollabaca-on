@@ -57,7 +57,7 @@ public class Properties extends Component {
       EList<EClass> _eAllSuperTypes = _eClass_1.getEAllSuperTypes();
       types.addAll(_eAllSuperTypes);
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<table class=\"table\">");
+      _builder.append("<table class=\"table table-condensed\">");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("<caption>Properties</caption>");

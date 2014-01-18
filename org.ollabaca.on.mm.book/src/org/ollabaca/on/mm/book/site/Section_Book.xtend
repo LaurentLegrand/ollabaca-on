@@ -10,13 +10,13 @@ import static extension org.ollabaca.on.site.util.Sites.*
 class Section_Book {
 
 	static def CharSequence section_Book(Book object) '''
-		<div class="row-fluid">
-			<div class="span12">
+		<div class="row">
+			<div class="col-md-12">
 				<div class="page-header">
 					<p>«object.topic_EObject.title_Element»</p>
 				</div>
 			</div>
-			<div class="span12">
+			<div class="col-md-12">
 				«object.toc_BookElement»
 			</div>
 		</div>

@@ -28,7 +28,7 @@ class Properties extends Component {
 		types.addAll(object.target.eClass.EAllSuperTypes)
 		
 		'''
-		<table class="table">
+		<table class="table table-condensed">
 			<caption>Properties</caption>
 			<thead>
 				<tr><th scope="col">Class</th><th scope="col">Name</th><th scope="col">Value</th></tr>

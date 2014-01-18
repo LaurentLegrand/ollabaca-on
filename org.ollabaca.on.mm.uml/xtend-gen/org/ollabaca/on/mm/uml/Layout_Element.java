@@ -24,10 +24,10 @@ public class Layout_Element {
     _builder.append("\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append("<div class=\"row-fluid\">");
+    _builder.append("<div class=\"row\">");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("<div class=\"span2\">");
+    _builder.append("<div class=\"col-md-2\">");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<h");
@@ -40,7 +40,7 @@ public class Layout_Element {
     _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("<div class=\"span10\">");
+    _builder.append("<div class=\"col-md-10\">");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("<h");
