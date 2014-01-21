@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest;
+package org.ollabaca.on.mm.rest;
 
 import org.eclipse.uml2.uml.Parameter;
 
@@ -12,11 +12,11 @@ import org.eclipse.uml2.uml.Parameter;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.HttpParameter#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.HttpParameter#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.ollabaca.on.mm.uml.rest.RestPackage#getHttpParameter()
+ * @see org.ollabaca.on.mm.rest.RestPackage#getHttpParameter()
  * @model
  * @generated
  */
@@ -24,7 +24,7 @@ public interface HttpParameter extends Parameter
 {
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.
-   * The literals are from the enumeration {@link org.ollabaca.on.mm.uml.rest.HttpParameterKind}.
+   * The literals are from the enumeration {@link org.ollabaca.on.mm.rest.HttpParameterKind}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Kind</em>' attribute isn't clear,
@@ -32,20 +32,20 @@ public interface HttpParameter extends Parameter
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Kind</em>' attribute.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameterKind
+   * @see org.ollabaca.on.mm.rest.HttpParameterKind
    * @see #setKind(HttpParameterKind)
-   * @see org.ollabaca.on.mm.uml.rest.RestPackage#getHttpParameter_Kind()
+   * @see org.ollabaca.on.mm.rest.RestPackage#getHttpParameter_Kind()
    * @model unique="false" required="true"
    * @generated
    */
   HttpParameterKind getKind();
 
   /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.uml.rest.HttpParameter#getKind <em>Kind</em>}' attribute.
+   * Sets the value of the '{@link org.ollabaca.on.mm.rest.HttpParameter#getKind <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Kind</em>' attribute.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameterKind
+   * @see org.ollabaca.on.mm.rest.HttpParameterKind
    * @see #getKind()
    * @generated
    */

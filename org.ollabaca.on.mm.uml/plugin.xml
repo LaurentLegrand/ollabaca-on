@@ -3,14 +3,6 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated rest -->
-      <package
-            uri="org.ollabaca.on.mm.uml.rest"
-            class="org.ollabaca.on.mm.uml.rest.RestPackage"
-            genModel="model/rest.xcore"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated todo -->
       <package
             uri="org.ollabaca.on.mm.uml.todo"

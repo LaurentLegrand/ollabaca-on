@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.impl;
+package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -8,52 +8,53 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.uml2.uml.internal.impl.InterfaceImpl;
+import org.eclipse.uml2.uml.internal.impl.ParameterImpl;
 
-import org.ollabaca.on.mm.uml.rest.HttpResource;
-import org.ollabaca.on.mm.uml.rest.RestPackage;
+import org.ollabaca.on.mm.rest.HttpParameter;
+import org.ollabaca.on.mm.rest.HttpParameterKind;
+import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Http Resource</b></em>'.
+ * An implementation of the model object '<em><b>Http Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpResourceImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpParameterImpl#getKind <em>Kind</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class HttpResourceImpl extends InterfaceImpl implements HttpResource
+public class HttpParameterImpl extends ParameterImpl implements HttpParameter
 {
   /**
-   * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
+   * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPath()
+   * @see #getKind()
    * @generated
    * @ordered
    */
-  protected static final String PATH_EDEFAULT = null;
+  protected static final HttpParameterKind KIND_EDEFAULT = HttpParameterKind.QUERY;
 
   /**
-   * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+   * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPath()
+   * @see #getKind()
    * @generated
    * @ordered
    */
-  protected String path = PATH_EDEFAULT;
+  protected HttpParameterKind kind = KIND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected HttpResourceImpl()
+  protected HttpParameterImpl()
   {
     super();
   }
@@ -66,7 +67,7 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
   @Override
   protected EClass eStaticClass()
   {
-    return RestPackage.Literals.HTTP_RESOURCE;
+    return RestPackage.Literals.HTTP_PARAMETER;
   }
 
   /**
@@ -74,9 +75,9 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPath()
+  public HttpParameterKind getKind()
   {
-    return path;
+    return kind;
   }
 
   /**
@@ -84,12 +85,12 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPath(String newPath)
+  public void setKind(HttpParameterKind newKind)
   {
-    String oldPath = path;
-    path = newPath;
+    HttpParameterKind oldKind = kind;
+    kind = newKind == null ? KIND_EDEFAULT : newKind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RestPackage.HTTP_RESOURCE__PATH, oldPath, path));
+      eNotify(new ENotificationImpl(this, Notification.SET, RestPackage.HTTP_PARAMETER__KIND, oldKind, kind));
   }
 
   /**
@@ -102,8 +103,8 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
   {
     switch (featureID)
     {
-      case RestPackage.HTTP_RESOURCE__PATH:
-        return getPath();
+      case RestPackage.HTTP_PARAMETER__KIND:
+        return getKind();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +119,8 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
   {
     switch (featureID)
     {
-      case RestPackage.HTTP_RESOURCE__PATH:
-        setPath((String)newValue);
+      case RestPackage.HTTP_PARAMETER__KIND:
+        setKind((HttpParameterKind)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +136,8 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
   {
     switch (featureID)
     {
-      case RestPackage.HTTP_RESOURCE__PATH:
-        setPath(PATH_EDEFAULT);
+      case RestPackage.HTTP_PARAMETER__KIND:
+        setKind(KIND_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +153,8 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
   {
     switch (featureID)
     {
-      case RestPackage.HTTP_RESOURCE__PATH:
-        return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+      case RestPackage.HTTP_PARAMETER__KIND:
+        return kind != KIND_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +170,10 @@ public class HttpResourceImpl extends InterfaceImpl implements HttpResource
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (path: ");
-    result.append(path);
+    result.append(" (kind: ");
+    result.append(kind);
     result.append(')');
     return result.toString();
   }
 
-} //HttpResourceImpl
+} //HttpParameterImpl

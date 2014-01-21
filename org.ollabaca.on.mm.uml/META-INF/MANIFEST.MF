@@ -17,11 +17,8 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.ollabaca.on.mm.uml,
- org.ollabaca.on.mm.uml.util,
- org.ollabaca.on.mm.uml.rest,
- org.ollabaca.on.mm.uml.rest.impl,
- org.ollabaca.on.mm.uml.rest.util,
  org.ollabaca.on.mm.uml.todo,
  org.ollabaca.on.mm.uml.todo.impl,
- org.ollabaca.on.mm.uml.todo.util
+ org.ollabaca.on.mm.uml.todo.util,
+ org.ollabaca.on.mm.uml.util
 

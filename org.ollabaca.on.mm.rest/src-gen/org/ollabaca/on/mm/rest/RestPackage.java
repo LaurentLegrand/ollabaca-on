@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest;
+package org.ollabaca.on.mm.rest;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -22,9 +22,9 @@ import org.eclipse.uml2.uml.UMLPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see org.ollabaca.on.mm.uml.rest.RestFactory
+ * @see org.ollabaca.on.mm.rest.RestFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='org.ollabaca.on.mm.uml'"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='org.ollabaca.on.mm'"
  * @generated
  */
 public interface RestPackage extends EPackage
@@ -43,7 +43,7 @@ public interface RestPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "org.ollabaca.on.mm.uml.rest";
+  String eNS_URI = "org.ollabaca.on.mm.rest";
 
   /**
    * The package namespace name.
@@ -59,14 +59,14 @@ public interface RestPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  RestPackage eINSTANCE = org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl.init();
+  RestPackage eINSTANCE = org.ollabaca.on.mm.rest.impl.RestPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpResourceImpl <em>Http Resource</em>}' class.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.impl.HttpResourceImpl <em>Http Resource</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.impl.HttpResourceImpl
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpResource()
+   * @see org.ollabaca.on.mm.rest.impl.HttpResourceImpl
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpResource()
    * @generated
    */
   int HTTP_RESOURCE = 0;
@@ -1368,11 +1368,11 @@ public interface RestPackage extends EPackage
   int HTTP_RESOURCE_OPERATION_COUNT = UMLPackage.INTERFACE_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl <em>Http Method</em>}' class.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl <em>Http Method</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMethod()
+   * @see org.ollabaca.on.mm.rest.impl.HttpMethodImpl
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMethod()
    * @generated
    */
   int HTTP_METHOD = 1;
@@ -2593,11 +2593,11 @@ public interface RestPackage extends EPackage
   int HTTP_METHOD_OPERATION_COUNT = UMLPackage.OPERATION_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpParameterImpl <em>Http Parameter</em>}' class.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.impl.HttpParameterImpl <em>Http Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.impl.HttpParameterImpl
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpParameter()
+   * @see org.ollabaca.on.mm.rest.impl.HttpParameterImpl
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpParameter()
    * @generated
    */
   int HTTP_PARAMETER = 2;
@@ -3629,11 +3629,11 @@ public interface RestPackage extends EPackage
   int HTTP_PARAMETER_OPERATION_COUNT = UMLPackage.PARAMETER_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl <em>Http Message</em>}' class.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.impl.HttpMessageImpl <em>Http Message</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMessage()
+   * @see org.ollabaca.on.mm.rest.impl.HttpMessageImpl
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMessage()
    * @generated
    */
   int HTTP_MESSAGE = 3;
@@ -4863,170 +4863,170 @@ public interface RestPackage extends EPackage
   int HTTP_MESSAGE_OPERATION_COUNT = UMLPackage.CLASSIFIER_OPERATION_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.HttpMethodKind <em>Http Method Kind</em>}' enum.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.HttpMethodKind <em>Http Method Kind</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethodKind
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMethodKind()
+   * @see org.ollabaca.on.mm.rest.HttpMethodKind
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMethodKind()
    * @generated
    */
   int HTTP_METHOD_KIND = 4;
 
   /**
-   * The meta object id for the '{@link org.ollabaca.on.mm.uml.rest.HttpParameterKind <em>Http Parameter Kind</em>}' enum.
+   * The meta object id for the '{@link org.ollabaca.on.mm.rest.HttpParameterKind <em>Http Parameter Kind</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameterKind
-   * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpParameterKind()
+   * @see org.ollabaca.on.mm.rest.HttpParameterKind
+   * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpParameterKind()
    * @generated
    */
   int HTTP_PARAMETER_KIND = 5;
 
 
   /**
-   * Returns the meta object for class '{@link org.ollabaca.on.mm.uml.rest.HttpResource <em>Http Resource</em>}'.
+   * Returns the meta object for class '{@link org.ollabaca.on.mm.rest.HttpResource <em>Http Resource</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Http Resource</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpResource
+   * @see org.ollabaca.on.mm.rest.HttpResource
    * @generated
    */
   EClass getHttpResource();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.uml.rest.HttpResource#getPath <em>Path</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.rest.HttpResource#getPath <em>Path</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Path</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpResource#getPath()
+   * @see org.ollabaca.on.mm.rest.HttpResource#getPath()
    * @see #getHttpResource()
    * @generated
    */
   EAttribute getHttpResource_Path();
 
   /**
-   * Returns the meta object for class '{@link org.ollabaca.on.mm.uml.rest.HttpMethod <em>Http Method</em>}'.
+   * Returns the meta object for class '{@link org.ollabaca.on.mm.rest.HttpMethod <em>Http Method</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Http Method</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod
+   * @see org.ollabaca.on.mm.rest.HttpMethod
    * @generated
    */
   EClass getHttpMethod();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.uml.rest.HttpMethod#getPath <em>Path</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.rest.HttpMethod#getPath <em>Path</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Path</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod#getPath()
+   * @see org.ollabaca.on.mm.rest.HttpMethod#getPath()
    * @see #getHttpMethod()
    * @generated
    */
   EAttribute getHttpMethod_Path();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.uml.rest.HttpMethod#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.rest.HttpMethod#getKind <em>Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod#getKind()
+   * @see org.ollabaca.on.mm.rest.HttpMethod#getKind()
    * @see #getHttpMethod()
    * @generated
    */
   EAttribute getHttpMethod_Kind();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.ollabaca.on.mm.uml.rest.HttpMethod#getConsumes <em>Consumes</em>}'.
+   * Returns the meta object for the attribute list '{@link org.ollabaca.on.mm.rest.HttpMethod#getConsumes <em>Consumes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Consumes</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod#getConsumes()
+   * @see org.ollabaca.on.mm.rest.HttpMethod#getConsumes()
    * @see #getHttpMethod()
    * @generated
    */
   EAttribute getHttpMethod_Consumes();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.ollabaca.on.mm.uml.rest.HttpMethod#getProduces <em>Produces</em>}'.
+   * Returns the meta object for the attribute list '{@link org.ollabaca.on.mm.rest.HttpMethod#getProduces <em>Produces</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Produces</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod#getProduces()
+   * @see org.ollabaca.on.mm.rest.HttpMethod#getProduces()
    * @see #getHttpMethod()
    * @generated
    */
   EAttribute getHttpMethod_Produces();
 
   /**
-   * Returns the meta object for class '{@link org.ollabaca.on.mm.uml.rest.HttpParameter <em>Http Parameter</em>}'.
+   * Returns the meta object for class '{@link org.ollabaca.on.mm.rest.HttpParameter <em>Http Parameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Http Parameter</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameter
+   * @see org.ollabaca.on.mm.rest.HttpParameter
    * @generated
    */
   EClass getHttpParameter();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.uml.rest.HttpParameter#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.mm.rest.HttpParameter#getKind <em>Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameter#getKind()
+   * @see org.ollabaca.on.mm.rest.HttpParameter#getKind()
    * @see #getHttpParameter()
    * @generated
    */
   EAttribute getHttpParameter_Kind();
 
   /**
-   * Returns the meta object for class '{@link org.ollabaca.on.mm.uml.rest.HttpMessage <em>Http Message</em>}'.
+   * Returns the meta object for class '{@link org.ollabaca.on.mm.rest.HttpMessage <em>Http Message</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for class '<em>Http Message</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMessage
+   * @see org.ollabaca.on.mm.rest.HttpMessage
    * @generated
    */
   EClass getHttpMessage();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.ollabaca.on.mm.uml.rest.HttpMessage#getHeaders <em>Headers</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.ollabaca.on.mm.rest.HttpMessage#getHeaders <em>Headers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Headers</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMessage#getHeaders()
+   * @see org.ollabaca.on.mm.rest.HttpMessage#getHeaders()
    * @see #getHttpMessage()
    * @generated
    */
   EReference getHttpMessage_Headers();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ollabaca.on.mm.uml.rest.HttpMessage#getContent <em>Content</em>}'.
+   * Returns the meta object for the containment reference '{@link org.ollabaca.on.mm.rest.HttpMessage#getContent <em>Content</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Content</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMessage#getContent()
+   * @see org.ollabaca.on.mm.rest.HttpMessage#getContent()
    * @see #getHttpMessage()
    * @generated
    */
   EReference getHttpMessage_Content();
 
   /**
-   * Returns the meta object for enum '{@link org.ollabaca.on.mm.uml.rest.HttpMethodKind <em>Http Method Kind</em>}'.
+   * Returns the meta object for enum '{@link org.ollabaca.on.mm.rest.HttpMethodKind <em>Http Method Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for enum '<em>Http Method Kind</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethodKind
+   * @see org.ollabaca.on.mm.rest.HttpMethodKind
    * @generated
    */
   EEnum getHttpMethodKind();
 
   /**
-   * Returns the meta object for enum '{@link org.ollabaca.on.mm.uml.rest.HttpParameterKind <em>Http Parameter Kind</em>}'.
+   * Returns the meta object for enum '{@link org.ollabaca.on.mm.rest.HttpParameterKind <em>Http Parameter Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for enum '<em>Http Parameter Kind</em>'.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameterKind
+   * @see org.ollabaca.on.mm.rest.HttpParameterKind
    * @generated
    */
   EEnum getHttpParameterKind();
@@ -5056,11 +5056,11 @@ public interface RestPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpResourceImpl <em>Http Resource</em>}' class.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.impl.HttpResourceImpl <em>Http Resource</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.impl.HttpResourceImpl
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpResource()
+     * @see org.ollabaca.on.mm.rest.impl.HttpResourceImpl
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpResource()
      * @generated
      */
     EClass HTTP_RESOURCE = eINSTANCE.getHttpResource();
@@ -5074,11 +5074,11 @@ public interface RestPackage extends EPackage
     EAttribute HTTP_RESOURCE__PATH = eINSTANCE.getHttpResource_Path();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl <em>Http Method</em>}' class.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl <em>Http Method</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMethod()
+     * @see org.ollabaca.on.mm.rest.impl.HttpMethodImpl
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMethod()
      * @generated
      */
     EClass HTTP_METHOD = eINSTANCE.getHttpMethod();
@@ -5116,11 +5116,11 @@ public interface RestPackage extends EPackage
     EAttribute HTTP_METHOD__PRODUCES = eINSTANCE.getHttpMethod_Produces();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpParameterImpl <em>Http Parameter</em>}' class.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.impl.HttpParameterImpl <em>Http Parameter</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.impl.HttpParameterImpl
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpParameter()
+     * @see org.ollabaca.on.mm.rest.impl.HttpParameterImpl
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpParameter()
      * @generated
      */
     EClass HTTP_PARAMETER = eINSTANCE.getHttpParameter();
@@ -5134,11 +5134,11 @@ public interface RestPackage extends EPackage
     EAttribute HTTP_PARAMETER__KIND = eINSTANCE.getHttpParameter_Kind();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl <em>Http Message</em>}' class.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.impl.HttpMessageImpl <em>Http Message</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMessage()
+     * @see org.ollabaca.on.mm.rest.impl.HttpMessageImpl
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMessage()
      * @generated
      */
     EClass HTTP_MESSAGE = eINSTANCE.getHttpMessage();
@@ -5160,21 +5160,21 @@ public interface RestPackage extends EPackage
     EReference HTTP_MESSAGE__CONTENT = eINSTANCE.getHttpMessage_Content();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.HttpMethodKind <em>Http Method Kind</em>}' enum.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.HttpMethodKind <em>Http Method Kind</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.HttpMethodKind
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpMethodKind()
+     * @see org.ollabaca.on.mm.rest.HttpMethodKind
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpMethodKind()
      * @generated
      */
     EEnum HTTP_METHOD_KIND = eINSTANCE.getHttpMethodKind();
 
     /**
-     * The meta object literal for the '{@link org.ollabaca.on.mm.uml.rest.HttpParameterKind <em>Http Parameter Kind</em>}' enum.
+     * The meta object literal for the '{@link org.ollabaca.on.mm.rest.HttpParameterKind <em>Http Parameter Kind</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ollabaca.on.mm.uml.rest.HttpParameterKind
-     * @see org.ollabaca.on.mm.uml.rest.impl.RestPackageImpl#getHttpParameterKind()
+     * @see org.ollabaca.on.mm.rest.HttpParameterKind
+     * @see org.ollabaca.on.mm.rest.impl.RestPackageImpl#getHttpParameterKind()
      * @generated
      */
     EEnum HTTP_PARAMETER_KIND = eINSTANCE.getHttpParameterKind();

@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest;
+package org.ollabaca.on.mm.rest;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,12 +15,12 @@ import org.eclipse.uml2.uml.Property;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.HttpMessage#getHeaders <em>Headers</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.HttpMessage#getContent <em>Content</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.HttpMessage#getHeaders <em>Headers</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.HttpMessage#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.ollabaca.on.mm.uml.rest.RestPackage#getHttpMessage()
+ * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface HttpMessage extends Classifier
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Headers</em>' containment reference list.
-   * @see org.ollabaca.on.mm.uml.rest.RestPackage#getHttpMessage_Headers()
+   * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Headers()
    * @model containment="true"
    * @generated
    */
@@ -52,14 +52,14 @@ public interface HttpMessage extends Classifier
    * <!-- end-user-doc -->
    * @return the value of the '<em>Content</em>' containment reference.
    * @see #setContent(Property)
-   * @see org.ollabaca.on.mm.uml.rest.RestPackage#getHttpMessage_Content()
+   * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Content()
    * @model containment="true"
    * @generated
    */
   Property getContent();
 
   /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.uml.rest.HttpMessage#getContent <em>Content</em>}' containment reference.
+   * Sets the value of the '{@link org.ollabaca.on.mm.rest.HttpMessage#getContent <em>Content</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Content</em>' containment reference.

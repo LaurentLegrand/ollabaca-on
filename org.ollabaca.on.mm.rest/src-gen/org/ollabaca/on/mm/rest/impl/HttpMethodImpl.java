@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.impl;
+package org.ollabaca.on.mm.rest.impl;
 
 import java.util.Collection;
 
@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import org.eclipse.uml2.uml.internal.impl.OperationImpl;
 
-import org.ollabaca.on.mm.uml.rest.HttpMethod;
-import org.ollabaca.on.mm.uml.rest.HttpMethodKind;
-import org.ollabaca.on.mm.uml.rest.RestPackage;
+import org.ollabaca.on.mm.rest.HttpMethod;
+import org.ollabaca.on.mm.rest.HttpMethodKind;
+import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,10 +27,10 @@ import org.ollabaca.on.mm.uml.rest.RestPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl#getPath <em>Path</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl#getConsumes <em>Consumes</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMethodImpl#getProduces <em>Produces</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getConsumes <em>Consumes</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getProduces <em>Produces</em>}</li>
  * </ul>
  * </p>
  *

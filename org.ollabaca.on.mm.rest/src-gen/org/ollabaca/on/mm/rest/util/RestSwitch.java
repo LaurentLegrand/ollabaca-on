@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.util;
+package org.ollabaca.on.mm.rest.util;
 
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 
-import org.ollabaca.on.mm.uml.rest.*;
+import org.ollabaca.on.mm.rest.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +38,7 @@ import org.ollabaca.on.mm.uml.rest.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see org.ollabaca.on.mm.uml.rest.RestPackage
+ * @see org.ollabaca.on.mm.rest.RestPackage
  * @generated
  */
 public class RestSwitch<T> extends Switch<T>

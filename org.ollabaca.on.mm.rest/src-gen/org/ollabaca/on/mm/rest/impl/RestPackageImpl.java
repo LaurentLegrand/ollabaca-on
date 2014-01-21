@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.impl;
+package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -13,14 +13,14 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.uml.UMLPackage;
 
-import org.ollabaca.on.mm.uml.rest.HttpMessage;
-import org.ollabaca.on.mm.uml.rest.HttpMethod;
-import org.ollabaca.on.mm.uml.rest.HttpMethodKind;
-import org.ollabaca.on.mm.uml.rest.HttpParameter;
-import org.ollabaca.on.mm.uml.rest.HttpParameterKind;
-import org.ollabaca.on.mm.uml.rest.HttpResource;
-import org.ollabaca.on.mm.uml.rest.RestFactory;
-import org.ollabaca.on.mm.uml.rest.RestPackage;
+import org.ollabaca.on.mm.rest.HttpMessage;
+import org.ollabaca.on.mm.rest.HttpMethod;
+import org.ollabaca.on.mm.rest.HttpMethodKind;
+import org.ollabaca.on.mm.rest.HttpParameter;
+import org.ollabaca.on.mm.rest.HttpParameterKind;
+import org.ollabaca.on.mm.rest.HttpResource;
+import org.ollabaca.on.mm.rest.RestFactory;
+import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,7 +83,7 @@ public class RestPackageImpl extends EPackageImpl implements RestPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see org.eclipse.emf.ecore.EPackage.Registry
-   * @see org.ollabaca.on.mm.uml.rest.RestPackage#eNS_URI
+   * @see org.ollabaca.on.mm.rest.RestPackage#eNS_URI
    * @see #init()
    * @generated
    */

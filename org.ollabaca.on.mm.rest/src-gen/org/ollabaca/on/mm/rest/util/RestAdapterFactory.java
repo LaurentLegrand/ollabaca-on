@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.util;
+package org.ollabaca.on.mm.rest.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -28,14 +28,14 @@ import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
 
-import org.ollabaca.on.mm.uml.rest.*;
+import org.ollabaca.on.mm.rest.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see org.ollabaca.on.mm.uml.rest.RestPackage
+ * @see org.ollabaca.on.mm.rest.RestPackage
  * @generated
  */
 public class RestAdapterFactory extends AdapterFactoryImpl
@@ -226,13 +226,13 @@ public class RestAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.uml.rest.HttpResource <em>Http Resource</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpResource <em>Http Resource</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ollabaca.on.mm.uml.rest.HttpResource
+   * @see org.ollabaca.on.mm.rest.HttpResource
    * @generated
    */
   public Adapter createHttpResourceAdapter()
@@ -241,13 +241,13 @@ public class RestAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.uml.rest.HttpMethod <em>Http Method</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpMethod <em>Http Method</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMethod
+   * @see org.ollabaca.on.mm.rest.HttpMethod
    * @generated
    */
   public Adapter createHttpMethodAdapter()
@@ -256,13 +256,13 @@ public class RestAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.uml.rest.HttpParameter <em>Http Parameter</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpParameter <em>Http Parameter</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ollabaca.on.mm.uml.rest.HttpParameter
+   * @see org.ollabaca.on.mm.rest.HttpParameter
    * @generated
    */
   public Adapter createHttpParameterAdapter()
@@ -271,13 +271,13 @@ public class RestAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.uml.rest.HttpMessage <em>Http Message</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpMessage <em>Http Message</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ollabaca.on.mm.uml.rest.HttpMessage
+   * @see org.ollabaca.on.mm.rest.HttpMessage
    * @generated
    */
   public Adapter createHttpMessageAdapter()

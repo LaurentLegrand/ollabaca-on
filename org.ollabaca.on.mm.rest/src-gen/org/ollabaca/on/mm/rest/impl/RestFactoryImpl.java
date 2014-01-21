@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.impl;
+package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.ollabaca.on.mm.uml.rest.*;
+import org.ollabaca.on.mm.rest.*;
 
 /**
  * <!-- begin-user-doc -->

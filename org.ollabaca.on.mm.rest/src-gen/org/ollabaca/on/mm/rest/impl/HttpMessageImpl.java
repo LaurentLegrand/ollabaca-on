@@ -1,6 +1,6 @@
 /**
  */
-package org.ollabaca.on.mm.uml.rest.impl;
+package org.ollabaca.on.mm.rest.impl;
 
 import java.util.Collection;
 
@@ -21,8 +21,8 @@ import org.eclipse.uml2.uml.Property;
 
 import org.eclipse.uml2.uml.internal.impl.ClassifierImpl;
 
-import org.ollabaca.on.mm.uml.rest.HttpMessage;
-import org.ollabaca.on.mm.uml.rest.RestPackage;
+import org.ollabaca.on.mm.rest.HttpMessage;
+import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +31,8 @@ import org.ollabaca.on.mm.uml.rest.RestPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl#getHeaders <em>Headers</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.uml.rest.impl.HttpMessageImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMessageImpl#getHeaders <em>Headers</em>}</li>
+ *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMessageImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
