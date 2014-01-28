@@ -11,9 +11,11 @@ import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EncapsulatedClassifier;
 import org.eclipse.uml2.uml.Feature;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -24,6 +26,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.RedefinableElement;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
@@ -94,6 +97,11 @@ public class RestAdapterFactory extends AdapterFactoryImpl
     new RestSwitch<Adapter>()
     {
       @Override
+      public Adapter caseMimeType(MimeType object)
+      {
+        return createMimeTypeAdapter();
+      }
+      @Override
       public Adapter caseHttpResource(HttpResource object)
       {
         return createHttpResourceAdapter();
@@ -104,9 +112,59 @@ public class RestAdapterFactory extends AdapterFactoryImpl
         return createHttpMethodAdapter();
       }
       @Override
+      public Adapter caseDELETE(DELETE object)
+      {
+        return createDELETEAdapter();
+      }
+      @Override
+      public Adapter caseGET(GET object)
+      {
+        return createGETAdapter();
+      }
+      @Override
+      public Adapter caseHEAD(HEAD object)
+      {
+        return createHEADAdapter();
+      }
+      @Override
+      public Adapter casePOST(POST object)
+      {
+        return createPOSTAdapter();
+      }
+      @Override
+      public Adapter caseOPTIONS(OPTIONS object)
+      {
+        return createOPTIONSAdapter();
+      }
+      @Override
       public Adapter caseHttpParameter(HttpParameter object)
       {
         return createHttpParameterAdapter();
+      }
+      @Override
+      public Adapter caseQueryParameter(QueryParameter object)
+      {
+        return createQueryParameterAdapter();
+      }
+      @Override
+      public Adapter casePathParameter(PathParameter object)
+      {
+        return createPathParameterAdapter();
+      }
+      @Override
+      public Adapter caseFormParameter(FormParameter object)
+      {
+        return createFormParameterAdapter();
+      }
+      @Override
+      public Adapter caseCookieParameter(CookieParameter object)
+      {
+        return createCookieParameterAdapter();
+      }
+      @Override
+      public Adapter caseHeaderParameter(HeaderParameter object)
+      {
+        return createHeaderParameterAdapter();
       }
       @Override
       public Adapter caseHttpMessage(HttpMessage object)
@@ -162,6 +220,26 @@ public class RestAdapterFactory extends AdapterFactoryImpl
       public Adapter caseClassifier(Classifier object)
       {
         return createClassifierAdapter();
+      }
+      @Override
+      public Adapter caseStructuredClassifier(StructuredClassifier object)
+      {
+        return createStructuredClassifierAdapter();
+      }
+      @Override
+      public Adapter caseEncapsulatedClassifier(EncapsulatedClassifier object)
+      {
+        return createEncapsulatedClassifierAdapter();
+      }
+      @Override
+      public Adapter caseBehavioredClassifier(BehavioredClassifier object)
+      {
+        return createBehavioredClassifierAdapter();
+      }
+      @Override
+      public Adapter caseClass(org.eclipse.uml2.uml.Class object)
+      {
+        return createClassAdapter();
       }
       @Override
       public Adapter caseInterface(Interface object)
@@ -226,6 +304,21 @@ public class RestAdapterFactory extends AdapterFactoryImpl
 
 
   /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.MimeType <em>Mime Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.MimeType
+   * @generated
+   */
+  public Adapter createMimeTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpResource <em>Http Resource</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -256,6 +349,81 @@ public class RestAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.DELETE <em>DELETE</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.DELETE
+   * @generated
+   */
+  public Adapter createDELETEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.GET <em>GET</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.GET
+   * @generated
+   */
+  public Adapter createGETAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HEAD <em>HEAD</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.HEAD
+   * @generated
+   */
+  public Adapter createHEADAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.POST <em>POST</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.POST
+   * @generated
+   */
+  public Adapter createPOSTAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.OPTIONS <em>OPTIONS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.OPTIONS
+   * @generated
+   */
+  public Adapter createOPTIONSAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HttpParameter <em>Http Parameter</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -266,6 +434,81 @@ public class RestAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createHttpParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.QueryParameter <em>Query Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.QueryParameter
+   * @generated
+   */
+  public Adapter createQueryParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.PathParameter <em>Path Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.PathParameter
+   * @generated
+   */
+  public Adapter createPathParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.FormParameter <em>Form Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.FormParameter
+   * @generated
+   */
+  public Adapter createFormParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.CookieParameter <em>Cookie Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.CookieParameter
+   * @generated
+   */
+  public Adapter createCookieParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ollabaca.on.mm.rest.HeaderParameter <em>Header Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ollabaca.on.mm.rest.HeaderParameter
+   * @generated
+   */
+  public Adapter createHeaderParameterAdapter()
   {
     return null;
   }
@@ -431,6 +674,66 @@ public class RestAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.StructuredClassifier <em>Structured Classifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.uml2.uml.StructuredClassifier
+   * @generated
+   */
+  public Adapter createStructuredClassifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.EncapsulatedClassifier <em>Encapsulated Classifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.uml2.uml.EncapsulatedClassifier
+   * @generated
+   */
+  public Adapter createEncapsulatedClassifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.BehavioredClassifier <em>Behaviored Classifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.uml2.uml.BehavioredClassifier
+   * @generated
+   */
+  public Adapter createBehavioredClassifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Class <em>Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.eclipse.uml2.uml.Class
+   * @generated
+   */
+  public Adapter createClassAdapter()
   {
     return null;
   }

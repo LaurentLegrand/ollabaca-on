@@ -4,28 +4,26 @@ package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.uml2.uml.internal.impl.ParameterImpl;
-
-import org.ollabaca.on.mm.rest.HttpParameter;
+import org.ollabaca.on.mm.rest.FormParameter;
 import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Http Parameter</b></em>'.
+ * An implementation of the model object '<em><b>Form Parameter</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class HttpParameterImpl extends ParameterImpl implements HttpParameter
+public class FormParameterImpl extends HttpParameterImpl implements FormParameter
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected HttpParameterImpl()
+  protected FormParameterImpl()
   {
     super();
   }
@@ -38,7 +36,7 @@ public abstract class HttpParameterImpl extends ParameterImpl implements HttpPar
   @Override
   protected EClass eStaticClass()
   {
-    return RestPackage.Literals.HTTP_PARAMETER;
+    return RestPackage.Literals.FORM_PARAMETER;
   }
 
-} //HttpParameterImpl
+} //FormParameterImpl

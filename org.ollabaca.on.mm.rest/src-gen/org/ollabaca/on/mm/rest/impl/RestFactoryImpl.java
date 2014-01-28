@@ -3,7 +3,6 @@
 package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -65,9 +64,18 @@ public class RestFactoryImpl extends EFactoryImpl implements RestFactory
   {
     switch (eClass.getClassifierID())
     {
+      case RestPackage.MIME_TYPE: return createMimeType();
       case RestPackage.HTTP_RESOURCE: return createHttpResource();
-      case RestPackage.HTTP_METHOD: return createHttpMethod();
-      case RestPackage.HTTP_PARAMETER: return createHttpParameter();
+      case RestPackage.DELETE: return createDELETE();
+      case RestPackage.GET: return createGET();
+      case RestPackage.HEAD: return createHEAD();
+      case RestPackage.POST: return createPOST();
+      case RestPackage.OPTIONS: return createOPTIONS();
+      case RestPackage.QUERY_PARAMETER: return createQueryParameter();
+      case RestPackage.PATH_PARAMETER: return createPathParameter();
+      case RestPackage.FORM_PARAMETER: return createFormParameter();
+      case RestPackage.COOKIE_PARAMETER: return createCookieParameter();
+      case RestPackage.HEADER_PARAMETER: return createHeaderParameter();
       case RestPackage.HTTP_MESSAGE: return createHttpMessage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -79,37 +87,10 @@ public class RestFactoryImpl extends EFactoryImpl implements RestFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  public MimeType createMimeType()
   {
-    switch (eDataType.getClassifierID())
-    {
-      case RestPackage.HTTP_METHOD_KIND:
-        return createHttpMethodKindFromString(eDataType, initialValue);
-      case RestPackage.HTTP_PARAMETER_KIND:
-        return createHttpParameterKindFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case RestPackage.HTTP_METHOD_KIND:
-        return convertHttpMethodKindToString(eDataType, instanceValue);
-      case RestPackage.HTTP_PARAMETER_KIND:
-        return convertHttpParameterKindToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
+    MimeTypeImpl mimeType = new MimeTypeImpl();
+    return mimeType;
   }
 
   /**
@@ -128,10 +109,10 @@ public class RestFactoryImpl extends EFactoryImpl implements RestFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public HttpMethod createHttpMethod()
+  public DELETE createDELETE()
   {
-    HttpMethodImpl httpMethod = new HttpMethodImpl();
-    return httpMethod;
+    DELETEImpl delete = new DELETEImpl();
+    return delete;
   }
 
   /**
@@ -139,10 +120,98 @@ public class RestFactoryImpl extends EFactoryImpl implements RestFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public HttpParameter createHttpParameter()
+  public GET createGET()
   {
-    HttpParameterImpl httpParameter = new HttpParameterImpl();
-    return httpParameter;
+    GETImpl get = new GETImpl();
+    return get;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HEAD createHEAD()
+  {
+    HEADImpl head = new HEADImpl();
+    return head;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public POST createPOST()
+  {
+    POSTImpl post = new POSTImpl();
+    return post;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OPTIONS createOPTIONS()
+  {
+    OPTIONSImpl options = new OPTIONSImpl();
+    return options;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QueryParameter createQueryParameter()
+  {
+    QueryParameterImpl queryParameter = new QueryParameterImpl();
+    return queryParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PathParameter createPathParameter()
+  {
+    PathParameterImpl pathParameter = new PathParameterImpl();
+    return pathParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FormParameter createFormParameter()
+  {
+    FormParameterImpl formParameter = new FormParameterImpl();
+    return formParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CookieParameter createCookieParameter()
+  {
+    CookieParameterImpl cookieParameter = new CookieParameterImpl();
+    return cookieParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HeaderParameter createHeaderParameter()
+  {
+    HeaderParameterImpl headerParameter = new HeaderParameterImpl();
+    return headerParameter;
   }
 
   /**
@@ -154,50 +223,6 @@ public class RestFactoryImpl extends EFactoryImpl implements RestFactory
   {
     HttpMessageImpl httpMessage = new HttpMessageImpl();
     return httpMessage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HttpMethodKind createHttpMethodKindFromString(EDataType eDataType, String initialValue)
-  {
-    HttpMethodKind result = HttpMethodKind.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertHttpMethodKindToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HttpParameterKind createHttpParameterKindFromString(EDataType eDataType, String initialValue)
-  {
-    HttpParameterKind result = HttpParameterKind.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertHttpParameterKindToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

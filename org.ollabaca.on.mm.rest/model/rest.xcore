@@ -6,30 +6,47 @@ import org.eclipse.uml2.uml.Classifier
 import org.eclipse.uml2.uml.Operation
 import org.eclipse.uml2.uml.Parameter
 
+class MimeType extends org.eclipse.uml2.uml.Class {
+	
+}
+
 class HttpResource extends Interface {
 	
 	String path
 	
 }
 
-class HttpMethod extends Operation {
+abstract class HttpMethod extends Operation {
 	
 	String path
 
-	HttpMethodKind[1] kind
+	refers MimeType[] consumes
 	
-	String[] consumes
-	
-	String[] produces 
+	refers MimeType[] produces 
 	
 }
 
-class HttpParameter extends Parameter {
-	
-	HttpParameterKind[1] kind  
-	
-	
+class DELETE extends HttpMethod {}
+
+class GET extends HttpMethod {}
+
+class HEAD extends HttpMethod {}
+
+class POST extends HttpMethod {}
+
+class OPTIONS extends HttpMethod {}
+
+
+
+abstract class HttpParameter extends Parameter {
+  
 }
+
+class QueryParameter extends HttpParameter { }
+class PathParameter extends HttpParameter { }
+class FormParameter extends HttpParameter { }
+class CookieParameter extends HttpParameter { }
+class HeaderParameter extends HttpParameter { }
 
 class HttpMessage extends Classifier {
 	
@@ -37,21 +54,4 @@ class HttpMessage extends Classifier {
 	
 	contains Property content
 	
-}
-
-
-// in lower case so as to conform to UML convention
-enum HttpMethodKind {
-	^get
-	put
-	post
-	delete
-}
-
-enum HttpParameterKind {
-	query
-	path
-	form
-	cookie
-	header
 }

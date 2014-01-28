@@ -9,9 +9,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.eclipse.uml2.uml.BehavioralFeature;
+import org.eclipse.uml2.uml.BehavioredClassifier;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EncapsulatedClassifier;
 import org.eclipse.uml2.uml.Feature;
 import org.eclipse.uml2.uml.Interface;
 import org.eclipse.uml2.uml.MultiplicityElement;
@@ -22,6 +24,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterableElement;
 import org.eclipse.uml2.uml.RedefinableElement;
+import org.eclipse.uml2.uml.StructuredClassifier;
 import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.TypedElement;
@@ -91,6 +94,27 @@ public class RestSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case RestPackage.MIME_TYPE:
+      {
+        MimeType mimeType = (MimeType)theEObject;
+        T result = caseMimeType(mimeType);
+        if (result == null) result = caseClass(mimeType);
+        if (result == null) result = caseEncapsulatedClassifier(mimeType);
+        if (result == null) result = caseBehavioredClassifier(mimeType);
+        if (result == null) result = caseStructuredClassifier(mimeType);
+        if (result == null) result = caseClassifier(mimeType);
+        if (result == null) result = caseNamespace(mimeType);
+        if (result == null) result = caseRedefinableElement(mimeType);
+        if (result == null) result = caseType(mimeType);
+        if (result == null) result = caseTemplateableElement(mimeType);
+        if (result == null) result = casePackageableElement(mimeType);
+        if (result == null) result = caseNamedElement(mimeType);
+        if (result == null) result = caseParameterableElement(mimeType);
+        if (result == null) result = caseElement(mimeType);
+        if (result == null) result = caseEModelElement(mimeType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RestPackage.HTTP_RESOURCE:
       {
         HttpResource httpResource = (HttpResource)theEObject;
@@ -126,6 +150,96 @@ public class RestSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RestPackage.DELETE:
+      {
+        DELETE delete = (DELETE)theEObject;
+        T result = caseDELETE(delete);
+        if (result == null) result = caseHttpMethod(delete);
+        if (result == null) result = caseOperation(delete);
+        if (result == null) result = caseBehavioralFeature(delete);
+        if (result == null) result = caseParameterableElement(delete);
+        if (result == null) result = caseTemplateableElement(delete);
+        if (result == null) result = caseNamespace(delete);
+        if (result == null) result = caseFeature(delete);
+        if (result == null) result = caseRedefinableElement(delete);
+        if (result == null) result = caseNamedElement(delete);
+        if (result == null) result = caseElement(delete);
+        if (result == null) result = caseEModelElement(delete);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.GET:
+      {
+        GET get = (GET)theEObject;
+        T result = caseGET(get);
+        if (result == null) result = caseHttpMethod(get);
+        if (result == null) result = caseOperation(get);
+        if (result == null) result = caseBehavioralFeature(get);
+        if (result == null) result = caseParameterableElement(get);
+        if (result == null) result = caseTemplateableElement(get);
+        if (result == null) result = caseNamespace(get);
+        if (result == null) result = caseFeature(get);
+        if (result == null) result = caseRedefinableElement(get);
+        if (result == null) result = caseNamedElement(get);
+        if (result == null) result = caseElement(get);
+        if (result == null) result = caseEModelElement(get);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.HEAD:
+      {
+        HEAD head = (HEAD)theEObject;
+        T result = caseHEAD(head);
+        if (result == null) result = caseHttpMethod(head);
+        if (result == null) result = caseOperation(head);
+        if (result == null) result = caseBehavioralFeature(head);
+        if (result == null) result = caseParameterableElement(head);
+        if (result == null) result = caseTemplateableElement(head);
+        if (result == null) result = caseNamespace(head);
+        if (result == null) result = caseFeature(head);
+        if (result == null) result = caseRedefinableElement(head);
+        if (result == null) result = caseNamedElement(head);
+        if (result == null) result = caseElement(head);
+        if (result == null) result = caseEModelElement(head);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.POST:
+      {
+        POST post = (POST)theEObject;
+        T result = casePOST(post);
+        if (result == null) result = caseHttpMethod(post);
+        if (result == null) result = caseOperation(post);
+        if (result == null) result = caseBehavioralFeature(post);
+        if (result == null) result = caseParameterableElement(post);
+        if (result == null) result = caseTemplateableElement(post);
+        if (result == null) result = caseNamespace(post);
+        if (result == null) result = caseFeature(post);
+        if (result == null) result = caseRedefinableElement(post);
+        if (result == null) result = caseNamedElement(post);
+        if (result == null) result = caseElement(post);
+        if (result == null) result = caseEModelElement(post);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.OPTIONS:
+      {
+        OPTIONS options = (OPTIONS)theEObject;
+        T result = caseOPTIONS(options);
+        if (result == null) result = caseHttpMethod(options);
+        if (result == null) result = caseOperation(options);
+        if (result == null) result = caseBehavioralFeature(options);
+        if (result == null) result = caseParameterableElement(options);
+        if (result == null) result = caseTemplateableElement(options);
+        if (result == null) result = caseNamespace(options);
+        if (result == null) result = caseFeature(options);
+        if (result == null) result = caseRedefinableElement(options);
+        if (result == null) result = caseNamedElement(options);
+        if (result == null) result = caseElement(options);
+        if (result == null) result = caseEModelElement(options);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RestPackage.HTTP_PARAMETER:
       {
         HttpParameter httpParameter = (HttpParameter)theEObject;
@@ -138,6 +252,86 @@ public class RestSwitch<T> extends Switch<T>
         if (result == null) result = caseNamedElement(httpParameter);
         if (result == null) result = caseElement(httpParameter);
         if (result == null) result = caseEModelElement(httpParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.QUERY_PARAMETER:
+      {
+        QueryParameter queryParameter = (QueryParameter)theEObject;
+        T result = caseQueryParameter(queryParameter);
+        if (result == null) result = caseHttpParameter(queryParameter);
+        if (result == null) result = caseParameter(queryParameter);
+        if (result == null) result = caseConnectableElement(queryParameter);
+        if (result == null) result = caseMultiplicityElement(queryParameter);
+        if (result == null) result = caseTypedElement(queryParameter);
+        if (result == null) result = caseParameterableElement(queryParameter);
+        if (result == null) result = caseNamedElement(queryParameter);
+        if (result == null) result = caseElement(queryParameter);
+        if (result == null) result = caseEModelElement(queryParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.PATH_PARAMETER:
+      {
+        PathParameter pathParameter = (PathParameter)theEObject;
+        T result = casePathParameter(pathParameter);
+        if (result == null) result = caseHttpParameter(pathParameter);
+        if (result == null) result = caseParameter(pathParameter);
+        if (result == null) result = caseConnectableElement(pathParameter);
+        if (result == null) result = caseMultiplicityElement(pathParameter);
+        if (result == null) result = caseTypedElement(pathParameter);
+        if (result == null) result = caseParameterableElement(pathParameter);
+        if (result == null) result = caseNamedElement(pathParameter);
+        if (result == null) result = caseElement(pathParameter);
+        if (result == null) result = caseEModelElement(pathParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.FORM_PARAMETER:
+      {
+        FormParameter formParameter = (FormParameter)theEObject;
+        T result = caseFormParameter(formParameter);
+        if (result == null) result = caseHttpParameter(formParameter);
+        if (result == null) result = caseParameter(formParameter);
+        if (result == null) result = caseConnectableElement(formParameter);
+        if (result == null) result = caseMultiplicityElement(formParameter);
+        if (result == null) result = caseTypedElement(formParameter);
+        if (result == null) result = caseParameterableElement(formParameter);
+        if (result == null) result = caseNamedElement(formParameter);
+        if (result == null) result = caseElement(formParameter);
+        if (result == null) result = caseEModelElement(formParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.COOKIE_PARAMETER:
+      {
+        CookieParameter cookieParameter = (CookieParameter)theEObject;
+        T result = caseCookieParameter(cookieParameter);
+        if (result == null) result = caseHttpParameter(cookieParameter);
+        if (result == null) result = caseParameter(cookieParameter);
+        if (result == null) result = caseConnectableElement(cookieParameter);
+        if (result == null) result = caseMultiplicityElement(cookieParameter);
+        if (result == null) result = caseTypedElement(cookieParameter);
+        if (result == null) result = caseParameterableElement(cookieParameter);
+        if (result == null) result = caseNamedElement(cookieParameter);
+        if (result == null) result = caseElement(cookieParameter);
+        if (result == null) result = caseEModelElement(cookieParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RestPackage.HEADER_PARAMETER:
+      {
+        HeaderParameter headerParameter = (HeaderParameter)theEObject;
+        T result = caseHeaderParameter(headerParameter);
+        if (result == null) result = caseHttpParameter(headerParameter);
+        if (result == null) result = caseParameter(headerParameter);
+        if (result == null) result = caseConnectableElement(headerParameter);
+        if (result == null) result = caseMultiplicityElement(headerParameter);
+        if (result == null) result = caseTypedElement(headerParameter);
+        if (result == null) result = caseParameterableElement(headerParameter);
+        if (result == null) result = caseNamedElement(headerParameter);
+        if (result == null) result = caseElement(headerParameter);
+        if (result == null) result = caseEModelElement(headerParameter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -160,6 +354,22 @@ public class RestSwitch<T> extends Switch<T>
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mime Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mime Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMimeType(MimeType object)
+  {
+    return null;
   }
 
   /**
@@ -195,6 +405,86 @@ public class RestSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>DELETE</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>DELETE</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDELETE(DELETE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>GET</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>GET</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGET(GET object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>HEAD</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>HEAD</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHEAD(HEAD object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>POST</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>POST</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePOST(POST object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>OPTIONS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>OPTIONS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOPTIONS(OPTIONS object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Http Parameter</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -206,6 +496,86 @@ public class RestSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseHttpParameter(HttpParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Query Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQueryParameter(QueryParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Path Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Path Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePathParameter(PathParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Form Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Form Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormParameter(FormParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cookie Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cookie Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCookieParameter(CookieParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Header Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Header Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeaderParameter(HeaderParameter object)
   {
     return null;
   }
@@ -382,6 +752,70 @@ public class RestSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClassifier(Classifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Structured Classifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Structured Classifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStructuredClassifier(StructuredClassifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Encapsulated Classifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Encapsulated Classifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEncapsulatedClassifier(EncapsulatedClassifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Behaviored Classifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Behaviored Classifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBehavioredClassifier(BehavioredClassifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClass(org.eclipse.uml2.uml.Class object)
   {
     return null;
   }

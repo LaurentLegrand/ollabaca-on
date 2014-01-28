@@ -12,12 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.eclipse.uml2.uml.internal.impl.OperationImpl;
 
 import org.ollabaca.on.mm.rest.HttpMethod;
-import org.ollabaca.on.mm.rest.HttpMethodKind;
+import org.ollabaca.on.mm.rest.MimeType;
 import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
@@ -28,7 +28,6 @@ import org.ollabaca.on.mm.rest.RestPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getPath <em>Path</em>}</li>
- *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getConsumes <em>Consumes</em>}</li>
  *   <li>{@link org.ollabaca.on.mm.rest.impl.HttpMethodImpl#getProduces <em>Produces</em>}</li>
  * </ul>
@@ -36,7 +35,7 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class HttpMethodImpl extends OperationImpl implements HttpMethod
+public abstract class HttpMethodImpl extends OperationImpl implements HttpMethod
 {
   /**
    * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
@@ -59,44 +58,24 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
   protected String path = PATH_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKind()
-   * @generated
-   * @ordered
-   */
-  protected static final HttpMethodKind KIND_EDEFAULT = HttpMethodKind.GET;
-
-  /**
-   * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKind()
-   * @generated
-   * @ordered
-   */
-  protected HttpMethodKind kind = KIND_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getConsumes() <em>Consumes</em>}' attribute list.
+   * The cached value of the '{@link #getConsumes() <em>Consumes</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getConsumes()
    * @generated
    * @ordered
    */
-  protected EList<String> consumes;
+  protected EList<MimeType> consumes;
 
   /**
-   * The cached value of the '{@link #getProduces() <em>Produces</em>}' attribute list.
+   * The cached value of the '{@link #getProduces() <em>Produces</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getProduces()
    * @generated
    * @ordered
    */
-  protected EList<String> produces;
+  protected EList<MimeType> produces;
 
   /**
    * <!-- begin-user-doc -->
@@ -147,34 +126,11 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
    * <!-- end-user-doc -->
    * @generated
    */
-  public HttpMethodKind getKind()
-  {
-    return kind;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKind(HttpMethodKind newKind)
-  {
-    HttpMethodKind oldKind = kind;
-    kind = newKind == null ? KIND_EDEFAULT : newKind;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RestPackage.HTTP_METHOD__KIND, oldKind, kind));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<String> getConsumes()
+  public EList<MimeType> getConsumes()
   {
     if (consumes == null)
     {
-      consumes = new EDataTypeEList<String>(String.class, this, RestPackage.HTTP_METHOD__CONSUMES);
+      consumes = new EObjectResolvingEList<MimeType>(MimeType.class, this, RestPackage.HTTP_METHOD__CONSUMES);
     }
     return consumes;
   }
@@ -184,11 +140,11 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getProduces()
+  public EList<MimeType> getProduces()
   {
     if (produces == null)
     {
-      produces = new EDataTypeEList<String>(String.class, this, RestPackage.HTTP_METHOD__PRODUCES);
+      produces = new EObjectResolvingEList<MimeType>(MimeType.class, this, RestPackage.HTTP_METHOD__PRODUCES);
     }
     return produces;
   }
@@ -205,8 +161,6 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
     {
       case RestPackage.HTTP_METHOD__PATH:
         return getPath();
-      case RestPackage.HTTP_METHOD__KIND:
-        return getKind();
       case RestPackage.HTTP_METHOD__CONSUMES:
         return getConsumes();
       case RestPackage.HTTP_METHOD__PRODUCES:
@@ -229,16 +183,13 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
       case RestPackage.HTTP_METHOD__PATH:
         setPath((String)newValue);
         return;
-      case RestPackage.HTTP_METHOD__KIND:
-        setKind((HttpMethodKind)newValue);
-        return;
       case RestPackage.HTTP_METHOD__CONSUMES:
         getConsumes().clear();
-        getConsumes().addAll((Collection<? extends String>)newValue);
+        getConsumes().addAll((Collection<? extends MimeType>)newValue);
         return;
       case RestPackage.HTTP_METHOD__PRODUCES:
         getProduces().clear();
-        getProduces().addAll((Collection<? extends String>)newValue);
+        getProduces().addAll((Collection<? extends MimeType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -256,9 +207,6 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
     {
       case RestPackage.HTTP_METHOD__PATH:
         setPath(PATH_EDEFAULT);
-        return;
-      case RestPackage.HTTP_METHOD__KIND:
-        setKind(KIND_EDEFAULT);
         return;
       case RestPackage.HTTP_METHOD__CONSUMES:
         getConsumes().clear();
@@ -282,8 +230,6 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
     {
       case RestPackage.HTTP_METHOD__PATH:
         return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-      case RestPackage.HTTP_METHOD__KIND:
-        return kind != KIND_EDEFAULT;
       case RestPackage.HTTP_METHOD__CONSUMES:
         return consumes != null && !consumes.isEmpty();
       case RestPackage.HTTP_METHOD__PRODUCES:
@@ -305,12 +251,6 @@ public class HttpMethodImpl extends OperationImpl implements HttpMethod
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (path: ");
     result.append(path);
-    result.append(", kind: ");
-    result.append(kind);
-    result.append(", consumes: ");
-    result.append(consumes);
-    result.append(", produces: ");
-    result.append(produces);
     result.append(')');
     return result.toString();
   }

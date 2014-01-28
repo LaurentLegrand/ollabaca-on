@@ -4,28 +4,28 @@ package org.ollabaca.on.mm.rest.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.uml2.uml.internal.impl.ParameterImpl;
+import org.eclipse.uml2.uml.internal.impl.ClassImpl;
 
-import org.ollabaca.on.mm.rest.HttpParameter;
+import org.ollabaca.on.mm.rest.MimeType;
 import org.ollabaca.on.mm.rest.RestPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Http Parameter</b></em>'.
+ * An implementation of the model object '<em><b>Mime Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class HttpParameterImpl extends ParameterImpl implements HttpParameter
+public class MimeTypeImpl extends ClassImpl implements MimeType
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected HttpParameterImpl()
+  protected MimeTypeImpl()
   {
     super();
   }
@@ -38,7 +38,7 @@ public abstract class HttpParameterImpl extends ParameterImpl implements HttpPar
   @Override
   protected EClass eStaticClass()
   {
-    return RestPackage.Literals.HTTP_PARAMETER;
+    return RestPackage.Literals.MIME_TYPE;
   }
 
-} //HttpParameterImpl
+} //MimeTypeImpl
