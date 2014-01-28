@@ -30,6 +30,10 @@ import org.ollabaca.on.site.SiteFactory
 import org.ollabaca.on.site.Topic
 import org.ollabaca.on.util.Units
 import org.eclipse.xtext.naming.QualifiedName
+import org.eclipse.emf.ecore.util.Diagnostician
+import org.eclipse.emf.common.util.BasicDiagnostic
+import org.eclipse.emf.common.util.DiagnosticChain
+import org.eclipse.emf.common.util.Diagnostic
 
 class ProjectToXmi {
 	
@@ -188,6 +192,21 @@ class ProjectToXmi {
 		}
 		
 		return result
+	}
+	
+	def Map<Instance, Diagnostic> validate() {
+		
+		val Map<Instance, Diagnostic> diagnostics = newHashMap()
+		for (e: instances.entrySet) {
+			val chain = new BasicDiagnostic
+			diagnostics.put(e.key, chain)
+			try {
+				Diagnostician::INSTANCE.validate(e.value, chain)
+			} catch (RuntimeException ex) {
+				chain.add(BasicDiagnostic::toDiagnostic(ex))
+			}
+		}
+		return diagnostics
 	}
 	
 	def void setFeatures(Instance object) {

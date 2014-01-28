@@ -18,8 +18,14 @@ import org.eclipse.xtext.generator.IFileSystemAccessExtension2
 import org.eclipse.xtext.generator.IGenerator
 import org.ollabaca.on.util.Visitor
 import java.util.Set
+import org.eclipse.emf.common.util.Diagnostic
+import org.eclipse.core.resources.IMarker
+import org.eclipse.core.resources.IResource
+import org.eclipse.core.resources.IWorkspace
 
 class ObjectNotationGenerator implements IGenerator {
+	
+	static val MARKER = "org.ollabaca.on.marker"
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		
@@ -38,6 +44,7 @@ class ObjectNotationGenerator implements IGenerator {
 	   		p.getFolder("src").accept(visitor)
 			for (IFile file: visitor.files) {
 				System::out.println("LOAD: " + file.fullPath)
+				file.deleteMarkers(MARKER, true, IResource::DEPTH_INFINITE)
 				resourceSet.getResource(URI::createPlatformResourceURI(file.fullPath.toString, true), true)
 			}   		
    		}
@@ -45,7 +52,9 @@ class ObjectNotationGenerator implements IGenerator {
 		
 		var URI all = (fsa as IFileSystemAccessExtension2).getURI("instances.xmi")
 		var XMLResource out = Resource$Factory$Registry::INSTANCE.getFactory(all).createResource(all) as XMLResource
-		out.contents.addAll(new ProjectToXmi(resourceSet, project.name).build())
+		
+		val projectToXmi = new ProjectToXmi(resourceSet, project.name)
+		out.contents.addAll(projectToXmi.build())
 		
 		// force id
 		for (e: out.allContents.toIterable) {
@@ -54,63 +63,37 @@ class ObjectNotationGenerator implements IGenerator {
 		
 		out.save(Collections::EMPTY_MAP)
 		
-//		val site = out.contents.filter(typeof(Site)).head
-//		
-//		if (site != null) {
-//			val siteToHtml = new SiteToHtml(site)
-//			val Set<ObjectRenderer> renderers = newHashSet()
-//			for (e: RendererFactory::factories) {
-//				renderers.add(e.newRenderer(siteToHtml))
-//			}
-//			fsa.generateFile("doc.html", siteToHtml.html(renderers))
-//		}
-
-		//new ToXWiki().doGenerate(out, fsa)
+		// validation & marker
 		
-//			for (g: Activator::instance.generators) {
-//				try {
-//				g.doGenerate(out, fsa);
-//				
-//				} catch (Exception e) {
-//					e.printStackTrace
-//				}
-//			}
 		
-		//fsa.generateFile("gexf.gexf", new ToGexf().graph(out.contents))
+	
+		for (e: projectToXmi.validate.entrySet) {
+			if (e.value.severity != Diagnostic.OK) {
+				val eUri = e.key.eResource.getURI()
+				if (eUri.isPlatformResource()) {
+					val iResource = ResourcesPlugin::getWorkspace().getRoot().findMember(eUri.toPlatformString(true))
+					iResource.getWorkspace().run([
+						for (c: e.value.children) {
+							val marker = iResource.createMarker(MARKER)
+							switch (c.severity) {
+								case Diagnostic::ERROR:
+									marker.setAttribute(IMarker::SEVERITY, IMarker::SEVERITY_ERROR)
+								case Diagnostic::WARNING:
+									marker.setAttribute(IMarker::SEVERITY, IMarker::SEVERITY_WARNING)
+								case Diagnostic::INFO:
+									marker.setAttribute(IMarker::SEVERITY, IMarker::SEVERITY_INFO)
+							}
+							marker.setAttribute(IMarker::MESSAGE, c.message)
+							System::out.println(marker)
+						}
+					], null, IWorkspace::AVOID_UPDATE, null);
 		
-		//var URI srcGen = (fsa as IFileSystemAccessExtension2).getURI("./")
-		
-		//for (e: resource.allContents.toIterable.filter(typeof(Unit))) {
-			
-//			var URI res = resource.URI
-//			
-//			var String file = res.toString.substring(Strings::longestSubstr(srcGen.toString, res.toString))
-//			
-//			//resource.
-//			var URI uri = (fsa as IFileSystemAccessExtension2).getURI(file).trimFileExtension.appendFileExtension(e.^extension)
-//		
-//			var Resource out = Resource$Factory$Registry::INSTANCE.getFactory(uri).createResource(uri)
-//			//factory.createResource(uri);
-//		
-//			out.contents.addAll(new XGenerator(resource).build())
-//			out.save(Collections::EMPTY_MAP)
-//
-//			for (g: Activator::instance.generators) {
-//				g.doGenerate(out, fsa);
-//			}
-			
-			// json
-//			uri =  (fsa as IFileSystemAccessExtension2).getURI(file).trimFileExtension.appendFileExtension("json")
-//			out = Resource$Factory$Registry::INSTANCE.getFactory(uri).createResource(uri)
-//			out.contents.addAll(new XGenerator(resource).build())
-//			
-//			var Map<String, Object> options = new HashMap<String, Object>();
-//			options.put(EMFJs::OPTION_INDENT_OUTPUT, true);
-//			options.put(EMFJs::OPTION_SERIALIZE_TYPE, false);		
-//			out.save(options)
+				}
+			}
 		}
+	
 		
-	//}
+	}
 		
 	def void fill(IProject object, Set<IProject> projects) {
 		if (projects.contains(object)) {
