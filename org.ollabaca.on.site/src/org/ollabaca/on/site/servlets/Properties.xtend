@@ -28,29 +28,34 @@ class Properties extends Component {
 		types.addAll(object.target.eClass.EAllSuperTypes)
 		
 		'''
-		<table class="table table-condensed">
-			<caption>Properties</caption>
-			<thead>
-				<tr><th scope="col">Class</th><th scope="col">Name</th><th scope="col">Value</th></tr>
-			</thead>
-			<tbody>
-				«FOR t: types»
-					«IF t.EStructuralFeatures.size != 0»
-						«FOR f: t.EStructuralFeatures»
-							<tr>
-								«IF t.EStructuralFeatures.indexOf(f) == 0»
-									<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link_EObject»</th>
-								«ENDIF»
-								<th scope="row">«f.name.escape»</th>
-								<td>«object.target.eGet(f).notation_Object»</td>
-							</tr>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Properties</div>
+			<div class="panel-body">
+				<table class="table table-condensed">
+					<thead>
+						<tr><th scope="col">Class</th><th scope="col">Name</th><th scope="col">Value</th></tr>
+					</thead>
+					<tbody>
+						«FOR t: types»
+							«IF t.EStructuralFeatures.size != 0»
+								«FOR f: t.EStructuralFeatures»
+									<tr>
+										«IF t.EStructuralFeatures.indexOf(f) == 0»
+											<th scope="row" rowspan="«t.EStructuralFeatures.size»">«t.link_EObject»</th>
+										«ENDIF»
+										<th scope="row">«f.name.escape»</th>
+										<td>«object.target.eGet(f).notation_Object»</td>
+									</tr>
+								«ENDFOR»
+							«ENDIF»
 						«ENDFOR»
-					«ENDIF»
-				«ENDFOR»
-			</tbody>
-			<tfoot>
-			</tfoot>
-		</table>
+					</tbody>
+					<tfoot>
+					</tfoot>
+				</table>
+			</div>
+		</div>
 		'''
 	}
 

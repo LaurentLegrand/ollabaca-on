@@ -33,16 +33,10 @@ public class Properties extends Component {
     }.apply(), null);
   }
   
-  public final static Properties instance = new Function0<Properties>() {
-    public Properties apply() {
-      Properties _properties = new Properties();
-      return _properties;
-    }
-  }.apply();
+  public final static Properties instance = new Properties();
   
   public static CharSequence properties_Element(final Element object) {
-    CharSequence _transform = Properties.instance.transform(object);
-    return _transform;
+    return Properties.instance.transform(object);
   }
   
   protected CharSequence _content_Element(final Topic object) {
@@ -57,21 +51,30 @@ public class Properties extends Component {
       EList<EClass> _eAllSuperTypes = _eClass_1.getEAllSuperTypes();
       types.addAll(_eAllSuperTypes);
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<table class=\"table table-condensed\">");
+      _builder.append("<div class=\"panel panel-default\">");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("<caption>Properties</caption>");
+      _builder.append("<!-- Default panel contents -->");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("<thead>");
+      _builder.append("<div class=\"panel-heading\">Properties</div>");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("<div class=\"panel-body\">");
       _builder.newLine();
       _builder.append("\t\t");
+      _builder.append("<table class=\"table table-condensed\">");
+      _builder.newLine();
+      _builder.append("\t\t\t");
+      _builder.append("<thead>");
+      _builder.newLine();
+      _builder.append("\t\t\t\t");
       _builder.append("<tr><th scope=\"col\">Class</th><th scope=\"col\">Name</th><th scope=\"col\">Value</th></tr>");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.append("\t\t\t");
       _builder.append("</thead>");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.append("\t\t\t");
       _builder.append("<tbody>");
       _builder.newLine();
       {
@@ -84,7 +87,7 @@ public class Properties extends Component {
               {
                 EList<EStructuralFeature> _eStructuralFeatures_1 = t.getEStructuralFeatures();
                 for(final EStructuralFeature f : _eStructuralFeatures_1) {
-                  _builder.append("\t\t");
+                  _builder.append("\t\t\t\t");
                   _builder.append("<tr>");
                   _builder.newLine();
                   {
@@ -92,37 +95,37 @@ public class Properties extends Component {
                     int _indexOf = _eStructuralFeatures_2.indexOf(f);
                     boolean _equals = (_indexOf == 0);
                     if (_equals) {
-                      _builder.append("\t\t");
+                      _builder.append("\t\t\t\t");
                       _builder.append("\t");
                       _builder.append("<th scope=\"row\" rowspan=\"");
                       EList<EStructuralFeature> _eStructuralFeatures_3 = t.getEStructuralFeatures();
                       int _size_1 = _eStructuralFeatures_3.size();
-                      _builder.append(_size_1, "\t\t\t");
+                      _builder.append(_size_1, "\t\t\t\t\t");
                       _builder.append("\">");
                       CharSequence _link_EObject = Link.link_EObject(t);
-                      _builder.append(_link_EObject, "\t\t\t");
+                      _builder.append(_link_EObject, "\t\t\t\t\t");
                       _builder.append("</th>");
                       _builder.newLineIfNotEmpty();
                     }
                   }
-                  _builder.append("\t\t");
+                  _builder.append("\t\t\t\t");
                   _builder.append("\t");
                   _builder.append("<th scope=\"row\">");
                   String _name = f.getName();
                   String _escape = Html.escape(_name);
-                  _builder.append(_escape, "\t\t\t");
+                  _builder.append(_escape, "\t\t\t\t\t");
                   _builder.append("</th>");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\t\t");
+                  _builder.append("\t\t\t\t");
                   _builder.append("\t");
                   _builder.append("<td>");
                   EObject _target_2 = object.getTarget();
                   Object _eGet = _target_2.eGet(f);
                   CharSequence _notation_Object = Notation.notation_Object(_eGet);
-                  _builder.append(_notation_Object, "\t\t\t");
+                  _builder.append(_notation_Object, "\t\t\t\t\t");
                   _builder.append("</td>");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\t\t");
+                  _builder.append("\t\t\t\t");
                   _builder.append("</tr>");
                   _builder.newLine();
                 }
@@ -131,18 +134,24 @@ public class Properties extends Component {
           }
         }
       }
-      _builder.append("\t");
+      _builder.append("\t\t\t");
       _builder.append("</tbody>");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.append("\t\t\t");
       _builder.append("<tfoot>");
       _builder.newLine();
-      _builder.append("\t");
+      _builder.append("\t\t\t");
       _builder.append("</tfoot>");
       _builder.newLine();
+      _builder.append("\t\t");
       _builder.append("</table>");
       _builder.newLine();
-      _xblockexpression = (_builder);
+      _builder.append("\t");
+      _builder.append("</div>");
+      _builder.newLine();
+      _builder.append("</div>");
+      _builder.newLine();
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
