@@ -10,9 +10,9 @@ class Types {
 		val List<Property> list = newArrayList()
 		for (a : object.associations) {
 			if (a.endTypes.size == 1) { // the same type is involved on all ends
-				list.addAll(a.ownedEnds)
+				list.addAll(a.memberEnds)
 			} else {
-				for (e : a.ownedEnds) {
+				for (e : a.memberEnds) {
 					if (e.type != object) {
 						list.add(e)
 					}

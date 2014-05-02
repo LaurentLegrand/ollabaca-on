@@ -18,11 +18,11 @@ public class Types {
       int _size = _endTypes.size();
       boolean _equals = (_size == 1);
       if (_equals) {
-        EList<Property> _ownedEnds = a.getOwnedEnds();
-        list.addAll(_ownedEnds);
+        EList<Property> _memberEnds = a.getMemberEnds();
+        list.addAll(_memberEnds);
       } else {
-        EList<Property> _ownedEnds_1 = a.getOwnedEnds();
-        for (final Property e : _ownedEnds_1) {
+        EList<Property> _memberEnds_1 = a.getMemberEnds();
+        for (final Property e : _memberEnds_1) {
           Type _type = e.getType();
           boolean _notEquals = (!Objects.equal(_type, object));
           if (_notEquals) {
