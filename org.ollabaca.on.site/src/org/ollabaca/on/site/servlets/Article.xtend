@@ -14,6 +14,7 @@ import org.ollabaca.on.site.util.Sites
 import static extension org.ollabaca.on.site.servlets.Link.*
 import static extension org.ollabaca.on.site.servlets.Notation.*
 import static extension org.ollabaca.on.site.util.Html.*
+import org.ollabaca.on.site.util.Levels
 
 class Article extends Component {
 	
@@ -22,8 +23,9 @@ class Article extends Component {
 	}
 
 	dispatch def CharSequence content_Element(Topic object) '''
+		«val level = Levels::start»
 		<a id="«object.name»"></a>
-		<h1>«object.title.html»</h1>
+		<h«level»>«object.title.html»</h«level»>
 		
 		<section class="abstract">
 			«object.^abstract.html»
@@ -35,6 +37,7 @@ class Article extends Component {
 		<div class="features">
 			«Features::features_EObject(object.target)»
 		</div>
+		<!-- «Levels::end» -->
 	'''
 	
 	def dispatch CharSequence content_Element(Element object) ''''''

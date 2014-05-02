@@ -33,6 +33,7 @@ import org.ollabaca.on.site.servlets.Link;
 import org.ollabaca.on.site.servlets.Notation;
 import org.ollabaca.on.site.util.Component;
 import org.ollabaca.on.site.util.Html;
+import org.ollabaca.on.site.util.Levels;
 import org.ollabaca.on.site.util.Sites;
 
 @SuppressWarnings("all")
@@ -50,16 +51,22 @@ public class Article extends Component {
   
   protected CharSequence _content_Element(final Topic object) {
     StringConcatenation _builder = new StringConcatenation();
+    final int level = Levels.start();
+    _builder.newLineIfNotEmpty();
     _builder.append("<a id=\"");
     String _name = object.getName();
     _builder.append(_name, "");
     _builder.append("\"></a>");
     _builder.newLineIfNotEmpty();
-    _builder.append("<h1>");
+    _builder.append("<h");
+    _builder.append(level, "");
+    _builder.append(">");
     String _title = object.getTitle();
     String _html = Html.html(_title);
     _builder.append(_html, "");
-    _builder.append("</h1>");
+    _builder.append("</h");
+    _builder.append(level, "");
+    _builder.append(">");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("<section class=\"abstract\">");
@@ -90,6 +97,11 @@ public class Article extends Component {
     _builder.newLineIfNotEmpty();
     _builder.append("</div>");
     _builder.newLine();
+    _builder.append("<!-- ");
+    int _end = Levels.end();
+    _builder.append(_end, "");
+    _builder.append(" -->");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -106,8 +118,7 @@ public class Article extends Component {
       EList<Topic> _topics = object.getTopics();
       final Function1<Topic,EObject> _function = new Function1<Topic,EObject>() {
         public EObject apply(final Topic it) {
-          EObject _target = it.getTarget();
-          return _target;
+          return it.getTarget();
         }
       };
       List<EObject> _map = ListExtensions.<Topic, EObject>map(_topics, _function);
@@ -259,7 +270,7 @@ public class Article extends Component {
       _builder.newLine();
       _builder.append("</table>");
       _builder.newLine();
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -275,8 +286,7 @@ public class Article extends Component {
       final Function1<IProject,Boolean> _function = new Function1<IProject,Boolean>() {
         public Boolean apply(final IProject it) {
           IFile _file = it.getFile("src-gen/instances.xmi");
-          boolean _exists = _file.exists();
-          return Boolean.valueOf(_exists);
+          return Boolean.valueOf(_file.exists());
         }
       };
       Iterable<IProject> _filter = IterableExtensions.<IProject>filter(((Iterable<IProject>)Conversions.doWrapArray(_projects)), _function);
