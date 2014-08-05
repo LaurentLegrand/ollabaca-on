@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.uml.todo.TodoPackage;
  *
  * @generated
  */
-public abstract class TierImpl extends NodeImpl implements Tier
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TierImpl()
-  {
-    super();
-  }
+public abstract class TierImpl extends NodeImpl implements Tier {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TierImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TodoPackage.Literals.TIER;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TodoPackage.Literals.TIER;
+	}
 
 } //TierImpl

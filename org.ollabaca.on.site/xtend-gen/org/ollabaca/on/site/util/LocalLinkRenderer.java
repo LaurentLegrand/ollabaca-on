@@ -19,16 +19,14 @@ public class LocalLinkRenderer extends LinkRenderer {
     final Topic topic = _site.getTopic(key);
     boolean _equals = Objects.equal(topic, null);
     if (_equals) {
-      LinkRenderer.Rendering _rendering = new LinkRenderer.Rendering("#", ("Not found: " + key));
-      return _rendering;
+      return new LinkRenderer.Rendering("#", ("Not found: " + key));
     } else {
       EObject _target = topic.getTarget();
       String _plus = ("#" + _target);
       String _title = topic.getTitle();
       CharSequence _notation_Object = Notation.notation_Object(_title);
       String _string = _notation_Object.toString();
-      LinkRenderer.Rendering _rendering_1 = new LinkRenderer.Rendering(_plus, _string);
-      return _rendering_1;
+      return new LinkRenderer.Rendering(_plus, _string);
     }
   }
 }

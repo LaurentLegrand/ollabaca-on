@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface POST extends HttpMethod
-{
+public interface POST extends HttpMethod {
 } // POST

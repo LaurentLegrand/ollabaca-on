@@ -36,6 +36,8 @@ import org.ollabaca.on.model.Slot;
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getAbbr <em>Abbr</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSee <em>See</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getTags <em>Tags</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSince <em>Since</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ollabaca.on.model.impl.InstanceImpl#getSlots <em>Slots</em>}</li>
@@ -145,6 +147,46 @@ public class InstanceImpl extends ValueImpl implements Instance
    * @ordered
    */
   protected EList<String> tags;
+
+  /**
+   * The default value of the '{@link #getSince() <em>Since</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSince()
+   * @generated
+   * @ordered
+   */
+  protected static final String SINCE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSince() <em>Since</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSince()
+   * @generated
+   * @ordered
+   */
+  protected String since = SINCE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVersion()
+   * @generated
+   * @ordered
+   */
+  protected static final String VERSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVersion()
+   * @generated
+   * @ordered
+   */
+  protected String version = VERSION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -342,6 +384,52 @@ public class InstanceImpl extends ValueImpl implements Instance
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getSince()
+  {
+    return since;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSince(String newSince)
+  {
+    String oldSince = since;
+    since = newSince;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INSTANCE__SINCE, oldSince, since));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getVersion()
+  {
+    return version;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVersion(String newVersion)
+  {
+    String oldVersion = version;
+    version = newVersion;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INSTANCE__VERSION, oldVersion, version));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -435,6 +523,10 @@ public class InstanceImpl extends ValueImpl implements Instance
         return getSee();
       case ModelPackage.INSTANCE__TAGS:
         return getTags();
+      case ModelPackage.INSTANCE__SINCE:
+        return getSince();
+      case ModelPackage.INSTANCE__VERSION:
+        return getVersion();
       case ModelPackage.INSTANCE__NAME:
         return getName();
       case ModelPackage.INSTANCE__TYPE:
@@ -475,6 +567,12 @@ public class InstanceImpl extends ValueImpl implements Instance
       case ModelPackage.INSTANCE__TAGS:
         getTags().clear();
         getTags().addAll((Collection<? extends String>)newValue);
+        return;
+      case ModelPackage.INSTANCE__SINCE:
+        setSince((String)newValue);
+        return;
+      case ModelPackage.INSTANCE__VERSION:
+        setVersion((String)newValue);
         return;
       case ModelPackage.INSTANCE__NAME:
         setName((String)newValue);
@@ -518,6 +616,12 @@ public class InstanceImpl extends ValueImpl implements Instance
       case ModelPackage.INSTANCE__TAGS:
         getTags().clear();
         return;
+      case ModelPackage.INSTANCE__SINCE:
+        setSince(SINCE_EDEFAULT);
+        return;
+      case ModelPackage.INSTANCE__VERSION:
+        setVersion(VERSION_EDEFAULT);
+        return;
       case ModelPackage.INSTANCE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -553,6 +657,10 @@ public class InstanceImpl extends ValueImpl implements Instance
         return see != null && !see.isEmpty();
       case ModelPackage.INSTANCE__TAGS:
         return tags != null && !tags.isEmpty();
+      case ModelPackage.INSTANCE__SINCE:
+        return SINCE_EDEFAULT == null ? since != null : !SINCE_EDEFAULT.equals(since);
+      case ModelPackage.INSTANCE__VERSION:
+        return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
       case ModelPackage.INSTANCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ModelPackage.INSTANCE__TYPE:
@@ -584,6 +692,10 @@ public class InstanceImpl extends ValueImpl implements Instance
     result.append(abbr);
     result.append(", tags: ");
     result.append(tags);
+    result.append(", since: ");
+    result.append(since);
+    result.append(", version: ");
+    result.append(version);
     result.append(", name: ");
     result.append(name);
     result.append(", type: ");

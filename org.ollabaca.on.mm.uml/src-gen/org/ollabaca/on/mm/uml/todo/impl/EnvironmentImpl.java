@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.uml.todo.TodoPackage;
  *
  * @generated
  */
-public class EnvironmentImpl extends ExecutionEnvironmentImpl implements Environment
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected EnvironmentImpl()
-  {
-    super();
-  }
+public class EnvironmentImpl extends ExecutionEnvironmentImpl implements Environment {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnvironmentImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TodoPackage.Literals.ENVIRONMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TodoPackage.Literals.ENVIRONMENT;
+	}
 
 } //EnvironmentImpl

@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.task.TaskPackage;
  *
  * @generated
  */
-public class ImportantImpl extends CommentImpl implements Important
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ImportantImpl()
-  {
-    super();
-  }
+public class ImportantImpl extends CommentImpl implements Important {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImportantImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TaskPackage.Literals.IMPORTANT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TaskPackage.Literals.IMPORTANT;
+	}
 
 } //ImportantImpl

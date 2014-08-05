@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Coordinate extends EObject
-{
+public interface Coordinate extends EObject {
 } // Coordinate

@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.uml.todo;
  * @model
  * @generated
  */
-public interface Middle extends Tier
-{
+public interface Middle extends Tier {
 } // Middle

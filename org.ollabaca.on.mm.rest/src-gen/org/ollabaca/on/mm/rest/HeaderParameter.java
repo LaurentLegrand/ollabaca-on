@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface HeaderParameter extends HttpParameter
-{
+public interface HeaderParameter extends HttpParameter {
 } // HeaderParameter

@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.om.OmPackage;
  *
  * @generated
  */
-public class ObseravtionImpl extends OmElementImpl implements Obseravtion
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ObseravtionImpl()
-  {
-    super();
-  }
+public class ObseravtionImpl extends OmElementImpl implements Obseravtion {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObseravtionImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return OmPackage.Literals.OBSERAVTION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OmPackage.Literals.OBSERAVTION;
+	}
 
 } //ObseravtionImpl

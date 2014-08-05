@@ -39,10 +39,10 @@ import org.ollabaca.on.site.util.Sites;
 @SuppressWarnings("all")
 public class Article extends Component {
   public Article() {
-    super("article", new Function0<Map<String,String>>() {
-      public Map<String,String> apply() {
-        Map<String,String> _xsetliteral = null;
-        Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+    super("article", new Function0<Map<String, String>>() {
+      public Map<String, String> apply() {
+        Map<String, String> _xsetliteral = null;
+        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
         _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
         return _xsetliteral;
       }
@@ -116,7 +116,7 @@ public class Article extends Component {
       final Set<EObject> instances = CollectionLiterals.<EObject>newHashSet();
       final Set<EClass> types = CollectionLiterals.<EClass>newHashSet();
       EList<Topic> _topics = object.getTopics();
-      final Function1<Topic,EObject> _function = new Function1<Topic,EObject>() {
+      final Function1<Topic, EObject> _function = new Function1<Topic, EObject>() {
         public EObject apply(final Topic it) {
           return it.getTarget();
         }
@@ -283,7 +283,7 @@ public class Article extends Component {
       IWorkspace _workspace = ResourcesPlugin.getWorkspace();
       IWorkspaceRoot _root = _workspace.getRoot();
       IProject[] _projects = _root.getProjects();
-      final Function1<IProject,Boolean> _function = new Function1<IProject,Boolean>() {
+      final Function1<IProject, Boolean> _function = new Function1<IProject, Boolean>() {
         public Boolean apply(final IProject it) {
           IFile _file = it.getFile("src-gen/instances.xmi");
           return Boolean.valueOf(_file.exists());

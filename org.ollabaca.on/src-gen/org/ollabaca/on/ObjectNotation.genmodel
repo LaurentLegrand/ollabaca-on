@@ -4,7 +4,7 @@
     editorDirectory="/org.ollabaca.on.editor/src" modelPluginID="org.ollabaca.on"
     forceOverwrite="true" modelName="ObjectNotation" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="org.ollabaca.on.edit"
-    editorPluginID="org.ollabaca.on.editor" runtimeVersion="2.9">
+    editorPluginID="org.ollabaca.on.editor" runtimeVersion="2.10">
   <genPackages prefix="Model" basePackage="org.ollabaca.on" disposableProviderFactory="true"
       ecorePackage="ObjectNotation.ecore#/">
     <genClasses ecoreClass="ObjectNotation.ecore#//Unit">
@@ -29,6 +29,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/abbr"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/see"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/tags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/since"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ObjectNotation.ecore#//Instance/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ObjectNotation.ecore#//Instance/slots"/>

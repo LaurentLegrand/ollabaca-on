@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.uml.todo.TodoPackage;
  *
  * @generated
  */
-public class FrontImpl extends TierImpl implements Front
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected FrontImpl()
-  {
-    super();
-  }
+public class FrontImpl extends TierImpl implements Front {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FrontImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TodoPackage.Literals.FRONT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TodoPackage.Literals.FRONT;
+	}
 
 } //FrontImpl

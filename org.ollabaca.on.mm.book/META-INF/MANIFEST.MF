@@ -11,11 +11,11 @@ Export-Package: org.ollabaca.on.mm.book,
  org.ollabaca.on.mm.book.impl,
  org.ollabaca.on.mm.book.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
- org.eclipse.xtext.xbase.lib,
- org.eclipse.emf.ecore.xcore.lib,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;visibility:=reexport,
+ org.eclipse.emf.ecore.xcore.lib;visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.uml2.uml;bundle-version="4.1.0",
+ org.eclipse.uml2.uml;bundle-version="4.1.0";visibility:=reexport,
  org.ollabaca.on.site;bundle-version="1.0.0",
  org.ollabaca.on.mm.uml;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

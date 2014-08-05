@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface CookieParameter extends HttpParameter
-{
+public interface CookieParameter extends HttpParameter {
 } // CookieParameter

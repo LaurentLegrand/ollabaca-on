@@ -2,6 +2,7 @@ package org.ollabaca.on.site.graph;
 
 import java.io.StringWriter;
 import java.util.List;
+import java.util.function.Consumer;
 import javax.json.Json;
 import javax.json.stream.JsonGenerator;
 import org.eclipse.emf.common.util.EList;
@@ -11,7 +12,6 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.renderers.Content;
@@ -31,35 +31,31 @@ public class GraphContentProvider {
   
   private final static String TYPES = "graph-types";
   
-  public static Function1<? super Site,? extends Content> register() {
-    Function1<? super Site,? extends Content> _xblockexpression = null;
+  public static Function1<? super Site, ? extends Content> register() {
+    Function1<? super Site, ? extends Content> _xblockexpression = null;
     {
-      final Function1<EObject,CharSequence> _function = new Function1<EObject,CharSequence>() {
+      final Function1<EObject, CharSequence> _function = new Function1<EObject, CharSequence>() {
         public CharSequence apply(final EObject it) {
           CharSequence _xifexpression = null;
           if ((it instanceof Site)) {
-            CharSequence _head_Site = GraphContentProvider.head_Site(((Site) it));
-            _xifexpression = _head_Site;
+            _xifexpression = GraphContentProvider.head_Site(((Site) it));
           }
           return _xifexpression;
         }
       };
       Page.head.beforeEnd.register(Site.class, _function);
-      final Function1<Site,Text> _function_1 = new Function1<Site,Text>() {
+      final Function1<Site, Text> _function_1 = new Function1<Site, Text>() {
         public Text apply(final Site it) {
-          Text _instancesToJSon = GraphContentProvider.instancesToJSon(it);
-          return _instancesToJSon;
+          return GraphContentProvider.instancesToJSon(it);
         }
       };
       Renderers.siteRenderers.registerRenderer(GraphContentProvider.INSTANCES, _function_1);
-      final Function1<Site,Text> _function_2 = new Function1<Site,Text>() {
+      final Function1<Site, Text> _function_2 = new Function1<Site, Text>() {
         public Text apply(final Site it) {
-          Text _typesToJSon = GraphContentProvider.typesToJSon(it);
-          return _typesToJSon;
+          return GraphContentProvider.typesToJSon(it);
         }
       };
-      Function1<? super Site,? extends Content> _registerRenderer = Renderers.siteRenderers.registerRenderer(GraphContentProvider.TYPES, _function_2);
-      _xblockexpression = (_registerRenderer);
+      _xblockexpression = Renderers.siteRenderers.registerRenderer(GraphContentProvider.TYPES, _function_2);
     }
     return _xblockexpression;
   }
@@ -251,30 +247,27 @@ public class GraphContentProvider {
   
   public static Text instancesToJSon(final Site object) {
     String _instances = GraphContentProvider.instances(object);
-    Text _text = new Text("text/json", _instances);
-    return _text;
+    return new Text("text/json", _instances);
   }
   
   public static Text typesToJSon(final Site object) {
     String _types = GraphContentProvider.types(object);
-    Text _text = new Text("text/json", _types);
-    return _text;
+    return new Text("text/json", _types);
   }
   
   public static String instances(final Site object) {
     final List<Topic> nodes = CollectionLiterals.<Topic>newArrayList();
     Site _site = Sites.site();
     EList<Topic> _topics = _site.getTopics();
-    final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>() {
+    final Function1<Topic, Boolean> _function = new Function1<Topic, Boolean>() {
       public Boolean apply(final Topic it) {
         boolean _isAnonymous = it.isAnonymous();
-        boolean _not = (!_isAnonymous);
-        return Boolean.valueOf(_not);
+        return Boolean.valueOf((!_isAnonymous));
       }
     };
     Iterable<Topic> _filter = IterableExtensions.<Topic>filter(_topics, _function);
-    final Procedure1<Topic> _function_1 = new Procedure1<Topic>() {
-      public void apply(final Topic it) {
+    final Consumer<Topic> _function_1 = new Consumer<Topic>() {
+      public void accept(final Topic it) {
         boolean _contains = nodes.contains(it);
         boolean _not = (!_contains);
         if (_not) {
@@ -282,14 +275,13 @@ public class GraphContentProvider {
         }
       }
     };
-    IterableExtensions.<Topic>forEach(_filter, _function_1);
-    StringWriter _stringWriter = new StringWriter();
-    final StringWriter out = _stringWriter;
+    _filter.forEach(_function_1);
+    final StringWriter out = new StringWriter();
     final JsonGenerator graph = Json.createGenerator(out);
     JsonGenerator _writeStartObject = graph.writeStartObject();
     _writeStartObject.writeStartArray("nodes");
-    final Procedure1<Topic> _function_2 = new Procedure1<Topic>() {
-      public void apply(final Topic it) {
+    final Consumer<Topic> _function_2 = new Consumer<Topic>() {
+      public void accept(final Topic it) {
         JsonGenerator _writeStartObject = graph.writeStartObject();
         CharSequence _ref_Object = Ref.ref_Object(it);
         String _string = _ref_Object.toString();
@@ -304,22 +296,21 @@ public class GraphContentProvider {
         _write_3.writeEnd();
       }
     };
-    IterableExtensions.<Topic>forEach(nodes, _function_2);
+    nodes.forEach(_function_2);
     JsonGenerator _writeEnd = graph.writeEnd();
     _writeEnd.writeStartArray("links");
-    final Procedure1<Topic> _function_3 = new Procedure1<Topic>() {
-      public void apply(final Topic parent) {
+    final Consumer<Topic> _function_3 = new Consumer<Topic>() {
+      public void accept(final Topic parent) {
         EList<Topic> _topics = parent.getTopics();
-        final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>() {
+        final Function1<Topic, Boolean> _function = new Function1<Topic, Boolean>() {
           public Boolean apply(final Topic it) {
             boolean _isAnonymous = it.isAnonymous();
-            boolean _not = (!_isAnonymous);
-            return Boolean.valueOf(_not);
+            return Boolean.valueOf((!_isAnonymous));
           }
         };
         Iterable<Topic> _filter = IterableExtensions.<Topic>filter(_topics, _function);
-        final Procedure1<Topic> _function_1 = new Procedure1<Topic>() {
-          public void apply(final Topic child) {
+        final Consumer<Topic> _function_1 = new Consumer<Topic>() {
+          public void accept(final Topic child) {
             JsonGenerator _writeStartObject = graph.writeStartObject();
             int _indexOf = nodes.indexOf(parent);
             JsonGenerator _write = _writeStartObject.write("source", _indexOf);
@@ -329,10 +320,10 @@ public class GraphContentProvider {
             _write_2.writeEnd();
           }
         };
-        IterableExtensions.<Topic>forEach(_filter, _function_1);
+        _filter.forEach(_function_1);
         EList<Topic> _see = parent.getSee();
-        final Procedure1<Topic> _function_2 = new Procedure1<Topic>() {
-          public void apply(final Topic child) {
+        final Consumer<Topic> _function_2 = new Consumer<Topic>() {
+          public void accept(final Topic child) {
             JsonGenerator _writeStartObject = graph.writeStartObject();
             int _indexOf = nodes.indexOf(parent);
             JsonGenerator _write = _writeStartObject.write("source", _indexOf);
@@ -342,10 +333,10 @@ public class GraphContentProvider {
             _write_2.writeEnd();
           }
         };
-        IterableExtensions.<Topic>forEach(_see, _function_2);
+        _see.forEach(_function_2);
       }
     };
-    IterableExtensions.<Topic>forEach(nodes, _function_3);
+    nodes.forEach(_function_3);
     graph.writeEnd();
     JsonGenerator _writeEnd_1 = graph.writeEnd();
     _writeEnd_1.close();
@@ -356,21 +347,20 @@ public class GraphContentProvider {
     final List<EClass> nodes = CollectionLiterals.<EClass>newArrayList();
     Site _site = Sites.site();
     EList<Topic> _topics = _site.getTopics();
-    final Procedure1<Topic> _function = new Procedure1<Topic>() {
-      public void apply(final Topic it) {
+    final Consumer<Topic> _function = new Consumer<Topic>() {
+      public void accept(final Topic it) {
         EObject _target = it.getTarget();
         EClass _eClass = _target.eClass();
         GraphContentProvider.fill(nodes, _eClass);
       }
     };
-    IterableExtensions.<Topic>forEach(_topics, _function);
-    StringWriter _stringWriter = new StringWriter();
-    final StringWriter out = _stringWriter;
+    _topics.forEach(_function);
+    final StringWriter out = new StringWriter();
     final JsonGenerator graph = Json.createGenerator(out);
     JsonGenerator _writeStartObject = graph.writeStartObject();
     _writeStartObject.writeStartArray("nodes");
-    final Procedure1<EClass> _function_1 = new Procedure1<EClass>() {
-      public void apply(final EClass it) {
+    final Consumer<EClass> _function_1 = new Consumer<EClass>() {
+      public void accept(final EClass it) {
         JsonGenerator _writeStartObject = graph.writeStartObject();
         CharSequence _ref_Object = Ref.ref_Object(it);
         String _string = _ref_Object.toString();
@@ -383,14 +373,14 @@ public class GraphContentProvider {
         _write_3.writeEnd();
       }
     };
-    IterableExtensions.<EClass>forEach(nodes, _function_1);
+    nodes.forEach(_function_1);
     JsonGenerator _writeEnd = graph.writeEnd();
     _writeEnd.writeStartArray("links");
-    final Procedure1<EClass> _function_2 = new Procedure1<EClass>() {
-      public void apply(final EClass from) {
+    final Consumer<EClass> _function_2 = new Consumer<EClass>() {
+      public void accept(final EClass from) {
         EList<EClass> _eSuperTypes = from.getESuperTypes();
-        final Procedure1<EClass> _function = new Procedure1<EClass>() {
-          public void apply(final EClass to) {
+        final Consumer<EClass> _function = new Consumer<EClass>() {
+          public void accept(final EClass to) {
             JsonGenerator _writeStartObject = graph.writeStartObject();
             int _indexOf = nodes.indexOf(from);
             JsonGenerator _write = _writeStartObject.write("source", _indexOf);
@@ -400,10 +390,10 @@ public class GraphContentProvider {
             _write_2.writeEnd();
           }
         };
-        IterableExtensions.<EClass>forEach(_eSuperTypes, _function);
+        _eSuperTypes.forEach(_function);
       }
     };
-    IterableExtensions.<EClass>forEach(nodes, _function_2);
+    nodes.forEach(_function_2);
     graph.writeEnd();
     JsonGenerator _writeEnd_1 = graph.writeEnd();
     _writeEnd_1.close();
@@ -417,11 +407,11 @@ public class GraphContentProvider {
     }
     list.add(object);
     EList<EClass> _eAllSuperTypes = object.getEAllSuperTypes();
-    final Procedure1<EClass> _function = new Procedure1<EClass>() {
-      public void apply(final EClass it) {
+    final Consumer<EClass> _function = new Consumer<EClass>() {
+      public void accept(final EClass it) {
         GraphContentProvider.fill(list, it);
       }
     };
-    IterableExtensions.<EClass>forEach(_eAllSuperTypes, _function);
+    _eAllSuperTypes.forEach(_function);
   }
 }

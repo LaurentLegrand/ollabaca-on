@@ -29,8 +29,8 @@ public class Scope {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((_path== null) ? 0 : _path.hashCode());
-    result = prime * result + ((_target== null) ? 0 : _target.hashCode());
+    result = prime * result + ((this._path== null) ? 0 : this._path.hashCode());
+    result = prime * result + ((this._target== null) ? 0 : this._target.hashCode());
     return result;
   }
   
@@ -43,15 +43,15 @@ public class Scope {
     if (getClass() != obj.getClass())
       return false;
     Scope other = (Scope) obj;
-    if (_path == null) {
+    if (this._path == null) {
       if (other._path != null)
         return false;
-    } else if (!_path.equals(other._path))
+    } else if (!this._path.equals(other._path))
       return false;
-    if (_target == null) {
+    if (this._target == null) {
       if (other._target != null)
         return false;
-    } else if (!_target.equals(other._target))
+    } else if (!this._target.equals(other._target))
       return false;
     return true;
   }

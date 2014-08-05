@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class PathParameterImpl extends HttpParameterImpl implements PathParameter
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PathParameterImpl()
-  {
-    super();
-  }
+public class PathParameterImpl extends HttpParameterImpl implements PathParameter {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PathParameterImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return RestPackage.Literals.PATH_PARAMETER;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RestPackage.Literals.PATH_PARAMETER;
+	}
 
 } //PathParameterImpl

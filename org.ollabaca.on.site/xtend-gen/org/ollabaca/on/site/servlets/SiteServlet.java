@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Consumer;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,11 +34,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.SiteFactory;
 import org.ollabaca.on.site.Tag;
@@ -68,13 +67,7 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
   
   private final Workspace workspace = SiteFactory.eINSTANCE.createWorkspace();
   
-  private final Map<IProject,Resource> instances = new Function0<Map<IProject,Resource>>() {
-    public Map<IProject,Resource> apply() {
-      HashMap<IProject,Resource> _hashMap = new HashMap<IProject, Resource>();
-      Map<IProject,Resource> _synchronizedMap = Collections.<IProject, Resource>synchronizedMap(_hashMap);
-      return _synchronizedMap;
-    }
-  }.apply();
+  private final Map<IProject, Resource> instances = Collections.<IProject, Resource>synchronizedMap(new HashMap<IProject, Resource>());
   
   protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
     try {
@@ -87,7 +80,7 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
         _or = true;
       } else {
         boolean _equals_1 = pathInfo.equals("/");
-        _or = (_equals || _equals_1);
+        _or = _equals_1;
       }
       if (_or) {
         this.home(request, response);
@@ -133,8 +126,7 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
   public PrintWriter home(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
     PrintWriter _writer = response.getWriter();
     CharSequence _page_Element = Page.page_Element(this.workspace);
-    PrintWriter _append = _writer.append(_page_Element);
-    return _append;
+    return _writer.append(_page_Element);
   }
   
   public PrintWriter site(final HttpServletRequest request, final HttpServletResponse response, final String path, final String project) {
@@ -158,19 +150,18 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
             if (_equals) {
               PrintWriter _writer = response.getWriter();
               CharSequence _page_Element = Page.page_Element(site);
-              PrintWriter _append = _writer.append(_page_Element);
-              _xifexpression = _append;
+              _xifexpression = _writer.append(_page_Element);
             } else {
               Content _render = Renderers.siteRenderers.render(path, site);
               _render.fill(response);
             }
-            _xblockexpression_1 = (_xifexpression);
+            _xblockexpression_1 = _xifexpression;
           }
           _xtrycatchfinallyexpression = _xblockexpression_1;
         } finally {
           Sites.current.set(null);
         }
-        _xblockexpression = (_xtrycatchfinallyexpression);
+        _xblockexpression = _xtrycatchfinallyexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -195,11 +186,10 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
           {
             Sites.current.set(site);
             EList<Topic> _topics = site.getTopics();
-            final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>() {
+            final Function1<Topic, Boolean> _function = new Function1<Topic, Boolean>() {
               public Boolean apply(final Topic it) {
                 String _name = it.getName();
-                boolean _equals = Objects.equal(_name, topic);
-                return Boolean.valueOf(_equals);
+                return Boolean.valueOf(Objects.equal(_name, topic));
               }
             };
             Iterable<Topic> _filter_1 = IterableExtensions.<Topic>filter(_topics, _function);
@@ -209,19 +199,18 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
             if (_equals) {
               PrintWriter _writer = response.getWriter();
               CharSequence _page_Element = Page.page_Element(t);
-              PrintWriter _append = _writer.append(_page_Element);
-              _xifexpression = _append;
+              _xifexpression = _writer.append(_page_Element);
             } else {
               Content _render = Renderers.topicRenderers.render(path, t);
               _render.fill(response);
             }
-            _xblockexpression_1 = (_xifexpression);
+            _xblockexpression_1 = _xifexpression;
           }
           _xtrycatchfinallyexpression = _xblockexpression_1;
         } finally {
           Sites.current.set(null);
         }
-        _xblockexpression = (_xtrycatchfinallyexpression);
+        _xblockexpression = _xtrycatchfinallyexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -246,11 +235,10 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
           {
             Sites.current.set(site);
             EList<Type> _types = site.getTypes();
-            final Function1<Type,Boolean> _function = new Function1<Type,Boolean>() {
+            final Function1<Type, Boolean> _function = new Function1<Type, Boolean>() {
               public Boolean apply(final Type it) {
                 String _name = it.getName();
-                boolean _equals = Objects.equal(_name, type);
-                return Boolean.valueOf(_equals);
+                return Boolean.valueOf(Objects.equal(_name, type));
               }
             };
             Iterable<Type> _filter_1 = IterableExtensions.<Type>filter(_types, _function);
@@ -260,19 +248,18 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
             if (_equals) {
               PrintWriter _writer = response.getWriter();
               CharSequence _page_Element = Page.page_Element(t);
-              PrintWriter _append = _writer.append(_page_Element);
-              _xifexpression = _append;
+              _xifexpression = _writer.append(_page_Element);
             } else {
               Content _render = Renderers.typeRenderers.render(path, t);
               _render.fill(response);
             }
-            _xblockexpression_1 = (_xifexpression);
+            _xblockexpression_1 = _xifexpression;
           }
           _xtrycatchfinallyexpression = _xblockexpression_1;
         } finally {
           Sites.current.set(null);
         }
-        _xblockexpression = (_xtrycatchfinallyexpression);
+        _xblockexpression = _xtrycatchfinallyexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -297,11 +284,10 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
           {
             Sites.current.set(site);
             EList<Tag> _tags = site.getTags();
-            final Function1<Tag,Boolean> _function = new Function1<Tag,Boolean>() {
+            final Function1<Tag, Boolean> _function = new Function1<Tag, Boolean>() {
               public Boolean apply(final Tag it) {
                 String _name = it.getName();
-                boolean _equals = Objects.equal(_name, tag);
-                return Boolean.valueOf(_equals);
+                return Boolean.valueOf(Objects.equal(_name, tag));
               }
             };
             Iterable<Tag> _filter_1 = IterableExtensions.<Tag>filter(_tags, _function);
@@ -311,18 +297,17 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
             if (_equals) {
               PrintWriter _writer = response.getWriter();
               CharSequence _page_Element = Page.page_Element(t);
-              PrintWriter _append = _writer.append(_page_Element);
-              _xifexpression = _append;
+              _xifexpression = _writer.append(_page_Element);
             } else {
               _xifexpression = null;
             }
-            _xblockexpression_1 = (_xifexpression);
+            _xblockexpression_1 = _xifexpression;
           }
           _xtrycatchfinallyexpression = _xblockexpression_1;
         } finally {
           Sites.current.set(null);
         }
-        _xblockexpression = (_xtrycatchfinallyexpression);
+        _xblockexpression = _xtrycatchfinallyexpression;
       }
       return _xblockexpression;
     } catch (Throwable _e) {
@@ -336,8 +321,7 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
     if (_notEquals) {
       return resource;
     }
-    ResourceSetImpl _resourceSetImpl = new ResourceSetImpl();
-    final ResourceSet set = _resourceSetImpl;
+    final ResourceSet set = new ResourceSetImpl();
     String _name = project.getName();
     String _format = String.format("/%s/src-gen/instances.xmi", _name);
     URI _createPlatformResourceURI = URI.createPlatformResourceURI(_format, true);
@@ -365,12 +349,12 @@ public class SiteServlet extends HttpServlet implements IResourceChangeListener 
         Resource _remove = this.instances.remove(p);
         ResourceSet _resourceSet = _remove.getResourceSet();
         EList<Resource> _resources = _resourceSet.getResources();
-        final Procedure1<Resource> _function = new Procedure1<Resource>() {
-          public void apply(final Resource it) {
+        final Consumer<Resource> _function = new Consumer<Resource>() {
+          public void accept(final Resource it) {
             it.unload();
           }
         };
-        IterableExtensions.<Resource>forEach(_resources, _function);
+        _resources.forEach(_function);
       }
     }
   }

@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.task.TaskPackage;
  *
  * @generated
  */
-public class NoteImpl extends CommentImpl implements Note
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected NoteImpl()
-  {
-    super();
-  }
+public class NoteImpl extends CommentImpl implements Note {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NoteImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TaskPackage.Literals.NOTE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TaskPackage.Literals.NOTE;
+	}
 
 } //NoteImpl

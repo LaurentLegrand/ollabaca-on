@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface PathParameter extends HttpParameter
-{
+public interface PathParameter extends HttpParameter {
 } // PathParameter

@@ -15,14 +15,12 @@ import org.ollabaca.on.site.util.Html;
 public class Namespaces {
   public static CharSequence ordered_list_Namespace_OwnedRules(final Namespace object) {
     EList<Constraint> _ownedRules = object.getOwnedRules();
-    final Function1<Constraint,CharSequence> _function = new Function1<Constraint,CharSequence>() {
+    final Function1<Constraint, CharSequence> _function = new Function1<Constraint, CharSequence>() {
       public CharSequence apply(final Constraint it) {
-        CharSequence _div_Constraint = Constraints.div_Constraint(it);
-        return _div_Constraint;
+        return Constraints.div_Constraint(it);
       }
     };
     Content<Constraint> _content = Html.<Constraint>content(_function);
-    CharSequence _ol = Html.<Constraint>ol(_ownedRules, Collections.<Attr<Iterable<? extends Constraint>>>unmodifiableList(Lists.<Attr<Iterable<? extends Constraint>>>newArrayList()), _content);
-    return _ol;
+    return Html.<Constraint>ol(_ownedRules, Collections.<Attr<Iterable<? extends Constraint>>>unmodifiableList(Lists.<Attr<Iterable<? extends Constraint>>>newArrayList()), _content);
   }
 }

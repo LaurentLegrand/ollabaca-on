@@ -37,7 +37,7 @@ class Notation_Element {
 		definition.append(object.visibility.notation_Element).append(object.link_EObject).append(":&nbsp;").append(
 			object.type.link_EObject).append(object.notation_Multiplicity)
 
-		if (object.setDefault) {
+		if (object.^default != null) {
 			definition.append(" = ").append(object.^default)
 		}
 		val List<String> modifiers = newArrayList()

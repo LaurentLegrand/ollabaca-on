@@ -279,13 +279,31 @@ public interface ModelPackage extends EPackage
   int INSTANCE__TAGS = VALUE_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Since</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE__SINCE = VALUE_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Version</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE__VERSION = VALUE_FEATURE_COUNT + 7;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 6;
+  int INSTANCE__NAME = VALUE_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -294,7 +312,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 7;
+  int INSTANCE__TYPE = VALUE_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Slots</b></em>' containment reference list.
@@ -303,7 +321,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 8;
+  int INSTANCE__SLOTS = VALUE_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Instance</em>' class.
@@ -312,7 +330,7 @@ public interface ModelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 9;
+  int INSTANCE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link org.ollabaca.on.model.impl.SlotImpl <em>Slot</em>}' class.
@@ -743,6 +761,28 @@ public interface ModelPackage extends EPackage
   EAttribute getInstance_Tags();
 
   /**
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.model.Instance#getSince <em>Since</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Since</em>'.
+   * @see org.ollabaca.on.model.Instance#getSince()
+   * @see #getInstance()
+   * @generated
+   */
+  EAttribute getInstance_Since();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ollabaca.on.model.Instance#getVersion <em>Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Version</em>'.
+   * @see org.ollabaca.on.model.Instance#getVersion()
+   * @see #getInstance()
+   * @generated
+   */
+  EAttribute getInstance_Version();
+
+  /**
    * Returns the meta object for the attribute '{@link org.ollabaca.on.model.Instance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1129,6 +1169,22 @@ public interface ModelPackage extends EPackage
      * @generated
      */
     EAttribute INSTANCE__TAGS = eINSTANCE.getInstance_Tags();
+
+    /**
+     * The meta object literal for the '<em><b>Since</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCE__SINCE = eINSTANCE.getInstance_Since();
+
+    /**
+     * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCE__VERSION = eINSTANCE.getInstance_Version();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

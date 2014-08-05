@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class MimeTypeImpl extends ClassImpl implements MimeType
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MimeTypeImpl()
-  {
-    super();
-  }
+public class MimeTypeImpl extends ClassImpl implements MimeType {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MimeTypeImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return RestPackage.Literals.MIME_TYPE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RestPackage.Literals.MIME_TYPE;
+	}
 
 } //MimeTypeImpl

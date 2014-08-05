@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.org;
  * @model
  * @generated
  */
-public interface Person extends Agent
-{
+public interface Person extends Agent {
 } // Person

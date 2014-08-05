@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class HEADImpl extends HttpMethodImpl implements HEAD
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected HEADImpl()
-  {
-    super();
-  }
+public class HEADImpl extends HttpMethodImpl implements HEAD {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HEADImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return RestPackage.Literals.HEAD;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RestPackage.Literals.HEAD;
+	}
 
 } //HEADImpl

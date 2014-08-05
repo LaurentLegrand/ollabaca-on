@@ -12,14 +12,12 @@ import org.ollabaca.on.site.util.Sites;
 @SuppressWarnings("all")
 public class BookElements {
   public static CharSequence toc_BookElement(final BookElement object) {
-    final Function1<BookElement,CharSequence> _function = new Function1<BookElement,CharSequence>() {
+    final Function1<BookElement, CharSequence> _function = new Function1<BookElement, CharSequence>() {
       public CharSequence apply(final BookElement it) {
-        CharSequence _ul_BookElement_OwnedElements = BookElement_OwnedElements.ul_BookElement_OwnedElements(it);
-        return _ul_BookElement_OwnedElements;
+        return BookElement_OwnedElements.ul_BookElement_OwnedElements(it);
       }
     };
-    CharSequence _tag = Html.<BookElement>tag(object, "nav", _function);
-    return _tag;
+    return Html.<BookElement>tag(object, "nav", _function);
   }
   
   public static Topic topic_BookElement(final BookElement object) {
@@ -28,11 +26,9 @@ public class BookElements {
     boolean _notEquals = (!Objects.equal(_documentation, null));
     if (_notEquals) {
       Element _documentation_1 = object.getDocumentation();
-      Topic _pic_EObject = Sites.topic_EObject(_documentation_1);
-      _xifexpression = _pic_EObject;
+      _xifexpression = Sites.topic_EObject(_documentation_1);
     } else {
-      Topic _pic_fallback = Sites.topic_fallback(object);
-      _xifexpression = _pic_fallback;
+      _xifexpression = Sites.topic_fallback(object);
     }
     return _xifexpression;
   }

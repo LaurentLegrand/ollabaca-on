@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.uml.todo.TodoPackage;
  *
  * @generated
  */
-public class MiddleImpl extends TierImpl implements Middle
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected MiddleImpl()
-  {
-    super();
-  }
+public class MiddleImpl extends TierImpl implements Middle {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MiddleImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TodoPackage.Literals.MIDDLE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TodoPackage.Literals.MIDDLE;
+	}
 
 } //MiddleImpl

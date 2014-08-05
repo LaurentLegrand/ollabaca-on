@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.book;
  * @model
  * @generated
  */
-public interface Chapter extends Section
-{
+public interface Chapter extends Section {
 } // Chapter

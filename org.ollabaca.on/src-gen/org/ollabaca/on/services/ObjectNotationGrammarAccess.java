@@ -228,24 +228,34 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTagsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cTagsIDTerminalRuleCall_6_1_0 = (RuleCall)cTagsAssignment_6_1.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cNameAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_7_0_0 = (RuleCall)cNameAssignment_7_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cNewKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cTypeIDTerminalRuleCall_9_0 = (RuleCall)cTypeAssignment_9.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cSlotsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cSlotsSlotParserRuleCall_11_0 = (RuleCall)cSlotsAssignment_11.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cSinceKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cSinceAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cSinceVERSIONTerminalRuleCall_7_1_0 = (RuleCall)cSinceAssignment_7_1.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cVersionKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cVersionAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cVersionVERSIONTerminalRuleCall_8_1_0 = (RuleCall)cVersionAssignment_8_1.eContents().get(0);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Assignment cNameAssignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_9_0_0 = (RuleCall)cNameAssignment_9_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Keyword cNewKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cTypeAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cTypeIDTerminalRuleCall_11_0 = (RuleCall)cTypeAssignment_11.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cSlotsAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cSlotsSlotParserRuleCall_13_0 = (RuleCall)cSlotsAssignment_13.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		
 		//Instance:
 		//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
-		//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+		//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* ("@since" since=VERSION)? ("@version" version=VERSION)?
+		//	(name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 		public ParserRule getRule() { return rule; }
 
 		//{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
-		//abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
+		//abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* ("@since" since=VERSION)? ("@version" version=VERSION)?
+		//(name=ID "=")? "new" type=ID "{" slots+=Slot* "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Instance}
@@ -326,38 +336,62 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getTagsIDTerminalRuleCall_6_1_0() { return cTagsIDTerminalRuleCall_6_1_0; }
 
-		//(name=ID "=")?
+		//("@since" since=VERSION)?
 		public Group getGroup_7() { return cGroup_7; }
 
+		//"@since"
+		public Keyword getSinceKeyword_7_0() { return cSinceKeyword_7_0; }
+
+		//since=VERSION
+		public Assignment getSinceAssignment_7_1() { return cSinceAssignment_7_1; }
+
+		//VERSION
+		public RuleCall getSinceVERSIONTerminalRuleCall_7_1_0() { return cSinceVERSIONTerminalRuleCall_7_1_0; }
+
+		//("@version" version=VERSION)?
+		public Group getGroup_8() { return cGroup_8; }
+
+		//"@version"
+		public Keyword getVersionKeyword_8_0() { return cVersionKeyword_8_0; }
+
+		//version=VERSION
+		public Assignment getVersionAssignment_8_1() { return cVersionAssignment_8_1; }
+
+		//VERSION
+		public RuleCall getVersionVERSIONTerminalRuleCall_8_1_0() { return cVersionVERSIONTerminalRuleCall_8_1_0; }
+
+		//(name=ID "=")?
+		public Group getGroup_9() { return cGroup_9; }
+
 		//name=ID
-		public Assignment getNameAssignment_7_0() { return cNameAssignment_7_0; }
+		public Assignment getNameAssignment_9_0() { return cNameAssignment_9_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_7_0_0() { return cNameIDTerminalRuleCall_7_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_9_0_0() { return cNameIDTerminalRuleCall_9_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_7_1() { return cEqualsSignKeyword_7_1; }
+		public Keyword getEqualsSignKeyword_9_1() { return cEqualsSignKeyword_9_1; }
 
 		//"new"
-		public Keyword getNewKeyword_8() { return cNewKeyword_8; }
+		public Keyword getNewKeyword_10() { return cNewKeyword_10; }
 
 		//type=ID
-		public Assignment getTypeAssignment_9() { return cTypeAssignment_9; }
+		public Assignment getTypeAssignment_11() { return cTypeAssignment_11; }
 
 		//ID
-		public RuleCall getTypeIDTerminalRuleCall_9_0() { return cTypeIDTerminalRuleCall_9_0; }
+		public RuleCall getTypeIDTerminalRuleCall_11_0() { return cTypeIDTerminalRuleCall_11_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_10() { return cLeftCurlyBracketKeyword_10; }
+		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
 
 		//slots+=Slot*
-		public Assignment getSlotsAssignment_11() { return cSlotsAssignment_11; }
+		public Assignment getSlotsAssignment_13() { return cSlotsAssignment_13; }
 
 		//Slot
-		public RuleCall getSlotsSlotParserRuleCall_11_0() { return cSlotsSlotParserRuleCall_11_0; }
+		public RuleCall getSlotsSlotParserRuleCall_13_0() { return cSlotsSlotParserRuleCall_13_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 	}
 
 	public class SlotElements extends AbstractParserRuleElementFinder {
@@ -592,6 +626,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tFQN;
 	private TerminalRule tID;
 	private TerminalRule tLONG_STRING;
+	private TerminalRule tVERSION;
 	
 	private final Grammar grammar;
 
@@ -683,7 +718,8 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Instance:
 	//	{Instance} ("@title" title=MY_STRING)? ("@abstract" abstract=MY_STRING)? ("@doc" documentation=MY_STRING)? ("@abbr"
-	//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* (name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
+	//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* ("@since" since=VERSION)? ("@version" version=VERSION)?
+	//	(name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 	public InstanceElements getInstanceAccess() {
 		return (pInstance != null) ? pInstance : (pInstance = new InstanceElements());
 	}
@@ -812,6 +848,12 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//	"(\""->"\")";
 	public TerminalRule getLONG_STRINGRule() {
 		return (tLONG_STRING != null) ? tLONG_STRING : (tLONG_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONG_STRING"));
+	} 
+
+	//terminal VERSION:
+	//	"0".."9"* ("." "0".."9"*)+;
+	public TerminalRule getVERSIONRule() {
+		return (tVERSION != null) ? tVERSION : (tVERSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "VERSION"));
 	} 
 
 	//terminal INT returns ecore::EInt:

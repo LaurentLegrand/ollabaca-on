@@ -22,7 +22,7 @@ public class BookElement_OwnedElements {
   
   protected static CharSequence _ul_BookElement_OwnedElements(final Book object) {
     EList<Part> _parts = object.getParts();
-    final Function1<Part,String> _function = new Function1<Part,String>() {
+    final Function1<Part, String> _function = new Function1<Part, String>() {
       public String apply(final Part it) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(" ");
@@ -34,13 +34,12 @@ public class BookElement_OwnedElements {
         return _builder.toString();
       }
     };
-    CharSequence _ul = Html.<Part>ul(_parts, _function);
-    return _ul;
+    return Html.<Part>ul(_parts, _function);
   }
   
   protected static CharSequence _ul_BookElement_OwnedElements(final Part object) {
     EList<Chapter> _chapters = object.getChapters();
-    final Function1<Chapter,String> _function = new Function1<Chapter,String>() {
+    final Function1<Chapter, String> _function = new Function1<Chapter, String>() {
       public String apply(final Chapter it) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append(" ");
@@ -52,8 +51,7 @@ public class BookElement_OwnedElements {
         return _builder.toString();
       }
     };
-    CharSequence _ul = Html.<Chapter>ul(_chapters, _function);
-    return _ul;
+    return Html.<Chapter>ul(_chapters, _function);
   }
   
   protected static CharSequence _ul_BookElement_OwnedElements(final Section object) {
@@ -67,12 +65,12 @@ public class BookElement_OwnedElements {
       } else {
         EList<Section> _sections = object.getSections();
         boolean _isEmpty_1 = _sections.isEmpty();
-        _and = (_isEmpty && _isEmpty_1);
+        _and = _isEmpty_1;
       }
       if (_and) {
         return "";
       }
-      final Function1<Section,String> _function = new Function1<Section,String>() {
+      final Function1<Section, String> _function = new Function1<Section, String>() {
         public String apply(final Section it) {
           StringConcatenation _builder = new StringConcatenation();
           {
@@ -104,8 +102,7 @@ public class BookElement_OwnedElements {
           return _builder.toString();
         }
       };
-      CharSequence _tag = Html.<Section>tag(object, "ul", _function);
-      _xblockexpression = (_tag);
+      _xblockexpression = Html.<Section>tag(object, "ul", _function);
     }
     return _xblockexpression;
   }

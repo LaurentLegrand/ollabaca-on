@@ -26,14 +26,49 @@
          unpack="false"/>
 
    <plugin
-         id="org.ollabaca.on.uml"
+         id="org.ollabaca.on.mm.book"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.ollabaca.on.gtbr"
+         id="org.ollabaca.on.mm.gtbr"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ollabaca.on.mm.om"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ollabaca.on.mm.org"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ollabaca.on.mm.rest"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ollabaca.on.mm.task"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.ollabaca.on.mm.uml"
          download-size="0"
          install-size="0"
          version="0.0.0"

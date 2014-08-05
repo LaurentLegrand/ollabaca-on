@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface FormParameter extends HttpParameter
-{
+public interface FormParameter extends HttpParameter {
 } // FormParameter

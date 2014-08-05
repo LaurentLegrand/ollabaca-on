@@ -5,6 +5,8 @@ import org.eclipse.uml2.uml.Property
 import org.eclipse.uml2.uml.Classifier
 import org.eclipse.uml2.uml.Operation
 import org.eclipse.uml2.uml.Parameter
+import org.eclipse.emf.ecore.EDiagnosticChain
+import org.eclipse.emf.ecore.EMap
 
 class MimeType extends org.eclipse.uml2.uml.Class {
 	
@@ -39,6 +41,17 @@ class OPTIONS extends HttpMethod {}
 
 
 abstract class HttpParameter extends Parameter {
+
+//	op boolean containerIsHttpMethod(EDiagnosticChain diagnostics, EMap<Object, Object> context) {
+//		if (this.operation instanceof HttpMethod) {
+//			return true
+//		}
+//		
+//		//diagnostics.add()		
+//				
+//		return false
+//	}
+//	
   
 }
 

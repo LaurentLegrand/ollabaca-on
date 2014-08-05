@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class HeaderParameterImpl extends HttpParameterImpl implements HeaderParameter
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected HeaderParameterImpl()
-  {
-    super();
-  }
+public class HeaderParameterImpl extends HttpParameterImpl implements HeaderParameter {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HeaderParameterImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return RestPackage.Literals.HEADER_PARAMETER;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RestPackage.Literals.HEADER_PARAMETER;
+	}
 
 } //HeaderParameterImpl

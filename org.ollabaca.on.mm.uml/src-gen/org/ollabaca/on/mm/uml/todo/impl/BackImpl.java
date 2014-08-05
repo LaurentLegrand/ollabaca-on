@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.uml.todo.TodoPackage;
  *
  * @generated
  */
-public class BackImpl extends TierImpl implements Back
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected BackImpl()
-  {
-    super();
-  }
+public class BackImpl extends TierImpl implements Back {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BackImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TodoPackage.Literals.BACK;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TodoPackage.Literals.BACK;
+	}
 
 } //BackImpl

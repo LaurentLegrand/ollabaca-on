@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.rest.RestPackage;
  *
  * @generated
  */
-public class OPTIONSImpl extends HttpMethodImpl implements OPTIONS
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected OPTIONSImpl()
-  {
-    super();
-  }
+public class OPTIONSImpl extends HttpMethodImpl implements OPTIONS {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OPTIONSImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return RestPackage.Literals.OPTIONS;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RestPackage.Literals.OPTIONS;
+	}
 
 } //OPTIONSImpl

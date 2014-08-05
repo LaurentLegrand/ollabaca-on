@@ -30,90 +30,79 @@ public class Environments {
     TreeIterator<EObject> _eAllContents = object.eAllContents();
     Iterator<Node> _filter = Iterators.<Node>filter(_eAllContents, Node.class);
     Iterable<Node> _iterable = IteratorExtensions.<Node>toIterable(_filter);
-    final Function1<Node,String> _function = new Function1<Node,String>() {
+    final Function1<Node, String> _function = new Function1<Node, String>() {
       public String apply(final Node it) {
-        String _name = it.getName();
-        return _name;
+        return it.getName();
       }
     };
     Column<Node> _column = Html.<Node>column("Name", _function);
-    final Function1<Node,CharSequence> _function_1 = new Function1<Node,CharSequence>() {
+    final Function1<Node, CharSequence> _function_1 = new Function1<Node, CharSequence>() {
       public CharSequence apply(final Node it) {
         EList<Property> _attributes = it.getAttributes();
-        final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
+        final Function1<Property, CharSequence> _function = new Function1<Property, CharSequence>() {
           public CharSequence apply(final Property it) {
-            CharSequence _notation_Object = Notation.notation_Object(it);
-            return _notation_Object;
+            return Notation.notation_Object(it);
           }
         };
-        final Function1<Property,CharSequence> _function_1 = new Function1<Property,CharSequence>() {
+        final Function1<Property, CharSequence> _function_1 = new Function1<Property, CharSequence>() {
           public CharSequence apply(final Property it) {
-            CharSequence _documentation_EObject = Html.documentation_EObject(it);
-            return _documentation_EObject;
+            return Html.documentation_EObject(it);
           }
         };
-        CharSequence _dl = Html.<Property>dl(_attributes, _function, _function_1);
-        return _dl;
+        return Html.<Property>dl(_attributes, _function, _function_1);
       }
     };
     Column<Node> _column_1 = Html.<Node>column("Attributes", _function_1);
-    final Function1<Node,CharSequence> _function_2 = new Function1<Node,CharSequence>() {
+    final Function1<Node, CharSequence> _function_2 = new Function1<Node, CharSequence>() {
       public CharSequence apply(final Node it) {
         EList<PackageableElement> _deployedElements = it.getDeployedElements();
-        final Function1<PackageableElement,CharSequence> _function = new Function1<PackageableElement,CharSequence>() {
+        final Function1<PackageableElement, CharSequence> _function = new Function1<PackageableElement, CharSequence>() {
           public CharSequence apply(final PackageableElement it) {
-            CharSequence _link_EObject = Link.link_EObject(it);
-            return _link_EObject;
+            return Link.link_EObject(it);
           }
         };
-        CharSequence _ul = Html.<PackageableElement>ul(_deployedElements, _function);
-        return _ul;
+        return Html.<PackageableElement>ul(_deployedElements, _function);
       }
     };
     Column<Node> _column_2 = Html.<Node>column("Deployed Elements", _function_2);
-    final Function1<Node,CharSequence> _function_3 = new Function1<Node,CharSequence>() {
+    final Function1<Node, CharSequence> _function_3 = new Function1<Node, CharSequence>() {
       public CharSequence apply(final Node it) {
-        CharSequence _documentation_EObject = Html.documentation_EObject(it);
-        return _documentation_EObject;
+        return Html.documentation_EObject(it);
       }
     };
     Column<Node> _column_3 = Html.<Node>column("Comment", _function_3);
-    CharSequence _table = Html.<Node>table(_iterable, 
+    return Html.<Node>table(_iterable, 
       Collections.<Attr<Iterable<? extends Node>>>unmodifiableList(Lists.<Attr<Iterable<? extends Node>>>newArrayList()), 
       Collections.<Column<Node>>unmodifiableList(Lists.<Column<Node>>newArrayList(_column, _column_1, _column_2, _column_3)));
-    return _table;
   }
   
   public static CharSequence table_Environment_Deployments(final Environment object) {
     TreeIterator<EObject> _eAllContents = object.eAllContents();
     Iterator<Deployment> _filter = Iterators.<Deployment>filter(_eAllContents, Deployment.class);
     Iterable<Deployment> _iterable = IteratorExtensions.<Deployment>toIterable(_filter);
-    final Function1<Deployment,String> _function = new Function1<Deployment,String>() {
+    final Function1<Deployment, String> _function = new Function1<Deployment, String>() {
       public String apply(final Deployment it) {
         DeploymentTarget _location = it.getLocation();
-        String _name = _location.getName();
-        return _name;
+        return _location.getName();
       }
     };
     Column<Deployment> _column = Html.<Deployment>column("Location", _function);
-    final Function1<Deployment,CharSequence> _function_1 = new Function1<Deployment,CharSequence>() {
+    final Function1<Deployment, CharSequence> _function_1 = new Function1<Deployment, CharSequence>() {
       public CharSequence apply(final Deployment it) {
         EList<DeployedArtifact> _deployedArtifacts = it.getDeployedArtifacts();
-        final Function1<DeployedArtifact,CharSequence> _function = new Function1<DeployedArtifact,CharSequence>() {
+        final Function1<DeployedArtifact, CharSequence> _function = new Function1<DeployedArtifact, CharSequence>() {
           public CharSequence apply(final DeployedArtifact it) {
-            CharSequence _link_EObject = Link.link_EObject(it);
-            return _link_EObject;
+            return Link.link_EObject(it);
           }
         };
-        CharSequence _ul = Html.<DeployedArtifact>ul(_deployedArtifacts, _function);
-        return _ul;
+        return Html.<DeployedArtifact>ul(_deployedArtifacts, _function);
       }
     };
     Column<Deployment> _column_1 = Html.<Deployment>column("Deployed Artifacts", _function_1);
-    final Function1<Deployment,CharSequence> _function_2 = new Function1<Deployment,CharSequence>() {
+    final Function1<Deployment, CharSequence> _function_2 = new Function1<Deployment, CharSequence>() {
       public CharSequence apply(final Deployment it) {
         EList<DeploymentSpecification> _configurations = it.getConfigurations();
-        final Function1<DeploymentSpecification,String> _function = new Function1<DeploymentSpecification,String>() {
+        final Function1<DeploymentSpecification, String> _function = new Function1<DeploymentSpecification, String>() {
           public String apply(final DeploymentSpecification it) {
             StringConcatenation _builder = new StringConcatenation();
             _builder.append("<li>");
@@ -147,14 +136,12 @@ public class Environments {
             return _builder.toString();
           }
         };
-        CharSequence _ul = Html.<DeploymentSpecification>ul(_configurations, _function);
-        return _ul;
+        return Html.<DeploymentSpecification>ul(_configurations, _function);
       }
     };
     Column<Deployment> _column_2 = Html.<Deployment>column("Configuration", _function_2);
-    CharSequence _table = Html.<Deployment>table(_iterable, 
+    return Html.<Deployment>table(_iterable, 
       Collections.<Attr<Iterable<? extends Deployment>>>unmodifiableList(Lists.<Attr<Iterable<? extends Deployment>>>newArrayList()), 
       Collections.<Column<Deployment>>unmodifiableList(Lists.<Column<Deployment>>newArrayList(_column, _column_1, _column_2)));
-    return _table;
   }
 }

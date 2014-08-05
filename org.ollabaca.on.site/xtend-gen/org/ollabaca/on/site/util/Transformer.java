@@ -7,54 +7,47 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 
 @SuppressWarnings("all")
 public class Transformer<I extends Object, O extends Object> {
-  private final Function1<? super I,? extends O> fallback;
+  private final Function1<? super I, ? extends O> fallback;
   
-  protected final SortedMap<Class<? extends I>,Function1<? super I,? extends O>> transformers = new Function0<SortedMap<Class<? extends I>,Function1<? super I,? extends O>>>() {
-    public SortedMap<Class<? extends I>,Function1<? super I,? extends O>> apply() {
-      final Comparator<Class<? extends I>> _function = new Comparator<Class<? extends I>>() {
-        public int compare(final Class<? extends I> a, final Class<? extends I> b) {
-          boolean _equals = Objects.equal(a, b);
-          if (_equals) {
-            return 0;
-          }
-          boolean _isAssignableFrom = a.isAssignableFrom(b);
-          if (_isAssignableFrom) {
-            return 1;
-          }
-          return (-1);
+  protected final SortedMap<Class<? extends I>, Function1<? super I, ? extends O>> transformers = new TreeMap<Class<? extends I>, Function1<? super I, ? extends O>>(
+    new Comparator<Class<? extends I>>() {
+      public int compare(final Class<? extends I> a, final Class<? extends I> b) {
+        boolean _equals = Objects.equal(a, b);
+        if (_equals) {
+          return 0;
         }
-      };
-      TreeMap<Class<? extends I>,Function1<? super I,? extends O>> _treeMap = new TreeMap<Class<? extends I>, Function1<? super I, ? extends O>>(_function);
-      return _treeMap;
-    }
-  }.apply();
+        boolean _isAssignableFrom = a.isAssignableFrom(b);
+        if (_isAssignableFrom) {
+          return 1;
+        }
+        return (-1);
+      }
+    });
   
   public Transformer() {
     this.fallback = null;
   }
   
-  public Transformer(final Function1<? super I,? extends O> fallback) {
+  public Transformer(final Function1<? super I, ? extends O> fallback) {
     this.fallback = fallback;
   }
   
-  public Function1<? super I,? extends O> register(final Class<? extends I> type, final Function1<? super I,? extends O> transformer) {
-    Function1<? super I,? extends O> _put = this.transformers.put(type, transformer);
-    return _put;
+  public Function1<? super I, ? extends O> register(final Class<? extends I> type, final Function1<? super I, ? extends O> transformer) {
+    return this.transformers.put(type, transformer);
   }
   
   public O transform(final I object) {
-    Set<Map.Entry<Class<? extends I>,Function1<? super I,? extends O>>> _entrySet = this.transformers.entrySet();
-    for (final Map.Entry<Class<? extends I>,Function1<? super I,? extends O>> e : _entrySet) {
+    Set<Map.Entry<Class<? extends I>, Function1<? super I, ? extends O>>> _entrySet = this.transformers.entrySet();
+    for (final Map.Entry<Class<? extends I>, Function1<? super I, ? extends O>> e : _entrySet) {
       try {
         Class<? extends I> _key = e.getKey();
         boolean _isInstance = _key.isInstance(object);
         if (_isInstance) {
-          Function1<? super I,? extends O> _value = e.getValue();
+          Function1<? super I, ? extends O> _value = e.getValue();
           final O o = _value.apply(object);
           boolean _notEquals = (!Objects.equal(o, null));
           if (_notEquals) {

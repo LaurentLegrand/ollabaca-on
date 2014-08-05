@@ -23,38 +23,37 @@ import org.eclipse.uml2.uml.Element;
  * @model
  * @generated
  */
-public interface Section extends BookElement
-{
-  /**
-   * Returns the value of the '<em><b>Elements</b></em>' reference list.
-   * The list contents are of type {@link org.eclipse.uml2.uml.Element}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Elements</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' reference list.
-   * @see org.ollabaca.on.mm.book.BookPackage#getSection_Elements()
-   * @model
-   * @generated
-   */
-  EList<Element> getElements();
+public interface Section extends BookElement {
+	/**
+	 * Returns the value of the '<em><b>Elements</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.Element}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Elements</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elements</em>' reference list.
+	 * @see org.ollabaca.on.mm.book.BookPackage#getSection_Elements()
+	 * @model
+	 * @generated
+	 */
+	EList<Element> getElements();
 
-  /**
-   * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
-   * The list contents are of type {@link org.ollabaca.on.mm.book.Section}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sections</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sections</em>' containment reference list.
-   * @see org.ollabaca.on.mm.book.BookPackage#getSection_Sections()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Section> getSections();
+	/**
+	 * Returns the value of the '<em><b>Sections</b></em>' containment reference list.
+	 * The list contents are of type {@link org.ollabaca.on.mm.book.Section}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sections</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sections</em>' containment reference list.
+	 * @see org.ollabaca.on.mm.book.BookPackage#getSection_Sections()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Section> getSections();
 
 } // Section

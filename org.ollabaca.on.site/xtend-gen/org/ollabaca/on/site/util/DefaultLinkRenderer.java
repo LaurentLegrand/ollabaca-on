@@ -19,16 +19,14 @@ public class DefaultLinkRenderer extends LinkRenderer {
     final Topic topic = _site.getTopic(key);
     boolean _equals = Objects.equal(topic, null);
     if (_equals) {
-      LinkRenderer.Rendering _rendering = new LinkRenderer.Rendering("#", ("Not found: " + key));
-      return _rendering;
+      return new LinkRenderer.Rendering("#", ("Not found: " + key));
     } else {
       CharSequence _ref_Object = Ref.ref_Object(topic);
       String _string = _ref_Object.toString();
       String _title = topic.getTitle();
       CharSequence _notation_Object = Notation.notation_Object(_title);
       String _string_1 = _notation_Object.toString();
-      LinkRenderer.Rendering _rendering_1 = new LinkRenderer.Rendering(_string, _string_1);
-      return _rendering_1;
+      return new LinkRenderer.Rendering(_string, _string_1);
     }
   }
 }

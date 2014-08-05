@@ -18,10 +18,10 @@ import org.ollabaca.on.site.util.Sites;
 @SuppressWarnings("all")
 public class Breadcrumb extends Component {
   public Breadcrumb() {
-    super("div", new Function0<Map<String,String>>() {
-      public Map<String,String> apply() {
-        Map<String,String> _xsetliteral = null;
-        Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+    super("div", new Function0<Map<String, String>>() {
+      public Map<String, String> apply() {
+        Map<String, String> _xsetliteral = null;
+        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
         _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
         return _xsetliteral;
       }

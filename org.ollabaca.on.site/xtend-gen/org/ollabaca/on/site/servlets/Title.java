@@ -3,7 +3,6 @@ package org.ollabaca.on.site.servlets;
 import java.util.Arrays;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Named;
 import org.ollabaca.on.site.Site;
@@ -13,16 +12,10 @@ import org.ollabaca.on.site.util.Template;
 
 @SuppressWarnings("all")
 public class Title extends Template<Element> {
-  public final static Title instance = new Function0<Title>() {
-    public Title apply() {
-      Title _title = new Title();
-      return _title;
-    }
-  }.apply();
+  public final static Title instance = new Title();
   
   public static CharSequence title_Element(final Element object) {
-    CharSequence _transform = Title.instance.transform(object);
-    return _transform;
+    return Title.instance.transform(object);
   }
   
   protected CharSequence _doFallback(final Site object) {

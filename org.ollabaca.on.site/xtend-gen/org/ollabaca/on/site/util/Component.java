@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Topic;
@@ -17,85 +16,55 @@ public class Component extends Template<Element> {
   /**
    * Tag attributes
    */
-  public final Template<EObject> attributes = new Function0<Template<EObject>>() {
-    public Template<EObject> apply() {
-      final Function1<EObject,String> _function = new Function1<EObject,String>() {
-        public String apply(final EObject it) {
-          return "";
-        }
-      };
-      Template<EObject> _template = new Template<EObject>(_function);
-      return _template;
+  public final Template<EObject> attributes = new Template<EObject>(new Function1<EObject, String>() {
+    public String apply(final EObject it) {
+      return "";
     }
-  }.apply();
+  });
   
   /**
    * Before the start tag declaration
    */
-  public final Template<EObject> beforeStart = new Function0<Template<EObject>>() {
-    public Template<EObject> apply() {
-      final Function1<EObject,String> _function = new Function1<EObject,String>() {
-        public String apply(final EObject it) {
-          return "";
-        }
-      };
-      Template<EObject> _template = new Template<EObject>(_function);
-      return _template;
+  public final Template<EObject> beforeStart = new Template<EObject>(new Function1<EObject, String>() {
+    public String apply(final EObject it) {
+      return "";
     }
-  }.apply();
+  });
   
   /**
    * After the start tag declaration and before the tag content
    */
-  public final Template<EObject> afterStart = new Function0<Template<EObject>>() {
-    public Template<EObject> apply() {
-      final Function1<EObject,String> _function = new Function1<EObject,String>() {
-        public String apply(final EObject it) {
-          return "";
-        }
-      };
-      Template<EObject> _template = new Template<EObject>(_function);
-      return _template;
+  public final Template<EObject> afterStart = new Template<EObject>(new Function1<EObject, String>() {
+    public String apply(final EObject it) {
+      return "";
     }
-  }.apply();
+  });
   
   /**
    * After the tag content and before the end tag declaration
    */
-  public final Template<EObject> beforeEnd = new Function0<Template<EObject>>() {
-    public Template<EObject> apply() {
-      final Function1<EObject,String> _function = new Function1<EObject,String>() {
-        public String apply(final EObject it) {
-          return "";
-        }
-      };
-      Template<EObject> _template = new Template<EObject>(_function);
-      return _template;
+  public final Template<EObject> beforeEnd = new Template<EObject>(new Function1<EObject, String>() {
+    public String apply(final EObject it) {
+      return "";
     }
-  }.apply();
+  });
   
   /**
    * After the end tag declaration
    */
-  public final Template<EObject> afterEnd = new Function0<Template<EObject>>() {
-    public Template<EObject> apply() {
-      final Function1<EObject,String> _function = new Function1<EObject,String>() {
-        public String apply(final EObject it) {
-          return "";
-        }
-      };
-      Template<EObject> _template = new Template<EObject>(_function);
-      return _template;
+  public final Template<EObject> afterEnd = new Template<EObject>(new Function1<EObject, String>() {
+    public String apply(final EObject it) {
+      return "";
     }
-  }.apply();
+  });
   
   private final String name;
   
-  private final Map<String,String> attrs;
+  private final Map<String, String> attrs;
   
-  private final Function1<? super Element,? extends CharSequence> content;
+  private final Function1<? super Element, ? extends CharSequence> content;
   
-  public Component(final String name, final Map<String,String> attrs, final Function1<? super Element,? extends CharSequence> content) {
+  public Component(final String name, final Map<String, String> attrs, final Function1<? super Element, ? extends CharSequence> content) {
     this.name = name;
     this.attrs = attrs;
     this.content = content;
@@ -110,7 +79,7 @@ public class Component extends Template<Element> {
     _builder.append(this.name, "");
     _builder.append(" ");
     {
-      Set<Map.Entry<String,String>> _entrySet = this.attrs.entrySet();
+      Set<Map.Entry<String, String>> _entrySet = this.attrs.entrySet();
       boolean _hasElements = false;
       for(final Map.Entry<String, String> e : _entrySet) {
         if (!_hasElements) {
@@ -153,14 +122,12 @@ public class Component extends Template<Element> {
   }
   
   protected CharSequence _beforeStart_Element(final Element object) {
-    CharSequence _concat = this.beforeStart.concat(object);
-    return _concat;
+    return this.beforeStart.concat(object);
   }
   
   protected CharSequence _beforeStart_Element(final Topic object) {
     EObject _target = object.getTarget();
-    CharSequence _concat = this.beforeStart.concat(_target);
-    return _concat;
+    return this.beforeStart.concat(_target);
   }
   
   protected CharSequence _beforeStart_Element(final Void object) {
@@ -168,14 +135,12 @@ public class Component extends Template<Element> {
   }
   
   protected CharSequence _afterStart_Element(final Element object) {
-    CharSequence _concat = this.afterStart.concat(object);
-    return _concat;
+    return this.afterStart.concat(object);
   }
   
   protected CharSequence _afterStart_Element(final Topic object) {
     EObject _target = object.getTarget();
-    CharSequence _concat = this.afterStart.concat(_target);
-    return _concat;
+    return this.afterStart.concat(_target);
   }
   
   protected CharSequence _afterStart_Element(final Void object) {
@@ -183,14 +148,12 @@ public class Component extends Template<Element> {
   }
   
   protected CharSequence _beforeEnd_Element(final Element object) {
-    CharSequence _concat = this.beforeEnd.concat(object);
-    return _concat;
+    return this.beforeEnd.concat(object);
   }
   
   protected CharSequence _beforeEnd_Element(final Topic object) {
     EObject _target = object.getTarget();
-    CharSequence _concat = this.beforeEnd.concat(_target);
-    return _concat;
+    return this.beforeEnd.concat(_target);
   }
   
   protected CharSequence _beforeEnd_Element(final Void object) {
@@ -198,14 +161,12 @@ public class Component extends Template<Element> {
   }
   
   protected CharSequence _afterEnd_Element(final Element object) {
-    CharSequence _concat = this.afterEnd.concat(object);
-    return _concat;
+    return this.afterEnd.concat(object);
   }
   
   protected CharSequence _afterEnd_Element(final Topic object) {
     EObject _target = object.getTarget();
-    CharSequence _concat = this.afterEnd.concat(_target);
-    return _concat;
+    return this.afterEnd.concat(_target);
   }
   
   protected CharSequence _afterEnd_Element(final Void object) {
@@ -213,14 +174,12 @@ public class Component extends Template<Element> {
   }
   
   protected CharSequence _attributes_Element(final Element object) {
-    CharSequence _concat = this.attributes.concat(object);
-    return _concat;
+    return this.attributes.concat(object);
   }
   
   protected CharSequence _attributes_Element(final Topic object) {
     EObject _target = object.getTarget();
-    CharSequence _concat = this.attributes.concat(_target);
-    return _concat;
+    return this.attributes.concat(_target);
   }
   
   protected CharSequence _attributes_Element(final Void object) {
@@ -234,7 +193,7 @@ public class Component extends Template<Element> {
       if (_notEquals) {
         return this.content.apply(object);
       }
-      _xblockexpression = ("");
+      _xblockexpression = "";
     }
     return _xblockexpression;
   }

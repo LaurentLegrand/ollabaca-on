@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.Comment;
  * @model
  * @generated
  */
-public interface Note extends Comment
-{
+public interface Note extends Comment {
 } // Note

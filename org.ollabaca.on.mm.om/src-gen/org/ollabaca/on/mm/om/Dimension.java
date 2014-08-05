@@ -21,58 +21,57 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Dimension extends EObject
-{
-  /**
-   * Returns the value of the '<em><b>Quantity</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Quantity</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Quantity</em>' reference.
-   * @see #setQuantity(QuantityKind)
-   * @see org.ollabaca.on.mm.om.OmPackage#getDimension_Quantity()
-   * @model
-   * @generated
-   */
-  QuantityKind getQuantity();
+public interface Dimension extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Quantity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Quantity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Quantity</em>' reference.
+	 * @see #setQuantity(QuantityKind)
+	 * @see org.ollabaca.on.mm.om.OmPackage#getDimension_Quantity()
+	 * @model
+	 * @generated
+	 */
+	QuantityKind getQuantity();
 
-  /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.om.Dimension#getQuantity <em>Quantity</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Quantity</em>' reference.
-   * @see #getQuantity()
-   * @generated
-   */
-  void setQuantity(QuantityKind value);
+	/**
+	 * Sets the value of the '{@link org.ollabaca.on.mm.om.Dimension#getQuantity <em>Quantity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Quantity</em>' reference.
+	 * @see #getQuantity()
+	 * @generated
+	 */
+	void setQuantity(QuantityKind value);
 
-  /**
-   * Returns the value of the '<em><b>Magnitude</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Magnitude</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Magnitude</em>' attribute.
-   * @see #setMagnitude(float)
-   * @see org.ollabaca.on.mm.om.OmPackage#getDimension_Magnitude()
-   * @model unique="false"
-   * @generated
-   */
-  float getMagnitude();
+	/**
+	 * Returns the value of the '<em><b>Magnitude</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Magnitude</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Magnitude</em>' attribute.
+	 * @see #setMagnitude(float)
+	 * @see org.ollabaca.on.mm.om.OmPackage#getDimension_Magnitude()
+	 * @model unique="false"
+	 * @generated
+	 */
+	float getMagnitude();
 
-  /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.om.Dimension#getMagnitude <em>Magnitude</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Magnitude</em>' attribute.
-   * @see #getMagnitude()
-   * @generated
-   */
-  void setMagnitude(float value);
+	/**
+	 * Sets the value of the '{@link org.ollabaca.on.mm.om.Dimension#getMagnitude <em>Magnitude</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Magnitude</em>' attribute.
+	 * @see #getMagnitude()
+	 * @generated
+	 */
+	void setMagnitude(float value);
 
 } // Dimension

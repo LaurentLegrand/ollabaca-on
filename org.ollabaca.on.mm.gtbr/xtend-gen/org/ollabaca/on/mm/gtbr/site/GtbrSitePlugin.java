@@ -10,10 +10,9 @@ import org.ollabaca.on.site.servlets.Features;
 @SuppressWarnings("all")
 public class GtbrSitePlugin implements SitePlugin {
   public void activate() {
-    final Function1<EObject,CharSequence> _function = new Function1<EObject,CharSequence>() {
+    final Function1<EObject, CharSequence> _function = new Function1<EObject, CharSequence>() {
       public CharSequence apply(final EObject it) {
-        CharSequence _table_Account = Table_Account.table_Account(((Account) it));
-        return _table_Account;
+        return Table_Account.table_Account(((Account) it));
       }
     };
     Features.instance.register(Account.class, _function);

@@ -28,18 +28,17 @@ public class BookSitePlugin implements SitePlugin {
   private final static String BOOK = "book";
   
   public void activate() {
-    final Function1<EObject,Topic> _function = new Function1<EObject,Topic>() {
+    final Function1<EObject, Topic> _function = new Function1<EObject, Topic>() {
       public Topic apply(final EObject it) {
         Topic _xifexpression = null;
         if ((it instanceof BookElement)) {
-          Topic _pic_BookElement = BookElements.topic_BookElement(((BookElement) it));
-          _xifexpression = _pic_BookElement;
+          _xifexpression = BookElements.topic_BookElement(((BookElement) it));
         }
         return _xifexpression;
       }
     };
     Sites.topic.register(BookElement.class, _function);
-    final Function1<EObject,String> _function_1 = new Function1<EObject,String>() {
+    final Function1<EObject, String> _function_1 = new Function1<EObject, String>() {
       public String apply(final EObject it) {
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("<a href=\"");
@@ -53,33 +52,29 @@ public class BookSitePlugin implements SitePlugin {
       }
     };
     Page.article.beforeEnd.register(Book.class, _function_1);
-    final Function1<Element,CharSequence> _function_2 = new Function1<Element,CharSequence>() {
+    final Function1<Element, CharSequence> _function_2 = new Function1<Element, CharSequence>() {
       public CharSequence apply(final Element it) {
-        CharSequence _section_Book = Section_Book.section_Book(((Book) it));
-        return _section_Book;
+        return Section_Book.section_Book(((Book) it));
       }
     };
     Section_Element.instance.register(Book.class, _function_2);
-    final Function1<Element,CharSequence> _function_3 = new Function1<Element,CharSequence>() {
+    final Function1<Element, CharSequence> _function_3 = new Function1<Element, CharSequence>() {
       public CharSequence apply(final Element it) {
-        CharSequence _section_Element_OwnedElements = Section_BookElement_OwnedElements.section_Element_OwnedElements(((BookElement) it));
-        return _section_Element_OwnedElements;
+        return Section_BookElement_OwnedElements.section_Element_OwnedElements(((BookElement) it));
       }
     };
     Section_Element_OwnedElements.instance.register(BookElement.class, _function_3);
-    final Function1<Element,CharSequence> _function_4 = new Function1<Element,CharSequence>() {
+    final Function1<Element, CharSequence> _function_4 = new Function1<Element, CharSequence>() {
       public CharSequence apply(final Element it) {
-        CharSequence _body_BookElement = Body_BookElement.body_BookElement(((BookElement) it));
-        return _body_BookElement;
+        return Body_BookElement.body_BookElement(((BookElement) it));
       }
     };
     Body_Element.instance.register(BookElement.class, _function_4);
-    final Function1<Topic,Text> _function_5 = new Function1<Topic,Text>() {
+    final Function1<Topic, Text> _function_5 = new Function1<Topic, Text>() {
       public Text apply(final Topic it) {
         EObject _target = it.getTarget();
         CharSequence _page_Book = Page_Book.page_Book(((Book) _target));
-        Text _text = new Text("text/html", _page_Book);
-        return _text;
+        return new Text("text/html", _page_Book);
       }
     };
     Renderers.topicRenderers.registerRenderer(BookSitePlugin.BOOK, _function_5);

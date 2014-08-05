@@ -13,19 +13,18 @@ public class Column<E extends Object> {
     return this._name;
   }
   
-  private final Function1<? super E,? extends CharSequence> _cell;
+  private final Function1<? super E, ? extends CharSequence> _cell;
   
-  public Function1<? super E,? extends CharSequence> getCell() {
+  public Function1<? super E, ? extends CharSequence> getCell() {
     return this._cell;
   }
   
   public CharSequence apply(final E object) {
-    Function1<? super E,? extends CharSequence> _cell = this.getCell();
-    CharSequence _apply = _cell.apply(object);
-    return _apply;
+    Function1<? super E, ? extends CharSequence> _cell = this.getCell();
+    return _cell.apply(object);
   }
   
-  public Column(final String name, final Function1<? super E,? extends CharSequence> cell) {
+  public Column(final String name, final Function1<? super E, ? extends CharSequence> cell) {
     super();
     this._name = name;
     this._cell = cell;
@@ -35,8 +34,8 @@ public class Column<E extends Object> {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((_name== null) ? 0 : _name.hashCode());
-    result = prime * result + ((_cell== null) ? 0 : _cell.hashCode());
+    result = prime * result + ((this._name== null) ? 0 : this._name.hashCode());
+    result = prime * result + ((this._cell== null) ? 0 : this._cell.hashCode());
     return result;
   }
   
@@ -49,15 +48,15 @@ public class Column<E extends Object> {
     if (getClass() != obj.getClass())
       return false;
     Column other = (Column) obj;
-    if (_name == null) {
+    if (this._name == null) {
       if (other._name != null)
         return false;
-    } else if (!_name.equals(other._name))
+    } else if (!this._name.equals(other._name))
       return false;
-    if (_cell == null) {
+    if (this._cell == null) {
       if (other._cell != null)
         return false;
-    } else if (!_cell.equals(other._cell))
+    } else if (!this._cell.equals(other._cell))
       return false;
     return true;
   }

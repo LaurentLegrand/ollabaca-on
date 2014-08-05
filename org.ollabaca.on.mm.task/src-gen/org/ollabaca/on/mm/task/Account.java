@@ -29,52 +29,51 @@ import org.eclipse.uml2.uml.PackageableElement;
  * @model
  * @generated
  */
-public interface Account extends NamedElement, TaskElement, PackageableElement
-{
-  /**
-   * Returns the value of the '<em><b>Nested Accounts</b></em>' containment reference list.
-   * The list contents are of type {@link org.ollabaca.on.mm.task.Account}.
-   * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.task.Account#getNestingAccount <em>Nesting Account</em>}'.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Nested Accounts</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Nested Accounts</em>' containment reference list.
-   * @see org.ollabaca.on.mm.task.TaskPackage#getAccount_NestedAccounts()
-   * @see org.ollabaca.on.mm.task.Account#getNestingAccount
-   * @model opposite="nestingAccount" containment="true"
-   * @generated
-   */
-  EList<Account> getNestedAccounts();
+public interface Account extends NamedElement, TaskElement, PackageableElement {
+	/**
+	 * Returns the value of the '<em><b>Nested Accounts</b></em>' containment reference list.
+	 * The list contents are of type {@link org.ollabaca.on.mm.task.Account}.
+	 * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.task.Account#getNestingAccount <em>Nesting Account</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nested Accounts</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nested Accounts</em>' containment reference list.
+	 * @see org.ollabaca.on.mm.task.TaskPackage#getAccount_NestedAccounts()
+	 * @see org.ollabaca.on.mm.task.Account#getNestingAccount
+	 * @model opposite="nestingAccount" containment="true"
+	 * @generated
+	 */
+	EList<Account> getNestedAccounts();
 
-  /**
-   * Returns the value of the '<em><b>Nesting Account</b></em>' container reference.
-   * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.task.Account#getNestedAccounts <em>Nested Accounts</em>}'.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Nesting Account</em>' container reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Nesting Account</em>' container reference.
-   * @see #setNestingAccount(Account)
-   * @see org.ollabaca.on.mm.task.TaskPackage#getAccount_NestingAccount()
-   * @see org.ollabaca.on.mm.task.Account#getNestedAccounts
-   * @model opposite="nestedAccounts" transient="false"
-   * @generated
-   */
-  Account getNestingAccount();
+	/**
+	 * Returns the value of the '<em><b>Nesting Account</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.task.Account#getNestedAccounts <em>Nested Accounts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nesting Account</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nesting Account</em>' container reference.
+	 * @see #setNestingAccount(Account)
+	 * @see org.ollabaca.on.mm.task.TaskPackage#getAccount_NestingAccount()
+	 * @see org.ollabaca.on.mm.task.Account#getNestedAccounts
+	 * @model opposite="nestedAccounts" transient="false"
+	 * @generated
+	 */
+	Account getNestingAccount();
 
-  /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.task.Account#getNestingAccount <em>Nesting Account</em>}' container reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Nesting Account</em>' container reference.
-   * @see #getNestingAccount()
-   * @generated
-   */
-  void setNestingAccount(Account value);
+	/**
+	 * Sets the value of the '{@link org.ollabaca.on.mm.task.Account#getNestingAccount <em>Nesting Account</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nesting Account</em>' container reference.
+	 * @see #getNestingAccount()
+	 * @generated
+	 */
+	void setNestingAccount(Account value);
 
 } // Account

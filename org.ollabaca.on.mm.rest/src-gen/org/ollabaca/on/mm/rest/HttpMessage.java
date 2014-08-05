@@ -24,48 +24,47 @@ import org.eclipse.uml2.uml.Property;
  * @model
  * @generated
  */
-public interface HttpMessage extends Classifier
-{
-  /**
-   * Returns the value of the '<em><b>Headers</b></em>' containment reference list.
-   * The list contents are of type {@link org.eclipse.uml2.uml.Property}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Headers</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Headers</em>' containment reference list.
-   * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Headers()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Property> getHeaders();
+public interface HttpMessage extends Classifier {
+	/**
+	 * Returns the value of the '<em><b>Headers</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Headers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Headers</em>' containment reference list.
+	 * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Headers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Property> getHeaders();
 
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference.
-   * @see #setContent(Property)
-   * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Content()
-   * @model containment="true"
-   * @generated
-   */
-  Property getContent();
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' containment reference.
+	 * @see #setContent(Property)
+	 * @see org.ollabaca.on.mm.rest.RestPackage#getHttpMessage_Content()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Property getContent();
 
-  /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.rest.HttpMessage#getContent <em>Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' containment reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(Property value);
+	/**
+	 * Sets the value of the '{@link org.ollabaca.on.mm.rest.HttpMessage#getContent <em>Content</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' containment reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(Property value);
 
 } // HttpMessage

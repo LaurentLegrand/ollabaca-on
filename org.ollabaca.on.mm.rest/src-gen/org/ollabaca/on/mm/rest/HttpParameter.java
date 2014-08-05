@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.Parameter;
  * @model abstract="true"
  * @generated
  */
-public interface HttpParameter extends Parameter
-{
+public interface HttpParameter extends Parameter {
 } // HttpParameter

@@ -11,10 +11,10 @@ Export-Package: org.ollabaca.on.mm.task,
  org.ollabaca.on.mm.task.impl,
  org.ollabaca.on.mm.task.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
- org.eclipse.xtext.xbase.lib,
- org.eclipse.emf.ecore.xcore.lib,
- org.ollabaca.on.mm.org;bundle-version="0.1.0",
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;visibility:=reexport,
+ org.eclipse.emf.ecore.xcore.lib;visibility:=reexport,
+ org.ollabaca.on.mm.org;bundle-version="0.1.0";visibility:=reexport,
  org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.uml2.uml;bundle-version="4.1.0"
+ org.eclipse.uml2.uml;bundle-version="4.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -9,7 +9,7 @@ import org.ollabaca.on.site.util.Levels;
 
 @SuppressWarnings("all")
 public class Layout_Element {
-  public static <E extends Element> CharSequence layout_Element(final String id, final String title, final E object, final Function1<? super E,? extends CharSequence> body, final Function1<? super E,? extends CharSequence> subsection) {
+  public static <E extends Element> CharSequence layout_Element(final String id, final String title, final E object, final Function1<? super E, ? extends CharSequence> body, final Function1<? super E, ? extends CharSequence> subsection) {
     StringConcatenation _builder = new StringConcatenation();
     final int level = Levels.start();
     _builder.newLineIfNotEmpty();

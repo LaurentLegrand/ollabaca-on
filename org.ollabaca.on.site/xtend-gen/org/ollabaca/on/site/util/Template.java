@@ -8,12 +8,12 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.ollabaca.on.site.util.Transformer;
 
 @SuppressWarnings("all")
-public class Template<E extends Object> extends Transformer<E,CharSequence> {
+public class Template<E extends Object> extends Transformer<E, CharSequence> {
   public Template() {
     super();
   }
   
-  public Template(final Function1<? super E,? extends CharSequence> fallback) {
+  public Template(final Function1<? super E, ? extends CharSequence> fallback) {
     super(fallback);
   }
   
@@ -21,15 +21,14 @@ public class Template<E extends Object> extends Transformer<E,CharSequence> {
    * Call all transformers and the callback and concat all non null results
    */
   public CharSequence concat(final E object) {
-    StringBuilder _stringBuilder = new StringBuilder();
-    final StringBuilder builder = _stringBuilder;
-    Set<Map.Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>>> _entrySet = this.transformers.entrySet();
-    for (final Map.Entry<Class<? extends E>,Function1<? super E,? extends CharSequence>> e : _entrySet) {
+    final StringBuilder builder = new StringBuilder();
+    Set<Map.Entry<Class<? extends E>, Function1<? super E, ? extends CharSequence>>> _entrySet = this.transformers.entrySet();
+    for (final Map.Entry<Class<? extends E>, Function1<? super E, ? extends CharSequence>> e : _entrySet) {
       try {
         Class<? extends E> _key = e.getKey();
         boolean _isInstance = _key.isInstance(object);
         if (_isInstance) {
-          Function1<? super E,? extends CharSequence> _value = e.getValue();
+          Function1<? super E, ? extends CharSequence> _value = e.getValue();
           final CharSequence o = _value.apply(object);
           boolean _notEquals = (!Objects.equal(o, null));
           if (_notEquals) {

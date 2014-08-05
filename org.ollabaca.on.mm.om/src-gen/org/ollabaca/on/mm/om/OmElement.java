@@ -14,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface OmElement extends EObject
-{
+public interface OmElement extends EObject {
 } // OmElement

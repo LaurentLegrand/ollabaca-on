@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.task.TaskPackage;
  *
  * @generated
  */
-public abstract class CoordinateImpl extends MinimalEObjectImpl.Container implements Coordinate
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected CoordinateImpl()
-  {
-    super();
-  }
+public abstract class CoordinateImpl extends MinimalEObjectImpl.Container implements Coordinate {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CoordinateImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TaskPackage.Literals.COORDINATE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TaskPackage.Literals.COORDINATE;
+	}
 
 } //CoordinateImpl

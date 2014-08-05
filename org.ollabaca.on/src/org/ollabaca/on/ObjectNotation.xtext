@@ -33,6 +33,9 @@ Instance returns Instance:
 	('@abbr' abbr=ID)?
 	('@see' see+= [Instance|FQN])*
 	('@tag' tags+=ID)*
+	('@since' since=VERSION)?
+	('@version' version=VERSION)?
+	
 	(name=ID '=')? 'new' type=ID
 	'{'
 		(slots+=Slot)*
@@ -40,7 +43,7 @@ Instance returns Instance:
 
 Slot returns Slot:
 	{Slot}
-	name=ID ':' value=Value;
+	name=ID '=' value=Value;
 
 Array returns Array:
 	'['
@@ -84,4 +87,7 @@ terminal ID:
 
 terminal LONG_STRING:
 	'("' -> '")';
-	
+
+terminal VERSION:
+	('0'..'9')* ('.' ('0'..'9')*)+	
+;

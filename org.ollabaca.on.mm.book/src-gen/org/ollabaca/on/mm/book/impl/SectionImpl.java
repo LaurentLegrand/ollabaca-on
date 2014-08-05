@@ -34,170 +34,153 @@ import org.ollabaca.on.mm.book.Section;
  *
  * @generated
  */
-public class SectionImpl extends BookElementImpl implements Section
-{
-  /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<Element> elements;
+public class SectionImpl extends BookElementImpl implements Section {
+	/**
+	 * The cached value of the '{@link #getElements() <em>Elements</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElements()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Element> elements;
 
-  /**
-   * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSections()
-   * @generated
-   * @ordered
-   */
-  protected EList<Section> sections;
+	/**
+	 * The cached value of the '{@link #getSections() <em>Sections</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Section> sections;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SectionImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SectionImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return BookPackage.Literals.SECTION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BookPackage.Literals.SECTION;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Element> getElements()
-  {
-    if (elements == null)
-    {
-      elements = new EObjectResolvingEList<Element>(Element.class, this, BookPackage.SECTION__ELEMENTS);
-    }
-    return elements;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Element> getElements() {
+		if (elements == null) {
+			elements = new EObjectResolvingEList<Element>(Element.class, this, BookPackage.SECTION__ELEMENTS);
+		}
+		return elements;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Section> getSections()
-  {
-    if (sections == null)
-    {
-      sections = new EObjectContainmentEList<Section>(Section.class, this, BookPackage.SECTION__SECTIONS);
-    }
-    return sections;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Section> getSections() {
+		if (sections == null) {
+			sections = new EObjectContainmentEList<Section>(Section.class, this, BookPackage.SECTION__SECTIONS);
+		}
+		return sections;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case BookPackage.SECTION__SECTIONS:
-        return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BookPackage.SECTION__SECTIONS:
+				return ((InternalEList<?>)getSections()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case BookPackage.SECTION__ELEMENTS:
-        return getElements();
-      case BookPackage.SECTION__SECTIONS:
-        return getSections();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case BookPackage.SECTION__ELEMENTS:
+				return getElements();
+			case BookPackage.SECTION__SECTIONS:
+				return getSections();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case BookPackage.SECTION__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends Element>)newValue);
-        return;
-      case BookPackage.SECTION__SECTIONS:
-        getSections().clear();
-        getSections().addAll((Collection<? extends Section>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case BookPackage.SECTION__ELEMENTS:
+				getElements().clear();
+				getElements().addAll((Collection<? extends Element>)newValue);
+				return;
+			case BookPackage.SECTION__SECTIONS:
+				getSections().clear();
+				getSections().addAll((Collection<? extends Section>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case BookPackage.SECTION__ELEMENTS:
-        getElements().clear();
-        return;
-      case BookPackage.SECTION__SECTIONS:
-        getSections().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case BookPackage.SECTION__ELEMENTS:
+				getElements().clear();
+				return;
+			case BookPackage.SECTION__SECTIONS:
+				getSections().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case BookPackage.SECTION__ELEMENTS:
-        return elements != null && !elements.isEmpty();
-      case BookPackage.SECTION__SECTIONS:
-        return sections != null && !sections.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case BookPackage.SECTION__ELEMENTS:
+				return elements != null && !elements.isEmpty();
+			case BookPackage.SECTION__SECTIONS:
+				return sections != null && !sections.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //SectionImpl

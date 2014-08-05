@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Conversions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Named;
@@ -20,16 +19,10 @@ import org.ollabaca.on.site.util.Template;
 
 @SuppressWarnings("all")
 public class Link extends Template<EObject> {
-  public final static Link instance = new Function0<Link>() {
-    public Link apply() {
-      Link _link = new Link();
-      return _link;
-    }
-  }.apply();
+  public final static Link instance = new Link();
   
   public static CharSequence link_EObject(final EObject object) {
-    CharSequence _transform = Link.instance.transform(object);
-    return _transform;
+    return Link.instance.transform(object);
   }
   
   protected CharSequence _doFallback(final Void object) {
@@ -82,13 +75,11 @@ public class Link extends Template<EObject> {
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(type, null);
       if (_equals) {
-        String _name = object.getName();
-        _xifexpression = _name;
+        _xifexpression = object.getName();
       } else {
-        CharSequence _link_EObject = Link.link_EObject(type);
-        _xifexpression = _link_EObject;
+        _xifexpression = Link.link_EObject(type);
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
@@ -100,21 +91,18 @@ public class Link extends Template<EObject> {
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(topic, null);
       if (_equals) {
-        String _string = object.toString();
-        _xifexpression = _string;
+        _xifexpression = object.toString();
       } else {
-        CharSequence _link_EObject = Link.link_EObject(topic);
-        _xifexpression = _link_EObject;
+        _xifexpression = Link.link_EObject(topic);
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
   
   protected CharSequence _doFallback(final Element object) {
     Site _site = Sites.site();
-    CharSequence _link_EObject = Link.link_EObject(_site);
-    return _link_EObject;
+    return Link.link_EObject(_site);
   }
   
   public CharSequence doFallback(final EObject object) {

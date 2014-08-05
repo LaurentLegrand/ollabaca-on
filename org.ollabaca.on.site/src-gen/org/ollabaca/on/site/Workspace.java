@@ -13,6 +13,5 @@ package org.ollabaca.on.site;
  * @model
  * @generated
  */
-public interface Workspace extends Element
-{
+public interface Workspace extends Element {
 } // Workspace

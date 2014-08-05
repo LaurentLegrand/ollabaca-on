@@ -24,12 +24,12 @@ import org.ollabaca.on.site.util.Html;
 public class Classifiers {
   public static CharSequence dl_Classifier_Associations(final Classifier object) {
     List<Property> _associationEnds = Types.getAssociationEnds(object);
-    final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
         return Notation.notation_Object(it);
       }
     };
-    final Function1<Property,CharSequence> _function_1 = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function_1 = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
         return Html.documentation_EObject(it);
       }
@@ -39,7 +39,7 @@ public class Classifiers {
   
   public static CharSequence ul_Classifier_Generals(final Classifier object) {
     EList<Classifier> _generals = object.getGenerals();
-    final Function1<Classifier,CharSequence> _function = new Function1<Classifier,CharSequence>() {
+    final Function1<Classifier, CharSequence> _function = new Function1<Classifier, CharSequence>() {
       public CharSequence apply(final Classifier it) {
         return Link.link_EObject(it);
       }
@@ -49,19 +49,19 @@ public class Classifiers {
   
   public static CharSequence dl_Classifier_Attributes(final Classifier object) {
     EList<Property> _attributes = object.getAttributes();
-    final Function1<Property,Boolean> _function = new Function1<Property,Boolean>() {
+    final Function1<Property, Boolean> _function = new Function1<Property, Boolean>() {
       public Boolean apply(final Property it) {
         Association _association = it.getAssociation();
         return Boolean.valueOf(Objects.equal(_association, null));
       }
     };
     Iterable<Property> _filter = IterableExtensions.<Property>filter(_attributes, _function);
-    final Function1<Property,CharSequence> _function_1 = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function_1 = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
         return Notation.notation_Object(it);
       }
     };
-    final Function1<Property,CharSequence> _function_2 = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function_2 = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
         return Html.documentation_EObject(it);
       }
@@ -71,12 +71,12 @@ public class Classifiers {
   
   public static CharSequence dl_Classifier_Operations(final Classifier object) {
     EList<Operation> _operations = object.getOperations();
-    final Function1<Operation,CharSequence> _function = new Function1<Operation,CharSequence>() {
+    final Function1<Operation, CharSequence> _function = new Function1<Operation, CharSequence>() {
       public CharSequence apply(final Operation it) {
         return Notation.notation_Object(it);
       }
     };
-    final Function1<Operation,String> _function_1 = new Function1<Operation,String>() {
+    final Function1<Operation, String> _function_1 = new Function1<Operation, String>() {
       public String apply(final Operation it) {
         StringConcatenation _builder = new StringConcatenation();
         CharSequence _documentation_EObject = Html.documentation_EObject(it);
@@ -93,19 +93,19 @@ public class Classifiers {
   
   public static CharSequence dl_Operation_Parameters(final Operation object) {
     EList<Parameter> _ownedParameters = object.getOwnedParameters();
-    final Function1<Iterable<? extends Parameter>,String> _function = new Function1<Iterable<? extends Parameter>,String>() {
+    final Function1<Iterable<? extends Parameter>, String> _function = new Function1<Iterable<? extends Parameter>, String>() {
       public String apply(final Iterable<? extends Parameter> it) {
         return "dl-horizontal";
       }
     };
     Attr<Iterable<? extends Parameter>> _attr = Html.<Iterable<? extends Parameter>>attr("class", _function);
-    final Function1<Parameter,CharSequence> _function_1 = new Function1<Parameter,CharSequence>() {
+    final Function1<Parameter, CharSequence> _function_1 = new Function1<Parameter, CharSequence>() {
       public CharSequence apply(final Parameter it) {
         return Notation.notation_Object(it);
       }
     };
     Content<Parameter> _content = Html.<Parameter>content(_function_1);
-    final Function1<Parameter,CharSequence> _function_2 = new Function1<Parameter,CharSequence>() {
+    final Function1<Parameter, CharSequence> _function_2 = new Function1<Parameter, CharSequence>() {
       public CharSequence apply(final Parameter it) {
         return Html.documentation_EObject(it);
       }

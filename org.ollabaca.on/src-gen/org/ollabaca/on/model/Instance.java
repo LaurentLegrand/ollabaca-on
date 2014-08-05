@@ -18,6 +18,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.ollabaca.on.model.Instance#getAbbr <em>Abbr</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getSee <em>See</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getTags <em>Tags</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.Instance#getSince <em>Since</em>}</li>
+ *   <li>{@link org.ollabaca.on.model.Instance#getVersion <em>Version</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getName <em>Name</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getType <em>Type</em>}</li>
  *   <li>{@link org.ollabaca.on.model.Instance#getSlots <em>Slots</em>}</li>
@@ -165,6 +167,58 @@ public interface Instance extends Value
    * @generated
    */
   EList<String> getTags();
+
+  /**
+   * Returns the value of the '<em><b>Since</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Since</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Since</em>' attribute.
+   * @see #setSince(String)
+   * @see org.ollabaca.on.model.ModelPackage#getInstance_Since()
+   * @model
+   * @generated
+   */
+  String getSince();
+
+  /**
+   * Sets the value of the '{@link org.ollabaca.on.model.Instance#getSince <em>Since</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Since</em>' attribute.
+   * @see #getSince()
+   * @generated
+   */
+  void setSince(String value);
+
+  /**
+   * Returns the value of the '<em><b>Version</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Version</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Version</em>' attribute.
+   * @see #setVersion(String)
+   * @see org.ollabaca.on.model.ModelPackage#getInstance_Version()
+   * @model
+   * @generated
+   */
+  String getVersion();
+
+  /**
+   * Sets the value of the '{@link org.ollabaca.on.model.Instance#getVersion <em>Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Version</em>' attribute.
+   * @see #getVersion()
+   * @generated
+   */
+  void setVersion(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

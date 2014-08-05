@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface DELETE extends HttpMethod
-{
+public interface DELETE extends HttpMethod {
 } // DELETE

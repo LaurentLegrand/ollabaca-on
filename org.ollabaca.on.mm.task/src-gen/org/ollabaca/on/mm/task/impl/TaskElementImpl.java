@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.task.TaskPackage;
  *
  * @generated
  */
-public abstract class TaskElementImpl extends ElementImpl implements TaskElement
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected TaskElementImpl()
-  {
-    super();
-  }
+public abstract class TaskElementImpl extends ElementImpl implements TaskElement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TaskElementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TaskPackage.Literals.TASK_ELEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TaskPackage.Literals.TASK_ELEMENT;
+	}
 
 } //TaskElementImpl

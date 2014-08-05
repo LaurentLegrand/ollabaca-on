@@ -176,7 +176,7 @@ public class Page_Book {
       _builder.newLine();
       _builder.append("</html>");
       _builder.newLine();
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -195,8 +195,7 @@ public class Page_Book {
           return Html.span(_name);
         }
       }
-      String _escape = Html.escape("<undef>");
-      _xblockexpression = (_escape);
+      _xblockexpression = Html.escape("<undef>");
     }
     return _xblockexpression;
   }
@@ -221,22 +220,20 @@ public class Page_Book {
       } else {
         return Notation.notation_Object(object);
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
   
   public static String id(final Object object) {
     int _identityHashCode = System.identityHashCode(object);
-    String _hexString = Long.toHexString(_identityHashCode);
-    return _hexString;
+    return Long.toHexString(_identityHashCode);
   }
   
   protected static boolean _isEmpty(final String object) {
     String _trim = object.trim();
     int _length = _trim.length();
-    boolean _equals = (_length == 0);
-    return _equals;
+    return (_length == 0);
   }
   
   protected static boolean _isEmpty(final Void object) {

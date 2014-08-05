@@ -11,19 +11,16 @@ import org.ollabaca.on.site.util.Html;
 public class StructuredClassifiers {
   public CharSequence definition_list_StructuredClassifier_Parts(final StructuredClassifier object) {
     EList<Property> _parts = object.getParts();
-    final Function1<Property,CharSequence> _function = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
-        CharSequence _notation_Object = Notation.notation_Object(it);
-        return _notation_Object;
+        return Notation.notation_Object(it);
       }
     };
-    final Function1<Property,CharSequence> _function_1 = new Function1<Property,CharSequence>() {
+    final Function1<Property, CharSequence> _function_1 = new Function1<Property, CharSequence>() {
       public CharSequence apply(final Property it) {
-        CharSequence _documentation_EObject = Html.documentation_EObject(it);
-        return _documentation_EObject;
+        return Html.documentation_EObject(it);
       }
     };
-    CharSequence _dl = Html.<Property>dl(_parts, _function, _function_1);
-    return _dl;
+    return Html.<Property>dl(_parts, _function, _function_1);
   }
 }

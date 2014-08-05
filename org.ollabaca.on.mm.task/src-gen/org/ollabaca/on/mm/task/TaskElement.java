@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.Element;
  * @model abstract="true"
  * @generated
  */
-public interface TaskElement extends Element
-{
+public interface TaskElement extends Element {
 } // TaskElement

@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface OPTIONS extends HttpMethod
-{
+public interface OPTIONS extends HttpMethod {
 } // OPTIONS

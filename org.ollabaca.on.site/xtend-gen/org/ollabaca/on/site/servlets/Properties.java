@@ -22,10 +22,10 @@ import org.ollabaca.on.site.util.Html;
 @SuppressWarnings("all")
 public class Properties extends Component {
   public Properties() {
-    super("div", new Function0<Map<String,String>>() {
-      public Map<String,String> apply() {
-        Map<String,String> _xsetliteral = null;
-        Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+    super("div", new Function0<Map<String, String>>() {
+      public Map<String, String> apply() {
+        Map<String, String> _xsetliteral = null;
+        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
         _tempMap.put("class", "properties");
         _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
         return _xsetliteral;

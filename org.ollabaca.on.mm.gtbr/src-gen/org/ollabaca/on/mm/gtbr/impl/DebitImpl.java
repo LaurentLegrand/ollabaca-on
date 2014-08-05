@@ -21,73 +21,64 @@ import org.ollabaca.on.mm.gtbr.Record;
  *
  * @generated
  */
-public class DebitImpl extends RecordImpl implements Debit
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected DebitImpl()
-  {
-    super();
-  }
+public class DebitImpl extends RecordImpl implements Debit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DebitImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return GtbrPackage.Literals.DEBIT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return GtbrPackage.Literals.DEBIT;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public double apply(final double balance)
-  {
-    double _amount = this.getAmount();
-    return (balance - _amount);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double apply(final double balance) {
+		double _amount = this.getAmount();
+		return (balance - _amount);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedOperationID(int baseOperationID, Class<?> baseClass)
-  {
-    if (baseClass == Record.class)
-    {
-      switch (baseOperationID)
-      {
-        case GtbrPackage.RECORD___APPLY__DOUBLE: return GtbrPackage.DEBIT___APPLY__DOUBLE;
-        default: return super.eDerivedOperationID(baseOperationID, baseClass);
-      }
-    }
-    return super.eDerivedOperationID(baseOperationID, baseClass);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == Record.class) {
+			switch (baseOperationID) {
+				case GtbrPackage.RECORD___APPLY__DOUBLE: return GtbrPackage.DEBIT___APPLY__DOUBLE;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException
-  {
-    switch (operationID)
-    {
-      case GtbrPackage.DEBIT___APPLY__DOUBLE:
-        return apply((Double)arguments.get(0));
-    }
-    return super.eInvoke(operationID, arguments);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GtbrPackage.DEBIT___APPLY__DOUBLE:
+				return apply((Double)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
 } //DebitImpl

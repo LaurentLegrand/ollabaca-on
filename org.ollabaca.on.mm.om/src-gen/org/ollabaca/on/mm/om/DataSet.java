@@ -22,22 +22,21 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DataSet extends EObject
-{
-  /**
-   * Returns the value of the '<em><b>Measures</b></em>' reference list.
-   * The list contents are of type {@link org.ollabaca.on.mm.om.Measure}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Measures</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Measures</em>' reference list.
-   * @see org.ollabaca.on.mm.om.OmPackage#getDataSet_Measures()
-   * @model
-   * @generated
-   */
-  EList<Measure> getMeasures();
+public interface DataSet extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Measures</b></em>' reference list.
+	 * The list contents are of type {@link org.ollabaca.on.mm.om.Measure}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Measures</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Measures</em>' reference list.
+	 * @see org.ollabaca.on.mm.om.OmPackage#getDataSet_Measures()
+	 * @model
+	 * @generated
+	 */
+	EList<Measure> getMeasures();
 
 } // DataSet

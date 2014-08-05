@@ -21,32 +21,31 @@ import org.eclipse.uml2.uml.PackageableElement;
  * @model
  * @generated
  */
-public interface BookElement extends PackageableElement
-{
-  /**
-   * Returns the value of the '<em><b>Documentation</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Documentation</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Documentation</em>' reference.
-   * @see #setDocumentation(Element)
-   * @see org.ollabaca.on.mm.book.BookPackage#getBookElement_Documentation()
-   * @model
-   * @generated
-   */
-  Element getDocumentation();
+public interface BookElement extends PackageableElement {
+	/**
+	 * Returns the value of the '<em><b>Documentation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Documentation</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Documentation</em>' reference.
+	 * @see #setDocumentation(Element)
+	 * @see org.ollabaca.on.mm.book.BookPackage#getBookElement_Documentation()
+	 * @model
+	 * @generated
+	 */
+	Element getDocumentation();
 
-  /**
-   * Sets the value of the '{@link org.ollabaca.on.mm.book.BookElement#getDocumentation <em>Documentation</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Documentation</em>' reference.
-   * @see #getDocumentation()
-   * @generated
-   */
-  void setDocumentation(Element value);
+	/**
+	 * Sets the value of the '{@link org.ollabaca.on.mm.book.BookElement#getDocumentation <em>Documentation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Documentation</em>' reference.
+	 * @see #getDocumentation()
+	 * @generated
+	 */
+	void setDocumentation(Element value);
 
 } // BookElement

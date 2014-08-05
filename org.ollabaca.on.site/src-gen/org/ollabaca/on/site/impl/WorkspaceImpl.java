@@ -16,27 +16,24 @@ import org.ollabaca.on.site.Workspace;
  *
  * @generated
  */
-public class WorkspaceImpl extends ElementImpl implements Workspace
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected WorkspaceImpl()
-  {
-    super();
-  }
+public class WorkspaceImpl extends ElementImpl implements Workspace {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WorkspaceImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return SitePackage.Literals.WORKSPACE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return SitePackage.Literals.WORKSPACE;
+	}
 
 } //WorkspaceImpl

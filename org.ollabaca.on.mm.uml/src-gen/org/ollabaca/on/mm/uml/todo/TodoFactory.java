@@ -12,59 +12,58 @@ import org.eclipse.emf.ecore.EFactory;
  * @see org.ollabaca.on.mm.uml.todo.TodoPackage
  * @generated
  */
-public interface TodoFactory extends EFactory
-{
-  /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  TodoFactory eINSTANCE = org.ollabaca.on.mm.uml.todo.impl.TodoFactoryImpl.init();
+public interface TodoFactory extends EFactory {
+	/**
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	TodoFactory eINSTANCE = org.ollabaca.on.mm.uml.todo.impl.TodoFactoryImpl.init();
 
-  /**
-   * Returns a new object of class '<em>Front</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Front</em>'.
-   * @generated
-   */
-  Front createFront();
+	/**
+	 * Returns a new object of class '<em>Front</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Front</em>'.
+	 * @generated
+	 */
+	Front createFront();
 
-  /**
-   * Returns a new object of class '<em>Middle</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Middle</em>'.
-   * @generated
-   */
-  Middle createMiddle();
+	/**
+	 * Returns a new object of class '<em>Middle</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Middle</em>'.
+	 * @generated
+	 */
+	Middle createMiddle();
 
-  /**
-   * Returns a new object of class '<em>Back</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Back</em>'.
-   * @generated
-   */
-  Back createBack();
+	/**
+	 * Returns a new object of class '<em>Back</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Back</em>'.
+	 * @generated
+	 */
+	Back createBack();
 
-  /**
-   * Returns a new object of class '<em>Environment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Environment</em>'.
-   * @generated
-   */
-  Environment createEnvironment();
+	/**
+	 * Returns a new object of class '<em>Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment</em>'.
+	 * @generated
+	 */
+	Environment createEnvironment();
 
-  /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
-  TodoPackage getTodoPackage();
+	/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
+	TodoPackage getTodoPackage();
 
 } //TodoFactory

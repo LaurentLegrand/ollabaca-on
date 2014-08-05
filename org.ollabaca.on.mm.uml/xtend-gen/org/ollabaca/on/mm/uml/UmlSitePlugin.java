@@ -12,10 +12,9 @@ import org.ollabaca.on.site.servlets.Features;
 public class UmlSitePlugin implements SitePlugin {
   public void activate() {
     Notation_Element.register();
-    final Function1<EObject,CharSequence> _function = new Function1<EObject,CharSequence>() {
+    final Function1<EObject, CharSequence> _function = new Function1<EObject, CharSequence>() {
       public CharSequence apply(final EObject it) {
-        CharSequence _section_Element = Section_Element.section_Element(((Element) it));
-        return _section_Element;
+        return Section_Element.section_Element(((Element) it));
       }
     };
     Features.instance.register(Element.class, _function);

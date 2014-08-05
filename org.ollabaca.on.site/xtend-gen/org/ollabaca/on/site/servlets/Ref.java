@@ -3,7 +3,6 @@ package org.ollabaca.on.site.servlets;
 import java.util.Arrays;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.ollabaca.on.site.Site;
 import org.ollabaca.on.site.Tag;
 import org.ollabaca.on.site.Topic;
@@ -14,21 +13,14 @@ import org.ollabaca.on.site.util.Template;
 
 @SuppressWarnings("all")
 public class Ref extends Template<Object> {
-  public final static Ref instance = new Function0<Ref>() {
-    public Ref apply() {
-      Ref _ref = new Ref();
-      return _ref;
-    }
-  }.apply();
+  public final static Ref instance = new Ref();
   
   public static CharSequence ref_Object(final Object object) {
-    CharSequence _transform = Ref.instance.transform(object);
-    return _transform;
+    return Ref.instance.transform(object);
   }
   
   public static Scope scope(final String path, final EObject target) {
-    Scope _scope = new Scope(path, target);
-    return _scope;
+    return new Scope(path, target);
   }
   
   protected CharSequence _doFallback(final Void object) {
@@ -37,15 +29,13 @@ public class Ref extends Template<Object> {
   
   protected CharSequence _doFallback(final EObject object) {
     Scope _scope = new Scope("pages", object);
-    CharSequence _ref_Object = Ref.ref_Object(_scope);
-    return _ref_Object;
+    return Ref.ref_Object(_scope);
   }
   
   protected CharSequence _doFallback(final Scope object) {
     String _path = object.getPath();
     EObject _target = object.getTarget();
-    String _path_1 = this.path(_path, _target);
-    return _path_1;
+    return this.path(_path, _target);
   }
   
   protected String _path(final String scope, final Site object) {

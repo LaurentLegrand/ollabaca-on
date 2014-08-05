@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.Locale;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Link;
@@ -19,16 +18,10 @@ import org.ollabaca.on.site.util.Template;
 
 @SuppressWarnings("all")
 public class Notation extends Template<Object> {
-  public final static Notation instance = new Function0<Notation>() {
-    public Notation apply() {
-      Notation _notation = new Notation();
-      return _notation;
-    }
-  }.apply();
+  public final static Notation instance = new Notation();
   
   public static CharSequence notation_Object(final Object object) {
-    CharSequence _transform = Notation.instance.transform(object);
-    return _transform;
+    return Notation.instance.transform(object);
   }
   
   protected CharSequence _doFallback(final EObject object) {
@@ -38,28 +31,24 @@ public class Notation extends Template<Object> {
       CharSequence _xifexpression = null;
       boolean _equals = Objects.equal(topic, null);
       if (_equals) {
-        String _string = object.toString();
-        _xifexpression = _string;
+        _xifexpression = object.toString();
       } else {
-        CharSequence _link_EObject = Link.link_EObject(topic);
-        _xifexpression = _link_EObject;
+        _xifexpression = Link.link_EObject(topic);
       }
-      _xblockexpression = (_xifexpression);
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }
   
   protected CharSequence _doFallback(final Element object) {
-    CharSequence _link_EObject = Link.link_EObject(object);
-    return _link_EObject;
+    return Link.link_EObject(object);
   }
   
   protected CharSequence _doFallback(final Object object) {
-    String _string = object.toString();
-    return _string;
+    return object.toString();
   }
   
-  protected CharSequence _doFallback(final Iterable<? extends Object> object) {
+  protected CharSequence _doFallback(final Iterable<?> object) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _hasElements = false;
@@ -81,8 +70,7 @@ public class Notation extends Template<Object> {
   }
   
   protected CharSequence _doFallback(final String object) {
-    CharSequence _span = Html.span(object);
-    return _span;
+    return Html.span(object);
   }
   
   protected CharSequence _doFallback(final Void object) {
@@ -92,15 +80,13 @@ public class Notation extends Template<Object> {
   protected CharSequence _doFallback(final Number object) {
     Locale _get = Locales.get();
     NumberFormat _instance = NumberFormat.getInstance(_get);
-    String _format = _instance.format(object);
-    return _format;
+    return _instance.format(object);
   }
   
   protected CharSequence _doFallback(final Date object) {
     Locale _get = Locales.get();
     DateFormat _dateTimeInstance = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.FULL, _get);
-    String _format = _dateTimeInstance.format(object);
-    return _format;
+    return _dateTimeInstance.format(object);
   }
   
   public CharSequence doFallback(final Object object) {

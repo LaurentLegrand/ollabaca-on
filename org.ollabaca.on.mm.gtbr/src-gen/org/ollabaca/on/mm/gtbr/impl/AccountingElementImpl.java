@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.gtbr.GtbrPackage;
  *
  * @generated
  */
-public abstract class AccountingElementImpl extends PackageableElementImpl implements AccountingElement
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AccountingElementImpl()
-  {
-    super();
-  }
+public abstract class AccountingElementImpl extends PackageableElementImpl implements AccountingElement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AccountingElementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return GtbrPackage.Literals.ACCOUNTING_ELEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return GtbrPackage.Literals.ACCOUNTING_ELEMENT;
+	}
 
 } //AccountingElementImpl

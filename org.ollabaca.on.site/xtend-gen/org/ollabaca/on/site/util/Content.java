@@ -7,19 +7,18 @@ import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 @Data
 @SuppressWarnings("all")
 public class Content<E extends Object> {
-  private final Function1<? super E,? extends CharSequence> _body;
+  private final Function1<? super E, ? extends CharSequence> _body;
   
-  public Function1<? super E,? extends CharSequence> getBody() {
+  public Function1<? super E, ? extends CharSequence> getBody() {
     return this._body;
   }
   
   public CharSequence apply(final E object) {
-    Function1<? super E,? extends CharSequence> _body = this.getBody();
-    CharSequence _apply = _body.apply(object);
-    return _apply;
+    Function1<? super E, ? extends CharSequence> _body = this.getBody();
+    return _body.apply(object);
   }
   
-  public Content(final Function1<? super E,? extends CharSequence> body) {
+  public Content(final Function1<? super E, ? extends CharSequence> body) {
     super();
     this._body = body;
   }
@@ -28,7 +27,7 @@ public class Content<E extends Object> {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((_body== null) ? 0 : _body.hashCode());
+    result = prime * result + ((this._body== null) ? 0 : this._body.hashCode());
     return result;
   }
   
@@ -41,10 +40,10 @@ public class Content<E extends Object> {
     if (getClass() != obj.getClass())
       return false;
     Content other = (Content) obj;
-    if (_body == null) {
+    if (this._body == null) {
       if (other._body != null)
         return false;
-    } else if (!_body.equals(other._body))
+    } else if (!this._body.equals(other._body))
       return false;
     return true;
   }

@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface HEAD extends HttpMethod
-{
+public interface HEAD extends HttpMethod {
 } // HEAD

@@ -24,10 +24,10 @@ import org.ollabaca.on.site.util.Html;
 @SuppressWarnings("all")
 public class Aside extends Component {
   public Aside() {
-    super("aside", new Function0<Map<String,String>>() {
-      public Map<String,String> apply() {
-        Map<String,String> _xsetliteral = null;
-        Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+    super("aside", new Function0<Map<String, String>>() {
+      public Map<String, String> apply() {
+        Map<String, String> _xsetliteral = null;
+        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
         _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
         return _xsetliteral;
       }
@@ -142,17 +142,15 @@ public class Aside extends Component {
     _builder.append("<nav class=\"instance-tree\">");
     _builder.newLine();
     EList<Topic> _roots = object.getRoots();
-    final Function1<Topic,String> _function = new Function1<Topic,String>() {
+    final Function1<Topic, String> _function = new Function1<Topic, String>() {
       public String apply(final Topic it) {
-        String _name = it.getName();
-        return _name;
+        return it.getName();
       }
     };
     List<Topic> _sortBy = IterableExtensions.<Topic, String>sortBy(_roots, _function);
-    final Function1<Topic,CharSequence> _function_1 = new Function1<Topic,CharSequence>() {
+    final Function1<Topic, CharSequence> _function_1 = new Function1<Topic, CharSequence>() {
       public CharSequence apply(final Topic it) {
-        CharSequence _nav = Aside.this.nav(it);
-        return _nav;
+        return Aside.this.nav(it);
       }
     };
     CharSequence _ul = Html.<Topic>ul(_sortBy, _function_1);
@@ -169,25 +167,22 @@ public class Aside extends Component {
     _builder.append(_link_EObject, "");
     _builder.newLineIfNotEmpty();
     EList<Topic> _topics = object.getTopics();
-    final Function1<Topic,Boolean> _function = new Function1<Topic,Boolean>() {
+    final Function1<Topic, Boolean> _function = new Function1<Topic, Boolean>() {
       public Boolean apply(final Topic it) {
         boolean _isAnonymous = it.isAnonymous();
-        boolean _not = (!_isAnonymous);
-        return Boolean.valueOf(_not);
+        return Boolean.valueOf((!_isAnonymous));
       }
     };
     Iterable<Topic> _filter = IterableExtensions.<Topic>filter(_topics, _function);
-    final Function1<Topic,String> _function_1 = new Function1<Topic,String>() {
+    final Function1<Topic, String> _function_1 = new Function1<Topic, String>() {
       public String apply(final Topic it) {
-        String _name = it.getName();
-        return _name;
+        return it.getName();
       }
     };
     List<Topic> _sortBy = IterableExtensions.<Topic, String>sortBy(_filter, _function_1);
-    final Function1<Topic,CharSequence> _function_2 = new Function1<Topic,CharSequence>() {
+    final Function1<Topic, CharSequence> _function_2 = new Function1<Topic, CharSequence>() {
       public CharSequence apply(final Topic it) {
-        CharSequence _nav = Aside.this.nav(it);
-        return _nav;
+        return Aside.this.nav(it);
       }
     };
     CharSequence _ul = Html.<Topic>ul(_sortBy, _function_2);

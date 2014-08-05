@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.PackageableElement;
  * @model abstract="true"
  * @generated
  */
-public interface AccountingElement extends PackageableElement
-{
+public interface AccountingElement extends PackageableElement {
 } // AccountingElement

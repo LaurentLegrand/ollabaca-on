@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.om.OmPackage;
  *
  * @generated
  */
-public class OmElementImpl extends MinimalEObjectImpl.Container implements OmElement
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected OmElementImpl()
-  {
-    super();
-  }
+public class OmElementImpl extends MinimalEObjectImpl.Container implements OmElement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OmElementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return OmPackage.Literals.OM_ELEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OmPackage.Literals.OM_ELEMENT;
+	}
 
 } //OmElementImpl

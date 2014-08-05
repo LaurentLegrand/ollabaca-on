@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.om;
  * @model
  * @generated
  */
-public interface Obseravtion extends OmElement
-{
+public interface Obseravtion extends OmElement {
 } // Obseravtion

@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.org.OrgPackage;
  *
  * @generated
  */
-public abstract class OrgElementImpl extends PackageableElementImpl implements OrgElement
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected OrgElementImpl()
-  {
-    super();
-  }
+public abstract class OrgElementImpl extends PackageableElementImpl implements OrgElement {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OrgElementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return OrgPackage.Literals.ORG_ELEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OrgPackage.Literals.ORG_ELEMENT;
+	}
 
 } //OrgElementImpl

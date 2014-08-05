@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface MimeType extends org.eclipse.uml2.uml.Class
-{
+public interface MimeType extends org.eclipse.uml2.uml.Class {
 } // MimeType

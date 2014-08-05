@@ -28,19 +28,17 @@ import org.ollabaca.on.site.servlets.Notation;
 
 @SuppressWarnings("all")
 public class Notation_Element {
-  public static Function1<? super Object,? extends CharSequence> register() {
-    final Function1<Object,CharSequence> _function = new Function1<Object,CharSequence>() {
+  public static Function1<? super Object, ? extends CharSequence> register() {
+    final Function1<Object, CharSequence> _function = new Function1<Object, CharSequence>() {
       public CharSequence apply(final Object it) {
         CharSequence _xifexpression = null;
         if ((it instanceof Element)) {
-          CharSequence _notation_Element = Notation_Element.notation_Element(((Element) it));
-          _xifexpression = _notation_Element;
+          _xifexpression = Notation_Element.notation_Element(((Element) it));
         }
         return _xifexpression;
       }
     };
-    Function1<? super Object,? extends CharSequence> _register = Notation.instance.register(Element.class, _function);
-    return _register;
+    return Notation.instance.register(Element.class, _function);
   }
   
   protected static CharSequence _notation_Element(final Element object) {
@@ -50,8 +48,7 @@ public class Notation_Element {
   protected static CharSequence _notation_Element(final Property object) {
     CharSequence _xblockexpression = null;
     {
-      StringBuilder _stringBuilder = new StringBuilder();
-      final StringBuilder definition = _stringBuilder;
+      final StringBuilder definition = new StringBuilder();
       boolean _isDerived = object.isDerived();
       if (_isDerived) {
         definition.append("/");
@@ -67,11 +64,12 @@ public class Notation_Element {
       StringBuilder _append_3 = _append_2.append(_link_EObject_1);
       CharSequence _notation_Multiplicity = Notation_Element.notation_Multiplicity(object);
       _append_3.append(_notation_Multiplicity);
-      boolean _isSetDefault = object.isSetDefault();
-      if (_isSetDefault) {
+      String _default = object.getDefault();
+      boolean _notEquals = (!Objects.equal(_default, null));
+      if (_notEquals) {
         StringBuilder _append_4 = definition.append(" = ");
-        String _default = object.getDefault();
-        _append_4.append(_default);
+        String _default_1 = object.getDefault();
+        _append_4.append(_default_1);
       }
       final List<String> modifiers = CollectionLiterals.<String>newArrayList();
       boolean _isReadOnly = object.isReadOnly();
@@ -104,7 +102,7 @@ public class Notation_Element {
         _and = false;
       } else {
         boolean _isMultivalued = object.isMultivalued();
-        _and = (_isUnique && _isMultivalued);
+        _and = _isMultivalued;
       }
       if (_and) {
         modifiers.add("unique");
@@ -132,7 +130,7 @@ public class Notation_Element {
         }
       }
       _builder.append("</code>");
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -140,8 +138,7 @@ public class Notation_Element {
   protected static CharSequence _notation_Element(final Operation that) {
     CharSequence _xblockexpression = null;
     {
-      StringBuilder _stringBuilder = new StringBuilder();
-      final StringBuilder definition = _stringBuilder;
+      final StringBuilder definition = new StringBuilder();
       VisibilityKind _visibility = that.getVisibility();
       CharSequence _notation_Element = Notation_Element.notation_Element(_visibility);
       StringBuilder _append = definition.append(_notation_Element);
@@ -200,7 +197,7 @@ public class Notation_Element {
         }
       }
       _builder.append("</code>");
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -208,8 +205,7 @@ public class Notation_Element {
   protected static CharSequence _notation_Element(final Parameter object) {
     CharSequence _xblockexpression = null;
     {
-      StringBuilder _stringBuilder = new StringBuilder();
-      final StringBuilder definition = _stringBuilder;
+      final StringBuilder definition = new StringBuilder();
       ParameterDirectionKind _direction = object.getDirection();
       CharSequence _notation_Element = Notation_Element.notation_Element(_direction);
       StringBuilder _append = definition.append(_notation_Element);
@@ -230,7 +226,7 @@ public class Notation_Element {
       }
       StringConcatenation _builder = new StringConcatenation();
       _builder.append(definition, "");
-      _xblockexpression = (_builder);
+      _xblockexpression = _builder;
     }
     return _xblockexpression;
   }
@@ -240,11 +236,10 @@ public class Notation_Element {
     _builder.append("(");
     {
       EList<Parameter> _ownedParameters = object.getOwnedParameters();
-      final Function1<Parameter,Boolean> _function = new Function1<Parameter,Boolean>() {
+      final Function1<Parameter, Boolean> _function = new Function1<Parameter, Boolean>() {
         public Boolean apply(final Parameter it) {
           ParameterDirectionKind _direction = it.getDirection();
-          boolean _notEquals = (!Objects.equal(_direction, ParameterDirectionKind.RETURN_LITERAL));
-          return Boolean.valueOf(_notEquals);
+          return Boolean.valueOf((!Objects.equal(_direction, ParameterDirectionKind.RETURN_LITERAL)));
         }
       };
       Iterable<Parameter> _filter = IterableExtensions.<Parameter>filter(_ownedParameters, _function);
@@ -275,7 +270,7 @@ public class Notation_Element {
       } else {
         int _upper = object.getUpper();
         boolean _equals_1 = (_upper == 0);
-        _and = (_equals && _equals_1);
+        _and = _equals_1;
       }
       if (_and) {
         _matched=true;
@@ -291,7 +286,7 @@ public class Notation_Element {
       } else {
         int _upper_1 = object.getUpper();
         boolean _equals_3 = (_upper_1 == 1);
-        _and_1 = (_equals_2 && _equals_3);
+        _and_1 = _equals_3;
       }
       if (_and_1) {
         _matched=true;
@@ -327,29 +322,22 @@ public class Notation_Element {
   
   protected static CharSequence _notation_Element(final ParameterDirectionKind object) {
     String _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (Objects.equal(object,ParameterDirectionKind.IN_LITERAL)) {
-        _matched=true;
-        _switchResult = "in";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,ParameterDirectionKind.OUT_LITERAL)) {
-        _matched=true;
-        _switchResult = "out";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,ParameterDirectionKind.INOUT_LITERAL)) {
-        _matched=true;
-        _switchResult = "inout";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,ParameterDirectionKind.RETURN_LITERAL)) {
-        _matched=true;
-        _switchResult = "return";
+    if (object != null) {
+      switch (object) {
+        case IN_LITERAL:
+          _switchResult = "in";
+          break;
+        case OUT_LITERAL:
+          _switchResult = "out";
+          break;
+        case INOUT_LITERAL:
+          _switchResult = "inout";
+          break;
+        case RETURN_LITERAL:
+          _switchResult = "return";
+          break;
+        default:
+          break;
       }
     }
     return _switchResult;
@@ -357,29 +345,22 @@ public class Notation_Element {
   
   protected static CharSequence _notation_Element(final VisibilityKind object) {
     String _switchResult = null;
-    boolean _matched = false;
-    if (!_matched) {
-      if (Objects.equal(object,VisibilityKind.PUBLIC_LITERAL)) {
-        _matched=true;
-        _switchResult = "+";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,VisibilityKind.PRIVATE_LITERAL)) {
-        _matched=true;
-        _switchResult = "-";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,VisibilityKind.PROTECTED_LITERAL)) {
-        _matched=true;
-        _switchResult = "#";
-      }
-    }
-    if (!_matched) {
-      if (Objects.equal(object,VisibilityKind.PACKAGE_LITERAL)) {
-        _matched=true;
-        _switchResult = "~";
+    if (object != null) {
+      switch (object) {
+        case PUBLIC_LITERAL:
+          _switchResult = "+";
+          break;
+        case PRIVATE_LITERAL:
+          _switchResult = "-";
+          break;
+        case PROTECTED_LITERAL:
+          _switchResult = "#";
+          break;
+        case PACKAGE_LITERAL:
+          _switchResult = "~";
+          break;
+        default:
+          break;
       }
     }
     return _switchResult;

@@ -16,23 +16,17 @@ import org.ollabaca.on.site.util.Component;
 
 @SuppressWarnings("all")
 public class Page {
-  public final static Page instance = new Function0<Page>() {
-    public Page apply() {
-      Page _page = new Page();
-      return _page;
-    }
-  }.apply();
+  public final static Page instance = new Page();
   
   public final static Component head = new Function0<Component>() {
     public Component apply() {
-      Map<String,String> _xsetliteral = null;
-      Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+      Map<String, String> _xsetliteral = null;
+      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("lang", "en");
       _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
+      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
         public CharSequence apply(final Element it) {
-          CharSequence _head_Element = Page.head_Element(it);
-          return _head_Element;
+          return Page.head_Element(it);
         }
       };
       Component _component = new Component("head", _xsetliteral, _function);
@@ -42,14 +36,13 @@ public class Page {
   
   public final static Component body = new Function0<Component>() {
     public Component apply() {
-      Map<String,String> _xsetliteral = null;
-      Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+      Map<String, String> _xsetliteral = null;
+      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("lang", "en");
       _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
+      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
         public CharSequence apply(final Element it) {
-          CharSequence _body_Element = Page.body_Element(it);
-          return _body_Element;
+          return Page.body_Element(it);
         }
       };
       Component _component = new Component("body", _xsetliteral, _function);
@@ -59,14 +52,13 @@ public class Page {
   
   public final static Component header = new Function0<Component>() {
     public Component apply() {
-      Map<String,String> _xsetliteral = null;
-      Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+      Map<String, String> _xsetliteral = null;
+      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("class", "");
       _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
+      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
         public CharSequence apply(final Element it) {
-          CharSequence _header_Element = Page.header_Element(it);
-          return _header_Element;
+          return Page.header_Element(it);
         }
       };
       Component _component = new Component("header", _xsetliteral, _function);
@@ -74,37 +66,21 @@ public class Page {
     }
   }.apply();
   
-  public final static Component breadcrumb = new Function0<Component>() {
-    public Component apply() {
-      Breadcrumb _breadcrumb = new Breadcrumb();
-      return _breadcrumb;
-    }
-  }.apply();
+  public final static Component breadcrumb = new Breadcrumb();
   
-  public final static Component aside = new Function0<Component>() {
-    public Component apply() {
-      Aside _aside = new Aside();
-      return _aside;
-    }
-  }.apply();
+  public final static Component aside = new Aside();
   
-  public final static Article article = new Function0<Article>() {
-    public Article apply() {
-      Article _article = new Article();
-      return _article;
-    }
-  }.apply();
+  public final static Article article = new Article();
   
   public final static Component footer = new Function0<Component>() {
     public Component apply() {
-      Map<String,String> _xsetliteral = null;
-      Map<String,String> _tempMap = Maps.<String, String>newHashMap();
+      Map<String, String> _xsetliteral = null;
+      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
       _tempMap.put("class", "footer");
       _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
+      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
         public CharSequence apply(final Element it) {
-          CharSequence _footer_Element = Page.footer_Element(it);
-          return _footer_Element;
+          return Page.footer_Element(it);
         }
       };
       Component _component = new Component("footer", _xsetliteral, _function);

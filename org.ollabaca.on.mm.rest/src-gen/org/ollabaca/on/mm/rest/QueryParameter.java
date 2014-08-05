@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.rest;
  * @model
  * @generated
  */
-public interface QueryParameter extends HttpParameter
-{
+public interface QueryParameter extends HttpParameter {
 } // QueryParameter

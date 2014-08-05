@@ -22,22 +22,21 @@ import org.eclipse.uml2.uml.DataType;
  * @model
  * @generated
  */
-public interface QuantityKind extends DataType, OmElement
-{
-  /**
-   * Returns the value of the '<em><b>Dimension</b></em>' containment reference list.
-   * The list contents are of type {@link org.ollabaca.on.mm.om.Dimension}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Dimension</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Dimension</em>' containment reference list.
-   * @see org.ollabaca.on.mm.om.OmPackage#getQuantityKind_Dimension()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Dimension> getDimension();
+public interface QuantityKind extends DataType, OmElement {
+	/**
+	 * Returns the value of the '<em><b>Dimension</b></em>' containment reference list.
+	 * The list contents are of type {@link org.ollabaca.on.mm.om.Dimension}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dimension</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dimension</em>' containment reference list.
+	 * @see org.ollabaca.on.mm.om.OmPackage#getQuantityKind_Dimension()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Dimension> getDimension();
 
 } // QuantityKind

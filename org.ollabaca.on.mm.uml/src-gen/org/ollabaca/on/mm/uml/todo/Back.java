@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.uml.todo;
  * @model
  * @generated
  */
-public interface Back extends Tier
-{
+public interface Back extends Tier {
 } // Back

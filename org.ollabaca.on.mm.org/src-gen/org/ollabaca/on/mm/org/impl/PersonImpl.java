@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.org.Person;
  *
  * @generated
  */
-public class PersonImpl extends AgentImpl implements Person
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected PersonImpl()
-  {
-    super();
-  }
+public class PersonImpl extends AgentImpl implements Person {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PersonImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return OrgPackage.Literals.PERSON;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OrgPackage.Literals.PERSON;
+	}
 
 } //PersonImpl

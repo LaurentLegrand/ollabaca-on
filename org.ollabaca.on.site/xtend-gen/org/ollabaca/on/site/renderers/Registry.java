@@ -10,19 +10,17 @@ import org.ollabaca.on.site.renderers.Text;
 
 @SuppressWarnings("all")
 public class Registry<E extends Element> {
-  private final Map<String,Function1<? super E,? extends Content>> renderers = CollectionLiterals.<String, Function1<? super E,? extends Content>>newHashMap();
+  private final Map<String, Function1<? super E, ? extends Content>> renderers = CollectionLiterals.<String, Function1<? super E, ? extends Content>>newHashMap();
   
-  public Function1<? super E,? extends Content> registerRenderer(final String path, final Function1<? super E,? extends Content> renderer) {
-    Function1<? super E,? extends Content> _put = this.renderers.put(path, renderer);
-    return _put;
+  public Function1<? super E, ? extends Content> registerRenderer(final String path, final Function1<? super E, ? extends Content> renderer) {
+    return this.renderers.put(path, renderer);
   }
   
   public Content render(final String path, final E object) {
-    Function1<? super E,? extends Content> renderer = this.renderers.get(path);
+    Function1<? super E, ? extends Content> renderer = this.renderers.get(path);
     boolean _equals = Objects.equal(renderer, null);
     if (_equals) {
-      Text _text = new Text("text/plain", ("Renderer not found for path: " + path));
-      return _text;
+      return new Text("text/plain", ("Renderer not found for path: " + path));
     }
     return renderer.apply(object);
   }

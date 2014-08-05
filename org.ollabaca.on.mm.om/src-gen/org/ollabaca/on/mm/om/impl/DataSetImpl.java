@@ -29,119 +29,106 @@ import org.ollabaca.on.mm.om.OmPackage;
  *
  * @generated
  */
-public class DataSetImpl extends MinimalEObjectImpl.Container implements DataSet
-{
-  /**
-   * The cached value of the '{@link #getMeasures() <em>Measures</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMeasures()
-   * @generated
-   * @ordered
-   */
-  protected EList<Measure> measures;
+public class DataSetImpl extends MinimalEObjectImpl.Container implements DataSet {
+	/**
+	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMeasures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Measure> measures;
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected DataSetImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DataSetImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return OmPackage.Literals.DATA_SET;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return OmPackage.Literals.DATA_SET;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Measure> getMeasures()
-  {
-    if (measures == null)
-    {
-      measures = new EObjectResolvingEList<Measure>(Measure.class, this, OmPackage.DATA_SET__MEASURES);
-    }
-    return measures;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Measure> getMeasures() {
+		if (measures == null) {
+			measures = new EObjectResolvingEList<Measure>(Measure.class, this, OmPackage.DATA_SET__MEASURES);
+		}
+		return measures;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case OmPackage.DATA_SET__MEASURES:
-        return getMeasures();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case OmPackage.DATA_SET__MEASURES:
+				return getMeasures();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case OmPackage.DATA_SET__MEASURES:
-        getMeasures().clear();
-        getMeasures().addAll((Collection<? extends Measure>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case OmPackage.DATA_SET__MEASURES:
+				getMeasures().clear();
+				getMeasures().addAll((Collection<? extends Measure>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case OmPackage.DATA_SET__MEASURES:
-        getMeasures().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case OmPackage.DATA_SET__MEASURES:
+				getMeasures().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case OmPackage.DATA_SET__MEASURES:
-        return measures != null && !measures.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case OmPackage.DATA_SET__MEASURES:
+				return measures != null && !measures.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //DataSetImpl

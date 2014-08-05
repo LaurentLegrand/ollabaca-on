@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.ExecutionEnvironment;
  * @model
  * @generated
  */
-public interface Environment extends ExecutionEnvironment
-{
+public interface Environment extends ExecutionEnvironment {
 } // Environment

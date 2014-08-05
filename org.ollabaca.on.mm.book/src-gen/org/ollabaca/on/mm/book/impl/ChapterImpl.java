@@ -16,27 +16,24 @@ import org.ollabaca.on.mm.book.Chapter;
  *
  * @generated
  */
-public class ChapterImpl extends SectionImpl implements Chapter
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ChapterImpl()
-  {
-    super();
-  }
+public class ChapterImpl extends SectionImpl implements Chapter {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChapterImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return BookPackage.Literals.CHAPTER;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BookPackage.Literals.CHAPTER;
+	}
 
 } //ChapterImpl

@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.NamedElement;
  * @model
  * @generated
  */
-public interface Role extends NamedElement, OrgElement
-{
+public interface Role extends NamedElement, OrgElement {
 } // Role

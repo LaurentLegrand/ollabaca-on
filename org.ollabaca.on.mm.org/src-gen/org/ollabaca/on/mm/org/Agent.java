@@ -22,24 +22,23 @@ import org.eclipse.uml2.uml.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface Agent extends NamedElement, OrgElement
-{
-  /**
-   * Returns the value of the '<em><b>Memberships</b></em>' reference list.
-   * The list contents are of type {@link org.ollabaca.on.mm.org.Membership}.
-   * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.org.Membership#getMembers <em>Members</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * <!-- begin-model-doc -->
-   * *
-   * cf. http://www.w3.org/TR/2012/WD-vocab-org-20121023/#org:hasMembership
-   * <!-- end-model-doc -->
-   * @return the value of the '<em>Memberships</em>' reference list.
-   * @see org.ollabaca.on.mm.org.OrgPackage#getAgent_Memberships()
-   * @see org.ollabaca.on.mm.org.Membership#getMembers
-   * @model opposite="members" changeable="false"
-   * @generated
-   */
-  EList<Membership> getMemberships();
+public interface Agent extends NamedElement, OrgElement {
+	/**
+	 * Returns the value of the '<em><b>Memberships</b></em>' reference list.
+	 * The list contents are of type {@link org.ollabaca.on.mm.org.Membership}.
+	 * It is bidirectional and its opposite is '{@link org.ollabaca.on.mm.org.Membership#getMembers <em>Members</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * *
+	 * cf. http://www.w3.org/TR/2012/WD-vocab-org-20121023/#org:hasMembership
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Memberships</em>' reference list.
+	 * @see org.ollabaca.on.mm.org.OrgPackage#getAgent_Memberships()
+	 * @see org.ollabaca.on.mm.org.Membership#getMembers
+	 * @model opposite="members" changeable="false"
+	 * @generated
+	 */
+	EList<Membership> getMemberships();
 
 } // Agent

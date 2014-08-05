@@ -4,6 +4,7 @@ import org.ollabaca.on.mm.org.Agent
 import org.ollabaca.on.mm.gtbr.util.Dates
 import org.eclipse.uml2.uml.NamedElement
 import org.eclipse.uml2.uml.PackageableElement
+import java.util.Date
 
 type Date wraps java.util.Date
 create {
@@ -28,7 +29,7 @@ class Account extends NamedElement, AccountingElement {
 	
 	derived double balance get {
 		var double b = 0
-		for (Record e: records.sortBy[date]) {
+		for (Record e: records.sortBy[it | if (it.date == null) return new Date() else return it.date ]) {
 			b = e.apply(b)
 		}
 		return b
@@ -78,5 +79,12 @@ class Transfer extends AccountingElement {
 	contains Debit debit
 	
 	contains Credit credit
+	
+}
+
+
+class Clearing extends AccountingElement {
+	
+	contains Record[2] records
 	
 }

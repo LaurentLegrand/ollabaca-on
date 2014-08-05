@@ -13,6 +13,5 @@ package org.ollabaca.on.mm.uml.todo;
  * @model
  * @generated
  */
-public interface Front extends Tier
-{
+public interface Front extends Tier {
 } // Front

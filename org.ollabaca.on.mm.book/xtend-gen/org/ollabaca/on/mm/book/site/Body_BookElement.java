@@ -18,8 +18,7 @@ import org.ollabaca.on.site.util.Html;
 @SuppressWarnings("all")
 public class Body_BookElement {
   protected static CharSequence _body_BookElement(final BookElement object) {
-    CharSequence _c_BookElement = BookElements.toc_BookElement(object);
-    return _c_BookElement;
+    return BookElements.toc_BookElement(object);
   }
   
   protected static CharSequence _body_BookElement(final Section object) {
@@ -28,17 +27,15 @@ public class Body_BookElement {
     _builder.append(__body_BookElement, "");
     _builder.newLineIfNotEmpty();
     EList<Element> _elements = object.getElements();
-    final Function1<Element,CharSequence> _function = new Function1<Element,CharSequence>() {
+    final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
       public CharSequence apply(final Element it) {
-        CharSequence _link_EObject = Link.link_EObject(it);
-        return _link_EObject;
+        return Link.link_EObject(it);
       }
     };
     Column<Element> _column = Html.<Element>column("Title", _function);
-    final Function1<Element,CharSequence> _function_1 = new Function1<Element,CharSequence>() {
+    final Function1<Element, CharSequence> _function_1 = new Function1<Element, CharSequence>() {
       public CharSequence apply(final Element it) {
-        CharSequence _abstract_EObject = Html.abstract_EObject(it);
-        return _abstract_EObject;
+        return Html.abstract_EObject(it);
       }
     };
     Column<Element> _column_1 = Html.<Element>column("Description", _function_1);

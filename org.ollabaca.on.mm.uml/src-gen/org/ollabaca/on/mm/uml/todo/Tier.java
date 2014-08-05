@@ -14,6 +14,5 @@ import org.eclipse.uml2.uml.Node;
  * @model abstract="true"
  * @generated
  */
-public interface Tier extends Node
-{
+public interface Tier extends Node {
 } // Tier

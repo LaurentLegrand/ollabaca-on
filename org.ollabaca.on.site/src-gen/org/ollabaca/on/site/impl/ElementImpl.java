@@ -18,27 +18,24 @@ import org.ollabaca.on.site.SitePackage;
  *
  * @generated
  */
-public abstract class ElementImpl extends MinimalEObjectImpl.Container implements Element
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ElementImpl()
-  {
-    super();
-  }
+public abstract class ElementImpl extends MinimalEObjectImpl.Container implements Element {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ElementImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return SitePackage.Literals.ELEMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return SitePackage.Literals.ELEMENT;
+	}
 
 } //ElementImpl

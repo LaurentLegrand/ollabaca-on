@@ -18,27 +18,24 @@ import org.ollabaca.on.mm.task.TaskPackage;
  *
  * @generated
  */
-public abstract class AssignmentImpl extends MinimalEObjectImpl.Container implements Assignment
-{
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected AssignmentImpl()
-  {
-    super();
-  }
+public abstract class AssignmentImpl extends MinimalEObjectImpl.Container implements Assignment {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AssignmentImpl() {
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return TaskPackage.Literals.ASSIGNMENT;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return TaskPackage.Literals.ASSIGNMENT;
+	}
 
 } //AssignmentImpl
