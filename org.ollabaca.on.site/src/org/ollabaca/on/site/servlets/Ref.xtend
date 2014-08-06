@@ -52,7 +52,12 @@ class Ref extends Template<Object> {
 	}
 
 	def dispatch String path(String scope, EObject object) {
-		'''/site/«scope»/«Sites::site.name»/unknwon/«object»'''
+		val topic = Sites::topic_EObject(object)
+		if (topic == null) {
+			'''#404/«scope»/«object»'''
+		} else {
+			path(scope, topic)
+		}
 	}
 
 	def dispatch String path(String scope, Type object) {

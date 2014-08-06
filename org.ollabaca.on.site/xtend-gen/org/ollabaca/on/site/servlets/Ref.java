@@ -1,5 +1,6 @@
 package org.ollabaca.on.site.servlets;
 
+import com.google.common.base.Objects;
 import java.util.Arrays;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -77,16 +78,24 @@ public class Ref extends Template<Object> {
   }
   
   protected String _path(final String scope, final EObject object) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("/site/");
-    _builder.append(scope, "");
-    _builder.append("/");
-    Site _site = Sites.site();
-    String _name = _site.getName();
-    _builder.append(_name, "");
-    _builder.append("/unknwon/");
-    _builder.append(object, "");
-    return _builder.toString();
+    String _xblockexpression = null;
+    {
+      final Topic topic = Sites.topic_EObject(object);
+      String _xifexpression = null;
+      boolean _equals = Objects.equal(topic, null);
+      if (_equals) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("#404/");
+        _builder.append(scope, "");
+        _builder.append("/");
+        _builder.append(object, "");
+        _xifexpression = _builder.toString();
+      } else {
+        _xifexpression = this.path(scope, topic);
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
   }
   
   protected String _path(final String scope, final Type object) {
