@@ -3,12 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.ollabaca.on.mm.book;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ resources/
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.ollabaca.on.mm.book,
  org.ollabaca.on.mm.book.impl,
+ org.ollabaca.on.mm.book.site,
+ org.ollabaca.on.mm.book.site.assets,
  org.ollabaca.on.mm.book.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,

@@ -35,5 +35,7 @@ class BookSitePlugin implements SitePlugin {
 		Renderers::topicRenderers.registerRenderer(BOOK, [		
 			new Text("text/html", Page_Book::page_Book(it.target as Book));
 		]);
+		return #{ "/site/book-assets" -> "/org/ollabaca/on/mm/book/site/assets" }
+		
 	}
 }

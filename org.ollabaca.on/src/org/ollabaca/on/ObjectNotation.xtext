@@ -35,7 +35,6 @@ Instance returns Instance:
 	('@tag' tags+=ID)*
 	('@since' since=VERSION)?
 	('@version' version=VERSION)?
-	
 	(name=ID '=')? 'new' type=ID
 	'{'
 		(slots+=Slot)*

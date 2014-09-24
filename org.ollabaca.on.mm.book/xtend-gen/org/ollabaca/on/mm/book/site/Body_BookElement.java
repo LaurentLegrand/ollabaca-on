@@ -1,11 +1,11 @@
 package org.ollabaca.on.mm.book.site;
 
-import com.google.common.collect.Lists;
 import java.util.Arrays;
 import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.ollabaca.on.mm.book.BookElement;
 import org.ollabaca.on.mm.book.Section;
@@ -39,7 +39,7 @@ public class Body_BookElement {
       }
     };
     Column<Element> _column_1 = Html.<Element>column("Description", _function_1);
-    CharSequence _table = Html.<Element>table(_elements, Collections.<Attr<Iterable<? extends Element>>>unmodifiableList(Lists.<Attr<Iterable<? extends Element>>>newArrayList()), Collections.<Column<Element>>unmodifiableList(Lists.<Column<Element>>newArrayList(_column, _column_1)));
+    CharSequence _table = Html.<Element>table(_elements, Collections.<Attr<Iterable<? extends Element>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Element>>>newArrayList()), Collections.<Column<Element>>unmodifiableList(CollectionLiterals.<Column<Element>>newArrayList(_column, _column_1)));
     _builder.append(_table, "");
     _builder.newLineIfNotEmpty();
     return _builder;

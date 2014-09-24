@@ -19,6 +19,7 @@ class Page_Book {
 		<html>
 		<head>
 			<link href="/site/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+			<link href="/site/assets/site.css" rel="stylesheet">
 			<style>
 				body {
 					counter-reset: part chapter;
@@ -64,6 +65,26 @@ class Page_Book {
 				}
 				
 			</style>
+		<script src="/site/assets/jquery/jquery-2.0.2.min.js"></script>
+		<script src="/site/assets/bootstrap/js/bootstrap.js"></script>
+		<script src="/site/book-assets/book.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("table").wrap("<div class='table' style='overflow: auto;'/>");
+				
+				$("a[href]").each(function() {
+					try {
+						var a = $(this);
+						var href = a.attr("href");
+						var id = "#" + href.replace( /(\/|:|\.|\[|\])/g, "\\$1" );
+						if ($(id).length != 0) {
+							a.attr("href", "#" + href);
+						}
+					} catch (err) { }
+				});
+			});
+			
+		</script>
 		</head>
 		<body>
 			<div class="container">

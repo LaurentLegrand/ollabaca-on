@@ -2,16 +2,13 @@ package org.ollabaca.on.site.util;
 
 import org.eclipse.xtend.lib.Data;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 @Data
 @SuppressWarnings("all")
 public class Content<E extends Object> {
   private final Function1<? super E, ? extends CharSequence> _body;
-  
-  public Function1<? super E, ? extends CharSequence> getBody() {
-    return this._body;
-  }
   
   public CharSequence apply(final E object) {
     Function1<? super E, ? extends CharSequence> _body = this.getBody();
@@ -24,6 +21,7 @@ public class Content<E extends Object> {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
@@ -32,6 +30,7 @@ public class Content<E extends Object> {
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -39,7 +38,7 @@ public class Content<E extends Object> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Content other = (Content) obj;
+    Content<?> other = (Content<?>) obj;
     if (this._body == null) {
       if (other._body != null)
         return false;
@@ -49,8 +48,14 @@ public class Content<E extends Object> {
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public Function1<? super E, ? extends CharSequence> getBody() {
+    return this._body;
   }
 }

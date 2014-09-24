@@ -606,37 +606,58 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private UnitElements pUnit;
-	private ValueElements pValue;
-	private LiteralElements pLiteral;
-	private ImportElements pImport;
-	private ContainerElements pContainer;
-	private InstanceElements pInstance;
-	private SlotElements pSlot;
-	private ArrayElements pArray;
-	private StringValueElements pStringValue;
-	private BooleanValueElements pBooleanValue;
-	private NullValueElements pNullValue;
-	private NumberValueElements pNumberValue;
-	private InstanceRefElements pInstanceRef;
-	private EnumValueElements pEnumValue;
-	private EStringElements pEString;
-	private TerminalRule tMY_STRING;
-	private TerminalRule tNUMBER;
-	private TerminalRule tFQN;
-	private TerminalRule tID;
-	private TerminalRule tLONG_STRING;
-	private TerminalRule tVERSION;
+	private final UnitElements pUnit;
+	private final ValueElements pValue;
+	private final LiteralElements pLiteral;
+	private final ImportElements pImport;
+	private final ContainerElements pContainer;
+	private final InstanceElements pInstance;
+	private final SlotElements pSlot;
+	private final ArrayElements pArray;
+	private final StringValueElements pStringValue;
+	private final BooleanValueElements pBooleanValue;
+	private final NullValueElements pNullValue;
+	private final NumberValueElements pNumberValue;
+	private final InstanceRefElements pInstanceRef;
+	private final EnumValueElements pEnumValue;
+	private final EStringElements pEString;
+	private final TerminalRule tMY_STRING;
+	private final TerminalRule tNUMBER;
+	private final TerminalRule tFQN;
+	private final TerminalRule tID;
+	private final TerminalRule tLONG_STRING;
+	private final TerminalRule tVERSION;
 	
 	private final Grammar grammar;
 
-	private TerminalsGrammarAccess gaTerminals;
+	private final TerminalsGrammarAccess gaTerminals;
 
 	@Inject
 	public ObjectNotationGrammarAccess(GrammarProvider grammarProvider,
 		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pUnit = new UnitElements();
+		this.pValue = new ValueElements();
+		this.pLiteral = new LiteralElements();
+		this.pImport = new ImportElements();
+		this.pContainer = new ContainerElements();
+		this.pInstance = new InstanceElements();
+		this.pSlot = new SlotElements();
+		this.pArray = new ArrayElements();
+		this.pStringValue = new StringValueElements();
+		this.pBooleanValue = new BooleanValueElements();
+		this.pNullValue = new NullValueElements();
+		this.pNumberValue = new NumberValueElements();
+		this.pInstanceRef = new InstanceRefElements();
+		this.pEnumValue = new EnumValueElements();
+		this.pEString = new EStringElements();
+		this.tMY_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MY_STRING");
+		this.tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER");
+		this.tFQN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FQN");
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tLONG_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONG_STRING");
+		this.tVERSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "VERSION");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -669,7 +690,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Unit:
 	//	imports+=Import+ ("parent" parent=[Instance|FQN])? container=Container? instances+=Instance+;
 	public UnitElements getUnitAccess() {
-		return (pUnit != null) ? pUnit : (pUnit = new UnitElements());
+		return pUnit;
 	}
 	
 	public ParserRule getUnitRule() {
@@ -679,7 +700,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Value:
 	//	Instance | Array | InstanceRef | Literal;
 	public ValueElements getValueAccess() {
-		return (pValue != null) ? pValue : (pValue = new ValueElements());
+		return pValue;
 	}
 	
 	public ParserRule getValueRule() {
@@ -689,7 +710,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Literal:
 	//	StringValue | BooleanValue | NullValue | NumberValue | EnumValue;
 	public LiteralElements getLiteralAccess() {
-		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
+		return pLiteral;
 	}
 	
 	public ParserRule getLiteralRule() {
@@ -699,7 +720,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Import:
 	//	"import" name=MY_STRING;
 	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+		return pImport;
 	}
 	
 	public ParserRule getImportRule() {
@@ -709,7 +730,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Container:
 	//	"container" instance=[Instance|FQN] "#" feature=ID;
 	public ContainerElements getContainerAccess() {
-		return (pContainer != null) ? pContainer : (pContainer = new ContainerElements());
+		return pContainer;
 	}
 	
 	public ParserRule getContainerRule() {
@@ -721,7 +742,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//	abbr=ID)? ("@see" see+=[Instance|FQN])* ("@tag" tags+=ID)* ("@since" since=VERSION)? ("@version" version=VERSION)?
 	//	(name=ID "=")? "new" type=ID "{" slots+=Slot* "}";
 	public InstanceElements getInstanceAccess() {
-		return (pInstance != null) ? pInstance : (pInstance = new InstanceElements());
+		return pInstance;
 	}
 	
 	public ParserRule getInstanceRule() {
@@ -731,7 +752,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//Slot:
 	//	{Slot} name=ID "=" value=Value;
 	public SlotElements getSlotAccess() {
-		return (pSlot != null) ? pSlot : (pSlot = new SlotElements());
+		return pSlot;
 	}
 	
 	public ParserRule getSlotRule() {
@@ -742,7 +763,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//	"[" //( "," value+=Value)*  
 	//	value+=Value+ "]";
 	public ArrayElements getArrayAccess() {
-		return (pArray != null) ? pArray : (pArray = new ArrayElements());
+		return pArray;
 	}
 	
 	public ParserRule getArrayRule() {
@@ -752,7 +773,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//StringValue:
 	//	value=MY_STRING;
 	public StringValueElements getStringValueAccess() {
-		return (pStringValue != null) ? pStringValue : (pStringValue = new StringValueElements());
+		return pStringValue;
 	}
 	
 	public ParserRule getStringValueRule() {
@@ -762,7 +783,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//BooleanValue:
 	//	value="true" | value="false";
 	public BooleanValueElements getBooleanValueAccess() {
-		return (pBooleanValue != null) ? pBooleanValue : (pBooleanValue = new BooleanValueElements());
+		return pBooleanValue;
 	}
 	
 	public ParserRule getBooleanValueRule() {
@@ -772,7 +793,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//NullValue:
 	//	{NullValue} "null";
 	public NullValueElements getNullValueAccess() {
-		return (pNullValue != null) ? pNullValue : (pNullValue = new NullValueElements());
+		return pNullValue;
 	}
 	
 	public ParserRule getNullValueRule() {
@@ -782,7 +803,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//NumberValue:
 	//	value=NUMBER;
 	public NumberValueElements getNumberValueAccess() {
-		return (pNumberValue != null) ? pNumberValue : (pNumberValue = new NumberValueElements());
+		return pNumberValue;
 	}
 	
 	public ParserRule getNumberValueRule() {
@@ -792,7 +813,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//InstanceRef:
 	//	value=[Instance|FQN];
 	public InstanceRefElements getInstanceRefAccess() {
-		return (pInstanceRef != null) ? pInstanceRef : (pInstanceRef = new InstanceRefElements());
+		return pInstanceRef;
 	}
 	
 	public ParserRule getInstanceRefRule() {
@@ -802,7 +823,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//EnumValue:
 	//	"#" value=ID;
 	public EnumValueElements getEnumValueAccess() {
-		return (pEnumValue != null) ? pEnumValue : (pEnumValue = new EnumValueElements());
+		return pEnumValue;
 	}
 	
 	public ParserRule getEnumValueRule() {
@@ -812,7 +833,7 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//EString returns ecore::EString:
 	//	STRING | LONG_STRING;
 	public EStringElements getEStringAccess() {
-		return (pEString != null) ? pEString : (pEString = new EStringElements());
+		return pEString;
 	}
 	
 	public ParserRule getEStringRule() {
@@ -822,38 +843,38 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal MY_STRING:
 	//	"\"" ("\\\"" | !"\"")* "\"";
 	public TerminalRule getMY_STRINGRule() {
-		return (tMY_STRING != null) ? tMY_STRING : (tMY_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MY_STRING"));
+		return tMY_STRING;
 	} 
 
 	//terminal NUMBER:
 	//	"0" | "-"? "1".."9" "0".."9"* ("." "0".."9"+)? ("e" ("+" | "-") "1".."9" "0".."9"*)?;
 	public TerminalRule getNUMBERRule() {
-		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
+		return tNUMBER;
 	} 
 
 	//terminal FQN:
 	//	("/" ID)*;
 	public TerminalRule getFQNRule() {
-		return (tFQN != null) ? tFQN : (tFQN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "FQN"));
+		return tFQN;
 	} 
 
 	////	ID ('/' ID)*;
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9" | "-" | ".")*;
 	public TerminalRule getIDRule() {
-		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+		return tID;
 	} 
 
 	//terminal LONG_STRING:
 	//	"(\""->"\")";
 	public TerminalRule getLONG_STRINGRule() {
-		return (tLONG_STRING != null) ? tLONG_STRING : (tLONG_STRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LONG_STRING"));
+		return tLONG_STRING;
 	} 
 
 	//terminal VERSION:
 	//	"0".."9"* ("." "0".."9"*)+;
 	public TerminalRule getVERSIONRule() {
-		return (tVERSION != null) ? tVERSION : (tVERSION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "VERSION"));
+		return tVERSION;
 	} 
 
 	//terminal INT returns ecore::EInt:
@@ -863,8 +884,8 @@ public class ObjectNotationGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
+	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	} 

@@ -1,13 +1,13 @@
 package org.ollabaca.on.site.util;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Lists;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.site.Topic;
@@ -28,7 +28,11 @@ public class Html {
   private final static DefaultLinkRenderer linkRenderer = new DefaultLinkRenderer();
   
   public static String html(final String object) {
-    return Html.processor.markdownToHtml(object, Html.linkRenderer);
+    String _markdownToHtml = Html.processor.markdownToHtml(object, Html.linkRenderer);
+    String _replace = _markdownToHtml.replace("{{info}}", "<div class=\'alert alert-info\'>");
+    String _replace_1 = _replace.replace("{{/info}}", "</div>");
+    String _replace_2 = _replace_1.replace("{{warning}}", "<div class=\'alert alert-warning\'>");
+    return _replace_2.replace("{{/warning}}", "</div>");
   }
   
   protected static CharSequence _span(final Void object) {
@@ -62,7 +66,7 @@ public class Html {
   
   public static <E extends Object> CharSequence tag(final E object, final String name, final Function1<? super E, ? extends CharSequence> content) {
     Content<E> _content = Html.<E>content(content);
-    return Html.<E>tag(object, name, Collections.<Attr<E>>unmodifiableList(Lists.<Attr<E>>newArrayList()), Collections.<Content<E>>unmodifiableList(Lists.<Content<E>>newArrayList(_content)));
+    return Html.<E>tag(object, name, Collections.<Attr<E>>unmodifiableList(CollectionLiterals.<Attr<E>>newArrayList()), Collections.<Content<E>>unmodifiableList(CollectionLiterals.<Content<E>>newArrayList(_content)));
   }
   
   public static <E extends Object> CharSequence tag(final E object, final String name, final List<Attr<E>> attributes, final List<Content<E>> contents) {
@@ -97,7 +101,7 @@ public class Html {
   public static <E extends Object> CharSequence dl(final Iterable<? extends E> object, final Function1<? super E, ? extends CharSequence> term, final Function1<? super E, ? extends CharSequence> definition) {
     Content<E> _content = Html.<E>content(term);
     Content<E> _content_1 = Html.<E>content(definition);
-    return Html.<E>dl(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content, _content_1);
+    return Html.<E>dl(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends E>>>newArrayList()), _content, _content_1);
   }
   
   public static <E extends Object> CharSequence dl(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> term, final Content<E> definition) {
@@ -123,7 +127,7 @@ public class Html {
       };
       Content<Iterable<? extends E>> _content = Html.<Iterable<? extends E>>content(_function);
       _xblockexpression = Html.<Iterable<? extends E>>tag(object, "dl", attributes, 
-        Collections.<Content<Iterable<? extends E>>>unmodifiableList(Lists.<Content<Iterable<? extends E>>>newArrayList(_content)));
+        Collections.<Content<Iterable<? extends E>>>unmodifiableList(CollectionLiterals.<Content<Iterable<? extends E>>>newArrayList(_content)));
     }
     return _xblockexpression;
   }
@@ -145,7 +149,7 @@ public class Html {
   
   public static <E extends Object> CharSequence ol(final Iterable<? extends E> object, final Function1<? super E, ? extends CharSequence> item) {
     Content<E> _content = Html.<E>content(item);
-    return Html.<E>ol(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
+    return Html.<E>ol(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends E>>>newArrayList()), _content);
   }
   
   public static <E extends Object> CharSequence ol(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
@@ -154,7 +158,7 @@ public class Html {
   
   public static <E extends Object> CharSequence ul(final Iterable<? extends E> object, final Function1<? super E, ? extends CharSequence> item) {
     Content<E> _content = Html.<E>content(item);
-    return Html.<E>ul(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(Lists.<Attr<Iterable<? extends E>>>newArrayList()), _content);
+    return Html.<E>ul(object, Collections.<Attr<Iterable<? extends E>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends E>>>newArrayList()), _content);
   }
   
   public static <E extends Object> CharSequence ul(final Iterable<? extends E> object, final List<Attr<Iterable<? extends E>>> attributes, final Content<E> item) {
@@ -185,7 +189,7 @@ public class Html {
       };
       Content<Iterable<? extends E>> _content = Html.<Iterable<? extends E>>content(_function);
       _xblockexpression = Html.<Iterable<? extends E>>tag(object, name, attributes, 
-        Collections.<Content<Iterable<? extends E>>>unmodifiableList(Lists.<Content<Iterable<? extends E>>>newArrayList(_content)));
+        Collections.<Content<Iterable<? extends E>>>unmodifiableList(CollectionLiterals.<Content<Iterable<? extends E>>>newArrayList(_content)));
     }
     return _xblockexpression;
   }

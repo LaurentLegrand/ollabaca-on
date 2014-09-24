@@ -1,13 +1,11 @@
 package org.ollabaca.on.site.servlets;
 
-import com.google.common.collect.Maps;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.site.Abbreviation;
@@ -24,14 +22,7 @@ import org.ollabaca.on.site.util.Html;
 @SuppressWarnings("all")
 public class Aside extends Component {
   public Aside() {
-    super("aside", new Function0<Map<String, String>>() {
-      public Map<String, String> apply() {
-        Map<String, String> _xsetliteral = null;
-        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-        _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-        return _xsetliteral;
-      }
-    }.apply(), null);
+    super("aside", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap()), null);
   }
   
   protected CharSequence _content_Element(final Element object) {

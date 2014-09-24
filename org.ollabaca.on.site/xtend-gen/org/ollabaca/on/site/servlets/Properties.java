@@ -1,17 +1,15 @@
 package org.ollabaca.on.site.servlets;
 
-import com.google.common.collect.Maps;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.Pair;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.Topic;
 import org.ollabaca.on.site.servlets.Link;
@@ -22,15 +20,7 @@ import org.ollabaca.on.site.util.Html;
 @SuppressWarnings("all")
 public class Properties extends Component {
   public Properties() {
-    super("div", new Function0<Map<String, String>>() {
-      public Map<String, String> apply() {
-        Map<String, String> _xsetliteral = null;
-        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-        _tempMap.put("class", "properties");
-        _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-        return _xsetliteral;
-      }
-    }.apply(), null);
+    super("div", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("class", "properties"))), null);
   }
   
   public final static Properties instance = new Properties();

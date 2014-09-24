@@ -2,6 +2,8 @@ package org.ollabaca.on.site;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -30,7 +32,10 @@ public class Activator implements BundleActivator {
 		serviceTracker.open();
 
 		for (SitePlugin plugin: this.load(SITE_PLUGIN_ID, SitePlugin.class, new HashSet<SitePlugin>())) {
-			plugin.activate();
+			for (Entry<String, String> resource : plugin.activate().entrySet()) {
+				System.out.println(resource);
+				serviceTracker.getService().registerResources(resource.getKey(), resource.getValue(), null);
+			}
 		}
 		GraphContentProvider.register();
 	}

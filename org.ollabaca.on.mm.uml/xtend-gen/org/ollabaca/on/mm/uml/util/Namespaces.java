@@ -1,10 +1,10 @@
 package org.ollabaca.on.mm.uml.util;
 
-import com.google.common.collect.Lists;
 import java.util.Collections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.ollabaca.on.mm.uml.util.Constraints;
 import org.ollabaca.on.site.util.Attr;
@@ -21,6 +21,6 @@ public class Namespaces {
       }
     };
     Content<Constraint> _content = Html.<Constraint>content(_function);
-    return Html.<Constraint>ol(_ownedRules, Collections.<Attr<Iterable<? extends Constraint>>>unmodifiableList(Lists.<Attr<Iterable<? extends Constraint>>>newArrayList()), _content);
+    return Html.<Constraint>ol(_ownedRules, Collections.<Attr<Iterable<? extends Constraint>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Constraint>>>newArrayList()), _content);
   }
 }

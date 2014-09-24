@@ -35,6 +35,8 @@ class Page {
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link href="/site/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="/site/assets/site.css" rel="stylesheet">
+		
 		<style type="text/css">
 
 		.parentOf {

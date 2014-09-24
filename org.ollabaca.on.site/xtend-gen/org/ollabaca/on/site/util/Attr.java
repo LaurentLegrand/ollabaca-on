@@ -3,6 +3,7 @@ package org.ollabaca.on.site.util;
 import org.eclipse.xtend.lib.Data;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 @Data
@@ -10,15 +11,7 @@ import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 public class Attr<E extends Object> {
   private final String _name;
   
-  public String getName() {
-    return this._name;
-  }
-  
   private final Function1<? super E, ? extends CharSequence> _value;
-  
-  public Function1<? super E, ? extends CharSequence> getValue() {
-    return this._value;
-  }
   
   public CharSequence apply(final E object) {
     StringConcatenation _builder = new StringConcatenation();
@@ -39,6 +32,7 @@ public class Attr<E extends Object> {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
@@ -48,6 +42,7 @@ public class Attr<E extends Object> {
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -55,7 +50,7 @@ public class Attr<E extends Object> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Attr other = (Attr) obj;
+    Attr<?> other = (Attr<?>) obj;
     if (this._name == null) {
       if (other._name != null)
         return false;
@@ -70,8 +65,19 @@ public class Attr<E extends Object> {
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public String getName() {
+    return this._name;
+  }
+  
+  @Pure
+  public Function1<? super E, ? extends CharSequence> getValue() {
+    return this._value;
   }
 }

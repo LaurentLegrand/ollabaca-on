@@ -93,6 +93,10 @@ public class Html {
 
 	def static String html(String object) {
 		processor.markdownToHtml(object, linkRenderer)
+		.replace("{{info}}", "<div class='alert alert-info'>")
+		.replace("{{/info}}", "</div>")
+		.replace("{{warning}}", "<div class='alert alert-warning'>")
+		.replace("{{/warning}}", "</div>")
 	}
 	
 	def static dispatch CharSequence span(Void object) {

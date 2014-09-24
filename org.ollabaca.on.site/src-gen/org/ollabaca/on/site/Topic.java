@@ -285,7 +285,7 @@ public interface Topic extends Named {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\n<%org.ollabaca.on.site.Topic%> e = this;\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(e, null));\nboolean _while = _notEquals;\nwhile (_while)\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n\tboolean _notEquals_1 = (!<%com.google.common.base.Objects%>.equal(e, null));\n\t_while = _notEquals_1;\n}\nreturn list;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\n<%org.ollabaca.on.site.Topic%> e = this;\nwhile ((!<%com.google.common.base.Objects%>.equal(e, null)))\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n}\nreturn list;'"
 	 * @generated
 	 */
 	EList<Topic> getAncestorsAndSelf();
@@ -294,7 +294,7 @@ public interface Topic extends Named {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation" unique="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\n<%org.ollabaca.on.site.Topic%> e = this.getParent();\nboolean _notEquals = (!<%com.google.common.base.Objects%>.equal(e, null));\nboolean _while = _notEquals;\nwhile (_while)\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n\tboolean _notEquals_1 = (!<%com.google.common.base.Objects%>.equal(e, null));\n\t_while = _notEquals_1;\n}\nreturn list;'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='final <%org.eclipse.emf.common.util.EList%><<%org.ollabaca.on.site.Topic%>> list = new <%org.eclipse.emf.common.util.BasicEList%><<%org.ollabaca.on.site.Topic%>>();\n<%org.ollabaca.on.site.Topic%> e = this.getParent();\nwhile ((!<%com.google.common.base.Objects%>.equal(e, null)))\n{\n\t{\n\t\tlist.add(0, e);\n\t\t<%org.ollabaca.on.site.Topic%> _parent = e.getParent();\n\t\te = _parent;\n\t}\n}\nreturn list;'"
 	 * @generated
 	 */
 	EList<Topic> getAncestors();

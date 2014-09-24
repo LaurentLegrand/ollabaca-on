@@ -5,15 +5,13 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.service.http.HttpService;
 import org.osgi.util.tracker.ServiceTracker;
 
-@SuppressWarnings("rawtypes")
-public class HttpServiceTracker extends ServiceTracker {
+public class HttpServiceTracker extends ServiceTracker<Void, HttpService> {
 
-	@SuppressWarnings("unchecked")
 	public HttpServiceTracker(BundleContext context) {
 		super(context, HttpService.class.getName(), null);
 	}
 
-	public Object addingService(ServiceReference reference) {
+	public HttpService addingService(ServiceReference<Void> reference) {
 		HttpService httpService = (HttpService) super.addingService(reference);
 		if (httpService == null)
 			return null;
@@ -28,5 +26,6 @@ public class HttpServiceTracker extends ServiceTracker {
 
 		return httpService;
 	}
+	
 
 }

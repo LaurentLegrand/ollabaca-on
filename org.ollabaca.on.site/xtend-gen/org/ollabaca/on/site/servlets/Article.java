@@ -1,11 +1,9 @@
 package org.ollabaca.on.site.servlets;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Maps;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -19,7 +17,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Conversions;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -39,14 +36,7 @@ import org.ollabaca.on.site.util.Sites;
 @SuppressWarnings("all")
 public class Article extends Component {
   public Article() {
-    super("article", new Function0<Map<String, String>>() {
-      public Map<String, String> apply() {
-        Map<String, String> _xsetliteral = null;
-        Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-        _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-        return _xsetliteral;
-      }
-    }.apply(), null);
+    super("article", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap()), null);
   }
   
   protected CharSequence _content_Element(final Topic object) {

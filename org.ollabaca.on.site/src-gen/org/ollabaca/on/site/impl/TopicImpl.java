@@ -548,16 +548,12 @@ public class TopicImpl extends NamedImpl implements Topic {
 	public EList<Topic> getAncestorsAndSelf() {
 		final EList<Topic> list = new BasicEList<Topic>();
 		Topic e = this;
-		boolean _notEquals = (!Objects.equal(e, null));
-		boolean _while = _notEquals;
-		while (_while) {
+		while ((!Objects.equal(e, null))) {
 			{
 				list.add(0, e);
 				Topic _parent = e.getParent();
 				e = _parent;
 			}
-			boolean _notEquals_1 = (!Objects.equal(e, null));
-			_while = _notEquals_1;
 		}
 		return list;
 	}
@@ -570,16 +566,12 @@ public class TopicImpl extends NamedImpl implements Topic {
 	public EList<Topic> getAncestors() {
 		final EList<Topic> list = new BasicEList<Topic>();
 		Topic e = this.getParent();
-		boolean _notEquals = (!Objects.equal(e, null));
-		boolean _while = _notEquals;
-		while (_while) {
+		while ((!Objects.equal(e, null))) {
 			{
 				list.add(0, e);
 				Topic _parent = e.getParent();
 				e = _parent;
 			}
-			boolean _notEquals_1 = (!Objects.equal(e, null));
-			_while = _notEquals_1;
 		}
 		return list;
 	}

@@ -1,7 +1,6 @@
 package org.ollabaca.on.mm.uml.util;
 
 import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.Iterator;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +14,7 @@ import org.eclipse.uml2.uml.Node;
 import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.ollabaca.on.mm.uml.todo.Environment;
@@ -72,8 +72,8 @@ public class Environments {
     };
     Column<Node> _column_3 = Html.<Node>column("Comment", _function_3);
     return Html.<Node>table(_iterable, 
-      Collections.<Attr<Iterable<? extends Node>>>unmodifiableList(Lists.<Attr<Iterable<? extends Node>>>newArrayList()), 
-      Collections.<Column<Node>>unmodifiableList(Lists.<Column<Node>>newArrayList(_column, _column_1, _column_2, _column_3)));
+      Collections.<Attr<Iterable<? extends Node>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Node>>>newArrayList()), 
+      Collections.<Column<Node>>unmodifiableList(CollectionLiterals.<Column<Node>>newArrayList(_column, _column_1, _column_2, _column_3)));
   }
   
   public static CharSequence table_Environment_Deployments(final Environment object) {
@@ -141,7 +141,7 @@ public class Environments {
     };
     Column<Deployment> _column_2 = Html.<Deployment>column("Configuration", _function_2);
     return Html.<Deployment>table(_iterable, 
-      Collections.<Attr<Iterable<? extends Deployment>>>unmodifiableList(Lists.<Attr<Iterable<? extends Deployment>>>newArrayList()), 
-      Collections.<Column<Deployment>>unmodifiableList(Lists.<Column<Deployment>>newArrayList(_column, _column_1, _column_2)));
+      Collections.<Attr<Iterable<? extends Deployment>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Deployment>>>newArrayList()), 
+      Collections.<Column<Deployment>>unmodifiableList(CollectionLiterals.<Column<Deployment>>newArrayList(_column, _column_1, _column_2)));
   }
 }

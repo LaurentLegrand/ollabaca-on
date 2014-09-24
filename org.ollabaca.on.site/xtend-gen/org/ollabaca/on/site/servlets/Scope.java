@@ -2,6 +2,7 @@ package org.ollabaca.on.site.servlets;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtend.lib.Data;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 @Data
@@ -9,15 +10,7 @@ import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 public class Scope {
   private final String _path;
   
-  public String getPath() {
-    return this._path;
-  }
-  
   private final EObject _target;
-  
-  public EObject getTarget() {
-    return this._target;
-  }
   
   public Scope(final String path, final EObject target) {
     super();
@@ -26,6 +19,7 @@ public class Scope {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
@@ -35,6 +29,7 @@ public class Scope {
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -57,8 +52,19 @@ public class Scope {
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public String getPath() {
+    return this._path;
+  }
+  
+  @Pure
+  public EObject getTarget() {
+    return this._target;
   }
 }

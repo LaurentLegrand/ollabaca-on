@@ -1,11 +1,10 @@
 package org.ollabaca.on.site.servlets;
 
-import com.google.common.collect.Maps;
 import java.util.Collections;
-import java.util.Map;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Pair;
 import org.ollabaca.on.site.Element;
 import org.ollabaca.on.site.servlets.Article;
 import org.ollabaca.on.site.servlets.Aside;
@@ -18,53 +17,23 @@ import org.ollabaca.on.site.util.Component;
 public class Page {
   public final static Page instance = new Page();
   
-  public final static Component head = new Function0<Component>() {
-    public Component apply() {
-      Map<String, String> _xsetliteral = null;
-      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-      _tempMap.put("lang", "en");
-      _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
-        public CharSequence apply(final Element it) {
-          return Page.head_Element(it);
-        }
-      };
-      Component _component = new Component("head", _xsetliteral, _function);
-      return _component;
+  public final static Component head = new Component("head", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("lang", "en"))), new Function1<Element, CharSequence>() {
+    public CharSequence apply(final Element it) {
+      return Page.head_Element(it);
     }
-  }.apply();
+  });
   
-  public final static Component body = new Function0<Component>() {
-    public Component apply() {
-      Map<String, String> _xsetliteral = null;
-      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-      _tempMap.put("lang", "en");
-      _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
-        public CharSequence apply(final Element it) {
-          return Page.body_Element(it);
-        }
-      };
-      Component _component = new Component("body", _xsetliteral, _function);
-      return _component;
+  public final static Component body = new Component("body", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("lang", "en"))), new Function1<Element, CharSequence>() {
+    public CharSequence apply(final Element it) {
+      return Page.body_Element(it);
     }
-  }.apply();
+  });
   
-  public final static Component header = new Function0<Component>() {
-    public Component apply() {
-      Map<String, String> _xsetliteral = null;
-      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-      _tempMap.put("class", "");
-      _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
-        public CharSequence apply(final Element it) {
-          return Page.header_Element(it);
-        }
-      };
-      Component _component = new Component("header", _xsetliteral, _function);
-      return _component;
+  public final static Component header = new Component("header", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("class", ""))), new Function1<Element, CharSequence>() {
+    public CharSequence apply(final Element it) {
+      return Page.header_Element(it);
     }
-  }.apply();
+  });
   
   public final static Component breadcrumb = new Breadcrumb();
   
@@ -72,21 +41,11 @@ public class Page {
   
   public final static Article article = new Article();
   
-  public final static Component footer = new Function0<Component>() {
-    public Component apply() {
-      Map<String, String> _xsetliteral = null;
-      Map<String, String> _tempMap = Maps.<String, String>newHashMap();
-      _tempMap.put("class", "footer");
-      _xsetliteral = Collections.<String, String>unmodifiableMap(_tempMap);
-      final Function1<Element, CharSequence> _function = new Function1<Element, CharSequence>() {
-        public CharSequence apply(final Element it) {
-          return Page.footer_Element(it);
-        }
-      };
-      Component _component = new Component("footer", _xsetliteral, _function);
-      return _component;
+  public final static Component footer = new Component("footer", Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(Pair.<String, String>of("class", "footer"))), new Function1<Element, CharSequence>() {
+    public CharSequence apply(final Element it) {
+      return Page.footer_Element(it);
     }
-  }.apply();
+  });
   
   public static CharSequence page_Element(final Element object) {
     StringConcatenation _builder = new StringConcatenation();
@@ -121,6 +80,9 @@ public class Page {
     _builder.append("<meta name=\"author\" content=\"\">");
     _builder.newLine();
     _builder.append("<link href=\"/site/assets/bootstrap/css/bootstrap.css\" rel=\"stylesheet\">");
+    _builder.newLine();
+    _builder.append("<link href=\"/site/assets/site.css\" rel=\"stylesheet\">");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("<style type=\"text/css\">");
     _builder.newLine();

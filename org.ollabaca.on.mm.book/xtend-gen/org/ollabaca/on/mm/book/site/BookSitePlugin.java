@@ -1,9 +1,13 @@
 package org.ollabaca.on.mm.book.site;
 
+import java.util.Collections;
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Pair;
 import org.ollabaca.on.mm.book.Book;
 import org.ollabaca.on.mm.book.BookElement;
 import org.ollabaca.on.mm.book.site.Body_BookElement;
@@ -27,7 +31,7 @@ import org.ollabaca.on.site.util.Sites;
 public class BookSitePlugin implements SitePlugin {
   private final static String BOOK = "book";
   
-  public void activate() {
+  public Map<String, String> activate() {
     final Function1<EObject, Topic> _function = new Function1<EObject, Topic>() {
       public Topic apply(final EObject it) {
         Topic _xifexpression = null;
@@ -78,5 +82,7 @@ public class BookSitePlugin implements SitePlugin {
       }
     };
     Renderers.topicRenderers.registerRenderer(BookSitePlugin.BOOK, _function_5);
+    Pair<String, String> _mappedTo = Pair.<String, String>of("/site/book-assets", "/org/ollabaca/on/mm/book/site/assets");
+    return Collections.<String, String>unmodifiableMap(CollectionLiterals.<String, String>newHashMap(_mappedTo));
   }
 }

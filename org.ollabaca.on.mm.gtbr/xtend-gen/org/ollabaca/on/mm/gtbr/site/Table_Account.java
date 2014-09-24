@@ -1,10 +1,10 @@
 package org.ollabaca.on.mm.gtbr.site;
 
-import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.mm.gtbr.Account;
@@ -56,7 +56,7 @@ public class Table_Account {
     };
     Column<Record> _column_2 = Html.<Record>column("Credit", _function_3);
     return Html.<Record>table(_sortBy, 
-      Collections.<Attr<Iterable<? extends Record>>>unmodifiableList(Lists.<Attr<Iterable<? extends Record>>>newArrayList()), 
-      Collections.<Column<Record>>unmodifiableList(Lists.<Column<Record>>newArrayList(_column, _column_1, _column_2)));
+      Collections.<Attr<Iterable<? extends Record>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Record>>>newArrayList()), 
+      Collections.<Column<Record>>unmodifiableList(CollectionLiterals.<Column<Record>>newArrayList(_column, _column_1, _column_2)));
   }
 }

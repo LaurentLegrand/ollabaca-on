@@ -1,7 +1,6 @@
 package org.ollabaca.on.mm.uml.util;
 
 import com.google.common.base.Objects;
-import com.google.common.collect.Lists;
 import java.util.Collections;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +10,7 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.ollabaca.on.mm.uml.util.Types;
@@ -112,6 +112,6 @@ public class Classifiers {
     };
     Content<Parameter> _content_1 = Html.<Parameter>content(_function_2);
     return Html.<Parameter>dl(_ownedParameters, 
-      Collections.<Attr<Iterable<? extends Parameter>>>unmodifiableList(Lists.<Attr<Iterable<? extends Parameter>>>newArrayList(_attr)), _content, _content_1);
+      Collections.<Attr<Iterable<? extends Parameter>>>unmodifiableList(CollectionLiterals.<Attr<Iterable<? extends Parameter>>>newArrayList(_attr)), _content, _content_1);
   }
 }

@@ -1,7 +1,13 @@
 package org.ollabaca.on.site;
 
+import java.util.Map;
+
 public interface SitePlugin {
 	
-	public void activate();
+	/**
+	 * 
+	 * @return the list of resources to register
+	 */
+	public Map<String, String> activate();
 
 }

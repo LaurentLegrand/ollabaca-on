@@ -2,6 +2,7 @@ package org.ollabaca.on.site.util;
 
 import org.eclipse.xtend.lib.Data;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.Pure;
 import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 
 @Data
@@ -9,15 +10,7 @@ import org.eclipse.xtext.xbase.lib.util.ToStringHelper;
 public class Column<E extends Object> {
   private final String _name;
   
-  public String getName() {
-    return this._name;
-  }
-  
   private final Function1<? super E, ? extends CharSequence> _cell;
-  
-  public Function1<? super E, ? extends CharSequence> getCell() {
-    return this._cell;
-  }
   
   public CharSequence apply(final E object) {
     Function1<? super E, ? extends CharSequence> _cell = this.getCell();
@@ -31,6 +24,7 @@ public class Column<E extends Object> {
   }
   
   @Override
+  @Pure
   public int hashCode() {
     final int prime = 31;
     int result = 1;
@@ -40,6 +34,7 @@ public class Column<E extends Object> {
   }
   
   @Override
+  @Pure
   public boolean equals(final Object obj) {
     if (this == obj)
       return true;
@@ -47,7 +42,7 @@ public class Column<E extends Object> {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Column other = (Column) obj;
+    Column<?> other = (Column<?>) obj;
     if (this._name == null) {
       if (other._name != null)
         return false;
@@ -62,8 +57,19 @@ public class Column<E extends Object> {
   }
   
   @Override
+  @Pure
   public String toString() {
     String result = new ToStringHelper().toString(this);
     return result;
+  }
+  
+  @Pure
+  public String getName() {
+    return this._name;
+  }
+  
+  @Pure
+  public Function1<? super E, ? extends CharSequence> getCell() {
+    return this._cell;
   }
 }
