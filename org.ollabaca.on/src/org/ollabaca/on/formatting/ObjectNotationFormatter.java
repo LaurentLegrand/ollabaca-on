@@ -45,6 +45,8 @@ public class ObjectNotationFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getDocumentationAssignment_3_1());
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getSeeAssignment_5_1());
 		c.setLinewrap(1, 1, 1).after(f.getInstanceAccess().getTagsAssignment_6_1());
+		
+		c.setLinewrap(1, 1, 1).after(f.getArrayAccess().getValueAssignment_1());
 
 		for (Pair<Keyword, Keyword> pair : f.findKeywordPairs("{", "}")) {
 			c.setIndentation(pair.getFirst(), pair.getSecond());
