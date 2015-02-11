@@ -17,6 +17,7 @@ import org.eclipse.uml2.uml.VisibilityKind
 import org.ollabaca.on.site.servlets.Notation
 
 import static extension org.ollabaca.on.site.servlets.Link.*
+import org.eclipse.uml2.uml.Reception
 
 class Notation_Element {
 
@@ -63,7 +64,7 @@ class Notation_Element {
 			modifiers.add("id")
 		}
 
-		'''<code>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " } "»«e»«ENDFOR»</code>'''
+		'''<code «IF object.isStatic»style="text-decoration: underline;"«ENDIF»>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " }"»«e»«ENDFOR»</code>'''
 	}
 	
 	static def dispatch CharSequence notation_Element(Operation that) {
@@ -93,7 +94,7 @@ class Notation_Element {
 			modifiers.add("unique")
 		}
 		
-		'''<code>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " } "»«e»«ENDFOR»</code>'''
+		'''<code «IF that.isStatic»style="text-decoration: underline;"«ENDIF»>«definition»«FOR e : modifiers BEFORE " { " SEPARATOR ", " AFTER " }"»«e»«ENDFOR»</code>'''
 	}
 
 	static def dispatch CharSequence notation_Element(Parameter object) {
@@ -159,6 +160,10 @@ class Notation_Element {
 	
 	static def dispatch CharSequence notation_Element(Generalization object) {
 		'''«object.specific.link_EObject» &#8680; «object.general.link_EObject»'''
+	}
+	
+	static def dispatch CharSequence notation_Element(Reception object) {
+		'''&#171; signal &#187; «object.signal.link_EObject»'''
 	}
 
 }

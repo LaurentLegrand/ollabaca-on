@@ -17,6 +17,8 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.Reception;
+import org.eclipse.uml2.uml.Signal;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.VisibilityKind;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -112,7 +114,14 @@ public class Notation_Element {
         modifiers.add("id");
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<code>");
+      _builder.append("<code ");
+      {
+        boolean _isStatic = object.isStatic();
+        if (_isStatic) {
+          _builder.append("style=\"text-decoration: underline;\"");
+        }
+      }
+      _builder.append(">");
       _builder.append(definition, "");
       {
         boolean _hasElements = false;
@@ -126,7 +135,7 @@ public class Notation_Element {
           _builder.append(e_2, "");
         }
         if (_hasElements) {
-          _builder.append(" } ", "");
+          _builder.append(" }", "");
         }
       }
       _builder.append("</code>");
@@ -179,7 +188,14 @@ public class Notation_Element {
         modifiers.add("unique");
       }
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("<code>");
+      _builder.append("<code ");
+      {
+        boolean _isStatic = that.isStatic();
+        if (_isStatic) {
+          _builder.append("style=\"text-decoration: underline;\"");
+        }
+      }
+      _builder.append(">");
       _builder.append(definition, "");
       {
         boolean _hasElements = false;
@@ -193,7 +209,7 @@ public class Notation_Element {
           _builder.append(e_1, "");
         }
         if (_hasElements) {
-          _builder.append(" } ", "");
+          _builder.append(" }", "");
         }
       }
       _builder.append("</code>");
@@ -414,6 +430,15 @@ public class Notation_Element {
     return _builder;
   }
   
+  protected static CharSequence _notation_Element(final Reception object) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("&#171; signal &#187; ");
+    Signal _signal = object.getSignal();
+    CharSequence _link_EObject = Link.link_EObject(_signal);
+    _builder.append(_link_EObject, "");
+    return _builder;
+  }
+  
   public static CharSequence notation_Element(final Object object) {
     if (object instanceof LiteralBoolean) {
       return _notation_Element((LiteralBoolean)object);
@@ -427,6 +452,8 @@ public class Notation_Element {
       return _notation_Element((Operation)object);
     } else if (object instanceof Property) {
       return _notation_Element((Property)object);
+    } else if (object instanceof Reception) {
+      return _notation_Element((Reception)object);
     } else if (object instanceof Parameter) {
       return _notation_Element((Parameter)object);
     } else if (object instanceof Generalization) {
