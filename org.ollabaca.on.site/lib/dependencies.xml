@@ -10,7 +10,7 @@
 		<dependency>
 			<groupId>org.pegdown</groupId>
 			<artifactId>pegdown</artifactId>
-			<version>1.2.1</version>
+			<version>1.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish</groupId>
@@ -21,7 +21,7 @@
 			<dependency>
 			<groupId>org.parboiled</groupId>
 			<artifactId>parboiled-java</artifactId>
-			<version>1.1.5</version>
+			<version>1.1.7</version>
 		</dependency>
 	</dependencies>
 	<build>
